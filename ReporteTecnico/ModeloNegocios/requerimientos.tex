@@ -20,14 +20,14 @@ En el registro de todos los elementos, incluyendo los casos de uso, deberá habe
 
 Los casos de uso deben ser clasificados en módulos.\\
 
-Se debe simular el proceso de revisón de los casos de uso, el cual consiste en que cuando un caso de uso está siendo editado su estado debe ser ``En edición'', cuando 
-el analista concluya la construcción del caso de uso el estado de este será ``Pendiente de revisión'', si el líder de análisis está revisando el caso de uso el estado 
-debe cambiar a ``En revisión'', cuando el líder decida enviar correcciones al analista el estado del caso de uso será ``En edición (con observaciones)'', al contrario, 
-si el líder decide liberar el caso de uso, el estado de este será ``Liberado'', una vez en este estado solamente el líder de análisis podrá realizar modificaciones.\\
+Se debe simular el proceso de revisón de los elementos, el cual consiste en que cuando un elemento está siendo editado su estado debe ser ``En edición'', cuando 
+el analista concluya la construcción del elemento el estado de este será ``Pendiente de revisión'', cuando líder de análisis lo está revisando el estado 
+debe cambiar a ``En revisión'', cuando el líder decida enviar correcciones al analista el estado será ``En edición (con observaciones)'', al contrario, 
+si el líder decide liberar un elemento el estado de este será ``Liberado'', una vez liberado solamente el líder de análisis podrá realizar modificaciones.\\
 
 \section{Requerimientos funcionales}
 De acuerdo al ámbito del sistema, se enlistan a continuación los requerimientos funcionales.
-\begin{enumerate}[{\bf RF 1.}]
+\begin{enumerate}[{\bf RF01.}]
  \item Existirán 3 roles en el sistema: administrador, líder de análisis y analista.
  \item El administrador podrá gestionar los proyectos y el personal de la organización.
  \item El líder de análisis podrá asignar los colaboradores al proyecto que lidera.
@@ -54,6 +54,8 @@ De acuerdo al ámbito del sistema, se enlistan a continuación los requerimiento
 		\item Formato correcto
 	\end{itemize}
 	Las reglas de negocio serán referenciadas desde los casos de uso y utilizadas en las trayectorias.
+ \item Cuando el administrador registre un proyecto podrá definir si este se encuentra en etapa de negociación o ya se ha iniciado, en caso de haberse iniciado tendrá
+ que registrar la fecha de inicio del proyecto.
 \end{enumerate}
 
 

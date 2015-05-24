@@ -1,0 +1,39 @@
+\section{Diagramas de estados}
+Es esta sección se muestran los diagramas de estados y la descripción de cada uno de ellos.\\
+
+\subsection{Diagrama de estados de un elemento}
+
+En la figura \refIM{fig:estadosElemento}{Diagrama de estados de un elemento} se muestran los estados que tiene un \cdtRef{gls:elemento}{elemento} a lo largo 
+del sistema. Estos estados cambian conforme la operación que se esté realizando sobre ellos.\\
+
+\IMfig[.9]{ModeloNegocios/images/estadosElementos.png}{fig:estadosElemento}{Diagrama de estados de un elemento}
+
+Cada estado se describe a continuación:
+
+\begin{itemize}
+ \item {\bf En edición.} Cuando un analista solicita el registro de un elemento, este tendrá el estado ``En edición'', el elemento se mantiene en 
+ este estado mientras el analista no termine el registro. Si el elemento es enviado por el líder con observaciones para corrección o el líder habilita la edición,
+ también pasará a este estado.
+ \item {\bf Terminado.} El elemento pasará a este estado cuando el analista decida que ha terminado de registrar toda la información solicitada.
+ \item {\bf En revisión.} Cuando el líder de análisis solicite revisar la información de un elemento, el estado de este pasará a ``En revisión''.
+ \item {\bf Liberado.} Si el líder de análisis registra un elemento y está seguro de que toda la información es correcta, entonces podrá liberarlo y el estado cambiará
+ a ``Liberado'', esto significa que ya no necesita cambios. También cuando un líder está revisando la información que ha registrado otro analista
+ podrá decidir si el elemento es correcto y cambiar su estado a ``Liberado''.
+\end{itemize}
+
+\subsection{Diagrama de estados de un proyecto}
+
+En la figura \refIM{fig:estadosProyecto}{Diagrama de estados de un proyecto} se muestra el diagrama de estados que corresponde a un proyecto. Cada estado se
+detalla a continuación:
+
+\IMfig[.9]{ModeloNegocios/images/estadosProyectos.png}{fig:estadosProyecto}{Diagrama de estados de un proyecto}
+
+\begin{itemize}
+ \item {\bf En negociación.} Cuando un proyecto esté siendo negociado con el cliente se puede indicar 
+ que el estado de este es ``En negociación''. 
+ \RCitem{PC1}{\TODO{Falta indicar si se puede realizar operaciones sobre los elementos en este estado.}}{}
+ \item {\bf Iniciado.} Cuando un proyecto haya iniciado antes de ser registrado en la herramienta, se puede indicar que el estado es ``Iniciado''.
+ Se puede realizar cualquier operación sobre los elementos de los proyectos en este estado.
+ \item {\bf Terminado.} Cuando un proyecto haya terminado, se puede indicar que el estado de este es ``Terminado'' y por lo tanto no se podrán realizar
+ modificaciones o registros de elementos, solo consulta.
+\end{itemize}
