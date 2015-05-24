@@ -1,11 +1,10 @@
 \section{Ámbito del sistema}
 Los roles de los usuarios del sistema serán: administrador, líder de análisis y colaborador. El administrador será el encargado 
-de registrar los proyectos donde participarán los \cdtRef{gls:analista}{analistas}, así como el \cdtRef{gls:lider}{líder de análisis} de dicho proyecto. El 
-administrador entonces es el principal encargado de la organización que pueda hacer uso de la herramienta teniendo el control de los proyectos y la gestión del 
-personal.\\
+de registrar los proyectos donde participarán los analistas, así como el líder de análisis de dicho proyecto. El administrador puede
+registrar al personal de la organización.\\
 
-El líder de análisis es un analista que además podrá asignar los recursos a los proyectos e indicar la fecha de arranque de los mismos. Finalmente
-el analista será el encargado de documentar los casos de uso.
+El líder de análisis es un analista que además podrá asignar los colaboradores a los proyectos e indicar la fecha de arranque de los mismos. Finalmente
+el analista será el encargado de documentar los casos de uso.\\
 
 El editor de casos de uso debe permitir al analista ingresar los elementos que componen un caso de uso: \cdtRef{gls:entidad}{entidades}, \cdtRef{gls:atributo}{atributos}, 
 \cdtRef{gls:rn}{reglas de negocio}, \cdtRef{gls:interfaces}{interfaces de usuario}, \cdtRef{gls:mensaje}{mensajes} y \cdtRef{gls:actor}{actores}.\\
@@ -19,7 +18,12 @@ caso de uso, la trayectoria principal, las trayectorias alternativas y los punto
 
 En el registro de todos los elementos, incluyendo los casos de uso, deberá haber un campo para el nombre y otro para la descripción.\\
 
-Los casos de uso deberán de poder ser clasificados por módulos.
+Los casos de uso deben ser clasificados en módulos.\\
+
+Se debe simular el proceso de revisón de los casos de uso, el cual consiste en que cuando un caso de uso está siendo editado su estado debe ser ``En edición'', cuando 
+el analista concluya la construcción del caso de uso el estado de este será ``Pendiente de revisión'', si el líder de análisis está revisando el caso de uso el estado 
+debe cambiar a ``En revisión'', cuando el líder decida enviar correcciones al analista el estado del caso de uso será ``En edición (con observaciones)'', al contrario, 
+si el líder decide liberar el caso de uso, el estado de este será ``Liberado'', una vez en este estado solamente el líder de análisis podrá realizar modificaciones.\\
 
 \section{Requerimientos funcionales}
 De acuerdo al ámbito del sistema, se enlistan a continuación los requerimientos funcionales.

@@ -1,5 +1,5 @@
-En este capítulo se especificarán las amenazas al uso del prototipo, los riesgos aquí mencionados son situaciones no deseables
-que pueden presentarse al utilizar la herramienta.
+En este capítulo se especificarán los riesgos que pueden surgir al utilizar el prototipo, así como la estrategia de reducción que se lleva a cabo. 
+
 
 % Para clasificar los riesgos, se utilizará la categorización propuesta por
 % Charette la cual propone tres categorías de riesgos:
@@ -10,7 +10,7 @@ que pueden presentarse al utilizar la herramienta.
 % \end{itemize}
 
 \section{Tabla de riesgos}
-A continuación se detallan los riesgos con base en las categorías explicadas anteriormente.
+La siguiente tabla muestra los riesgos de utilizar la herramienta.
 En la primer columna se describe el riesgo, en la segunda columna se indica la 
 probabilidad que se percibe (valoración colectiva del equipo de trabajo), la tercer columna indica el nivel de impacto de acuerdo a los siguientes valores:
 
@@ -46,6 +46,8 @@ La última columna se indica la estrategia de reducción del riesgo. Los riesgos
  		{El usuario podrá descargar el documento de análisis en formato tex para modificar lo que requiera. El usuario debe tener experiencia utilizando Latex.}
  	\riesgo{Un analista no experimentado realiza cambios en elementos que no son parte de su trabajo y sobreescribe información importante.}{80 \%}{2}
 		{Los cambios realizados a los elementos se registran en un histórico para posibles aclaraciones de las modificaciones.}
+	\riesgo{El analista desea realizar algún cambio a un elemento que ya está liberado.}{40 \%}{1}
+		{Se contempló que cada elemento pasa por una serie de revisiones por parte del líder de análisis que debería evitar esta situación.}
 % 	\riesgo{Riesgo}{probabilidad}{impacto}
 % 		{estrategia}
 \end{riesgos}
