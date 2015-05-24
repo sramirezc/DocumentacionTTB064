@@ -14,10 +14,12 @@
 \newcommand{\palabrasClave}{{Documentación de Sistemas, Ingeniería de Software, Proceso de Software.}}
 \newcommand{\autores}{{Natalia Giselle Hernández Sánchez, Sergio Ramírez Camacho}}
 
+%Hacer referencia a las imágenes
 \newcommand{\refIM}[2]{%
 	\hyperlink{#1}{\ref{#1}\ {#2}}%
 }
 
+%Incluir imágenes 
 \newcommand{\IMfig}[4][0.7]{%
 	\begin{figure}[htpb!]%
 		\begin{center}%
@@ -27,3 +29,17 @@
 		\end{center}%
 	\end{figure}%
 }
+
+%Tabla análisis de riesgo
+\newenvironment{riesgos}
+{
+\begin{longtable}{| p{.30\textwidth} | p{.10\textwidth} | p{.08\textwidth} | p{.40\textwidth} |}%
+	\rowcolor{black}%
+	\riesgo{\color{white}Descripción del riesgo}{\color{white}Probabilidad percibida}{\color{white}Impacto}{\color{white}Estrategia de reducción}%
+}
+{
+	\end{longtable}
+}
+
+%Riesgo
+\newcommand{\riesgo}[4]{{#1} & {#2} & {#3} & {#4}\\ \hline}%

@@ -1,18 +1,18 @@
-En este capítulo se especificarán las amenazas al pĺan de proyecto. Para clasificar los riesgos, se utilizará la categorización propuesta por
-Charette la cual propone tres categorías de riesgos:
-\begin{itemize}
- \item {\bf Conocidos.} Son aquellos que pueden descubrirse después de una evaluación cuidadosa del plan del proyecto, de los requerimientos del sistma y del 
-	entorno de desarrollo del sistema.
- \item {\bf Predecibles.} Pueden definirse de acuerdo a la experiencia de proyectos anteriores.
- \item {\bf Impredecibles.} Son aquellos riesgos que difícilmente se pueden identificar por adelantado.
-\end{itemize}
+En este capítulo se especificarán las amenazas al uso del prototipo, los riesgos aquí mencionados son situaciones no deseables
+que pueden presentarse al utilizar la herramienta.
+
+% Para clasificar los riesgos, se utilizará la categorización propuesta por
+% Charette la cual propone tres categorías de riesgos:
+% \begin{itemize}
+%  \item {\bf Conocidos.} Son aquellos que se relacionan directamente con el negocio del sistema.
+%  \item {\bf Predecibles.} Pueden definirse de acuerdo a la experiencia de proyectos anteriores.
+%  \item {\bf Impredecibles.} Son aquellos riesgos que difícilmente se pueden identificar por adelantado.
+% \end{itemize}
 
 \section{Tabla de riesgos}
-A continuación se detallan los riesgos con base en las categorías explicadas anteriormente, es importante mencionar que los riesgos impredecibles no
-se mencionan debido a la naturaleza de los mismos.\\
-
-En la primer columna se describe el riesgo, en la segunda columna se indica a qué categoría pertenece, la tercer columna indica la 
-probabilidad que se percibe (valoración colectiva del equipo de trabajo), la cuarta columna indica el nivel de impacto de acuerdo a los siguientes valores:
+A continuación se detallan los riesgos con base en las categorías explicadas anteriormente.
+En la primer columna se describe el riesgo, en la segunda columna se indica la 
+probabilidad que se percibe (valoración colectiva del equipo de trabajo), la tercer columna indica el nivel de impacto de acuerdo a los siguientes valores:
 
 \begin{enumerate}
  \item Catastrófico
@@ -21,29 +21,34 @@ probabilidad que se percibe (valoración colectiva del equipo de trabajo), la cu
  \item Despreciable
 \end{enumerate}
 
-Los riesgos de alta probabilidad y alto impacto se ubican en
-la parte superior de la tabla y los riesgos de baja probabilidad se ubican en el fondo. Esto logra
-una priorización de riesgos.\\
+La última columna se indica la estrategia de reducción del riesgo. Los riesgos de alta probabilidad y alto impacto deben ser atendidos con mayor prioridad.\\
 
-Posibles riesgos:
-\begin{itemize}
- \item No terminar el proyecto debido al tamaño del mismo.
- \item 
-\end{itemize}
+\clearpage
+\begin{riesgos}
+	\riesgo{El usuario ha olvidado su nombre de usuario o su contraseña.}{90 \%}{4} 
+		{El nombre de usuario es el correo electrónico del usuario y en la sección ``Recuperar contraseña'' se puede solicitar el envío de una contraseña nueva.}
+	\riesgo{El usuario desea recuperar un elemento eliminado.}{80 \%}{4}
+		{Antes de que se elimine definitivamente un elemento, el sistema alerta al usuario para que esté consiente de que no podrá recuperarlo posteriormente.}
+	\riesgo{El usuario desea revertir las modificaciones realizadas a un elemento.}{80 \%}{4}
+		{Antes de guardar los cambios definitivamente, el sistema alerta al usuario para que esté consiente de que no se podrán revertir los cambios.}
+	\riesgo{El documento de análisis no se puede generar debido a que faltan elementos por registrar.}{80 \%}{4}
+		{Cuando el analista desee generar el documento de análisis y hay elementos pendientes de registrar, se notificará al usuario que es posible que el documento 
+		no se genere completo.}
+	\riesgo{Algunos analistas participan en todos los proyectos y otros no tienen proyectos asignados.}{70 \%}{2}
+		{Se notifica al líder de análisis cuántos proyectos tiene asociado cada analista y el debe tomar la decisión de asignarlo o no a los proyectos.}
+	\riesgo{Alguno de los analistas desea consultar la información de otro analista.}{70 \%}{3}
+		{Debido al enfoque del proyecto, no es prioridad en este momento la comunicación directa entre colaboradores.}
+	\riesgo{Los analistas registran dos elementos idénticos semánticamente pero con distinta clave.}{60 \%}{2}
+ 		{Todos los elementos pueden ser eliminados cuando no tienen asociado ningún otro elemento, la comunicación entre analistas es un punto clave para evitar esta situación de duplicidad.}
+ 	\riesgo{El analista necesita un tipo de regla de negocio que no está en la lista.}{80 \%}{2}
+ 		{Es posible registrar un tipo de regla de negocio que no esté en la lista mediante la opción ``Otro'' y describiendola en lenguaje natural.}
+ 	 \riesgo{El usuario desea agregar más datos de los que se solicitan para generar el documento de análisis.}{100 \%}{2}
+ 		{El usuario podrá descargar el documento de análisis en formato tex para modificar lo que requiera. El usuario debe tener experiencia utilizando Latex.}
+ 	\riesgo{Un analista no experimentado realiza cambios en elementos que no son parte de su trabajo y sobreescribe información importante.}{80 \%}{2}
+		{Los cambios realizados a los elementos se registran en un histórico para posibles aclaraciones de las modificaciones.}
+% 	\riesgo{Riesgo}{probabilidad}{impacto}
+% 		{estrategia}
+\end{riesgos}
 
 
-
-
-\section{Riesgos conocidos}
-\subsection{Genéricos}
-\begin{enumerate}
- \item El tamaño del producto esperado crece debido al cambio constante de requerimientos
-\end{enumerate}
-
-\subsection{Específicos}
-
-
-\section{Riesgos predecibles}
-\subsection{Genéricos}
-\subsection{Específicos}
 
