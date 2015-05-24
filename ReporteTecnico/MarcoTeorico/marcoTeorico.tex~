@@ -1,0 +1,62 @@
+\section{Proceso de software}
+Un \emph{proceso de software} es un conjunto coherente de actividades que se llevan a cabo para la producción de un software. 
+El modelo básico para un proceso de software contiene cuatro etapas \emph{Análisis}, \emph{Diseño}, \emph{Implementación} y \emph{Pruebas}, cada una de estas etapas contiene una serie de tareas que se describen brevemente a continuación:
+
+\begin{itemize}
+	\item Análisis. En esta etapa se especifica qué hará el software, para ello se recaban los requerimientos del sistema, se construyen diagramas y se elabora el documento de análisis.
+	\item Diseño. Esta etapa consiste en especificar cómo debe implementarse el software, con base en el análisis realizado. Para ello se analiza cómo estará organizada la información, se definen las tecnologías que deben utilizarse, 
+		se crea la base de datos y se diseñan las pantallas del sistema.
+	\item Implementación. En esta etapa se codifica el software.
+	\item Pruebas. Consiste en verificar y validar que el software se ajusta a su especificación, para ello se ejecutan pruebas de funcionalidad, desempeño, usabilidad, entre otras.
+\end{itemize}
+
+Durante todas las etapas del proceso se busca asegurar la calidad del sistema a desarrollar, para ello es necesario tomar en cuenta los requerimientos y evaluar en qué grado se están cumpliendo. Dentro el proceso de
+software también es importante reducir en lo mayor posible los costos, esto se logra minimizando el tiempo y el esfuerzo de las tareas de cada etapa del proceso.\\
+
+
+\section{Etapa de análisis}
+Como se mencionó antes, una de las tareas de la etapa de análisis es recabar los requerimientos del sistema, este es el punto de partida para la construcción de un sistema. Para comprender la naturaleza de un sistema, 
+el analista debe conocer el dominio de información del sistema, así como la función requerida, el comportamiento, el rendimiento y la interconexión [Pressman, 20].\\
+
+El trabajo de un analista es refinar el detalle de los requerimientos de un sistema y la funcionalidad que este va a tener. Debe construir modelos de los requerimientos, del flujo de información y del comportamiento operativo. Un análisis completo
+y bien hecho asegura un producto de calidad que cumple con las necesidades que el cliente desea satisfacer. \\
+
+\subsection{Casos de uso}
+Una vez recopilados los requerimientos, el analista puede crear un conjunto de escenarios para facilitar la descripción de cómo el usuario utilizará al sistema. Estos escenarios se describen mediante casos de uso. Un modelo de caso de uso 
+describe lo que hacer el sistema sin describir cómo lo hace. El modelo de caso de uso refleja la vista del sistema desde la perspectiva de los usuarios y divide la funcionalidad del sistema en comportamientos, servicios y respuestas que son 
+significativos para los mismos usuarios (K&K, 666). Desde la perspectiva del usuario, un caso de uso debe producir algo que es de valor.\\
+
+Un caso de uso puede verse como una secuencia de transacciones en un sistema. Un caso de uso siempre describe tres cosas: un actor que inicia un evento; el evento que activa el caso de uso y el caso de uso que desempeña las acciones activadas
+por el evento.\\
+
+La trayectoria principal del caso de uso consiste en un flujo ideal del sistema, la trayectoria principal representa la realización normal, esperada y exitosa del caso de uso. Las variaciones o excepciones (trayectorias alternativas) también 
+se pueden describir. Cada caso de uso tiene una descripción, no existe un formato estándar para describir los escenarios del caso de uso, por lo que cada organización se enfrenta con especificar qué lineamientos se deben seguir. Las áreas principales 
+que debe tener la descripción de un caso de uso son:
+\begin{itemize}
+ \item {\bf Identificadores e iniciadores de caso de uso.} En esta área se agrega el identificador y nombre del caso de uso, los actores involucrados, una breve descripción de lo que logra el caso de uso y la iniciación (activación), es decir, lo que ocasionó que empezara el caso de uso.
+ \item {\bf Pasos desempeñados (trayectorias).} Aquí se incluye el flujo del caso de uso representado en pasos y la información requerida para cada uno de estos.
+ \item {\bf Condiciones, suposiciones y preguntas.} Aquí se incluyen la condición del sistema antes de que se pudiera desempeñar el caso de uso, así como el estado del sistema después de que el caso de uso se haya terminado.
+\end{itemize}
+
+\subsubsection{Principios del análisis}
+
+Los sistemas se construyen para procesar datos, para obtener una salida específica a partir de una entrada mediante alguna función definida. A partir de esto uno de los principios del análisis requiere el examen del dominio de la información
+y la creación de un modelo de datos que describa la organización de los elementos que participan como entradas o salidas del sistema.\\
+
+Los modelos se crean para entender mejor la entidad que se va a construir. Cuando la entidad es algo físico (un edificio, un avión, una máquina), se puede construir un modelo idéntico en forma, pero más pequeño. Sin embargo, cuando la entidad en un sistema,
+el modelo debe tomar una forma diferente. Debe ser capaz de modelar la información que transforma el sistema y las funciones que permiten que ocurran estas transformaciones, así como el comportamiento que tendrá el sistema a partir de ello.\\
+
+Como consecuencia existen otros dos principios del análisis que se refieren a la construcción de modelos de función y comportamiento.
+
+\subsection{Modelos funcionales y de comportamiento}
+Los sistemas deben realizar al menos tres funciones genéricas para transformar la información: entrada, procesamiento y salida. Después es necesario descomponer cada función en funciones más específicas buscando que con cada iteración 
+las funciones se detallen, hasta que se consigue representar una minuciosa definición de toda la funcionalidad del sistema.\\
+
+La mayoría de los sistemas responden a acontecimientos del mundo exterior, esta característica de estímulo-respuesta forma la base del modelo de comportamiento. Un programa de computadora siempre está en un estado, un modo de comportamiento observable
+exteriormente que cambia solamente cuando ocurre un proceso. Un modelo de comportamiento crea una representación de los estados del software y de los sucesos que causan que cambie de estado.\\
+
+Como resultado de la etapa de análsis se desarrolla la \emph{especificación de requerimientos del software}, esta especificación puede verse como un proceso de representación donde además se pueden agregar otros elementos como diagramas. 
+
+
+
+\section{Herramientas similares}

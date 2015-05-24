@@ -1,0 +1,47 @@
+El {\emph proceso de software} tiene como etapas principales el Análisis, Diseño, Implementación y Pruebas, 
+cuando se trata de proyectos grandes regularmente cada una de estas etapas se lleva a cabo por diferentes equipos
+de trabajo, en la etapa de {\emph Analisis} los colaboradores deben construir un documento donde se explique el comportamiento 
+que tendrá el sistema a desarrollar.\\
+
+Dentro del documento generado en la etapa de Análisis se incluye la descripción de los casos de uso, las entidades, las reglas de negocio, los mensajes, las interfaces, los actores, la trayoctoria principal
+y las trayectorias alterntivas del sistema. Toda la información recabada es utilizada a lo largo del proceso de software por el equipo de desarrollo y pruebas, los integrantes de estos
+equipos deben interpretar la información del documento de análisis para codificar el sistema y ejecutar las pruebas. \\
+
+La documentación de análisis debe contener los elementos necesarios para describir el funcionamiento completo del sistema, si consideramos lo anterior
+este documento puede ser utilizado para automatizar algunas tareas dentro del proceso de software. Si suponemos una estructura del documento de análisis
+bien definida con cada elemento organizado y las relaciones entre estos completamente descritas, toda la información es materia prima para construir algunos
+artefactos de software tales como scripts para la base de datos, codificación automática de algunos componentes, generación automática de guiones de prueba, entre otros,
+este mapeo del documento de análisis a otro artefacto parece viable cuando la estructura del documento es bien conocida, sin embargo hay que considerar que exiten diversas maneras y estilos para 
+documentar sistemas.\\
+
+Para lograr un mapeo automático del documento de análisis a otro artefacto de software es necesario conocer la redacción utilizada, la manera de escribir 
+el documento de análisis depende del analista y de las reglas definidas por la empresa u organización, no existe un lenguaje definido para realizar esta tarea, 
+regularmente se redacta en lenguaje natural, por lo que las posibilidades de escritura son infinitas. \\
+
+El lenguaje natural no puede ser completamente modelado, así que debe buscarse una alternativa para mitigar este hecho, la forma en que trabaja un lenguaje de programación 
+puede ser una primera aproximación; los lenguajes de programación son modelados en gramáticas, esto permite traducir cualquier código sin importar el estilo de cada pogramador. \\
+
+Obligar a los analistas a aprender un lenguaje para escribir el documento de análisis reduce la flexibilidad de escritura, sin embargo los beneficios de trabajar con una estructura definida
+son muy grandes. Es posible crear una herramienta que le permita al analista seguir una estructura definida y no estar obligarlo a escribir un documento en un lenguaje que pueda ser 
+difícil de aprender.\\
+
+En este proyecto se planea construir un prototipo que permita la captura de los elementos principales del documento de análisis de una manera organizada y así
+tener la posibilidad de utilizar esta información para crear otros artefactos de software. 
+
+\section{Estructura del documento}
+
+	El contenido del documento se encuentra estructurado de la siguiente forma:
+
+\begin{Citemize}
+	\item En el capítulo 2 se describen algunos aspectos generales relacionados al prototipo.
+	\item En el capítulo 3 se enlistan los requerimientos funcionales del prototipo descritos de manera general.
+	\item En el capítulo 4 se muestra el análisis de los riesgos que presenta la construcción del prototipo.
+	\item En el capítulo 5 se presenta el Modelo de negocio que consiste en la descripción de las reglas de negocio del prototipo y el ciclo de vida de los elementos del sistema que se va a documentar.
+	\item En el capítulo 6 se describe el Modelo conceptual donde se incluyen las entidades involucradas en el prototipo, así como la especificación de sus atributos.
+	\item En el capítulo 7 se presenta el Modelo de comportamiento donde se describen los casos de uso más importantes del prototipo.
+	\item En el capítulo 8 se detalla el Modelo de interacción donde se describe la documentación de las pantallas y de los mensajes del prototipo.
+	\item En el capítulo 9 se describen los avances realizados del prototipo.
+	
+\end{Citemize}
+
+

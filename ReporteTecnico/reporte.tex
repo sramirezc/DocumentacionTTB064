@@ -1,0 +1,161 @@
+\documentclass[10pt]{book}
+\usepackage{cdt/cdtBusiness}
+\usepackage{prisma}
+\usepackage{enumerate}
+\usepackage{subfigure}
+\usepackage{cite}
+\usepackage{ragged2e}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Datos del proyecto
+
+% \tituloTrabajo
+% \noRegistro
+% \resumen
+% \palabrasClave
+% \autores
+% \directores
+
+% \organizacion[ESCOM--IPN]{ESCOM-IPN}
+% \autor[Natalia Giselle Hernández Sánchez, Sergio Ramírez Camacho]{\autores}
+% 
+% \sistema[PRISMA]{\prisma}
+% \proyecto[Prototipo de editor de casos de uso para la construcción asistida de casos de prueba]{\editor}
+% \documento{RT}{Reporte técnico}{\DRAFT{\today}} %{\RELEASE{2.0}}
+% 
+% \entregable{}{\Large{Editor de casos de uso}}
+
+% Descomentar y establecer la fecha cuando se desee congelar la fecha del documento.
+%\fecha{12 de Abril de 2013}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Datos para revisión
+% \elaboro[Líder de proyecto IPN-ESCOM]{M. en C. Idalia Maldonado Castillo\vspace{0.4cm}} % Responsable del contenido (IPN) Lic. Ulises Vélez Saldaña
+% \superviso[Jefe del Área SMAGEM]{Lic. Mario Alberto Pichardo Mejía} % Quien recibe el documento (Contraparte)
+% \aprobo[Jefe del Departamento de Educación y Difusión de la Cultura Ambiental SMAGEM]{Emmanuel Macedonio Flores Campuzano} % Responsable Técnico (Contraparte)
+
+%\title{\varProyecto}
+%\subtitle{\varCveDocumento--\varDocumento}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Documentos relacionados con el documento actual
+
+% TODO: Escriba los documentos en los que está basado este documento.
+% \docRefs{
+%      \docItem{Catálogo de Escuelas}{}{Catálogo de Escuelas de la DGAIR (Dirección General de Acreditación, Incorporación y Revalidación) de la SEP (Secretaría de Educación Pública)}
+%      \docItem{M-5RT}{1.0}{ \cdtLabel{M-5RT}{Minuta de la quinta reunión de trabajo}, para presentar el proyecto SIG para la SMAGEM.}
+% }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Elementos contenidos en el documento
+
+% TODO: Al finalizar el análisis resuma aquí todos los elementos del componente: RN, CU, IU, MSG.
+% \elemRefs{
+%   \elemItem{Glosario de términos}{1.0}{Descripción de los terminos técnicos y de negocio usados.}                  
+
+%Reglas de negocio
+%    \elemItem{RN-S1}{1.0}{Información correcta.}          
+  
+%Mensajes
+%    \elemItem{MSG1}{1.0}{Operación realizada exitosamente}
+  
+%Casos de uso
+%   \elemItem{CUEI 1}{1.0}{Administrar incendios (Responsable)}  
+% 
+%   \elemItem{IUEI 1}{1.0}{Administrar incendios (Responsable)}  
+% }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%=========================================================
+% Portada
+\ThisLRCornerWallPaper{1}{cdt/theme/agua.png}
+\thispagestyle{empty}
+
+\cfinput{portada}
+% \makeFirmas
+
+%=========================================================
+% Indices del documento
+\frontmatter
+\LRCornerWallPaper{1}{cdt/theme/pleca.png}
+\tableofcontents
+\listoffigures
+%\listoftables
+\mainmatter
+
+% Para esconder la información del documentador se descomenta el \hideControlVersion
+\hideControlVersion
+
+%=========================================================
+\chapter{Introducción}\label{chp:introduccion}
+\cfinput{introduccion}
+%=========================================================
+
+\chapter{Marco teórico}\label{chp:marcoTeorico} 
+\hypertarget{chp:marcoTeorico}{}
+\cfinput{MarcoTeorico/marcoTeorico}
+%=========================================================
+\chapter{Requerimientos del sistema}\label{chp:requerimientos}
+\hypertarget{chp:requerimientos}{}
+\cfinput{ModeloNegocios/requerimientos}
+%=========================================================
+\chapter{Análisis de riesgos}\label{chp:riesgos}
+\cfinput{AnalisisRiesgos/analisisRiesgos}
+
+%=========================================================
+\chapter{Modelo de negocios}\label{chp:modeloNegocios}
+     \cfinput{ModeloNegocios/reglas}
+%      \cfinput{ModeloNegocios/estados}
+
+%===========================================================
+ \chapter{Modelo conceptual}\label{chp:modeloConceptual}
+%   \cfinput{ModeloComportamiento/comportamiento}
+
+%===========================================================
+ \chapter{Modelo de comportamiento}\label{chp:modeloComportamiento}
+     En este capítulo se describen los casos de uso referentes al registro y modificación la información de las escuelas. \bigskip
+     
+    \begin{objetivos}[Elementos de un caso de uso]
+	\item {\bf Resumen:} Descripción textual del caso de uso.
+	\item {\bf Actores:} Lista de los actores que intervienen en el caso de uso.
+	\item {\bf Propósito:} Una breve descripción del objetivo que busca el actor al ejecutar el caso de uso.
+	\item {\bf Entradas:} Lista de los datos de entrada requeridos durante la ejecución del caso de uso.
+	\item {\bf Salidas:} Lista de los datos de salida que presenta el sistema durante la ejecución del caso de uso.
+	\item {\bf Precondiciones:} Descripción de las operaciones o condiciones que se deben cumplir previamente para que el caso de uso pueda ejecutarse correctamente.
+	\item {\bf Postcondiciones:} Lista de los cambios que ocurrirán en el sistema después de la ejecución del caso de uso y de las consecuencias en el sistema.
+	\item {\bf Reglas de negocio:} Lista de las reglas que describen, limitan o controlan algún aspecto del negocio del caso de uso.
+	\item {\bf Errores:} Lista de los posibles errores que pueden surgir durante la ejecución del caso de uso.
+	\item {\bf Trayectorias:} Secuencia de los pasos que ejecutará el caso de uso.
+    \end{objetivos}
+
+%       \cfinput{cue1/uc} %Administrar escuelas (Administrador)
+%       \cfinput{cue2/uc}%Administrar escuela (Coordinador del programa)
+%       \cfinput{cue3/uc}%Solicitar registro de escuela
+%       \cfinput{cue4/uc}%Modificar información de la escuela
+%       \cfinput{cue5/uc}%Eliminar escuela
+%       \cfinput{cue6/uc}%Visualizar información de la escuela
+%       \cfinput{cue7/uc}%Agregar datos estadísticos
+%       \cfinput{cue8/uc}%Modificar datos estadísticos
+%       \cfinput{cue9/uc}%Agregar datos de contacto
+%       \cfinput{cue10/uc}%Modificar datos de contacto
+
+    
+
+\chapter{Modelo de interacción con el usuario}\label{chp:modeloInteraccionUsuario}
+% \cfinput{ModeloInteraccion/interaccion}
+
+%---------------------------------------------------------------------
+\section{Interfaces del prototipo}
+%       \cfinput{cue1/ui}
+      
+%---------------------------------------------------------------------
+\section{Diseño de mensajes}
+%  \cfinput{ModeloInteraccion/mensajes}
+
+\chapter{Avances realizados}\label{chp:avances}
+
+
+\clossing
+\end{document}

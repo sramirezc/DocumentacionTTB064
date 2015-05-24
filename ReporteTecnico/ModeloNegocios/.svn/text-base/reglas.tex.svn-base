@@ -1,0 +1,168 @@
+% No editar las reglas cuyo estatus es APROBADO.
+\section{Reglas de negocio}
+
+\subsection{Reglas derivadas del sistema}
+%---------------------------------------------------------
+\begin{BusinessRule}{RN-S1}{Información correcta}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{0.1}
+    \BRitem{Autor}{Victor Lozano Ortega}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{Los datos proporcionados al sistema que son marcados como ``requeridos'' no se deben omitir. Todos los datos proporcionados al sistema deben respetar el formato y pertenecer al \cdtRef{gls:tipoDato}{tipo de dato} especificado en el modelo de información; así como estar dentro de la longitud máxima o mínima definida en el diccionario de datos.}
+    \BRitem{Referenciado por}{\cdtIdRef{CUE 3}{Solicitar registro de escuela}, \cdtIdRef{CUE 4}{Modificar información de la escuela}, \cdtIdRef{CUE 7}{Agregar datos estadísticos}, \cdtIdRef{CUE 8}{Modificar datos estadísticos}, \cdtIdRef{CUE 9}{Agregar datos de contacto}, \cdtIdRef{CUE 10}{Modificar datos de contacto},\cdtIdRef{CUC 2}{Solicitar registro de Responsable de programa}.\cdtIdRef{CUC 3}{Modificar información del Responsable de programa}}
+	
+\end{BusinessRule}
+%----------------------------------------------------------
+\begin{BusinessRule}{RN-S2}{Formato de correo electrónico}
+    {Derivación}
+    {Controla la operación}
+    \BRitem{Versión}{0.1}
+    \BRitem{Autor}{Victor Lozano Ortega}
+    \BRitem{Estatus}{Edición}
+    \item[Descripción:]El correo electrónico debe ser una cadena de caracteres con alguna de la siguiente estructura y orden:
+      \begin{enumerate}
+	\item Cadena de caracteres.
+	\item Caracter ``@''.
+	\item Cadena de caracteres.
+	\item Caracter ``.''.
+	\item Cadena de caracteres.
+      \end{enumerate}
+      \BRitem{Ejemplo}{email@dominio.com\\correo@dominio.com.mx}
+    \BRitem{Referenciado por}{\cdtIdRef{CUC 2}{Solicitar registro de Responsable de programa}, \cdtIdRef{CUC 3}{Modificar información del Responsable de Programa}}
+\end{BusinessRule}
+%---------------------------------------------------------
+\begin{BusinessRule}{RN-S3}{Formato de la contraseña}
+    {Derivación}
+    {Controla la operación}
+    \BRitem{Versión}{0.1}
+    \BRitem{Autor}{Victor Lozano Ortega}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{La longitud de la contraseña debe ser entre 8 y 16 caracteres, debe contener al menos una letra en mayúscula, un dígito y no debe contener la subcadena ``nombre propio del actor'' en ella. Se deberán considerar las siguientes restricciones: No debe haber caracteres especiales, no debe haber letras acentuadas y no deben existir espacios.}
+    \BRitem{Ejemplo}{Bond007}
+    \BRitem{Referenciado por}{}
+\end{BusinessRule}
+%---------------------------------------------------------
+\begin{BusinessRule}{RN-S4}{Unicidad de identificadores}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{0.1}
+    \BRitem{Autor}{Victor Lozano Ortega}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{En el conjunto de entidades del sistema, la clave de centro de trabajo debe ser única.}
+    \item[Ejemplo de cumplimiento:] El conjunto de escuelas:
+        \begin{Citemize}
+            \item (Nombre del plantel: ``Antonio Camacho Salazar'', Clave de centro de trabajo: ``15DPR2497K'')
+            \item (Nombre del plantel: ``Coatlicue'', Clave de centro de trabajo: ``27DPR4279H'')
+            \item (Nombre del plantel: ``Antonio Camacho Salazar'', Clave de centro de trabajo: ``79DPR4251H'')
+        \end{Citemize}
+        Es correcto debido a que las escuelas tienen una clave de centro de trabajo diferente.
+    \BRitem{Referenciado por}{\cdtIdRef{CUE 3}{Solicitar registro de escuela}, \cdtIdRef{CUE 4}{Modificar información de la escuela}}
+\end{BusinessRule}
+ 
+\subsection{Reglas derivadas del negocio}
+
+% \begin{BusinessRule}{RN-N1}{Intentos permitidos para iniciar sesión}
+% 	{Derivación}
+% 	{Controla la operación}
+% 	\BRitem{Versión}{0.1}
+% 	\BRitem{Autor}{Victor Lozano Ortega}
+% 	\BRitem{Estatus}{Edición}
+% 	\BRitem{Descripción}{El estado de la cuenta será ``Bloqueada'' cuando el usuario intente iniciar sesión en el sistema con una contraseña incorrecta más de 4 veces seguidas en un periodo de tiempo de 30 minutos.}
+% 	\BRitem{Referenciado por}{}
+% \end{BusinessRule}
+
+\begin{BusinessRule}{RN-N2}{Confirmación de correo electrónico}
+	{Derivación}
+	{Controla la operación}
+	\BRitem{Versión}{0.1}
+	\BRitem{Autor}{Victor Lozano Ortega}
+	\BRitem{Estatus}{Edición}
+	\BRitem{Descripción}{Los datos ingresados en los campos ``Correo'' y ``Confirmar correo'' deben coincidir en su totalidad.}
+	\BRitem{Referenciado por}{}
+\end{BusinessRule}
+
+%---------------------------------------------------------
+% \begin{BusinessRule}{RN-N3}{Confirmación de contraseña}
+% 	{Derivación}
+% 	{Controla la operación}
+% 	\BRitem{Versión}{0.1}
+% 	\BRitem{Autor}{Victor Lozano Ortega}
+% 	\BRitem{Estatus}{Edición}
+% 	\BRitem{Descripción}{Los datos ingresados en los campos ``Contraseña''/''Nueva contraseña'' y ``Confirmar contraseña'' deben coincidir en su totalidad.}
+% 	\BRitem{Referenciado por}{}
+% \end{BusinessRule}
+
+%----------------------------------------------------------
+\begin{BusinessRule}{RN-N4}{Formato de clave de centro de trabajo}
+	{Derivación}
+	{Controla la operación}
+	\BRitem{Versión}{0.1}
+	\BRitem{Autor}{Victor Lozano Ortega}
+	\BRitem{Estatus}{Edición}
+	\item[Descripción:] La clave de centro de trabajo debe ser una cadena de caracteres con la siguiente estructura ordenada:
+	  \begin{enumerate}
+	   \item Un número en dos dígitos.
+	   \item Tres letras.
+	   \item Un número de cuatro dígitos.
+	   \item Una letra.
+	  \end{enumerate}
+	  \BRitem{Ejemplo}{15DPR2497K}
+	\BRitem{Referenciado por}{}
+\end{BusinessRule}
+
+%----------------------------------------------------------
+\begin{BusinessRule}{RN-N5}{Persistencia de escuelas}
+	{Derivación}
+	{Controla la operación}
+	\BRitem{Versión}{0.1}
+	\BRitem{Autor}{Victor Lozano Ortega}
+	\BRitem{Estatus}{Edición}
+	\item[Descripción:] Una escuela no puede ser eliminada si cuenta con un comité asociado a ella, para eliminar a la escuela primero se debe eliminar al comité asociado a la misma.
+	\BRitem{Referenciado por}{\cdtIdRef{CUE 5}{Eliminar escuela}}
+\end{BusinessRule}
+
+%----------------------------------------------------------
+\begin{BusinessRule}{RN-N6}{Conformación del comité}
+	{Derivación}
+	{Controla la operación}
+	\BRitem{Versión}{0.1}
+	\BRitem{Autor}{Victor Lozano Ortega}
+	\BRitem{Estatus}{Edición}
+	\item[Descripción:] Un comité obtiene el estatus de ``Conformado'' cuando cumple con todas y cada una de las siguientes características:
+	    \begin{itemize}
+	     \item Debe contar con un responsable, el cual debe tener todos sus datos registrados.
+	     \item Debe tener al menos un integrante con rol de \cdtRef{gls:alumno}{alumno} en cada una de las lineas de acción.
+	     \item Cada linea de acción debe tener entre uno y dos integrantes.
+	    \end{itemize}
+	\BRitem{Referenciado por}{}
+\end{BusinessRule}
+
+%----------------------------------------------------------
+\begin{BusinessRule}{RN-N7}{Superficies escolares}
+	{Derivación}
+	{Controla la operación}
+	\BRitem{Versión}{0.1}
+	\BRitem{Autor}{Victor Lozano Ortega}
+	\BRitem{Estatus}{Edición}
+	\item[Descripción:] Las superficies relacionadas a una escuela son \cdtRef{}{superficie del predio} y \cdtRef{}{superficie construida}. La \cdtRef{}{superficie del predio} debe ser siempre mayor a la \cdtRef{}{superficie construida}.
+	\BRitem{Referenciado por}{}
+\end{BusinessRule}
+%-----------------------------------------------------------
+
+\begin{BusinessRule}{RN-N8}{Conformación del comité}
+	{Derivación}
+	{Controla la operación}
+	\BRitem{Versión}{0.1}
+	\BRitem{Autor}{Victor Lozano Ortega}
+	\BRitem{Estatus}{Edición}
+	\item[Descripción:] Un comité obtiene el estatus de ``Conformado'' cuando cumple con todas y cada una de las siguientes características:
+	    \begin{itemize}
+	     \item Debe contar con un responsable, el cual debe tener todos sus datos registrados.
+	     \item Debe tener al menos un integrante con rol de \cdtRef{gls:alumno}{alumno} en cada una de las lineas de acción.
+	     \item Cada linea de acción debe tener entre uno y dos integrantes.
+	    \end{itemize}
+	\BRitem{Referenciado por}{}
+\end{BusinessRule}
+
+%----------------------------------------------------------
