@@ -1,0 +1,86 @@
+\begin{UseCase}{CU 5}{Gestionar casos de uso}
+	{
+		Este caso de uso permite al analista visualizar los registros de los casos de uso del sistema. También permite 
+		al actor acceder a las operaciones de registro, consulta, modificación y eliminación de un caso de uso.
+	}
+	%\UCitem{\DONEUC}{Edición}
+	\UCitem{Versión}{1.0}
+	\UCccsection{Administración de Requerimientos}	
+	\UCitem{Autor}{Natalia Giselle Hernández Sánchez}	
+	\UCccitem{Evaluador}{}
+	\UCitem{Operación}{Administración}
+	\UCccitem{Prioridad}{Alta}
+	\UCccitem{Complejidad}{Media}
+	\UCccitem{Volatilidad}{Alta}
+	\UCccitem{Madurez}{Baja}
+	\UCitem{Estatus}{Terminado}
+	\UCitem{Fecha del último estatus}{}
+	\UCsection{Atributos}
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Permitir al actor gestionar los casos de uso registrados en la herramienta.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtRef{Modulo:Clave}{Clave del módulo}: \ioObtener.
+			\UCli \cdtRef{Modulo:Nombre}{Nombre del módulo}: \ioObtener.
+			\UCli \cdtRef{Modulo:Descripcion}{Descripción del módulo}: \ioObtener.
+			\UCli \cdtRef{CasodeUso}{Caso de uso}: \ioTabla{\cdtRef{Elemento:Clave}{Clave}, \cdtRef{Elemento:Numero}{Número}, \cdtRef{Elemento:Nombre}{Nombre} y el \cdtRef{Estado_Elemento}{Estado} }{de los casos de uso}.
+		\end{UClist}
+	}
+	
+	\UCitem{Mensajes}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG2}{No existe información}: Se muestra en la pantalla \cdtIdRef{CU 5}{Gestionar casos de uso} cuando no existen casos de uso registrados.
+		\end{UClist}
+	}
+
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		\begin{UClist}
+			\UCli Se podrá solicitar el registro de un caso de uso por medio del caso de uso \cdtIdRef{CU 5.1}{Registrar caso de uso}.
+			\UCli Se podrá solicitar la modificación de un caso de uso por medio del caso de uso \cdtIdRef{CU 5.2}{Modificar caso de uso}.
+			\UCli Se podrá solicitar la eliminación de un caso de uso por medio del caso de uso \cdtIdRef{CU 5.3}{Eliminar caso de uso}.
+		\end{UClist}
+	}
+
+	\UCitem{Errores}{
+		Ninguno
+	}
+
+	\UCitem{Tipo}{
+		Primario
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita gestionar los casos de uso presionando el botón \btnCU de la pantalla \cdtIdRef{Gestionar módulos}.
+    \UCpaso[\UCsist] Busca la información de los casos de uso en cualquier estado. \refTray{B}
+    \UCpaso[\UCsist] Muestra la información de los casos de uso en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}. 
+    \UCpaso[\UCactor] Gestiona los casos de uso a través de los botones: \btnNuevo, \btnConsulta, \btnEditar y \btnEliminar. \label{cu5:gestionaCU}
+ \end{UCtrayectoria}
+ 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No existen registros de casos de uso.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG2}{No existe información} en pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} 
+    para indicar que no hay registros de casos de uso para mostrar.
+ \end{UCtrayectoriaA}
+ 
+
+\subsection{Puntos de extensión}
+
+\UCExtensionPoint{El actor requiere registrar un caso de uso}
+	{Paso \ref{cu5:gestionaCU}}
+	{\cdtIdRef{CU 5.1}{Registrar caso de uso}}
+\UCExtensionPoint{El actor requiere modificar un caso de uso}
+	{Paso \ref{cu5:gestionaCU}}
+	{\cdtIdRef{CU 5.2}{Registrar caso de uso}}	
+\UCExtensionPoint{El actor requiere eliminar un caso de uso}
+	{Paso \ref{cu5:gestionaCU}}
+	{\cdtIdRef{CU 5.3}{Eliminar caso de uso}}
+  

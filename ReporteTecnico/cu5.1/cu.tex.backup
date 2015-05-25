@@ -1,0 +1,129 @@
+\begin{UseCase}{CU 5.1}{Registrar caso de uso}
+	{
+		Este caso de uso permite al actor registrar un caso de uso. El actor puede dejar inconcluso el registro de un 
+		caso de uso o puede marcarlo como terminado, si esto sucede la herramienta validará y almacenará la información.
+	}
+	
+	\UCsection{Atributos}
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Registrar la información de un caso de uso e indicar el módulo al que pertenece.
+	}
+	\UCitem{Entradas}{
+		\begin{UClist} 
+			\UCli De la sección {\bf Información general del caso de uso}: 
+				\begin{Citemize}
+				        \item \cdtRef{Elemento:Nombre}{Nombre} \ioEscribir.
+					\item \cdtRef{Elemento:Descripcion}{Descripcion} \ioEscribir.
+				\end{Citemize}
+			\UCli De la sección {\bf Descripción del caso de uso}:
+				\begin{Citemize}
+				        \item \cdtRef{Actor}{Actores}: \ioEscribirSeleccionar.
+				        \item \cdtRef{Entrada}{Entradas}: \ioEscribirSeleccionar.
+				        \item \cdtRef{Salida}{Salidas}: \ioEscribirSeleccionar.
+					\item \cdtRef{RegladeNegocio}{Reglas de negocio}: \ioEscribirSeleccionar.
+					\item \cdtRef{Mensaje}{Mensajes}: \ioEscribirSeleccionar.
+				\end{Citemize}
+		\end{UClist}
+	}	
+	
+	\UCitem{Salidas}{	
+		\begin{UClist}
+			\UCli \cdtRef{Elemento:Clave}{Clave}: \ioObtener.
+			\UCli \cdtRef{Elemento:Numero}{Número}: \ioCalcular{\cdtIdRef{RN05}{Numeración de elementos}}.
+		\end{UClist}
+	}
+	
+	\UCitem{Mensajes}{	
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{CU 5}{Gestionar casos de uso} para indicar que el registro fue exitoso.
+			\UCli \cdtIdRef{MSG3}{Caso de uso terminado}: Se muestra en la pantalla \cdtIdRef{CU 5}{Gestionar casos de uso} para indicar que el 
+			caso de uso se ha terminado de registrar y la información se guardó exitosamente.
+			
+			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{CU 5.1}{Registrar caso de uso} cuando no se ha ingresado un dato marcado como obligatorio.
+			\UCli \cdtIdRef{MSG5}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{CU 5.1}{Registrar caso de uso} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{CU 5.1}{Registrar caso de uso} cuando se ha excedido la longitud de alguno de los campos.
+			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{CU 5.1}{Registrar caso de uso} cuando se hayan registrado dos casos de uso con el mismo nombre.
+		\end{UClist}
+	}
+	
+	\UCitem{Precondiciones}{ 
+		\begin{UClist}
+			\UCli Ninguna
+		\end{UClist}
+	}			
+	\UCitem{Postcondiciones}{ 
+		\begin{UClist}
+			\UCli El estado del caso de uso cambiará a ``Terminado''.
+			\UCli Se almacenará en el sistema la fecha de actualización y el mensaje referente a esta actualización.
+	 	\end{UClist}
+	}
+	
+	\UCitem{Tipo}{Secundario, extiende del caso de uso \cdtIdRef{CU 5}{Gestionar casos de uso}.}
+
+	
+\end{UseCase}
+ %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita registrar un caso de uso oprimiendo el botón \btnNuevo de la pantalla \cdtIdRef{CU 5}{Gestionar casos de uso}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{CU 5.1}{Registrar caso de uso} en la cual se realizará el registro del caso de uso. 
+    \UCpaso[\UCactor] Ingresa los datos del caso de uso en la pantalla \cdtIdRef{CU 5.1}{Registrar caso de uso}. \label{cu5.1:ingresaDatos}
+    \UCpaso[\UCactor] Solicita terminar el caso de uso oprimiendo el botón \cdtButton{Terminar} de la pantalla \cdtIdRef{CU 5.1}{Registrar caso de uso}. \refTray{A}  \refTray{B}
+    \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN-S8}{Datos obligatorios}.\refTray{C}
+    \UCpaso[\UCsist] Verifica que el nombre del caso de uso no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN-N6}{Unicidad de nombres}.\refTray{D}
+    \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN-S7}{Información correcta}. \refTray{E} \refTray{F}  
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG8}{Caso de uso terminado} para preguntar al actor si desea continuar con la operación.
+    \UCpaso[\UCactor] Oprime el botón \cdtButton{Aceptar} del mensaje de confirmación. \refTray{G}
+    \UCpaso[\UCsist] Registra la información del caso de uso en el sistema.
+    \UCpaso[\UCsist] Cambia el estado del caso de uso a ``Terminado''.
+    \UCpaso[\UCsist] Actualiza la fecha de la última actualización y solicita las observaciones de la actualización.
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG3}{Caso de uso terminado} en la pantalla \cdtIdRef{CU 5}{Gestionar casos de uso} 
+    para indicar al actor que el registro se ha realizado exitosamente.
+ \end{UCtrayectoria}
+ %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El actor no desea terminar la edición.}
+    \UCpaso[\UCactor] Solicita Guardar el caso de uso oprimiendo el botón \cdtButton{Guardar} de la pantalla \cdtIdRef{CU 5.1}{Registrar caso de uso}.
+    \UCpaso[\UCsist] Actualiza la fecha de la última actualización y solicita las observaciones de la actualización.
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{CU 5}{Gestionar casos de uso} 
+    para indicar al actor que el registro se ha realizado exitosamente.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{El actor desea cancelar la operación.}
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{CU 5.1}{Registrar caso de uso}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{CU 5}{Gestionar casos de uso}.
+ \end{UCtrayectoriaA}
+  %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{C}{El actor no ingresó algún dato marcado como obligatorio.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
+	    \cdtIdRef{CU 5.1}{Registrar caso de uso}, indicando al actor que el dato es obligatorio.
+    \UCpaso[] Continúa con el paso \ref{cu5.1:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{D}{El actor ingresó un nombre de ANP repetido.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Registro repetido} y señala el campo que presenta la duplicidad en la pantalla 
+	    \cdtIdRef{CU 5.1}{Registrar caso de uso}, indicando al actor que existe un caso de uso con el mismo nombre.
+    \UCpaso[] Continúa con el paso \ref{cu5.1:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{E}{El actor ingresó un tipo de dato incorrecto.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Formato incorrecto} y señala el campo que presenta el dato inválido en la 
+    pantalla \cdtIdRef{CU 5.1}{Registrar caso de uso} para indicar que se ha ingresado un tipo de dato inválido.
+    \UCpaso[] Continúa con el paso \ref{cu5.1:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria F----------------------------------------------------  
+ \begin{UCtrayectoriaA}{F}{El actor proporciona un dato que excede la longitud máxima.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
+    longitud en la pantalla \cdtIdRef{CU 5.1}{Registrar caso de uso}, para indicar que el dato excede el tamaño máximo permitido.
+    \UCpaso[] Continúa con el paso \ref{cu5.1:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria G---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{G}{El actor desea cancelar el envío de la información.}
+    \UCpaso[\UCactor] Solicita cancelar el envío de la información oprimiendo el botón \cdtButton{Cancelar} del mensaje \cdtIdRef{MSG8}{Caso de uso terminado}.
+    \UCpaso[] Continúa con el paso \ref{cu5.1:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+\subsection{Puntos de extensión}
+
+\UCExtensionPoint{El actor requiere gestionar la trayectoria principal del caso de uso}
+	{Paso \ref{cu5.1:ingresaDatos}}
+	{\cdtIdRef{CU 5.1.1}{Gestionar trayectorias}}

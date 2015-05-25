@@ -1,0 +1,45 @@
+\subsection{CU 5.1 Registrar caso de uso}
+
+\subsubsection{Objetivo}
+	
+	Esta pantalla permite al actor registrar la información de un caso de uso nuevo.
+
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 5.1} se muestra la pantalla ``Registrar caso de uso'' que permite registrar un caso de uso. El actor deberá ingresar la información solicitada, 
+    esto incluye las trayectorias principales, alternativas y los puntos de extensión.\\
+    
+    
+    Una vez ingresada la información solicitada en la pantalla, deberá oprimir el botón 
+    \cdtButton{Terminar}, posteriormente se mostrará una pantalla emergente 
+    con el mensaje \cdtIdRef{MSG3}{Caso de uso terminado} donde deberá confirmar el envío de la información oprimiendo el botón \cdtButton{Aceptar}. 
+    El sistema validará y registrará la información sólo si se han cumplido todas las reglas de negocio establecidas.  \\
+    
+    Finalmente se mostrará el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{CU 5}{Gestionar casos de uso}, para indicar que la información del caso de uso
+    se ha registrado correctamente.        
+
+
+    \IUfig[.9]{cu5.1/images/iu.png}{IU 5.1}{Registrar caso de uso}
+
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \cdtButton{Terminar}: Permite al actor confirmar el término del registro, dirige a la pantalla \cdtIdRef{CU 5}{Gestionar casos de uso}.
+	\item \cdtButton{Aceptar}: Permite al actor guardar el registro del caso de uso, dirige a la pantalla \cdtIdRef{CU 5}{Gestionar casos de uso}.
+	\item \cdtButton{Cancelar}: Permite al actor cancelar el registro del caso de uso, dirige a la pantalla \cdtIdRef{CU 5}{Gestionar casos de uso}.
+\end{itemize}
+
+\subsubsection{Mensajes}
+
+	
+\begin{description}
+	\item[\cdtIdRef{MSG2}{No se encontró información sustantiva}:] Se muestra en la pantalla \cdtIdRef{CU 5}{Gestionar casos de uso} cuando no hay registros de tipos de categoría, categorías o tipo de convenio.
+	\item[ \cdtIdRef{MSG1}{Operación exitosa}:] Se muestra en la pantalla \cdtIdRef{CU 5}{Gestionar casos de uso} para indicar que el registro fue exitoso.
+	\item[ \cdtIdRef{MSG3}{Caso de uso terminado}:] Se muestra en la pantalla \cdtIdRef{CU 5}{Gestionar casos de uso} para indicar que el 
+	caso de uso se ha terminado de registrar y la información se guardó exitosamente.
+	\item[ \cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{CU 5.1}{Registrar caso de uso} cuando no se ha ingresado un dato marcado como obligatorio.
+	\item[ \cdtIdRef{MSG5}{Dato incorrecto}:] Se muestra en la pantalla \cdtIdRef{CU 5.1}{Registrar caso de uso} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+	\item[ \cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{CU 5.1}{Registrar caso de uso} cuando se ha excedido la longitud de alguno de los campos.
+	\item[ \cdtIdRef{MSG7}{Registro repetido}:] Se muestra en la pantalla \cdtIdRef{CU 5.1}{Registrar caso de uso} cuando se hayan registrado dos casos de uso con el mismo nombre.
+	
+\end{description}
