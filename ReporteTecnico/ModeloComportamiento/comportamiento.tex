@@ -1,131 +1,139 @@
-%=========================================================
-\section{Módulos del sistema}
-
-El sistema se encuentra organizado por módulos con la finalidad de agrupar y administrar de mejor manera los requerimientos funcionales del sistema. 
-Dividir el sistema en módulos permite visualizar e identificar rápidamente aquellos aspectos funcionales que pueden tratarse conjuntamente. \\
-
-La figura \ref{fig:ModulosPAPEAR} muestra los módulos que conforman el subsistema de \gie. Cada uno de estos módulos agrupan los casos de uso que poseen funcionalidad similar o que trabajan en conjunto para alcanzar un aspecto funcional del sistema. Cada uno de los módulos que se muestran en la figura se describe a continuación:
-
-% \begin{figure}[h!]
-%   \begin{center}
-% 	  \fbox{\includegraphics[width=\textwidth]{images/modulosGral.png}}
-%   \caption{Módulos del \seipae.}
-%   \label{fig:ModulosPAPEAR}
-%   \end{center}
-% \end{figure}
-
-% \begin{itemize}
-% 	\item {\bf Administrar eventos:} Agrupa los casos de uso que tienen que ver con el registro de la información cartográfica y georreferencia de los eventos. En este se integran los casos de uso de cada uno de los eventos manejados por PROBOSQUE para el SIG-SEIPA de forma independiente: \cdtRef{gls:incendio}{``Incendios''}, \cdtRef{gls:pagoServicios}{``Pagos por servicios ambientales hidrológicos''} y \cdtRef{gls:reforestacion}{``Reforestaciónes'}. Este módulo está diseñado para cada una de las áreas responsables de los eventos manejados por PROBOSQUE.
-% 	\item {\bf Administrar predios:} Agrupa los casos de uso que tienen que ver con el registro y modificación de la información cartográfica y georreferencia de predios. Este módulo está diseñado para el área responsable de los predios que maneja PROBOSQUE.
-% 	\item {\bf Administrar cartografía:} Agrupa los casos de uso que tienen que ver con la consulta de la información cartográfica y georreferencia de los eventos y predios.
-% 	\item {\bf Capas cartográficas:} Contiene las capas cartográficas correspondientes a datos geográficos de división política, climas, regiones, localidades, entre otros.
-% 	\item {\bf Administrar cuentas:} Integra los casos de uso referentes a credenciales, usuarios y control de acceso al sistema. 
-% \end{itemize}
+En este capítulo se describen los casos de uso referentes al registro y modificación la información de las escuelas. \bigskip
+     
+    \begin{objetivos}[Elementos de un caso de uso]
+	\item {\bf Resumen:} Descripción textual del caso de uso.
+	\item {\bf Actores:} Lista de los actores que intervienen en el caso de uso.
+	\item {\bf Propósito:} Una breve descripción del objetivo que busca el actor al ejecutar el caso de uso.
+	\item {\bf Entradas:} Lista de los datos de entrada requeridos durante la ejecución del caso de uso.
+	\item {\bf Salidas:} Lista de los datos de salida que presenta el sistema durante la ejecución del caso de uso.
+	\item {\bf Precondiciones:} Descripción de las operaciones o condiciones que se deben cumplir previamente para que el caso de uso pueda ejecutarse correctamente.
+	\item {\bf Postcondiciones:} Lista de los cambios que ocurrirán en el sistema después de la ejecución del caso de uso y de las consecuencias en el sistema.
+	\item {\bf Reglas de negocio:} Lista de las reglas que describen, limitan o controlan algún aspecto del negocio del caso de uso.
+	\item {\bf Errores:} Lista de los posibles errores que pueden surgir durante la ejecución del caso de uso.
+	\item {\bf Trayectorias:} Secuencia de los pasos que ejecutará el caso de uso.
+    \end{objetivos}
 
 %=========================================================
 \section{Actores del sistema}\label{sec:Comportamiento:ActoresSistema}
-Los actores son los perfiles asociados a las diversas áreas y/u organizaciones que intervienen en el proceso. Se han identificado los actores de acuerdo a las actividades y responsabilidades dentro del \papear - \gie, los cuales se describen a continuación.
-
-% \begin{figure}[h!]
-%   \begin{center}
-%       \includegraphics[width=0.6\textwidth]{images/actores.png}
-%   \caption{Perfiles identificados.}
-%   \label{fig:ModulosSIGSEIPA}
-%   \end{center}
-% \end{figure}
+Los actores del sistema son los perfiles que tiene un usuario que interactúa con la herramienta. Los perfiles que puede tener un usuario
+son: administrador, líder de análisis y analista.\\
 
 %--------------------------------------------------------------------------------------------------
-\begin{actor}{Coordinador del programa}{usuarioEscuela}{Se refiere a cualquier persona perteneciente a la escuela participante.}
-    \item[Área:] Escuela participante.
+\begin{actor}{Administrador}{administrador}{Es la persona encargada de registrar los proyectos y al personal de la organización.}
     \item[Responsabilidades:] \hspace{1pt}
     \begin{itemize}
-	\item Registrar a su escuela en el programa.
-	\item Registrar a los miembros del comité de su escuela en el programa.
-	\item Visualizar la información de registro de su escuela.
-	\item Visualizar la información de registro de los miembros del comité de su escuela.
-	\item Modificar la información de registro correspondiente a su escuela.
-	\item Modificar la información de registro correspondiente a los miembros del comité de su escuela.
-	\item Dar de baja a su escuela del programa.
-	\item Dar de baja a miembros del comité de su escuela.
+	\item Registrar y modificar la información de los proyectos.
+	\item Asignar un líder de análisis a los proyectos.
+	\item Registrar y modificar la información del personal.
     \end{itemize}
     \item[Perfil:] \hspace{1pt}
     \begin{itemize}
-	\item Conocer el objetivo del programa.
-	\item Conocimientos básicos en materia ambiental.
-	\item Conocimientos en el uso de computadora.
-	\item Contar con una cuenta de correo electrónico.
+	\item Debe conocer los proyectos que la organización va a  comenzar.
+	\item Debe conocer toda la información del personal que colabora en la organización.
     \end{itemize}
-    \item[Cantidad:] Uno por cada turno escolar de la escuela participante.
+    \item[Cantidad:] Uno
 \end{actor}
 
 %--------------------------------------------------------------------------------------------------
-\begin{actor}{Director de Programa}{directorPrograma}{Director del Programa de Acreditación de Escuelas Ambientalmente Responsables en SMAGEM}
-    \item[Área:] SMAGEM.
+\begin{actor}{Líder de análisis}{liderAnalisis}{Es el analista encargado de un proyecto.}
     \item[Responsabilidades:] \hspace{1pt}
     \begin{itemize}
-	\item Visualizar las escuelas inscritas en el programa.
-	\item Visualizar la información registrada de las escuelas inscritas en el programa.
-	\item Visualizar la información registrada del comité de las escuelas inscritas en el programa.
-	\item Dar de baja una escuela inscrita en el programa.
+	\item Asignar los colaboradores del proyecto que lidera.
+	\item Registrar y modificar módulos para los casos de uso y pantallas.
+	\item Registrar y modificar los \cdtRef{gls:elemento}{elementos} del sistema.
+	\RCitem{PC1}{\TODO{Falta indicar si el indica el inicio y fin del proyecto.}}{}
+	\item Revisar y realizar observaciones de los elementos para enviarlos a corrección.
+	\item Liberar los elementos que considere completos y correctos.
     \end{itemize}
     \item[Perfil:] \hspace{1pt}
     \begin{itemize}
-	\item Conocimientos sobre la operación del subsistema GIE.
-	\item Contar con un amplio conocimiento sobre el PAEAR.
-	\item Conocimientos en el uso de computadora.
-	\item Contar con una cuenta de correo electrónico.
+	\item Debe tener conocimientos referentes a la documentación de sistemas.
+	\item Debe saber organizar las actividades que debe hacer.
+	\item Debe tener habilidad para comunicarse efectivamente con los demás colaboradores del proyecto.
+	\item Debe saber asignar trabajo.
     \end{itemize}
-    \item[Cantidad:] Uno.
+    \item[Cantidad:] Uno por proyecto.
 \end{actor}
 
 %--------------------------------------------------------------------------------------------------
-\begin{actor}{Administrador}{administrador}{Persona encargada de administrar y dar soporte técnico al sistema}
-    \item[Área:] SMAGEM.
+\begin{actor}{Analista}{analista}{Es el encargado de documentar los elementos que componen el proyecto.}
     \item[Responsabilidades:] \hspace{1pt}
     \begin{itemize}
-	\item Dar soporte técnico al sistema, en lo referente a conectividad y acceso por parte de los usuarios.
-	\item Puede realizar todas las operaciones de los demás usuarios por instrucciones del Director del Programa.
+	\item Registrar y modificar módulos para los casos de uso y pantallas.
+	\item Registrar y modificar los \cdtRef{gls:elemento}{elementos} del sistema.
+	\item Corregir la información de los elementos con base en las observaciones realizadas por el líder de análisis.
     \end{itemize}
     \item[Perfil:] \hspace{1pt}
     \begin{itemize}
-	\item Conocimientos técnicos y de operación del subsistema GIE.
-	\item Conocimientos del sistema operativo sobre el cual se instale el sistema.
-	\item Conocimientos acerca de la administración de sistemas.
-	\item Contar con una cuenta de correo electrónico.
+	\item Debe tener conocimientos referentes a la documentación de sistemas.
+	\item Debe tener habilidad para comunicarse efectivamente con los demás colaboradores del proyecto.
     \end{itemize}
-    \item[Cantidad:] Uno.
+    \item[Cantidad:] De acuerdo al personal de la organización.
 \end{actor}
 
 
 %====================================================================================
-\section{Casos de Uso del módulo Administración de Escuelas}
-La figura \ref{fig:casosUso:escuelas} muestra los casos de uso que integran la funcionalidad de la Administración de Escuelas, que se refieren al registro, modificación y visualización de su información.
+\clearpage
+\section{Casos de uso}
+Los casos de uso que describen el funcionamiento del prototipo se muestran en la figura \refIM{fig:cuAdmin}{Casos de uso del módulo: Administrador}, 
+los casos de uso se dividieron por módulos para organizar de una mejor manera la visualización y el desarrollo. Los módulos
+que conforman el editor son:
+\begin{itemize}
+	\item Administrador
+	\item Líder de Análisis
+	\item Módulos
+	\item 
+\end{itemize}
 
-% \begin{figure}[h!]
-%     \begin{center}
-%         \fbox{\includegraphics[width=\textwidth]{images/CasosUso/escuelas.png}}
-%     \caption{Diagrama de casos de uso para la administración de escuelas. \label{fig:casosUso:escuelas}}
-%     \end{center}
-% \end{figure}
+\clearpage
+La figura \refIM{fig:cuAdmin}{Casos de uso del módulo: Administrador} muestra los casos de uso del administrador que incluyen la gestión de proyectos y del personal.\\
 
-\section{Casos de Uso del módulo Administración de Comité}
-La figura \ref{fig:casosUso:comite} muestra los casos de uso que integran la funcionalidad de la Administración de Comité, que se refieren al registro, modificación y visualización de su información.
+\IMfig[.9]{ModeloComportamiento/images/CasosUso_Adminstrador.png}{fig:cuAdmin}{Casos de uso del módulo: Administrador}
 
-% \begin{figure}[h!]
-%     \begin{center}
-%         \fbox{\includegraphics[angle=90, height=0.9\textheight]{images/CasosUso/comite.png}}
-%     \caption{Diagrama de casos de uso para la administración de comité.}
-%     \label{fig:casosUso:comite}
-%     \end{center}
-% \end{figure}
+\clearpage
+La figura \refIM{fig:cuLider}{Casos de uso del módulo: Líder de Análisis} muestra los casos de uso del líder de análisis que incluyen elegir colaboradores y gestionar proyectos.\\
 
-\section{Casos de Uso del módulo Administración de Cuentas de usuario}
-La figura \ref{fig:casosUso:cuentasUsuario} muestra los casos de uso que integran la funcionalidad de la Administración de Cuentas de usuario y el acceso al sistema. 
+\IMfig[.9]{ModeloComportamiento/images/CasosUso_Lider.png}{fig:cuLider}{Casos de uso del módulo: Líder de Análisis}
 
-\begin{figure}[h!]
-    \begin{center}
-        \fbox{\includegraphics[width=\textwidth]{images/CasosUso/cuentasUsuario.png}}
-    \caption{Diagrama de casos de uso para la administración de cuentas de usuario.}
-    \label{fig:casosUso:cuentasUsuario}
-    \end{center}
-\end{figure}
+\clearpage
+La figura \refIM{fig:cuModulos}{Casos de uso del módulo: Módulos} muestra los casos de uso referentes a la gestión de los módulos.\\
+
+\IMfig[.9]{ModeloComportamiento/images/CasosUso_Modulos.png}{fig:cuModulos}{Casos de uso del módulo: Módulos}
+
+\clearpage
+La figura \refIM{fig:cuCU}{Casos de uso del módulo: Casos de Uso} muestra los casos de uso referentes a la gestión de los casos de uso.\\
+
+\IMfig[.9]{ModeloComportamiento/images/CasosUso_CU.png}{fig:cuCU}{Casos de uso del módulo: Casos de Uso}
+
+\clearpage
+La figura \refIM{fig:cuIU}{Casos de uso del módulo: Pantallas} muestra los casos de uso referentes a la gestión de las pantallas y los comandos de estas.\\
+
+\IMfig[.9]{ModeloComportamiento/images/CasosUso_Pantallas.png}{fig:cuIU}{Casos de uso del módulo: Pantallas}
+
+\clearpage
+La figura \refIM{fig:cuEntidades}{Casos de uso del módulo: Entidades} muestra los casos de uso referentes a la gestión de las entidades y atributos que las describen.\\
+
+\IMfig[.9]{ModeloComportamiento/images/CasosUso_Entidades.png}{fig:cuEntidades}{Casos de uso del módulo: Entidades}
+
+\clearpage
+La figura \refIM{fig:cuRN}{Casos de uso del módulo: Reglas de Negocio} muestra los casos de uso referentes a la gestión de las reglas de negocio.\\
+
+\IMfig[.9]{ModeloComportamiento/images/CasosUso_ReglasNegocio.png}{fig:cuRN}{Casos de uso del módulo: Reglas de Negocio}
+
+\clearpage
+La figura \refIM{fig:cuMsj}{Casos de uso del módulo: Mensajes} muestra los casos de uso referentes a la gestión de los mensajes.\\
+
+\IMfig[.9]{ModeloComportamiento/images/CasosUso_Mensajes.png}{fig:cuMsj}{Casos de uso del módulo: Mensajes}
+
+\clearpage
+La figura \refIM{fig:cuActores}{Casos de uso del módulo: Actores} muestra los casos de uso referentes a la gestión de los actores.\\
+
+\IMfig[.9]{ModeloComportamiento/images/CasosUso_Actores.png}{fig:cuActores}{Casos de uso del módulo: Actores}
+
+\clearpage
+La figura \refIM{fig:cuGlosario}{Casos de uso del módulo: Glosario} muestra los casos de uso referentes a la gestión de los términos del glosario.\\
+
+\IMfig[.9]{ModeloComportamiento/images/CasosUso_Glosario.png}{fig:cuGlosario}{Casos de uso del módulo: Glosario}
+
+
+
