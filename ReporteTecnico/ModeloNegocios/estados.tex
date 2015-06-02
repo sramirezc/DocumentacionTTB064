@@ -11,7 +11,10 @@ del sistema. Estos estados cambian conforme la operación que se esté realizand
 Cada estado se describe a continuación:
 
 \begin{itemize}
- \item {\bf En edición.} Cuando un analista solicita el registro de un elemento, este tendrá el estado ``En edición'', el elemento se mantiene en 
+ \item {\bf En registro.} Cuando un analista solicita el registro de un elemento, este tendrá el estado ``En registro'', el elemento se mantiene en 
+ este estado mientras el analista no guarde la información del elemento. Este estado permite asociar información al elemento que se registra aunque aún no 
+ haya sido almacenado en el sistema.
+ \item {\bf En edición.} Cuando un analista guarde la información de un elemento, este tendrá el estado ``En edición'', el elemento se mantiene en 
  este estado mientras el analista no termine el registro. Si el elemento tiene observaciones para corrección o el líder de análisis habilita la edición,
  también pasará a este estado.
  \item {\bf Terminado.} El elemento pasará a este estado cuando el analista decida que ha terminado de registrar toda la información solicitada.

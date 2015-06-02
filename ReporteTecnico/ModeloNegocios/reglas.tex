@@ -71,3 +71,48 @@
     \BRitem{Estatus}{Edición}
     \BRitem{Descripción}{El usuario debe ingresar toda la información marcada como obligatoria en el modelo conceptual.}	
 \end{BusinessRule}
+
+\begin{BusinessRule}{RN-S9}{Operaciones disponibles de casos de uso}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{0.1}
+    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{
+      Los estados de los casos de uso y el rol del actor determinan las operaciones que pueden solicitarse desde la gestión:
+      
+      \begin{longtable}{| p{.2\textwidth} | p{.3\textwidth} | p{.3\textwidth} |}%
+		\arrayrulecolor{black}%
+		\rowcolor{black}%
+		\color{white} Estado &  \color{white} Analista & \color{white} Líder de análisis\\ \hline
+		\endhead%
+		\arrayrulecolor{black}
+		En registro & N/A & N/A\\ \hline
+		En edición & Consulta, edición (solamente el analista que esté editando el caso de uso) & \\ \hline
+		Terminado & Consulta, revisión, eliminación & Edición\\ \hline
+		En revisión & Consulta, revisión (solamente el analista que esté realizando la revisión) & N/A\\ \hline
+		Liberado & Consulta & Edición\\ \hline
+		
+      \end{longtable}
+    }	
+\end{BusinessRule}
+
+\begin{BusinessRule}{RN-S10}{Referencias a elementos}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{0.1}
+    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{Los elementos que podrán ser referenciados desde los casos de uso son aquellos que ya han sido registrados.}	
+    % Se sacrifica la usabilidad por el tiempo reducido de desarrollo
+\end{BusinessRule}
+
+\begin{BusinessRule}{RN-S11}{Registro de trayectorias}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{0.1}
+    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{Al menos una de las trayectorias registradas debe ser marcada como principal.}	
+    % Se sacrifica la usabilidad por el tiempo reducido de desarrollo
+\end{BusinessRule}
