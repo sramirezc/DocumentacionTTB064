@@ -1,4 +1,4 @@
-\section{Modelo conceptual del proyecto}
+\section{Modelo conceptual del Proyecto}
 \subsection{Descripción general}
  En la figura~\ref{fig:modeloConceptualProyectos} se muestra la estructura de información que manejará el sistema para registrar proyectos 
  y los colaboradores de la organización.
@@ -10,6 +10,87 @@
 		\label{fig:modeloConceptualProyectos}
 	\end{center}
 \end{figure}
+
+
+%-------------------------------------------------Elemento----------------------------------
+\begin{BusinessEntity}{Elemento}{Elemento}
+      \Battr{Clave}{Clave}{\tdPalabra}{Clave que permitirá distinguir el tipo de Elemento}{\requerido}
+      \Battr{Numero}{Número}{\tdNumerico{entero}}{Número del Elemento del tipo definido por la Clave}{\requerido}
+      \Battr{Nombre}{Nombre}{\tdFrase}{Nombre que identificará al Elemento}{\requerido}
+\end{BusinessEntity}
+
+\subsubsection{Relaciones}
+
+\begin{BusinessFact}{Elemento:Pantalla}{Pantalla}
+	\BRitem{Descripción}{Pantalla es un tipo de \cdtRef{elemento}{Elemento}.}
+	\BRitem{Tipo}{\relHerencia}
+\end{BusinessFact}
+
+\begin{BusinessFact}{Elemento:RegladeNegocio}{Regla de Negocio}
+	\BRitem{Descripción}{Regla de Negocio es un tipo de \cdtRef{elemento}{Elemento}.}
+	\BRitem{Tipo}{\relHerencia}
+\end{BusinessFact}
+
+\begin{BusinessFact}{Elemento:Actor}{Actor}
+	\BRitem{Descripción}{Actor es un tipo de \cdtRef{elemento}{Elemento}.}
+	\BRitem{Tipo}{\relHerencia}
+\end{BusinessFact}
+
+\begin{BusinessFact}{Elemento:Mensaje}{Mensaje}
+	\BRitem{Descripción}{Mensaje es un tipo de \cdtRef{elemento}{Elemento}.}
+	\BRitem{Tipo}{\relHerencia}
+\end{BusinessFact}
+
+\begin{BusinessFact}{Elemento:Termino(Glosario)}{Término (Glosario)}
+	\BRitem{Descripción}{Término (Glosario) es un tipo de \cdtRef{elemento}{Elemento}.}
+	\BRitem{Tipo}{\relHerencia}
+\end{BusinessFact}
+
+\begin{BusinessFact}{Elemento:Entidad}{Entidad}
+	\BRitem{Descripción}{Entidad es un tipo de \cdtRef{elemento}{Elemento}.}
+	\BRitem{Tipo}{\relHerencia}
+\end{BusinessFact}
+
+\begin{BusinessFact}{Elemento:CasodeUso}{Caso de Uso}
+	\BRitem{Descripción}{Caso de Uso es un tipo de \cdtRef{elemento}{Elemento}.}
+	\BRitem{Tipo}{\relHerencia}
+\end{BusinessFact}
+
+\begin{BusinessFact}{Elemento:Actualizacion}{Actualización}
+	\BRitem{Descripción}{Un elemento ha pasado por un conjunto de actualizaciones.}
+      \BRitem{Tipo}{\relComposicion}
+      \BRitem{Cardinalidad}{Uno a muchos}
+\end{BusinessFact}
+
+\begin{BusinessFact}{Elemento:EstadodelElemento}{Estado del Elemento}
+		\BRitem{Descripción}{Un Elemento se encuentra en un Estado.}
+      	\BRitem{Tipo}{\relAsociacion}
+      	\BRitem{Cardinalidad}{Muchos a uno}
+\end{BusinessFact}
+
+\begin{BusinessFact}{Elemento:Proyecto}{Proyecto}
+	\BRitem{Descripción}{Un Proyecto se compone de elementos.}
+      \BRitem{Tipo}{\relComposicion}
+      \BRitem{Cardinalidad}{Muchos a uno}
+\end{BusinessFact}
+
+\begin{BusinessFact}{Elemento:ValorParametroenPaso}{Valor Parámetro en Paso}
+	\BRitem{Descripción}{Un Elemento puede ser el valor de algún parámetro en un paso de la Trayectoria.}
+      \BRitem{Tipo}{\relAsociacion}
+      \BRitem{Cardinalidad}{Uno a muchos}
+\end{BusinessFact}
+
+\begin{BusinessFact}{Elemento:ValorParametroenMensaje}{Valor Parámetro en Mensaje}
+	\BRitem{Descripción}{Un Elemento puede ser el valor de algún parámetro en un Mensaje.}
+      \BRitem{Tipo}{\relAsociacion}
+      \BRitem{Cardinalidad}{Uno a muchos}
+\end{BusinessFact}
+
+\begin{BusinessFact}{Elemento:ValorParametroenRegladeNegocio}{Valor Parámetro en Regla de Negocio}
+	\BRitem{Descripción}{Un Elemento puede ser el valor de algún parámetro en una Regla de Negocio.}
+      \BRitem{Tipo}{\relAsociacion}
+      \BRitem{Cardinalidad}{Uno a muchos}
+\end{BusinessFact}
 
 %------------------------------------PROYECTO-----------------------------------------------
 \begin{BusinessEntity}{Proyecto}{Proyecto}
