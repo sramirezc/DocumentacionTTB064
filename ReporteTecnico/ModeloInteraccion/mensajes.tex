@@ -16,7 +16,7 @@
 	\item [ENTIDAD:] Es un sustantivo y generalmente se refiere a una entidad del modelo estructural del negocio.
 	\item [OPERACIÓN:] Se refiere a una acción que se debe realizar sobre los datos de una o varias entidades. Por ejemplo: registrar, eliminar, modificar, etc.
 	\item [VALOR:] Es un sustantivo concreto y generalmente se refiere a un valor en específico. 
-	\item [TAMAÑO:] Es el tamaño del atributo de una entidad, el cual se encuentra definido en el modelo conceptual.
+	\item [TAMAÑO:] Es el tamaño del atributo de una entidad, el cual se encuentra definido en el modelo conceptual. \
     \end{description}
     
     Los tipos de mensajes que se manejan en la herramienta son: notificación, alerta, error y confirmación.\\
@@ -27,12 +27,13 @@
 %===========================  MSG1 ==================================
 \begin{mensaje}{MSG1}{Operación exitosa}{Notificación}
     \item[Objetivo:] Notificar al actor que la operación se ha realizado de forma exitosa.
-    \item[Redacción:] OPERACIÓN exitosa.
+    \item[Redacción:] DETERMINADO ENTIDAD ha sido OPERACIÓN exitosamente.
     \item[Parámetros:] El mensaje se muestra con base en los siguientes parámetros:
     \begin{Citemize}
+	\item DETERMINADO ENTIDAD: Artículo determinado más el nombre de la entidad sobre la que se realiza la operación.
 	\item OPERACIÓN: Es la acción que el actor solicitó realizar. Puede ser registro, eliminación, modificación o revisión.
     \end{Citemize}
-    \item[Ejemplo:] {\em Registro} exitoso.
+    \item[Ejemplo:] {\em El actor} ha sido {\em registrado} exitosamente.
 \end{mensaje}
 
 %============================== MSG2 =================================
@@ -85,5 +86,23 @@
 %============================== MSG8 =================================
 \begin{mensaje}{MSG8}{Caso de uso terminado}{Confirmación}
     \item[Objetivo:] Preguntar al usuario si desea continuar con la operación debido a que no podrá realizar ningún cambio.
-    \item[Redacción:] ¿Está seguro de marcar como terminado este elemento? La información será enviada a corrección y no podrá realizar algún cambio.
+    \item[Redacción:] "¿Está seguro de marcar como terminado este elemento? La información será enviada a revisión y no podrá realizar ningún cambio."
+\end{mensaje}
+
+%============================== MSG9 =================================
+\begin{mensaje}{MSG9}{Elemento no referenciado}{Error}
+    \item[Objetivo:] Notificar al actor que un actor, entrada, salida, regla de negocio o mensaje no está siendo utilizado en las trayectorias.
+    \item[Redacción:] Hay elementos que no están siendo utilizados en las trayectorias.
+\end{mensaje}
+
+%============================== MSG10 =================================
+\begin{mensaje}{MSG10}{Error en la operación}{Error}
+    \item[Objetivo:] Notificar al actor que ocurrión un problema al intentar ejecutar la operación solicitada.
+    \item[Redacción:] Hubo un error al realizar la operación, vuelva a intentarlo.
+\end{mensaje}
+
+%============================== MSG11 =================================
+\begin{mensaje}{MSG11}{Confirmar eliminación}{Confirmación}
+    \item[Objetivo:] Preguntar al actor si desea confirmar la eliminación.
+    \item[Redacción:] ¿Está seguro de que quiere eliminar este registro?
 \end{mensaje}

@@ -6,6 +6,7 @@
 \usepackage{cite}
 \usepackage{ragged2e}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Datos del proyecto
 
@@ -67,7 +68,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-
+\bibliographystyle{IEEEtran}
 %=========================================================
 % Portada
 \ThisLRCornerWallPaper{1}{cdt/theme/agua.png}
@@ -79,14 +80,14 @@
 %=========================================================
 % Indices del documento
 \frontmatter
-\LRCornerWallPaper{1}{cdt/theme/pleca.png}
+% \LRCornerWallPaper{1}{cdt/theme/pleca.png}
 \tableofcontents
 \listoffigures
 %\listoftables
 \mainmatter
 
 % Para esconder la información del documentador se descomenta el \hideControlVersion
-% \hideControlVersion
+ \hideControlVersion
 
 %=========================================================
 \chapter{Introducción}\label{chp:introduccion}
@@ -115,9 +116,11 @@ y las reglas de negocio.\\
 %===========================================================
  \chapter{Modelo de comportamiento}\label{chp:modeloComportamiento}
 	\cfinput{ModeloComportamiento/comportamiento.tex}
-
 	\cfinput{cu5/cu} %Gestionar casos de uso
 	\cfinput{cu5.1/cu}
+	\cfinput{cu5.1.1/cu}
+	\cfinput{cu5.1.1.1/cu}
+	\cfinput{cu5.1.1.1.1/cu}
 
 \chapter{Modelo de interacción con el usuario}\label{chp:modeloInteraccionUsuario}
 % \cfinput{ModeloInteraccion/interaccion}
@@ -126,14 +129,21 @@ y las reglas de negocio.\\
 \section{Interfaces del prototipo}
 	\cfinput{cu5/iu}
 	\cfinput{cu5.1/iu}
-      
+	\cfinput{cu5.1.1/iu}
+	\cfinput{cu5.1.1.1/iu}
+	\cfinput{cu5.1.1.1.1/iu}
 %---------------------------------------------------------------------
 \section{Diseño de mensajes}
 	\cfinput{ModeloInteraccion/mensajes}
 
 \chapter{Avances realizados}\label{chp:avances}
-
+% 	\cfinput{Avances/avances}
 
 % \clossing
+
+%---------------------------------------------------------------------
+
+\bibliography{Referencias}
+
 \end{document}
 

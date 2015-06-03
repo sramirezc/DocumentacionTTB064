@@ -1,4 +1,4 @@
-\subsection{IU 5.1 Registrar caso de uso}
+\subsection{CU 5.1.1.1 Registrar trayectoria}
 
 \subsubsection{Objetivo}
 	
@@ -33,6 +33,7 @@
 
 	
 \begin{description}
+	\item[\cdtIdRef{MSG2}{No se encontró información sustantiva}:] Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} cuando no hay registros de tipos de categoría, categorías o tipo de convenio.
 	\item[ \cdtIdRef{MSG1}{Operación exitosa}:] Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} para indicar que el registro fue exitoso.
 	\item[ \cdtIdRef{MSG3}{Caso de uso terminado}:] Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} para indicar que el 
 	caso de uso se ha terminado de registrar y la información se guardó exitosamente.

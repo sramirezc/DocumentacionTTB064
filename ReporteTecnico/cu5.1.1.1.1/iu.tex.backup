@@ -1,0 +1,29 @@
+\subsection{IU 5.1.1 Gestionar trayectorias}
+\subsubsection{Objetivo}
+	
+	En esta pantalla el actor puede visualizar algunos atributos de las trayectorias y las operaciones para registrar, modificar y eliminar las mismas.
+
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 5.1.1} se muestra la pantalla ``Gestionar trayectorias'', por medio de la cual 
+    se podrán gestionar las trayectorias a través de una tabla.
+    El actor podrá podrá solicitar el registro, la modificación y la eliminación de una trayectoria mediante los botones
+    \cdtButton{Registrar}, \btnEditar y \btnEliminar respectivamente. \\
+    
+
+    \IUfig[.9]{cu5.1.1/images/iu.png}{IU 5.1.1}{Gestionar trayectorias}
+
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \cdtButton{Registrar}: Permite al actor solicitar el registro de una trayectoria, dirige a la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria}.
+	\item \btnEditar[Modificar]: Permite al actor solicitar la modificación de una trayectoria, dirige a la pantalla \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria}.
+	\item \btnEliminar[Eliminar]: Permite al actor solicitar la eliminación de una trayectoria, dirige a la pantalla \cdtIdRef{IU 5.1.1.3}{Eliminar trayectoria}.
+\end{itemize}
+
+\subsubsection{Mensajes}
+
+	
+\begin{description}
+	\item[\cdtIdRef{MSG2}{No existe información}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.1}{Gestionar casos de uso} cuando no existen casos de uso registrados.
+\end{description}
