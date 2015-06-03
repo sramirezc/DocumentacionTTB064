@@ -1,9 +1,9 @@
 \section{Diagramas de estados}
 Es esta sección se muestran los diagramas de estados y la descripción de cada uno de ellos.\\
 
-\subsection{Diagrama de estados de un elemento}
+\subsection{Diagrama de estados de un caso de uso}
 
-En la figura \refIM{fig:estadosElemento}{Diagrama de estados de un elemento} se muestran los estados que tiene un \cdtRef{gls:elemento}{elemento} a lo largo 
+En la figura \refIM{fig:estadosElemento}{Diagrama de estados de un caso de uso} se muestran los estados que tiene un caso de uso a lo largo 
 del sistema. Estos estados cambian conforme la operación que se esté realizando sobre ellos.\\
 
 \IMfig[.9]{ModeloNegocios/images/estadosElementos.png}{fig:estadosElemento}{Diagrama de estados de un elemento}
@@ -11,17 +11,39 @@ del sistema. Estos estados cambian conforme la operación que se esté realizand
 Cada estado se describe a continuación:
 
 \begin{itemize}
- \item {\bf En registro.} Cuando un analista solicita el registro de un elemento, este tendrá el estado ``En registro'', el elemento se mantiene en 
- este estado mientras el analista no guarde la información del elemento. Este estado permite asociar información al elemento que se registra aunque aún no 
- haya sido almacenado en el sistema.
- \item {\bf En edición.} Cuando un analista guarde la información de un elemento, este tendrá el estado ``En edición'', el elemento se mantiene en 
- este estado mientras el analista no termine el registro. Si el elemento tiene observaciones para corrección o el líder de análisis habilita la edición,
- también pasará a este estado.
- \item {\bf Terminado.} El elemento pasará a este estado cuando el analista decida que ha terminado de registrar toda la información solicitada.
- \item {\bf En revisión.} Cuando un analista solicite revisar la información de un elemento, el estado de este pasará a ``En revisión''.
- \item {\bf Liberado.} Si el líder de análisis registra un elemento y está seguro de que toda la información es correcta, entonces podrá liberarlo y el estado cambiará
- a ``Liberado'', esto significa que ya no necesita cambios. También cuando un líder está revisando la información que ha registrado otro analista
- podrá decidir si el elemento es correcto y cambiar su estado a ``Liberado''.
+ \item {\bf Pre-registro.} Cuando un analista solicite el registro de un caso de uso, este tendrá el estado ``Pre-registro''.
+ Los elementos que se encuentran en este estado están temporalmente en la base de datos hasta que el analista decide guardar la información.
+ 
+ \item {\bf Edición.} Un elemento pasará a este estado cuando: 
+ \begin{itemize}
+  \item El analista guarda la información del caso de uso que solicitó registrar.
+  \item Cuando un analista solicita modificar la información del caso de uso que no ha terminado.
+  \item Cuando un analista solicita corregir un caso de uso.
+  \item Cuando un caso de uso está liberado y un analista solicita modicar su información.
+ \end{itemize}
+ El analista que haya guardado el caso de uso puede solicitar la edición de este mientras no lo termine.
+ 
+ \item {\bf Terminado.} Cuando el analista haya concluido el registro del caso de uso este pasará a estado ``Terminado''. Cuando el caso de uso está en este estado
+ el analista que lo haya terminado podrá modificarlo y cualquier otro analista podrá revisarlo.
+ \item {\bf Pendiente de corrección.} Cuando un analista revisa un caso de uso y solicita correcciones, este pasará a estado ``Pendiente de corrección''. Cuando el 
+ líder de análisis decide que no puede liberar el caso de uso debido a que tiene errores este pasará a estado ``Pendiente de corrección''. Cualquier 
+ analista puede corregir un caso de uso en este estado.
+ \item {\bf Por liberar.} Cuando un analista revisa un caso de uso y no realiza observaciones, este pasará a estado ``Por liberar''. El líder de análisis podrá
+ decidir liberar el caso de uso o mandarlo a corregir.
+ \item {\bf Liberado.} Cuando un caso de uso está en estado ``Por liberar'' y el líder de análisis decide liberar el caso de uso, este pasará a estado ``Liberado''. 
+ Cuando el líder de análisis revisa el caso de uso y decide liberarlos, este pasará a estado ``Liberado''.
+ Cualquier analista puede modificar la información de un caso de uso en este estado.
+%  \item {\bf En registro.} Cuando un analista solicita el registro de un elemento, este tendrá el estado ``En registro'', el elemento se mantiene en 
+%  este estado mientras el analista no guarde la información del elemento. Este estado permite asociar información al elemento que se registra aunque aún no 
+%  haya sido almacenado en el sistema.
+%  \item {\bf En edición.} Cuando un analista guarde la información de un elemento, este tendrá el estado ``En edición'', el elemento se mantiene en 
+%  este estado mientras el analista no termine el registro. Si el elemento tiene observaciones para corrección o el líder de análisis habilita la edición,
+%  también pasará a este estado.
+%  \item {\bf Terminado.} El elemento pasará a este estado cuando el analista decida que ha terminado de registrar toda la información solicitada.
+%  \item {\bf En revisión.} Cuando un analista solicite revisar la información de un elemento, el estado de este pasará a ``En revisión''.
+%  \item {\bf Liberado.} Si el líder de análisis registra un elemento y está seguro de que toda la información es correcta, entonces podrá liberarlo y el estado cambiará
+%  a ``Liberado'', esto significa que ya no necesita cambios. También cuando un líder está revisando la información que ha registrado otro analista
+%  podrá decidir si el elemento es correcto y cambiar su estado a ``Liberado''.
 \end{itemize}
 
 \subsection{Diagrama de estados de un proyecto}

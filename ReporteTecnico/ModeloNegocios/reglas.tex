@@ -1,22 +1,22 @@
 \section{Reglas de negocio}
 %---------------------------------------------------------
-\begin{BusinessRule}{RN01}{Eliminación de elementos}
-    {Restricción de operación}
-    {Controla la operación}
-    \BRitem{Versión}{0.1}
-    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
-    \BRitem{Estatus}{Edición}
-    \BRitem{Descripción}{Un elemento podrá ser eliminado del sistema cuando no tenga asociado ningún otro elemento.}	
-\end{BusinessRule}
-
-\begin{BusinessRule}{RN02}{Eliminación de módulos}
-    {Restricción de operación}
-    {Controla la operación}
-    \BRitem{Versión}{0.1}
-    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
-    \BRitem{Estatus}{Edición}
-    \BRitem{Descripción}{Los módulos del sistema podrán ser eliminados cuando no contengan casos de uso o pantallas asociados.}	
-\end{BusinessRule}
+% \begin{BusinessRule}{RN01}{Eliminación de elementos}
+%     {Restricción de operación}
+%     {Controla la operación}
+%     \BRitem{Versión}{0.1}
+%     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+%     \BRitem{Estatus}{Edición}
+%     \BRitem{Descripción}{Un elemento podrá ser eliminado del sistema cuando no tenga asociado ningún otro elemento.}	
+% \end{BusinessRule}
+% 
+% \begin{BusinessRule}{RN02}{Eliminación de módulos}
+%     {Restricción de operación}
+%     {Controla la operación}
+%     \BRitem{Versión}{0.1}
+%     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+%     \BRitem{Estatus}{Edición}
+%     \BRitem{Descripción}{Los módulos del sistema podrán ser eliminados cuando no contengan casos de uso o pantallas asociados.}	
+% \end{BusinessRule}
 
 \begin{BusinessRule}{RN03}{Líder de análisis}
     {Restricción de operación}
@@ -36,14 +36,14 @@
     \BRitem{Descripción}{Los proyectos deben tener al menos un integrante.}	
 \end{BusinessRule}
 
-\begin{BusinessRule}{RN05}{Numeración de elementos}
-    {Restricción de operación}
-    {Controla la operación}
-    \BRitem{Versión}{0.1}
-    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
-    \BRitem{Estatus}{Edición}
-    \BRitem{Descripción}{El número de los elementos será consecutivo, si un elemento es eliminado, la numeración se recorre.}	
-\end{BusinessRule}
+% \begin{BusinessRule}{RN05}{Numeración de elementos}
+%     {Restricción de operación}
+%     {Controla la operación}
+%     \BRitem{Versión}{0.1}
+%     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+%     \BRitem{Estatus}{Edición}
+%     \BRitem{Descripción}{El número de los elementos será consecutivo, si un elemento es eliminado, la numeración se recorre.}	
+% \end{BusinessRule}
 
 \begin{BusinessRule}{RN-N6}{Unicidad de nombres}
     {Restricción de operación}
@@ -84,14 +84,15 @@
       \begin{longtable}{| p{.2\textwidth} | p{.3\textwidth} | p{.3\textwidth} |}%
 		\arrayrulecolor{black}%
 		\rowcolor{black}%
-		\color{white} Estado &  \color{white} Analista & \color{white} Líder de análisis\\ \hline
+		\color{white} Estado &  \color{white}Operaciones Analista & \color{white}Operaciones Líder de análisis\\ \hline
 		\endhead%
 		\arrayrulecolor{black}
-		En registro & N/A & N/A\\ \hline
+		En registro & N/A & N/A\\ \hline 
+		Pendiente de corrección & Consulta, edición & N/A\\ \hline
 		En edición & Consulta, edición (solamente el analista que esté editando el caso de uso) & \\ \hline
-		Terminado & Consulta, revisión, eliminación & Edición\\ \hline
-		En revisión & Consulta, revisión (solamente el analista que esté realizando la revisión) & N/A\\ \hline
-		Liberado & Consulta & Edición\\ \hline
+		Terminado & Consulta, revisión, eliminación, edición (solamente el analista que terminó el caso de uso) & \\ \hline
+		En revisión & Consulta, revisión (solamente el analista que esté realizando la revisión) & Liberar\\ \hline
+		Liberado & Consulta & Habilitar correcciones\\ \hline
 		
       \end{longtable}
     }	
@@ -115,4 +116,34 @@
     \BRitem{Estatus}{Edición}
     \BRitem{Descripción}{Al menos una de las trayectorias registradas debe ser marcada como principal.}	
     % Se sacrifica la usabilidad por el tiempo reducido de desarrollo
+\end{BusinessRule}
+
+\begin{BusinessRule}{RN-S12}{Identificador de elemento}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{0.1}
+    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{El identificador de cada elemento se compone de un nombre, número y una clave. Donde el nombre es el que le asigna el usuario, el número 
+    es secuencial y la clave define el tipo de elemento: ``ENT'' para las entidades, ``ACT'' para los actores, ``CU'' para los casos de uso, ``IU'' para
+    las pantallas, ``MSJ'' para los mensajes y ``RN'' para las reglas de negocio.}	
+    % Se sacrifica la usabilidad por el tiempo reducido de desarrollo
+\end{BusinessRule}
+
+\begin{BusinessRule}{RN-S13}{Modificación del identificador}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{0.1}
+    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{Una vez registrado un elemento no se podrá modificar el nombre, el número o la clave del identificador.}
+\end{BusinessRule}
+
+\begin{BusinessRule}{RN-S14}{Salidas del caso de uso}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{0.1}
+    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{En las salidas del caso de uso podrán enlistarse mensajes y atributos de las entidades.}
 \end{BusinessRule}

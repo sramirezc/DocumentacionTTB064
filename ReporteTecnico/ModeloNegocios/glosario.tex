@@ -2,7 +2,58 @@
     En este capítulo se describen algunos términos utilizados a lo largo del documento que se considera importante detallar. 
   
 \begin{description}
+%	\BRterm{gls:nombre}{nombre.} Descripción.
+	\BRterm{gls:atributo}{Atributo.} Característica que define o identifica una \cdtRef{gls:entidad}{entidad} en un conjunto de entidades.
+
+	\BRterm{gls:archivoDigital}{Archivo digital.} Equivalente digital de los archivos escritos en libros, tarjetas, libretas, papel o microfichas del entorno de oficina tradicional.
+
+	\BRterm{gls:booleano}{Booleano.} Es un \cdtRef{gls:tipoDato}{tipo de dato} que puede tomar los valores verdadero o falso (1 ó 0).
+	
+	\BRterm{gls:cadena}{Cadena.} Es el \cdtRef{gls:tipoDato}{tipo de dato} definido por cualquier valor que se compone de una secuencia de caracteres, con o sin acentos, espacios, dígitos y 
+	signos de puntuación. Existen tres tipos de cadenas: Palabra, frase y párrafo.
+
 	\BRterm{gls:elemento}{Elemento.} Se utiliza para referirse a los casos de uso, pantallas, reglas de negocio, entidades, atributos, mensajes y actores.
+	
+	\BRterm{gls:entero}{Entero} Es el \cdtRef{gls:tipoDato}{tipo de dato} \cdtRef{gls:numerico}{numérico} definido por todos los valores numéricos enteros, tanto positivos como negativos.
+	
+	\BRterm{gls:entidad}{Entidad.} Término genérico que se utiliza para determinar un ente el cual puede ser concreto, abstracto o conceptual por ejemplo: Caso de uso, 
+		proyecto, módulo, etc. La entidades se caracterizan con atributos que la definen.		
+		
+	\BRterm{gls:EstadoDelElemento}{Estado del Elemento.} Es un identificador que indica la situación de un elemento. Es un \cdtRef{gls:tipoDato}{tipo de dato} para el sistema y puede tomar alguno de los siguientes valores:
+	Pre-registro, Edición, Terminado, Pendiente de corrección, Por liberar o Liberado.
+
+	\BRterm{gls:fecha}{Fecha.} Es un \cdtRef{gls:tipoDato}{tipo de dato} que indica un día único en referencia al calendario gregoriano. Los tipos de fecha utilizados son: \cdtRef{gls:fechaCorta}
+	{fecha corta} y \cdtRef{gls:fechaLarga}{fecha larga}. %con formato DD/MM/YYYY, por ejemplo: 24/02/2013.
+
+	\BRterm{gls:fechaCorta}{Fecha corta.} Es la representación del \cdtRef{gls:tipoDato}{tipo de dato} \cdtRef{gls:fecha}{fecha} en la forma DD/MM/YYYY, por ejemplo: 24/02/2013.
+	
 	\BRterm{gls:fechaInicioProy}{Fecha de inicio del proyecto.} Es la fecha de inicio el proceso de software del sistema.
+
+	\BRterm{gls:fechaLarga}{Fecha larga.} Es la representación del \cdtRef{gls:tipoDato}{tipo de dato} \cdtRef{gls:fecha}{fecha} en la forma DD de MM del YYYY, por ejemplo: 24 de febrero del 2013.
+
+	\BRterm{gls:frase}{Frase.} Es un \cdtRef{gls:tipoDato}{tipo de dato} conformado por \cdtRef{gls:palabra}{palabras} y espacios.
+	
+	\BRterm{gls:imagen}{Imagen.} Es una imagen de tamaño pequeño (no más de un Megabyte) en formato jpeg.
+	
+	\BRterm{gls:numerico}{Numérico.} Es un \cdtRef{gls:tipoDato}{tipo de dato} que se compone de la combinación de los símbolos \textit{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, . y -},  que expresan una cantidad 
+	en relación a su unidad.
+	
+	\BRterm{gls:opcional}{Opcional.} Es un elemento que el actor puede o no proporcionar en el formulario o la pantalla, su decisión no afectará la ejecución de la operación solicitada.
+
+	\BRterm{gls:palabra}{Palabra.} Es un \cdtRef{gls:tipoDato}{tipo de dato} \cdtRef{gls:cadena}{cadena} conformado por el alfabeto y símbolos especiales como son 
+	\textit{\#, -, \$, \%, \&, (,), etc.} y se caracteriza por no tener espacios.
+	
+	\BRterm{gls:parrafo}{Párrafo.} Es un \cdtRef{gls:tipoDato}{tipo de dato}  conformado por \cdtRef{gls:frase}{frases}.
+
+	\BRterm{gls:requerido}{Requerido.} Es un tipo de dato que debe proporcionarse siempre sin excepción en el formulario.
+	
+	\BRterm{gls:Rol}{Rol.} Es la función de un colaborador dentro de un proyecto. Es un \cdtRef{gls:tipoDato}{tipo de dato} para el sistema y puede tomar alguno de los siguientes valores:
+	Analista o Líder de Análisis.
+	
+	\BRterm{gls:Telefono}{Teléfono.} Secuencia de dígitos utilizada para identificar una línea telefónica. Es un \cdtRef{gls:tipoDato}{tipo de dato} para el sistema.
+	
+	\BRterm{gls:tipoDato}{Tipo de dato.} Es el dominio o conjunto de valores que puede tomar un atributo de una \cdtRef{gls:entidad}{entidad} en el modelo de información. Los tipos de datos 
+	utilizados son: \cdtRef{gls:palabra}{palabra}, \cdtRef{gls:frase}{frase}, \cdtRef{gls:parrafo}{párrafo}, \cdtRef{gls:numerico}{numérico}, \cdtRef{gls:fecha}{fecha} y 
+	\cdtRef{gls:booleano}{booleano}.
 	
 \end{description}
