@@ -1,0 +1,34 @@
+\subsection{IU 5.1.2.1 Registrar precondición}
+
+\subsubsection{Objetivo}
+	
+	Esta pantalla permite al actor registrar la información de una precondición.
+
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 5.1.2.1} se muestra la pantalla ``Registrar precondición'' que permite registrar una precondición. El actor deberá ingresar la redacción de la precondición en la pantalla.
+    
+    Una vez ingresada la información solicitada, el actor deberá oprimir el botón \cdtButton{Aceptar}, el sistema validará y registrará la información sólo si se han cumplido todas las reglas de negocio establecidas.  \\
+    
+    Finalmente se mostrará el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla donde se solicitó la operación, para indicar que la información de la precondición
+    se ha registrado correctamente.        
+
+
+    \IUfig[.9]{cu5.1.2.1/images/iu.png}{IU 5.1.2.1}{Registrar precondición}
+
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \cdtButton{Aceptar}: Permite al actor guardar el registro de la precondición, dirige a la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o \cdtIdRef{IU 5.2}{Modificar caso de uso}.
+	\item \cdtButton{Cancelar}: Permite al actor cancelar el registro de la precondición, dirige a la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o \cdtIdRef{IU 5.2}{Modificar caso de uso}.
+\end{itemize}
+
+\subsubsection{Mensajes}
+
+	
+\begin{description}
+
+	\item[ \cdtIdRef{MSG1}{Operación exitosa}:] Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o \cdtIdRef{IU 5.2}{Modificar caso de uso} para indicar que el registro fue exitoso.
+	\item[ \cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.2.1}{Registrar precondición} cuando no se ha ingresado un dato marcado como obligatorio.
+	\item[ \cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.2.1}{Registrar precondición} cuando se ha excedido la longitud de alguno de los campos.
+\end{description}
