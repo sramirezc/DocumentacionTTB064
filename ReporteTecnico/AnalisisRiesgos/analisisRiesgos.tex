@@ -1,4 +1,5 @@
-En este capítulo se especificarán los riesgos que pueden surgir al utilizar el prototipo, así como la estrategia de reducción que se lleva a cabo. 
+En este capítulo se especificarán los riesgos del desarrollo del prototipo, así como aquellos
+que pueden surgir al utilizarlo, también la estrategia de reducción que se lleva a cabo. 
 
 
 % Para clasificar los riesgos, se utilizará la categorización propuesta por
@@ -10,7 +11,7 @@ En este capítulo se especificarán los riesgos que pueden surgir al utilizar el
 % \end{itemize}
 
 \section{Tabla de riesgos}
-La siguiente tabla muestra los riesgos de utilizar la herramienta.
+La siguiente tabla muestra los riesgos detectados en el análisis del prototipo.
 En la primer columna se describe el riesgo, en la segunda columna se indica la 
 probabilidad que se percibe (valoración colectiva del equipo de trabajo), la tercer columna indica el nivel de impacto de acuerdo a los siguientes valores:
 
@@ -21,10 +22,18 @@ probabilidad que se percibe (valoración colectiva del equipo de trabajo), la te
  \item Despreciable
 \end{enumerate}
 
-La última columna se indica la estrategia de reducción del riesgo. Los riesgos de alta probabilidad y alto impacto deben ser atendidos con mayor prioridad.\\
+La última columna indica la estrategia de reducción del riesgo. Los riesgos de alta probabilidad y alto impacto deben ser atendidos con mayor prioridad.\\
 
 \clearpage
 \begin{riesgos}
+%%Referentes al desarrollo del proyecto
+	\riesgo{La curva de aprendizaje de las tecnologías impacta en el tiempo de desarrollo.}{90 \%}{1} 
+		{Se implementarán los módulos más representativos del prototipo con la finalidad de demostrar la funcionalidad.}
+	\riesgo{La duración del semestre no es suficiente para concluir el desarrollo del prototipo.}{90 \%}{1} 
+		{Se implementarán los módulos más representativos del prototipo con la finalidad de demostrar la funcionalidad.}
+	\riesgo{El constante cambio de los requerimientos del sistema retardan las demás etapas del proceso de software del prototipo.}{90 \%}{1} 
+		{Se limitarán los casos de uso a implementar y se evaluará la posibilidad de un incremento posterior.}
+%%Referentes al uso del proyecto
 	\riesgo{El usuario ha olvidado su nombre de usuario o su contraseña.}{90 \%}{4} 
 		{El nombre de usuario es el correo electrónico del usuario y en la sección ``Recuperar contraseña'' se puede solicitar el envío de una contraseña nueva.}
 	\riesgo{El usuario desea recuperar un elemento eliminado.}{80 \%}{4}
@@ -34,8 +43,6 @@ La última columna se indica la estrategia de reducción del riesgo. Los riesgos
 	\riesgo{El documento de análisis no se puede generar debido a que faltan elementos por registrar.}{80 \%}{4}
 		{Cuando el analista desee generar el documento de análisis y hay elementos pendientes de registrar, se notificará al usuario que es posible que el documento 
 		no se genere completo.}
-	\riesgo{Algunos analistas participan en todos los proyectos y otros no tienen proyectos asignados.}{70 \%}{2}
-		{Se notifica al líder de análisis cuántos proyectos tiene asociado cada analista y el debe tomar la decisión de asignarlo o no a los proyectos.}
 	\riesgo{Alguno de los analistas desea consultar la información de otro analista.}{70 \%}{3}
 		{Debido al enfoque del proyecto, no es prioridad en este momento la comunicación directa entre colaboradores.}
 	\riesgo{Los analistas registran dos elementos idénticos semánticamente pero con distinta clave.}{60 \%}{2}
@@ -45,9 +52,10 @@ La última columna se indica la estrategia de reducción del riesgo. Los riesgos
  	 \riesgo{El usuario desea agregar más datos de los que se solicitan para generar el documento de análisis.}{100 \%}{2}
  		{El usuario podrá descargar el documento de análisis en formato tex para modificar lo que requiera. El usuario debe tener experiencia utilizando Latex.}
  	\riesgo{Un analista no experimentado realiza cambios en elementos que no son parte de su trabajo y sobreescribe información importante.}{80 \%}{2}
-		{Los cambios realizados a los elementos se registran en un histórico para posibles aclaraciones de las modificaciones.}
+		{Se registra el responsable y la fecha de actualización.}
 	\riesgo{El analista desea realizar algún cambio a un elemento que ya está liberado.}{40 \%}{1}
 		{Se contempló que cada elemento pasa por una serie de revisiones por parte del líder de análisis que debería evitar esta situación.}
+	
 % 	\riesgo{Riesgo}{probabilidad}{impacto}
 % 		{estrategia}
 \end{riesgos}
