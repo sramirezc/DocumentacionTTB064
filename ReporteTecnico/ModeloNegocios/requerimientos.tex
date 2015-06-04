@@ -1,33 +1,34 @@
 \section{Ámbito del sistema}
-Los roles de los usuarios del sistema serán: administrador, líder de análisis y colaborador. El administrador será el encargado 
+Los roles de los usuarios del sistema serán: administrador, líder de análisis y analista. El administrador será el encargado 
 de registrar los proyectos donde participarán los analistas, así como el líder de análisis de dicho proyecto. El administrador puede
 registrar al personal de la organización.\\
 
 El líder de análisis es un analista que además podrá asignar los colaboradores a los proyectos e indicar la fecha de arranque de los mismos. Finalmente
 el analista será el encargado de documentar los casos de uso.\\
 
-El editor de casos de uso debe permitir al analista ingresar los elementos que componen un caso de uso: \cdtRef{gls:entidad}{entidades}, \cdtRef{gls:atributo}{atributos}, 
-\cdtRef{gls:rn}{reglas de negocio}, \cdtRef{gls:interfaces}{interfaces de usuario}, \cdtRef{gls:mensaje}{mensajes} y \cdtRef{gls:actor}{actores}.\\
+El editor de casos de uso debe permitir al analista ingresar los elementos que componen un caso de uso: entidades, atributos, 
+reglas de negocio, pantallas, mensajes y actores.\\
 
 El editor permitirá documentar casos de uso que contengan referencias a los elementos descritos anteriormente.
 Cada elemento debe tener un identificador que facilite la forma de hacerles referencia desde los casos de uso.\\
 
 Los casos de uso deben contener secciones para especificar los actores que participan, las salidas, las entradas, las reglas de negocio,
-las precondiciones, las postcondiciones, los errores, los mensajes, el tipo de
-caso de uso, la trayectoria principal, las trayectorias alternativas y los puntos de extensión.\\
+las precondiciones, las postcondiciones, los errores, la trayectoria principal, las trayectorias alternativas y los puntos de extensión.\\
 
-En el registro de todos los elementos, incluyendo los casos de uso, deberá haber un campo para el nombre y otro para la descripción.\\
+En el registro de todos los elementos, incluyendo los casos de uso, deberá haber un campo para el nombre, el cual debe ser único.\\
 
 Los casos de uso deben ser clasificados en módulos.\\
 
-Se debe simular el proceso de revisón de los elementos, el cual consiste en que cuando un elemento está siendo editado su estado debe ser ``En edición'', cuando 
-el analista concluya la construcción del elemento el estado de este será ``Pendiente de revisión'', cuando líder de análisis lo está revisando el estado 
-debe cambiar a ``En revisión'', cuando el líder decida enviar correcciones al analista el estado será ``En edición (con observaciones)'', al contrario, 
-si el líder decide liberar un elemento el estado de este será ``Liberado'', una vez liberado solamente el líder de análisis podrá realizar modificaciones.\\
+Se debe simular el proceso de revisón de los elementos, el cual consiste en que cuando un elemento está siendo editado debe ser notificado a los demás analistas, cuando 
+el analista concluya la construcción del elemento el estado de este se considerará terminado, cuando líder de análisis lo está revisando ningún analista
+podrá modificar su información, cuando el líder decida enviar correcciones del caso de uso, cualquier analista podrá corregir la información; y al contrario, 
+si el líder decide liberar un elemento, este podrá ser liberado.\\
+
+Es importante que por cualquier cambio realizado en un caso de uso se registre en el sistema el responsable y los comentarios referentes.\\
 
 \section{Requerimientos funcionales}
 De acuerdo al ámbito del sistema, se enlistan a continuación los requerimientos funcionales.
-\begin{enumerate}[{\bf RF01.}]
+\begin{enumerate}[{\bf RF1.}]
  \item Existirán 3 roles en el sistema: administrador, líder de análisis y analista.
  \item El administrador podrá gestionar los proyectos y el personal de la organización.
  \item El líder de análisis podrá asignar los colaboradores al proyecto que lidera.
