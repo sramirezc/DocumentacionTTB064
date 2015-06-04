@@ -36,14 +36,14 @@
     \BRitem{Descripción}{Los proyectos deben tener al menos un integrante.}	
 \end{BusinessRule}
 
-% \begin{BusinessRule}{RN05}{Numeración de elementos}
-%     {Restricción de operación}
-%     {Controla la operación}
-%     \BRitem{Versión}{0.1}
-%     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
-%     \BRitem{Estatus}{Edición}
-%     \BRitem{Descripción}{El número de los elementos será consecutivo, si un elemento es eliminado, la numeración se recorre.}	
-% \end{BusinessRule}
+\begin{BusinessRule}{RN05}{Numeración de elementos}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{0.1}
+    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{Para asignar el número de un elemento en el registro, el sistema buscará el último número asociado a la clave y le sumará 1. }
+\end{BusinessRule}
 
 \begin{BusinessRule}{RN-N6}{Unicidad de nombres}
     {Restricción de operación}
@@ -126,7 +126,7 @@
     \BRitem{Estatus}{Edición}
     \BRitem{Descripción}{El identificador de cada elemento se compone de un nombre, número y una clave. Donde el nombre es el que le asigna el usuario, el número 
     es secuencial y la clave define el tipo de elemento: ``ENT'' para las entidades, ``ACT'' para los actores, ``CU'' para los casos de uso, ``IU'' para
-    las pantallas, ``MSJ'' para los mensajes y ``RN'' para las reglas de negocio.}	
+    las pantallas, ``MSJ'' para los mensajes, ``RN'' para las reglas de negocio y ``GLS'' para los términos del glosario.}	
     % Se sacrifica la usabilidad por el tiempo reducido de desarrollo
 \end{BusinessRule}
 
@@ -146,4 +146,14 @@
     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
     \BRitem{Estatus}{Edición}
     \BRitem{Descripción}{En las salidas del caso de uso podrán enlistarse mensajes y atributos de las entidades.}
+\end{BusinessRule}
+
+\begin{BusinessRule}{RN-S15}{Elementos en uso}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{0.1}
+    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{Cuando un analista esté modificando un elemento que no sea un caso de uso, ningún otro analista podrá solicitar 
+    su edición, ni eliminación. La única operación disponible será la consulta.}
 \end{BusinessRule}

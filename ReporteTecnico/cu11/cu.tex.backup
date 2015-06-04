@@ -1,12 +1,12 @@
-\begin{UseCase}{CU 5}{Gestionar casos de uso}
+\begin{UseCase}{CU 11}{Gestionar entidades}
 	{
-		Este caso de uso permite al analista visualizar los registros de los casos de uso del sistema. También permite 
-		al actor acceder a las operaciones de revisión, registro, consulta, modificación y eliminación de un caso de uso.
+		Este caso de uso permite al analista visualizar los registros de las entidades del sistema. También permite 
+		al actor acceder a las operaciones de registro, modificación y eliminación de una entidad.
 	}
 	
 	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
 	\UCitem{Propósito}{
-		Revisar y gestionar los casos de uso registrados en la herramienta.
+		Gestionar las entidades registradas en la herramienta.
 	}
 	\UCitem{Entradas}{
 		Ninguna
@@ -16,7 +16,7 @@
 			\UCli \cdtRef{Modulo:Clave}{Clave del módulo}: \ioObtener.
 			\UCli \cdtRef{Modulo:Nombre}{Nombre del módulo}: \ioObtener.
 			\UCli \cdtRef{Modulo:Descripcion}{Descripción del módulo}: \ioObtener.
-			\UCli \cdtRef{CasodeUso}{Caso de uso}: \ioTabla{\cdtRef{Elemento:Clave}{Clave}, \cdtRef{Elemento:Numero}{Número}, \cdtRef{Elemento:Nombre}{Nombre} y el \cdtRef{Estado_Elemento}{Estado} }{de los casos de uso}.
+			\UCli \cdtRef{Entidad}{Entidad}: \ioTabla{\cdtRef{Elemento:Clave}{Clave}, \cdtRef{Elemento:Numero}{Número} y \cdtRef{Elemento:Nombre}{Nombre}}{de las entidades}.
 		\end{UClist}
 	}
 	
@@ -32,11 +32,9 @@
 	
 	\UCitem{Postcondiciones}{
 		\begin{UClist}
-			\UCli Se podrá solicitar el registro de un caso de uso por medio del caso de uso \cdtIdRef{CU 5.1}{Registrar caso de uso}.
-			\UCli Se podrá solicitar la modificación de un caso de uso por medio del caso de uso \cdtIdRef{CU 5.2}{Modificar caso de uso}.
-			\UCli Se podrá solicitar la eliminación de un caso de uso por medio del caso de uso \cdtIdRef{CU 5.3}{Eliminar caso de uso}.
-			\UCli Se podrá solicitar la consulta de un caso de uso por medio del caso de uso \cdtIdRef{CU 5.4}{Consultar caso de uso}.
-			\UCli Se podrá solicitar la revisión de un caso de uso por medio del caso de uso \cdtIdRef{CU 5.5}{Revisar caso de uso}.
+			\UCli Se podrá solicitar el registro de una entidad por medio del caso de uso \cdtIdRef{CU 11.1}{Registrar entidad}.
+			\UCli Se podrá solicitar la modificación de una entidad por medio del caso de uso \cdtIdRef{CU 11.2}{Modificar entidad}.
+			\UCli Se podrá solicitar la eliminación de una entidad por medio del caso de uso \cdtIdRef{CU 11.3}{Eliminar entidad}.
 		\end{UClist}
 	}
 
@@ -70,7 +68,7 @@
 	{\cdtIdRef{CU 5.1}{Registrar caso de uso}}
 \UCExtensionPoint{El actor requiere modificar un caso de uso}
 	{Paso \ref{cu5:gestionaCU}}
-	{\cdtIdRef{CU 5.2}{Modificar caso de uso}}	
+	{\cdtIdRef{CU 5.2}{Registrar caso de uso}}	
 \UCExtensionPoint{El actor requiere eliminar un caso de uso}
 	{Paso \ref{cu5:gestionaCU}}
 	{\cdtIdRef{CU 5.3}{Eliminar caso de uso}}

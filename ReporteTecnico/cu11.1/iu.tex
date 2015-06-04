@@ -1,0 +1,33 @@
+\subsection{IU 11.1 Registrar entidad}
+
+\subsubsection{Objetivo}
+	
+	Esta pantalla permite al actor registrar la información de una entidad nueva.
+
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 11.1} se muestra la pantalla ``Registrar entidad'' que permite registrar una entidad. El actor deberá ingresar la información solicitada,
+    y oprimir el botón \cdtButton{Aceptar}. El sistema validará y registrará la información sólo si se han cumplido todas las reglas de negocio establecidas.  \\
+    
+    Finalmente se mostrará el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 11}{Gestionar entidades}, para indicar que la información de la entidad
+    se ha registrado correctamente.        
+
+
+    \IUfig[.9]{cu11.1/images/iu.png}{IU 11.1}{Registrar entidad}
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \cdtButton{Aceptar}: Permite al actor guardar el registro de la entidad, dirige a la pantalla \cdtIdRef{IU 11}{Gestionar entidades}.
+	\item \cdtButton{Cancelar}: Permite al actor cancelar el registro de la entidad, dirige a la pantalla \cdtIdRef{IU 11}{Gestionar entidades}.
+\end{itemize}
+
+\subsubsection{Mensajes}
+
+	
+\begin{description}
+	\item[\cdtIdRef{MSG1}{Operación exitosa}:] Se muestra en la pantalla \cdtIdRef{IU 11}{Gestionar entidades} para indicar que el registro fue exitoso.
+	\item[\cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 11.1}{Registrar entidad} cuando no se ha ingresado un dato marcado como obligatorio.
+	\item[\cdtIdRef{MSG5}{Dato incorrecto}:] Se muestra en la pantalla \cdtIdRef{IU 11.1}{Registrar entidad} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+	\item[\cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 11.1}{Registrar entidad} cuando se ha excedido la longitud de alguno de los campos.
+	\item[\cdtIdRef{MSG7}{Registro repetido}:] Se muestra en la pantalla \cdtIdRef{IU 11.1}{Registrar entidad} cuando se registre una entidad con un nombre que ya este registrado.
+\end{description}

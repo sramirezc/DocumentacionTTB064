@@ -1,0 +1,75 @@
+\begin{UseCase}{CU 11}{Gestionar entidades}
+	{
+		Este caso de uso permite al analista visualizar los registros de las entidades del sistema. También permite 
+		al actor acceder a las operaciones de registro, modificación y eliminación de una entidad.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Gestionar las entidades registradas en la herramienta.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtRef{Modulo:Clave}{Clave del módulo}: \ioObtener.
+			\UCli \cdtRef{Modulo:Nombre}{Nombre del módulo}: \ioObtener.
+			\UCli \cdtRef{Modulo:Descripcion}{Descripción del módulo}: \ioObtener.
+			\UCli \cdtRef{Entidad}{Entidad}: \ioTabla{el \cdtRef{Elemento:Nombre}{Nombre}}{de las entidades}.
+		\end{UClist}
+	}
+	
+	\UCitem{Mensajes}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG2}{No existe información}: Se muestra en la pantalla \cdtIdRef{CU 11}{Gestionar entidades} cuando no existen entidades registradas.
+		\end{UClist}
+	}
+
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		\begin{UClist}
+			\UCli Se podrá solicitar el registro de una entidad por medio del caso de uso \cdtIdRef{CU 11.1}{Registrar entidad}.
+			\UCli Se podrá solicitar la modificación de una entidad por medio del caso de uso \cdtIdRef{CU 11.2}{Modificar entidad}.
+			\UCli Se podrá solicitar la eliminación de una entidad por medio del caso de uso \cdtIdRef{CU 11.3}{Eliminar entidad}.
+		\end{UClist}
+	}
+
+	\UCitem{Errores}{
+		Ninguno
+	}
+
+	\UCitem{Tipo}{
+		Primario
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita gestionar las entidades seleccionando la opción ``Entidades'' del \cdtRef{menu:principal}{Menú principal}.
+    \UCpaso[\UCsist] Busca la información de las entidades registradas en el sistema. \refTray{A}
+    \UCpaso[\UCsist] Muestra la información de las entidades en la pantalla \cdtIdRef{IU 11}{Gestionar entidades} y las operaciones 
+    disponibles de acuerdo a la regla de negocio \cdtIdRef{RN-S15}{Elementos en uso}. 
+    \UCpaso[\UCactor] Gestiona las entidades a través de los botones: \cdtButton{Registrar}, \btnEditar y \btnEliminar. \label{cu11:gestionaCU}
+ \end{UCtrayectoria}
+ 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No existen registros de entidades.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG2}{No existe información} en pantalla \cdtIdRef{IU 11}{Gestionar entidades} 
+    para indicar que no hay registros de entidades para mostrar.
+ \end{UCtrayectoriaA}
+ 
+
+\subsection{Puntos de extensión}
+
+\UCExtensionPoint{El actor requiere registrar una entidad}
+	{Paso \ref{cu11:gestionaCU}}
+	{\cdtIdRef{CU 11.1}{Registrar entidad}}
+\UCExtensionPoint{El actor requiere modificar una entidad}
+	{Paso \ref{cu11:gestionaCU}}
+	{\cdtIdRef{CU 11.2}{Modificar entidad}}	
+\UCExtensionPoint{El actor requiere eliminar una entidad}
+	{Paso \ref{cu11:gestionaCU}}
+	{\cdtIdRef{CU 11.3}{Eliminar entidad}}
+  

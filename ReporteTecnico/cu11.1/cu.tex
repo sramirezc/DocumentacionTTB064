@@ -1,0 +1,109 @@
+\begin{UseCase}{CU 11.1}{Registrar entidad}
+	{
+		Este caso de uso permite al analista registrar la información de una entidad, así como 
+		gestionar sus atributos. También permite 
+		al actor acceder a las operaciones de registro, modificación y eliminación de un atributo.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Registrar una entidad y gestionar sus atributos.
+	}
+	\UCitem{Entradas}{
+		\begin{UClist}
+			\UCli \cdtRef{Elemento:Nombre}{Nombre}: \ioEscribir.
+		\end{UClist}
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtRef{Atributo}{Atributo}: \ioTabla{\cdtRef{Elemento:Nombre}{Nombre}, 
+			\cdtRef{Atributo:Obligatorio}{Obligatorio (sí o no)} y \cdtRef{gls:TipoDeDato}{Tipo de Dato}}{de los atributos}.
+			\UCli \cdtRef{Elemento:Clave}{Clave}: \ioCalcular{\cdtIdRef{RN-S12}{Identificador de elemento}}.
+			\UCli \cdtRef{Elemento:Numero}{Número}: \ioCalcular{\cdtIdRef{RN05}{Numeración de elementos}}.
+		\end{UClist}
+	}
+	
+	\UCitem{Mensajes}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 11}{Gestionar entidades} para indicar que el registro fue exitoso.
+		\end{UClist}
+	}
+
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		\begin{UClist}
+			\UCli Se podrá solicitar el registro de un atributo por medio del caso de uso \cdtIdRef{CU 11.1}{Registrar atributo}.
+			\UCli Se podrá solicitar la modificación de un atributo por medio del caso de uso \cdtIdRef{CU 11.2}{Modificar atributo}.
+			\UCli Se podrá solicitar la eliminación de un atributo por medio del caso de uso \cdtIdRef{CU 11.3}{Eliminar atributo}.
+		\end{UClist}
+	}
+
+	\UCitem{Errores}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 11.1}{Registrar entidad} cuando no se ha ingresado un dato marcado como obligatorio.
+			\UCli \cdtIdRef{MSG5}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 11.1}{Registrar entidad} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 11.1}{Registrar entidad} cuando se ha excedido la longitud de alguno de los campos.
+			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 11.1}{Registrar entidad} cuando se registre una entidad con un nombre que ya este registrado.
+		\end{UClist}
+	}
+
+	\UCitem{Tipo}{
+		Secundario, extiende del caso de uso \cdtIdRef{CU 11}{Gestionar entidades}.
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita registrar una entidad oprimiendo el botón \cdtButton{Registrar} de la pantalla \cdtIdRef{IU 11}{Gestionar entidades}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 11.1}{Registrar entidad} en la cual se realizará el registro de la entidad. 
+    \UCpaso[\UCactor] Ingresa el nombre de la entidad en la pantalla \cdtIdRef{IU 11.1}{Registrar entidad}. \label{cu11.1:ingresaDatos}
+    
+    \UCpaso[\UCactor] Gestiona los atributos a través de los botones: \cdtButton{Registrar}, \btnEditar y \btnEliminar. \label{cu11.1:gestionar}
+    
+    \UCpaso[\UCactor] Solicita guardar la entidad oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 11.1}{Registrar entidad}. \refTray{A}
+    \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN-S8}{Datos obligatorios}. \refTray{B}
+    \UCpaso[\UCsist] Verifica que el nombre de la entidad no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN-N6}{Unicidad de nombres}. \refTray{C}
+    \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN-S7}{Información correcta}. \refTray{D}
+
+    \UCpaso[\UCsist] Registra la información de la entidad en el sistema.
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 11}{Gestionar entidades} 
+    para indicar al actor que el registro se ha realizado exitosamente.
+ \end{UCtrayectoria}
+ 
+ %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El actor desea cancelar la operación.}
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 11.1}{Registrar entidad}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 11}{Gestionar entidades}.
+ \end{UCtrayectoriaA}
+  %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{B}{El actor no ingresó algún dato marcado como obligatorio.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
+	    \cdtIdRef{IU 11.1}{Registrar entidad}, indicando al actor que el dato es obligatorio.
+    \UCpaso[] Continúa con el paso \ref{cu11.1:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{C}{El actor ingresó un nombre de entidad repetido.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Registro repetido} y señala el campo que presenta la duplicidad en la pantalla 
+	    \cdtIdRef{IU 11.1}{Registrar entidad}, indicando al actor que existe una entidad con el mismo nombre.
+    \UCpaso[] Continúa con el paso \ref{cu11.1:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria D----------------------------------------------------  
+ \begin{UCtrayectoriaA}{D}{El actor proporciona un dato que excede la longitud máxima.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
+    longitud en la pantalla \cdtIdRef{IU 11.1}{Registrar entidad}, para indicar que el dato excede el tamaño máximo permitido.
+    \UCpaso[] Continúa con el paso \ref{cu11.1:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ 
+\subsection{Puntos de extensión}
+ 
+ \UCExtensionPoint{El actor requiere registrar un atributo}
+	{Paso \ref{cu11.1:gestionar}}
+	{\cdtIdRef{CU 11.1}{Registrar atributo}}
+\UCExtensionPoint{El actor requiere modificar un atributo}
+	{Paso \ref{cu11.1:gestionar}}
+	{\cdtIdRef{CU 11.2}{Modificar atributo}}	
+\UCExtensionPoint{El actor requiere eliminar un atributo}
+	{Paso \ref{cu11.1:gestionar}}
+	{\cdtIdRef{CU 11.3}{Eliminar atributo}}
