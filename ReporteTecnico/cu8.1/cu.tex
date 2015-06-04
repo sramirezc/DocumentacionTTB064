@@ -1,4 +1,4 @@
-\begin{UseCase}{CU 8.1}{Registrar reglas de negocio}
+\begin{UseCase}{CU 8.1}{Registrar regla de negocio}
 	{
 		Este caso de uso permite al analista registrar la información de una regla de negocio. 
 	}
@@ -14,7 +14,7 @@
  			\UCli \cdtRef{gls:TipoDeReglaDeNegocio}{Tipo}: \ioSeleccionar.
  			\UCli Para el tipo ``Operaciones aritméticas'':
  			\begin{itemize}
- 			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Parámetros}: \ioSeleccionar.
+ 			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Operación}: \ioSeleccionar.
  			\end{itemize}
  			
  			\UCli Para el tipo ``Unicidad de parámetros'':
@@ -30,11 +30,7 @@
  			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Entidad que contiene el segundo atributo de fecha}: \ioSeleccionar.
  			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Segundo atributo de fecha}: \ioSeleccionar.
  			\end{itemize}
- 			
- 			\UCli Para el tipo ``Otro'':
- 			\begin{itemize}
- 			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Redacción}: \ioEscribir.
- 			\end{itemize}
+
 		\end{UClist}
 	}
 	\UCitem{Salidas}{
@@ -81,7 +77,8 @@
     \UCpaso[\UCsist] Verifica que el tipo de regla de negocio sea ``Operaciones aritméticas''. \refTray{B}
     \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 8.1a}{Registrar reglas de negocio: Operaciones aritméticas}.
     \UCpaso[\UCactor] Ingresa la operación aritmética en la pantalla \cdtIdRef{IU 8.1a}{Registrar reglas de negocio: Operaciones aritméticas}. \refTray{C} \refTray{D} \refTray{E} \refTray{F} \refTray{G} \refTray{H} \refTray{I} \refTray{J}\label{cu8:ingresaPaso}
-    \UCpaso[\UCactor] Solicita guardar la regla de negocio oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio}. \refTray{K} \label{cu8:guardarInfo}
+    \UCpaso[\UCactor] Ingresa la descripción de la regla de negocio. \label{cu8:descripcion}
+    \UCpaso[\UCactor] Solicita guardar la regla de negocio oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio}. \refTray{K} 
     \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN-S8}{Datos obligatorios}. \refTray{L}
     \UCpaso[\UCsist] Verifica que el nombre de la regla de negocio no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN-N6}{Unicidad de nombres}. \refTray{M}
     \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN-S7}{Información correcta}. \refTray{N}
@@ -94,14 +91,14 @@
  
  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
  \begin{UCtrayectoriaA}{A}{La regla de negocio no requiere parámetros.}
-	\UCpaso[] Continúa con el paso \ref{cu8:guardarInfo} de la trayectoria principal.
+	\UCpaso[] Continúa con el paso \ref{cu8:descripcion} de la trayectoria principal.
  \end{UCtrayectoriaA}
  
  %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
- \begin{UCtrayectoriaA}{B}{El tipo de regla de negocio es de tipo ``Unicidad de parámetros'', ``Intervalo de fechas correcto'' u ``Otro''.}
-	\UCpaso[\UCactor] El usuario ingresa la información de la regla de negocio en la pantalla \cdtIdRef{IU 8.1b}{Registrar reglas de negocio: Unicidad de parámetros},
-	\cdtIdRef{IU 8.1c}{Registrar reglas de negocio: Intervalo de fechas correcto} o \cdtIdRef{IU 8.1d}{Registrar reglas de negocio: Otro}, según corresponda.
-	\UCpaso[] Continúa con el paso \ref{cu8:guardarInfo} de la trayectoria principal.
+ \begin{UCtrayectoriaA}{B}{El tipo de regla de negocio es de tipo ``Unicidad de parámetros'', ``Intervalo de fechas correcto''.}
+	\UCpaso[\UCactor] El usuario ingresa la información de la regla de negocio en la pantalla \cdtIdRef{IU 8.1b}{Registrar reglas de negocio: Unicidad de parámetros} o
+	\cdtIdRef{IU 8.1c}{Registrar reglas de negocio: Intervalo de fechas correcto}, según corresponda.
+	\UCpaso[] Continúa con el paso \ref{cu8:descripcion} de la trayectoria principal.
  \end{UCtrayectoriaA}
 
  %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
