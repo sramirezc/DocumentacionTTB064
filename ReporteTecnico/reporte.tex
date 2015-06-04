@@ -7,66 +7,7 @@
 \usepackage{ragged2e}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Datos del proyecto
 
-% \tituloTrabajo
-% \noRegistro
-% \resumen
-% \palabrasClave
-% \autores
-% \directores
-
-% \organizacion[ESCOM--IPN]{ESCOM-IPN}
-% \autor[Natalia Giselle Hernández Sánchez, Sergio Ramírez Camacho]{\autores}
-% 
-% \sistema[PRISMA]{\prisma}
-% \proyecto[Prototipo de editor de casos de uso para la construcción asistida de casos de prueba]{\editor}
-% \documento{RT}{Reporte técnico}{\DRAFT{\today}} %{\RELEASE{2.0}}
-% 
-% \entregable{}{\Large{Editor de casos de uso}}
-
-% Descomentar y establecer la fecha cuando se desee congelar la fecha del documento.
-%\fecha{12 de Abril de 2013}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Datos para revisión
-% \elaboro[Líder de proyecto IPN-ESCOM]{M. en C. Idalia Maldonado Castillo\vspace{0.4cm}} % Responsable del contenido (IPN) Lic. Ulises Vélez Saldaña
-% \superviso[Jefe del Área SMAGEM]{Lic. Mario Alberto Pichardo Mejía} % Quien recibe el documento (Contraparte)
-% \aprobo[Jefe del Departamento de Educación y Difusión de la Cultura Ambiental SMAGEM]{Emmanuel Macedonio Flores Campuzano} % Responsable Técnico (Contraparte)
-
-%\title{\varProyecto}
-%\subtitle{\varCveDocumento--\varDocumento}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Documentos relacionados con el documento actual
-
-% TODO: Escriba los documentos en los que está basado este documento.
-% \docRefs{
-%      \docItem{Catálogo de Escuelas}{}{Catálogo de Escuelas de la DGAIR (Dirección General de Acreditación, Incorporación y Revalidación) de la SEP (Secretaría de Educación Pública)}
-%      \docItem{M-5RT}{1.0}{ \cdtLabel{M-5RT}{Minuta de la quinta reunión de trabajo}, para presentar el proyecto SIG para la SMAGEM.}
-% }
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Elementos contenidos en el documento
-
-% TODO: Al finalizar el análisis resuma aquí todos los elementos del componente: RN, CU, IU, MSG.
-% \elemRefs{
-%   \elemItem{Glosario de términos}{1.0}{Descripción de los terminos técnicos y de negocio usados.}                  
-
-%Reglas de negocio
-%    \elemItem{RN-S1}{1.0}{Información correcta.}          
-  
-%Mensajes
-%    \elemItem{MSG1}{1.0}{Operación realizada exitosamente}
-  
-%Casos de uso
-%   \elemItem{CUEI 1}{1.0}{Administrar incendios (Responsable)}  
-% 
-%   \elemItem{IUEI 1}{1.0}{Administrar incendios (Responsable)}  
-% }
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \bibliographystyle{IEEEtran}
 %=========================================================
@@ -91,6 +32,7 @@
 
 %=========================================================
 \chapter{Introducción}\label{chp:introduccion}
+\hypertarget{chp:introduccion}{}
 \cfinput{Introduccion/introduccion}
 %=========================================================
 
@@ -103,12 +45,15 @@
 \cfinput{ModeloNegocios/requerimientos}
 %=========================================================
 \chapter{Análisis de riesgos}\label{chp:riesgos}
+\hypertarget{chp:riesgos}{}
 \cfinput{AnalisisRiesgos/analisisRiesgos}
 
 %=========================================================
-\chapter{Modelo de negocios}\label{chp:modeloNegocios}
+\chapter{Modelo de negocio}\label{chp:modeloNegocios}
+\hypertarget{chp:modeloNegocios}{}
 En este capítulo se mostrará aquella información que define el negocio de la herramienta: el glosario, los diagramas de estado, el modelo conceptual 
 y las reglas de negocio.\\
+
 	\cfinput{ModeloNegocios/glosario}
 	\cfinput{ModeloNegocios/estados}
 	\cfinput{ModeloNegocios/conceptual}
@@ -116,6 +61,7 @@ y las reglas de negocio.\\
 	\cfinput{ModeloNegocios/reglas}
 %===========================================================
  \chapter{Modelo de comportamiento}\label{chp:modeloComportamiento}
+ \hypertarget{chp:modeloComportamiento}{}
 	\cfinput{ModeloComportamiento/comportamiento.tex}
 	\cfinput{cu5/cu} %Gestionar casos de uso
 	\cfinput{cu5.1/cu}
@@ -140,6 +86,7 @@ y las reglas de negocio.\\
 % 	\cfinput{cu/cu}
 
 \chapter{Modelo de interacción con el usuario}\label{chp:modeloInteraccionUsuario}
+\hypertarget{chp:modeloInteraccionUsuario}{}
 % \cfinput{ModeloInteraccion/interaccion}
 
 %---------------------------------------------------------------------
