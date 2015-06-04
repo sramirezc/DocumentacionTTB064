@@ -6,7 +6,7 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 \begin{figure}[htbp!]
 	\begin{center}
 		\fbox{\includegraphics[width=1\textwidth]{ModeloNegocios/images/ModeloConceptualCasoUso}}
-		\caption{Modelo conceptual de proyectos}
+		\caption{Modelo conceptual de casos de uso}
 		\label{fig:conceptualProyectos}
 	\end{center}
 \end{figure}
@@ -108,7 +108,7 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 \end{BusinessFact}
 
 %-------------------------------------------------Accion----------------------------------
-
+\clearpage
 \begin{BusinessEntity}{Accion}{Acción}
       \Battr{Nombre}{Nombre}{\tdFrase}{Nombre que identificará a la Acción}{\requerido}	
       \Battr{Descripcion}{Descripción}{\tdParrafo}{Texto que describirá la Acción}{\requerido}
@@ -147,7 +147,7 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 \end{BusinessFact}
 
 %-------------------------------------------------Regla de Negocio----------------------------------
-
+\clearpage
 \begin{BusinessEntity}{RegladeNegocio}{Regla de Negocio}
       \Battr{Clave}{Clave}{\tdPalabra}{Clave que permitirá distinguir que el Elemento es una Regla de Negocio}{\requerido}
       \Battr{Numero}{Número}{\tdNumerico{entero}}{Número de Regla de Negocio}{\requerido}
@@ -278,7 +278,7 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 \end{BusinessFact}
 
 %-------------------------------------------------Atributo----------------------------------
-
+\clearpage
 \begin{BusinessEntity}{Atributo}{Atributo}
     \Battr{Nombre}{Nombre}{\tdFrase}{Nombre que identificará al Atributo en la Entidad}{\requerido}
   	\Battr{Descripcion}{Descripción}{\tdParrafo}{Texto que describirá al Atributo}{\requerido}
@@ -311,7 +311,7 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 \end{BusinessFact}
 
 %-------------------------------------------------Trayectoria----------------------------------
-
+\clearpage
 \begin{BusinessEntity}{Trayectoria}{Trayectoria}
     \Battr{Alternativa}{Alternativa}{\tdBooleano}{Bandera que especifica si la Trayectoria es alternativa o principal}{\requerido}
     \Battr{Identificador}{Identificador}{\tdPalabra}{Nombre o clave que identificará a la Trayectoria.}{\requerido}
@@ -350,7 +350,7 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 \end{BusinessFact}
 
 %-------------------------------------------------Valor del Parámetro en Paso----------------------------------
-
+\clearpage
 \begin{BusinessEntity}{ValordelParametroenPaso}{Valor del Parámetro en Paso}
 	\item Esta entidad no cuenta con atributos y únicamente sirve para ilustrar que el Paso cuenta con valores determinados por las relaciones de esta entidad.
 \end{BusinessEntity}
@@ -440,7 +440,7 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 \end{BusinessFact}
 
 %-------------------------------------------------Precondición----------------------------------
-
+\clearpage
 \begin{BusinessEntity}{Postcondicion}{Postcondición}
     \Battr{Redaccion}{Redacción}{\tdParrafo}{Redacción de la Postcondición}{\requerido}
     \Battr{Numero}{Número}{\tdNumerico{entero}}{Número de la Postcondición}{\requerido}
