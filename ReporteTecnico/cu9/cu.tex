@@ -1,0 +1,75 @@
+\begin{UseCase}{CU 9}{Gestionar mensajes}
+	{
+		Este caso de uso permite al analista visualizar los registros de los mensajes del sistema. También permite 
+		al actor acceder a las operaciones de registro, modificación y eliminación de un mensaje.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Gestionar los mensajes registrados en la herramienta.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtRef{Modulo:Clave}{Clave del módulo}: \ioObtener.
+			\UCli \cdtRef{Modulo:Nombre}{Nombre del módulo}: \ioObtener.
+			\UCli \cdtRef{Modulo:Descripcion}{Descripción del módulo}: \ioObtener.
+			\UCli \cdtRef{Mensaje}{Mensaje}: \ioTabla{el \cdtRef{Elemento:Nombre}{Nombre}}{de los mensajes}.
+		\end{UClist}
+	}
+	
+	\UCitem{Mensajes}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG2}{No existe información}: Se muestra en la pantalla \cdtIdRef{CU 9}{Gestionar mensajes} cuando no existen mensajes registrados.
+		\end{UClist}
+	}
+
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		\begin{UClist}
+			\UCli Se podrá solicitar el registro de un mensaje por medio del caso de uso \cdtIdRef{CU 9.1}{Registrar mensaje}.
+			\UCli Se podrá solicitar la modificación de un mensaje por medio del caso de uso \cdtIdRef{CU 9.2}{Modificar mensaje}.
+			\UCli Se podrá solicitar la eliminación de un mensaje por medio del caso de uso \cdtIdRef{CU 9.3}{Eliminar mensaje}.
+		\end{UClist}
+	}
+
+	\UCitem{Errores}{
+		Ninguno
+	}
+
+	\UCitem{Tipo}{
+		Primario
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita gestionar los mensajes seleccionando la opción ``Mensajes'' del \cdtRef{menu:principal}{Menú principal}.
+    \UCpaso[\UCsist] Busca la información de los mensajes registrados en el sistema. \refTray{A}
+    \UCpaso[\UCsist] Muestra la información de los mensajes en la pantalla \cdtIdRef{IU 9}{Gestionar mensajes} y las operaciones 
+    disponibles de acuerdo a la regla de negocio \cdtIdRef{RN-S15}{Elementos en uso}. 
+    \UCpaso[\UCactor] Gestiona los mensajes a través de los botones: \cdtButton{Registrar}, \btnEditar y \btnEliminar. \label{cu8:gestiona}
+ \end{UCtrayectoria}
+ 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No existen registros de mensajes.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG2}{No existe información} en pantalla \cdtIdRef{IU 9}{Gestionar mensajes} 
+    para indicar que no hay registros de mensajes para mostrar.
+ \end{UCtrayectoriaA}
+ 
+
+\subsection{Puntos de extensión}
+
+\UCExtensionPoint{El actor requiere registrar un mensaje}
+	{Paso \ref{cu8:gestiona}}
+	{\cdtIdRef{CU 9.1}{Registrar mensaje}}
+\UCExtensionPoint{El actor requiere modificar un mensaje}
+	{Paso \ref{cu8:gestiona}}
+	{\cdtIdRef{CU 9.2}{Modificar mensaje}}	
+\UCExtensionPoint{El actor requiere eliminar un mensaje}
+	{Paso \ref{cu8:gestiona}}
+	{\cdtIdRef{CU 9.3}{Eliminar mensaje}}
+  

@@ -1,0 +1,40 @@
+\subsection{IU 9.1 Registrar mensaje}
+
+\subsubsection{Objetivo}
+	
+	Esta pantalla permite al actor registrar la información de un mensaje nuevo.
+
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 9.1} se muestra la pantalla ``Registrar mensaje'' que permite registrar un mensaje. El actor deberá ingresar la información solicitada 
+    y seleccionar si es parametrizado el mensaje. Si el actor selecciona que el mensaje es parametrizado, el sistema mostrará la pantalla ~\ref{IU 9.1a} y 
+    cuando el actor indique el uso de un parámetro el sistema agregará a la pantalla un campo para que el actor pueda ingresar la descripción del parámetro. 
+    Si el actor selecciona que el mensaje no es parametrizado, el sistema mostrará la pantalla de la figura ~\ref{IU 9.1b}.\\
+    
+    
+    El actor deberá oprimir el botón \cdtButton{Aceptar}. El sistema validará y registrará la información sólo si se han cumplido todas las reglas de negocio establecidas.  \\
+    
+    Finalmente se mostrará el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 9}{Gestionar mensajes}, para indicar que la información del mensaje
+    se ha registrado correctamente.        
+
+
+    \IUfig[.9]{cu9.1/images/iu.png}{IU 9.1}{Registrar mensaje}
+    \IUfig[.9]{cu9.1/images/iua.png}{IU 9.1a}{Registrar mensaje: Parametrizado}
+    \IUfig[.9]{cu9.1/images/iub.png}{IU 9.1b}{Registrar mensaje: No parametrizado}
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \cdtButton{Aceptar}: Permite al actor guardar el registro del mensaje, dirige a la pantalla \cdtIdRef{IU 9}{Gestionar mensajes}.
+	\item \cdtButton{Cancelar}: Permite al actor cancelar el registro del mensaje, dirige a la pantalla \cdtIdRef{IU 9}{Gestionar mensajes}.
+\end{itemize}
+
+\subsubsection{Mensajes}
+
+	
+\begin{description}
+	\item[\cdtIdRef{MSG1}{Operación exitosa}:] Se muestra en la pantalla \cdtIdRef{IU 9}{Gestionar mensajes} para indicar que el registro fue exitoso.
+	\item[\cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 9.1}{Registrar mensaje} cuando no se ha ingresado un dato marcado como obligatorio.
+	\item[\cdtIdRef{MSG5}{Dato incorrecto}:] Se muestra en la pantalla \cdtIdRef{IU 9.1}{Registrar mensaje} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+	\item[\cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 9.1}{Registrar mensaje} cuando se ha excedido la longitud de alguno de los campos.
+	\item[\cdtIdRef{MSG7}{Registro repetido}:] Se muestra en la pantalla \cdtIdRef{IU 9.1}{Registrar mensaje} cuando se registre un mensaje con un nombre que ya este registrado.
+\end{description}

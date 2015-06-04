@@ -1,0 +1,215 @@
+\begin{UseCase}{CU 8.1}{Registrar reglas de negocio}
+	{
+		Este caso de uso permite al analista registrar la información de una regla de negocio. 
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Registrar la información de una regla de negocio.
+	}
+	\UCitem{Entradas}{
+		\begin{UClist}
+			\UCli \cdtRef{Elemento:Nombre}{Nombre}: \ioEscribir.
+ 			\UCli \cdtRef{ReglaDeNegocio:Redaccion}{Redacción}: \ioEscribir.
+ 			\UCli \cdtRef{gls:TipoDeReglaDeNegocio}{Tipo}: \ioSeleccionar.
+ 			\UCli Para el tipo ``Operaciones aritméticas'':
+ 			\begin{itemize}
+ 			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Parámetros}: \ioSeleccionar.
+ 			\end{itemize}
+ 			
+ 			\UCli Para el tipo ``Unicidad de parámetros'':
+ 			\begin{itemize}
+ 			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Entidad}: \ioEscribir.
+ 			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Atributo único}: \ioEscribir. 
+ 			\end{itemize}
+
+ 			\UCli Para el tipo ``Intervalo de fechas correcto'':
+ 			\begin{itemize}
+ 			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Entidad que contiene el primer atributo de fecha}: \ioSeleccionar.
+ 			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Primer atributo de fecha}: \ioSeleccionar.
+ 			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Entidad que contiene el segundo atributo de fecha}: \ioSeleccionar.
+ 			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Segundo atributo de fecha}: \ioSeleccionar.
+ 			\end{itemize}
+ 			
+ 			\UCli Para el tipo ``Otro'':
+ 			\begin{itemize}
+ 			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Redacción}: \ioEscribir.
+ 			\end{itemize}
+		\end{UClist}
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtRef{Elemento:Clave}{Clave}: \ioCalcular{\cdtIdRef{RN-S12}{Identificador de elemento}}.
+			\UCli \cdtRef{Elemento:Numero}{Número}: \ioCalcular{\cdtIdRef{RN05}{Numeración de elementos}}.
+		\end{UClist}
+	}
+	
+	\UCitem{Mensajes}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 8}{Gestionar reglas de negocio} para indicar que el registro fue exitoso.
+		\end{UClist}
+	}
+
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		Ninguna
+	}
+
+	\UCitem{Errores}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio} cuando no se ha ingresado un dato marcado como obligatorio.
+			\UCli \cdtIdRef{MSG5}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio} cuando se ha excedido la longitud de alguno de los campos.
+			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio} cuando se registre una regla de negocio con un nombre que ya este registrado.
+		\end{UClist}
+	}
+
+	\UCitem{Tipo}{
+		Secundario, extiende del casos de uso \cdtIdRef{CU 8}{Gestionar reglas de negocio}.
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita registrar una regla de negocio oprimiendo el botón \cdtButton{Registrar} de la pantalla \cdtIdRef{IU 8}{Gestionar reglas de negocio}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio} en la cual se realizará el registro de la regla de negocio. 
+    \UCpaso[\UCactor] Ingresa el nombre de la regla de negocio. \label{cu8.1:ingresaDatos}
+    \UCpaso[\UCactor] Selecciona el tipo de regla de negocio. 
+    \UCpaso[\UCsist] Verifica que el tipo de regla de negocio requiera parámetros. \refTray{A}
+    \UCpaso[\UCsist] Verifica que el tipo de regla de negocio sea ``Operaciones aritméticas''. \refTray{B}
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 8.1a}{Registrar reglas de negocio: Operaciones aritméticas}.
+    \UCpaso[\UCactor] Ingresa la operación aritmética en la pantalla \cdtIdRef{IU 8.1a}{Registrar reglas de negocio: Operaciones aritméticas}. \refTray{C} \refTray{D} \refTray{E} \refTray{F} \refTray{G} \refTray{H} \refTray{I} \refTray{J}\label{cu8:ingresaPaso}
+    \UCpaso[\UCactor] Solicita guardar la regla de negocio oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio}. \refTray{K} \label{cu8:guardarInfo}
+    \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN-S8}{Datos obligatorios}. \refTray{L}
+    \UCpaso[\UCsist] Verifica que el nombre de la regla de negocio no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN-N6}{Unicidad de nombres}. \refTray{M}
+    \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN-S7}{Información correcta}. \refTray{N}
+    
+    \UCpaso[\UCsist] Registra la información de la regla de negocio en el sistema.
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 8}{Gestionar reglas de negocio}
+    para indicar al actor que el registro se ha realizado exitosamente.
+ \end{UCtrayectoria}
+ 
+ 
+ %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{A}{La regla de negocio no requiere parámetros.}
+	\UCpaso[] Continúa con el paso \ref{cu8:guardarInfo} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ 
+ %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{B}{El tipo de regla de negocio es de tipo ``Unicidad de parámetros'', ``Intervalo de fechas correcto'' u ``Otro''.}
+	\UCpaso[\UCactor] El usuario ingresa la información de la regla de negocio en la pantalla \cdtIdRef{IU 8.1b}{Registrar reglas de negocio: Unicidad de parámetros},
+	\cdtIdRef{IU 8.1c}{Registrar reglas de negocio: Intervalo de fechas correcto} o \cdtIdRef{IU 8.1d}{Registrar reglas de negocio: Otro}, según corresponda.
+	\UCpaso[] Continúa con el paso \ref{cu8:guardarInfo} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+ %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{C}{El actor desea ingresar una entidad.}
+ 	
+ 	 \UCpaso[\UCactor] Ingresa el token ``ENT.''.
+ 	\UCpaso[\UCsist] Busca las entidades registradas en el sistema. 
+ 	\UCpaso[\UCsist] Muestra la lista de entidades encontradas.
+ 	\UCpaso[\UCactor] Selecciona una entidad de la lista.
+  	\UCpaso[\UCsist] Oculta el texto ``ENT.'' y muestra únicamente el nombre de la entidad.
+    \UCpaso[] Continúa con el paso \ref{cu8:ingresaPaso} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ 
+  %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{D}{El actor desea ingresar un actor.}
+ 	\UCpaso[\UCactor] Ingresa el token ``ACT.''.
+ 	\UCpaso[\UCsist] Busca los actores registrados en el sistema. 
+ 	\UCpaso[\UCsist] Muestra la lista de actores encontrados.
+ 	\UCpaso[\UCactor] Selecciona un actor de la lista.
+  	\UCpaso[\UCsist] Oculta el texto ``ACT.'' y muestra únicamente el nombre del actor.
+    \UCpaso[] Continúa con el paso \ref{cu8:ingresaPaso} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+  %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{E}{El actor desea ingresar un caso de uso.}
+  	\UCpaso[\UCactor] Ingresa el token ``CU.''.	
+ 	\UCpaso[\UCsist] Busca los casos de uso registrados en el sistema. 
+ 	\UCpaso[\UCsist] Muestra la lista de casos de uso encontrados.
+ 	\UCpaso[\UCactor] Selecciona un caso de uso de la lista.
+  	\UCpaso[\UCsist] Oculta el texto ``CU.'' y muestra únicamente el nombre del caso de uso.
+    \UCpaso[] Continúa con el paso \ref{cu8:ingresaPaso} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+  %----------------------------------------------------------%trayectoria F---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{F}{El actor desea ingresar una pantalla.}
+ 	\UCpaso[\UCactor] Ingresa el token ``IU.''.	
+ 	\UCpaso[\UCsist] Busca las pantallas registradas en el sistema. 
+ 	\UCpaso[\UCsist] Muestra la lista de pantallas encontradas.
+ 	\UCpaso[\UCactor] Selecciona una pantalla de la lista.
+  	\UCpaso[\UCsist] Oculta el texto ``IU.'' y muestra únicamente el nombre de la pantalla.
+    \UCpaso[] Continúa con el paso \ref{cu8:ingresaPaso} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+ %----------------------------------------------------------%trayectoria G---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{G}{El actor desea ingresar un mensaje.}
+ 	 \UCpaso[\UCactor] Ingresa el token ``MSJ.''.	
+ 	\UCpaso[\UCsist] Busca los mensajes registrados en el sistema. 
+ 	\UCpaso[\UCsist] Muestra la lista de mensajes.
+ 	\UCpaso[\UCactor] Selecciona un mensaje de la lista.
+  	\UCpaso[\UCsist] Oculta el texto ``MSJ.'' y muestra únicamente el nombre de la pantalla.
+    \UCpaso[] Continúa con el paso \ref{cu8:ingresaPaso} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+  %----------------------------------------------------------%trayectoria H---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{H}{El actor desea ingresar una regla de negocio.}
+ 	\UCpaso[\UCactor] Ingresa el token ``RN.''.	
+ 	\UCpaso[\UCsist] Busca las reglas de negocio registradas en el sistema. 
+ 	\UCpaso[\UCsist] Muestra la lista de reglas de negocio.
+ 	\UCpaso[\UCactor] Selecciona una regla de negocio de la lista.
+  	\UCpaso[\UCsist] Oculta el texto ``RN.'' y muestra únicamente el nombre de la regla de negocio.
+    \UCpaso[] Continúa con el paso \ref{cu8:ingresaPaso} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+  %----------------------------------------------------------%trayectoria I---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{I}{El actor desea ingresar un término del glosario.}
+ 	\UCpaso[\UCactor] Ingresa el token ``GLS.''.	
+ 	\UCpaso[\UCsist] Busca los términos del glosario registrados en el sistema. 
+ 	\UCpaso[\UCsist] Muestra la lista de términos del glosario.
+ 	\UCpaso[\UCactor] Selecciona un término del glosario de la lista.
+  	\UCpaso[\UCsist] Oculta el texto ``GLS.'' y muestra únicamente el nombre del término del glosario.
+    \UCpaso[] Continúa con el paso \ref{cu8:ingresaPaso} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+  %----------------------------------------------------------%trayectoria J---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{J}{El actor desea ingresar un atributo de una entidad.}
+ 	\UCpaso[\UCactor] Ingresa el token ``ENT.''.
+ 	\UCpaso[\UCsist] Busca las entidades registradas en el sistema. 
+ 	\UCpaso[\UCsist] Muestra la lista de entidades encontradas.
+ 	\UCpaso[\UCactor] Selecciona la entidad a la que pertenece el atributo.
+  	\UCpaso[\UCactor] Ingresa el token ``.''.
+  	\UCpaso[\UCsist] Busca los atributos de la entidad seleccionada.
+  	\UCpaso[\UCsist] Muestra la lista de atributos encontrados.
+ 	\UCpaso[\UCactor] Selecciona un atributo de la lista.
+  	\UCpaso[\UCsist] Oculta el texto de los tokens ingregsados y muestra únicamente el nombre del atributo.
+    \UCpaso[] Continúa con el paso \ref{cu8:ingresaPaso} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria K---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{K}{El actor desea cancelar la operación.}
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio}.
+    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
+ \end{UCtrayectoriaA}
+  %----------------------------------------------------------%trayectoria L---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{L}{El actor no ingresó algún dato marcado como obligatorio.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
+	    \cdtIdRef{IU 8.1}{Registrar reglas de negocio}, indicando al actor que el dato es obligatorio.
+    \UCpaso[] Continúa con el paso \ref{cu8.1:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria M---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{M}{El actor ingresó un nombre de entidad repetido.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Registro repetido} y señala el campo que presenta la duplicidad en la pantalla 
+	    \cdtIdRef{IU 8.1}{Registrar reglas de negocio}, indicando al actor que existe una regla de negocio con el mismo nombre.
+    \UCpaso[] Continúa con el paso \ref{cu8.1:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ 
+ %----------------------------------------------------------%trayectoria N----------------------------------------------------  
+ \begin{UCtrayectoriaA}{N}{El actor proporciona un dato que excede la longitud máxima.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
+    longitud en la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio}, para indicar que el dato excede el tamaño máximo permitido.
+    \UCpaso[] Continúa con el paso \ref{cu8.1:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ 
