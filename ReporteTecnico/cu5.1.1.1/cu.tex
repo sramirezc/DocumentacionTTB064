@@ -23,15 +23,13 @@
 	}
 	\UCitem{Entradas}{
 		\begin{UClist}
-% 			\UCli \cdtRef{Paso:RealizaActor}{Quien realiza el paso}: \ioSeleccionar.
-% 			\UCli \cdtRef{Paso:Redaccion}{Redacción del paso}: \ioEscribir.
-			\UCli \cdtRef{}{Principal o alternativa}: \ioSeleccionar.
-			\UCli \cdtRef{}{Nombre de la trayectoria}: \ioEscribir.
+			\UCli \cdtRef{Trayectoria:Alternativa}{Principal o alternativa}: \ioSeleccionar.
+			\UCli \cdtRef{Trayectoria:Identificador}{Nombre de la trayectoria}: \ioEscribir.
 		\end{UClist}
 	}
 	\UCitem{Salidas}{
 		\begin{UClist}
-			\UCli Pasos de la trayectoria.
+			\UCli \cdtRef{Paso}{Pasos} de la trayectoria.
 		\end{UClist}
 	}
 	
@@ -48,7 +46,7 @@
 	\UCitem{Postcondiciones}{
 		\begin{UClist}
 			\UCli Los elementos utilizados en los pasos y que no estén descritos en la sección ``Descripción del Caso de uso'' de la pantalla 
-			      \cdtIdRef{CU 5.1}{Registrar caso de uso} se agregarán en el campo correspondiente.
+			      \cdtIdRef{CU 5.1}{Registrar caso de uso} se agregarán a la sección automáticamente.
 		\end{UClist}
 	}
 

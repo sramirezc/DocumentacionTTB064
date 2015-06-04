@@ -1,13 +1,13 @@
-\begin{UseCase}{CU 5.1.1.1.1}{Registrar paso}
+\begin{UseCase}{CU 5.1.2.1}{Registrar precondición}
 	{
-		Los pasos que describen una trayectoria deben indicar las acciones que realiza el sistema o el actor.
-		Este caso de uso permite al analista registrar un paso de alguna trayectoria.
+		Las precondiciones describen un conjunto de condiciones que deben cumplirse para poder ejecutar el caso de uso satisfactoriamente.
+		Este caso de uso permite al analista registrar una precondición.
 		
 	}
 	%\UCitem{\DONEUC}{Edición}
 	\UCitem{Versión}{1.0}
 	\UCccsection{Administración de Requerimientos}	
-	\UCitem{Autor}{Natalia Giselle Hernández Sánchez}	
+	\UCitem{Autor}{Sergio Ramírez Camacho}	
 	\UCccitem{Evaluador}{}
 	\UCitem{Operación}{Registro}
 	\UCccitem{Prioridad}{Alta}
@@ -19,24 +19,23 @@
 	\UCsection{Atributos}
 	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
 	\UCitem{Propósito}{
-		Registrar los pasos de la trayectoria principal o de alguna trayectoria alternativa.
+		Registrar las precondiciones de un caso de uso.
 	}
 	\UCitem{Entradas}{
 		\begin{UClist}
- 			\UCli \cdtRef{Paso:RealizaActor}{Quien realiza el paso}: \ioSeleccionar.
- 			\UCli \cdtRef{Paso:Redaccion}{Redacción del paso}: \ioEscribir.
+ 			\UCli \cdtRef{Precondicion:Redaccion}{Redacción de la precondición}: \ioEscribir.
 		\end{UClist}
 	}
 	\UCitem{Salidas}{
 		\begin{UClist}
-			\UCli Número del paso.
+			\UCli Número de la precondición.
 		\end{UClist}
 	}
 	
 	\UCitem{Mensajes}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} o \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria}
-			para indicar que el registro del paso fue exitoso.
+			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o \cdtIdRef{IU 5.2}{Modificar caso de uso}
+			para indicar que el registro de la precondición fue exitoso.
 		\end{UClist}
 	}
 
@@ -54,13 +53,13 @@
 
 	\UCitem{Errores}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1.1}{Registrar paso} cuando no se ha ingresado un dato marcado como obligatorio.
-			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1.1}{Registrar paso} cuando se ha excedido la longitud de alguno de los campos.
+			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{CU 5.1.2.1}{Registrar precondición} cuando no se ha ingresado un dato marcado como obligatorio.
+			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{CU 5.1.2.1}{Registrar precondición} cuando se ha excedido la longitud de alguno de los campos.
 		\end{UClist}
 	}
 
 	\UCitem{Tipo}{
-		Secundario, extiende de los casos de uso \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} y \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria}.
+		Secundario, extiende del caso de uso \cdtIdRef{CU 5.1.2}{Gestionar precondiciones}.
 	}
 \end{UseCase}
 
@@ -69,15 +68,13 @@
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
 
  \begin{UCtrayectoria}
-	\UCpaso[\UCactor] Solicita registrar un paso oprimiento el botón \cdtButton{Registrar} de la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} o de la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria}. 
-	\UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.1.1.1.1}{Registrar paso}. 
-	\UCpaso[\UCactor] Selecciona si el actor o el sistema realiza el paso.\label{cu5.1.1.1.1:ingresaDatos}
-	\UCpaso[\UCactor] Selecciona el verbo.
-	\UCpaso[\UCactor] Ingresa la redacción del paso. \refTray{A} \refTray{B} \refTray{C} \refTray{D} \refTray{E} \refTray{F} \refTray{G} \refTray{H} \label{cu5.1.1.1.1:ingresaPaso}
-	\UCpaso[\UCactor] Solicita registrar el paso oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{CU 5.1.1.1.1}{Registrar paso}. \refTray{I} 
+	\UCpaso[\UCactor] Solicita registrar una precondición oprimiento el botón \btnAgregar de la sección ``Precondiciones'' de la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} o de la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}. 
+	\UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{CU 5.1.2.1}{Registrar precondición}. 
+	\UCpaso[\UCactor] Ingresa la redacción de la precondición. \refTray{A} \refTray{B} \refTray{C} \refTray{D} \refTray{E} \refTray{F} \refTray{G} \refTray{H} \label{cu5.1.2.1:ingresaRedaccion}
+	\UCpaso[\UCactor] Solicita registrar la precondición oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{CU 5.1.2.1}{Registrar precondición}. \refTray{I} 
 	\UCpaso[\UCsist] Verifica que el actor haya ingresado todos los campos obligatorios con base en la regla de negocio \cdtIdRef{RN-S8}{Datos obligatorios}. \refTray{J}
 	\UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN-S7}{Información correcta}. \refTray{K} 
-	\UCpaso[\UCsist] Registra la información del paso en el sistema.
+	\UCpaso[\UCsist] Registra la información de la precondición en el sistema.
 	\UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla donde se solicitó la operación
 	para indicar al actor que el registro se ha realizado exitosamente. 
 \end{UCtrayectoria}
@@ -92,7 +89,7 @@
  	\UCpaso[\UCsist] Muestra la lista de entidades encontradas.
  	\UCpaso[\UCactor] Selecciona una entidad de la lista.
   	\UCpaso[\UCsist] Oculta el texto ``ENT.'' y muestra únicamente el nombre de la entidad.
-    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.1:ingresaPaso} de la trayectoria principal.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.
  \end{UCtrayectoriaA}
  
   %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
@@ -102,7 +99,7 @@
  	\UCpaso[\UCsist] Muestra la lista de actores encontrados.
  	\UCpaso[\UCactor] Selecciona un actor de la lista.
   	\UCpaso[\UCsist] Oculta el texto ``ACT.'' y muestra únicamente el nombre del actor.
-    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.1:ingresaPaso} de la trayectoria principal.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.
  \end{UCtrayectoriaA}
 
   %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
@@ -112,7 +109,7 @@
  	\UCpaso[\UCsist] Muestra la lista de casos de uso encontrados.
  	\UCpaso[\UCactor] Selecciona un caso de uso de la lista.
   	\UCpaso[\UCsist] Oculta el texto ``CU.'' y muestra únicamente el nombre del caso de uso.
-    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.1:ingresaPaso} de la trayectoria principal.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.
  \end{UCtrayectoriaA}
 
   %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
@@ -122,7 +119,7 @@
  	\UCpaso[\UCsist] Muestra la lista de pantallas encontradas.
  	\UCpaso[\UCactor] Selecciona una pantalla de la lista.
   	\UCpaso[\UCsist] Oculta el texto ``IU.'' y muestra únicamente el nombre de la pantalla.
-    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.1:ingresaPaso} de la trayectoria principal.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.
  \end{UCtrayectoriaA}
 
  %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
@@ -132,7 +129,7 @@
  	\UCpaso[\UCsist] Muestra la lista de mensajes.
  	\UCpaso[\UCactor] Selecciona un mensaje de la lista.
   	\UCpaso[\UCsist] Oculta el texto ``MSJ.'' y muestra únicamente el nombre de la pantalla.
-    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.1:ingresaPaso} de la trayectoria principal.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.
  \end{UCtrayectoriaA}
 
   %----------------------------------------------------------%trayectoria F---------------------------------------------------- 
@@ -142,7 +139,7 @@
  	\UCpaso[\UCsist] Muestra la lista de reglas de negocio.
  	\UCpaso[\UCactor] Selecciona una regla de negocio de la lista.
   	\UCpaso[\UCsist] Oculta el texto ``RN.'' y muestra únicamente el nombre de la regla de negocio.
-    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.1:ingresaPaso} de la trayectoria principal.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.
  \end{UCtrayectoriaA}
 
   %----------------------------------------------------------%trayectoria G---------------------------------------------------- 
@@ -152,7 +149,7 @@
  	\UCpaso[\UCsist] Muestra la lista de términos del glosario.
  	\UCpaso[\UCactor] Selecciona un término del glosario de la lista.
   	\UCpaso[\UCsist] Oculta el texto ``GLS.'' y muestra únicamente el nombre del término del glosario.
-    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.1:ingresaPaso} de la trayectoria principal.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.
  \end{UCtrayectoriaA}
 
   %----------------------------------------------------------%trayectoria H---------------------------------------------------- 
@@ -166,28 +163,27 @@
   	\UCpaso[\UCsist] Muestra la lista de atributos encontrados.
  	\UCpaso[\UCactor] Selecciona un atributo de la lista.
   	\UCpaso[\UCsist] Oculta el texto de los tokens ingregsados y muestra únicamente el nombre del atributo.
-    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.1:ingresaPaso} de la trayectoria principal.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.
  \end{UCtrayectoriaA}
 
 
  %----------------------------------------------------------%trayectoria I---------------------------------------------------- 
  \begin{UCtrayectoriaA}[Fin del caso de uso]{I}{El actor desea cancelar la operación.}
-    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{CU 5.1.1.1.1}{Registrar paso}.
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} o \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} según corresponda.
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{CU 5.1.2.1}{Registrar precondición}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o \cdtIdRef{IU 5.2}{Modificar caso de uso} según corresponda.
  \end{UCtrayectoriaA}
  
  %----------------------------------------------------------%trayectoria J---------------------------------------------------- 
  \begin{UCtrayectoriaA}{J}{El actor no ingresó algún dato marcado como obligatorio.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
-	    \cdtIdRef{CU 5.1.1.1.1}{Registrar paso}, indicando al actor que el dato es obligatorio.
-    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.1:ingresaDatos} de la trayectoria principal.
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla \cdtIdRef{CU 5.1.2.1}{Registrar precondición}, indicando al actor que el dato es obligatorio.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.
  \end{UCtrayectoriaA}
  
  %----------------------------------------------------------%trayectoria K --------------------------------------------------  
  \begin{UCtrayectoriaA}{K}{El actor proporciona un dato que excede la longitud máxima.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
-    longitud en la pantalla \cdtIdRef{CU 5.1.1.1.1}{Registrar paso}, para indicar que el dato excede el tamaño máximo permitido.
-    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.1:ingresaDatos} de la trayectoria principal.
+    longitud en la pantalla \cdtIdRef{CU 5.1.2.1}{Registrar precondición}, para indicar que el dato excede el tamaño máximo permitido.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.
  \end{UCtrayectoriaA}
 
   
