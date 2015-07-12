@@ -45,7 +45,7 @@
     \BRitem{Descripción}{Para asignar el número de un elemento en el registro, el sistema buscará el último número asociado a la clave y le sumará 1. }
 \end{BusinessRule}
 
-\begin{BusinessRule}{RN-N6}{Unicidad de nombres}
+\begin{BusinessRule}{RN6}{Unicidad de nombres}
     {Restricción de operación}
     {Controla la operación}
     \BRitem{Versión}{0.1}
@@ -54,7 +54,7 @@
     \BRitem{Descripción}{El nombre de los elementos no puede repetirse.}	
 \end{BusinessRule}
 
-\begin{BusinessRule}{RN-S7}{Información correcta}
+\begin{BusinessRule}{RN7}{Información correcta}
     {Restricción de operación}
     {Controla la operación}
     \BRitem{Versión}{0.1}
@@ -63,7 +63,7 @@
     \BRitem{Descripción}{La información que el usuario proporcione, debe ser del tipo y longitud definida en el modelo conceptual.}	
 \end{BusinessRule}
 
-\begin{BusinessRule}{RN-S8}{Datos obligatorios}
+\begin{BusinessRule}{RN8}{Datos obligatorios}
     {Restricción de operación}
     {Controla la operación}
     \BRitem{Versión}{0.1}
@@ -72,7 +72,7 @@
     \BRitem{Descripción}{El usuario debe ingresar toda la información marcada como obligatoria en el modelo conceptual.}	
 \end{BusinessRule}
 
-\begin{BusinessRule}{RN-S9}{Operaciones disponibles de casos de uso}
+\begin{BusinessRule}{RN9}{Operaciones disponibles de casos de uso}
     {Restricción de operación}
     {Controla la operación}
     \BRitem{Versión}{0.1}
@@ -87,18 +87,19 @@
 		\color{white} Estado &  \color{white}Operaciones Analista & \color{white}Operaciones Líder de análisis\\ \hline
 		\endhead%
 		\arrayrulecolor{black}
-		En registro & N/A & N/A\\ \hline 
+		Edición & Consultar y solamente el analista que esté editando el caso de uso puede editar, gestionar trayectorias y gestionar puntos de extensión 
+		& Consultar y solamente el analista que esté editando el caso de uso puede editar, gestionar trayectorias y gestionar puntos de extensión \\ \hline
+		Terminado & Consultar, revisar, eliminar y solamente el analista que esté editando el caso de uso puede editar, gestionar trayectorias y gestionar puntos de extensión 
+		& Consultar, revisar, eliminar y solamente el analista que esté editando el caso de uso puede editar, gestionar trayectorias y gestionar puntos de extensión\\ \hline
+		Revisión & Consultar y solamente el analista que esté realizando la revisión puede revisar & Liberar, consultar, revisar (solamente el líder que esté realizando la revisión)\\ \hline
 		Pendiente de corrección & Consultar, editar & N/A\\ \hline
-		En edición & Consultar, editar (solamente el analista que esté editando el caso de uso) & Consultar, editar (solamente el líder que esté editando el caso de uso) \\ \hline
-		Terminado & Consultar, revisar, eliminar, editar (solamente el analista que terminó el caso de uso) & Consultar, revisar, eliminar, editar (solamente el líder que terminó el caso de uso)\\ \hline
-		En revisión & Consultar, revisiar (solamente el analista que esté realizando la revisión) & Liberar, consultar, revisar (solamente el líder que esté realizando la revisión)\\ \hline
+		Por Liberar & Consulta & Habilitar correcciones\\ \hline
 		Liberado & Consulta & Habilitar correcciones\\ \hline
-		
       \end{longtable}
     }	
 \end{BusinessRule}
 
-\begin{BusinessRule}{RN-S10}{Referencias a elementos}
+\begin{BusinessRule}{RN10}{Referencias a elementos}
     {Restricción de operación}
     {Controla la operación}
     \BRitem{Versión}{0.1}
@@ -108,7 +109,7 @@
     % Se sacrifica la usabilidad por el tiempo reducido de desarrollo
 \end{BusinessRule}
 
-\begin{BusinessRule}{RN-S11}{Registro de trayectorias}
+\begin{BusinessRule}{RN11}{Registro de trayectorias}
     {Restricción de operación}
     {Controla la operación}
     \BRitem{Versión}{0.1}
@@ -118,7 +119,7 @@
     % Se sacrifica la usabilidad por el tiempo reducido de desarrollo
 \end{BusinessRule}
 
-\begin{BusinessRule}{RN-S12}{Identificador de elemento}
+\begin{BusinessRule}{RN12}{Identificador de elemento}
     {Restricción de operación}
     {Controla la operación}
     \BRitem{Versión}{0.1}
@@ -130,7 +131,7 @@
     % Se sacrifica la usabilidad por el tiempo reducido de desarrollo
 \end{BusinessRule}
 
-\begin{BusinessRule}{RN-S13}{Modificación del identificador}
+\begin{BusinessRule}{RN13}{Modificación del identificador}
     {Restricción de operación}
     {Controla la operación}
     \BRitem{Versión}{0.1}
@@ -139,7 +140,7 @@
     \BRitem{Descripción}{Una vez registrado un elemento no se podrá modificar el nombre, el número o la clave del identificador.}
 \end{BusinessRule}
 
-\begin{BusinessRule}{RN-S14}{Salidas del caso de uso}
+\begin{BusinessRule}{RN14}{Salidas del caso de uso}
     {Restricción de operación}
     {Controla la operación}
     \BRitem{Versión}{0.1}
@@ -148,7 +149,7 @@
     \BRitem{Descripción}{En las salidas del caso de uso podrán enlistarse mensajes y atributos de las entidades.}
 \end{BusinessRule}
 
-\begin{BusinessRule}{RN-S15}{Elementos en uso}
+\begin{BusinessRule}{RN15}{Elementos en uso}
     {Restricción de operación}
     {Controla la operación}
     \BRitem{Versión}{0.1}

@@ -4,19 +4,6 @@
 		Este caso de uso permite al analista registrar la trayectoria principal o una trayectoria alternativa de un caso de uso.
 		
 	}
-	%\UCitem{\DONEUC}{Edición}
-	\UCitem{Versión}{1.0}
-	\UCccsection{Administración de Requerimientos}	
-	\UCitem{Autor}{Natalia Giselle Hernández Sánchez}	
-	\UCccitem{Evaluador}{}
-	\UCitem{Operación}{Administración}
-	\UCccitem{Prioridad}{Alta}
-	\UCccitem{Complejidad}{Media}
-	\UCccitem{Volatilidad}{Alta}
-	\UCccitem{Madurez}{Baja}
-	\UCitem{Estatus}{Terminado}
-	\UCitem{Fecha del último estatus}{}
-	\UCsection{Atributos}
 	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
 	\UCitem{Propósito}{
 		Registrar una trayectoria principal o alternativa.
@@ -75,9 +62,9 @@
 	\UCpaso[\UCactor] Gestiona los pasos de la trayectoria. \label{cu5.1.1.1:gestionaPasos}
 	\UCpaso[\UCactor] Solicita registrar la trayectoria oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria}. \refTray{A} 
 	
-	\UCpaso[\UCsist] Verifica que el actor haya ingresado todos los campos obligatorios con base en la regla de negocio \cdtIdRef{RN-S8}{Datos obligatorios}. \refTray{B}
-	\UCpaso[\UCsist] Verifica que la trayectoria no se encuentre registrada en el sistema con base en la regla de negocio \cdtIdRef{RN-N6}{Unicidad de nombres}. \refTray{C}
-	\UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN-S7}{Información correcta}. \refTray{D} \refTray{E}
+	\UCpaso[\UCsist] Verifica que el actor haya ingresado todos los campos obligatorios con base en la regla de negocio \cdtIdRef{RN8}{Datos obligatorios}. \refTray{B}
+	\UCpaso[\UCsist] Verifica que la trayectoria no se encuentre registrada en el sistema con base en la regla de negocio \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{C}
+	\UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{D} \refTray{E}
 	
 	\UCpaso[\UCsist] Registra la información de la trayectoria en el sistema.
 	
@@ -88,9 +75,9 @@
 %     \UCpaso[\UCactor] Selecciona si el actor o el sistema realiza el paso.
 %     \UCpaso[\UCactor] Ingresa la redacción del paso.
 %     \UCpaso[\UCactor] Solicita registrar la  oprimiendo el botón \cdtButton{Terminar} de la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso}. \refTray{C}  \refTray{D} 
-%     \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN-S8}{Datos obligatorios}. \refTray{E}
-%     \UCpaso[\UCsist] Verifica que el nombre del caso de uso no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN-N6}{Unicidad de nombres}. \refTray{F}
-%     \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN-S7}{Información correcta}. \refTray{G} \refTray{H}
+%     \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{E}
+%     \UCpaso[\UCsist] Verifica que el nombre del caso de uso no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{F}
+%     \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{G} \refTray{H}
 %     \UCpaso[\UCsist] Verifica que todos los elementos del caso de uso esten referenciados en las trayectorias. \refTray{I}
 %     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG8}{Caso de uso terminado} para preguntar al actor si desea continuar con la operación.
     

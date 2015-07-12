@@ -1,7 +1,8 @@
 \begin{UseCase}{CU 5}{Gestionar casos de uso}
 	{
 		Este caso de uso permite al analista visualizar los registros de los casos de uso del sistema. También permite 
-		al actor acceder a las operaciones de revisión, registro, consulta, modificación y eliminación de un caso de uso.
+		al actor acceder a las operaciones de registro, gestión de trayectorias, gestión de puntos de extensión, consulta, modificación, 
+		eliminación y revisión de un caso de uso.
 	}
 	
 	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
@@ -33,6 +34,8 @@
 	\UCitem{Postcondiciones}{
 		\begin{UClist}
 			\UCli Se podrá solicitar el registro de un caso de uso por medio del caso de uso \cdtIdRef{CU 5.1}{Registrar caso de uso}.
+			\UCli Se podrá solicitar la gestión de las trayectorias del caso de uso por medio del caso de uso \cdtIdRef{CU 5.1.1}{Gestionar trayectorias}.
+			\UCli Se podrá solicitar la gestión de los puntos de extensión del caso de uso por medio del caso de uso \cdtIdRef{CU 5.1.4}{Gestionar puntos de extensión}. 
 			\UCli Se podrá solicitar la modificación de un caso de uso por medio del caso de uso \cdtIdRef{CU 5.2}{Modificar caso de uso}.
 			\UCli Se podrá solicitar la eliminación de un caso de uso por medio del caso de uso \cdtIdRef{CU 5.3}{Eliminar caso de uso}.
 			\UCli Se podrá solicitar la consulta de un caso de uso por medio del caso de uso \cdtIdRef{CU 5.4}{Consultar caso de uso}.
@@ -45,7 +48,7 @@
 	}
 
 	\UCitem{Tipo}{
-		Primario
+		Secundario, extiende del caso de uso \cdtIdRef{CU 3}{Gestionar módulos}.
 	}
 \end{UseCase}
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
@@ -53,8 +56,8 @@
     \UCpaso[\UCactor] Solicita gestionar los casos de uso presionando el botón \btnCU de la pantalla \cdtIdRef{IU 3}{Gestionar módulos}.
     \UCpaso[\UCsist] Busca la información de los casos de uso en cualquier estado. \refTray{A}
     \UCpaso[\UCsist] Muestra la información de los casos de uso en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} y las operaciones 
-    disponibles de acuerdo a la regla de negocio \cdtIdRef{RN-S9}{Operaciones disponibles de casos de uso}. 
-    \UCpaso[\UCactor] Gestiona los casos de uso a través de los botones: \btnRevisar, \cdtButton{Registrar}, \btnConsulta, \btnEditar y \btnEliminar. \label{cu5:gestionaCU}
+    disponibles de acuerdo a la regla de negocio \cdtIdRef{RN9}{Operaciones disponibles de casos de uso}. 
+    \UCpaso[\UCactor] Gestiona los casos de uso a través de los botones: \cdtButton{Registrar}, \btnTray, \btnExt \btnConsulta, \btnEditar, \btnEliminar y \btnRevisar. \label{cu5:gestionaCU}
  \end{UCtrayectoria}
  
  \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No existen registros de casos de uso.}
@@ -68,6 +71,12 @@
 \UCExtensionPoint{El actor requiere registrar un caso de uso}
 	{Paso \ref{cu5:gestionaCU}}
 	{\cdtIdRef{CU 5.1}{Registrar caso de uso}}
+\UCExtensionPoint{El actor requiere gestionar las trayectorias del caso de uso}
+	{Paso \ref{cu5:gestionaCU}}
+	{\cdtIdRef{CU 5.1.1}{Gestionar trayectorias}}
+\UCExtensionPoint{El actor requiere gestionar los puntos de extensión del caso de uso}
+	{Paso \ref{cu5:gestionaCU}}
+	{\cdtIdRef{CU 5.1.4}{Gestionar puntos de extensión}}
 \UCExtensionPoint{El actor requiere modificar un caso de uso}
 	{Paso \ref{cu5:gestionaCU}}
 	{\cdtIdRef{CU 5.2}{Modificar caso de uso}}	

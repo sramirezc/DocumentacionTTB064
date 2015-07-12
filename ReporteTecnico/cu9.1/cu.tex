@@ -17,7 +17,7 @@
 	}
 	\UCitem{Salidas}{
 		\begin{UClist}
-			\UCli \cdtRef{Elemento:Clave}{Clave}: \ioCalcular{\cdtIdRef{RN-S12}{Identificador de elemento}}.
+			\UCli \cdtRef{Elemento:Clave}{Clave}: \ioCalcular{\cdtIdRef{RN12}{Identificador de elemento}}.
 			\UCli \cdtRef{Elemento:Numero}{Número}: \ioCalcular{\cdtIdRef{RN05}{Numeración de elementos}}.
 		\end{UClist}
 	}
@@ -59,9 +59,9 @@
     \UCpaso[\UCactor] Ingresa la redacción del mensaje en la pantalla \cdtIdRef{IU 9.1a}{Registrar mensaje: Parametrizado}. \refTray{B} \label{cu9.1:ingresaParam}
     \UCpaso[\UCactor] Ingresa la descripción de cada parámetro. \refTray{C} \refTray{D} \refTray{E} \refTray{F} \refTray{G} \refTray{H} \refTray{I} \refTray{J}\label{cu9.1:ingresaPaso}
     \UCpaso[\UCactor] Solicita guardar el mensaje oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 9.1}{Registrar mensaje}. \refTray{K} \label{cu9.1:guardarInfo}
-    \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN-S8}{Datos obligatorios}. \refTray{L}
-    \UCpaso[\UCsist] Verifica que el nombre del mensaje no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN-N6}{Unicidad de nombres}. \refTray{M}
-    \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN-S7}{Información correcta}. \refTray{N}
+    \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{L}
+    \UCpaso[\UCsist] Verifica que el nombre del mensaje no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{M}
+    \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{N}
     
     \UCpaso[\UCsist] Registra la información del mensaje en el sistema.
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 9}{Gestionar mensajes}
