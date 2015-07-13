@@ -9,22 +9,22 @@
     En la figura ~\ref{IU 8.1} se muestra la pantalla ``Registrar regla de negocio'' que permite registrar una regla de negocio. El actor deberá 
     seleccionar el tipo de regla de negocio y el sistema mostrará los campos de los parámetros de la regla de negocio. \\
     
-    Cuando el actor seleccione el tipo ``Operaciones aritméticas'', el sistema mostrará la pantalla ~\ref{IU 8.1a}; si el actor selecciona el tipo
-    ``Unicidad de parámetros'' el sistema mostrará la pantalla ~\ref{IU 8.1b}; si el actor selecciona el tipo ``Intervalo de fechas correcto'' el sistema
+    Cuando el actor seleccione el tipo ``Comparación de atributos'', el sistema mostrará la pantalla ~\ref{IU 8.1a}; si el actor selecciona el tipo
+    ``Unicidad de parámetros'' el sistema mostrará la pantalla ~\ref{IU 8.1b}; si el actor selecciona el tipo ``Formato correcto'' el sistema
     mostrará la pantalla ~\ref{IU 8.1c}. Para los demás tipos de reglas de negocio el sistema no mostrará más campos.\\
     
     Una vez ingresada la información solicitada, el actor deberá oprimir el botón \cdtButton{Aceptar}. El sistema validará y registrará la 
     información sólo si se han cumplido todas las reglas de negocio establecidas.  \\
     
-    Finalmente se mostrará el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 8}{Gestionar reglas de negocio} o \cdtIdRef{IU 11.2}{Modificar entidad}, 
+    Finalmente se mostrará el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 8}{Gestionar reglas de negocio}, 
     para indicar que la información de la regla de negocio
     se ha registrado correctamente.        
 
 
     \IUfig[.9]{cu8.1/images/iu.png}{IU 8.1}{Registrar regla de negocio}
-     \IUfig[.9]{cu8.1/images/iua.png}{IU 8.1a}{Registrar regla de negocio: Operaciones aritméticas}
+     \IUfig[.9]{cu8.1/images/iua.png}{IU 8.1a}{Registrar regla de negocio: Comparación de atributos}
      \IUfig[.9]{cu8.1/images/iub.png}{IU 8.1b}{Registrar regla de negocio: Unicidad de parámetros}
-     \IUfig[.9]{cu8.1/images/iuc.png}{IU 8.1c}{Registrar regla de negocio: Intervalo de fechas correcto}
+     \IUfig[.9]{cu8.1/images/iuc.png}{IU 8.1c}{Registrar regla de negocio: Formato correcto}
 
 \subsubsection{Comandos}
 \begin{itemize}
@@ -36,7 +36,9 @@
 	
 \begin{description}
 	\item[\cdtIdRef{MSG1}{Operación exitosa}:] Se muestra en la pantalla \cdtIdRef{IU 8}{Gestionar reglas de negocio} para indicar que el registro fue exitoso.
-	\item[\cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar regla de negocio} cuando no se ha ingresado un dato marcado como obligatorio.
-	\item[\cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar regla de negocio} cuando se ha excedido la longitud de alguno de los campos.
-	\item[\cdtIdRef{MSG7}{Registro repetido}:] Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar regla de negocio} cuando se registre una regla de negocio con un nombre que ya este registrado.
+	\UCli \cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio} cuando no se ha ingresado un dato marcado como obligatorio.
+	\UCli \cdtIdRef{MSG5}{Dato incorrecto}:] Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+	\UCli \cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio} cuando se ha excedido la longitud de alguno de los campos.
+	\UCli \cdtIdRef{MSG7}{Registro repetido}:] Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio} cuando se registre una regla de negocio con un nombre o número que ya este registrado.
+	\UCli \cdtIdRef{MSG23}{Caracteres inválidos}:] Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio} cuando el nombre de la regla de negocio contiene un caracter no válido.
 \end{description}

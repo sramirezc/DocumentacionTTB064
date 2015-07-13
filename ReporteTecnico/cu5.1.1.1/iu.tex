@@ -23,6 +23,9 @@
 
 \subsubsection{Comandos}
 \begin{itemize}
+	\item \cdtButton{Registrar}: Permite al actor solicitar el registro de un paso, dirige a la pantalla \cdtIdRef{IU 5.1.1.1.1}{Registrar paso}.
+	\item \btnEditar[Modificar]: Permite al actor solicitar la modificación de un paso, dirige a la pantalla \cdtIdRef{IU 5.1.1.1.2}{Modificar paso}.
+	\item \btnEliminar[Eliminar]: Permite al actor solicitar la eliminación de un paso, dirige a la pantalla \cdtIdRef{IU 5.1.1.1.3}{Eliminar paso}.
 	\item \cdtButton{Aceptar}: Permite al actor guardar el registro de la trayectoria, dirige a la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias}.
 	\item \cdtButton{Cancelar}: Permite al actor cancelar el registro de la trayectoria, dirige a la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias}.
 \end{itemize}
@@ -32,9 +35,11 @@
 	
 \begin{description}
 	\item[ \cdtIdRef{MSG1}{Operación exitosa}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias} para indicar que el registro fue exitoso.
-	\item[ \cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} cuando no se ha ingresado un dato marcado como obligatorio.
-	\item[ \cdtIdRef{MSG5}{Dato incorrecto}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
-	\item[ \cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} cuando se ha excedido la longitud de alguno de los campos.
-	\item[ \cdtIdRef{MSG7}{Registro repetido}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} cuando se hayan registrado dos casos de uso con el mismo nombre.
-	
+	\item[\cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando no se ha ingresado un dato marcado como obligatorio.
+	\item[\cdtIdRef{MSG5}{Dato incorrecto}:] Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+	\item[\cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando se ha excedido la longitud de alguno de los campos.
+	\item[\cdtIdRef{MSG7}{Registro repetido}:] Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando se haya ingresado una clave que ya esté registrada.
+	\item[\cdtIdRef{MSG15}{Dato no registrado}:] Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando un elemento referenciado no existe en el sistema.
+	\item[\cdtIdRef{MSG23}{Caracteres inválidos}:] Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando el nombre del caso de uso contiene un caracter no válido.
+	\item[\cdtIdRef{MSG27}{Token incorrecto}:] Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando el token ingresado está mal formado.
 \end{description}

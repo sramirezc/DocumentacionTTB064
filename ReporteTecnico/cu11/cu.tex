@@ -13,9 +13,7 @@
 	}
 	\UCitem{Salidas}{
 		\begin{UClist}
-			\UCli \cdtRef{Modulo:Clave}{Clave del módulo}: \ioObtener.
-			\UCli \cdtRef{Modulo:Nombre}{Nombre del módulo}: \ioObtener.
-			\UCli \cdtRef{Modulo:Descripcion}{Descripción del módulo}: \ioObtener.
+			\UCli \cdtRef{}{Clave} y \cdtRef{}{nombre} del proyecto.
 			\UCli \cdtRef{Entidad}{Entidad}: \ioTabla{el \cdtRef{Elemento:Nombre}{Nombre}}{de las entidades}.
 		\end{UClist}
 	}
@@ -35,6 +33,7 @@
 			\UCli Se podrá solicitar el registro de una entidad por medio del caso de uso \cdtIdRef{CU 11.1}{Registrar entidad}.
 			\UCli Se podrá solicitar la modificación de una entidad por medio del caso de uso \cdtIdRef{CU 11.2}{Modificar entidad}.
 			\UCli Se podrá solicitar la eliminación de una entidad por medio del caso de uso \cdtIdRef{CU 11.3}{Eliminar entidad}.
+			\UCli Se podrá solicitar la consulta de una entidad por medio del caso de uso \cdtIdRef{CU 11.4}{Consultar entidad}.
 		\end{UClist}
 	}
 
@@ -52,7 +51,7 @@
     \UCpaso[\UCsist] Busca la información de las entidades registradas en el sistema. \refTray{A}
     \UCpaso[\UCsist] Muestra la información de las entidades en la pantalla \cdtIdRef{IU 11}{Gestionar entidades} y las operaciones 
     disponibles de acuerdo a la regla de negocio \cdtIdRef{RN15}{Elementos en uso}. 
-    \UCpaso[\UCactor] Gestiona las entidades a través de los botones: \cdtButton{Registrar}, \btnEditar y \btnEliminar. \label{cu11:gestionaCU}
+    \UCpaso[\UCactor] Gestiona las entidades a través de los botones: \cdtButton{Registrar}, \btnConsulta, \btnEditar y \btnEliminar. \label{cu11:gestionaCU}
  \end{UCtrayectoria}
  
  \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No existen registros de entidades.}
@@ -72,4 +71,6 @@
 \UCExtensionPoint{El actor requiere eliminar una entidad}
 	{Paso \ref{cu11:gestionaCU}}
 	{\cdtIdRef{CU 11.3}{Eliminar entidad}}
-  
+\UCExtensionPoint{El actor requiere consultar una entidad}
+	{Paso \ref{cu11:gestionaCU}}
+	{\cdtIdRef{CU 11.4}{Consultar entidad}}

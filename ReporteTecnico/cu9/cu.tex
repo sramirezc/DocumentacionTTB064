@@ -13,9 +13,7 @@
 	}
 	\UCitem{Salidas}{
 		\begin{UClist}
-			\UCli \cdtRef{Modulo:Clave}{Clave del módulo}: \ioObtener.
-			\UCli \cdtRef{Modulo:Nombre}{Nombre del módulo}: \ioObtener.
-			\UCli \cdtRef{Modulo:Descripcion}{Descripción del módulo}: \ioObtener.
+			\UCli \cdtRef{}{Clave} y \cdtRef{}{nombre} del proyecto.
 			\UCli \cdtRef{Mensaje}{Mensaje}: \ioTabla{el \cdtRef{Elemento:Nombre}{Nombre}}{de los mensajes}.
 		\end{UClist}
 	}
@@ -35,6 +33,7 @@
 			\UCli Se podrá solicitar el registro de un mensaje por medio del caso de uso \cdtIdRef{CU 9.1}{Registrar mensaje}.
 			\UCli Se podrá solicitar la modificación de un mensaje por medio del caso de uso \cdtIdRef{CU 9.2}{Modificar mensaje}.
 			\UCli Se podrá solicitar la eliminación de un mensaje por medio del caso de uso \cdtIdRef{CU 9.3}{Eliminar mensaje}.
+			\UCli Se podrá solicitar la consulta de un mensaje por medio del caso de uso \cdtIdRef{CU 9.4}{Consultar mensaje}.
 		\end{UClist}
 	}
 
@@ -52,7 +51,7 @@
     \UCpaso[\UCsist] Busca la información de los mensajes registrados en el sistema. \refTray{A}
     \UCpaso[\UCsist] Muestra la información de los mensajes en la pantalla \cdtIdRef{IU 9}{Gestionar mensajes} y las operaciones 
     disponibles de acuerdo a la regla de negocio \cdtIdRef{RN15}{Elementos en uso}. 
-    \UCpaso[\UCactor] Gestiona los mensajes a través de los botones: \cdtButton{Registrar}, \btnEditar y \btnEliminar. \label{cu8:gestiona}
+    \UCpaso[\UCactor] Gestiona los mensajes a través de los botones: \cdtButton{Registrar}, \btnConsulta, \btnEditar y \btnEliminar. \label{cu8:gestiona}
  \end{UCtrayectoria}
  
  \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No existen registros de mensajes.}
@@ -72,4 +71,6 @@
 \UCExtensionPoint{El actor requiere eliminar un mensaje}
 	{Paso \ref{cu8:gestiona}}
 	{\cdtIdRef{CU 9.3}{Eliminar mensaje}}
-  
+\UCExtensionPoint{El actor requiere consultar un mensaje}
+	{Paso \ref{cu8:gestiona}}
+	{\cdtIdRef{CU 9.4}{Consultar mensaje}}

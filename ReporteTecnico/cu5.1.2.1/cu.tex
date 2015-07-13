@@ -15,28 +15,19 @@
 		\end{UClist}
 	}
 	\UCitem{Salidas}{
-		\begin{UClist}
-			\UCli Número de la precondición.
-		\end{UClist}
+		Ninguna
 	}
 	
 	\UCitem{Mensajes}{
-		\begin{UClist}
-			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o \cdtIdRef{IU 5.2}{Modificar caso de uso}
-			para indicar que el registro de la precondición fue exitoso.
-		\end{UClist}
+		Ninguno
 	}
 
 	\UCitem{Precondiciones}{
-		\begin{UClist}
-			\UCli Ninguna
-		\end{UClist}
+		Ninguna
 	}
 	
 	\UCitem{Postcondiciones}{
-		\begin{UClist}
-			\UCli Ninguna
-		\end{UClist}
+		Ninguna
 	}
 
 	\UCitem{Errores}{
@@ -56,15 +47,13 @@
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
 
  \begin{UCtrayectoria}
-	\UCpaso[\UCactor] Solicita registrar una precondición oprimiento el botón \btnAgregar de la sección ``Precondiciones'' de la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o de la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}. 
+	\UCpaso[\UCactor] Solicita registrar una precondición oprimiento el botón \cdtButton{Registrar} de la sección ``Precondiciones'' de la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o de la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}. 
 	\UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{CU 5.1.2.1}{Registrar precondición}. 
-	\UCpaso[\UCactor] Ingresa la redacción de la precondición. \refTray{A} \refTray{B} \refTray{C} \refTray{D} \refTray{E} \refTray{F} \refTray{G} \refTray{H} \label{cu5.1.2.1:ingresaRedaccion}
-	\UCpaso[\UCactor] Solicita registrar la precondición oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{CU 5.1.2.1}{Registrar precondición}. \refTray{I} 
-	\UCpaso[\UCsist] Verifica que el actor haya ingresado todos los campos obligatorios con base en la regla de negocio \cdtIdRef{RN8}{Datos obligatorios}. \refTray{J}
-	\UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{K} 
-	\UCpaso[\UCsist] Registra la información de la precondición en el sistema.
-	\UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla donde se solicitó la operación
-	para indicar al actor que el registro se ha realizado exitosamente. 
+	\UCpaso[\UCactor] Ingresa la redacción de la precondición. \refTray{A} \refTray{B} \refTray{C} \refTray{D} \refTray{E} \refTray{F} \refTray{G} \refTray{H} \refTray{I} \label{cu5.1.2.1:ingresaRedaccion}
+	\UCpaso[\UCactor] Solicita registrar la precondición oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{CU 5.1.2.1}{Registrar precondición}. \refTray{J} 
+	\UCpaso[\UCsist] Verifica que el actor haya ingresado todos los campos obligatorios con base en la regla de negocio \cdtIdRef{RN8}{Datos obligatorios}. \refTray{K}
+	\UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{L} 
+	\UCpaso[\UCsist] Muestra la precondición en la tabla de precondiciones de la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o de la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}.
 \end{UCtrayectoria}
 
     
@@ -72,103 +61,108 @@
  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
  \begin{UCtrayectoriaA}{A}{El actor desea ingresar una entidad.}
  	
- 	 \UCpaso[\UCactor] Ingresa el token ``ENT.''.
+ 	 \UCpaso[\UCactor] Ingresa el token ``ENT·''.
  	\UCpaso[\UCsist] Busca las entidades registradas en el sistema. 
  	\UCpaso[\UCsist] Muestra la lista de entidades encontradas.
  	\UCpaso[\UCactor] Selecciona una entidad de la lista.
-  	\UCpaso[\UCsist] Oculta el texto ``ENT.'' y muestra únicamente el nombre de la entidad.
+  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre de la entidad al texto.
     \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.
  \end{UCtrayectoriaA}
  
   %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
  \begin{UCtrayectoriaA}{B}{El actor desea ingresar un actor.}
- 	\UCpaso[\UCactor] Ingresa el token ``ACT.''.
+ 	\UCpaso[\UCactor] Ingresa el token ``ACT·''.
  	\UCpaso[\UCsist] Busca los actores registrados en el sistema. 
  	\UCpaso[\UCsist] Muestra la lista de actores encontrados.
  	\UCpaso[\UCactor] Selecciona un actor de la lista.
-  	\UCpaso[\UCsist] Oculta el texto ``ACT.'' y muestra únicamente el nombre del actor.
+  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre del actor al texto.
     \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.
  \end{UCtrayectoriaA}
 
   %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
  \begin{UCtrayectoriaA}{C}{El actor desea ingresar un caso de uso.}
-  	\UCpaso[\UCactor] Ingresa el token ``CU.''.	
+  	\UCpaso[\UCactor] Ingresa el token ``CU·''.	
  	\UCpaso[\UCsist] Busca los casos de uso registrados en el sistema. 
  	\UCpaso[\UCsist] Muestra la lista de casos de uso encontrados.
  	\UCpaso[\UCactor] Selecciona un caso de uso de la lista.
-  	\UCpaso[\UCsist] Oculta el texto ``CU.'' y muestra únicamente el nombre del caso de uso.
+  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre del caso de uso al texto.
     \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.
  \end{UCtrayectoriaA}
 
   %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
  \begin{UCtrayectoriaA}{D}{El actor desea ingresar una pantalla.}
- 	\UCpaso[\UCactor] Ingresa el token ``IU.''.	
+ 	\UCpaso[\UCactor] Ingresa el token ``IU·''.	
  	\UCpaso[\UCsist] Busca las pantallas registradas en el sistema. 
  	\UCpaso[\UCsist] Muestra la lista de pantallas encontradas.
  	\UCpaso[\UCactor] Selecciona una pantalla de la lista.
-  	\UCpaso[\UCsist] Oculta el texto ``IU.'' y muestra únicamente el nombre de la pantalla.
+  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre de la pantalla al texto.
     \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.
  \end{UCtrayectoriaA}
 
  %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
  \begin{UCtrayectoriaA}{E}{El actor desea ingresar un mensaje.}
- 	 \UCpaso[\UCactor] Ingresa el token ``MSJ.''.	
+ 	 \UCpaso[\UCactor] Ingresa el token ``MSG·''.	
  	\UCpaso[\UCsist] Busca los mensajes registrados en el sistema. 
  	\UCpaso[\UCsist] Muestra la lista de mensajes.
  	\UCpaso[\UCactor] Selecciona un mensaje de la lista.
-  	\UCpaso[\UCsist] Oculta el texto ``MSJ.'' y muestra únicamente el nombre de la pantalla.
+  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre del mensaje al texto.
     \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.
  \end{UCtrayectoriaA}
 
   %----------------------------------------------------------%trayectoria F---------------------------------------------------- 
  \begin{UCtrayectoriaA}{F}{El actor desea ingresar una regla de negocio.}
- 	\UCpaso[\UCactor] Ingresa el token ``RN.''.	
+ 	\UCpaso[\UCactor] Ingresa el token ``RN·''.	
  	\UCpaso[\UCsist] Busca las reglas de negocio registradas en el sistema. 
  	\UCpaso[\UCsist] Muestra la lista de reglas de negocio.
  	\UCpaso[\UCactor] Selecciona una regla de negocio de la lista.
-  	\UCpaso[\UCsist] Oculta el texto ``RN.'' y muestra únicamente el nombre de la regla de negocio.
+  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre de la regla de negocio al texto.
     \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.
  \end{UCtrayectoriaA}
 
   %----------------------------------------------------------%trayectoria G---------------------------------------------------- 
  \begin{UCtrayectoriaA}{G}{El actor desea ingresar un término del glosario.}
- 	\UCpaso[\UCactor] Ingresa el token ``GLS.''.	
+ 	\UCpaso[\UCactor] Ingresa el token ``GLS·''.	
  	\UCpaso[\UCsist] Busca los términos del glosario registrados en el sistema. 
  	\UCpaso[\UCsist] Muestra la lista de términos del glosario.
  	\UCpaso[\UCactor] Selecciona un término del glosario de la lista.
-  	\UCpaso[\UCsist] Oculta el texto ``GLS.'' y muestra únicamente el nombre del término del glosario.
+  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre del término del glosario al texto.
     \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.
  \end{UCtrayectoriaA}
 
   %----------------------------------------------------------%trayectoria H---------------------------------------------------- 
  \begin{UCtrayectoriaA}{H}{El actor desea ingresar un atributo de una entidad.}
- 	\UCpaso[\UCactor] Ingresa el token ``ENT.''.
- 	\UCpaso[\UCsist] Busca las entidades registradas en el sistema. 
- 	\UCpaso[\UCsist] Muestra la lista de entidades encontradas.
- 	\UCpaso[\UCactor] Selecciona la entidad a la que pertenece el atributo.
-  	\UCpaso[\UCactor] Ingresa el token ``.''.
-  	\UCpaso[\UCsist] Busca los atributos de la entidad seleccionada.
+ 	\UCpaso[\UCactor] Ingresa el token ``ATR·''.
+  	\UCpaso[\UCsist] Busca los atributos de las entidades registradas.
   	\UCpaso[\UCsist] Muestra la lista de atributos encontrados.
  	\UCpaso[\UCactor] Selecciona un atributo de la lista.
-  	\UCpaso[\UCsist] Oculta el texto de los tokens ingregsados y muestra únicamente el nombre del atributo.
+  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre del atributo al texto.
     \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.
  \end{UCtrayectoriaA}
 
-
  %----------------------------------------------------------%trayectoria I---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{I}{El actor desea cancelar la operación.}
+ \begin{UCtrayectoriaA}{I}{El actor desea ingresar un paso.}
+ 	\UCpaso[\UCactor] Ingresa el token ``P·''.
+  	\UCpaso[\UCsist] Busca los pasos de las trayectorias del caso de uso.
+  	\UCpaso[\UCsist] Muestra la lista de pasos encontrados.
+ 	\UCpaso[\UCactor] Selecciona un paso de la lista.
+  	\UCpaso[\UCsist] Oculta la lista y agrega el número del paso al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+ %----------------------------------------------------------%trayectoria J---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{J}{El actor desea cancelar la operación.}
     \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{CU 5.1.2.1}{Registrar precondición}.
     \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o \cdtIdRef{IU 5.2}{Modificar caso de uso} según corresponda.
  \end{UCtrayectoriaA}
  
- %----------------------------------------------------------%trayectoria J---------------------------------------------------- 
- \begin{UCtrayectoriaA}{J}{El actor no ingresó algún dato marcado como obligatorio.}
+ %----------------------------------------------------------%trayectoria K---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{K}{El actor no ingresó algún dato marcado como obligatorio.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla \cdtIdRef{CU 5.1.2.1}{Registrar precondición}, indicando al actor que el dato es obligatorio.
     \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.
  \end{UCtrayectoriaA}
  
- %----------------------------------------------------------%trayectoria K --------------------------------------------------  
- \begin{UCtrayectoriaA}{K}{El actor proporciona un dato que excede la longitud máxima.}
+ %----------------------------------------------------------%trayectoria L --------------------------------------------------  
+ \begin{UCtrayectoriaA}{L}{El actor proporciona un dato que excede la longitud máxima.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
     longitud en la pantalla \cdtIdRef{CU 5.1.2.1}{Registrar precondición}, para indicar que el dato excede el tamaño máximo permitido.
     \UCpaso[] Continúa con el paso \ref{cu5.1.2.1:ingresaRedaccion} de la trayectoria principal.

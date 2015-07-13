@@ -15,10 +15,10 @@
     	
     \begin{itemize}
 	    \item {\bf En registro:} Los elementos en este estado no se muestran en la tabla de gestión.
-	    \item {\bf En edición:} Para este estado se muestra el botón \btnConsulta, si el actor es el que lo está editando o es el líder de análisis además se mostrará el botón \btnEditar.
-            \item {\bf Terminado:} Para este estado se muestran los botones \btnConsulta \btnRevisar \btnEliminar, si el actor es el líder de análisis además se mostrarán el botón \btnEditar.
-            \item {\bf En revisión:} Para este estado se muestra el botón \btnConsulta, si el actor es el que lo está revisando además se mostrará el botón \btnRevisar.
-            \item {\bf Liberado:} Para este estado se muestra el botón \btnConsulta, si el actor es el líder de análisis además se mostrará el botón \btnEditar.
+	    \item {\bf Edición:} Para este estado se muestra el botón \btnConsulta, si el actor es el que lo está editando o es el líder de análisis además se mostrarán los botones \btnEditar, \btnTray, \btnExt.
+            \item {\bf Terminado:} Para este estado se muestran los botones \btnConsulta \btnRevisar \btnEliminar, si el actor es el líder de análisis además se mostrarán los botones \btnEditar, \btnTray, \btnExt.
+            \item {\bf Revisión:} Para este estado se muestra el botón \btnConsulta, si el actor es el que lo está revisando además se mostrará el botón \btnRevisar.
+            \item {\bf Liberado:} Para este estado se muestra el botón \btnConsulta, si el actor es el líder de análisis además se mostrarán los botones \btnEditar, \btnTray, \btnExt.
     \end{itemize}
 
 
@@ -29,6 +29,8 @@
 \begin{itemize}
 	\item \cdtButton{Registrar}: Permite al actor solicitar el registro de un caso de uso, dirige a la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso}.
 	\item \btnEditar[Modificar]: Permite al actor solicitar la modificación de un caso de uso, dirige a la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}.
+	\item \btnTray[Gestionar Trayectorias]: Permite al actor gestionar las trayectorias del caso de uso, dirige a la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias}.
+	\item \btnExt[Gestionar Puntos de extensión]: Permite al actor gestionar los puntos de extensión del caso de uso, dirige a la pantalla \cdtIdRef{IU 5.1.4}{Gestionar puntos de extensión}.
 	\item \btnEliminar[Eliminar]: Permite al actor solicitar la eliminación de un caso de uso, dirige a la pantalla \cdtIdRef{IU 5.3}{Eliminar caso de uso}.
 	\item \btnConsulta[Consultar]: Permite al actor solicitar la consulta de un caso de uso, dirige a la pantalla \cdtIdRef{IU 5.4}{Consultar caso de uso}.
 	\item \btnRevisar[Revisar]: Permite al actor solicitar la revisión de un caso de uso, dirige a la pantalla \cdtIdRef{IU 5.5}{Revisar caso de uso}.

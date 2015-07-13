@@ -12,7 +12,7 @@
 	}
 	\UCitem{Salidas}{
 		\begin{UClist}
-			\UCli \cdtRef{Precondicion}{Precondición}: \ioTabla{el \cdtRef{Precondicion:Numero}{Número} y la \cdtRef{Precondicion:Redacción}{Redacción}}.
+			\UCli \cdtRef{Precondicion}{Precondición}: \ioTabla{la \cdtRef{Precondicion:Redacción}{Redacción}}.
 		\end{UClist}
 	}
 	
@@ -29,7 +29,6 @@
 	\UCitem{Postcondiciones}{
 		\begin{UClist}
 			\UCli Se podrá solicitar el registro de una precondición por medio del caso de uso \cdtIdRef{CU 5.1.2.1}{Registrar precondición}.
-			\UCli Se podrá solicitar la modificación de una precondición por medio del caso de uso \cdtIdRef{CU 5.1.2.2}{Modificar precondición}.
 			\UCli Se podrá solicitar la eliminación de una precondición por medio del caso de uso \cdtIdRef{CU 5.1.2.3}{Eliminar precondición}.
 		\end{UClist}
 	}
@@ -44,15 +43,21 @@
 \end{UseCase}
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
-    \UCpaso[\UCactor] Solicita gestionar las precondiciones del caso de uso seleccionando la opción ``Precondiciones'' de la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o \cdtIdRef{IU 5.2}{Modificar caso de uso}.
-    \UCpaso[\UCsist] Busca información de las precondiciones del caso de uso. \refTray{A}
-    \UCpaso[\UCsist] Muestra la información de las precondiciones en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o \cdtIdRef{IU 5.2}{Modificar caso de uso}. 
-    \UCpaso[\UCactor] Gestiona las precondiciones a través de los botones: \btnAgregar, \btnEditar y \btnEliminar. \label{cu5.1.2:gestionaCU}
+    \UCpaso[\UCactor] Solicita gestionar las precondiciones del caso de uso en la sección ``Precondiciones'' de la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o \cdtIdRef{IU 5.2}{Modificar caso de uso}.
+    \UCpaso[\UCsist] Verifica que la operación sea registrar caso de uso. \refTray{A}
+    \UCpaso[\UCactor] Gestiona las precondiciones a través de los botones: \cdtButton{Registrar} y \btnEliminar. \label{cu5.1.2:gestionaCU}
  \end{UCtrayectoria}
  
- \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No existen registros de precondiciones.}
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{La operación es una modificación.}
+    \UCpaso[\UCsist] Busca información de las precondiciones del caso de uso. \refTray{B}
+    \UCpaso[\UCsist] Muestra la información de las precondiciones en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o \cdtIdRef{IU 5.2}{Modificar caso de uso}. 
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2:gestionaCU} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{No existen registros de precondiciones.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG2}{No existe información} en la pantalla correspondiente
     para indicar que no hay registros de precondiciones para mostrar.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2:gestionaCU} de la trayectoria principal.
  \end{UCtrayectoriaA}
  
 
@@ -61,9 +66,6 @@
 \UCExtensionPoint{El actor requiere registrar una precondición}
 	{Paso \ref{cu5.1.2:gestionaCU}}
 	{\cdtIdRef{CU 5.1.2.1}{Registrar precondición}}
-\UCExtensionPoint{El actor requiere modificar una precondición}
-	{Paso \ref{cu5.1.2:gestionaCU}}
-	{\cdtIdRef{CU 5.1.2.2}{Modificar precondición}}
 \UCExtensionPoint{El actor requiere eliminar una precondición}
 	{Paso \ref{cu5.1.2:gestionaCU}}
 	{\cdtIdRef{CU 5.1.2.3}{Eliminar precondición}}

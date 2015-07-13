@@ -7,11 +7,11 @@
 
     En la figura ~\ref{IU 11} se muestra la pantalla ``Gestionar entidades'', por medio de la cual 
     se podrán gestionar las entidades a través de una tabla.
-    El actor podrá podrá solicitar el registro, la modificación y la eliminación de una entidad mediante los botones
-    \cdtButton{Registrar}, \btnEditar y \btnEliminar respectivamente. \\
+    El actor podrá podrá solicitar el registro, la consulta, la modificación y la eliminación de una entidad mediante los botones
+    \cdtButton{Registrar}, \btnConsulta, \btnEditar y \btnEliminar respectivamente. \\
     
     Los botones correspondientes a las opciones mencionadas para cada uno de los registros aparecerán en la tabla dependiendo de si 
-    un analista está modificando el elemento. Cuando un elemento está siendo modificado, los demás analistas no tendrán operaciones disponibles.\\
+    un analista está modificando el elemento. Cuando un elemento está siendo modificado, los demás analistas solamente podrán consultarlo.\\
    
     Cuando ninguno de los analistas este modificando la entidad, los botones para modificar y eliminar estarán disponibles.
     
@@ -23,6 +23,7 @@
 	\item \cdtButton{Registrar}: Permite al actor solicitar el registro de una entidad, dirige a la pantalla \cdtIdRef{IU 11.1}{Registrar entidad}.
 	\item \btnEditar[Modificar]: Permite al actor solicitar la modificación de una entidad, dirige a la pantalla \cdtIdRef{IU 11.2}{Modificar entidad}.
 	\item \btnEliminar[Eliminar]: Permite al actor solicitar la eliminación de una entidad, dirige a la pantalla \cdtIdRef{IU 11.3}{Eliminar entidad}.
+	\item \btnConsulta[Consultar]: Permite al actor solicitar la consulta de una entidad, dirige a la pantalla \cdtIdRef{IU 11.4}{Consultar entidad}.
 \end{itemize}
 
 \subsubsection{Mensajes}

@@ -7,10 +7,9 @@
 \subsubsection{Diseño}
 
     En la figura ~\ref{IU 9.1} se muestra la pantalla ``Registrar mensaje'' que permite registrar un mensaje. El actor deberá ingresar la información solicitada 
-    y seleccionar si es parametrizado el mensaje. Si el actor selecciona que el mensaje es parametrizado, el sistema mostrará la pantalla ~\ref{IU 9.1a} y 
+    y agregar parámetros con el token PARAM· en caso de ser necesario. Si el mensaje es parametrizado, el sistema mostrará la pantalla ~\ref{IU 9.1a} y 
     cuando el actor indique el uso de un parámetro el sistema agregará a la pantalla un campo para que el actor pueda ingresar la descripción del parámetro. 
-    Si el actor selecciona que el mensaje no es parametrizado, el sistema mostrará la pantalla de la figura ~\ref{IU 9.1b}.\\
-    
+    Cuando un mensaje no es parametrizado, el sistema mostrará la pantalla de la figura ~\ref{IU 9.1b}.\\
     
     El actor deberá oprimir el botón \cdtButton{Aceptar}. El sistema validará y registrará la información sólo si se han cumplido todas las reglas de negocio establecidas.  \\
     
@@ -36,5 +35,6 @@
 	\item[\cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 9.1}{Registrar mensaje} cuando no se ha ingresado un dato marcado como obligatorio.
 	\item[\cdtIdRef{MSG5}{Dato incorrecto}:] Se muestra en la pantalla \cdtIdRef{IU 9.1}{Registrar mensaje} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
 	\item[\cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 9.1}{Registrar mensaje} cuando se ha excedido la longitud de alguno de los campos.
-	\item[\cdtIdRef{MSG7}{Registro repetido}:] Se muestra en la pantalla \cdtIdRef{IU 9.1}{Registrar mensaje} cuando se registre un mensaje con un nombre que ya este registrado.
+	\item[\cdtIdRef{MSG7}{Registro repetido}:] Se muestra en la pantalla \cdtIdRef{IU 9.1}{Registrar mensaje} cuando se registre un mensaje con un nombre o número que ya este registrado.
+	\item[\cdtIdRef{MSG23}{Caracteres inválidos}:] Se muestra en la pantalla \cdtIdRef{IU 9.1}{Registrar mensaje} cuando el nombre del mensaje contiene un caracter no válido.
 \end{description}

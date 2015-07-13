@@ -1,5 +1,6 @@
 \section{Reglas de negocio}
 %---------------------------------------------------------
+
 % \begin{BusinessRule}{RN01}{Eliminación de elementos}
 %     {Restricción de operación}
 %     {Controla la operación}
@@ -17,11 +18,26 @@
 %     \BRitem{Estatus}{Edición}
 %     \BRitem{Descripción}{Los módulos del sistema podrán ser eliminados cuando no contengan casos de uso o pantallas asociados.}	
 % \end{BusinessRule}
-
+\begin{BusinessRule}{RN01}{Unicidad de números}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{1.0}
+    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{El número de los elementos del mismo tipo no pueden repetirse.}	
+\end{BusinessRule}
+\begin{BusinessRule}{RN02}{Nombres de los elementos}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{1.0}
+    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{Los nombres de los elementos no pueden contener coma, punto, punto medio, dos puntos o guión bajo.}
+\end{BusinessRule}
 \begin{BusinessRule}{RN03}{Líder de análisis}
     {Restricción de operación}
     {Controla la operación}
-    \BRitem{Versión}{0.1}
+    \BRitem{Versión}{1.0}
     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
     \BRitem{Estatus}{Edición}
     \BRitem{Descripción}{Los proyectos deben tener asignado solamente un líder de análisis.}	
@@ -30,34 +46,34 @@
 \begin{BusinessRule}{RN04}{Integrantes de un proyecto}
     {Restricción de operación}
     {Controla la operación}
-    \BRitem{Versión}{0.1}
+    \BRitem{Versión}{1.0}
     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
     \BRitem{Estatus}{Edición}
     \BRitem{Descripción}{Los proyectos deben tener al menos un integrante.}	
 \end{BusinessRule}
 
-\begin{BusinessRule}{RN05}{Numeración de elementos}
-    {Restricción de operación}
-    {Controla la operación}
-    \BRitem{Versión}{0.1}
-    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
-    \BRitem{Estatus}{Edición}
-    \BRitem{Descripción}{Para asignar el número de un elemento en el registro, el sistema buscará el último número asociado a la clave y le sumará 1. }
-\end{BusinessRule}
+%\begin{BusinessRule}{RN05}{Numeración de elementos}
+%     {Restricción de operación}
+%     {Controla la operación}
+%     \BRitem{Versión}{0.1}
+%     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+%     \BRitem{Estatus}{Edición}
+%     \BRitem{Descripción}{Para asignar el número de un elemento en el registro, el sistema buscará el último número asociado a la clave y le sumará 1. }
+% \end{BusinessRule}
 
 \begin{BusinessRule}{RN6}{Unicidad de nombres}
     {Restricción de operación}
     {Controla la operación}
-    \BRitem{Versión}{0.1}
+    \BRitem{Versión}{1.0}
     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
     \BRitem{Estatus}{Edición}
-    \BRitem{Descripción}{El nombre de los elementos no puede repetirse.}	
+    \BRitem{Descripción}{El nombre de los elementos del mismo tipo no puede repetirse.}	
 \end{BusinessRule}
 
 \begin{BusinessRule}{RN7}{Información correcta}
     {Restricción de operación}
     {Controla la operación}
-    \BRitem{Versión}{0.1}
+    \BRitem{Versión}{1.0}
     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
     \BRitem{Estatus}{Edición}
     \BRitem{Descripción}{La información que el usuario proporcione, debe ser del tipo y longitud definida en el modelo conceptual.}	
@@ -66,7 +82,7 @@
 \begin{BusinessRule}{RN8}{Datos obligatorios}
     {Restricción de operación}
     {Controla la operación}
-    \BRitem{Versión}{0.1}
+    \BRitem{Versión}{1.0}
     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
     \BRitem{Estatus}{Edición}
     \BRitem{Descripción}{El usuario debe ingresar toda la información marcada como obligatoria en el modelo conceptual.}	
@@ -75,7 +91,7 @@
 \begin{BusinessRule}{RN9}{Operaciones disponibles de casos de uso}
     {Restricción de operación}
     {Controla la operación}
-    \BRitem{Versión}{0.1}
+    \BRitem{Versión}{1.0}
     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
     \BRitem{Estatus}{Edición}
     \BRitem{Descripción}{
@@ -102,7 +118,7 @@
 \begin{BusinessRule}{RN10}{Referencias a elementos}
     {Restricción de operación}
     {Controla la operación}
-    \BRitem{Versión}{0.1}
+    \BRitem{Versión}{1.0}
     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
     \BRitem{Estatus}{Edición}
     \BRitem{Descripción}{Los elementos que podrán ser referenciados desde los casos de uso son aquellos que ya han sido registrados.}	
@@ -112,7 +128,7 @@
 \begin{BusinessRule}{RN11}{Registro de trayectorias}
     {Restricción de operación}
     {Controla la operación}
-    \BRitem{Versión}{0.1}
+    \BRitem{Versión}{1.0}
     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
     \BRitem{Estatus}{Edición}
     \BRitem{Descripción}{Al menos una de las trayectorias registradas debe ser marcada como principal.}	
@@ -122,7 +138,7 @@
 \begin{BusinessRule}{RN12}{Identificador de elemento}
     {Restricción de operación}
     {Controla la operación}
-    \BRitem{Versión}{0.1}
+    \BRitem{Versión}{1.0}
     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
     \BRitem{Estatus}{Edición}
     \BRitem{Descripción}{El identificador de cada elemento se compone de un nombre, número y una clave. Donde el nombre es el que le asigna el usuario, el número 
@@ -134,7 +150,7 @@
 \begin{BusinessRule}{RN13}{Modificación del identificador}
     {Restricción de operación}
     {Controla la operación}
-    \BRitem{Versión}{0.1}
+    \BRitem{Versión}{1.0}
     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
     \BRitem{Estatus}{Edición}
     \BRitem{Descripción}{Una vez registrado un elemento no se podrá modificar el nombre, el número o la clave del identificador.}
@@ -143,7 +159,7 @@
 \begin{BusinessRule}{RN14}{Salidas del caso de uso}
     {Restricción de operación}
     {Controla la operación}
-    \BRitem{Versión}{0.1}
+    \BRitem{Versión}{1.0}
     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
     \BRitem{Estatus}{Edición}
     \BRitem{Descripción}{En las salidas del caso de uso podrán enlistarse mensajes y atributos de las entidades.}
@@ -152,9 +168,27 @@
 \begin{BusinessRule}{RN15}{Elementos en uso}
     {Restricción de operación}
     {Controla la operación}
-    \BRitem{Versión}{0.1}
+    \BRitem{Versión}{1.0}
     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
     \BRitem{Estatus}{Edición}
     \BRitem{Descripción}{Cuando un analista esté modificando un elemento que no sea un caso de uso, ningún otro analista podrá solicitar 
     su edición, ni eliminación. La única operación disponible será la consulta.}
+\end{BusinessRule}
+
+\begin{BusinessRule}{RN16}{Nombres de las trayecorias}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{1.0}
+    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{Los nombres de las trayectorias no pueden contener espacio, coma, punto, punto medio, dos puntos o guión bajo.}
+\end{BusinessRule}
+
+\begin{BusinessRule}{RN17}{Unicidad de puntos de extensión}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{1.0}
+    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{No puede existir más de un punto de extensión con el mismo caso de uso origen y el mismo caso de uso destino.}
 \end{BusinessRule}

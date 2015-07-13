@@ -112,3 +112,34 @@
     \item[Objetivo:] Informar al actor que algunos elementos mencionados en las trayectorias no están en la descripción del caso de uso.
     \item[Redacción:] Hay elementos que están siendo utilizados en las trayectorias pero no están en la descripción del caso de uso.
 \end{mensaje}
+%============================== MSG15 =================================
+\begin{mensaje}{MSG15}{Dato no registrado}{Error}
+    \item[Objetivo:] Informar al actor que el dato que ingresó o referenció no existe en el sistema.
+    \item[Redacción:] Datos incorrecto, DETERMINADO ELEMENTO VALOR no se encuentra registrado en el sistema.
+    \item[Parámetros:] El mensaje se muestra con base en los siguientes parámetros:
+    \begin{Citemize}
+	\item DETERMINADO ENTIDAD: Artículo determinado más el nombre de un elemento.
+	\item VALOR: El nombre o identificador de la entidad que no está registrada en el sistema.
+    \end{Citemize}
+    \item[Ejemplo:] Datos incorrectos, { \em el actor Alumno} no se encuentra registrado en el sistema.
+\end{mensaje}
+%============================== MSG18 =================================
+\begin{mensaje}{MSG18}{Registro necesario}{Error}
+    \item[Objetivo:] Informar al actor que debe realizar el registro de al menos un elemento para continuar con la operación.
+    \item[Redacción:] Ingrese al menos INDETERMINADO ENTIDAD.
+    \item[Parámetros:] El mensaje se muestra con base en los siguientes parámetros:
+    \begin{Citemize}
+	\item INDETERMINADO ENTIDAD: Artículo indeterminado más el nombre de una entidad.
+    \end{Citemize}
+    \item[Ejemplo:] Ingrese al menos {\em un paso}.
+\end{mensaje}
+%============================== MSG23 =================================
+\begin{mensaje}{MSG23}{Caracteres inválidos}{Error}
+    \item[Objetivo:] Informar al actor que el dato que ingresó no puede contener coma, punto, punto medio, dos puntos o guión bajo.
+    \item[Redacción:] DETERMINADO ATRIBUTO no puede contener coma, punto, punto medio, dos puntos o guión bajo.
+    \item[Parámetros:] El mensaje se muestra con base en los siguientes parámetros:
+    \begin{Citemize}
+	\item DETERMINADO ATRIBUTO: Artículo determinado más el nombre del atributo que no puede contener coma, punto, punto medio, dos puntos o guión bajo.
+    \end{Citemize}
+    \item[Ejemplo:] { \em El nombre} no puede contener coma, punto, punto medio, dos puntos o guión bajo.
+\end{mensaje}

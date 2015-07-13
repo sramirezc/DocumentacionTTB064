@@ -10,13 +10,15 @@
 	}
 	\UCitem{Entradas}{
 		\begin{UClist}
-			\UCli \cdtRef{Trayectoria:Alternativa}{Principal o alternativa}: \ioSeleccionar.
-			\UCli \cdtRef{Trayectoria:Identificador}{Nombre de la trayectoria}: \ioEscribir.
+			\UCli \cdtRef{Trayectoria:Identificador}{Clave}: \ioEscribir
+			\UCli \cdtRef{Trayectoria:Alternativa}{Tipo}: \ioSeleccionar
+			\UCli \cdtRef{Trayectoria:Condicion}{Condición}: \ioEscribir
+			\UCli \cdtRef{Trayectoria:FindelCasodeUso}{Fin del caso de uso}: \ioSeleccionar
 		\end{UClist}
 	}
 	\UCitem{Salidas}{
 		\begin{UClist}
-			\UCli \cdtRef{Paso}{Pasos} de la trayectoria.
+			\UCli \cdtRef{Elemento:Clave}{Clave}, \cdtRef{Elemento:Numero}{número} y \cdtRef{Elemento:Nombre}{nombre} del caso de uso al que pertenece la trayectoria.
 		\end{UClist}
 	}
 	
@@ -32,16 +34,22 @@
 	
 	\UCitem{Postcondiciones}{
 		\begin{UClist}
-			\UCli Los elementos utilizados en los pasos y que no estén descritos en la sección ``Descripción del Caso de uso'' de la pantalla 
-			      \cdtIdRef{CU 5.1}{Registrar caso de uso} se agregarán a la sección automáticamente.
+			\UCli Se podrá solicitar el registro de un paso por medio del caso de uso \cdtIdRef{CU 5.1.1.1.1}{Registrar paso}.
+			\UCli Se podrá solicitar el registro de un paso por medio del caso de uso \cdtIdRef{CU 5.1.1.1.2}{Modificar paso}.
+			\UCli Se podrá solicitar el registro de un paso por medio del caso de uso \cdtIdRef{CU 5.1.1.1.3}{Eliminar paso}.
 		\end{UClist}
 	}
 
 	\UCitem{Errores}{
+		\begin{UClist}
 			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando no se ha ingresado un dato marcado como obligatorio.
 			\UCli \cdtIdRef{MSG5}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
 			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando se ha excedido la longitud de alguno de los campos.
-			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando se haya ingresado un nombre que ya esté registrado.
+			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando se haya ingresado una clave que ya esté registrada.
+			\UCli \cdtIdRef{MSG15}{Dato no registrado}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando un elemento referenciado no existe en el sistema.
+			\UCli \cdtIdRef{MSG23}{Caracteres inválidos}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando el nombre del caso de uso contiene un caracter no válido.
+			\UCli \cdtIdRef{MSG27}{Token incorrecto}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando el token ingresado está mal formado.
+		\end{UClist}
 	}
 
 	\UCitem{Tipo}{
@@ -55,16 +63,21 @@
  \begin{UCtrayectoria}
 	\UCpaso[\UCactor] Solicita registrar una trayectoria oprimiento el botón \cdtButton{Registrar} de la la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias}. 
 	\UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} con el mensaje \cdtIdRef{MSG2}{No existe información} debido a que no hay pasos registrados para la trayectoria. 
-	
-	\UCpaso[\UCactor] Selecciona que es la trayectoria principal. \label{cu5.1.1.1:ingresaDatos}
 	\UCpaso[\UCactor] Ingresa el nombre de la trayectoria.
+	\UCpaso[\UCactor] Selecciona que es la trayectoria principal. \refTray{A} \label{cu5.1.1.1:ingresaDatos}
+	\UCpaso[\UCsist] Marca que en la trayectoria termina el caso de uso.
 	
 	\UCpaso[\UCactor] Gestiona los pasos de la trayectoria. \label{cu5.1.1.1:gestionaPasos}
-	\UCpaso[\UCactor] Solicita registrar la trayectoria oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria}. \refTray{A} 
+	\UCpaso[\UCactor] Solicita registrar la trayectoria oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria}. \refTray{B} 
 	
-	\UCpaso[\UCsist] Verifica que el actor haya ingresado todos los campos obligatorios con base en la regla de negocio \cdtIdRef{RN8}{Datos obligatorios}. \refTray{B}
-	\UCpaso[\UCsist] Verifica que la trayectoria no se encuentre registrada en el sistema con base en la regla de negocio \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{C}
-	\UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{D} \refTray{E}
+	\UCpaso[\UCsist] Verifica que el actor haya ingresado todos los campos obligatorios con base en la regla de negocio \cdtIdRef{RN8}{Datos obligatorios}. \refTray{C}
+	\UCpaso[\UCsist] Verifica que la trayectoria no se encuentre registrada en el sistema con base en la regla de negocio \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{D}
+	\UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{E} \refTray{F}
+	
+	\UCpaso[\UCsist] Verifica que la clave no contenga caracteres inválidos con base en la regla de negocio \cdtIdRef{RN16}{Nombres de las trayectorias}. \refTray{G}
+	\UCpaso[\UCsist] Verifica que el usuario haya ingresado al menos un paso. \refTray{H}
+	\UCpaso[\UCsist] Verifica que los tokens utilizados en los pasos esten bien formados. \refTray{I}
+	\UCpaso[\UCsist] Verifica que los elementos referenciados en los pasos existan. \refTray{J}
 	
 	\UCpaso[\UCsist] Registra la información de la trayectoria en el sistema.
 	
@@ -72,43 +85,62 @@
 	para indicar al actor que el registro se ha realizado exitosamente.
     
 \end{UCtrayectoria}
-%     \UCpaso[\UCactor] Selecciona si el actor o el sistema realiza el paso.
-%     \UCpaso[\UCactor] Ingresa la redacción del paso.
-%     \UCpaso[\UCactor] Solicita registrar la  oprimiendo el botón \cdtButton{Terminar} de la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso}. \refTray{C}  \refTray{D} 
-%     \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{E}
-%     \UCpaso[\UCsist] Verifica que el nombre del caso de uso no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{F}
-%     \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{G} \refTray{H}
-%     \UCpaso[\UCsist] Verifica que todos los elementos del caso de uso esten referenciados en las trayectorias. \refTray{I}
-%     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG8}{Caso de uso terminado} para preguntar al actor si desea continuar con la operación.
-    
  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El actor desea cancelar la operación.}
+ \begin{UCtrayectoriaA}{A}{El actor desea registrar una trayectoria alternativa.}
+    \UCpaso[\UCsist] Muestra el campo de condición.
+    \UCpaso[\UCactor] Ingresa la condición de la trayectoria.
+    \UCpaso[\UCactor] Selecciona si en la trayectoria se termina el caso de uso.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1:gestionaPasos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{El actor desea cancelar la operación.}
     \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria}.
     \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias}.
  \end{UCtrayectoriaA}
  
- %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
- \begin{UCtrayectoriaA}{B}{El actor no ingresó algún dato marcado como obligatorio.}
+ %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{C}{El actor no ingresó algún dato marcado como obligatorio.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
 	    \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria}, indicando al actor que el dato es obligatorio.
     \UCpaso[] Continúa con el paso \ref{cu5.1.1.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
- \begin{UCtrayectoriaA}{C}{El actor ingresó un nombre de trayectoria repetido.}
+ %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{D}{El actor ingresó un nombre de trayectoria repetido.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Registro repetido} y señala el campo que presenta la duplicidad en la pantalla 
 	    \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria}, indicando al actor que existe una trayectoria con el mismo nombre.
     \UCpaso[] Continúa con el paso \ref{cu5.1.1.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
- \begin{UCtrayectoriaA}{D}{El actor ingresó un tipo de dato incorrecto.}
+ %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{E}{El actor ingresó un tipo de dato incorrecto.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Formato incorrecto} y señala el campo que presenta el dato inválido en la 
     pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} para indicar que se ha ingresado un tipo de dato inválido.
     \UCpaso[] Continúa con el paso \ref{cu5.1.1.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria E--------------------------------------------------  
- \begin{UCtrayectoriaA}{E}{El actor proporciona un dato que excede la longitud máxima.}
+ %----------------------------------------------------------%trayectoria F--------------------------------------------------  
+ \begin{UCtrayectoriaA}{F}{El actor proporciona un dato que excede la longitud máxima.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
     longitud en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria}, para indicar que el dato excede el tamaño máximo permitido.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ 
+ %----------------------------------------------------------%trayectoria G---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{G}{El actor ingresó una clave con caracteres inválidos.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG23}{Caracteres inválidos} y señala el campo que contiene los caracteres inválidos.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria H---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{H}{El actor no registró ningún paso.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG18}{Registro necesario} en la sección de pasos.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria I---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{I}{El actor ingresó un token mal formado.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG27}{Token incorrecto} mencionando que el token utilizado en alguno de los pasos no es correcto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria J---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{J}{Alguno de los elementos referenciados no existe en el sistema.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG15}{Dato no registrado} mencionando el elemento que no está registrado en el sistema.
     \UCpaso[] Continúa con el paso \ref{cu5.1.1.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
 

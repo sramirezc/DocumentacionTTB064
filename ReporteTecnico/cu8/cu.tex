@@ -1,7 +1,7 @@
 \begin{UseCase}{CU 8}{Gestionar reglas de negocio}
 	{
 		Este caso de uso permite al analista visualizar los registros de las reglas de negocio del sistema. También permite 
-		al actor acceder a las operaciones de registro, modificación y eliminación de una regla de negocio.
+		al actor acceder a las operaciones de registro, consulta, modificación y eliminación de una regla de negocio.
 	}
 	
 	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
@@ -13,9 +13,7 @@
 	}
 	\UCitem{Salidas}{
 		\begin{UClist}
-			\UCli \cdtRef{Modulo:Clave}{Clave del módulo}: \ioObtener.
-			\UCli \cdtRef{Modulo:Nombre}{Nombre del módulo}: \ioObtener.
-			\UCli \cdtRef{Modulo:Descripcion}{Descripción del módulo}: \ioObtener.
+			\UCli \cdtRef{}{Clave} y \cdtRef{}{nombre} del proyecto.
 			\UCli \cdtRef{ReglaDeNegocio}{Regla de Negocio}: \ioTabla{el \cdtRef{Elemento:Nombre}{Nombre}}{de las reglas de negocio}.
 		\end{UClist}
 	}
@@ -35,6 +33,7 @@
 			\UCli Se podrá solicitar el registro de una regla de negocio por medio del caso de uso \cdtIdRef{CU 8.1}{Registrar regla de negocio}.
 			\UCli Se podrá solicitar la modificación de una regla de negocio por medio del caso de uso \cdtIdRef{CU 8.2}{Modificar regla de negocio}.
 			\UCli Se podrá solicitar la eliminación de una regla de negocio por medio del caso de uso \cdtIdRef{CU 8.3}{Eliminar regla de negocio}.
+			\UCli Se podrá solicitar la consulta de una regla de negocio por medio del caso de uso \cdtIdRef{CU 8.4}{Consultar regla de negocio}.
 		\end{UClist}
 	}
 
@@ -52,7 +51,7 @@
     \UCpaso[\UCsist] Busca la información de las reglas de negocio registradas en el sistema. \refTray{A}
     \UCpaso[\UCsist] Muestra la información de las reglas de negocio en la pantalla \cdtIdRef{IU 8}{Gestionar reglas de negocio} y las operaciones 
     disponibles de acuerdo a la regla de negocio \cdtIdRef{RN15}{Elementos en uso}. 
-    \UCpaso[\UCactor] Gestiona las reglas de negocio a través de los botones: \cdtButton{Registrar}, \btnEditar y \btnEliminar. \label{cu8:gestiona}
+    \UCpaso[\UCactor] Gestiona las reglas de negocio a través de los botones: \cdtButton{Registrar}, \btnConsulta, \btnEditar y \btnEliminar. \label{cu8:gestiona}
  \end{UCtrayectoria}
  
  \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No existen registros de reglas de negocio.}
@@ -72,4 +71,6 @@
 \UCExtensionPoint{El actor requiere eliminar una regla de negocio}
 	{Paso \ref{cu8:gestiona}}
 	{\cdtIdRef{CU 8.3}{Eliminar regla de negocio}}
-  
+\UCExtensionPoint{El actor requiere consultar una regla de negocio}
+	{Paso \ref{cu8:gestiona}}
+	{\cdtIdRef{CU 8.4}{Consultar regla de negocio}}

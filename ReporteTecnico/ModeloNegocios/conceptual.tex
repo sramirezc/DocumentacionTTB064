@@ -316,6 +316,7 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
     \Battr{Alternativa}{Alternativa}{\tdBooleano}{Bandera que especifica si la Trayectoria es alternativa o principal}{\requerido}
     \Battr{Identificador}{Identificador}{\tdPalabra}{Nombre o clave que identificará a la Trayectoria.}{\requerido}
     \Battr{Condicion}{Condición}{\tdFrase}{Texto que determina la circunstancia con la que se ejecuta la Trayectoria en caso de ser alternativa}{\requerido}
+    \Battr{FindelCasodeUso}{Fin del Caso de Uso}{\tdBooleano}{Bandera que especifica si la Trayectoria concluye el Caso de Uso.}{\requerido}
 \end{BusinessEntity}
 
 \subsubsection{Relaciones}
@@ -331,7 +332,6 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 \begin{BusinessEntity}{Paso}{Paso}
     \Battr{Numero}{Número}{\tdBooleano}{Número del Paso en la Trayectoria Principal}{\requerido}
     \Battr{RealizaActor}{Realiza Actor}{\tdBooleano}{Badera que especifica quién realiza el paso, el Actor o el Sistema}{\requerido}
-    \Battr{FindelCasodeUso}{Fin del Caso de Uso}{\tdBooleano}{Bandera que especifica si el paso concluye el Caso de Uso.}{\requerido}
     \Battr{Redaccion}{Redacción}{\tdFrase}{Redacción del Paso}{\requerido}
 \end{BusinessEntity}
 

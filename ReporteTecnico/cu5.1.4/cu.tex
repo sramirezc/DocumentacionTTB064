@@ -13,13 +13,14 @@
 	}
 	\UCitem{Salidas}{
 		\begin{UClist}
+			\UCli \cdtRef{Elemento:Clave}{Clave}, \cdtRef{Elemento:Numero}{número} y \cdtRef{Elemento:Nombre}{nombre} del caso de uso al que pertenece el punto de extensión.
 			\UCli \cdtRef{Extension}{Punto de Extensión}: \ioTabla{la \cdtRef{Extension:Causa}{Causa}, la región de la trayectoria y el caso de uso que extiende}.
 		\end{UClist}
 	}
 	
 	\UCitem{Mensajes}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG2}{No existe información}: Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o \cdtIdRef{IU 5.2}{Modificar caso de uso} cuando no existen puntos de extensión registradas.
+			\UCli \cdtIdRef{MSG2}{No existe información}: Se muestra en la pantalla \cdtIdRef{IU 5.1.4}{Gestionar puntos de extensión} cuando no existen puntos de extensión registrados.
 		\end{UClist}
 	}
 
@@ -32,6 +33,7 @@
 			\UCli Se podrá solicitar el registro de un punto de extensión por medio del caso de uso \cdtIdRef{CU 5.1.4.1}{Registrar punto de extensión}.
 			\UCli Se podrá solicitar la modificación de un punto de extensión por medio del caso de uso \cdtIdRef{CU 5.1.4.2}{Modificar punto de extensión}.
 			\UCli Se podrá solicitar la eliminación de un punto de extensión por medio del caso de uso \cdtIdRef{CU 5.1.4.3}{Eliminar punto de extensión}.
+			\UCli Se podrá regresar a la gestión de casos de uso.
 		\end{UClist}
 	}
 
@@ -40,15 +42,15 @@
 	}
 
 	\UCitem{Tipo}{
-		Secundario, extiende del caso de uso \cdtIdRef{CU 5.1}{Registrar caso de uso}.
+		Secundario, extiende del caso de uso \cdtIdRef{CU 5}{Gestionar casos de uso}.
 	}
 \end{UseCase}
-%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
-    \UCpaso[\UCactor] Solicita gestionar los puntos de extensión del caso de uso seleccionando la opción ``Puntos de Extensión'' de la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso}.
+    \UCpaso[\UCactor] Solicita gestionar los puntos de extensión del caso de uso presionando el botón \btnExt de la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
     \UCpaso[\UCsist] Busca información de los puntos de extensión del caso de uso. \refTray{A}
-    \UCpaso[\UCsist] Muestra la información de los puntos de extensión en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o \cdtIdRef{IU 5.2}{Modificar caso de uso}. 
-    \UCpaso[\UCactor] Gestiona los puntos de extensión a través de los botones: \btnAgregar, \btnEditar y \btnEliminar. \label{cu5.1.4:gestionaCU}
+    \UCpaso[\UCsist] Muestra la información de los puntos de extensión en la pantalla \cdtIdRef{IU 5.1.4}{Gestionar puntos de extensión}. 
+    \UCpaso[\UCactor] Gestiona los puntos de extensión a través de los botones: \cdtButton{Registrar}, \btnEditar y \btnEliminar. \refTray{B} \label{cu5.1.4:gestionaCU}
  \end{UCtrayectoria}
  
  \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No existen registros de puntos de extensión.}
@@ -56,6 +58,10 @@
     para indicar que no hay registros de puntos de extensión para mostrar.
  \end{UCtrayectoriaA}
  
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{El actor desea regresar a la gestión de casos de uso.}
+    \UCpaso[\UCactor] Presiona el botón \cdtButton{Regresar}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+ \end{UCtrayectoriaA}
 
 \subsection{Puntos de extensión}
 
