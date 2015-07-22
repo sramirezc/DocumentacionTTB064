@@ -8,9 +8,11 @@
 *.lof
 *.out
 *.toc
+*.bbl
+*.blg
 *reporte.pdf
 
-# OS generated files #
+# OSX generated files #
 ######################
 *.DS_Store
 *.DS_Store?
@@ -18,4 +20,8 @@
 *.Spotlight-V100
 *.Trashes
 
-
+# Debian generated files #
+######################
+*.bak
+*~
+*.backup
