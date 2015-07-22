@@ -1,0 +1,34 @@
+\subsection{IU 6.1.1 Registrar acción}
+
+\subsubsection{Objetivo}
+	
+	Esta pantalla permite al actor registrar la información de una acción perteneciente a una pantalla.
+
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 6.1.1} se muestra la pantalla ``Registrar acción'' que permite registrar una acción. El actor deberá ingresar la información solicitada,
+    y oprimir el botón \cdtButton{Aceptar}. El sistema validará y agregará la acción a la pantalla solamente si se han cumplido todas las reglas de negocio establecidas.  \\
+    
+    Finalmente la acción será agregada a la tabla de la pantalla \cdtIdRef{IU 6.1}{Registrar pantalla} o \cdtIdRef{IU 6.2}{Modificar pantalla} según corresponda. \\
+
+
+    \IUfig[.9]{cu6.1.1/images/iu.png}{IU 6.1.1}{Registrar acción}
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \cdtButton{Aceptar}: Permite al actor agregar a la pantalla el registro de la acción, dirige a la pantalla \cdtIdRef{IU 6.1}{Registrar pantalla} o \cdtIdRef{IU 6.2}{Modificar pantalla}, según corresponda.
+	\item \cdtButton{Cancelar}: Permite al actor cancelar el registro de la acción, dirige a la pantalla \cdtIdRef{IU 6.1}{Registrar pantalla} o \cdtIdRef{IU 6.2}{Modificar pantalla}, según corresponda.
+\end{itemize}
+
+\subsubsection{Mensajes}
+
+	
+\begin{description}
+	\item[\cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 6.1.1}{Registrar acción} cuando no se ha ingresado un dato marcado como obligatorio.
+	\item[\cdtIdRef{MSG5}{Dato incorrecto}:] Se muestra en la pantalla \cdtIdRef{IU 6.1.1}{Registrar acción} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+	\item[\cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 6.1.1}{Registrar acción} cuando se ha excedido la longitud de alguno de los campos.
+	\item[\cdtIdRef{MSG7}{Registro repetido}:] Se muestra en la pantalla \cdtIdRef{IU 6.1.1}{Registrar acción} cuando se registre una acción con un nombre que ya esté asociado a la pantalla.
+	\item[\cdtIdRef{MSG23}{Caracteres inválidos}:] Se muestra en la pantalla \cdtIdRef{IU 6.1.1}{Registrar acción} cuando el nombre de la acción contiene un caracter no válido.
+	\item[\cdtIdRef{MSG24}{Formato de archivo incorrecto}:] Se muestra en la pantalla \cdtIdRef{IU 6.1.1}{Registrar acción} cuando la imagen de la acción no cumpla con el formato especificado.
+	\item[\cdtIdRef{MSG25}{Se ha excedido el tamaño del archivo}:] Se muestra en la pantalla \cdtIdRef{IU 6.1.1}{Registrar acción} cuando la imagen de la acción exceda el tamaño especificado.
+\end{description}
