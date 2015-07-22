@@ -62,9 +62,9 @@
     
     \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{B}
     \UCpaso[\UCsist] Verifica que el nombre de la pantalla no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{C}
-    \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{D} \refTray{E} \refTray{F}
-    \UCpaso[\UCsist] Verifica que el nombre no contenga caracteres inválidos con base en la regla de negocio \cdtIdRef{RN2}{Nombres de los elementos}. \refTray{G}
-    \UCpaso[\UCsist] Verifica que el número del caso de uso no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN1}{Unicidad de números}. \refTray{H}    
+    \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{D} \refTray{E} \refTray{F} \refTray{G}
+    \UCpaso[\UCsist] Verifica que el nombre no contenga caracteres inválidos con base en la regla de negocio \cdtIdRef{RN2}{Nombres de los elementos}. \refTray{H}
+    \UCpaso[\UCsist] Verifica que el número del caso de uso no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN1}{Unicidad de números}. \refTray{I}    
     
     \UCpaso[\UCsist] Registra la información de la pantalla en el sistema.
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 6}{Gestionar pantallas}
@@ -95,28 +95,35 @@
     longitud en la pantalla \cdtIdRef{IU 6.1}{Registrar pantalla}, para indicar que el dato excede el tamaño máximo permitido.
     \UCpaso[] Continúa con el paso \ref{cu6.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
+ 
+ %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{E}{El actor ingresó un tipo de dato incorrecto.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Formato incorrecto} y señala el campo que presenta el dato inválido en la 
+    pantalla \cdtIdRef{IU 6.1}{Registrar pantalla} para indicar que se ha ingresado un tipo de dato inválido.
+    \UCpaso[] Continúa con el paso \ref{cu6.1:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
 
- %----------------------------------------------------------%trayectoria E----------------------------------------------------  
- \begin{UCtrayectoriaA}{E}{El actor proporciona una imagen de formato incorrecto.}
+ %----------------------------------------------------------%trayectoria F----------------------------------------------------  
+ \begin{UCtrayectoriaA}{F}{El actor proporciona una imagen de formato incorrecto.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG24}{Formato de archivo incorrecto} y señala el campo donde se solicita la imagen
     en la pantalla \cdtIdRef{IU 6.1}{Registrar pantalla}, para indicar que el formato es incorrecto.
     \UCpaso[] Continúa con el paso \ref{cu6.1:seleccionaImagen} de la trayectoria principal.
  \end{UCtrayectoriaA}
  
- %----------------------------------------------------------%trayectoria F----------------------------------------------------  
- \begin{UCtrayectoriaA}{F}{El actor proporciona una imagen que excede el tamaño máximo}
+ %----------------------------------------------------------%trayectoria G----------------------------------------------------  
+ \begin{UCtrayectoriaA}{G}{El actor proporciona una imagen que excede el tamaño máximo}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG25}{Se ha excedido el tamaño del archivo} y señala el campo donde se solicita la imagen
     en la pantalla \cdtIdRef{IU 6.1}{Registrar pantalla}, para indicar que el tamaño máximo ha sido rebasado.
     \UCpaso[] Continúa con el paso \ref{cu6.1:seleccionaImagen} de la trayectoria principal.
  \end{UCtrayectoriaA}
  
- %----------------------------------------------------------%trayectoria G---------------------------------------------------- 
- \begin{UCtrayectoriaA}{G}{El actor ingresó un nombre con caracteres inválidos.}
+ %----------------------------------------------------------%trayectoria H---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{H}{El actor ingresó un nombre con caracteres inválidos.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG23}{Caracteres inválidos} y señala el campo que contiene los caracteres inválidos.
     \UCpaso[] Continúa con el paso \ref{cu6.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria H---------------------------------------------------- 
- \begin{UCtrayectoriaA}{H}{El actor ingresó un número de regla de negocio repetido.}
+ %----------------------------------------------------------%trayectoria I---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{I}{El actor ingresó un número de regla de negocio repetido.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Registro repetido} y señala el campo que presenta la duplicidad en la pantalla 
 	    \cdtIdRef{IU 6.1}{Registrar pantalla}, indicando al actor que existe una regla de negocio con el mismo número.
     \UCpaso[] Continúa con el paso \ref{cu6.1:ingresaDatos} de la trayectoria principal.
