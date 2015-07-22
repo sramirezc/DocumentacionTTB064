@@ -1,12 +1,12 @@
 \begin{UseCase}{CU 5.1.1.2}{Modificar trayectoria}
 	{
 		Las trayectorias describen los escenarios ideales y alternos de un sistema mediante una serie de pasos.
-		Este caso de uso permite al analista modificar la trayectoria principal o alternativa de un caso de uso.
+		Este caso de uso permite al analista modificar la información de una trayectoria, así como gestionar sus pasos.
 		
 	}
 	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
 	\UCitem{Propósito}{
-		Modificar una trayectoria principal o alternativa de un caso de uso.
+		Modificar la información de una trayectoria, así como gestionar sus pasos.
 	}
 	\UCitem{Entradas}{
 		\begin{UClist}
@@ -39,20 +39,18 @@
 		\begin{UClist}
 			\UCli Que el caso de uso al que pertenece la trayectoria se encuentre en estado ``Edición'' o en estado ``Pendiente de corrección''.
 			\UCli Que existan verbos registrados en el sistema.
-			\UCli Que el caso de uso se encuentre en estado ``En edición''.
 		\end{UClist}
 	}
 	
 	\UCitem{Postcondiciones}{
-		\UCli El caso de uso cambiará a estado ``Edición''
-		
+		\UCli El caso de uso cambiará a estado ``Edición''.
 	}
 
 	\UCitem{Errores}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} cuando no se ha ingresado un dato marcado como obligatorio.
+			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} o en la pantalla emergente \cdtIdRef{IU 5.1.1.2A}{Modificar trayectoria: Comentario} cuando no se ha ingresado un dato marcado como obligatorio.
 			\UCli \cdtIdRef{MSG5}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
-			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} cuando se ha excedido la longitud de alguno de los campos.
+			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} o en la pantalla emergente \cdtIdRef{IU 5.1.1.2A}{Modificar trayectoria: Comentario}  cuando se ha excedido la longitud de alguno de los campos.
 			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} cuando se haya ingresado una clave que ya esté registrada.
 			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias} cuando no existan verbos registrados en el sistema o cuando el estado del caso de uso al que pertece la trayectoria sea inválido.
 			\UCli \cdtIdRef{MSG15}{Dato no registrado}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} cuando un elemento referenciado no existe en el sistema.
@@ -91,12 +89,10 @@
 	\UCpaso[\UCsist] Verifica que el usuario haya ingresado al menos un paso. \refTray{H}
 	\UCpaso[\UCsist] Verifica que los tokens utilizados en los pasos estén bien formados. \refTray{I}
 	\UCpaso[\UCsist] Verifica que los elementos referenciados en los pasos existan. \refTray{J}
-
 	\UCpaso[\UCsist] Muestra la pantalla emergente \cdtIdRef{IU 5.1.1.2A}{Modificar trayectoria: Comentarios}.
 	\UCpaso[\UCsist] Ingresa el comentario referente a la modificación realizada en la pantalla emergente \cdtIdRef{IU 5.1.1.2A}{Modificar trayectoria: Comentarios}. \label{cu5.1.1.2:ingresaComentario}
     \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{C}
     \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{F}
-	
 	\UCpaso[\UCsist] Verifica que el caso de uso al que pertenece la trayectoria se encuentre en estado ``Edición'' o en estado ``Pendiente de corrección''.\refTray{L}
 	\UCpaso[\UCsist] Modifica la información de la trayectoria en el sistema.
     \UCpaso[\UCsist] Cambia el estado del caso de uso a ``Edición''.
@@ -120,7 +116,7 @@
  %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
  \begin{UCtrayectoriaA}{C}{El actor no ingresó algún dato marcado como obligatorio.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
-	    \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} o en la pantalla emergente \cdtIdRef{IU 5.1.1.2A}{Modificar trayectoria: Comentarios} según corresponda, indicando al actor que el dato es obligatorio.
+	    \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} o en la pantalla emergente \cdtIdRef{IU 5.1.1.2A}{Modificar trayectoria: Comentarios}, según corresponda, indicando al actor que el dato es obligatorio.
     \UCpaso[] Continúa con el paso \ref{cu5.1.1.2:ingresaDatos} o con el paso \ref{cu5.1.1.2:ingresaComentario} de la trayectoria principal, según corresponda.
  \end{UCtrayectoriaA}
  %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
@@ -138,7 +134,7 @@
  %----------------------------------------------------------%trayectoria F--------------------------------------------------  
  \begin{UCtrayectoriaA}{F}{El actor proporciona un dato que excede la longitud máxima.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
-    longitud en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria}, para indicar que el dato excede el tamaño máximo permitido.
+    longitud en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} o en la pantalla emergente \cdtIdRef{IU 5.1.1.2A}{Modificar trayectoria: Comentarios}, según corresponda, para indicar que el dato excede el tamaño máximo permitido.
     \UCpaso[] Continúa con el paso \ref{cu5.1.1.2:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
  
