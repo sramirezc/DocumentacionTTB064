@@ -2,28 +2,25 @@
 
 \subsubsection{Objetivo}
 	
-	Esta pantalla permite al actor modificar la información de un caso de uso.
+	Esta pantalla permite al actor modificar la información general y la descripción de un caso de uso, así como gestionar sus precondiciones y postcondiciones.
 
 \subsubsection{Diseño}
 
-    En la figura ~\ref{IU 5.2} se muestra la pantalla ``Modificar caso de uso'' que permite modificar un caso de uso. El actor deberá ingresar la información solicitada y gestionar las precondiciones y postcondiciones.\\
+    En la figura ~\ref{IU 5.2} se muestra la pantalla ``Modificar caso de uso'', en la cual el actor deberá ingresar la información solicitada y gestionar las precondiciones y postcondiciones.\\
     
-    
-    Una vez ingresada la información solicitada en la pantalla, deberá oprimir el botón 
-    \cdtButton{Aceptar}, el sistema validará y modificará la información sólo si se han cumplido todas las reglas de negocio establecidas.  \\
-    
+    Una vez ingresada la información solicitada en la pantalla, deberá oprimir el botón \cdtButton{Aceptar}, el sistema mostrará la pantalla emergente ~\ref{IU 5.2A} para que el actor ingrese los comentarios referentes a la modificación, posteriormente deberá oprimir el botón \cdtButton{Aceptar} de la pantalla emergente, el sistema validará la información y en caso de cumplir con todas las reglas de negocio establecidas, se realizará la modificación de la información.\\
+	    
     Finalmente se mostrará el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}, para indicar que la información del caso de uso se ha modificado correctamente.        
 
 
     \IUfig[.9]{cu5.2/images/iu.png}{IU 5.2}{Modificar caso de uso}
-    
-%     \IUfig[.9]{cu5.2/images/comentarios.png}{IU C1}{Comentarios de la actualización}
+    \IUfig[.9]{cu5.2/images/iuA.png}{IU 5.2A}{Modificar caso de uso: Comentarios}
 
 
 \subsubsection{Comandos}
 \begin{itemize}
-	\item \cdtButton{Aceptar}: Permite al actor guardar el registro del caso de uso, dirige a la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
-	\item \cdtButton{Cancelar}: Permite al actor cancelar el registro del caso de uso, dirige a la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+	\item \cdtButton{Aceptar}: Permite al confirmar la modificación del caso de uso, dirige a la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} o a la pantalla \cdtIdRef{IU 5.2A}{Modificar caso de uso: Comentarios}.
+	\item \cdtButton{Cancelar}: Permite al actor cancelar el registro del caso de uso, dirige a la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} o a la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}.
 \end{itemize}
 
 \subsubsection{Mensajes}
@@ -31,10 +28,11 @@
 	
 \begin{description}
 	\item[\cdtIdRef{MSG1}{Operación exitosa}:] Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} para indicar que el registro fue exitoso.
-	\item[\cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso} cuando no se ha ingresado un dato marcado como obligatorio.
+	\item[\cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso} o en la pantalla emergente \cdtIdRef{IU 5.2A}{Modificar caso de uso: Comentario} cuando no se ha ingresado un dato marcado como obligatorio.
 	\item[\cdtIdRef{MSG5}{Dato incorrecto}:] Se muestra en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
-	\item[\cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso} cuando se ha excedido la longitud de alguno de los campos.
+	\item[\cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso} o en la pantalla emergente \cdtIdRef{IU 5.2A}{Modificar caso de uso: Comentario} cuando se ha excedido la longitud de alguno de los campos.
 	\item[\cdtIdRef{MSG7}{Registro repetido}:] Se muestra en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso} cuando se registre un caso de uso con un nombre o número que ya este registrado.
+	\item[\cdtIdRef{MSG13}{Ha ocurrido un error}:] Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} cuando el estado del caso de uso sea inválido.
 	\item[\cdtIdRef{MSG15}{Dato no registrado}:] Se muestra en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso} cuando un elemento referenciado no existe en el sistema.
 	\item[\cdtIdRef{MSG23}{Caracteres inválidos}:] Se muestra en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso} cuando el nombre del caso de uso contiene un caracter no válido.
 	\item[\cdtIdRef{MSG27}{Token incorrecto}:] Se muestra en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso} cuando el token ingresado está mal formado.
