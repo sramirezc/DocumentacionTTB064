@@ -22,12 +22,13 @@
 				        \item \cdtRef{Salida}{Salidas}: \ioEscribirSeleccionar.
 					\item \cdtRef{RegladeNegocio}{Reglas de negocio}: \ioEscribirSeleccionar.
 				\end{Citemize}
-			
+			\UCli \cdtRef{Actualizacion:Comentario}{Comentario de la actualización}: \ioEscribir.
 		\end{UClist}
 	}	
 	
 	\UCitem{Salidas}{	
-		\begin{UClist}			
+		\begin{UClist}	
+			\UCli \cdtRef{Revision:Observaciones}{Observaciones}: \ioObtener.
 			\UCli \cdtRef{Elemento:Clave}{Clave}: \ioCalcular{\cdtIdRef{RN12}{Identificador de elemento}}.
 			\UCli De la sección {\bf Información general del caso de uso}: 
 				\begin{Citemize}
@@ -37,9 +38,9 @@
 				\end{Citemize}
 			\UCli De la sección {\bf Descripción del caso de uso}:
 				\begin{Citemize}
-				        \item \cdtRef{Actor}{Actores}: \ioEscribirSeleccionar.
-				        \item \cdtRef{Entrada}{Entradas}: \ioEscribirSeleccionar.
-				        \item \cdtRef{Salida}{Salidas}: \ioEscribirSeleccionar.
+			        \item \cdtRef{Actor}{Actores}: \ioEscribirSeleccionar.
+				    \item \cdtRef{Entrada}{Entradas}: \ioEscribirSeleccionar.
+				    \item \cdtRef{Salida}{Salidas}: \ioEscribirSeleccionar.
 					\item \cdtRef{RegladeNegocio}{Reglas de negocio}: \ioEscribirSeleccionar.
 				\end{Citemize}
 		\end{UClist}
@@ -47,26 +48,27 @@
 	
 	\UCitem{Mensajes}{	
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} para indicar que el registro fue exitoso.
+			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} para indicar que la modificación fue exitosa.
 		\end{UClist}
 	}
 	
 	\UCitem{Precondiciones}{ 
-		Ninguna
+		\begin{UClist}
+			\UCli Que el caso de uso se encuentre en estado ``Edición'' o en estado ``Pendiente de corrección''.
+	 	\end{UClist}
 	}			
 	\UCitem{Postcondiciones}{ 
-		\begin{UClist}
-			\UCli El estado del caso de uso cambiará a ``Edición''.
-	 	\end{UClist}
-	}
+			\UCli El caso de uso cambiará a estado ``Edición''
+				}
 	\UCitem{Errores}{
 		\begin{UClist}
 			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso} cuando no se ha ingresado un dato marcado como obligatorio.
 			\UCli \cdtIdRef{MSG5}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
 			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso} cuando se ha excedido la longitud de alguno de los campos.
-			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso} cuando se registre un caso de uso con un nombre o número que ya este registrado.
+			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso} cuando se registre un caso de uso con un nombre o número que ya esté registrado.
+			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} cuando el estado del caso de uso sea inválido.
 			\UCli \cdtIdRef{MSG15}{Dato no registrado}: Se muestra en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso} cuando un elemento referenciado no existe en el sistema.
-			\UCli \cdtIdRef{MSG23}{Caracteres inválidos}: Se muestra en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso} cuando el nombre del caso de uso contiene un caracter no válido.
+			\UCli \cdtIdRef{MSG23}{Caracteres inválidos}: Se muestra en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso} cuando el nombre del caso de uso contiene un carácter no válido.
 			\UCli \cdtIdRef{MSG27}{Token incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso} cuando el token ingresado está mal formado.
 		\end{UClist}
 	}
@@ -79,29 +81,34 @@
 \end{UseCase}
  %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
-    \UCpaso[\UCactor] Solicita registrar un caso de uso oprimiendo el botón \cdtButton{Registrar} de la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
-    \UCpaso[\UCsist] Calcula la clave del caso de uso.
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso} en la cual se realizará el registro del caso de uso. 
-    \UCpaso[\UCactor] Ingresa la información general del caso de uso en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}. \label{cu5.2:ingresaDatos}
-    \UCpaso[\UCactor] Ingresa los actores en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}. \refTray{A} \label{cu5.2:ingresaActores}
-    \UCpaso[\UCactor] Ingresa las entradas en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}. \refTray{B} \refTray{C} \label{cu5.2:ingresaEntradas}
-    \UCpaso[\UCactor] Ingresa las salidas en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}. \refTray{B} \refTray{C} \refTray{D} \label{cu5.2:ingresaSalidas}
-    \UCpaso[\UCactor] Ingresa las reglas de negocio en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}. \refTray{E} \label{cu5.2:ingresaReglasNegocio}
+    \UCpaso[\UCactor] Oprime el botón \btnEditar del caso de uso que desea modificar en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+    \UCpaso[\UCsist] Busca la información del caso de uso.
+	\UCpaso[\UCsist] Verifica que el caso de uso se encuentre en estado ``Edición'' o en estado ``Pendiente de corrección''.\refTray{O}
+	\UCpaso[\UCsist] Busca entidades, actores, casos de uso, pantallas, mensajes, reglas de negocio y términos del glosario asociados al proyecto.
+	\UCpaso[\UCsist] Busca las trayectorias y los pasos del caso de uso.
+	\UCpaso[\UCsist] Verifica que la sección información general, descripción, precondiciones y postcondiciones no cuenten con observaciones. \refTray{P}
+    \UCpaso[\UCsist] Muestra la información encontrada en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}. \label{cu5.2:muestraPantalla} 
+    \UCpaso[\UCactor] Modifica la información general del caso de uso en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}. \label{cu5.2:ingresaDatos}
+    \UCpaso[\UCactor] Modifica los actores en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}. \refTray{A} \label{cu5.2:ingresaActores}
+    \UCpaso[\UCactor] Modifica las entradas en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}. \refTray{B} \refTray{C} \label{cu5.2:ingresaEntradas}
+    \UCpaso[\UCactor] Modifica las salidas en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}. \refTray{B} \refTray{C} \refTray{D} \label{cu5.2:ingresaSalidas}
+    \UCpaso[\UCactor] Modifica las reglas de negocio en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}. \refTray{E} \label{cu5.2:ingresaReglasNegocio}
     \UCpaso[\UCactor] Gestiona las precondiciones.\label{cu5.2:ingresaPrecond}
     \UCpaso[\UCactor] Gestiona las postcondiciones.\label{cu5.2:ingresaPostcond}
-    \UCpaso[\UCactor] Solicita registrar el caso de uso oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}. \refTray{F}
+    \UCpaso[\UCactor] Solicita modificar el caso de uso oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}. \refTray{F}
     \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{G}
     \UCpaso[\UCsist] Verifica que el nombre del caso de uso no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{H}
-    
     \UCpaso[\UCsist] Verifica que el nombre no contenga caracteres inválidos con base en la regla de negocio \cdtIdRef{RN2}{Nombres de los elementos}. \refTray{I}
     \UCpaso[\UCsist] Verifica que el número del caso de uso no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN1}{Unicidad de números}. \refTray{J}
-    
     \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{K} \refTray{L}
-    
-    \UCpaso[\UCsist] Verifica que los tokens utilizados esten bien formados. \refTray{M}
+    \UCpaso[\UCsist] Verifica que los tokens utilizados estén bien formados. \refTray{M}
     \UCpaso[\UCsist] Verifica que los elementos referenciados existan. \refTray{N}
-    
-    \UCpaso[\UCsist] Registra la información del caso de uso en el sistema.
+	\UCpaso[\UCsist] Muestra la pantalla emergente \cdtIdRef{IU 5.2A}{Modificar caso de uso: Comentarios}.
+	\UCpaso[\UCsist] Ingresa el comentario referente a la modificación realizada en la pantalla emergente \cdtIdRef{IU 5.2A}{Modificar caso de uso: Comentarios}. \label{cu5.2:ingresaComentario}
+    \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{G}
+    \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{L}
+	\UCpaso[\UCsist] Verifica que el caso de uso se encuentre en estado ``Edición'' o en estado ``Pendiente de corrección''.\refTray{P}
+	\UCpaso[\UCsist] Modifica la información del caso de uso en el sistema.
     \UCpaso[\UCsist] Cambia el estado del caso de uso a ``Edición''.
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} 
     para indicar al actor que el registro se ha realizado exitosamente.
@@ -110,18 +117,18 @@
   %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
  \begin{UCtrayectoriaA}{A}{El actor desea ingresar un actor.}
  	\UCpaso[\UCactor] Ingresa el token ``ACT·''.
- 	\UCpaso[\UCsist] Busca los actores registrados en el sistema. 
  	\UCpaso[\UCsist] Muestra la lista de actores encontrados.
  	\UCpaso[\UCactor] Selecciona un actor de la lista.
+ 	\UCpaso[\UCsist] Sustituye los espacios del elemento seleccionado por guiones bajos.
   	\UCpaso[\UCsist] Oculta la lista y agrega el nombre del actor al texto.
     \UCpaso[] Continúa con el paso \ref{cu5.2:ingresaActores} de la trayectoria principal.
  \end{UCtrayectoriaA}
   %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
  \begin{UCtrayectoriaA}{B}{El actor desea ingresar un término del glosario.}
  	\UCpaso[\UCactor] Ingresa el token ``GLS·''.	
- 	\UCpaso[\UCsist] Busca los términos del glosario registrados en el sistema. 
- 	\UCpaso[\UCsist] Muestra la lista de términos del glosario.
+ 	\UCpaso[\UCsist] Muestra la lista de términos del glosario encontrados.
  	\UCpaso[\UCactor] Selecciona un término del glosario de la lista.
+ 	\UCpaso[\UCsist] Sustituye los espacios del elemento seleccionado por guiones bajos.
   	\UCpaso[\UCsist] Oculta la lista y agrega el nombre del término del glosario al texto.
     \UCpaso[] Continúa con el paso \ref{cu5.2:ingresaEntradas} o el paso \ref{cu5.2:ingresaSalidas} de la trayectoria principal.
  \end{UCtrayectoriaA}
@@ -129,27 +136,27 @@
   %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
  \begin{UCtrayectoriaA}{C}{El actor desea ingresar un atributo de una entidad.}
  	\UCpaso[\UCactor] Ingresa el token ``ATR·''.
-  	\UCpaso[\UCsist] Busca los atributos de las entidades registradas.
   	\UCpaso[\UCsist] Muestra la lista de atributos encontrados.
  	\UCpaso[\UCactor] Selecciona un atributo de la lista.
+ 	\UCpaso[\UCsist] Sustituye los espacios del elemento seleccionado por guiones bajos.
   	\UCpaso[\UCsist] Oculta la lista y agrega el nombre del atributo al texto.
     \UCpaso[] Continúa con el paso \ref{cu5.2:ingresaEntradas} o el paso \ref{cu5.2:ingresaSalidas} de la trayectoria principal.
  \end{UCtrayectoriaA}
 %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
  \begin{UCtrayectoriaA}{D}{El actor desea ingresar un mensaje.}
- 	 \UCpaso[\UCactor] Ingresa el token ``MSG·''.	
- 	\UCpaso[\UCsist] Busca los mensajes registrados en el sistema. 
- 	\UCpaso[\UCsist] Muestra la lista de mensajes.
+ 	 \UCpaso[\UCactor] Ingresa el token ``MSG·''.
+ 	\UCpaso[\UCsist] Muestra la lista de mensajes encontrados.
  	\UCpaso[\UCactor] Selecciona un mensaje de la lista.
+ 	\UCpaso[\UCsist] Sustituye los espacios del elemento seleccionado por guiones bajos.
   	\UCpaso[\UCsist] Oculta la lista y agrega el nombre del mensaje al texto.
     \UCpaso[] Continúa con el paso \ref{cu5.2:ingresaSalidas} de la trayectoria principal.
  \end{UCtrayectoriaA}
  %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
  \begin{UCtrayectoriaA}{E}{El actor desea ingresar una regla de negocio.}
  	\UCpaso[\UCactor] Ingresa el token ``RN·''.	
- 	\UCpaso[\UCsist] Busca las reglas de negocio registradas en el sistema. 
- 	\UCpaso[\UCsist] Muestra la lista de reglas de negocio.
+ 	\UCpaso[\UCsist] Muestra la lista de reglas de negocio encontradas.
  	\UCpaso[\UCactor] Selecciona una regla de negocio de la lista.
+ 	\UCpaso[\UCsist] Sustituye los espacios del elemento seleccionado por guiones bajos.
   	\UCpaso[\UCsist] Oculta la lista y agrega el nombre de la regla de negocio al texto.
     \UCpaso[] Continúa con el paso \ref{cu5.2:ingresaReglasNegocio} de la trayectoria principal.
  \end{UCtrayectoriaA}
@@ -162,8 +169,8 @@
   %----------------------------------------------------------%trayectoria G---------------------------------------------------- 
  \begin{UCtrayectoriaA}{G}{El actor no ingresó algún dato marcado como obligatorio.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
-	    \cdtIdRef{CU 5.2}{Modificar caso de uso}, indicando al actor que el dato es obligatorio.
-    \UCpaso[] Continúa con el paso \ref{cu5.2:ingresaDatos} de la trayectoria principal.
+	    \cdtIdRef{CU 5.2}{Modificar caso de uso} o en la pantalla emergente \cdtIdRef{IU 5.2A}{Modificar caso de uso: Comentarios} según corresponda, indicando al actor que el dato es obligatorio.
+    \UCpaso[] Continúa con el paso \ref{cu5.2:ingresaDatos} o con el paso \ref{cu5.2:ingresaComentario} de la trayectoria principal según corresponda.
  \end{UCtrayectoriaA}
  %----------------------------------------------------------%trayectoria H---------------------------------------------------- 
  \begin{UCtrayectoriaA}{H}{El actor ingresó un nombre de caso de uso repetido.}
@@ -191,8 +198,8 @@
  %----------------------------------------------------------%trayectoria L----------------------------------------------------  
  \begin{UCtrayectoriaA}{L}{El actor proporciona un dato que excede la longitud máxima.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
-    longitud en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}, para indicar que el dato excede el tamaño máximo permitido.
-    \UCpaso[] Continúa con el paso \ref{cu5.2:ingresaDatos} de la trayectoria principal.
+    longitud en la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso} o en la pantalla emergente \cdtIdRef{IU 5.2A}{Modificar caso de uso: Comentarios} según corresponda, para indicar que el dato excede el tamaño máximo permitido.
+    \UCpaso[] Continúa con el paso \ref{cu5.2:ingresaDatos} o con el paso \ref{cu5.2:ingresaComentario} de la trayectoria principal según corresponda.
  \end{UCtrayectoriaA}
  %----------------------------------------------------------%trayectoria M---------------------------------------------------- 
  \begin{UCtrayectoriaA}{M}{El actor ingresó un token mal formado.}
@@ -204,6 +211,18 @@
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG15}{Dato no registrado} mencionando el elemento que no está registrado en el sistema.
     \UCpaso[] Continúa con el paso \ref{cu5.2:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria P---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{O}{El estado del caso de uso no es ``Edición'' o ``Pendiente de corrección''.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error} en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}, indicando que no es posible
+	continuar con la operación debido a que el caso de uso no cuenta con el estado adecuado.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria O---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{P}{La secciones información general, descripción, precondiciones y postcondiciones cuentan con observaciones.}
+    \UCpaso[\UCsist] Muestra la sección ``Observaciones'' con las observaciones encontradas.
+	\UCpaso[] Continúa con el paso \ref{cu5.2:muestraPantalla} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ 
+
  
 
 \subsection{Puntos de extensión}	
