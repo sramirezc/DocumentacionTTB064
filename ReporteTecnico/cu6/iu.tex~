@@ -1,0 +1,33 @@
+\subsection{IU 6 Gestionar pantallas}
+\subsubsection{Objetivo}
+	
+	En esta pantalla el actor puede visualizar algunos atributos de las pantallas y las operaciones disponibles de acuerdo su estado.
+
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 6} se muestra la pantalla ``Gestionar pantallas'', por medio de la cual 
+    se podrán gestionar las pantallas a través de una tabla.
+    El actor podrá podrá solicitar el registro, la consulta, la modificación y la eliminación de un caso de uso mediante los botones
+    \cdtButton{Registrar}, \btnConsulta, \btnEditar y \btnEliminar respectivamente. \\
+    
+    Los botones correspondientes a las opciones mencionadas para cada uno de los registros aparecerán en la tabla dependiendo del estado
+    de la pantalla y el rol del actor, con base en la regla de negocio \cdtIdRef{RN15}{Elementos en uso}.
+
+
+    \IUfig[.9]{cu6/images/iu.png}{IU 6}{Gestionar pantallas}
+
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \cdtButton{Registrar}: Permite al actor solicitar el registro de un caso de uso, dirige a la pantalla \cdtIdRef{IU 6.1}{Registrar caso de uso}.
+	\item \btnEditar[Modificar]: Permite al actor solicitar la modificación de un caso de uso, dirige a la pantalla \cdtIdRef{IU 6.2}{Modificar caso de uso}.
+	\item \btnEliminar[Eliminar]: Permite al actor solicitar la eliminación de un caso de uso, dirige a la pantalla \cdtIdRef{IU 6.3}{Eliminar caso de uso}.
+	\item \btnConsulta[Consultar]: Permite al actor solicitar la consulta de un caso de uso, dirige a la pantalla \cdtIdRef{IU 6.4}{Consultar caso de uso}.
+\end{itemize}
+
+\subsubsection{Mensajes}
+
+	
+\begin{description}
+	\item[\cdtIdRef{MSG2}{No existe información}:] Se muestra en la pantalla \cdtIdRef{IU 6}{Gestionar casos de uso} cuando no existen casos de uso registrados.
+\end{description}
