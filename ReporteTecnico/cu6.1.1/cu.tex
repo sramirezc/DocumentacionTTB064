@@ -39,8 +39,8 @@
 			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 6.1.1}{Registrar acción} cuando se ha excedido la longitud de alguno de los campos.
 			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 6.1.1}{Registrar acción} cuando se registre una acción con un nombre que ya esté asociado a la pantalla.
 			\UCli \cdtIdRef{MSG23}{Caracteres inválidos}: Se muestra en la pantalla \cdtIdRef{IU 6.1.1}{Registrar acción} cuando el nombre de la acción contiene un caracter no válido.
-			\UCli \cdtIdRef{MSG24}{Formato de archivo incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 6.1.1}{Registrar acción} cuando la imagen de la acción no cumpla con el formato especificado.
-			\UCli \cdtIdRef{MSG25}{Se ha excedido el tamaño del archivo}: Se muestra en la pantalla \cdtIdRef{IU 6.1.1}{Registrar acción} cuando la imagen de la acción exceda el tamaño especificado.
+			\UCli \cdtIdRef{MSG28}{Formato de archivo incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 6.1.1}{Registrar acción} cuando la imagen de la acción no cumpla con el formato especificado.
+			\UCli \cdtIdRef{MSG29}{Se ha excedido el tamaño del archivo}: Se muestra en la pantalla \cdtIdRef{IU 6.1.1}{Registrar acción} cuando la imagen de la acción exceda el tamaño especificado.
 		\end{UClist}
 	}
 
@@ -94,14 +94,14 @@
  \end{UCtrayectoriaA}
   %----------------------------------------------------------%trayectoria F----------------------------------------------------  
  \begin{UCtrayectoriaA}{F}{El actor proporciona una imagen de formato incorrecto.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG24}{Formato de archivo incorrecto} y señala el campo donde se solicita la imagen
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG28}{Formato de archivo incorrecto} y señala el campo donde se solicita la imagen
     en la pantalla \cdtIdRef{IU 6.1.1}{Registrar acción}, para indicar que el formato es incorrecto.
     \UCpaso[] Continúa con el paso \ref{cu6.1.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
  
  %----------------------------------------------------------%trayectoria G----------------------------------------------------  
  \begin{UCtrayectoriaA}{G}{El actor proporciona una imagen que excede el tamaño máximo.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG25}{Se ha excedido el tamaño del archivo} y señala el campo donde se solicita la imagen
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG29}{Se ha excedido el tamaño del archivo} y señala el campo donde se solicita la imagen
     en la pantalla \cdtIdRef{IU 6.1.1}{Registrar acción}, para indicar que el tamaño máximo ha sido rebasado.
     \UCpaso[] Continúa con el paso \ref{cu6.1.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
