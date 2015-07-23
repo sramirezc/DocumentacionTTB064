@@ -1,0 +1,114 @@
+\begin{UseCase}{CU 6.1.2}{Modificar acción}
+	{
+		Una acción es una operación que se puede solicitar desde una pantalla, regularmente son botones u opciones de un menú. Este caso de uso permite al analista modificar la información de una acción. 
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Modificar la información de una acción.
+	}
+	\UCitem{Entradas}{
+		\begin{UClist}
+			\UCli \cdtRef{Accion:Nombre}{Nombre}: \ioEscribir.
+ 			\UCli \cdtRef{Accion:Descripcion}{Descripción}: \ioEscribir.
+ 			\UCli \cdtRef{Accion:Imagen}{Imagen}: \ioArchivo.
+		\end{UClist}
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtRef{Accion:Nombre}{Nombre}: \ioObtener.
+ 			\UCli \cdtRef{Accion:Descripcion}{Descripción}: \ioObtener.
+ 			\UCli \cdtRef{Accion:Imagen}{Imagen}: \ioObtener.
+		\end{UClist}
+	}
+	
+	\UCitem{Mensajes}{
+		Ninguno
+	}
+
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		Ninguna
+	}
+
+	\UCitem{Errores}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 6.1.2}{Modificar acción} cuando no se ha ingresado un dato marcado como obligatorio.
+			\UCli \cdtIdRef{MSG5}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 6.1.2}{Modificar acción} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 6.1.2}{Modificar acción} cuando se ha excedido la longitud de alguno de los campos.
+			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 6.1.2}{Modificar acción} cuando se registre una acción con un nombre que ya esté asociado a la pantalla.
+			\UCli \cdtIdRef{MSG23}{Caracteres inválidos}: Se muestra en la pantalla \cdtIdRef{IU 6.1.2}{Modificar acción} cuando el nombre de la acción contiene un carácter no válido.
+			\UCli \cdtIdRef{MSG24}{Formato de archivo incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 6.1.2}{Modificar acción} cuando la imagen de la acción no cumpla con el formato especificado.
+			\UCli \cdtIdRef{MSG25}{Se ha excedido el tamaño del archivo}: Se muestra en la pantalla \cdtIdRef{IU 6.1.2}{Modificar acción} cuando la imagen de la acción exceda el tamaño especificado.
+		\end{UClist}
+	}
+
+	\UCitem{Tipo}{
+		Secundario, extiende de los casos de uso \cdtIdRef{CU 6.1}{Registrar pantalla} y \cdtIdRef{CU 6.2}{Modificar pantalla}.
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}	
+	\UCpaso[\UCactor] Oprime el botón \btnEditar de la acción que desea modificar en la pantalla \cdtIdRef{IU 6.1}{Registrar pantalla} o \cdtIdRef{IU 6.2}{Modificar pantalla}.
+	\UCpaso[\UCsist] Busca la información de la acción.
+    \UCpaso[\UCsist] Muestra la información encontrada en la pantalla \cdtIdRef{IU 6.1.2}{Modificar acción}.
+    \UCpaso[\UCactor] Modifica la información de la acción en la pantalla \cdtIdRef{IU 6.1.2}{Modificar acción}. \label{cu6.1.2:ingresaDatos}
+    \UCpaso[\UCactor] Solicita modificar la acción oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 6.1.2}{Modificar acción}. \refTray{A}
+    \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{B}
+    \UCpaso[\UCsist] Verifica que el nombre de la acción no se encuentre asociado a la pantalla con base en la regla de negocio \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{C}
+    \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{D} \refTray{E} \refTray{F} \refTray{G}
+    \UCpaso[\UCsist] Verifica que el nombre no contenga caracteres inválidos con base en la regla de negocio \cdtIdRef{RN2}{Nombres de los elementos}. \refTray{H}
+    \UCpaso[\UCsist] Agrega la acción a la tabla de la pantalla \cdtIdRef{IU 6.1}{Registrar pantalla} o \cdtIdRef{IU 6.2}{Modificar pantalla}.
+ \end{UCtrayectoria}
+ 
+ %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El actor desea cancelar la operación.}
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 6.1.2}{Modificar acción}.
+    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
+ \end{UCtrayectoriaA}
+  %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{B}{El actor no ingresó algún dato marcado como obligatorio.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
+	    \cdtIdRef{IU 6.1.2}{Modificar acción}, indicando al actor que el dato es obligatorio.
+    \UCpaso[] Continúa con el paso \ref{cu6.1.2:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{C}{El actor ingresó un nombre de acción que ya está asociado a la pantalla.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Registro repetido} y señala el campo que presenta la duplicidad en la pantalla 
+	    \cdtIdRef{IU 6.1.2}{Modificar acción}, indicando al actor que existe una acción con el mismo nombre.
+    \UCpaso[] Continúa con el paso \ref{cu6.1.2:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ 
+ %----------------------------------------------------------%trayectoria D----------------------------------------------------  
+ \begin{UCtrayectoriaA}{D}{El actor proporciona un dato que excede la longitud máxima.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
+    longitud en la pantalla \cdtIdRef{IU 6.1.2}{Modificar acción}, para indicar que el dato excede el tamaño máximo permitido.
+    \UCpaso[] Continúa con el paso \ref{cu6.1.2:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{E}{El actor ingresó un tipo de dato incorrecto.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Formato incorrecto} y señala el campo que presenta el dato inválido en la 
+    pantalla \cdtIdRef{IU 6.1.2}{Modificar acción} para indicar que se ha ingresado un tipo de dato inválido.
+    \UCpaso[] Continúa con el paso \ref{cu6.1.2:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+  %----------------------------------------------------------%trayectoria F----------------------------------------------------  
+ \begin{UCtrayectoriaA}{F}{El actor proporciona una imagen de formato incorrecto.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG24}{Formato de archivo incorrecto} y señala el campo donde se solicita la imagen
+    en la pantalla \cdtIdRef{IU 6.1.2}{Modificar acción}, para indicar que el formato es incorrecto.
+    \UCpaso[] Continúa con el paso \ref{cu6.1.2:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ 
+ %----------------------------------------------------------%trayectoria G----------------------------------------------------  
+ \begin{UCtrayectoriaA}{G}{El actor proporciona una imagen que excede el tamaño máximo.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG25}{Se ha excedido el tamaño del archivo} y señala el campo donde se solicita la imagen
+    en la pantalla \cdtIdRef{IU 6.1.2}{Modificar acción}, para indicar que el tamaño máximo ha sido rebasado.
+    \UCpaso[] Continúa con el paso \ref{cu6.1.2:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria H---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{H}{El actor ingresó un nombre con caracteres inválidos.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG23}{Caracteres inválidos} y señala el campo que contiene los caracteres inválidos.
+    \UCpaso[] Continúa con el paso \ref{cu6.1.2:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
