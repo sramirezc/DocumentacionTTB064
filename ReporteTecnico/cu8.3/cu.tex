@@ -1,18 +1,18 @@
-\begin{UseCase}{CU 6.3}{Eliminar pantalla}
+\begin{UseCase}{CU 8.3}{Eliminar regla de negocio}
 	{
-		Este caso de uso permite al actor eliminar del sistema una pantalla.
+		Este caso de uso permite al actor eliminar del sistema una regla de negocio.
 	}
 	
 	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
 	\UCitem{Propósito}{
-		Eliminar la información de una pantalla.
+		Eliminar la información de una regla de negocio.
 	}
 	\UCitem{Entradas}{
 		Ninguna
 	}
 	\UCitem{Salidas}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 6}{Gestionar pantallas} para indicar que la eliminación fue exitosa.
+			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 8}{Gestionar reglas de negocio} para indicar que la eliminación fue exitosa.
 		\end{UClist}
 	}
 	\UCitem{Mensajes}{
@@ -27,25 +27,25 @@
 	
 	\UCitem{Postcondiciones}{
 		\begin{UClist}
-			\UCli Se eliminará la pantalla seleccionada del sistema.
+			\UCli Se eliminará la regla de negocio seleccionada del sistema.
 		\end{UClist}
 	}
 
 	\UCitem{Errores}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG14}{Eliminación no permitida}: Se muestra en una pantalla emergente cuando no se pueda eliminar la pantalla debido a que está siendo referenciada en algún caso de uso.
-			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 6}{Gestionar pantallas} cuando la pantalla no se encuentre en un estado que permita la eliminación.
+			\UCli \cdtIdRef{MSG14}{Eliminación no permitida}: Se muestra en una pantalla emergente cuando no se pueda eliminar la regla de negocio debido a que está siendo referenciada en algún caso de uso.
+			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 8}{Gestionar reglas de negocio} cuando la regla de negocio no se encuentre en un estado que permita la eliminación.
 		\end{UClist}
 	}
 
 	\UCitem{Tipo}{
-		Secundario, extiende del casos de uso \cdtIdRef{CU 6}{Gestionar pantallas}.
+		Secundario, extiende del casos de uso \cdtIdRef{CU 8}{Gestionar reglas de negocio}.
 	}
 \end{UseCase}
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
-    \UCpaso[\UCactor] Solicita eliminar una pantalla oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{IU 6}{Gestionar pantallas}.
-    \UCpaso[\UCsist] Verifica que la pantalla se encuentra en un estado que permita la eliminación de acuerdo a la regla de negocio \cdtIdRef{RN18}{Eliminación de elementos}. \refTray{A}
+    \UCpaso[\UCactor] Solicita eliminar una regla de negocio oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{IU 8}{Gestionar reglas de negocio}.
+    \UCpaso[\UCsist] Verifica que la regla de negocio se encuentra en un estado que permita la eliminación de acuerdo a la regla de negocio \cdtIdRef{RN18}{Eliminación de elementos}. \refTray{A}
     \UCpaso[\UCsist] Busca los casos de uso que estén referenciando a la pantalla.
     \UCpaso[\UCsist] Busca los casos de uso que estén referenciando a alguna acción de la pantalla.
     \UCpaso[\UCsist] Verifica que ningún caso de uso esté referenciando a la pantalla. \refTray{B}
@@ -54,27 +54,27 @@
     \UCpaso[\UCactor] Confirma la eliminación de la pantalla oprimiendo el botón \cdtButton{Aceptar}. \refTray{D}
     \UCpaso[\UCsist] Verifica que la pantalla se encuentra en un estado que permita la eliminación de acuerdo a la regla de negocio \cdtIdRef{RN18}{Eliminación de elementos}. \refTray{A}
     \UCpaso[\UCsist] Elimina la información referente a la pantalla del sistema.
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 6}{Gestionar pantallas}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 8}{Gestionar reglas de negocio}
     para indicar al actor que se ha eliminado el registro exitosamente.
  \end{UCtrayectoria}
  
  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
  \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{La pantalla está en un estado en que no se permite la eliminación.}
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 6}{Gestionar pantallas} con el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 8}{Gestionar reglas de negocio} con el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error}.
  \end{UCtrayectoriaA} 
   %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
  \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{La pantalla está siendo referenciada en un caso de uso.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG14}{Eliminación no permitida} en una pantalla emergente
     con la lista de casos de uso que están referenciando a la pantalla.
     \UCpaso[\UCactor] Oprime el botón \cdtButton{Aceptar} de la pantalla emergente.
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 6}{Gestionar pantallas}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 8}{Gestionar reglas de negocio}.
  \end{UCtrayectoriaA}
 %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
  \begin{UCtrayectoriaA}[Fin del caso de uso]{C}{Algunas acciones de la pantalla están siendo referenciadas en algún caso de uso.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG14}{Eliminación no permitida} en una pantalla emergente
     con la lista de casos de uso que están referenciando a la acción o a las acciones.
     \UCpaso[\UCactor] Oprime el botón \cdtButton{Aceptar} de la pantalla emergente.
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 6}{Gestionar pantallas}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 8}{Gestionar reglas de negocio}.
  \end{UCtrayectoriaA}
  %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
  \begin{UCtrayectoriaA}[Fin del caso de uso]{D}{El actor desea cancelar la operación.}

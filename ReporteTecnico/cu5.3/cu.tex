@@ -1,0 +1,92 @@
+\begin{UseCase}{CU 5.3}{Eliminar caso de uso}
+	{
+		Este caso de uso permite al actor eliminar del sistema un caso de uso.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Eliminar la información de un caso de uso.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} para indicar que la eliminación fue exitosa.
+		\end{UClist}
+	}
+	\UCitem{Mensajes}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG11}{Confirmar eliminación}: Se muestra para que el actor confirme la eliminación.
+		\end{UClist}
+	}
+
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		\begin{UClist}
+			\UCli Se eliminará el caso de uso seleccionado del sistema.
+		\end{UClist}
+	}
+
+	\UCitem{Errores}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG14}{Eliminación no permitida}: Se muestra en una pantalla emergente cuando no se pueda eliminar el caso de uso debido a que está siendo referenciado en algún caso de uso.
+			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} cuando el caso de uso no se encuentre en un estado que permita la eliminación.
+		\end{UClist}
+	}
+
+	\UCitem{Tipo}{
+		Secundario, extiende del casos de uso \cdtIdRef{CU 5}{Gestionar casos de uso}.
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita eliminar un caso de uso oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+    \UCpaso[\UCsist] Verifica que el caso de uso se encuentra en un estado que permita la eliminación de acuerdo a la regla de negocio \cdtIdRef{RN18}{Eliminación de elementos}. \refTray{A}
+    \UCpaso[\UCsist] Busca los casos de uso que estén referenciando al caso de uso.
+    \UCpaso[\UCsist] Busca los casos de uso que estén referenciando alguna trayectoria del caso de uso.
+    \UCpaso[\UCsist] Busca los casos de uso que estén referenciando algún paso de alguna trayectoria del caso de uso.
+    \UCpaso[\UCsist] Verifica que ningún caso de uso esté referenciando al caso de uso. \refTray{B}
+    \UCpaso[\UCsist] Verifica que ningún caso de uso esté referenciando alguna trayectoria del caso de uso. \refTray{C}
+    \UCpaso[\UCsist] Verifica que ningún caso de uso esté referenciando algún paso de alguna trayectoria del caso de uso. \refTray{D}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG11}{Confirmar eliminación} en una pantalla emergente con los botones \cdtButton{Aceptar} y \cdtButton{Cancelar}.
+    \UCpaso[\UCactor] Confirma la eliminación del caso de uso oprimiendo el botón \cdtButton{Aceptar} de la pantalla emergente. \refTray{E}
+    \UCpaso[\UCsist] Verifica que el caso de uso se encuentra en un estado que permita la eliminación de acuerdo a la regla de negocio \cdtIdRef{RN18}{Eliminación de elementos}. \refTray{A}
+    \UCpaso[\UCsist] Elimina la información referente al caso de uso.
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}
+    para indicar al actor que se ha eliminado el registro exitosamente.
+ \end{UCtrayectoria}
+ 
+ %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El caso de uso está en un estado en que no se permite la eliminación.}
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} con el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error}.
+ \end{UCtrayectoriaA} 
+ %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{El caso de uso está siendo referenciado en algún caso de uso.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG14}{Eliminación no permitida} en una pantalla emergente
+    con la lista de casos de uso que están referenciando al caso de uso.
+    \UCpaso[\UCactor] Oprime el botón \cdtButton{Aceptar} de la pantalla emergente.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{C}{Alguna trayectoria del caso de uso está siendo referenciada en algún caso de uso.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG14}{Eliminación no permitida} en una pantalla emergente
+    con la lista de casos de uso que están referenciando a la trayectoria.
+    \UCpaso[\UCactor] Oprime el botón \cdtButton{Aceptar} de la pantalla emergente.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{D}{Algún paso de alguna trayectoria del caso de uso está siendo referenciado en algún caso de uso.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG14}{Eliminación no permitida} en una pantalla emergente
+    con la lista de casos de uso que están referenciando al paso.
+    \UCpaso[\UCactor] Oprime el botón \cdtButton{Aceptar} de la pantalla emergente.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{E}{El actor desea cancelar la operación.}
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla emergente.
+    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
+ \end{UCtrayectoriaA} 
