@@ -38,36 +38,28 @@
 	}
 
 	\UCitem{Tipo}{
-		Secundario, extiende del casos de uso \cdtIdRef{CU 6}{Gestionar pantallas}.
+		Secundario, extiende de los casos de uso \cdtIdRef{CU 6.1}{Registrar pantalla} y \cdtIdRef{CU 6.2}{Modificar pantalla}.
 	}
 \end{UseCase}
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
-    \UCpaso[\UCactor] Solicita eliminar una pantalla oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{IU 6}{Gestionar pantallas}.
-    \UCpaso[\UCsist] Verifica que la pantalla se encuentra en un estado que permita la eliminación de acuerdo a la regla de negocio \cdtIdRef{RN18}{Eliminación de elementos}. \refTray{A}
-    \UCpaso[\UCsist] Busca los casos de uso que estén referenciando a la pantalla.
-    \UCpaso[\UCsist] Verifica que ningún caso de uso esté referenciando a la pantalla. \refTray{B}
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 6.1.3}{Eliminar pantalla}. 
-    \UCpaso[\UCactor] Confirma la eliminación de la pantalla oprimiendo el botón \cdtButton{Aceptar}. \refTray{C}
-    \UCpaso[\UCsist] Verifica que la pantalla se encuentra en un estado que permita la eliminación de acuerdo a la regla de negocio \cdtIdRef{RN18}{Eliminación de elementos}. \refTray{A}
-    \UCpaso[\UCsist] Elimina la información referente a la pantalla del sistema.
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 6}{Gestionar pantallas}
-    para indicar al actor que se ha eliminado el registro exitosamente.
+    \UCpaso[\UCactor] Solicita eliminar una acción oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{CU 6.1}{Registrar pantalla} o \cdtIdRef{CU 6.2}{Modificar pantalla}.
+    \UCpaso[\UCsist] Busca los casos de uso que estén referenciando a la acción.
+    \UCpaso[\UCsist] Verifica que ningún caso de uso esté referenciando a la acción. \refTray{A}
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 6.1.3}{Eliminar acción}. 
+    \UCpaso[\UCactor] Confirma la eliminación de la acción oprimiendo el botón \cdtButton{Aceptar}. \refTray{B}
+    \UCpaso[\UCsist] Elimina la acción de la tabla correspondiente.
+    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
  \end{UCtrayectoria}
- 
- %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{La pantalla está en un estado en que no se permite la eliminación.}
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 6}{Getionar pantallas} con el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error}.
- \end{UCtrayectoriaA} 
-  %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{La pantalla está siendo referenciada en un caso de uso.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG14}{Eliminación no permitida} en la pantalla \cdtIdRef{IU 6.1.3b}{Eliminar pantalla: Eliminación no permitida}
-    con la lista de casos de uso que están referenciando a la pantalla.
-    \UCpaso[\UCactor] Oprime el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 6.1.3b}{Eliminar pantalla: Eliminación no permitida}.
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 6}{Gestionar pantallas}.
+  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{La acción está siendo referenciada en un caso de uso.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG14}{Eliminación no permitida} en una pantalla emergente
+    con la lista de casos de uso que están referenciando a la acción.
+    \UCpaso[\UCactor] Oprime el botón \cdtButton{Aceptar} de la pantalla emergente.
+    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
  \end{UCtrayectoriaA}
  %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
  \begin{UCtrayectoriaA}[Fin del caso de uso]{C}{El actor desea cancelar la operación.}
-    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 6.1.3}{Eliminar pantalla}.
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 6.1.3}{Eliminar acción}.
     \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
  \end{UCtrayectoriaA} 
