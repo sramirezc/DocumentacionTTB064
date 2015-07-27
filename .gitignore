@@ -25,3 +25,5 @@
 *.bak
 *~
 *.backup
+*.kate-swp
+*.bak~1

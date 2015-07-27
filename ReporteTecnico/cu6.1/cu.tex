@@ -66,7 +66,7 @@
     \UCpaso[\UCsist] Verifica que el nombre de la pantalla no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{C}
     \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{D} \refTray{E} \refTray{F} \refTray{G}
     \UCpaso[\UCsist] Verifica que el nombre no contenga caracteres inválidos con base en la regla de negocio \cdtIdRef{RN2}{Nombres de los elementos}. \refTray{H}
-    \UCpaso[\UCsist] Verifica que el número del caso de uso no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN1}{Unicidad de números}. \refTray{I}    
+    \UCpaso[\UCsist] Verifica que el número de la pantalla no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN1}{Unicidad de números}. \refTray{I}    
     
     \UCpaso[\UCsist] Registra la información de la pantalla en el sistema.
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 6}{Gestionar pantallas}
@@ -87,7 +87,7 @@
  %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
  \begin{UCtrayectoriaA}{C}{El actor ingresó un nombre de entidad repetido.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Registro repetido} y señala el campo que presenta la duplicidad en la pantalla 
-	    \cdtIdRef{IU 6.1}{Registrar pantalla}, indicando al actor que existe una regla de negocio con el mismo nombre.
+	    \cdtIdRef{IU 6.1}{Registrar pantalla}, indicando al actor que existe una pantalla con el mismo nombre.
     \UCpaso[] Continúa con el paso \ref{cu6.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
  
@@ -127,10 +127,10 @@
  %----------------------------------------------------------%trayectoria I---------------------------------------------------- 
  \begin{UCtrayectoriaA}{I}{El actor ingresó un número de regla de negocio repetido.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Registro repetido} y señala el campo que presenta la duplicidad en la pantalla 
-	    \cdtIdRef{IU 6.1}{Registrar pantalla}, indicando al actor que existe una regla de negocio con el mismo número.
+	    \cdtIdRef{IU 6.1}{Registrar pantalla}, indicando al actor que existe una pantalla con el mismo número.
     \UCpaso[] Continúa con el paso \ref{cu6.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
-
+ 
 \subsection{Puntos de extensión}
 
 \UCExtensionPoint{El actor requiere registrar una acción}

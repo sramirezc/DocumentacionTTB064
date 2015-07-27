@@ -1,0 +1,67 @@
+\begin{UseCase}{CU 6.4}{Consultar pantalla}
+	{
+		Este caso de uso permite al analista consultar la información de una pantalla y la lista de acciones que contiene. 
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Consultar la información de una pantalla.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli De la sección ``Información general de la pantalla'':
+			\begin{itemize}
+			    \item \cdtRef{Elemento:Clave}{Clave}: \ioObtener.
+			    \item \cdtRef{Elemento:Numero}{Número}: \ioObtener.
+			    \item \cdtRef{Elemento:Nombre}{Nombre}: \ioObtener.
+			    \item \cdtRef{Elemento:Descripcion}{Descripción}: \ioObtener.
+			    \item \cdtRef{Pantalla:Imagen}{Imagen}: \ioObtener.
+			\end{itemize}
+			\UCli De la sección ``Acciones'':
+			\begin{itemize}
+			    \item \cdtRef{Accion:Nombre}{Nombre}: \ioObtener.
+			    \item \cdtRef{Accion:Descripcion}{Descripción}: \ioObtener.
+			    \item \cdtRef{Accion:Imagen}{Imagen}: \ioObtener.
+			\end{itemize}
+		\end{UClist}
+		
+	}
+	
+	\UCitem{Mensajes}{
+		Ninguno
+	}
+
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		Ninguna
+	}
+
+	\UCitem{Errores}{
+		\begin{UClist}
+			\UCli \cdtRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla donde se solicitó la operación cuando la pantalla que se desea consultar no existe.
+		\end{UClist}
+	}
+
+	\UCitem{Tipo}{
+		Secundario, extiende del casos de uso \cdtIdRef{CU 6}{Gestionar pantallas}.
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita consultar una pantalla oprimiendo el botón \btnConsulta del registro que desea consultar en la pantalla \cdtIdRef{IU 6}{Gestionar pantallas} o la liga correspondiente a una pantalla en la pantalla \cdtIdRef{IU 5.4}{Consultar caso de uso}.
+    \UCpaso[\UCsist] Busca la información de la pantalla seleccionada. \refTray{A} %No existe información
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 6.4}{Consultar pantalla} en la cual se mostrará toda la información de la pantalla.
+    \UCpaso[\UCactor] Solicita finalizar la consulta oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 6.4}{Consultar pantalla}.
+ \end{UCtrayectoria}
+ 
+ %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{La pantalla que se desea consultar no existe.}
+    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación con el mensaje .
+ \end{UCtrayectoriaA} 
+  

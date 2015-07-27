@@ -1,0 +1,64 @@
+\begin{UseCase}{CU 6.1.3}{Eliminar acción}
+	{
+		Este caso de uso permite al actor eliminar un registro de la tabla de acciones de la pantalla \cdtIdRef{IU 6.1}{Registrar pantalla} o de la pantalla \cdtIdRef{IU 6.2}{Modificar pantalla}.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Eliminar la información de una acción de la tabla de acciones.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 6.1}{Registrar pantalla} o \cdtIdRef{IU 6.2}{Modificar pantalla} para indicar que la eliminación fue exitosa.
+		\end{UClist}
+	}
+	\UCitem{Mensajes}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG11}{Confirmar eliminación}: Se muestra para que el actor confirme la eliminación.
+		\end{UClist}
+	}
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		\begin{UClist}
+			\UCli Se eliminará la acción de la tabla de acciones correspondiente.
+		\end{UClist}
+	}
+
+	\UCitem{Errores}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG14}{Eliminación no permitida}: Se muestra en la pantalla \cdtIdRef{IU 6.1}{Registrar pantalla} o \cdtIdRef{IU 6.2}{Modificar pantalla} cuando no se pueda eliminar la acción debido a que está siendo referenciada en algún caso de uso.
+		\end{UClist}
+	}
+
+	\UCitem{Tipo}{
+		Secundario, extiende de los casos de uso \cdtIdRef{CU 6.1}{Registrar pantalla} y \cdtIdRef{CU 6.2}{Modificar pantalla}.
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita eliminar una acción oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{CU 6.1}{Registrar pantalla} o \cdtIdRef{CU 6.2}{Modificar pantalla}.
+    \UCpaso[\UCsist] Busca los casos de uso que estén referenciando a la acción.
+    \UCpaso[\UCsist] Verifica que ningún caso de uso esté referenciando a la acción. \refTray{A}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG11}{Confirmar eliminación} en una pantalla emergente con los botones \cdtButton{Aceptar} y \cdtButton{Cancelar}.
+    \UCpaso[\UCactor] Confirma la eliminación de la acción oprimiendo el botón \cdtButton{Aceptar} de la pantalla emergente. \refTray{B}
+    \UCpaso[\UCsist] Elimina la acción de la tabla correspondiente.
+    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
+ \end{UCtrayectoria}
+  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{La acción está siendo referenciada en un caso de uso.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG14}{Eliminación no permitida} en una pantalla emergente
+    con la lista de casos de uso que están referenciando a la acción.
+    \UCpaso[\UCactor] Oprime el botón \cdtButton{Aceptar} de la pantalla emergente.
+    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{C}{El actor desea cancelar la operación.}
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla emergente.
+    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
+ \end{UCtrayectoriaA} 

@@ -1,0 +1,64 @@
+\begin{UseCase}{CU 11.5.3}{Eliminar atributo}
+	{
+		Este caso de uso permite al actor eliminar un registro de la tabla de atributos de la pantalla \cdtIdRef{IU 11.1}{Registrar entidad} o de la pantalla \cdtIdRef{IU 11.2}{Modificar entidad}.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Eliminar la información de un atributo de la tabla de atributos.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 11.1}{Registrar entidad} o \cdtIdRef{IU 11.2}{Modificar entidad} para indicar que la eliminación fue exitosa.
+		\end{UClist}
+	}
+	\UCitem{Mensajes}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG11}{Confirmar eliminación}: Se muestra para que el actor confirme la eliminación.
+		\end{UClist}
+	}
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		\begin{UClist}
+			\UCli Se eliminará el atributo de la tabla de atributos correspondiente.
+		\end{UClist}
+	}
+
+	\UCitem{Errores}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG14}{Eliminación no permitida}: Se muestra en la pantalla \cdtIdRef{IU 11.1}{Registrar entidad} o \cdtIdRef{IU 11.2}{Modificar entidad} cuando no se pueda eliminar el atributo debido a que está siendo referenciado en algún caso de uso.
+		\end{UClist}
+	}
+
+	\UCitem{Tipo}{
+		Secundario, extiende de los casos de uso \cdtIdRef{CU 11.1}{Registrar entidad} y \cdtIdRef{CU 11.2}{Modificar entidad}.
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita eliminar un atributo oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{CU 11.1}{Registrar entidad} o \cdtIdRef{CU 11.2}{Modificar entidad}.
+    \UCpaso[\UCsist] Busca los casos de uso que estén referenciando al atributo.
+    \UCpaso[\UCsist] Verifica que ningún caso de uso esté referenciando al atributo. \refTray{A}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG11}{Confirmar eliminación} en una pantalla emergente con los botones \cdtButton{Aceptar} y \cdtButton{Cancelar}.
+    \UCpaso[\UCactor] Confirma la eliminación del atributo oprimiendo el botón \cdtButton{Aceptar} de la pantalla emergente. \refTray{B}
+    \UCpaso[\UCsist] Elimina el atributo de la tabla correspondiente.
+    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
+ \end{UCtrayectoria}
+  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El atributo está siendo referenciado en un caso de uso.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG14}{Eliminación no permitida} en una pantalla emergente
+    con la lista de casos de uso que están referenciando al atributo.
+    \UCpaso[\UCactor] Oprime el botón \cdtButton{Aceptar} de la pantalla emergente.
+    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{C}{El actor desea cancelar la operación.}
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla emergente.
+    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
+ \end{UCtrayectoriaA} 

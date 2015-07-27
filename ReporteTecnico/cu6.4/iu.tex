@@ -1,0 +1,23 @@
+\subsection{IU 6.4 Consultar pantalla}
+
+\subsubsection{Objetivo}
+	
+	Esta pantalla permite al actor consultar la información de una pantalla, así como viualizar las acciones que contiene.
+
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 6.4} se muestra la pantalla ``Consultar pantalla'' que permite consultar una pantalla y visualizar sus acciones. Cuando no existan acciones registradas, la sección ``Acciones'' no aparecerá. \\
+
+
+    \IUfig[.9]{cu6.4/images/iu.png}{IU 6.4}{Consultar pantalla}
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \cdtButton{Aceptar}: Permite al actor finalizar la operación, dirige a la pantalla \cdtIdRef{IU 6}{Gestionar pantallas}.
+\end{itemize}
+
+\subsubsection{Mensajes}
+	
+\begin{description}
+	\item[\cdtRef{MSG13}{Ha ocurrido un error}:] Se muestra en la pantalla donde se solicitó la operación cuando la pantalla que se desea consultar no existe.
+\end{description}
