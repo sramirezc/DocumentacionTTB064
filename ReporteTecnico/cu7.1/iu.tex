@@ -1,43 +1,35 @@
-\subsection{IU 5.1 Registrar caso de uso}
+\subsection{IU 7.1 Registrar actor}
 
 \subsubsection{Objetivo}
 	
-	Esta pantalla permite al actor registrar la información de un caso de uso nuevo.
+	Esta pantalla permite al actor registrar la información de un actor nuevo.
 
 \subsubsection{Diseño}
 
-    En la figura ~\ref{IU 5.1} se muestra la pantalla ``Registrar caso de uso'' que permite registrar un caso de uso. El actor deberá ingresar la información solicitada, 
-    y gestionar las precondiciones y postcondiciones.\\
-    
-    
-    Una vez ingresada la información solicitada en la pantalla, deberá oprimir el botón 
+    En la figura ~\ref{IU 7.1} se muestra la pantalla ``Registrar actor'' que permite registrar un actor. El actor deberá ingresar la información solicitada, 
+    una vez ingresada la información, deberá oprimir el botón 
     \cdtButton{Aceptar}, el sistema validará y registrará la información sólo si se han cumplido todas las reglas de negocio establecidas.  \\
     
-    Finalmente se mostrará el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}, para indicar que la información del caso de uso
+    Finalmente se mostrará el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 7}{Gestionar actores}, para indicar que la información del actor
     se ha registrado correctamente.        
 
 
-    \IUfig[.9]{cu5.1/images/iu.png}{IU 5.1}{Registrar caso de uso}
-    
-%     \IUfig[.9]{cu5.1/images/comentarios.png}{IU C1}{Comentarios de la actualización}
-
+    \IUfig[.9]{cu7.1/images/iu.png}{IU 7.1}{Registrar actor}
 
 \subsubsection{Comandos}
 \begin{itemize}
-	\item \cdtButton{Aceptar}: Permite al actor guardar el registro del caso de uso, dirige a la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
-	\item \cdtButton{Cancelar}: Permite al actor cancelar el registro del caso de uso, dirige a la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+	\item \cdtButton{Aceptar}: Permite al actor guardar el registro del actor, dirige a la pantalla \cdtIdRef{IU 7}{Gestionar actores}.
+	\item \cdtButton{Cancelar}: Permite al actor cancelar el registro del actor, dirige a la pantalla \cdtIdRef{IU 7}{Gestionar actores}.
 \end{itemize}
 
 \subsubsection{Mensajes}
 
 	
 \begin{description}
-	\item[\cdtIdRef{MSG1}{Operación exitosa}:] Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} para indicar que el registro fue exitoso.
-	\item[\cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} cuando no se ha ingresado un dato marcado como obligatorio.
-	\item[\cdtIdRef{MSG5}{Dato incorrecto}:] Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
-	\item[\cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} cuando se ha excedido la longitud de alguno de los campos.
-	\item[\cdtIdRef{MSG7}{Registro repetido}:] Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} cuando se registre un caso de uso con un nombre o número que ya este registrado.
-	\item[\cdtIdRef{MSG15}{Dato no registrado}:] Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} cuando un elemento referenciado no existe en el sistema.
-	\item[\cdtIdRef{MSG23}{Caracteres inválidos}:] Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} cuando el nombre del caso de uso contiene un caracter no válido.
-	\item[\cdtIdRef{MSG27}{Token incorrecto}:] Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} cuando el token ingresado está mal formado.
+	\item[\cdtIdRef{MSG1}{Operación exitosa}:] Se muestra en la pantalla \cdtIdRef{IU 7}{Gestionar actores} para indicar que el registro fue exitoso.
+	\item[\cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar actor} cuando no se ha ingresado un dato marcado como obligatorio.
+	\item[\cdtIdRef{MSG7}{Dato incorrecto}:] Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar actor} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+	\item[\cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar actor} cuando se ha excedido la longitud de alguno de los campos.
+	\item[\cdtIdRef{MSG7}{Registro repetido}:] Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar actor} cuando se registre un actor con un nombre o número que ya este registrado.
+	\item[\cdtIdRef{MSG23}{Caracteres inválidos}:] Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar actor} cuando el nombre del actor contiene un caracter no válido.
 \end{description}

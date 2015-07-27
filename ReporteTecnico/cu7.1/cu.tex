@@ -12,7 +12,6 @@
 		\begin{UClist} 
 			\UCli De la sección {\bf Información general del caso de uso}: 
 				\begin{Citemize}
-					\item \cdtRef{Elemento:Numero}{Número}: \ioEscribir.
 				        \item \cdtRef{Elemento:Nombre}{Nombre}: \ioEscribir.
 					\item \cdtRef{Elemento:Descripcion}{Descripcion}: \ioEscribir.
 				\end{Citemize}
@@ -27,7 +26,7 @@
 	
 	\UCitem{Mensajes}{	
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 7}{Gestionar casos de uso} para indicar que el registro fue exitoso.
+			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 7}{Gestionar actores} para indicar que el registro fue exitoso.
 		\end{UClist}
 	}
 	
@@ -35,162 +34,73 @@
 		Ninguna
 	}			
 	\UCitem{Postcondiciones}{ 
-		\begin{UClist}
-			\UCli El estado del caso de uso cambiará a ``Edición''.
-	 	\end{UClist}
+		Ninguna
 	}
 	\UCitem{Errores}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar caso de uso} cuando no se ha ingresado un dato marcado como obligatorio.
-			\UCli \cdtIdRef{MSG7}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar caso de uso} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
-			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar caso de uso} cuando se ha excedido la longitud de alguno de los campos.
-			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar caso de uso} cuando se registre un caso de uso con un nombre o número que ya este registrado.
-			\UCli \cdtIdRef{MSG17}{Dato no registrado}: Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar caso de uso} cuando un elemento referenciado no existe en el sistema.
-			\UCli \cdtIdRef{MSG23}{Caracteres inválidos}: Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar caso de uso} cuando el nombre del caso de uso contiene un caracter no válido.
-			\UCli \cdtIdRef{MSG27}{Token incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar caso de uso} cuando el token ingresado está mal formado.
+			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar actor} cuando no se ha ingresado un dato marcado como obligatorio.
+			\UCli \cdtIdRef{MSG7}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar actor} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar actor} cuando se ha excedido la longitud de alguno de los campos.
+			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar actor} cuando se registre un actor con un nombre o número que ya este registrado.
+			\UCli \cdtIdRef{MSG23}{Caracteres inválidos}: Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar actor} cuando el nombre del actor contiene un caracter no válido.
 		\end{UClist}
 	}
 	
 	\UCitem{Tipo}{
-		Secundario, extiende del caso de uso \cdtIdRef{CU 7}{Gestionar casos de uso}.
+		Secundario, extiende del caso de uso \cdtIdRef{CU 7}{Gestionar actores}.
 	}
 
 	
 \end{UseCase}
  %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
-    \UCpaso[\UCactor] Solicita registrar un caso de uso oprimiendo el botón \cdtButton{Registrar} de la pantalla \cdtIdRef{IU 7}{Gestionar casos de uso}.
-    \UCpaso[\UCsist] Calcula la clave del caso de uso.
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 7.1}{Registrar caso de uso} en la cual se realizará el registro del caso de uso. 
-    \UCpaso[\UCactor] Ingresa la información general del caso de uso en la pantalla \cdtIdRef{IU 7.1}{Registrar caso de uso}. \label{cu7.1:ingresaDatos}
-    \UCpaso[\UCactor] Ingresa los actores en la pantalla \cdtIdRef{IU 7.1}{Registrar caso de uso}. \refTray{A} \label{cu7.1:ingresaActores}
-    \UCpaso[\UCactor] Ingresa las entradas en la pantalla \cdtIdRef{IU 7.1}{Registrar caso de uso}. \refTray{B} \refTray{C} \label{cu7.1:ingresaEntradas}
-    \UCpaso[\UCactor] Ingresa las salidas en la pantalla \cdtIdRef{IU 7.1}{Registrar caso de uso}. \refTray{B} \refTray{C} \refTray{D} \label{cu7.1:ingresaSalidas}
-    \UCpaso[\UCactor] Ingresa las reglas de negocio en la pantalla \cdtIdRef{IU 7.1}{Registrar caso de uso}. \refTray{E} \label{cu7.1:ingresaReglasNegocio}
-    \UCpaso[\UCactor] Gestiona las precondiciones.\label{cu7.1:ingresaPrecond}
-    \UCpaso[\UCactor] Gestiona las postcondiciones.\label{cu7.1:ingresaPostcond}
-    \UCpaso[\UCactor] Solicita registrar el caso de uso oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 7.1}{Registrar caso de uso}. \refTray{F}
-    \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{G}
-    \UCpaso[\UCsist] Verifica que el nombre del caso de uso no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{H}
+    \UCpaso[\UCactor] Solicita registrar un actor oprimiendo el botón \cdtButton{Registrar} de la pantalla \cdtIdRef{IU 7}{Gestionar actores}.
+    \UCpaso[\UCsist] Calcula la clave del actor.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 7.1}{Registrar actor} en la cual se realizará el registro del actor. 
+    \UCpaso[\UCactor] Ingresa la información del actor en la pantalla \cdtIdRef{IU 7.1}{Registrar actor}. \label{cu7.1:ingresaDatos}
+    \UCpaso[\UCactor] Solicita registrar al actor oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 7.1}{Registrar actor}. \refTray{A}
     
-    \UCpaso[\UCsist] Verifica que el nombre no contenga caracteres inválidos con base en la regla de negocio \cdtIdRef{RN2}{Nombres de los elementos}. \refTray{I}
-    \UCpaso[\UCsist] Verifica que el número del caso de uso no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN1}{Unicidad de números}. \refTray{J}
+    \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{B}
+    \UCpaso[\UCsist] Verifica que el nombre del caso de uso no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{C}
+    \UCpaso[\UCsist] Verifica que el nombre no contenga caracteres inválidos con base en la regla de negocio \cdtIdRef{RN2}{Nombres de los elementos}. \refTray{D}
+    \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{E} \refTray{F}
     
-    \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{K} \refTray{L}
-    
-    \UCpaso[\UCsist] Verifica que los tokens utilizados esten bien formados. \refTray{M}
-    \UCpaso[\UCsist] Verifica que los elementos referenciados existan. \refTray{N}
-    
-    \UCpaso[\UCsist] Registra la información del caso de uso en el sistema.
-    \UCpaso[\UCsist] Cambia el estado del caso de uso a ``Edición''.
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 7}{Gestionar casos de uso} 
+    \UCpaso[\UCsist] Registra la información del actor en el sistema.
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 7}{Gestionar actores} 
     para indicar al actor que el registro se ha realizado exitosamente.
  \end{UCtrayectoria}
- 
-  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
- \begin{UCtrayectoriaA}{A}{El actor desea ingresar un actor.}
- 	\UCpaso[\UCactor] Ingresa el token ``ACT·''.
- 	\UCpaso[\UCsist] Busca los actores registrados en el sistema. 
- 	\UCpaso[\UCsist] Muestra la lista de actores encontrados.
- 	\UCpaso[\UCactor] Selecciona un actor de la lista.
-  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre del actor al texto.
-    \UCpaso[] Continúa con el paso \ref{cu7.1:ingresaActores} de la trayectoria principal.
+ %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El actor desea cancelar la operación.}
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 7.1}{Registrar actor}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 7}{Gestionar actores}.
  \end{UCtrayectoriaA}
   %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
- \begin{UCtrayectoriaA}{B}{El actor desea ingresar un término del glosario.}
- 	\UCpaso[\UCactor] Ingresa el token ``GLS·''.	
- 	\UCpaso[\UCsist] Busca los términos del glosario registrados en el sistema. 
- 	\UCpaso[\UCsist] Muestra la lista de términos del glosario.
- 	\UCpaso[\UCactor] Selecciona un término del glosario de la lista.
-  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre del término del glosario al texto.
-    \UCpaso[] Continúa con el paso \ref{cu7.1:ingresaEntradas} o el paso \ref{cu7.1:ingresaSalidas} de la trayectoria principal.
+ \begin{UCtrayectoriaA}{B}{El actor no ingresó algún dato marcado como obligatorio.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
+	    \cdtIdRef{CU 7.1}{Registrar actor}, indicando al actor que el dato es obligatorio.
+    \UCpaso[] Continúa con el paso \ref{cu7.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
-
-  %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
- \begin{UCtrayectoriaA}{C}{El actor desea ingresar un atributo de una entidad.}
- 	\UCpaso[\UCactor] Ingresa el token ``ATR·''.
-  	\UCpaso[\UCsist] Busca los atributos de las entidades registradas.
-  	\UCpaso[\UCsist] Muestra la lista de atributos encontrados.
- 	\UCpaso[\UCactor] Selecciona un atributo de la lista.
-  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre del atributo al texto.
-    \UCpaso[] Continúa con el paso \ref{cu7.1:ingresaEntradas} o el paso \ref{cu7.1:ingresaSalidas} de la trayectoria principal.
+ %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{C}{El actor ingresó un nombre de actor repetido.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Registro repetido} y señala el campo que presenta la duplicidad en la pantalla 
+	    \cdtIdRef{CU 7.1}{Registrar actor}, indicando al actor que existe un actor con el mismo nombre.
+    \UCpaso[] Continúa con el paso \ref{cu7.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
 %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
- \begin{UCtrayectoriaA}{D}{El actor desea ingresar un mensaje.}
- 	 \UCpaso[\UCactor] Ingresa el token ``MSG·''.	
- 	\UCpaso[\UCsist] Busca los mensajes registrados en el sistema. 
- 	\UCpaso[\UCsist] Muestra la lista de mensajes.
- 	\UCpaso[\UCactor] Selecciona un mensaje de la lista.
-  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre del mensaje al texto.
-    \UCpaso[] Continúa con el paso \ref{cu7.1:ingresaSalidas} de la trayectoria principal.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
- \begin{UCtrayectoriaA}{E}{El actor desea ingresar una regla de negocio.}
- 	\UCpaso[\UCactor] Ingresa el token ``RN·''.	
- 	\UCpaso[\UCsist] Busca las reglas de negocio registradas en el sistema. 
- 	\UCpaso[\UCsist] Muestra la lista de reglas de negocio.
- 	\UCpaso[\UCactor] Selecciona una regla de negocio de la lista.
-  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre de la regla de negocio al texto.
-    \UCpaso[] Continúa con el paso \ref{cu7.1:ingresaReglasNegocio} de la trayectoria principal.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria F---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{F}{El actor desea cancelar la operación.}
-    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 7.1}{Registrar caso de uso}.
-    \UCpaso[\UCsist] Elimina la información registrada en el sistema.
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 7}{Gestionar casos de uso}.
- \end{UCtrayectoriaA}
-  %----------------------------------------------------------%trayectoria G---------------------------------------------------- 
- \begin{UCtrayectoriaA}{G}{El actor no ingresó algún dato marcado como obligatorio.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
-	    \cdtIdRef{CU 7.1}{Registrar caso de uso}, indicando al actor que el dato es obligatorio.
-    \UCpaso[] Continúa con el paso \ref{cu7.1:ingresaDatos} de la trayectoria principal.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria H---------------------------------------------------- 
- \begin{UCtrayectoriaA}{H}{El actor ingresó un nombre de caso de uso repetido.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Registro repetido} y señala el campo que presenta la duplicidad en la pantalla 
-	    \cdtIdRef{CU 7.1}{Registrar caso de uso}, indicando al actor que existe un caso de uso con el mismo nombre.
-    \UCpaso[] Continúa con el paso \ref{cu7.1:ingresaDatos} de la trayectoria principal.
- \end{UCtrayectoriaA}
-%----------------------------------------------------------%trayectoria I---------------------------------------------------- 
- \begin{UCtrayectoriaA}{I}{El actor ingresó un nombre con caracteres inválidos.}
+ \begin{UCtrayectoriaA}{D}{El actor ingresó un nombre con caracteres inválidos.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG23}{Caracteres inválidos} y señala el campo que contiene los caracteres inválidos.
     \UCpaso[] Continúa con el paso \ref{cu7.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria J---------------------------------------------------- 
- \begin{UCtrayectoriaA}{J}{El actor ingresó un número de caso de uso repetido.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Registro repetido} y señala el campo que presenta la duplicidad en la pantalla 
-	    \cdtIdRef{CU 7.1}{Registrar caso de uso}, indicando al actor que existe un caso de uso con el mismo número.
-    \UCpaso[] Continúa con el paso \ref{cu7.1:ingresaDatos} de la trayectoria principal.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria K---------------------------------------------------- 
- \begin{UCtrayectoriaA}{K}{El actor ingresó un tipo de dato incorrecto.}
+ %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{E}{El actor ingresó un tipo de dato incorrecto.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Formato incorrecto} y señala el campo que presenta el dato inválido en la 
-    pantalla \cdtIdRef{IU 7.1}{Registrar caso de uso} para indicar que se ha ingresado un tipo de dato inválido.
+    pantalla \cdtIdRef{IU 7.1}{Registrar actor} para indicar que se ha ingresado un tipo de dato inválido.
     \UCpaso[] Continúa con el paso \ref{cu7.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria L----------------------------------------------------  
- \begin{UCtrayectoriaA}{L}{El actor proporciona un dato que excede la longitud máxima.}
+ %----------------------------------------------------------%trayectoria F----------------------------------------------------  
+ \begin{UCtrayectoriaA}{F}{El actor proporciona un dato que excede la longitud máxima.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
-    longitud en la pantalla \cdtIdRef{IU 7.1}{Registrar caso de uso}, para indicar que el dato excede el tamaño máximo permitido.
-    \UCpaso[] Continúa con el paso \ref{cu7.1:ingresaDatos} de la trayectoria principal.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria M---------------------------------------------------- 
- \begin{UCtrayectoriaA}{M}{El actor ingresó un token mal formado.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG27}{Token incorrecto} mencionando que el token utilizado no es correcto.
-    \UCpaso[] Continúa con el paso \ref{cu7.1:ingresaDatos} de la trayectoria principal.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria N---------------------------------------------------- 
- \begin{UCtrayectoriaA}{N}{Alguno de los elementos referenciados no existe en el sistema.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG17}{Dato no registrado} mencionando el elemento que no está registrado en el sistema.
+    longitud en la pantalla \cdtIdRef{IU 7.1}{Registrar actor}, para indicar que el dato excede el tamaño máximo permitido.
     \UCpaso[] Continúa con el paso \ref{cu7.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
  
-
-\subsection{Puntos de extensión}	
-\UCExtensionPoint{El actor requiere registrar una precondición}
-	{Paso \ref{cu7.1:ingresaPrecond} de la trayectoria principal}
-	{\cdtIdRef{CU 7.1.2}{Registrar precondición}}
-	
-\UCExtensionPoint{El actor requiere registrar una postcondición}
-	{Paso \ref{cu7.1:ingresaPostcond} de la trayectoria principal}
-	{\cdtIdRef{CU 7.1.3}{Registrar postcondición}}
