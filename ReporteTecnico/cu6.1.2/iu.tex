@@ -6,16 +6,16 @@
 
 \subsubsection{Diseño}
 
-    En la figura ~\ref{IU 6.1.2} se muestra la pantalla ``Modificar acción'' en la cual el actor deberá ingresar la información solicitada, y oprimir el botón \cdtButton{Aceptar}. El sistema validará y agregará la acción a la pantalla solamente si se han cumplido todas las reglas de negocio establecidas.  \\
+    En la figura ~\ref{IU 6.1.2} se muestra la pantalla ``Modificar acción'' en la cual el actor deberá ingresar la información solicitada, y oprimir el botón \cdtButton{Aceptar}. El sistema validará y modificará la acción solamente si se han cumplido todas las reglas de negocio establecidas.  \\
+	
+	Para aplicar los cambios realizados, el actor deberá confirmar la operación en la pantalla \cdtIdRef{IU 6.1}{Registrar pantalla} o \cdtIdRef{IU 6.2}{Modificar pantalla}.
     
-    Finalmente la acción será agregada a la tabla de la pantalla \cdtIdRef{IU 6.1}{Registrar pantalla} o \cdtIdRef{IU 6.2}{Modificar pantalla} según corresponda. \\
-
     \IUfig[.9]{cu6.1.2/images/iu.png}{IU 6.1.2}{Modificar acción}
 
 \subsubsection{Comandos}
 \begin{itemize}
-	\item \cdtButton{Aceptar}: Permite al actor agregar a la pantalla el registro de la acción, dirige a la pantalla \cdtIdRef{IU 6.1}{Registrar pantalla} o \cdtIdRef{IU 6.2}{Modificar pantalla}, según corresponda.
-	\item \cdtButton{Cancelar}: Permite al actor cancelar el registro de la acción, dirige a la pantalla \cdtIdRef{IU 6.1}{Registrar pantalla} o \cdtIdRef{IU 6.2}{Modificar pantalla}, según corresponda.
+	\item \cdtButton{Aceptar}: Permite al actor modificar la acción, dirige a la pantalla \cdtIdRef{IU 6.1}{Registrar pantalla} o \cdtIdRef{IU 6.2}{Modificar pantalla}, según corresponda.
+	\item \cdtButton{Cancelar}: Permite al actor cancelar la modificación de la acción, dirige a la pantalla \cdtIdRef{IU 6.1}{Registrar pantalla} o \cdtIdRef{IU 6.2}{Modificar pantalla}, según corresponda.
 \end{itemize}
 
 \subsubsection{Mensajes}

@@ -159,15 +159,30 @@
     \end{Citemize}
     \item[Ejemplo:] Ingrese al menos {\em un paso}.
 \end{mensaje}
+%============================== MSG21 =================================
+\begin{mensaje}{MSG21}{Registro incorrecto}{Error}
+    \item[Objetivo:] Informar al actor que alguno de los registros de la tabla presenta un error.
+    \item[Redacción:] Alguno de los datos ingresados no es correcto.
+\end{mensaje}
 %============================== MSG23 =================================
 \begin{mensaje}{MSG23}{Caracteres inválidos}{Error}
-    \item[Objetivo:] Informar al actor que el dato que ingresó no puede contener coma, punto, punto medio, dos puntos o guión bajo.
+    \item[Objetivo:] Informar al actor que el dato que ingresó no puede contener coma, punto, punto medio, dos pufTntos o guión bajo.
     \item[Redacción:] DETERMINADO ATRIBUTO no puede contener coma, punto, punto medio, dos puntos o guión bajo.
     \item[Parámetros:] El mensaje se muestra con base en los siguientes parámetros:
     \begin{Citemize}
 	\item DETERMINADO ATRIBUTO: Artículo determinado más el nombre del atributo que no puede contener coma, punto, punto medio, dos puntos o guión bajo.
     \end{Citemize}
     \item[Ejemplo:] { \em El nombre} no puede contener coma, punto, punto medio, dos puntos o guión bajo.
+\end{mensaje}
+%============================== MSG27 =================================
+\begin{mensaje}{MSG23}{Token incorrecto}{Error}
+    \item[Objetivo:] Informar al actor que no es posible realizar la operación debido a que el token ingresado es incorrecto.
+    \item[Redacción:] El token ingresado para DETERMINADO ELEMENTO es incorrecto.
+    \item[Parámetros:] El mensaje se muestra con base en los siguientes parámetros:
+    \begin{Citemize}
+	\item DETERMINADO ELEMENTO: Artículo determinado más el nombre del elemento que se desea referenciar.
+    \end{Citemize}
+    \item[Ejemplo:] El token ingresado para { \em el caso de uso} es incorrecto.
 \end{mensaje}
 %============================== MSG28 =================================
 \begin{mensaje}{MSG28}{Formato de archivo incorrecto}{Error}
@@ -189,4 +204,15 @@
 	\item UNIDAD: Es la unidad en que se especificó el tamaño máximo del archivo.
     \end{Citemize}
     \item[Ejemplo:] El archivo no puede exceder {\em 2 MB}.
+\end{mensaje}
+
+%============================== MSG30 =================================
+\begin{mensaje}{MSG30}{Modificación no permitida}{Error}
+    \item[Objetivo:] Informar al actor que el elemento seleccionado no puede modificarse debido a que se encuentra asociado algún caso de uso liberados.
+    \item[Redacción:] Este elemento no se puede modificar debido a que está siendo referenciado en casos de uso liberados: LISTA
+    \item[Parámetros:] El mensaje se muestra con base en los siguientes parámetros:
+    \begin{Citemize}
+	\item LISTA: Es la lista de casos de uso liberados en los que se utiliza el elemento.
+    \end{Citemize}
+    \item[Ejemplo:] Este elemento no se puede modificar debido a que está siendo referenciado en casos de uso liberados: {\em CUSF1.1 Registrar incendio, CUSF1.2 Modificar incendio}.
 \end{mensaje}

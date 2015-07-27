@@ -1,38 +1,33 @@
-\subsection{CU 5.1.1.1.2 Modificar paso}
+\subsection{IU 5.1.1.1.2 Modificar paso}
 
 \subsubsection{Objetivo}
 	
-	Esta pantalla permite al actor modificar la información de un paso.
+	Esta pantalla permite al actor modificar la información de un paso perteneciente a una trayectoria.
 
 \subsubsection{Diseño}
 
-    En la figura ~\ref{IU 5.1.1.1.2} se muestra la pantalla ``Modificar paso'' que permite registrar un paso. El actor deberá ingresar la información solicitada, 
-    esto incluye indicar quién realiza la acción y la redacción del paso.\\
+    En la figura ~\ref{IU 5.1.1.1.2} se muestra la pantalla ``Modificar paso'' en la cual el actor deberá ingresar la información solicitada, y oprimir el botón \cdtButton{Aceptar}. El sistema validará la información y realizará la modificación solamente si se han cumplido todas las reglas de negocio establecidas.\\
+	
+	Para aplicar los cambios realizados, el actor deberá confirmar la operación en la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} o \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria}.
     
+    Cuando el actor requiera un verbo que no está en la lista podrá seleccionar la opción ``Otro'' y el sistema mostrará un campo para que especifique el verbo que requiera como se muestra en la figura ~\ref{IU 5.1.1.1.2A}. \\
     
-    Una vez ingresada la información solicitada en la pantalla, deberá oprimir el botón 
-    \cdtButton{Aceptar}, el sistema validará y modificará la información sólo si se han cumplido todas las reglas de negocio establecidas.  \\
-    
-    Finalmente se mostrará el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla donde se solicitó la operación,
-    para indicar que la información del paso
-    se ha modificado correctamente.        
 
 
     \IUfig[.9]{cu5.1.1.1.2/images/iu.png}{IU 5.1.1.1.2}{Modificar paso}
+    \IUfig[.9]{cu5.1.1.1.2/images/iuA.png}{IU 5.1.1.1.2A}{Modificar paso: Otro verbo}
 
 
 \subsubsection{Comandos}
 \begin{itemize}
-	\item \cdtButton{Aceptar}: Permite al actor guardar la modificación del paso, dirige a la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria}.
-	\item \cdtButton{Cancelar}: Permite al actor cancelar la modificación del paso, dirige a la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria}.
+	\item \cdtButton{Aceptar}: Permite al actor modificar el paso, dirige a la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} o \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria}.
+	\item \cdtButton{Cancelar}: Permite al actor cancelar la modificación del paso, dirige a la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} o \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria}.
 \end{itemize}
 
 \subsubsection{Mensajes}
 
 	
 \begin{description}
-
-	\item[ \cdtIdRef{MSG1}{Operación exitosa}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} para indicar que la modificación fue exitosa.
-	\item[ \cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.1.1.2}{Registrar paso} cuando no se ha ingresado un dato marcado como obligatorio.
-	\item[ \cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.1.1.2}{Registrar paso} cuando se ha excedido la longitud de alguno de los campos.	
+	\item[ \cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.1.1.2}{Modificar paso} cuando no se ha ingresado un dato marcado como obligatorio.
+	\item[ \cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.1.1.2}{Modificar paso} cuando se ha excedido la longitud de alguno de los campos.
 \end{description}
