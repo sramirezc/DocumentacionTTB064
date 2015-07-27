@@ -1,0 +1,74 @@
+\begin{UseCase}{CU 7}{Gestionar actores}
+	{
+		Este caso de uso permite al analista visualizar los registros de los actores registrados en el sistema. También permite 
+		al actor acceder a las operaciones de registro, consulta, modificación, 
+		y eliminación de un actor.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Revisar y gestionar los actores registrados en la herramienta.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtRef{Modulo:Clave}{Clave del módulo}: \ioObtener.
+			\UCli \cdtRef{Modulo:Nombre}{Nombre del módulo}: \ioObtener.
+			\UCli \cdtRef{Modulo:Descripcion}{Descripción del módulo}: \ioObtener.
+			\UCli \cdtRef{Actor}{Actor}: \ioTabla{\cdtRef{Elemento:Clave}{Clave}, \cdtRef{Elemento:Numero}{Número} y el \cdtRef{Elemento:Nombre}{Nombre}}{de los actores}.
+		\end{UClist}
+	}
+	
+	\UCitem{Mensajes}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG2}{No existe información}: Se muestra en la pantalla \cdtIdRef{IU 7}{Gestionar actores} cuando no existen actores registrados.
+		\end{UClist}
+	}
+
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		Ninguna
+	}
+
+	\UCitem{Errores}{
+		Ninguno
+	}
+
+	\UCitem{Tipo}{
+		Primario
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita gestionar los actores seleccionando la opción ``Actores'' del \cdtRef{menu:principal}{Menú principal}.
+    \UCpaso[\UCsist] Busca la información de los actores registrados en el sistema. \refTray{A}
+    \UCpaso[\UCsist] Muestra la información de los actores en la pantalla \cdtIdRef{IU 7}{Gestionar actores} y las operaciones 
+    disponibles de acuerdo a la regla de negocio \cdtIdRef{RN15}{Operaciones disponibles}. 
+    \UCpaso[\UCactor] Gestiona los actores a través de los botones: \cdtButton{Registrar}, \btnConsulta, \btnEditar y \btnEliminar. \label{cu7:gestiona}
+ \end{UCtrayectoria}
+ 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No existen registros de actores.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG2}{No existe información} en pantalla \cdtIdRef{IU 7}{Gestionar actores} 
+    para indicar que no hay registros de actores para mostrar.
+ \end{UCtrayectoriaA}
+ 
+
+\subsection{Puntos de extensión}
+
+\UCExtensionPoint{El actor requiere registrar un actor}
+	{Paso \ref{cu7:gestiona}}
+	{\cdtIdRef{CU 7.1}{Registrar actor}}
+\UCExtensionPoint{El actor requiere modificar un actor}
+	{Paso \ref{cu7:gestiona}}
+	{\cdtIdRef{CU 7.2}{Modificar actor}}	
+\UCExtensionPoint{El actor requiere eliminar un actor}
+	{Paso \ref{cu7:gestiona}}
+	{\cdtIdRef{CU 7.3}{Eliminar actor}}
+\UCExtensionPoint{El actor requiere consultar un actor}
+	{Paso \ref{cu7:gestiona}}
+	{\cdtIdRef{CU 7.4}{Consultar actor}}  
