@@ -1,22 +1,9 @@
 \begin{UseCase}{CU 5.1.1.1.2}{Modificar paso}
 	{
-		Este caso de uso permite al actor modificar la información previamente registrada de un paso 
-		de la trayectoria principal o de alguna trayectoria alternativa.
+		Los pasos que describen una trayectoria deben indicar las acciones que realiza el sistema o el actor.
+		Este caso de uso permite al analista modificar un paso de alguna trayectoria.
 		
 	}
-	%\UCitem{\DONEUC}{Edición}
-	\UCitem{Versión}{1.0}
-	\UCccsection{Administración de Requerimientos}	
-	\UCitem{Autor}{Natalia Giselle Hernández Sánchez}	
-	\UCccitem{Evaluador}{}
-	\UCitem{Operación}{Administración}
-	\UCccitem{Prioridad}{Alta}
-	\UCccitem{Complejidad}{Media}
-	\UCccitem{Volatilidad}{Alta}
-	\UCccitem{Madurez}{Baja}
-	\UCitem{Estatus}{Terminado}
-	\UCitem{Fecha del último estatus}{}
-	\UCsection{Atributos}
 	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
 	\UCitem{Propósito}{
 		Modificar los pasos de la trayectoria principal o de alguna trayectoria alternativa.
@@ -24,32 +11,28 @@
 	\UCitem{Entradas}{
 		\begin{UClist}
  			\UCli \cdtRef{Paso:RealizaActor}{Quien realiza el paso}: \ioSeleccionar.
+ 			\UCli \cdtRef{Verbo}{Verbo}: \ioSeleccionar.
  			\UCli \cdtRef{Paso:Redaccion}{Redacción del paso}: \ioEscribir.
 		\end{UClist}
 	}
 	\UCitem{Salidas}{
 		\begin{UClist}
-			\UCli Número del paso.
+ 			\UCli \cdtRef{Paso:RealizaActor}{Quien realiza el paso}: \ioObtener.
+ 			\UCli \cdtRef{Verbo}{Verbo}: \ioObtener.
+ 			\UCli \cdtRef{Paso:Redaccion}{Redacción del paso}: \ioObtener.
 		\end{UClist}
 	}
 	
 	\UCitem{Mensajes}{
-		\begin{UClist}
-			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} o \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria}
-			para indicar que la modificación ha sido exitosa.
-		\end{UClist}
+		Ninguno
 	}
 
 	\UCitem{Precondiciones}{
-		\begin{UClist}
-			\UCli Ninguna
-		\end{UClist}
+		Ninguna
 	}
 	
 	\UCitem{Postcondiciones}{
-		\begin{UClist}
-			\UCli Ninguna
-		\end{UClist}
+		Ninguna
 	}
 
 	\UCitem{Errores}{
@@ -63,44 +46,142 @@
 		Secundario, extiende de los casos de uso \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} y \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria}.
 	}
 \end{UseCase}
+
+
+
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+
  \begin{UCtrayectoria}
-	\UCpaso[\UCactor] Solicita modificar un paso oprimiento el botón \btnEditar de la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} o la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria}. 
-	\UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.1.1.1.2}{Modificar paso}. 
-	
+	 \UCpaso[\UCactor] Oprime el botón \btnEditar del paso que desea modificar en la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} o \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria}. 
+	\UCpaso[\UCsist] Busca la información del paso.
+	\UCpaso[\UCsist] Muestra la información encontrada en la pantalla \cdtIdRef{IU 5.1.1.1.2}{Modificar paso}. 
 	\UCpaso[\UCactor] Selecciona si el actor o el sistema realiza el paso.\label{cu5.1.1.1.2:ingresaDatos}
-	\UCpaso[\UCactor] Ingresa la redacción del paso.
-	
-	\UCpaso[\UCactor] Solicita modificar el paso oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 5.1.1.1.2}{Modificar paso}. \refTray{A} 
-	
-	\UCpaso[\UCsist] Verifica que el actor haya ingresado todos los campos obligatorios con base en la regla de negocio \cdtIdRef{RN8}{Datos obligatorios}. \refTray{B}
-	\UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{C} 
-	
-	\UCpaso[\UCsist] Registra la información del paso en el sistema.
-	
-	\UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla donde se solicitó la operación
-	para indicar al actor que la modificación se ha realizado exitosamente.
-    
+	\UCpaso[\UCactor] Selecciona el verbo.
+	\UCpaso[\UCactor] Modifica la redacción del paso. \refTray{A} \refTray{B} \refTray{C} \refTray{D} \refTray{E} \refTray{F} \refTray{G} \refTray{H} \refTray{I} \refTray{M} \label{cu5.1.1.1.2:ingresaPaso}
+	\UCpaso[\UCactor] Solicita modificar el paso oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{CU 5.1.1.1.2}{Modificar paso}. \refTray{J} 
+	\UCpaso[\UCsist] Verifica que el actor haya ingresado todos los campos obligatorios con base en la regla de negocio \cdtIdRef{RN8}{Datos obligatorios}. \refTray{K}
+	\UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{L} 
+	\UCpaso[\UCsist] Modifica la información del paso.
 \end{UCtrayectoria}
 
     
+
  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El actor desea cancelar la operación.}
-    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{CU 5.1.1.1.2}{Modificar paso}.
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} o \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} según corresponda.
+ \begin{UCtrayectoriaA}{A}{El actor desea ingresar una entidad.}
+ 	 \UCpaso[\UCactor] Ingresa el token ``ENT·''.
+ 	\UCpaso[\UCsist] Muestra la lista de entidades encontradas.
+ 	\UCpaso[\UCactor] Selecciona una entidad de la lista.
+  	\UCpaso[\UCsist] Sustituye los espacios del elemento seleccionado por guiones bajos.
+  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre de la entidad al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.2:ingresaPaso} de la trayectoria principal.
  \end{UCtrayectoriaA}
  
- %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
- \begin{UCtrayectoriaA}{B}{El actor no ingresó algún dato marcado como obligatorio.}
+  %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{B}{El actor desea ingresar un actor.}
+ 	\UCpaso[\UCactor] Ingresa el token ``ACT·''.
+ 	\UCpaso[\UCsist] Muestra la lista de actores encontrados.
+ 	\UCpaso[\UCactor] Selecciona un actor de la lista.
+  	\UCpaso[\UCsist] Sustituye los espacios del elemento seleccionado por guiones bajos.
+  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre del actor al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.2:ingresaPaso} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+  %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{C}{El actor desea ingresar un caso de uso.}
+  	\UCpaso[\UCactor] Ingresa el token ``CU·''.	
+ 	\UCpaso[\UCsist] Muestra la lista de casos de uso encontrados.
+ 	\UCpaso[\UCactor] Selecciona un caso de uso de la lista.
+  	\UCpaso[\UCsist] Sustituye los espacios del elemento seleccionado por guiones bajos.
+  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre del caso de uso al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.2:ingresaPaso} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+  %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{D}{El actor desea ingresar una pantalla.}
+ 	\UCpaso[\UCactor] Ingresa el token ``IU·''.	
+ 	\UCpaso[\UCsist] Muestra la lista de pantallas encontradas.
+ 	\UCpaso[\UCactor] Selecciona una pantalla de la lista.
+  	\UCpaso[\UCsist] Sustituye los espacios del elemento seleccionado por guiones bajos.
+  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre de la pantalla al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.2:ingresaPaso} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+ %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{E}{El actor desea ingresar un mensaje.}
+ 	 \UCpaso[\UCactor] Ingresa el token ``MSG·''.	
+ 	\UCpaso[\UCsist] Muestra la lista de mensajes.
+ 	\UCpaso[\UCactor] Selecciona un mensaje de la lista.
+  	\UCpaso[\UCsist] Sustituye los espacios del elemento seleccionado por guiones bajos.
+  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre del mensaje al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.2:ingresaPaso} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+  %----------------------------------------------------------%trayectoria F---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{F}{El actor desea ingresar una regla de negocio.}
+ 	\UCpaso[\UCactor] Ingresa el token ``RN·''.	
+ 	\UCpaso[\UCsist] Muestra la lista de reglas de negocio.
+ 	\UCpaso[\UCactor] Selecciona una regla de negocio de la lista.
+  	\UCpaso[\UCsist] Sustituye los espacios del elemento seleccionado por guiones bajos.
+  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre de la regla de negocio al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.2:ingresaPaso} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+  %----------------------------------------------------------%trayectoria G---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{G}{El actor desea ingresar un término del glosario.}
+ 	\UCpaso[\UCactor] Ingresa el token ``GLS·''.	
+ 	\UCpaso[\UCsist] Muestra la lista de términos del glosario.
+ 	\UCpaso[\UCactor] Selecciona un término del glosario de la lista.
+  	\UCpaso[\UCsist] Sustituye los espacios del elemento seleccionado por guiones bajos.
+  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre del término del glosario al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.2:ingresaPaso} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+  %----------------------------------------------------------%trayectoria H---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{H}{El actor desea ingresar un atributo de una entidad.}
+ 	\UCpaso[\UCactor] Ingresa el token ``ATR·''.
+  	\UCpaso[\UCsist] Muestra la lista de atributos encontrados.
+ 	\UCpaso[\UCactor] Selecciona un atributo de la lista.
+  	\UCpaso[\UCsist] Sustituye los espacios del elemento seleccionado por guiones bajos.
+  	\UCpaso[\UCsist] Oculta la lista y agrega el nombre del atributo al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.2:ingresaPaso} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+ %----------------------------------------------------------%trayectoria I---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{I}{El actor desea ingresar un paso.}
+ 	\UCpaso[\UCactor] Ingresa el token ``P·''.
+  	\UCpaso[\UCsist] Muestra la lista de pasos encontrados.
+ 	\UCpaso[\UCactor] Selecciona un paso de la lista.
+  	\UCpaso[\UCsist] Sustituye los espacios del elemento seleccionado por guiones bajos.
+  	\UCpaso[\UCsist] Oculta la lista y agrega el número del paso al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.2:ingresaPaso} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+ %----------------------------------------------------------%trayectoria J---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{J}{El actor desea cancelar la operación.}
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{CU 5.1.1.1.2}{Modificar paso}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} o \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria}, según corresponda.
+ \end{UCtrayectoriaA}
+ 
+ %----------------------------------------------------------%trayectoria K---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{K}{El actor no ingresó algún dato marcado como obligatorio.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
 	    \cdtIdRef{CU 5.1.1.1.2}{Modificar paso}, indicando al actor que el dato es obligatorio.
     \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.2:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria C --------------------------------------------------  
- \begin{UCtrayectoriaA}{C}{El actor proporciona un dato que excede la longitud máxima.}
+ 
+ %----------------------------------------------------------%trayectoria L --------------------------------------------------  
+ \begin{UCtrayectoriaA}{L}{El actor proporciona un dato que excede la longitud máxima.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
     longitud en la pantalla \cdtIdRef{CU 5.1.1.1.2}{Modificar paso}, para indicar que el dato excede el tamaño máximo permitido.
     \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.2:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
 
-  
+ %----------------------------------------------------------%trayectoria M---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{M}{El actor desea ingresar un paso.}
+ 	\UCpaso[\UCactor] Ingresa el token ``TRAY·''.
+  	\UCpaso[\UCsist] Muestra la lista de trayectorias encontradas.
+ 	\UCpaso[\UCactor] Selecciona una trayectoria de la lista.
+  	\UCpaso[\UCsist] Sustituye los espacios del elemento seleccionado por guiones bajos.
+  	\UCpaso[\UCsist] Oculta la lista y agrega la clave de la trayectoria al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.2:ingresaPaso} de la trayectoria principal.
+ \end{UCtrayectoriaA}

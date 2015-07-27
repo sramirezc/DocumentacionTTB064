@@ -76,6 +76,7 @@
 	\UCpaso[\UCsist] Busca entidades, actores, casos de uso, pantallas, mensajes, reglas de negocio y términos del glosario asociados al proyecto.
 	\UCpaso[\UCsist] Busca las trayectorias y los pasos del caso de uso al que pertenece la trayectoria.
 	\UCpaso[\UCsist] Verifica que la sección trayectorias del caso de uso al que pertenece la trayectoria no cuente con observaciones. \refTray{M}
+	\UCpaso[\UCsist] Verifica que no exista una trayectoria principal asociada al caso de uso. \refTray{N} 
 	\UCpaso[\UCsist] Muestra la información encontrada en la pantalla \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria}. \label{cu5.1.1.2:muestra}
 	\UCpaso[\UCactor] Modifica la clave de la trayectoria.
 	\UCpaso[\UCactor] Selecciona que es la trayectoria principal. \refTray{A} \label{cu5.1.1.2:ingresaDatos}
@@ -85,7 +86,7 @@
 	\UCpaso[\UCsist] Verifica que el actor haya ingresado todos los campos obligatorios con base en la regla de negocio \cdtIdRef{RN8}{Datos obligatorios}. \refTray{C}
 	\UCpaso[\UCsist] Verifica que la trayectoria no se encuentre registrada en el sistema con base en la regla de negocio \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{D}
 	\UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{E} \refTray{F}
-	\UCpaso[\UCsist] Verifica que la clave no contenga caracteres inválidos con base en la regla de negocio \cdtIdRef{RN16}{Nombres de las trayectorias}. \refTray{G}
+	\UCpaso[\UCsist] Verifica que la clave no contenga caracteres inválidos con base en la regla de negocio \cdtIdRef{RN16}{Nombres de las trayectorias}. \refTray{G}	
 	\UCpaso[\UCsist] Verifica que el usuario haya ingresado al menos un paso. \refTray{H}
 	\UCpaso[\UCsist] Verifica que los tokens utilizados en los pasos estén bien formados. \refTray{I}
 	\UCpaso[\UCsist] Verifica que los elementos referenciados en los pasos existan. \refTray{J}
@@ -173,7 +174,16 @@
     \UCpaso[\UCsist] Muestra la sección ``Observaciones'' con las observaciones encontradas.
 	\UCpaso[] Continúa con el paso \ref{cu5.1.1.2:muestra} de la trayectoria principal.
  \end{UCtrayectoriaA}
-
+ %----------------------------------------------------------%trayectoria N---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{N}{Existe una trayectoria principal asociada al caso de uso.}
+    \UCpaso[\UCsist] Verifica que la trayecoria principal encontrada no sea la trayectoria a modificar. \refTray{O}
+	\UCpaso[\UCsist] Bloquea el campo tipo.	
+	\UCpaso[] Continúa con el paso \ref{cu5.1.1.2:muestra} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria O---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{O}{La trayectoria a modificar es la trayectoria principal.}
+	\UCpaso[] Continúa con el paso \ref{cu5.1.1.2:muestra} de la trayectoria principal.
+ \end{UCtrayectoriaA}
 
 \subsection{Puntos de extensión}
 
