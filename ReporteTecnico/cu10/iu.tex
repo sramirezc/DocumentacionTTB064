@@ -1,0 +1,29 @@
+\subsection{IU 10 Gestionar términos}
+\subsubsection{Objetivo}
+	
+	En esta pantalla el actor puede visualizar algunos atributos de los términos y las operaciones disponibles de acuerdo a si está relacionado a un caso de uso liberado.
+
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 10} se muestra la pantalla ``Gestionar términos'', por medio de la cual 
+    se podrán gestionar los términos a través de una tabla.
+    El actor podrá podrá solicitar el registro, la consulta, la modificación y la eliminación de un término mediante los botones
+    \cdtButton{Registrar}, \btnConsulta, \btnEditar y \btnEliminar respectivamente. \\
+
+    \IUfig[.9]{cu10/images/iu.png}{IU 10}{Gestionar términos}
+
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \cdtButton{Registrar}: Permite al actor solicitar el registro de un término, dirige a la pantalla \cdtIdRef{IU 10.1}{Registrar término}.
+	\item \btnEditar[Modificar]: Permite al actor solicitar la modificación de un término, dirige a la pantalla \cdtIdRef{IU 10.2}{Modificar término}.
+	\item \btnEliminar[Eliminar]: Permite al actor solicitar la eliminación de un término, dirige a la pantalla \cdtIdRef{IU 10.3}{Eliminar término}.
+	\item \btnConsulta[Consultar]: Permite al actor solicitar la consulta de un término, dirige a la pantalla \cdtIdRef{IU 10.4}{Consultar término}.
+\end{itemize}
+
+\subsubsection{Mensajes}
+
+	
+\begin{description}
+	\item[\cdtIdRef{MSG2}{No existe información}:] Se muestra en la pantalla \cdtIdRef{IU 10}{Gestionar término} cuando no existen términos registrados.
+\end{description}

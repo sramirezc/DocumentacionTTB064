@@ -1,0 +1,74 @@
+\begin{UseCase}{CU 10}{Gestionar términos}
+	{
+		Este caso de uso permite al analista visualizar los registros de los términos registrados en el sistema. También permite 
+		al actor acceder a las operaciones de registro, consulta, modificación, 
+		y eliminación de un término del glosario.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Revisar y gestionar los términos registrados en la herramienta.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtRef{Modulo:Clave}{Clave del módulo}: \ioObtener.
+			\UCli \cdtRef{Modulo:Nombre}{Nombre del módulo}: \ioObtener.
+			\UCli \cdtRef{Modulo:Descripcion}{Descripción del módulo}: \ioObtener.
+			\UCli \cdtRef{Actor}{Actor}: \ioTabla{\cdtRef{Elemento:Clave}{Clave} y el \cdtRef{Elemento:Nombre}{Nombre}}{de los términos}.
+		\end{UClist}
+	}
+	
+	\UCitem{Mensajes}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG2}{No existe información}: Se muestra en la pantalla \cdtIdRef{IU 10}{Gestionar términos} cuando no existen términos registrados.
+		\end{UClist}
+	}
+
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		Ninguna
+	}
+
+	\UCitem{Errores}{
+		Ninguno
+	}
+
+	\UCitem{Tipo}{
+		Primario
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita gestionar los términos seleccionando la opción ``Glosario'' del \cdtRef{menu:principal}{Menú principal}.
+    \UCpaso[\UCsist] Busca la información de los términos registrados en el sistema. \refTray{A}
+    \UCpaso[\UCsist] Muestra la información de los términos en la pantalla \cdtIdRef{IU 10}{Gestionar términos} y las operaciones 
+    disponibles de acuerdo a la regla de negocio \cdtIdRef{RN15}{Operaciones disponibles}. 
+    \UCpaso[\UCactor] Gestiona los términos a través de los botones: \cdtButton{Registrar}, \btnConsulta, \btnEditar y \btnEliminar. \label{cu10:gestiona}
+ \end{UCtrayectoria}
+ 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No existen registros de términos.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG2}{No existe información} en pantalla \cdtIdRef{IU 10}{Gestionar términos} 
+    para indicar que no hay registros de términos para mostrar.
+ \end{UCtrayectoriaA}
+ 
+
+\subsection{Puntos de extensión}
+
+\UCExtensionPoint{El actor requiere registrar un término}
+	{Paso \ref{cu10:gestiona}}
+	{\cdtIdRef{CU 10.1}{Registrar término}}
+\UCExtensionPoint{El actor requiere modificar un término}
+	{Paso \ref{cu10:gestiona}}
+	{\cdtIdRef{CU 10.2}{Modificar término}}	
+\UCExtensionPoint{El actor requiere eliminar un término}
+	{Paso \ref{cu10:gestiona}}
+	{\cdtIdRef{CU 10.3}{Eliminar término}}
+\UCExtensionPoint{El actor requiere consultar un término}
+	{Paso \ref{cu10:gestiona}}
+	{\cdtIdRef{CU 10.4}{Consultar término}}  

@@ -41,7 +41,7 @@
 			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar actor} cuando no se ha ingresado un dato marcado como obligatorio.
 			\UCli \cdtIdRef{MSG7}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar actor} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
 			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar actor} cuando se ha excedido la longitud de alguno de los campos.
-			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar actor} cuando se registre un actor con un nombre o número que ya este registrado.
+			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar actor} cuando se registre un actor con un nombre que ya este registrado.
 			\UCli \cdtIdRef{MSG23}{Caracteres inválidos}: Se muestra en la pantalla \cdtIdRef{IU 7.1}{Registrar actor} cuando el nombre del actor contiene un caracter no válido.
 		\end{UClist}
 	}
@@ -61,7 +61,7 @@
     \UCpaso[\UCactor] Solicita registrar al actor oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 7.1}{Registrar actor}. \refTray{A}
     
     \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{B}
-    \UCpaso[\UCsist] Verifica que el nombre del caso de uso no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{C}
+    \UCpaso[\UCsist] Verifica que el nombre del actor no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{C}
     \UCpaso[\UCsist] Verifica que el nombre no contenga caracteres inválidos con base en la regla de negocio \cdtIdRef{RN2}{Nombres de los elementos}. \refTray{D}
     \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{E} \refTray{F}
     
