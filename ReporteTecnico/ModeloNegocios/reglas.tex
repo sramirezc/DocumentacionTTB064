@@ -174,14 +174,25 @@
     \BRitem{Descripción}{En las salidas del caso de uso podrán enlistarse mensajes y atributos de las entidades.}
 \end{BusinessRule}
 
-\begin{BusinessRule}{RN15}{Elementos en uso}
+% \begin{BusinessRule}{RN15}{Elementos en uso}
+%     {Restricción de operación}
+%     {Controla la operación}
+%     \BRitem{Versión}{1.0}
+%     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+%     \BRitem{Estatus}{Edición}
+%     \BRitem{Descripción}{Cuando un analista esté modificando una entidad, regla de negocio, actor, término del glosario, pantalla y/o mensaje, 
+%     ningún otro analista podrá solicitar su edición, ni eliminación. La única operación disponible será la consulta.}
+% \end{BusinessRule}
+
+\begin{BusinessRule}{RN15}{Operaciones disponibles}
     {Restricción de operación}
     {Controla la operación}
     \BRitem{Versión}{1.0}
     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
     \BRitem{Estatus}{Edición}
-    \BRitem{Descripción}{Cuando un analista esté modificando una entidad, regla de negocio, actor, término del glosario, pantalla y/o mensaje, 
-    ningún otro analista podrá solicitar su edición, ni eliminación. La única operación disponible será la consulta.}
+    \BRitem{Descripción}{Cuando una entidad, regla de negocio, actor, término del glosario, pantalla y/o mensaje, 
+    están en estado ``Edición'' es posible solicitar su consulta, modificación y eliminación. Cuando alguno de estos elementos se encuentre asociado 
+    a un caso de uso con estado ``Liberado'' solamente estará disponible la operación de consulta.}
 \end{BusinessRule}
 
 \begin{BusinessRule}{RN16}{Nombres de las trayecorias}
