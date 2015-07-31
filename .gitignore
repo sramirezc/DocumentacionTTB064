@@ -27,3 +27,6 @@
 *.backup
 *.kate-swp
 *.bak~1
+*.vpp~*
+*.working*
+*.vpp~*
