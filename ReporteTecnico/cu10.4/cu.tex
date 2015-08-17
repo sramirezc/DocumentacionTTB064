@@ -1,0 +1,54 @@
+\begin{UseCase}{CU 7.4}{Consultar término}
+	{
+		Este caso de uso permite al analista consultar la información de un término del glosario. 
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Consultar la información de un término del glosario.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtRef{Elemento:Nombre}{Nombre}: \ioObtener.
+			\UCli \cdtRef{Elemento:Descripcion}{Descripción}: \ioObtener.
+		\end{UClist}
+	}
+	
+	\UCitem{Mensajes}{
+		Ninguno
+	}
+
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		Ninguna
+	}
+
+	\UCitem{Errores}{
+		\begin{UClist}
+			\UCli \cdtRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla donde se solicitó la operación cuando el término que se desea consultar no existe.
+		\end{UClist}
+	}
+
+	\UCitem{Tipo}{
+		Secundario, extiende del casos de uso \cdtIdRef{CU 10}{Gestionar términos}.
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita consultar el término oprimiendo el botón \btnConsulta del registro que desea consultar en la pantalla \cdtIdRef{IU 10}{Gestionar términos} o la liga correspondiente a un término en la pantalla \cdtIdRef{IU 5.4}{Consultar caso de uso}.
+    \UCpaso[\UCsist] Busca la información del término seleccionado. \refTray{A}
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 7.4}{Consultar término} en la cual se mostrará toda la información del término.
+    \UCpaso[\UCactor] Solicita finalizar la consulta oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 7.4}{Consultar término}.
+ \end{UCtrayectoria}
+ 
+ %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El término que se desea consultar no existe.}
+    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación con el mensaje \cdtRef{MSG13}{Ha ocurrido un error}.
+ \end{UCtrayectoriaA} 
+  

@@ -60,34 +60,34 @@
 
 	\UCitem{Errores}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio} cuando no se ha ingresado un dato marcado como obligatorio.
-			\UCli \cdtIdRef{MSG5}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
-			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio} cuando se ha excedido la longitud de alguno de los campos.
-			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio} cuando se registre una regla de negocio con un nombre o número que ya este registrado.
-			\UCli \cdtIdRef{MSG23}{Caracteres inválidos}: Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio} cuando el nombre de la regla de negocio contiene un caracter no válido.
+			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar regla de negocio} cuando no se ha ingresado un dato marcado como obligatorio.
+			\UCli \cdtIdRef{MSG5}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar regla de negocio} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar regla de negocio} cuando se ha excedido la longitud de alguno de los campos.
+			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar regla de negocio} cuando se registre una regla de negocio con un nombre o número que ya este registrado.
+			\UCli \cdtIdRef{MSG23}{Caracteres inválidos}: Se muestra en la pantalla \cdtIdRef{IU 8.1}{Registrar regla de negocio} cuando el nombre de la regla de negocio contiene un caracter no válido.
 		\end{UClist}
 	}
 
 	\UCitem{Tipo}{
-		Secundario, extiende del casos de uso \cdtIdRef{CU 8}{Gestionar reglas de negocio}.
+		Secundario, extiende del caso de uso \cdtIdRef{CU 8}{Gestionar reglas de negocio}.
 	}
 \end{UseCase}
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
     \UCpaso[\UCactor] Solicita registrar una regla de negocio oprimiendo el botón \cdtButton{Registrar} de la pantalla \cdtIdRef{IU 8}{Gestionar reglas de negocio}.
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio} en la cual se realizará el registro de la regla de negocio. 
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 8.1}{Registrar regla de negocio} en la cual se realizará el registro de la regla de negocio. 
     \UCpaso[\UCactor] Ingresa el nombre y la descripción de la regla de negocio. \label{cu8.1:ingresaDatos}
     \UCpaso[\UCactor] Selecciona el tipo de regla de negocio. 
     \UCpaso[\UCsist] Verifica que el tipo de regla de negocio requiera parámetros. \refTray{A}
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 8.1a}{Registrar reglas de negocio: Comparación de atributos}, 
-	\cdtIdRef{IU 8.1b}{Registrar reglas de negocio: Unicidad de parámetros} o
-	\cdtIdRef{IU 8.1c}{Registrar reglas de negocio: Formato correcto}, según corresponda.
-    \UCpaso[\UCactor] El usuario ingresa la información de la regla de negocio en la pantalla \cdtIdRef{IU 8.1a}{Registrar reglas de negocio: Comparación de atributos}, 
-	\cdtIdRef{IU 8.1b}{Registrar reglas de negocio: Unicidad de parámetros} o
-	\cdtIdRef{IU 8.1c}{Registrar reglas de negocio: Formato correcto}, según corresponda.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 8.1a}{Registrar regla de negocio: Comparación de atributos}, 
+	\cdtIdRef{IU 8.1b}{Registrar regla de negocio: Unicidad de parámetros} o
+	\cdtIdRef{IU 8.1c}{Registrar regla de negocio: Formato correcto}, según corresponda.
+    \UCpaso[\UCactor] El usuario ingresa la información de la regla de negocio en la pantalla \cdtIdRef{IU 8.1a}{Registrar regla de negocio: Comparación de atributos}, 
+	\cdtIdRef{IU 8.1b}{Registrar regla de negocio: Unicidad de parámetros} o
+	\cdtIdRef{IU 8.1c}{Registrar regla de negocio: Formato correcto}, según corresponda.
     \UCpaso[\UCactor] Ingresa la información solicitada en la pantalla correspondiente. \label{cu8:ingresaPaso}
     \UCpaso[\UCactor] Ingresa la redacción de la regla de negocio. \label{cu8.1:descripcion}
-    \UCpaso[\UCactor] Solicita guardar la regla de negocio oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio}. \refTray{B} 
+    \UCpaso[\UCactor] Solicita guardar la regla de negocio oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 8.1}{Registrar regla de negocio}. \refTray{B} 
     \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{C}
     \UCpaso[\UCsist] Verifica que el nombre de la regla de negocio no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{D}
     \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{E}
@@ -106,26 +106,26 @@
  \end{UCtrayectoriaA}
  %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
  \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{El actor desea cancelar la operación.}
-    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio}.
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 8.1}{Registrar regla de negocio}.
     \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
  \end{UCtrayectoriaA}
   %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
  \begin{UCtrayectoriaA}{C}{El actor no ingresó algún dato marcado como obligatorio.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
-	    \cdtIdRef{IU 8.1}{Registrar reglas de negocio}, indicando al actor que el dato es obligatorio.
+	    \cdtIdRef{IU 8.1}{Registrar regla de negocio}, indicando al actor que el dato es obligatorio.
     \UCpaso[] Continúa con el paso \ref{cu8.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
  %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
- \begin{UCtrayectoriaA}{D}{El actor ingresó un nombre de entidad repetido.}
+ \begin{UCtrayectoriaA}{D}{El actor ingresó un nombre de regla de negocio repetido.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Registro repetido} y señala el campo que presenta la duplicidad en la pantalla 
-	    \cdtIdRef{IU 8.1}{Registrar reglas de negocio}, indicando al actor que existe una regla de negocio con el mismo nombre.
+	    \cdtIdRef{IU 8.1}{Registrar regla de negocio}, indicando al actor que existe una regla de negocio con el mismo nombre.
     \UCpaso[] Continúa con el paso \ref{cu8.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
  
  %----------------------------------------------------------%trayectoria E----------------------------------------------------  
  \begin{UCtrayectoriaA}{E}{El actor proporciona un dato que excede la longitud máxima.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
-    longitud en la pantalla \cdtIdRef{IU 8.1}{Registrar reglas de negocio}, para indicar que el dato excede el tamaño máximo permitido.
+    longitud en la pantalla \cdtIdRef{IU 8.1}{Registrar regla de negocio}, para indicar que el dato excede el tamaño máximo permitido.
     \UCpaso[] Continúa con el paso \ref{cu8.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
  
@@ -137,7 +137,7 @@
  %----------------------------------------------------------%trayectoria G---------------------------------------------------- 
  \begin{UCtrayectoriaA}{G}{El actor ingresó un número de regla de negocio repetido.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Registro repetido} y señala el campo que presenta la duplicidad en la pantalla 
-	    \cdtIdRef{IU 8.1}{Registrar reglas de negocio}, indicando al actor que existe una regla de negocio con el mismo número.
+	    \cdtIdRef{IU 8.1}{Registrar regla de negocio}, indicando al actor que existe una regla de negocio con el mismo número.
     \UCpaso[] Continúa con el paso \ref{cu8.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
  

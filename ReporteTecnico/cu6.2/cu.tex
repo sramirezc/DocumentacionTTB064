@@ -44,9 +44,9 @@
 
 	\UCitem{Errores}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 6.2}{Modificar pantalla} o en la pantalla emergente \cdtIdRef{IU 6.2A}{Modificar pantalla: Comentarios} cuando no se ha ingresado un dato marcado como obligatorio.
+			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 6.2}{Modificar pantalla} o en la pantalla emergente \cdtIdRef{IU 6.2A}{Modificar pantalla: Comentario} cuando no se ha ingresado un dato marcado como obligatorio.
 			\UCli \cdtIdRef{MSG5}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 6.2}{Modificar pantalla} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
-			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 6.2}{Modificar pantalla} o en la pantalla emergente \cdtIdRef{IU 6.2A}{Modificar pantalla: Comentarios} cuando se ha excedido la longitud de alguno de los campos.
+			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 6.2}{Modificar pantalla} o en la pantalla emergente \cdtIdRef{IU 6.2A}{Modificar pantalla: Comentario} cuando se ha excedido la longitud de alguno de los campos.
 			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 6.2}{Modificar pantalla} cuando se registre una pantalla con un nombre o número que ya está registrado.
 			\UCli \cdtIdRef{MSG23}{Caracteres inválidos}: Se muestra en la pantalla \cdtIdRef{IU 6.2}{Modificar pantalla} cuando el nombre de la pantalla contenga un carácter no válido.
 			\UCli \cdtIdRef{MSG28}{Formato de archivo incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 6.2}{Modificar pantalla} cuando la imagen de la pantalla no cumpla con el formato especificado.
@@ -76,13 +76,13 @@
     \UCpaso[\UCsist] Verifica que el nombre no contenga caracteres inválidos con base en la regla de negocio \cdtIdRef{RN2}{Nombres de los elementos}. \refTray{H}
     \UCpaso[\UCsist] Verifica que el número de la pantalla no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN1}{Unicidad de números}. \refTray{I}    
 	\UCpaso[\UCsist] Verifica que la pantalla pueda modificarse con base en la regla de negocio \cdtIdRef{RN05}{Modificación de elementos asociados a casos de uso liberados}. \refTray{J}
-	\UCpaso[\UCsist] Muestra la pantalla emergente \cdtIdRef{IU 6.2A}{Modificar pantalla: Comentarios}.
-	\UCpaso[\UCactor] Ingresa el comentario referente a la modificación realizada en la pantalla emergente \cdtIdRef{IU 5.2A}{Modificar caso de uso: Comentarios}. \label{cu6.2:ingresaComentario}
+	\UCpaso[\UCsist] Muestra la pantalla emergente \cdtIdRef{IU 6.2A}{Modificar pantalla: Comentario}.
+	\UCpaso[\UCactor] Ingresa el comentario referente a la modificación realizada en la pantalla emergente \cdtIdRef{IU 5.2A}{Modificar pantalla: Comentario}. \label{cu6.2:ingresaComentario}
     \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{B}
     \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{E}
     \UCpaso[\UCsist] Modifica la información de la pantalla en el sistema.
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 6}{Gestionar pantallas}
-    para indicar al actor que el registro se ha realizado exitosamente.
+    para indicar al actor que la modificación se ha realizado exitosamente.
  \end{UCtrayectoria}
  
  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
@@ -93,11 +93,11 @@
   %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
  \begin{UCtrayectoriaA}{B}{El actor no ingresó algún dato marcado como obligatorio.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
-	    \cdtIdRef{IU 6.2}{Modificar pantalla} o la pantalla emergente \cdtIdRef{IU 6.2A}{Modificar pantalla: Comentarios}, indicando al actor que el dato es obligatorio.
-    \UCpaso[] Continúa con el paso \ref{cu6.2:ingresaDatos} o con el paso \ref{cu6.2:ingresaComentario} de la trayectoria principal, según correspon.
+	    \cdtIdRef{IU 6.2}{Modificar pantalla} o la pantalla emergente \cdtIdRef{IU 6.2A}{Modificar pantalla: Comentario}, indicando al actor que el dato es obligatorio.
+    \UCpaso[] Continúa con el paso \ref{cu6.2:ingresaDatos} o con el paso \ref{cu6.2:ingresaComentario} de la trayectoria principal, según corresponda.
  \end{UCtrayectoriaA}
  %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
- \begin{UCtrayectoriaA}{C}{El actor ingresó un nombre de entidad repetido.}
+ \begin{UCtrayectoriaA}{C}{El actor ingresó un nombre de pantalla repetido.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Registro repetido} y señala el campo que presenta la duplicidad en la pantalla 
 	    \cdtIdRef{IU 6.2}{Modificar pantalla}, indicando al actor que existe una pantalla con el mismo nombre.
     \UCpaso[] Continúa con el paso \ref{cu6.2:ingresaDatos} de la trayectoria principal.
@@ -113,7 +113,7 @@
  %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
  \begin{UCtrayectoriaA}{E}{El actor ingresó un tipo de dato incorrecto.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Formato incorrecto} y señala el campo que presenta el dato inválido en la 
-    pantalla \cdtIdRef{IU 6.2}{Modificar pantalla} o la pantalla emergente \cdtIdRef{IU 6.2A}{Modificar pantalla: Comentarios} para indicar que se ha ingresado un tipo de dato inválido.
+    pantalla \cdtIdRef{IU 6.2}{Modificar pantalla} o la pantalla emergente \cdtIdRef{IU 6.2A}{Modificar pantalla: Comentario} para indicar que se ha ingresado un tipo de dato inválido.
     \UCpaso[] Continúa con el paso \ref{cu6.2:ingresaDatos} o con el paso \ref{cu6.2:ingresaComentario} de la trayectoria principal, según corresponda.
  \end{UCtrayectoriaA}
 
@@ -125,7 +125,7 @@
  \end{UCtrayectoriaA}
  
  %----------------------------------------------------------%trayectoria G----------------------------------------------------  
- \begin{UCtrayectoriaA}{G}{El actor proporciona una imagen que excede el tamaño máximo}
+ \begin{UCtrayectoriaA}{G}{El actor proporciona una imagen que excede el tamaño máximo.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG29}{Se ha excedido el tamaño del archivo} y señala el campo donde se solicita la imagen
     en la pantalla \cdtIdRef{IU 6.2}{Modificar pantalla}, para indicar que el tamaño máximo ha sido rebasado.
     \UCpaso[] Continúa con el paso \ref{cu6.2:seleccionaImagen} de la trayectoria principal.
@@ -137,7 +137,7 @@
     \UCpaso[] Continúa con el paso \ref{cu6.2:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
  %----------------------------------------------------------%trayectoria I---------------------------------------------------- 
- \begin{UCtrayectoriaA}{I}{El actor ingresó un número de regla de negocio repetido.}
+ \begin{UCtrayectoriaA}{I}{El actor ingresó un número de pantalla repetido.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Registro repetido} y señala el campo que presenta la duplicidad en la pantalla 
 	    \cdtIdRef{IU 6.2}{Modificar pantalla}, indicando al actor que existe una pantalla con el mismo número.
     \UCpaso[] Continúa con el paso \ref{cu6.2:ingresaDatos} de la trayectoria principal.

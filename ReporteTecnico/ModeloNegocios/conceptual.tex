@@ -15,9 +15,10 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 %-------------------------------------------------Caso de Uso----------------------------------
 
 \begin{BusinessEntity}{CasodeUso}{Caso de Uso}
-      \Battr{Clave}{Clave}{\tdPalabra}{Clave que permitirá distinguir el que el Elemento es un Caso de Uso}{\requerido}
+      \Battr{Clave}{Clave}{\tdPalabra}{Clave que permitirá distinguir que el Elemento es un Caso de Uso}{\requerido}
       \Battr{Numero}{Número}{\tdNumerico{entero}}{Número del Caso de Uso}{\requerido}
       \Battr{Nombre}{Nombre}{\tdFrase}{Nombre que identificará al Caso de Uso}{\requerido}
+      \Battr{Resumen}{Resumen}{\tdParrafo}{Breve descripción del contenido del caso de uso}{\requerido}
 \end{BusinessEntity}
 
 \subsubsection{Relaciones}
@@ -152,7 +153,8 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
       \Battr{Clave}{Clave}{\tdPalabra}{Clave que permitirá distinguir que el Elemento es una Regla de Negocio}{\requerido}
       \Battr{Numero}{Número}{\tdNumerico{entero}}{Número de Regla de Negocio}{\requerido}
       \Battr{Nombre}{Nombre}{\tdFrase}{Nombre que identificará a la Regla de Negocio}{\requerido}
-	  \Battr{Redaccion}{Redacción}{\tdParrafo}{Redacción de la Regla de Negocio}{\requerido}
+      \Battr{Redaccion}{Redacción}{\tdParrafo}{Redacción de la Regla de Negocio}{\requerido}
+      \Battr{ExpresionRegular}{Expresión regular}{\tdFrase}{Es la expresión regular que modela el formato de un determinado campo}{\requerido}
 \end{BusinessEntity}
 
 \subsubsection{Relaciones}
@@ -163,35 +165,29 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
     \BRitem{Cardinalidad}{Muchos a uno}
 \end{BusinessFact}
 
-\begin{BusinessFact}{RegladeNegocio:ValordelParametroenRegladeNegocio}{Valor del Parámetro en Regla de Negocio}
-	\BRitem{Descripción}{Valor de los parámetros ocupados al definir la Regla de Negocio.}
-	\BRitem{Tipo}{\relAgregacion}
-    \BRitem{Cardinalidad}{Uno a muchos}
-\end{BusinessFact}
-
-%-------------------------------------------------Valor del Parámetro en Regla de Negocio----------------------------------
-
-\begin{BusinessEntity}{ValordelParametroenRegladeNegocio}{Valor del Parámetro en Regla de Negocio}
-      \Battr{OtroValor}{Otro Valor}{\tdFrase}{Valor del parámetro utilizado cuando no es un Elemento}{\opcional}
-      \Battr{NumerodeParametro}{Número de Parámetro}{\tdNumerico{entero}}{Número del Parámetro}{\requerido}
-\end{BusinessEntity}
-
-\subsubsection{Relaciones}
-
-\begin{BusinessFact}{ValordelParametroenRegladeNegocio:Elemento}{Elemento}
-	\BRitem{Descripción}{El valor utilizado en la Regla de Negocio corresponde a un Elemento.}
+\begin{BusinessFact}{RegladeNegocio:Operador}{Operador}
+	\BRitem{Descripción}{El operador que se utiliza en una comparación de atributos.}
 	\BRitem{Tipo}{\relAsociacion}
     \BRitem{Cardinalidad}{Muchos a uno}
 \end{BusinessFact}
 
-\begin{BusinessFact}{ValordelParametroenRegladeNegocio:ParametrodelaRegladeNegocio}{Parámetro de la Regla de Negocio}
-	\BRitem{Descripción}{El valor del parámetro utilizado es de un tipo específico.}
+\begin{BusinessFact}{RegladeNegocio:Atributo}{Atributo}
+	\BRitem{Descripción}{Una regla de negocio debe especificar el atributo que hace única a una entidad.}
 	\BRitem{Tipo}{\relAsociacion}
-    \BRitem{Cardinalidad}{Muchos a uno}
+	\BRitem{Cardinalidad}{Muchos a uno}
 \end{BusinessFact}
 
+\begin{BusinessFact}{RegladeNegocio:Atributo}{Atributo}
+	\BRitem{Descripción}{Una regla de negocio debe especificar los atributos a comparar.}
+	\BRitem{Tipo}{\relAsociacion}
+	\BRitem{Cardinalidad}{Muchos a uno}
+\end{BusinessFact}
 
-
+\begin{BusinessFact}{RegladeNegocio:Atributo}{Atributo}
+	\BRitem{Descripción}{Una regla de negocio debe especificar el atributo que se desea validar con la expresión regular.}
+	\BRitem{Tipo}{\relAsociacion}
+	\BRitem{Cardinalidad}{Muchos a uno}
+\end{BusinessFact}
 %-------------------------------------------------Salida----------------------------------
 
 \begin{BusinessEntity}{Salida}{Salida}
