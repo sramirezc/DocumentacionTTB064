@@ -1,0 +1,101 @@
+\begin{UseCase}{CU 8.4}{Consultar regla de negocio}
+	{
+		Este caso de uso permite al analista consultar la información de una regla de negocio mostrando la información según su tipo.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Consultar la información de una regla de negocio.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtRef{Elemento:Clave}{Clave}: \ioCalcular{\cdtIdRef{RN12}{Identificador de elemento}}.
+			\UCli \cdtRef{Elemento:Numero}{Número}: \ioObtener.
+			\UCli \cdtRef{Elemento:Nombre}{Nombre}: \ioObtener.
+			\UCli \cdtRef{Elemento:Descripcion}{Descripción}: \ioObtener.
+ 			\UCli \cdtRef{ReglaDeNegocio:Redaccion}{Redacción}: \ioObtener.
+ 			\UCli \cdtRef{gls:TipoDeReglaDeNegocio}{Tipo}: \ioObtener.
+ 			\UCli Para el tipo ``Comparación de atributos'':
+ 			\begin{itemize}
+ 			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Entidad 1}: \ioObtener.
+ 			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Atributo 1}: \ioObtener.
+ 			 \item \cdtRef{Operador}{Operador}: \ioObtener.
+ 			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Entidad 2}: \ioObtener.
+ 			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Atributo 2}: \ioObtener.
+ 			\end{itemize}
+ 			
+ 			\UCli Para el tipo ``Unicidad de parámetros'':
+ 			\begin{itemize}
+ 			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Entidad}: \ioObtener.
+ 			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Atributo único}: \ioObtener. 
+ 			\end{itemize}
+
+ 			\UCli Para el tipo ``Formato correcto'':
+ 			\begin{itemize}
+ 			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Entidad que contiene el atributo para verificar el formato}: \ioObtener.
+ 			 \item \cdtRef{ValorDelParametroEnReglaDeNegocio}{Atributo que se verificará con la expresión regular}: \ioObtener.
+ 			 \item \cdtRef{}{Expresión regular}: \ioObtener.
+ 			\end{itemize}
+		\end{UClist}
+	}
+	
+	\UCitem{Mensajes}{
+		Ninguno
+	}
+
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		Ninguna
+	}
+
+	\UCitem{Errores}{
+		\begin{UClist}
+			\UCli \cdtRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla donde se solicitó la operación cuando la pantalla que se desea consultar no existe.
+		\end{UClist}
+	}
+
+	\UCitem{Tipo}{
+		Secundario, extiende del casos de uso \cdtIdRef{CU 8}{Gestionar reglas de negocio}.
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita consultar una regla de negocio oprimiendo el botón \btnConsulta del registro que desea consultar en la pantalla \cdtIdRef{IU 8}{Gestionar reglas de negocio} o la liga correspondiente a una regla de negocio en la pantalla \cdtIdRef{IU 5.4}{Consultar caso de uso}.
+    \UCpaso[\UCsist] Busca la información de la regla de negocio seleccionada. \refTray{A} %No existe información
+    \UCpaso[\UCsist] Verifica que el tipo de regla de negocio no tenga parámetros. \refTray{B} \refTray{C} \refTray{D}
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 8.4}{Consultar regla de negocio}.
+    \UCpaso[\UCactor] Consulta la información de la regla de negocio. \label{cu8.4:consultarElemento} 
+    \UCpaso[\UCactor] Solicita finalizar la consulta oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 8.4}{Consultar regla de negocio}. \label{cu8.4:finalizar}
+ \end{UCtrayectoria}
+ 
+ %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{La regla de negocio que se desea consultar no existe.}
+    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación con el mensaje \cdtRef{MSG13}{Ha ocurrido un error}.
+ \end{UCtrayectoriaA} 
+ %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{B}{La regla de negocio es de tipo ``Comparación de atributos''.}
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 8.4a}{Consultar regla de negocio: Comparación de atributos}.
+    \UCpaso[] Continúa con el paso \ref{cu8.4:finalizar} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{C}{La regla de negocio es de tipo ``Unicidad de parámetros''.}
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 8.4b}{Consultar regla de negocio: Unicidad de parámetros}.
+    \UCpaso[] Continúa con el paso \ref{cu8.4:finalizar} de la trayectoria principal.
+ \end{UCtrayectoriaA} 
+ %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{D}{La regla de negocio es de tipo ``Formato correcto''.}
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 8.4c}{Consultar regla de negocio: Formato correcto}.
+    \UCpaso[] Continúa con el paso \ref{cu8.4:finalizar} de la trayectoria principal.
+ \end{UCtrayectoriaA} 
+  
+ \subsection{Puntos de extensión}
+ 
+ \UCExtensionPoint{El actor desea consultar alguno de los atributos mostrados en la pantalla.}
+ 	{Paso \ref{cu8.4:consultarElemento} de la trayectoria principal}
+ 	{\cdtIdRef{CU 11.4}{Consultar entidad}}

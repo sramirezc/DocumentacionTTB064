@@ -1,0 +1,29 @@
+\subsection{IU 8.4 Consultar regla de negocio}
+
+\subsubsection{Objetivo}
+	
+	Esta pantalla permite al actor consultar la información de una regla de negocio de acuerdo a su tipo.
+
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 8.4} se muestra la pantalla ``Consultar regla de negocio'' que permite consultar una regla de negocio que no contiene parámetros. 
+    Cuando la regla de negocio es de tipo ``Comparación de atributos'' se mostrará la pantalla de la figura ~\ref{IU 8.4a}, cuando sea de tipo ``Unicidad de parámetros''
+    el sistema mostrará la pantalla de la figura ~\ref{IU 8.4b} y cuando el tipo de regla de negocio sea ``Formato correcto'' el sistema mostrará la pantalla de
+    la figura ~\ref{IU 8.4c}.\\
+
+
+     \IUfig[.9]{cu8.4/images/iu.png}{IU 8.4}{Consultar regla de negocio}
+     \IUfig[.9]{cu8.4/images/iua.png}{IU 8.4a}{Consultar regla de negocio: Comparación de atributos}
+     \IUfig[.9]{cu8.4/images/iub.png}{IU 8.4b}{Consultar regla de negocio: Unicidad de parámetros}
+     \IUfig[.9]{cu8.4/images/iuc.png}{IU 8.4c}{Consultar regla de negocio: Formato correcto}
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \cdtButton{Aceptar}: Permite al actor finalizar la operación, dirige a la pantalla donde se solicitó la operación.
+\end{itemize}
+
+\subsubsection{Mensajes}
+	
+\begin{description}
+	\item[\cdtRef{MSG13}{Ha ocurrido un error}:] Se muestra en la pantalla donde se solicitó la operación cuando la regla de negocio que se desea consultar no existe.
+\end{description}

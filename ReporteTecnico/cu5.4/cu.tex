@@ -83,7 +83,7 @@
 	\UCpaso[\UCactor] Oprime el botón \btnConsulta del caso de uso que desea consultar en la pantalla \cdtIdRef{IU 6}{Gestionar casos de uso}.
     \UCpaso[\UCsist] Busca la información del caso de uso. \refTray{A} %No existe información
     \UCpaso[\UCsist] Muestra la información encontrada en la pantalla \cdtIdRef{IU 5.4}{Consultar caso de uso}.
-    \UCpaso[\UCactor] Consulta la información del caso de uso. \label{cu5.4:consultarElemento}
+    \UCpaso[\UCactor] Consulta la información del caso de uso. \label{cu5.4:consultarElemento} 
     \UCpaso[\UCactor] Solicita finalizar la consulta oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 5.4}{Consultar caso de uso}.
  \end{UCtrayectoria}
  
@@ -91,96 +91,41 @@
  \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El caso de uso que se desea consultar no existe.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error} en la pantalla donde se solicitó la consulta.
  \end{UCtrayectoriaA} 
- %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
- \begin{UCtrayectoriaA}{B}{El actor desea consultar alguno de los actores mostrados en la pantalla.}
-    \UCpaso[\UCactor] Oprime el enlace del actor que desea consultar en la pantalla \cdtIdRef{IU 5.4}{Consultar caso de uso}. \label{cu5.4:consultarActor}
-	\UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 7.4}{Consultar actor}.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
- \begin{UCtrayectoriaA}{C}{El actor desea consultar alguno de los atributos mostrados en la pantalla.}
-    \UCpaso[\UCactor] Oprime el enlace del atributo que desea consultar en la pantalla \cdtIdRef{IU 5.4}{Consultar caso de uso}. \label{cu5.4:consultarAtributo}
-	\UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 11.4}{Consultar entidad} y enfoca al atributo seleccionado.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
- \begin{UCtrayectoriaA}{D}{El actor desea consultar alguno de los términos del glosario mostrados en la pantalla.}
-    \UCpaso[\UCactor] Oprime el enlace del término del glosario que desea consultar en la pantalla \cdtIdRef{IU 5.4}{Consultar caso de uso}. \label{cu5.4:consultarTermino}
-	\UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 10.4}{Consultar término del glosario}.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
- \begin{UCtrayectoriaA}{E}{El actor desea consultar alguno de los mensajes mostrados en la pantalla.}
-    \UCpaso[\UCactor] Oprime el enlace del mensaje que desea consultar en la pantalla \cdtIdRef{IU 5.4}{Consultar caso de uso}. \label{cu5.4:consultarMensaje}
-	\UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 9.4}{Consultar término del glosario}.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria F---------------------------------------------------- 
- \begin{UCtrayectoriaA}{F}{El actor desea consultar alguna de las reglas de negocio mostradas en la pantalla.}
-    \UCpaso[\UCactor] Oprime el enlace de la regla de negocio que desea consultar en la pantalla \cdtIdRef{IU 5.4}{Consultar caso de uso}. \label{cu5.4:consultarReglaNegocio}
-	\UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 8.4}{Consultar regla de negocio}.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria G---------------------------------------------------- 
- \begin{UCtrayectoriaA}{G}{El actor desea consultar alguna de las entidades mostradas en la pantalla.}
-    \UCpaso[\UCactor] Oprime el enlace de la entidad que desea consultar en la pantalla \cdtIdRef{IU 5.4}{Consultar caso de uso}. \label{cu5.4:consultarEntidad}
-	\UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 11.4}{Consultar entidad}.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria H---------------------------------------------------- 
- \begin{UCtrayectoriaA}{H}{El actor desea consultar alguna de las pantallas mostradas en la pantalla.}
-    \UCpaso[\UCactor] Oprime el enlace de la pantalla que desea consultar en la pantalla \cdtIdRef{IU 5.4}{Consultar caso de uso}. \label{cu5.4:consultarPantalla}
-	\UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 6.4}{Consultar pantalla}.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria I---------------------------------------------------- 
- \begin{UCtrayectoriaA}{I}{El actor desea consultar alguna de las acciones mostradas en la pantalla.}
-    \UCpaso[\UCactor] Oprime el enlace de la acción que desea consultar en la pantalla \cdtIdRef{IU 5.4}{Consultar caso de uso}. \label{cu5.4:consultarAccion}
-	\UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 6.4}{Consultar pantalla} y enfoca a la acción seleccionada.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria J---------------------------------------------------- 
- \begin{UCtrayectoriaA}{J}{El actor desea consultar alguno de los casos de uso  mostrados en la pantalla.}
-    \UCpaso[\UCactor] Oprime el enlace del caso de uso que desea consultar en la pantalla \cdtIdRef{IU 5.4}{Consultar caso de uso}. \label{cu5.4:consultarCasoUso}
-	\UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.4}{Consultar caso de uso}.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria K---------------------------------------------------- 
- \begin{UCtrayectoriaA}{K}{El actor desea consultar alguna de las trayectorias  mostradas en la pantalla.}
-    \UCpaso[\UCactor] Oprime el enlace del la trayectoria que desea consultar en la pantalla \cdtIdRef{IU 5.4}{Consultar caso de uso}. \label{cu5.4:consultarTrayectoria}
-	\UCpaso[\UCsist] Enfoca a la trayectoria seleccionada en la pantalla.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria L---------------------------------------------------- 
- \begin{UCtrayectoriaA}{L}{El actor desea consultar alguno de los pasos  mostrados en la pantalla.}
-    \UCpaso[\UCactor] Oprime el enlace del paso que desea consultar en la pantalla \cdtIdRef{IU 5.4}{Consultar caso de uso}. \label{cu5.4:consultarPaso}
-	\UCpaso[\UCsist] Enfoca al paso seleccionado en la pantalla.
- \end{UCtrayectoriaA}
  
  \subsection{Puntos de extensión}
 
  \UCExtensionPoint{El actor desea consultar alguno de los actores mostrados en la pantalla.}
- 	{Paso \ref{cu5.4:consultarElemento}}
+ 	{Paso \ref{cu5.4:consultarElemento} de la trayectoria principal}
  	{\cdtIdRef{CU 7.4}{Consultar actor}}
 	
  \UCExtensionPoint{El actor desea consultar alguno de los atributos mostrados en la pantalla.}
- 	{Paso \ref{cu5.4:consultarElemento}}
+ 	{Paso \ref{cu5.4:consultarElemento} de la trayectoria principal}
  	{\cdtIdRef{CU 11.4}{Consultar entidad}}
 	
  \UCExtensionPoint{El actor desea consultar alguno de los términos del glosario mostrados en la pantalla.}
- 	{Paso \ref{cu5.4:consultarElemento}}
+ 	{Paso \ref{cu5.4:consultarElemento} de la trayectoria principal}
  	{\cdtIdRef{CU 10.4}{Consultar término del glosario}}	
 
  \UCExtensionPoint{El actor desea consultar alguno de los mensajes mostrados en la pantalla.}
- 	{Paso \ref{cu5.4:consultarElemento}}
+ 	{Paso \ref{cu5.4:consultarElemento} de la trayectoria principal}
  	{\cdtIdRef{CU 9.4}{Consultar mensaje}}	
 	
  \UCExtensionPoint{El actor desea consultar alguna de las reglas de negocio mostradas en la pantalla.}
- 	{Paso \ref{cu5.4:consultarElemento}}
+ 	{Paso \ref{cu5.4:consultarElemento} de la trayectoria principal}
  	{\cdtIdRef{CU 8.4}{Consultar regla de negocio}}	
 	
  \UCExtensionPoint{El actor desea consultar alguna de las pantallas mostradas en la pantalla.}
- 	{Paso \ref{cu5.4:consultarElemento}}
+ 	{Paso \ref{cu5.4:consultarElemento} de la trayectoria principal}
  	{\cdtIdRef{CU 6.4}{Consultar pantalla}}
 	
  \UCExtensionPoint{El actor desea consultar alguna de las acciones mostradas en la pantalla.}
- 	{Paso \ref{cu5.4:consultarElemento}}
+ 	{Paso \ref{cu5.4:consultarElemento} de la trayectoria principal}
  	{\cdtIdRef{CU 6.4}{Consultar pantalla}}
 	
  \UCExtensionPoint{El actor desea consultar alguna de las trayectorias mostradas en la pantalla.}
- 	{Paso \ref{cu5.4:consultarElemento}}
+ 	{Paso \ref{cu5.4:consultarElemento} de la trayectoria principal}
  	{\cdtIdRef{CU 5.4}{Consultar caso de uso}}
 	
  \UCExtensionPoint{El actor desea consultar alguno de los pasos mostradas en la pantalla.}
- 	{Paso \ref{cu5.4:consultarElemento}}
+ 	{Paso \ref{cu5.4:consultarElemento} de la trayectoria principal}
  	{\cdtIdRef{CU 5.4}{Consultar caso de uso}}
