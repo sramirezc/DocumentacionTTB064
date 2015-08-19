@@ -1,0 +1,56 @@
+\begin{UseCase}{CU 11.4}{Consultar entidad}
+	{
+		Este 11.1.1 de uso permite al analista consultar la información de un mensaje.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Consultar la información de una entidad.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtRef{Elemento:Nombre}{Nombre}: \ioObtener.
+			\UCli \cdtRef{Elemento:Descripcion}{Descripción}: \ioObtener.
+			\UCli \cdtRef{Atributo}{Atributos}: \ioTabla{\cdtRef{Elemento:Nombre}{Nombre}, 
+			\cdtRef{Atributo:Obligatorio}{Obligatorio (sí o no)} y \cdtRef{gls:TipoDeDato}{Tipo de Dato}}{de los atributos}.
+		\end{UClist}
+	}	
+	
+	\UCitem{Mensajes}{
+		Ninguno
+	}
+
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		Ninguna
+	}
+
+	\UCitem{Errores}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla donde se solicitó la operación cuando la entidad que se desea consultar no existe.
+		\end{UClist}
+	}
+
+	\UCitem{Tipo}{
+		Secundario, extiende del 11.1.1 de uso \cdtIdRef{CU 11}{Gestionar entidades}.
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+	\UCpaso[\UCactor] Oprime el botón \btnConsulta de la entidad que desea consultar en la pantalla \cdtIdRef{IU 11}{Gestionar entidades}.
+    \UCpaso[\UCsist] Busca la información de la entidad. \refTray{A} %No existe información
+    \UCpaso[\UCsist] Muestra la información encontrada en la pantalla \cdtIdRef{IU 11.4}{Consultar entidad}.
+    \UCpaso[\UCactor] Consulta la información del mensaje. \label{cu11.4:consultarElemento} 
+    \UCpaso[\UCactor] Solicita finalizar la consulta oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 11.4}{Consultar entidad}.
+ \end{UCtrayectoria}
+ 
+ %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del 11.1.1 de uso]{A}{La entidad que se desea consultar no existe.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error} en la pantalla donde se solicitó la consulta.
+ \end{UCtrayectoriaA} 
