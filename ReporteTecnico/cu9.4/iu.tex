@@ -1,0 +1,24 @@
+\subsection{IU 9.4 Consultar mensaje}
+
+\subsubsection{Objetivo}
+	
+	Esta pantalla permite al actor consultar la información de un mensaje.
+	
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 9.4} se muestra la pantalla ``Consultar mensaje'' en la cual el actor podrá consultar la información de un mensaje.\\
+	
+	Una vez que el actor ha consultado la información mostrada, deberá oprimir el botón \cdtButton{Aceptar} y el sistema mostrará la pantalla en la cuál se solicitó la consulta.
+
+    \IUfig[.8]{cu9.4/images/iu.png}{IU 9.4}{Consultar mensaje}
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \cdtButton{Aceptar}: Permite al actor concluir la consulta, dirige a la pantalla donde se solicitó la consuta.
+\end{itemize}
+
+\subsubsection{Mensajes}
+	
+\begin{description}
+	\item[\cdtIdRef{MSG13}{Ha ocurrido un error}:] Se muestra en la pantalla donde se solicitó la operación cuando el mensaje que se desea consultar no existe.
+\end{description}

@@ -1,0 +1,79 @@
+\begin{UseCase}{CU 13}{Iniciar sesión}
+	{
+		Este caso de uso permite al actor iniciar sesión en el sistema.
+		
+	}
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Iniciar sesión en el sistema.
+	}
+	\UCitem{Entradas}{
+		\begin{UClist} 
+			\UCli \cdtRef{Colaborador:CURP}{CURP}: \ioEscribir
+			\UCli \cdtRef{Colaborador:Contrasena}{Contraseña}: \ioEscribir
+		\end{UClist}
+	}	
+	
+	\UCitem{Salidas}{	
+		Ninguna
+	}
+	
+	\UCitem{Mensajes}{	
+		Ninguno
+	}
+	
+	\UCitem{Precondiciones}{ 
+		\begin{UClist}
+			\item Que el actor se encuentre registrado en el sistema.
+		\end{UClist}
+	}			
+	\UCitem{Postcondiciones}{ 
+		\begin{UClist}
+			\UCli El actor podrá hacer uso del sistema.
+	 	\end{UClist}
+	}
+	\UCitem{Errores}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 13}{Iniciar sesión} cuando no se ha ingresado un dato marcado como obligatorio.
+			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 13}{Iniciar sesión} cuando se ha excedido la longitud de alguno de los campos.
+			\UCli \cdtIdRef{MSG31}{CURP y/o contraseña incorrectos}: Se muestra en la pantalla \cdtIdRef{IU 13}{Iniciar sesión} cuando el CURP y/o la contraseña ingresada son incorrectos.
+	}
+	
+	\UCitem{Tipo}{
+		Primario
+	}
+
+	
+\end{UseCase}
+ %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Ingresa al sistema a través de la URL.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 13}{Iniciar sesión}.
+    \UCpaso[\UCactor] Ingresa los datos solicitados en la pantalla \cdtIdRef{IU 13}{Iniciar sesión}. \label{cu13:ingresaDatos}
+	\UCpaso[\UCactor] Oprime el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 13}{Iniciar sesión}.
+    \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{A}
+    \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{B}
+    \UCpaso[\UCsist] Verifica que el actor se encuentre registrado. \refTray{C}
+    \UCpaso[\UCsist] Verifica que la contraseña ingresada sea correcta. \refTray{C}
+    \UCpaso[\UCactor] Muestra la pantalla \cdtIdRef{IU 4}{Gestionar proyectos}.
+ \end{UCtrayectoria}
+ 
+  
+  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{A}{El actor no ingresó algún dato marcado como obligatorio.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
+	    \cdtIdRef{IU 13}{Iniciar sesión}, indicando al actor que el dato es obligatorio.
+    \UCpaso[] Continúa con el paso \ref{cu13:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+ %----------------------------------------------------------%trayectoria B----------------------------------------------------  
+ \begin{UCtrayectoriaA}{B}{El actor proporciona un dato que excede la longitud máxima.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
+    longitud en la pantalla \cdtIdRef{IU 13}{Iniciar sesión}, para indicar que el dato excede el tamaño máximo permitido.
+    \UCpaso[] Continúa con el paso \ref{cu13:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria c----------------------------------------------------  
+ \begin{UCtrayectoriaA}{C}{Existe un error en los datos.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG31}{CURP y/o contraseña incorrectos}, para indicar que los datos ingresados son incorrcetos.
+    \UCpaso[] Continúa con el paso \ref{cu13:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}

@@ -1,0 +1,43 @@
+\subsection{IU 11.1.1 Registrar atributo}
+
+\subsubsection{Objetivo}
+	
+	Esta pantalla permite al actor registrar la información de un atributo nuevo.
+
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 11.1.1} se muestra la pantalla ``Registrar atributo'' que permite registrar un atributo. El actor deberá ingresar la información solicitada,
+    y oprimir el botón \cdtButton{Aceptar}. El sistema validará y registrará la información sólo si se han cumplido todas las reglas de negocio establecidas.  \\
+    
+    Finalmente se mostrará el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 11.1}{Registrar entidad} o \cdtIdRef{IU 11.2}{Modificar entidad}, para indicar que la información del atributo
+    se ha registrado correctamente.        
+
+	Los datos solicitados dependerán del tipo de dato seleccionado:
+	\begin{itemize}
+		\item Tipo de dato ``Archivo'', el sistema solicitará los formatos válidos así como el tamaño máximo, como se muestra en la figura ~\ref{IU 11.1.1A}.
+		\item Tipo de dato ``Booleano'' o ``Fecha'', el sistema no solicitará ningún dato extra, como se muestra en la figura ~\ref{IU 11.1.1B}.
+		\item Tipo de dato ``Cadena'' o ``Entero'' o ``Flotante'', el sistema solicitará la longitud máxima, como se muestra en la figura ~\ref{IU 11.1.1C}.
+		\item Tipo de dato ``Otro'', el sistema solicitará el tipo especificado, como se muestra en la figura ~\ref{IU 11.1.1D}.
+	\end{itemize}
+	
+    \IUfig[.8]{cu11.1.1/images/iu.png}{IU 11.1.1}{Registrar atributo}
+    \IUfig[.8]{cu11.1.2/images/iua.png}{IU 11.1.1A}{Registrar atributo: Archivo}
+    \IUfig[.8]{cu11.1.2/images/iub.png}{IU 11.1.1B}{Registrar atributo: Booleano, Fecha}
+    \IUfig[.8]{cu11.1.2/images/iuc.png}{IU 11.1.1C}{Registrar atributo: Cadena, Entero, Flotante}
+    \IUfig[.8]{cu11.1.2/images/iud.png}{IU 11.1.1D}{Registrar atributo: Otro}
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \cdtButton{Aceptar}: Permite al actor guardar el registro del atributo, dirige a la pantalla \cdtIdRef{IU 11.1}{Registrar entidad} o \cdtIdRef{IU 11.2}{Modificar entidad}, según corresponda.
+	\item \cdtButton{Cancelar}: Permite al actor cancelar el registro del atributo, dirige a la pantalla \cdtIdRef{IU 11.1}{Registrar entidad} o \cdtIdRef{IU 11.2}{Modificar entidad}, según corresponda.
+\end{itemize}
+
+\subsubsection{Mensajes}
+
+	
+\begin{description}
+	\item[\cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 11.1.1}{Registrar atributo} cuando no se ha ingresado un dato marcado como obligatorio.
+	\item[\cdtIdRef{MSG5}{Dato incorrecto}:] Se muestra en la pantalla \cdtIdRef{IU 11.1.1}{Registrar atributo} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+	\item[\cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 11.1.1}{Registrar atributo} cuando se ha excedido la longitud de alguno de los campos.
+	\item[\cdtIdRef{MSG7}{Registro repetido}:] Se muestra en la pantalla \cdtIdRef{IU 11.1.1}{Registrar atributo} cuando se registre un atributo con un nombre que ya este registrado.
+\end{description}

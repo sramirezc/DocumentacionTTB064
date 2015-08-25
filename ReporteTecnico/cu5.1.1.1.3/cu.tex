@@ -11,14 +11,10 @@
 		Ninguna
 	}
 	\UCitem{Salidas}{
-		\begin{UClist}
-			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} o \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria} para indicar que la eliminación fue exitosa.
-		\end{UClist}
+		Ninguna
 	}
 	\UCitem{Mensajes}{
-		\begin{UClist}
-			\UCli \cdtIdRef{MSG11}{Confirmar eliminación}: Se muestra para que el actor confirme la eliminación.
-		\end{UClist}
+		Ninguno
 	}
 	\UCitem{Precondiciones}{
 		Ninguna
@@ -26,39 +22,31 @@
 	
 	\UCitem{Postcondiciones}{
 		\begin{UClist}
-			\UCli Se eliminará el paso de la tabla de pasos de la pantalla correspondiente.
+			\UCli Se eliminará el atributo de la tabla de atributos correspondiente.
 		\end{UClist}
 	}
 
 	\UCitem{Errores}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG14}{Eliminación no permitida}: Se muestra en la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} o \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria} cuando no se pueda eliminar el paso debido a que está siendo referenciado en algún caso de uso.
+			\UCli \cdtIdRef{MSG14}{Eliminación no permitida}: Se muestra en una pantalla emergente cuando no se pueda eliminar el paso debido a que está siendo utilizado por otro elemento.
 		\end{UClist}
 	}
 
 	\UCitem{Tipo}{
-		Secundario, extiende de los casos de uso \cdtIdRef\cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} y \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria}.
+		Secundario, extiende de los casos de uso \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} y \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria}.
 	}
 \end{UseCase}
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
-    \UCpaso[\UCactor] Solicita eliminar un paso oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef\cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} o \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria}.
-    \UCpaso[\UCsist] Busca los casos de uso que estén referenciando al paso.
-    \UCpaso[\UCsist] Verifica que ningún caso de uso esté referenciando al paso. \refTray{A}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG11}{Confirmar eliminación} en una pantalla emergente con los botones \cdtButton{Aceptar} y \cdtButton{Cancelar}.
-    \UCpaso[\UCactor] Confirma la eliminación del paso oprimiendo el botón \cdtButton{Aceptar} de la pantalla emergente. \refTray{B}
+    \UCpaso[\UCactor] Solicita eliminar un paso oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} o de la pantalla \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria}.
+    \UCpaso[\UCsist] Busca los elementos que estén referenciando al paso.
+    \UCpaso[\UCsist] Verifica que ningún elemento esté referenciando al paso. \refTray{A}
     \UCpaso[\UCsist] Elimina el paso de la tabla correspondiente.
-    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
  \end{UCtrayectoria}
   %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El paso está siendo referenciado en un caso de uso.}
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El paso está siendo referenciado en un elemento.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG14}{Eliminación no permitida} en una pantalla emergente
-    con la lista de casos de uso que están referenciando al paso.
+    con la lista de elementos que están referenciando al paso.
     \UCpaso[\UCactor] Oprime el botón \cdtButton{Aceptar} de la pantalla emergente.
     \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
  \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{C}{El actor desea cancelar la operación.}
-    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla emergente.
-    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
- \end{UCtrayectoriaA} 

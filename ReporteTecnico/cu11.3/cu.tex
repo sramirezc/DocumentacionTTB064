@@ -33,7 +33,7 @@
 
 	\UCitem{Errores}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG14}{Eliminación no permitida}: Se muestra en una pantalla emergente cuando no se pueda eliminar la entidad debido a que está siendo referenciada en algún caso de uso.
+			\UCli \cdtIdRef{MSG14}{Eliminación no permitida}: Se muestra en una pantalla emergente cuando no se pueda eliminar la entidad debido a que está siendo utilizada por otro elemento.
 			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 11}{Gestionar entidades} cuando la entidad no se encuentre en un estado que permita la eliminación.
 		\end{UClist}
 	}
@@ -46,8 +46,8 @@
  \begin{UCtrayectoria}
     \UCpaso[\UCactor] Solicita eliminar una entidad oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{IU 11}{Gestionar entidades}.
     \UCpaso[\UCsist] Verifica que la entidad se encuentra en un estado que permita la eliminación de acuerdo a la regla de negocio \cdtIdRef{RN18}{Eliminación de elementos}. \refTray{A}
-    \UCpaso[\UCsist] Busca los casos de uso que estén referenciando a la entidad.
-    \UCpaso[\UCsist] Busca los casos de uso que estén referenciando a algún atributo de la entidad.
+    \UCpaso[\UCsist] Busca los elementos que estén utilizando a la entidad.
+    \UCpaso[\UCsist] Busca los elementos estén utilizando a algún atributo de la entidad.
     \UCpaso[\UCsist] Verifica que ningún caso de uso esté referenciando a la entidad. \refTray{B}
     \UCpaso[\UCsist] Verifica que ningún caso de uso esté referenciando a alguno de los atributos. \refTray{C}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG11}{Confirmar eliminación} en una pantalla emergente con los botones \cdtButton{Aceptar} y \cdtButton{Cancelar}.
@@ -72,7 +72,7 @@
 %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
  \begin{UCtrayectoriaA}[Fin del caso de uso]{C}{Algunos atributos de la entidad están siendo referenciados en algún caso de uso.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG14}{Eliminación no permitida} en una pantalla emergente
-    con la lista de casos de uso que están referenciando al atributo o atributos.
+    con la lista de elementos que están referenciando al atributo o atributos.
     \UCpaso[\UCactor] Oprime el botón \cdtButton{Aceptar} de la pantalla emergente.
     \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 11}{Gestionar entidades}.
  \end{UCtrayectoriaA}

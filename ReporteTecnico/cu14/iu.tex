@@ -1,0 +1,27 @@
+\subsection{IU 14 Recuperar contraseña}
+
+\subsubsection{Objetivo}
+	
+	Esta pantalla permite al actor recuperar su contraseña.
+
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 14} se muestra la pantalla ``Recuperar contraseña'' que permite recuperar la contraseña del actor. El actor deberá ingresar la información solicitada, y deberá oprimir el botón \cdtButton{Aceptar}, el sistema validará y verificará que los datos ingresados sean correctos, finalmente se mostrará la pantalla \cdtIdRef{IU 13}{Iniciar sesión}, indicando que la recuperación de la contraseña fue exitosa.
+
+
+    \IUfig[.9]{cu14/images/iu.png}{IU 14}{Recuperar contraseña}
+   
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \cdtButton{Aceptar}: Permite solicitar la recuperación de la contraseña, dirige a la pantalla \cdtIdRef{IU 13}{Iniciar sesión}.
+\end{itemize}
+
+\subsubsection{Mensajes}
+
+	
+\begin{description}
+	\item[\cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 14}{Recuperar contraseña} cuando no se ha ingresado un dato marcado como obligatorio.
+	\item[\cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 14}{Recuperar contraseña} cuando se ha excedido la longitud de alguno de los campos.
+	\item[\cdtIdRef{MSG33}{Correo electrónico inválido}:] Se muestra en la pantalla \cdtIdRef{IU 14}{Recuperar contraseña} cuando el correo electrónico ingresado es incorrecto.
+\end{description}

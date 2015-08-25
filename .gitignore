@@ -11,6 +11,7 @@
 *.bbl
 *.blg
 *reporte.pdf
+.svn/
 
 # OSX generated files #
 ######################
@@ -29,4 +30,3 @@
 *.bak~1
 *.vpp~*
 *.working*
-*.vpp~*

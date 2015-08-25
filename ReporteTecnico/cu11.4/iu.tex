@@ -1,0 +1,24 @@
+\subsection{IU 11.4 Consultar entidad}
+
+\subsubsection{Objetivo}
+	
+	Esta pantalla permite al actor consultar la información de un mensaje.
+	
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 11.4} se muestra la pantalla ``Consultar entidad'' en la cual el actor podrá consultar la información de una entidad.\\
+	
+	Una vez que el actor ha consultado la información mostrada, deberá oprimir el botón \cdtButton{Aceptar} y el sistema mostrará la pantalla en la cuál se solicitó la consulta.
+
+    \IUfig[.8]{cu11.4/images/iu.png}{IU 11.4}{Consultar entidad}
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \cdtButton{Aceptar}: Permite al actor concluir la consulta, dirige a la pantalla donde se solicitó la consuta.
+\end{itemize}
+
+\subsubsection{Mensajes}
+	
+\begin{description}
+	\item[\cdtIdRef{MSG13}{Ha ocurrido un error}:] Se muestra en la pantalla donde se solicitó la operación cuando la entidad que se desea consultar no existe.
+\end{description}
