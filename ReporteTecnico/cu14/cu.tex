@@ -1,0 +1,80 @@
+\begin{UseCase}{CU 14}{Recuperar contraseña}
+	{
+		Este caso de uso permite al actor recuperar su contraseña.
+		
+	}
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Recuperar la contraseña del actor.
+	}
+	\UCitem{Entradas}{
+		\begin{UClist} 
+			\UCli \cdtRef{Colaborador:CorreoElectronico}{Correo electrónico}: \ioEscribir
+		\end{UClist}
+	}	
+	
+	\UCitem{Salidas}{
+		Ninguna
+	}
+	
+	\UCitem{Mensajes}{	
+		\UCli \cdtIdRef{MSG32}{Recuperar contraseña}: Se muestra en la pantalla \cdtIdRef{IU 13}{Iniciar sesión} indicando que se ha enviado el correo electrónico con la contraseña exitosamente.
+	}
+	
+	\UCitem{Precondiciones}{ 
+		\begin{UClist}
+			\item Que el actor se encuentre registrado en el sistema.
+		\end{UClist}
+	}			
+	\UCitem{Postcondiciones}{ 
+		\begin{UClist}
+			\UCli Se enviará un correo electrónico al actor con su contraseña.
+	 	\end{UClist}
+	}
+	\UCitem{Errores}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 14}{Recuperar contraseña} cuando no se ha ingresado un dato marcado como obligatorio.
+			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 14}{Iniciar sesión} cuando se ha excedido la longitud de alguno de los campos.
+			\UCli \cdtIdRef{MSG33}{Correo electrónico inválido}: Se muestra en la pantalla \cdtIdRef{IU 14}{Recuperar contraseña} cuando el correo ingresado es incorrecto.
+			
+}
+	
+	\UCitem{Tipo}{
+		Primario
+	}
+
+	
+\end{UseCase}
+ %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Oprime la liga ``Recuperar contraseña'' de la pantalla \cdtIdRef{IU 13}{Iniciar sesión}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 14}{Recuperar contraseña}.
+    \UCpaso[\UCactor] Ingresa los datos solicitados en la pantalla  \cdtIdRef{IU 14}{Recuperar contraseña}. \label{cu14:ingresaDatos}
+	\UCpaso[\UCactor] Oprime el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 14}{Recuperar contraseña}.
+    \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{A}
+    \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{B}
+    \UCpaso[\UCsist] Verifica que el correo electrónico ingresado tenga el formato correcto con base en la regla de negocio \cdtIdRef{RN19}{Formato de correo electrónico}. \refTray{C}
+    \UCpaso[\UCsist] Verifica que el correo electrónico se encuentre registrado. \refTray{C}
+    \UCpaso[\UCsist] Envía un correo electrónico con la contraseña.
+    \UCpaso[\UCactor] Muestra el mensaje \cdtIdRef{MSG32}{Recuperar contraseña} en la pantalla \cdtIdRef{IU 13}{Iniciar sesión}, para indicar que se ha solicitado la recuperación de contraseña exitosamente.
+ \end{UCtrayectoria}
+ 
+  
+  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{A}{El actor no ingresó algún dato marcado como obligatorio.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
+	    \cdtIdRef{IU 14}{Recuperar contraseña}, indicando al actor que el dato es obligatorio.
+    \UCpaso[] Continúa con el paso \ref{cu14:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria B----------------------------------------------------  
+ \begin{UCtrayectoriaA}{B}{El actor proporciona un dato que excede la longitud máxima.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG6}{Longitud inválida} y señala el campo que excede la 
+    longitud en la pantalla \cdtIdRef{IU 14}{Recuperar contraseña}, para indicar que el dato excede el tamaño máximo permitido.
+    \UCpaso[] Continúa con el paso \ref{cu14:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria B----------------------------------------------------  
+ \begin{UCtrayectoriaA}{C}{El actor proporciona un correo electrónico incorrecto.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG33}{Correo electrónico inválido} en la pantalla \cdtIdRef{IU 14}{Recuperar contraseña}, para indicar que el correo electrónico es inválido.
+    \UCpaso[] Continúa con el paso \ref{cu14:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ 

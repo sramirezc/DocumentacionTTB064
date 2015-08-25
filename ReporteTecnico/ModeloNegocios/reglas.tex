@@ -221,3 +221,21 @@
     \BRitem{Estatus}{Edición}
     \BRitem{Descripción}{No es posible eliminar entidades, reglas de negocio, actores, términos del glosario, pantallas y/o mensajes que se encuentren asociados a casos de uso con estado ``Liberado''.}
 \end{BusinessRule}
+
+\begin{BusinessRule}{RN19}{Formato de correo electrónico}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{1.0}
+    \BRitem{Autor}{Sergio Ramírez Camacho}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{El correo electrónico debe ser una cadena de caracteres con la siguiente estructura ordenada:
+		\begin{enumerate}
+			\item Cadena de caracteres
+			\item ``@''
+			\item Cadena de caracteres
+			\item ``.''
+			\item Cadena de caracteres
+		\end{enumerate}
+		}
+	\BRitem{Ejemplo}{cadena1@cadena2.cadena3}
+\end{BusinessRule}

@@ -1,0 +1,27 @@
+\subsection{IU 13 Iniciar sesión}
+
+\subsubsection{Objetivo}
+	
+	Esta pantalla permite al actor iniciar sesión en el sistema.
+
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 13} se muestra la pantalla ``Iniciar sesión'' que permite iniciar sesión en el sistema. El actor deberá ingresar la información solicitada, y deberá oprimir el botón \cdtButton{Aceptar}, el sistema validará y verificará que los datos ingresados sean correctos, finalmente se mostrará la pantalla \cdtIdRef{IU 4}{Gestionar proyectos}, indicando que el inicio de sesión fue exitoso.
+
+
+    \IUfig[.9]{cu13/images/iu.png}{IU 13}{Iniciar sesión}
+   
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \cdtButton{Aceptar}: Permite solicitar el inicio de sesión, dirige a la pantalla \cdtIdRef{IU 4}{Gestionar proyectos}.
+\end{itemize}
+
+\subsubsection{Mensajes}
+
+	
+\begin{description}
+	\item[\cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 13}{Iniciar sesión} cuando no se ha ingresado un dato marcado como obligatorio.
+	\item[\cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 13}{Iniciar sesión} cuando se ha excedido la longitud de alguno de los campos.
+	\item[\cdtIdRef{MSG31}{CURP y/o contraseña incorrectos}:] Se muestra en la pantalla \cdtIdRef{IU 13}{Iniciar sesión} cuando el CURP y/o la contraseña ingresada son incorrectos.
+\end{description}
