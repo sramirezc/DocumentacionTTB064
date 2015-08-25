@@ -17,13 +17,15 @@
 		Ninguna
 	}
 	
-	\UCitem{Mensajes}{	
+	\UCitem{Mensajes}{
+	\begin{UClist}	
 		\UCli \cdtIdRef{MSG32}{Recuperar contraseña}: Se muestra en la pantalla \cdtIdRef{IU 13}{Iniciar sesión} indicando que se ha enviado el correo electrónico con la contraseña exitosamente.
+		\end{UClist}
 	}
 	
 	\UCitem{Precondiciones}{ 
 		\begin{UClist}
-			\item Que el actor se encuentre registrado en el sistema.
+			\UCli Que el actor se encuentre registrado en el sistema.
 		\end{UClist}
 	}			
 	\UCitem{Postcondiciones}{ 
@@ -36,7 +38,7 @@
 			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 14}{Recuperar contraseña} cuando no se ha ingresado un dato marcado como obligatorio.
 			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 14}{Iniciar sesión} cuando se ha excedido la longitud de alguno de los campos.
 			\UCli \cdtIdRef{MSG33}{Correo electrónico inválido}: Se muestra en la pantalla \cdtIdRef{IU 14}{Recuperar contraseña} cuando el correo ingresado es incorrecto.
-			
+			\end{UClist}
 }
 	
 	\UCitem{Tipo}{
