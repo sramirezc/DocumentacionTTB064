@@ -1,0 +1,66 @@
+\begin{UseCase}{CU 2}{Gestionar personal}
+	{
+		Este caso de uso permite al Administrador visualizar todas las personas de la organización, así como solicitar el registro, consulta, modificación y eliminación de una persona.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:administrador}{Administrador}}
+	\UCitem{Propósito}{
+		Visualizar y gestionar el personal.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtRef{Colaborador}{Colaborador}: \ioTabla{\cdtRef{Colaborador:CURP}{CURP}, \cdtRef{Colaborador:Nombre}{Nombre}, \cdtRef{Colaborador:PrimerApellido}{Primer Apellido} 
+			y \cdtRef{Colaborador:SegundoApellido}{Segundo Apellido}}{de las personas}.
+		\end{UClist}
+	}
+	
+	\UCitem{Mensajes}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG2}{No existe información}: Se muestra en la pantalla \cdtIdRef{IU 2}{Gestionar personal} cuando no existe personal registrado.
+		\end{UClist}
+	}
+
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		Ninguna
+	}
+
+	\UCitem{Errores}{
+		Ninguno
+	}
+
+	\UCitem{Tipo}{
+		Primario
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita gestionar el personal presionando la opción ``Personal'' del menú \cdtRef{menu:principal}{Menú principal}.
+    \UCpaso[\UCsist] Busca la información del personal registrado. \refTray{A}
+    \UCpaso[\UCsist] Muestra la información del personal en la pantalla \cdtIdRef{IU 2}{Gestionar personal}.
+    \UCpaso[\UCactor] Gestiona el personal a través de los botones: \cdtButton{Registrar}, \btnEditar y \btnEliminar. \label{cu2:gestiona}
+ \end{UCtrayectoria}
+ 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No existen registros de personas.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG2}{No existe información} en pantalla \cdtIdRef{IU 2}{Gestionar personal} 
+    para indicar que no hay registros de personal para mostrar.
+ \end{UCtrayectoriaA}
+ 
+
+\subsection{Puntos de extensión}
+
+\UCExtensionPoint{El actor requiere registrar una persona}
+	{Paso \ref{cu2:gestiona} de la trayectoria principal}
+	{\cdtIdRef{CU 2.1}{Registrar persona}}
+\UCExtensionPoint{El actor requiere modificar una persona}
+	{Paso \ref{cu2:gestiona} de la trayectoria principal}
+	{\cdtIdRef{CU 2.2}{Modificar persona}}	
+\UCExtensionPoint{El actor requiere eliminar una persona}
+	{Paso \ref{cu2:gestiona} de la trayectoria principal}
+	{\cdtIdRef{CU 2.3}{Eliminar persona}}

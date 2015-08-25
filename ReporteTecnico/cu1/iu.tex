@@ -1,0 +1,36 @@
+\subsection{IU 1 Gestionar proyectos de Administrador}
+\subsubsection{Objetivo}
+	
+	En esta pantalla el actor puede visualizar algunos atributos de los proyectos y las operaciones disponibles de acuerdo su estado.
+
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 1} se muestra la pantalla ``Gestionar proyectos de Administrador'', por medio de la cual 
+    se podrán gestionar los proyectos a través de una tabla. El actor podrá podrá solicitar el registro, la consulta, la modificación y la eliminación 
+    de un proyecto mediante los botones
+    \cdtButton{Registrar}, \btnConsulta, \btnEditar y \btnEliminar respectivamente. \\
+    
+    Los botones correspondientes a las opciones mencionadas para cada uno de los registros aparecerán en la tabla dependiendo del estado
+    del proyecto.
+    	
+    \begin{itemize}
+	    \item {\bf En negociación:} \btnConsulta, \btnEditar, \btnEliminar.
+	    \item {\bf Iniciado:} \btnConsulta, \btnEditar, \btnEliminar.
+            \item {\bf Terminado:} \btnConsulta.
+    \end{itemize}
+
+    \IUfig[.9]{cu1/images/iu.png}{IU 1}{Gestionar proyectos de Administrador}
+
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \cdtButton{Registrar}: Permite al actor solicitar el registro de un proyecto, dirige a la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto}.
+	\item \btnEditar[Modificar]: Permite al actor solicitar la modificación de un proyecto, dirige a la pantalla \cdtIdRef{IU 1.2}{Modificar proyecto}.
+	\item \btnEliminar[Eliminar]: Permite al actor solicitar la eliminación de un proyecto, dirige a la pantalla \cdtIdRef{IU 1.3}{Eliminar proyecto}.
+	\item \btnConsulta[Consultar]: Permite al actor solicitar la consulta de un proyecto, dirige a la pantalla \cdtIdRef{IU 1.4}{Consultar proyecto}.
+\end{itemize}
+\subsubsection{Mensajes}
+	
+\begin{description}
+	\item[\cdtIdRef{MSG2}{No existe información}:] Se muestra en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador} cuando no existen proyectos registrados.
+\end{description}

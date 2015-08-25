@@ -1,0 +1,26 @@
+\subsection{IU 2 Gestionar personal}
+\subsubsection{Objetivo}
+	
+	En esta pantalla el actor puede visualizar algunos atributos de las personas registradas y las operaciones disponibles de gestión.
+
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 2} se muestra la pantalla ``Gestionar personal'', por medio de la cual 
+    se podrán gestionar las personas a través de una tabla. El actor podrá podrá solicitar el registro, la modificación y la eliminación 
+    de una persona mediante los botones
+    \cdtButton{Registrar}, \btnEditar y \btnEliminar respectivamente. \\
+
+    \IUfig[.9]{cu2/images/iu.png}{IU 1}{Gestionar personal}
+
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \cdtButton{Registrar}: Permite al actor solicitar el registro de una persona, dirige a la pantalla \cdtIdRef{IU 2.1}{Registrar persona}.
+	\item \btnEditar[Modificar]: Permite al actor solicitar la modificación de una persona, dirige a la pantalla \cdtIdRef{IU 2.2}{Modificar persona}.
+	\item \btnEliminar[Eliminar]: Permite al actor solicitar la eliminación de una persona, dirige a la pantalla \cdtIdRef{IU 1.3}{Eliminar persona}.
+\end{itemize}
+\subsubsection{Mensajes}
+	
+\begin{description}
+	\item[\cdtIdRef{MSG2}{No existe información}:] Se muestra en la pantalla \cdtIdRef{IU 1}{Gestionar personal} cuando no existe personal registrado.
+\end{description}
