@@ -1,35 +1,35 @@
-\subsection{IU 1.1 Registrar proyecto}
+\subsection{IU 2.1 Registrar persona}
 
 \subsubsection{Objetivo}
 	
-    Esta pantalla permite al actor registrar la información de un proyecto nuevo.
+    Esta pantalla permite al actor registrar la información de una persona..
 
 \subsubsection{Diseño}
 
-    En la figura ~\ref{IU 1.1} se muestra la pantalla ``Registrar proyecto'' que permite al actor registrar un proyecto. \\
+    En la figura ~\ref{IU 2.1} se muestra la pantalla ``Registrar persona'' que permite al actor registrar una persona. \\
     
     Una vez ingresada la información solicitada, el actor deberá oprimir el botón \cdtButton{Aceptar}. El sistema validará y registrará la 
     información solo si se han cumplido todas las reglas de negocio establecidas.  \\
     
-    Finalmente se mostrará el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}, 
-    para indicar que la información del proyecto
+    Finalmente se mostrará el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 2}{Gestionar personal}, 
+    para indicar que la información de la persona
     se ha registrado correctamente.        
 
 
-    \IUfig[.9]{cu1.1/images/iu.png}{IU 1.1}{Registrar proyecto}
+    \IUfig[.9]{cu2.1/images/iu.png}{IU 2.1}{Registrar persona}
 
 \subsubsection{Comandos}
 \begin{itemize}
-	\item \cdtButton{Aceptar}: Permite al actor guardar el registro del proyecto, dirige a la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}.
-	\item \cdtButton{Cancelar}: Permite al actor cancelar el registro del proyecto, dirige a la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}.
+	\item \cdtButton{Aceptar}: Permite al actor guardar el registro de la persona, dirige a la pantalla \cdtIdRef{IU 2}{Gestionar personal}.
+	\item \cdtButton{Cancelar}: Permite al actor cancelar el registro de la persona, dirige a la pantalla \cdtIdRef{IU 2}{Gestionar personal}.
 \end{itemize}
 
 \subsubsection{Mensajes}
 	
 \begin{description}
-	\item[\cdtIdRef{MSG1}{Operación exitosa}:] Se muestra en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador} para indicar que el registro fue exitoso.
-	\item[\cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto} cuando no se ha ingresado un dato marcado como obligatorio.
-	\item[\cdtIdRef{MSG5}{Dato incorrecto}:] Se muestra en la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
-	\item[\cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto} cuando se ha excedido la longitud de alguno de los campos.
-	\item[\cdtIdRef{MSG7}{Registro repetido}:] Se muestra en la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto} cuando se registre un proyecto con un nombre que ya exista.
+	\item[\cdtIdRef{MSG1}{Operación exitosa}:] Se muestra en la pantalla \cdtIdRef{IU 2}{Gestionar personal} para indicar que el registro fue exitoso.
+	\item[\cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 2.1}{Registrar persona} cuando no se ha ingresado un dato marcado como obligatorio.
+	\item[\cdtIdRef{MSG5}{Dato incorrecto}:] Se muestra en la pantalla \cdtIdRef{IU 2.1}{Registrar persona} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+	\item[\cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 2.1}{Registrar persona} cuando se ha excedido la longitud de alguno de los campos.
+	\item[\cdtIdRef{MSG7}{Registro repetido}:] Se muestra en la pantalla \cdtIdRef{IU 2.1}{Registrar persona} cuando se registre una persona con una CURP que ya exista.
 \end{description}

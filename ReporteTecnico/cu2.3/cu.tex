@@ -1,18 +1,18 @@
-\begin{UseCase}{CU 1.3}{Eliminar proyecto}
+\begin{UseCase}{CU 2.3}{Eliminar persona}
 	{
-		Este caso de uso permite al actor eliminar del sistema un proyecto.
+		Este caso de uso permite al actor eliminar del sistema una persona.
 	}
 	
 	\UCitem{Actor}{\cdtRef{actor:administrador}{Administrador}}
 	\UCitem{Propósito}{
-		Eliminar la información de un proyecto.
+		Eliminar la información de una persona.
 	}
 	\UCitem{Entradas}{
 		Ninguna
 	}
 	\UCitem{Salidas}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador} para indicar que la eliminación fue exitosa.
+			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 2}{Gestionar personal} para indicar que la eliminación fue exitosa.
 		\end{UClist}
 	}
 	\UCitem{Mensajes}{
@@ -23,42 +23,42 @@
 
 	\UCitem{Precondiciones}{
 		\begin{UClist}
-			\UCli Que el proyecto se encuentre en estado ``En negociación'' o ``Iniciado''.
+			\UCli Que la persona no lidere ningún proyecto en estado ``En negociación'' o ``Iniciado''.
 		\end{UClist}
 	}
 	
 	\UCitem{Postcondiciones}{
 		\begin{UClist}
-			\UCli Se eliminará del sistema el proyecto.
+			\UCli Se eliminará del sistema la persona.
 		\end{UClist}
 	}
 
 	\UCitem{Errores}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador} cuando el caso de uso no se encuentre en un estado que permita la eliminación.
+			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 2}{Gestionar personal} cuando la persona lidere un proyecto en estado ``En negociación'' o ``Iniciado''.
 		\end{UClist}
 	}
 
 	\UCitem{Tipo}{
-		Secundario, extiende del caso de uso \cdtIdRef{CU 1}{Gestionar proyectos de Administrador}.
+		Secundario, extiende del caso de uso \cdtIdRef{CU 2}{Gestionar personal}.
 	}
 \end{UseCase}
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
-    \UCpaso[\UCactor] Solicita eliminar un proyecto oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}.
-    \UCpaso[\UCsist] Busca la información del proyecto seleccionado.
-    \UCpaso[\UCsist] Verifica que el estado del proyecto sea ``En negociación'' o ``Iniciado''. \refTray{A}
+    \UCpaso[\UCactor] Solicita eliminar un proyecto oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{IU 2}{Gestionar personal}.
+    \UCpaso[\UCsist] Busca la información de la persona seleccionada.
+    \UCpaso[\UCsist] Verifica que la persona no lidere un proyecto en estado ``En negociación'' o ``Iniciado''. \refTray{A}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG11}{Confirmar eliminación} en una pantalla emergente con los botones \cdtButton{Aceptar} y \cdtButton{Cancelar}.
-    \UCpaso[\UCactor] Confirma la eliminación del caso de uso oprimiendo el botón \cdtButton{Aceptar} de la pantalla emergente. \refTray{B}
-    \UCpaso[\UCsist] Verifica que el estado del proyecto sea ``En negociación'' o ``Iniciado''. \refTray{A}
-    \UCpaso[\UCsist] Elimina la información referente al proyecto.
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}
+    \UCpaso[\UCactor] Confirma la eliminación de la persona oprimiendo el botón \cdtButton{Aceptar} de la pantalla emergente. \refTray{B}
+    \UCpaso[\UCsist] Verifica que la persona no lidere un proyecto en estado ``En negociación'' o ``Iniciado''. \refTray{A}
+    \UCpaso[\UCsist] Elimina la información referente a la persona.
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 2}{Gestionar personal}
     para indicar al actor que se ha eliminado el registro exitosamente.
  \end{UCtrayectoria}
  
  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El proyecto no está en un estado que permita la eliminación.}
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador} con el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error}.
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{La persona es líder de un proyecto en estado ``En negociación'' o ``Iniciado''.}
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 2}{Gestionar personal} con el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error}.
  \end{UCtrayectoriaA} 
  %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
  \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{El actor desea cancelar la operación.}
