@@ -23,7 +23,7 @@
 
 	\UCitem{Precondiciones}{
 		\begin{UClist}
-			\UCli Que la persona no lidere ningún proyecto en estado ``En negociación'' o ``Iniciado''.
+			\UCli Que la persona no lidere ningún proyecto.
 		\end{UClist}
 	}
 	
@@ -35,7 +35,7 @@
 
 	\UCitem{Errores}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 2}{Gestionar personal} cuando la persona lidere un proyecto en estado ``En negociación'' o ``Iniciado''.
+			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 2}{Gestionar personal} cuando la persona lidere un proyecto.
 		\end{UClist}
 	}
 
@@ -45,19 +45,19 @@
 \end{UseCase}
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
-    \UCpaso[\UCactor] Solicita eliminar un proyecto oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{IU 2}{Gestionar personal}.
+    \UCpaso[\UCactor] Solicita eliminar una persona oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{IU 2}{Gestionar personal}.
     \UCpaso[\UCsist] Busca la información de la persona seleccionada.
-    \UCpaso[\UCsist] Verifica que la persona no lidere un proyecto en estado ``En negociación'' o ``Iniciado''. \refTray{A}
+    \UCpaso[\UCsist] Verifica que la persona no lidere ningún proyecto. \refTray{A}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG11}{Confirmar eliminación} en una pantalla emergente con los botones \cdtButton{Aceptar} y \cdtButton{Cancelar}.
     \UCpaso[\UCactor] Confirma la eliminación de la persona oprimiendo el botón \cdtButton{Aceptar} de la pantalla emergente. \refTray{B}
-    \UCpaso[\UCsist] Verifica que la persona no lidere un proyecto en estado ``En negociación'' o ``Iniciado''. \refTray{A}
+    \UCpaso[\UCsist] Verifica que la persona no lidere ningún proyecto. \refTray{A}
     \UCpaso[\UCsist] Elimina la información referente a la persona.
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 2}{Gestionar personal}
     para indicar al actor que se ha eliminado el registro exitosamente.
  \end{UCtrayectoria}
  
  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{La persona es líder de un proyecto en estado ``En negociación'' o ``Iniciado''.}
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{La persona es líder de algún proyecto.}
     \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 2}{Gestionar personal} con el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error}.
  \end{UCtrayectoriaA} 
  %----------------------------------------------------------%trayectoria B---------------------------------------------------- 

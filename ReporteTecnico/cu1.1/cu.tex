@@ -18,6 +18,7 @@
 			\UCli \cdtRef{Proyecto:Descripcion}{Descripción}: \ioEscribir.
 			\UCli \cdtRef{Proyecto:Contraparte}{Contraparte}: \ioEscribir.
 			\UCli \cdtRef{Proyecto:Presupuesto}{Presupuesto}: \ioEscribir.
+			\UCli \cdtRef{gls:EstadoDelProyecto}{Estado del Proyecto}: \ioSeleccionar.
 		\end{UClist}
 	}
 	\UCitem{Salidas}{
@@ -58,6 +59,7 @@
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
     \UCpaso[\UCactor] Solicita registrar un proyecto oprimiendo el botón \cdtButton{Registrar} de la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}.
+    \UCpaso[\UCsist] Busca los estados con los que puede iniciar un proyecto.
     \UCpaso[\UCsist] Busca los colaboradores registrados en el sistema. 
     \UCpaso[\UCsist] Verifica que exista al menos un colaborador. \refTray{A}
     \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto} en la cual se realizará el registro del proyecto. 

@@ -1,0 +1,65 @@
+\begin{UseCase}{CU 3}{Gestionar módulos}
+	{
+		Este caso de uso permite al Analista visualizar todos los módulos en que se divide el proyecto, así como solicitar el registro, modificación y eliminación de un módulo.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Visualizar y gestionar los módulos del sistema.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtRef{Modulo}{Módulo}: \ioTabla{\cdtRef{Modulo:Clave}{Clave} y \cdtRef{Modulo:Nombre}{Nombre}}{de los módulos}.
+		\end{UClist}
+	}
+	
+	\UCitem{Mensajes}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG2}{No existe información}: Se muestra en la pantalla \cdtIdRef{IU 3}{Gestionar módulos} cuando no existen módulos registrados.
+		\end{UClist}
+	}
+
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		Ninguna
+	}
+
+	\UCitem{Errores}{
+		Ninguno
+	}
+
+	\UCitem{Tipo}{
+		Primario
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita gestionar los módulos presionando el botón \btnEntrar de algún proyecto de la pantalla \cdtIdRef{IU 4}{Gestionar proyectos de Líder}.
+    \UCpaso[\UCsist] Busca la información de los módulos del proyecto seleccionado. \refTray{A}
+    \UCpaso[\UCsist] Muestra la información de los módulos en la pantalla \cdtIdRef{IU 3}{Gestionar módulos}.
+    \UCpaso[\UCactor] Gestiona los módulos a través de los botones: \cdtButton{Registrar}, \btnEditar y \btnEliminar. \label{cu3:gestiona}
+ \end{UCtrayectoria}
+ 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No existen registros de módulos.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG2}{No existe información} en pantalla \cdtIdRef{IU 3}{Gestionar módulos} 
+    para indicar que no hay registros de módulos para mostrar.
+ \end{UCtrayectoriaA}
+ 
+
+\subsection{Puntos de extensión}
+
+\UCExtensionPoint{El actor requiere registrar un módulo}
+	{Paso \ref{cu3:gestiona} de la trayectoria principal}
+	{\cdtIdRef{CU 3.1}{Registrar módulo}}
+\UCExtensionPoint{El actor requiere modificar un módulo}
+	{Paso \ref{cu3:gestiona} de la trayectoria principal}
+	{\cdtIdRef{CU 3.2}{Modificar módulo}}	
+\UCExtensionPoint{El actor requiere eliminar un módulo}
+	{Paso \ref{cu3:gestiona} de la trayectoria principal}
+	{\cdtIdRef{CU 3.3}{Eliminar módulo}}
