@@ -1,0 +1,26 @@
+\subsection{IU 3 Gestionar módulos}
+\subsubsection{Objetivo}
+	
+	En esta pantalla el actor puede visualizar algunos atributos de los módulos registrados y las operaciones disponibles de gestión.
+
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 3} se muestra la pantalla ``Gestionar módulos'', por medio de la cual 
+    se podrán gestionar los módulos a través de una tabla. El actor podrá podrá solicitar el registro, la modificación y la eliminación 
+    de un módulo mediante los botones
+    \cdtButton{Registrar}, \btnEditar y \btnEliminar respectivamente. \\
+
+    \IUfig[.9]{cu3/images/iu.png}{IU 1}{Gestionar módulos}
+
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \cdtButton{Registrar}: Permite al actor solicitar el registro de un módulo, dirige a la pantalla \cdtIdRef{IU 3.1}{Registrar módulo}.
+	\item \btnEditar[Modificar]: Permite al actor solicitar la modificación de un módulo, dirige a la pantalla \cdtIdRef{IU 3.3}{Modificar módulo}.
+	\item \btnEliminar[Eliminar]: Permite al actor solicitar la eliminación de un módulo, dirige a la pantalla \cdtIdRef{IU 1.3}{Eliminar módulo}.
+\end{itemize}
+\subsubsection{Mensajes}
+	
+\begin{description}
+	\item[\cdtIdRef{MSG2}{No existe información}:] Se muestra en la pantalla \cdtIdRef{IU 3}{Gestionar módulos} cuando no existe módulol registrado.
+\end{description}

@@ -1,23 +1,21 @@
-\begin{UseCase}{CU 1.1}{Registrar proyecto}
+\begin{UseCase}{CU 2.1}{Registrar persona}
 	{
-		Este caso de uso permite registrar la información de un proyecto.
+		Este caso de uso permite registrar la información de una persona que podrá ser elegida como colaborador de un proyecto.
 	}
 	
 	\UCitem{Actor}{\cdtRef{actor:administrador}{Administrador}}
 	\UCitem{Propósito}{
-		Registrar la información de un proyecto.
+		Registrar la información de una persona.
 	}
 	\UCitem{Entradas}{
 		\begin{UClist}
-			\UCli \cdtRef{Proyecto:Clave}{Clave}: \ioEscribir.
-			\UCli \cdtRef{Proyecto:Nombre}{Nombre}: \ioEscribir.
-			\UCli \cdtRef{Proyecto:FechaDeInicio}{Fecha de inicio}: \ioCalendario.
-			\UCli \cdtRef{Proyecto:FechaDeTermino}{Fecha de término}: \ioCalendario.
-			\UCli \cdtRef{Proyecto:FechaDeInicioProgramada}{Fecha de Inicio Programada}: \ioCalendario.
-			\UCli \cdtRef{Proyecto:FechaDeTerminoProgramada}{Fecha de Término Programada}: \ioCalendario.
-			\UCli \cdtRef{Proyecto:Descripcion}{Descripcion}: \ioEscribir.
-			\UCli \cdtRef{Proyecto:Contraparte}{Contraparte}: \ioEscribir.
-			\UCli \cdtRef{Proyecto:Presupuesto}{Presupuesto}: \ioEscribir.
+			\UCli \cdtRef{Persona:CURP}{CURP}: \ioEscribir.
+			\UCli \cdtRef{Persona:Nombre}{Nombre}: \ioEscribir.
+			\UCli \cdtRef{Persona:PrimerApellido}{Primer Apellido}: \ioEscribir.
+			\UCli \cdtRef{Persona:SegundoApellido}{Segundo Apellido}: \ioEscribir.
+			\UCli \cdtRef{Persona:CorreoElectronico}{Correo Electrónico}: \ioEscribir.
+			\UCli \cdtRef{Persona:Contrasena}{Contraseña}: \ioEscribir.
+			\UCli \cdtRef{Persona:Telefono}{Teléfono}: \ioEscribir.
 		\end{UClist}
 	}
 	\UCitem{Salidas}{
@@ -26,85 +24,76 @@
 	
 	\UCitem{Mensajes}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador} para indicar que el registro fue exitoso.
+			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 2}{Gestionar personal} para indicar que el registro fue exitoso.
 		\end{UClist}
 	}
 
 	\UCitem{Precondiciones}{
-		\begin{UClist}
-			\UCli Que exista al menos un colaborador registrado.
-		\end{UClist}
+		Ninguna
 	}
 	
 	\UCitem{Postcondiciones}{
 		\begin{UClist}
-			\UCli Se registrará un proyecto en el sistema.
+			\UCli Se registrará una persona en el sistema.
 		\end{UClist}
 	}
 
 	\UCitem{Errores}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto} cuando no se ha ingresado un dato marcado como obligatorio.
-			\UCli \cdtIdRef{MSG5}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
-			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto} cuando se ha excedido la longitud de alguno de los campos.
-			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto} cuando se registre un proyecto con un nombre que ya exista.
+			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 2.1}{Registrar persona} cuando no se ha ingresado un dato marcado como obligatorio.
+			\UCli \cdtIdRef{MSG5}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 2.1}{Registrar persona} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 2.1}{Registrar persona} cuando se ha excedido la longitud de alguno de los campos.
+			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 2.1}{Registrar persona} cuando se registre una persona con una CURP que ya exista.
 		\end{UClist}
 	}
 
 	\UCitem{Tipo}{
-		Secundario, extiende del casos de uso \cdtIdRef{CU 1}{Gestionar proyectos de Administrador}.
+		Secundario, extiende del casos de uso \cdtIdRef{CU 2}{Gestionar personal}.
 	}
 \end{UseCase}
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
-    \UCpaso[\UCactor] Solicita registrar un proyecto oprimiendo el botón \cdtButton{Registrar} de la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}.
-    \UCpaso[\UCsist] Busca los colaboradores registrados en el sistema. 
-    \UCpaso[\UCsist] Verifica que exista al menos un colaborador. \refTray{A}
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto} en la cual se realizará el registro del proyecto. 
-    \UCpaso[\UCactor] Ingresa la información solicitada en la pantalla. \label{cu1.1:ingresaDatos}
-    \UCpaso[\UCactor] Solicita guardar el proyecto oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto}. \refTray{B} 
-    
-    \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{C}
-    \UCpaso[\UCsist] Verifica que el nombre del proyecto no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{D}
-    \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{E} \refTray{F}
-    \UCpaso[\UCsist] Registra la información del proyecto en el sistema.
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}
+    \UCpaso[\UCactor] Solicita registrar una persona oprimiendo el botón \cdtButton{Registrar} de la pantalla \cdtIdRef{IU 2}{Gestionar personal}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 2.1}{Registrar persona} en la cual se realizará el registro. 
+    \UCpaso[\UCactor] Ingresa la información solicitada en la pantalla. \label{cu2.1:ingresaDatos}
+    \UCpaso[\UCactor] Solicita guardar la información de la persona oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 2.1}{Registrar persona}. \refTray{A} 
+    \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{B}
+    \UCpaso[\UCsist] Verifica que la CURP no se encuentre registrada en el sistema con base en la regla de negocio  \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{C}
+    \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{D} \refTray{E}
+    \UCpaso[\UCsist] Registra la información de la persona en el sistema.
+    \UCpaso[\UCsist] Envía un correo con el mensaje \cdtIdRef{MSG34}{Datos de sesión} a la cuenta de correo electrónico ingresado con la contraseña ingresada.
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 2}{Gestionar personal}
     para indicar al actor que el registro se ha realizado exitosamente.
  \end{UCtrayectoria}
-
  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No hay ningún colaborador registrado.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG25}{Falta de información} en la la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}.
- \end{UCtrayectoriaA} 
- %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{El actor desea cancelar la operación.}
-    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto}.
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El actor desea cancelar la operación.}
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 2.1}{Registrar persona}.
     \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
  \end{UCtrayectoriaA} 
-  %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
- \begin{UCtrayectoriaA}{C}{El actor no ingresó algún dato marcado como obligatorio.}
+  %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{B}{El actor no ingresó algún dato marcado como obligatorio.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
-	    \cdtIdRef{IU 1.1}{Registrar proyecto}, indicando al actor que el dato es obligatorio.
-    \UCpaso[] Continúa con el paso \ref{cu1.1:ingresaDatos} de la trayectoria principal.
+	    \cdtIdRef{IU 2.1}{Registrar persona}, indicando al actor que el dato es obligatorio.
+    \UCpaso[] Continúa con el paso \ref{cu2.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
- \begin{UCtrayectoriaA}{D}{El actor ingresó un nombre de proyecto repetido.}
+ %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{C}{El actor ingresó una CURP repetida.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Registro repetido} y señala el campo que presenta la duplicidad en la pantalla 
-	    \cdtIdRef{IU 1.1}{Registrar proyecto}, indicando al actor que existe un proyecto con el mismo nombre.
-    \UCpaso[] Continúa con el paso \ref{cu1.1:ingresaDatos} de la trayectoria principal.
+	    \cdtIdRef{IU 2.1}{Registrar persona}, indicando al actor que existe una persona con la misma CURP.
+    \UCpaso[] Continúa con el paso \ref{cu2.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
  
- %----------------------------------------------------------%trayectoria E----------------------------------------------------  
- \begin{UCtrayectoriaA}{E}{El actor proporciona un dato que excede la longitud máxima.}
+ %----------------------------------------------------------%trayectoria D----------------------------------------------------  
+ \begin{UCtrayectoriaA}{D}{El actor proporciona un dato que excede la longitud máxima.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
-    longitud en la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto}, para indicar que el dato excede el tamaño máximo permitido.
-    \UCpaso[] Continúa con el paso \ref{cu1.1:ingresaDatos} de la trayectoria principal.
+    longitud en la pantalla \cdtIdRef{IU 2.1}{Registrar persona}, para indicar que el dato excede el tamaño máximo permitido.
+    \UCpaso[] Continúa con el paso \ref{cu2.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
  
- %----------------------------------------------------------%trayectoria F---------------------------------------------------- 
- \begin{UCtrayectoriaA}{F}{El actor ingresó un tipo de dato incorrecto.}
+ %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{E}{El actor ingresó un tipo de dato incorrecto.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Formato incorrecto} y señala el campo que presenta el dato inválido en la 
-    pantalla \cdtIdRef{IU 1.1}{Registrar proyecto} para indicar que se ha ingresado un tipo de dato inválido.
-    \UCpaso[] Continúa con el paso \ref{cu1.1:ingresaDatos} de la trayectoria principal.
+    pantalla \cdtIdRef{IU 2.1}{Registrar persona} para indicar que se ha ingresado un tipo de dato inválido.
+    \UCpaso[] Continúa con el paso \ref{cu2.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
  

@@ -1,0 +1,99 @@
+\begin{UseCase}{CU 3.2}{Modificar módulo}
+	{
+		Este caso de uso permite modificar la información de un módulo.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Modificar la información de un módulo.
+	}
+	\UCitem{Entradas}{
+		\begin{UClist}
+			\UCli \cdtRef{Modulo:Clave}{Clave}: \ioEscribir.
+			\UCli \cdtRef{Modulo:Nombre}{Nombre}: \ioEscribir.
+			\UCli \cdtRef{Modulo:Descripcion}{Descripción}: \ioEscribir.
+		\end{UClist}
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtRef{Modulo:Clave}{Clave}: \ioObtener.
+			\UCli \cdtRef{Modulo:Nombre}{Nombre}: \ioObtener.
+			\UCli \cdtRef{Modulo:Descripcion}{Descripción}: \ioObtener.
+		\end{UClist}
+	}
+	
+	\UCitem{Mensajes}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 3}{Gestionar módulos} para indicar que la modificación fue exitosa.
+		\end{UClist}
+	}
+
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		\begin{UClist}
+			\UCli Se actualizará la información de un módulo en el sistema.
+		\end{UClist}
+	}
+
+	\UCitem{Errores}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 3.1}{Registrar módulo} cuando no se ha ingresado un dato marcado como obligatorio.
+			\UCli \cdtIdRef{MSG5}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 3.1}{Registrar módulo} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 3.1}{Registrar módulo} cuando se ha excedido la longitud de alguno de los campos.
+			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 3.1}{Registrar módulo} cuando se ingrese un nombre o clave repetido en el proyecto.
+		\end{UClist}
+	}
+
+	\UCitem{Tipo}{
+		Secundario, extiende del casos de uso \cdtIdRef{CU 3}{Gestionar módulos}.
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita modificar un módulo oprimiendo el botón \btnEditar de la pantalla \cdtIdRef{IU 3}{Gestionar módulos}.
+    \UCpaso[\UCsist] Busca la información del múdulo seleccionado.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 3.2}{Modificar módulo} con la información del módulo. 
+    \UCpaso[\UCactor] Modifica la información en la pantalla \cdtIdRef{IU 3.2}{Modificar módulo}. \label{cu3.2:ingresaDatos}
+    \UCpaso[\UCactor] Solicita guardar la información del módulo oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 3.2}{Modificar módulo}. \refTray{A} 
+    \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio \cdtIdRef{RN8}{Datos obligatorios}. \refTray{B}
+    \UCpaso[\UCsist] Verifica que la clave y el nombre no se encuentren registrados en el sistema con base en la regla de negocio  \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{C}
+    \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{D} \refTray{E}
+    \UCpaso[\UCsist] Actualiza la información del módulo en el sistema.
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 3}{Gestionar módulos}
+    para indicar al actor que el registro se ha realizado exitosamente. 
+ \end{UCtrayectoria}
+ %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El actor desea cancelar la operación.}
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 3.2}{Modificar módulo}.
+    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
+ \end{UCtrayectoriaA} 
+  %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{B}{El actor no ingresó algún dato marcado como obligatorio.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
+	    \cdtIdRef{IU 3.1}{Registrar módulo}, indicando al actor que el dato es obligatorio.
+    \UCpaso[] Continúa con el paso \ref{cu3.2:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{C}{El actor ingresó un nombre o clave repetido.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Registro repetido} y señala el campo que presenta la duplicidad en la pantalla 
+	    \cdtIdRef{IU 3.1}{Registrar módulo}, indicando al actor que existe un módulo con el mismo nombre o clave.
+    \UCpaso[] Continúa con el paso \ref{cu3.2:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ 
+ %----------------------------------------------------------%trayectoria D----------------------------------------------------  
+ \begin{UCtrayectoriaA}{D}{El actor proporciona un dato que excede la longitud máxima.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
+    longitud en la pantalla \cdtIdRef{IU 3.1}{Registrar módulo}, para indicar que el dato excede el tamaño máximo permitido.
+    \UCpaso[] Continúa con el paso \ref{cu3.2:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ 
+ %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{E}{El actor ingresó un tipo de dato incorrecto.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Formato incorrecto} y señala el campo que presenta el dato inválido en la 
+    pantalla \cdtIdRef{IU 3.1}{Registrar módulo} para indicar que se ha ingresado un tipo de dato inválido.
+    \UCpaso[] Continúa con el paso \ref{cu3.2:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ 

@@ -1,6 +1,6 @@
 \begin{UseCase}{CU 1}{Gestionar proyectos de Administrador}
 	{
-		Este caso de uso permite al Administrador visualizar todos los proyectos, así como solicitar el registro, consulta, modificación y eliminación de un proyecto.
+		Este caso de uso permite al Administrador visualizar todos los proyectos, así como solicitar el registro, modificación, eliminación de un proyecto y la descarga del documento.
 	}
 	
 	\UCitem{Actor}{\cdtRef{actor:administrador}{Administrador}}
@@ -12,7 +12,7 @@
 	}
 	\UCitem{Salidas}{
 		\begin{UClist}
-			\UCli \cdtRef{Proyecto}{Proyecto}: \ioTabla{\cdtRef{Proyecto:Clave}{Clave}, \cdtRef{Proyecto:Nombre}{Nombre} y el \cdtRef{Colaborador}{Lídel del Proyecto}}{de los proyectos}.
+			\UCli \cdtRef{Proyecto}{Proyecto}: \ioTabla{\cdtRef{Proyecto:Clave}{Clave}, \cdtRef{Proyecto:Nombre}{Nombre} y el \cdtRef{Colaborador}{Líder del Proyecto}}{de los proyectos}.
 		\end{UClist}
 	}
 	
@@ -44,7 +44,7 @@
     \UCpaso[\UCsist] Busca la información de los proyectos registrados en cualquier estado. \refTray{A}
     \UCpaso[\UCsist] Muestra la información de los proyectos en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador} y las operaciones 
     disponibles de acuerdo al estado en que se encuentra.
-    \UCpaso[\UCactor] Gestiona los proyectos a través de los botones: \cdtButton{Registrar}, \btnConsulta, \btnEditar y \btnEliminar. \label{cu1:gestiona}
+    \UCpaso[\UCactor] Gestiona los proyectos a través de los botones: \cdtButton{Registrar}, \btnDescargarDoc, \btnEditar y \btnEliminar. \label{cu1:gestiona}
  \end{UCtrayectoria}
  
  \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No existen registros de proyectos.}
@@ -64,6 +64,3 @@
 \UCExtensionPoint{El actor requiere eliminar un proyecto}
 	{Paso \ref{cu1:gestiona} de la trayectoria principal}
 	{\cdtIdRef{CU 1.3}{Eliminar proyecto}}
-\UCExtensionPoint{El actor requiere consultar un proyecto}
-	{Paso \ref{cu1:gestiona} de la trayectoria principal}
-	{\cdtIdRef{CU 1.4}{Consultar proyecto}}
