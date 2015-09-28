@@ -1,0 +1,44 @@
+\begin{UseCase}{CU 15}{Cerrar sesión}
+	{
+		Este caso de uso permite al actor cerrar sesión en el sistema.
+		
+	}
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Cerrar sesión en el sistema
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}	
+	
+	\UCitem{Salidas}{
+		Ninguna
+	}
+	
+	\UCitem{Mensajes}{
+		Ninguno
+	}
+	
+	\UCitem{Precondiciones}{ 
+		\begin{UClist}
+			\UCli Que el actor haya iniciado sesión en el sistema.
+		\end{UClist}
+	}			
+	\UCitem{Postcondiciones}{ 
+		Ninguna
+	}
+	\UCitem{Errores}{
+		Ninguno
+	}
+	
+	\UCitem{Tipo}{
+		Primario
+	}
+
+	
+\end{UseCase}
+ %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Oprime la liga ``Cerrar sesión'' de la pantalla en la que se encuentre.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 13}{Iniciar sesión}.
+ \end{UCtrayectoria}
