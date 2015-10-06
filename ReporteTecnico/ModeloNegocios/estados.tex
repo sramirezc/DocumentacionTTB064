@@ -59,3 +59,207 @@ detalla a continuación:
  \item {\bf Terminado.} Cuando un proyecto haya terminado, se puede indicar que el estado de este es ``Terminado'' y por lo tanto no se podrán realizar
  modificaciones o registros de elementos, solo consulta.
 \end{itemize}
+% ----------------------------------------------------------------	
+% ----------------------------------------------------------------	
+% ----------------------------------------------------------------	
+% ----------------------------------------------------------------	
+% ----------------------------------------------------------------	
+% ----------------------------------------------------------------	
+
+\subsection{Diagrama del comportamiento de un caso de uso}
+En la figura \refIM{fig:estadosComportamientoCasoUso}{} se describe el funcionamiento de un conjunto limitado de casos de uso, a los cuales se buscará convertir en casos de prueba.
+
+\IMfig[1]{ModeloNegocios/images/estadosComportamientoCasoUso.png}{fig:estadosComportamientoCasoUso}{Diagrama de estados de la trayectoria de un caso de uso}
+
+A continuación se describirá cada transición del diagrama:\\
+
+% ----------------------------------------------------------------	
+\subsubsection{Transición inicial} \IMfig[.3]{ModeloNegocios/images/trayectoriaEstados/0_1.png}{fig:trayectoriaEstados0_1}{Transición inicial} 
+En la figura \refIM{fig:trayectoriaEstados0_1}{} se muestra la transición que modela el escenario que desencadena la ejecución del caso de uso, generalmente corresponde a la acción de oprimir un botón o ícono en una gestión. \\
+Un paso de este tipo es necesario ya que el botón o ícono aporta información sobre la URL que se utilizará para generar la prueba. Ejemplo:\\
+
+{``\it
+    {\bf 1} \UCactor Solicita registrar un proyecto oprimiendo el botón \cdtButton{Registrar} de la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}.
+''}\\
+	
+	Debido a que el paso anterior es realizado por el actor, es necesario crear una petición HTTP que simule este comportamiento, por lo que es indispensable contar con la URL que especifica la acción \cdtButton{Registrar}.\\
+		
+	
+% ----------------------------------------------------------------	
+\subsubsection{Transición de 1 a 2 y de 1 a 14}
+   \IMfig[.3]{ModeloNegocios/images/trayectoriaEstados/1_2.png}{fig:trayectoriaEstados1_2}{Transición de 1 a 2}
+   
+En la figura \refIM{fig:trayectoriaEstados1_2}{} se muestra la transición que modela el escenario en el que el sistema cumple las precondiciones establecidas.
+  
+   \IMfig[.2]{ModeloNegocios/images/trayectoriaEstados/1_14.png}{fig:trayectoriaEstados1_14}{Transición de 1 a 14}
+   
+En la figura \refIM{fig:trayectoriaEstados1_14}{} se muestra la transición que modela el escenario en el que el sistema no cumple las precondiciones establecidas.\\\\
+  
+  
+ La aparición de pasos de este tipo en la trayectoria es opcional, ya que algunos casos de uso no cuentan con precondiciones. En nuestro caso de estudio únicamente se trabajará con precondiciones cuyo comportamiento exija la validación de la existencia de información necesaria para operar. Ejemplo:\\
+
+``{\it
+     {\bf 3} \UCsist Busca los colaboradores registrados en el sistema. \refTray{A}
+ }''\\
+	
+	Debido a que el paso anterior es realizado por el sistema no es necesario simularlo, no obstante, para poder verificar que el sistema hizo lo correcto es necesario saber si hay o no información, y para lograr esto se debe realizar una consulta a la base de datos, de manera que es necesario contar con la configuración del JDBC y el query adecuado.\\
+	
+% ----------------------------------------------------------------	
+
+\subsubsection{Transición de 14 a 8}
+  \IMfig[.3]{ModeloNegocios/images/trayectoriaEstados/14_8.png}{fig:trayectoriaEstados14_8}{Transición de 14 a 8}
+  
+En la figura \refIM{fig:trayectoriaEstados14_8}{} se muestra la transición que modela el escenario en el que después de haber incumplido una precondición, el sistema muestra un mensaje de error. 
+La aparición de un paso de este tipo en la trayectoria es necesaria ya que  permite saber si el sistema muestra correctamente mensaje de error. Ejemplo:\\
+
+``{\it
+    {\bf A-1} \UCsist Muestra el mensaje \cdtIdRef{MSG25}{Falta de información} en la la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}.
+}''\\
+	
+	Debido a que el paso anterior es realizado por el sistema, no es necesario simularlo, sin embargo, para poder verificar que el sistema mostró correctamente el mensaje es necesario conocer el contenido del mensaje especificado. 
+		
+% ----------------------------------------------------------------	
+\subsubsection{Transición de 1 a 3 y de 2 a 3}
+
+  \IMfig[.4]{ModeloNegocios/images/trayectoriaEstados/1_3.png}{fig:trayectoriaEstados1_3}{Transición de 1 a 3}
+  
+En la figura \refIM{fig:trayectoriaEstados1_3}{} se muestra la transición que modela el escenario en el que el sistema no requiere condiciones para ejecutar el caso de uso, de modo que directamente muestra la pantalla en la que se realizará la operación.
+  \IMfig[.3]{ModeloNegocios/images/trayectoriaEstados/2_3.png}{fig:trayectoriaEstados2_3}{Transición de 2 a 3}
+  
+ En la figura \refIM{fig:trayectoriaEstados2_3}{} se muestra la transición que modela el escenario en el que después de haber cumplido las precondiciones se muestra la pantalla en la que se realizará la operación.
+ La aparición de pasos de este tipo en la trayectoria es indispensable ya que la pantalla aporta información sobre el contenido que el sistema debe mostrar. Ejemplo:\\
+   
+  ``{\it
+    {\bf 5} \UCsist Muestra la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto} en la cual se realizará el registro del proyecto. 
+   } ''\\
+	
+  	Debido a que el paso anterior es realizado por el sistema, no es necesario simularlo, sin embargo, para poder verificar que el sistema mostró la pantalla correcta es necesario conocer el contenido de la pantalla especificada. 
+	
+% ----------------------------------------------------------------	
+\subsubsection{Transición de 3 a 4}
+
+\IMfig[.3]{ModeloNegocios/images/trayectoriaEstados/3_4.png}{fig:trayectoriaEstados3_4}{Transición de 3 a 4}
+
+En la figura \refIM{fig:trayectoriaEstados3_4}{} se muestra la transición que modela el escenario en el que el actor debe ingresar la información solicitada en la pantalla.
+ La aparición de pasos de este tipo en la trayectoria es indispensable ya que sirve como indicador para la generación de los datos de entrada. Ejemplo:\\
+   
+   ``{\it
+    {\bf 6} \UCactor Ingresa la información solicitada en la pantalla. 
+   }''\\
+	
+  	Debido a que el paso anterior es realizado por el actor, es necesario simularlo y para ello se deberá generar un conjunto de datos de entrada basados en la estructura definida en el módulo de entidades.
+
+  % ----------------------------------------------------------------	
+  
+ \subsubsection{Transición de 4 a 9, 9 a 10, 10 a 11 y 11 a 5} \IMfig[.5]{ModeloNegocios/images/trayectoriaEstados/4_9_10_11_5.png}{fig:trayectoriaEstados4_9_10_11_5}{Transición de 4 a 9, 9 a 10 y 11 a 5}
+ 
+ En la figura \refIM{fig:trayectoriaEstados4_9_10_11_5}{} se muestra un conjunto de transiciones que modelan el escenario en el que una vez ingresados los datos, el sistema opera para mostrar nuevos campos, mostrar nueva información, realizar validaciones, calculos etc. Ejemplo:\\
+
+  ``{\it
+ {\bf 5} \UCsist Verifica que el tipo de regla de negocio requiera parámetros. \refTray{A}\\
+ 
+ En este caso particular, se realiza una validación y en caso de cumplirse se solicita nueva información que posteriormente será mostrada en la pantalla, de lo contrario simplemente omitirá algunos pasos.\\
+ 
+ {\bf 6} \UCsist Muestra la pantalla \cdtIdRef{IU 8.1a}{Registrar regla de negocio: Comparación de atributos}''\\\\
+ ``
+ \begin{UCtrayectoriaA}{A}{La regla de negocio no requiere parámetros.}
+	\UCpaso[] Continúa con el paso \ref{cu8.1:descripcion} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+     
+  }''\\
+	
+  	{\bf Este tipo de comportamientos no están considerados para la generación de casos de prueba.}
+	
+% ----------------------------------------------------------------
+ \subsubsection{Transición de 4 a 5} \IMfig[.3]{ModeloNegocios/images/trayectoriaEstados/4_5.png}{fig:trayectoriaEstados4_5}{Transición de 4 a 5}
+ 
+ En la figura \refIM{fig:trayectoriaEstados4_5}{} se muestra la transición que modela el escenario en el que el actor decide ejecutar la operación.
+La aparición de un paso de este tipo en la trayectoria es indispensable ya que el botón o ícono aporta información sobre la URL que se utilizará para ejecutar la operación. Ejemplo:\\
+
+``{\it
+    {\bf 7} \UCactor Solicita guardar el proyecto oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto}. \refTray{B} 
+}''\\
+
+	Debido a que el paso anterior es realizado por el actor, es necesario crear una petición HTTP que simule este comportamiento, por lo que es indispensable contar con la URL que especifica la acción \cdtButton{Aceptar}.\\
+	  
+% ----------------------------------------------------------------	
+\subsubsection{Transición de 5 a 6 y 5 a 12}
+ \IMfig[.3]{ModeloNegocios/images/trayectoriaEstados/5_6.png}{fig:trayectoriaEstados5_6}{Transición de 5 a 6}
+ 
+ En la figura \refIM{fig:trayectoriaEstados5_6}{} se muestra la transición que modela el escenario en el que el sistema cumple con las reglas de negocio establecidas.
+  
+ \IMfig[.4]{ModeloNegocios/images/trayectoriaEstados/5_12.png}{fig:trayectoriaEstados5_12}{Transición de 5 a 12}
+ 
+ En la figura \refIM{fig:trayectoriaEstados5_12}{} se muestra la transición que modela el escenario en el que el sistema no cumple con las reglas de negocio establecidas.\\
+  
+  
+ La aparición de pasos de este tipo en la trayectoria es opcional, ya que algunos casos de uso no cuentan con validación de reglas de negocio. A continuación se muestra una lista de reglas de negocio con las que el sistema podrá operar:
+ 
+ \begin{itemize}
+	 \item Formato correcto. Especifican mendiante una expresión regular el formato de alguna cadena.
+	 \item Datos obligatorios. Especifica que los datos obligatorios no pueden omitirse.
+	 \item Longitud correcta. Especifica que los datos no deben exceder la longitud establecida.
+	 \item Tipo de dato correcto. Especifica que los datos deben ser del tipo de dato establecido.
+	 \item Verificación de catálogos. Especifica que debe existir información base para una determinada operación.
+	 \item Comparación de atributos. Especifica condiciones de mayor, igual o menor entre 2 atributos.\\
+ \end{itemize}
+ 
+
+Ejemplo:\\
+
+ ``{\it
+    {\bf 8} \UCsist Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{C}
+ }''
+	
+	Debido a que el paso anterior es realizado por el sistema, no es necesario simularlo, sin embargo, para poder verificar que el sistema hizo lo correcto es necesario evaluar las entradas generadas y así determinar qué comportamiento esperar.
+	
+	% ----------------------------------------------------------------	
+\subsubsection{Transición de 12 a 13}
+ \IMfig[.4]{ModeloNegocios/images/trayectoriaEstados/12_13.png}{fig:trayectoriaEstados12_13}{Transición de 12 a 13} 
+ 
+En la figura \refIM{fig:trayectoriaEstados5_6}{} se muestra la transición que modela el conjunto de escenarios en los que alguna regla de negocio no fue cumplida y no es de alguno de los tipos especificados anteriormente. Debido a que las reglas de negocio pueden ser de naturalezas completamente diferentes, modelarlo sería bastante complejo, pues el comportamiento de cada una es muy particular, se podrían solicitar nuevos datos, mostrar mensajes, cambiar de pantalla, ejecutar transacciones, terminar el caso de uso, realizar cálculos, etc. Ejemplo:\\
+	 
+
+	``{\it
+	    {\bf 11} \UCsist Verifica que la georreferencia sea válida como se especifica en la regla de negocio RN-N8 Georreferencia válida. [Trayectoria H] [Trayectoria I] [Trayectoria J]
+	}''\\
+	
+		{\bf Este tipo de comportamientos no están considerados para la generación de casos de prueba.}
+		
+\subsubsection{Transición de 12 a 3} \IMfig[.4]{ModeloNegocios/images/trayectoriaEstados/12_3.png}{fig:trayectoriaEstados12_3}{Transición de 14 a 8}
+
+En la figura \refIM{fig:trayectoriaEstados12_3}{} se muestra la transición que modela el escenario en el que después de haber incumplido una regla de negocio de alguno de los tipos permitidos, el sistema muestra un mensaje de error.
+La aparición de un paso de este tipo en la trayectoria es indispensable ya que el  permite saber si el sistema muestra correctamente mensaje de error. Ejemplo: \\
+
+		``{\it
+		     {\bf C-1} \UCsist Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla. 
+		}''\\
+	
+			Debido a que el paso anterior es realizado por el sistema, no es necesario simularlo, sin embargo, para poder verificar que el sistema mostró correctamente el mensaje es necesario conocer el contenido del mensaje especificado.
+			
+% ----------------------------------------------------------------	
+
+\subsubsection{Transición de 5 a 7 y 6 a 7} \IMfig[.4]{ModeloNegocios/images/trayectoriaEstados/5_7.png}{fig:trayectoriaEstados5_7}{Transición de 5 a 7}
+En la figura \refIM{fig:trayectoriaEstados5_7}{} se muestra la transición que modela el escenario en el que el sistema no requiere validar reglas de negocio para ejecutar la transacción, de modo que directamente se ejecuta la transacción.
+ \IMfig[.3]{ModeloNegocios/images/trayectoriaEstados/6_7.png}{fig:trayectoriaEstados6_7}{Transición de 6 a 7}
+En la figura \refIM{fig:trayectoriaEstados6_7}{} se muestra la transición que modela el escenario en el que después de haber cumplido las reglas de negocio se debe ejecutar la transacción.
+Un paso de este tipo es necesario ya que el botón o ícono aporta información sobre la URL que se utilizará para generar la prueba. Ejemplo:\\
+
+{``\it
+    {\bf 11} \UCsist Registra la información del proyecto en el sistema.
+''}\\
+ 
+ % ----------------------------------------------------------------	
+
+ \subsubsection{Transición de 7 a 8}
+   \IMfig[.2]{ModeloNegocios/images/trayectoriaEstados/7_8.png}{fig:trayectoriaEstados7_8}{Transición de 7 a 8}
+  
+ En la figura \refIM{fig:trayectoriaEstados14_8}{} se muestra la transición que modela el escenario en el que después de ejecutar la transacción, el sistema muestra un mensaje de éxito. 
+ La aparición de un paso de este tipo en la trayectoria es necesaria ya que  permite saber si el sistema muestra correctamente mensaje. Ejemplo:\\
+
+ ``{\it
+     {\bf 12} \UCsist Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}
+ }''\\
+	
+ 	Debido a que el paso anterior es realizado por el sistema, no es necesario simularlo, sin embargo, para poder verificar que el sistema mostró correctamente el mensaje es necesario conocer el contenido del mensaje especificado.
+	
