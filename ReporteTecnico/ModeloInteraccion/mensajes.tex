@@ -96,10 +96,10 @@
 \end{mensaje}
 
 %============================== MSG10 =================================
-\begin{mensaje}{MSG10}{Error en la operación}{Error}
-    \item[Objetivo:] Notificar al actor que ocurrión un problema al intentar ejecutar la operación solicitada.
-    \item[Redacción:] Hubo un error al realizar la operación, vuelva a intentarlo.
-\end{mensaje}
+%\begin{mensaje}{MSG10}{Error en la operación}{Error}
+%    \item[Objetivo:] Notificar al actor que ocurrión un problema al intentar ejecutar la operación solicitada.
+%    \item[Redacción:] Hubo un error al realizar la operación, vuelva a intentarlo.
+%\end{mensaje}
 
 %============================== MSG11 =================================
 \begin{mensaje}{MSG11}{Confirmar eliminación}{Confirmación}
@@ -164,6 +164,16 @@
     \item[Objetivo:] Informar al actor que alguno de los registros de la tabla presenta un error.
     \item[Redacción:] Alguno de los datos ingresados no es correcto.
 \end{mensaje}
+%============================== MSG22 =================================
+\begin{mensaje}{MSG22}{Falta información}{Error}
+    \item[Objetivo:] Informar al actor que es necesario que registre un elemento para solicitar la operación.
+    \item[Redacción:] No es posible realizar la operación debido a que no ha registrado ELEMENTO.
+    \item[Parámetros:] El mensaje se muestra con base en los siguientes parámetros:
+    \begin{Citemize}
+	\item ELEMENTO: Elemento o elementos que son necesarios para solicitar la operación.
+    \end{Citemize}
+    \item[Ejemplo:] No es posible realizar la operación debido a que no ha registrado { \em Colaboradores}.
+\end{mensaje}
 %============================== MSG23 =================================
 \begin{mensaje}{MSG23}{Caracteres inválidos}{Error}
     \item[Objetivo:] Informar al actor que el dato que ingresó no puede contener coma, punto, punto medio, dos pufTntos o guión bajo.
@@ -175,10 +185,10 @@
     \item[Ejemplo:] { \em El nombre} no puede contener coma, punto, punto medio, dos puntos o guión bajo.
 \end{mensaje}
 %============================== MSG25 =================================
-\begin{mensaje}{MSG25}{Falta información}{Error}
-    \item[Objetivo:] Informar al actor que no se puede llevar a cabo alguna operación debido a que falta información en el sistema.
-    \item[Redacción:] No es posible realizar la operación debido a la falta de información necesaria para el sistema.
-\end{mensaje}
+%\begin{mensaje}{MSG25}{Falta información}{Error}
+%    \item[Objetivo:] Informar al actor que no se puede llevar a cabo alguna operación debido a que falta información en el sistema.
+%    \item[Redacción:] No es posible realizar la operación debido a la falta de información necesaria para el sistema.
+%\end{mensaje}
 %============================== MSG27 =================================
 \begin{mensaje}{MSG23}{Token incorrecto}{Error}
     \item[Objetivo:] Informar al actor que no es posible realizar la operación debido a que el token ingresado es incorrecto.
@@ -238,4 +248,15 @@
     \item[Redacción:] El correo electrónico ingresado es incorrecto.
 \end{mensaje}
 
+%============================== MSG35 =================================
+\begin{mensaje}{MSG35}{Orden de fechas}{Error}
+    \item[Objetivo:] Informar al actor que las fechas de término deben ser posteriores a las fechas de inicio.
+    \item[Redacción:] La FECHATERMINO debe ser posterior a la FECHAINICIO.
+    \item[Parámetros:] El mensaje se muestra con base en los siguientes parámetros:
+    \begin{Citemize}
+	\item FECHATERMINO: Es la fecha de término.
+	\item FECHAINICIO: Es la fecha de inicio.
+    \end{Citemize}
+    \item[Ejemplo:] La {\em fecha de inicio programada} debe ser posterior a la {\em fecha de término programada}.
+\end{mensaje}
 

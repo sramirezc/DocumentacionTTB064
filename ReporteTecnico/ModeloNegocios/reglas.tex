@@ -174,16 +174,6 @@
     \BRitem{Descripción}{En las salidas del caso de uso podrán enlistarse mensajes y atributos de las entidades.}
 \end{BusinessRule}
 
-% \begin{BusinessRule}{RN15}{Elementos en uso}
-%     {Restricción de operación}
-%     {Controla la operación}
-%     \BRitem{Versión}{1.0}
-%     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
-%     \BRitem{Estatus}{Edición}
-%     \BRitem{Descripción}{Cuando un analista esté modificando una entidad, regla de negocio, actor, término del glosario, pantalla y/o mensaje, 
-%     ningún otro analista podrá solicitar su edición, ni eliminación. La única operación disponible será la consulta.}
-% \end{BusinessRule}
-
 \begin{BusinessRule}{RN15}{Operaciones disponibles}
     {Restricción de operación}
     {Controla la operación}
@@ -238,4 +228,67 @@
 		\end{enumerate}
 		}
 	\BRitem{Ejemplo}{cadena1@cadena2.cadena3}
+\end{BusinessRule}
+
+\begin{BusinessRule}{RN20}{Verificación de catálogos}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{1.0}
+    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{Es necesario que exista información registrada en los catálogos al momento de solicitar una operación que requiera de estos. Sin la información de los catálogos, las operaciones no podrán ser solicitadas.}
+\end{BusinessRule}
+
+\begin{BusinessRule}{RN21}{Estados para iniciar un proyecto}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{1.0}
+    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{Se podrán registrar proyectos con estado ``En Negociación'' o ``Iniciado''.}
+\end{BusinessRule}
+
+\begin{BusinessRule}{RN22}{Unicidad de la clave del proyecto}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{1.0}
+    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{La clave de los proyectos debe ser única en todo el sistema.}
+\end{BusinessRule}
+
+\begin{BusinessRule}{RN23}{Unicidad de la clave del módulo}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{1.0}
+    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{La clave de los módulos debe ser única en un proyecto.}
+\end{BusinessRule}
+
+\begin{BusinessRule}{RN24}{Unicidad de la clave de la trayectoria}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{1.0}
+    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{La clave de las trayectorias debe ser única en un caso de uso.}
+\end{BusinessRule}
+
+\begin{BusinessRule}{RN25}{Comparación de fechas del proyecto}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{1.0}
+    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{La fecha de término del proyecto debe ser posterior a la fecha de inicio.}
+\end{BusinessRule}
+
+\begin{BusinessRule}{RN26}{Comparación de fechas programadas del proyecto}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{1.0}
+    \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{La fecha de término programada del proyecto debe ser posterior a la fecha de inicio programada.}
 \end{BusinessRule}
