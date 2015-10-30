@@ -134,9 +134,9 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 
 \begin{BusinessEntity}{Actor}{Actor}
       \Battr{Clave}{Clave}{\tdPalabra}{Clave que permitirá distinguir que el Elemento es una Actor}{\requerido}
-      \Battr{Numero}{Número}{\tdNumerico{entero}}{Número del Actor}{\requerido}
       \Battr{Nombre}{Nombre}{\tdFrase}{Nombre que identificará al Actor}{\requerido}
 	  \Battr{Descripcion}{Descripción}{\tdParrafo}{Texto que describirá al Actor}{\requerido}
+	  \Battr{OtraCardinalidad}{Otra cardinalidad}{\tdFrase}{En caso de seleccionar la opción ``Otra'' como cardinalidad, este campo permitirá describirla}{\opcional}
 \end{BusinessEntity}
 
 \subsubsection{Relaciones}
