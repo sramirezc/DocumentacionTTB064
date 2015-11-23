@@ -1,0 +1,30 @@
+\section{Diseño}
+La arquitectura del prototipo se diseñó con base en el patrón Modelo Vista Controlador (MVC) parar separar la lógica de negocios, los datos y la interfaz de usuario, esta forma de trabajo permitió reutilizar el código de algunos componentes y además podría facilitar el futuro mantenimiento.\\
+
+En la figura ~\ref{Arquitectura} se muestra el diseño por capas de la aplicación.
+
+\IUfig[.8]{Avances/images/arquitectura.png}{Arquitectura}{}
+
+\subsubsection{Capa de presentación}
+
+La capa de presentación se utiliza para permitir al usuario interactuar con el sistema, esta capa se encuentra gestionada por Struts2. Esta capa no realiza operaciones relacionadas con el procesamiento de datos o con el funcionamiento del negocio, por lo que únicamente delega la responsabilidad a las demás capas. El usuario interactúa con esta capa a través del navegador.\\
+Dentro de esta capa se utilizaron principalmente JSP, que se encargaron de constuir las vistas auxiliándose de estilos CSS y Javascript.
+
+\subsubsection{Capa de control}
+
+La capa de control se utiliza para procesar los datos proporcionados por la capa de presentación y se encuentra gestionada por Struts2. Esta capa realiza el procesamiento de los datos y solicita a la capa de negocio que realice las validaciones correspondientes. La capa de control le indicará a la capa de presentación qué cambios debe realizar con base en los resultados brindados por la capa de negocio. 
+
+\subsubsection{Capa de negocio}
+
+La capa de negocio se encarga de procesar los datos con base en la lógica del negocio. Esta capa determinará si es necesario realizar una transacción con la base de datos, o  informar a la capa de control que hubo un error, si es necesario realizar una transacción se deberá realizar una solicitud a la capa de datos.
+
+\subsubsection{Capa de datos}
+
+La capa de datos es la encargada de realizar las transacciones con base de datos y se encuentra gestionada por Hibernate. Esta capa utilizará los modelos definidos y el patrón DAO para realizar inserciones y extracciones de datos.
+
+
+
+
+
+
+

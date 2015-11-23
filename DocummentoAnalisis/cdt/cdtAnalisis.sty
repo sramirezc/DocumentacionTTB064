@@ -84,7 +84,7 @@
 
 %=====================================================================
 \newcommand{\cdtRef}[2]{%
-	{\bf \hyperlink{#1}{{#2}}}
+	\hyperlink{#1}{{#2}}%
 }
 
 %=====================================================================
@@ -426,17 +426,6 @@
 			\hypertarget{#3}{\includegraphics[width=#1\textwidth]{#2}}%
 			\caption{%
 #3 #4}%
-			\label{#3}%
-		\end{center}%
-	\end{figure}%
-}
-
-\newcommand{\IUfigNoId}[4][0.7]{%
-	\begin{figure}[htpb!]%
-		\begin{center}%
-			\hypertarget{#3}{\includegraphics[width=#1\textwidth]{#2}}%
-			\caption{%
- #4}%
 			\label{#3}%
 		\end{center}%
 	\end{figure}%
