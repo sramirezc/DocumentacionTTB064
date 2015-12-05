@@ -133,7 +133,7 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 %-------------------------------------------------Actor----------------------------------
 
 \begin{BusinessEntity}{Actor}{Actor}
-      \Battr{Clave}{Clave}{\tdPalabra}{Clave que permitirá distinguir que el Elemento es una Actor}{\requerido}
+      \Battr{Clave}{Clave}{\tdPalabra}{Clave que permitirá distinguir que el Elemento es un Actor}{\requerido}
       \Battr{Nombre}{Nombre}{\tdFrase}{Nombre que identificará al Actor}{\requerido}
 	  \Battr{Descripcion}{Descripción}{\tdParrafo}{Texto que describirá al Actor}{\requerido}
 	  \Battr{OtraCardinalidad}{Otra cardinalidad}{\tdFrase}{En caso de seleccionar la opción ``Otra'' como cardinalidad, este campo permitirá describirla}{\opcional}
@@ -146,6 +146,14 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 	\BRitem{Tipo}{\relComposicion}
     \BRitem{Cardinalidad}{Muchos a uno}
 \end{BusinessFact}
+
+%-------------------------------------------------Término del glosario----------------------------------
+
+\begin{BusinessEntity}{TerminodelGlosario}{Término del glosario}
+      \Battr{Clave}{Clave}{\tdPalabra}{Clave que permitirá distinguir que el Elemento es un Término del glosario}{\requerido}
+      \Battr{Nombre}{Nombre}{\tdFrase}{Nombre que identificará al Término del glosario}{\requerido}
+	  \Battr{Descripcion}{Descripción}{\tdParrafo}{Texto que describirá al Término del glosario}{\requerido}
+\end{BusinessEntity}
 
 %-------------------------------------------------Regla de Negocio----------------------------------
 \clearpage
