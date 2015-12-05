@@ -5,6 +5,8 @@
 \usepackage{subfigure}
 \usepackage{cite}
 \usepackage{ragged2e}
+\usepackage{pdfpages}
+
 \pagenumbering{roman}
 
 
@@ -12,7 +14,9 @@
 \begin{document}
 \bibliographystyle{IEEEtran}
 \thispagestyle{empty}
-\cfinput{portada}
+
+\includepdf[pages=-]{presentacion.pdf}
+%\cfinput{portada}
 
 %=========================================================
 % Indices del documento
