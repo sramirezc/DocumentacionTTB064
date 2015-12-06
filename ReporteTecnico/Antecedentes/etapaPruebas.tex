@@ -1,0 +1,45 @@
+La etapa de {\it Pruebas} consiste en verificar y validar que el software se ajusta a los requerimientos funcionales y no funcionales del sistema. Existen muchos tipos de prueba y cada uno de ellos cuenta con un propósito específico.
+
+\subsection{Tipos de pruebas}
+
+	Una clasificación para las pruebas de software, se conoce como niveles de prueba, y permite identificar las pruebas que se realizan según la etapa de desarrollo en la que se encuentre el sistema. Los niveles son:
+\begin{itemize}
+	\item {\bf Pruebas de componentes.} También conocidas como pruebas unitarias, buscan defectos en módulos o programas en un ambiente aislado del resto del sistema.
+	\item {\bf Pruebas de integración.} Buscan defectos entre el funcionamiento de 2 o más componentes.
+	\item {\bf Pruebas de sistema.} Buscan defectos desde un punto de vista integral.
+	\item {\bf Pruebas de aceptación.} No busca encontrar defectos, sino otorgar confianza en el sistema frente a los clientes.
+\end{itemize}
+
+	También es posible clasificar las pruebas según su objetivo \cite{istqb2011}, esta clasificación no es excluyende con la mostrada anteriormente, de hecho, los tipos que se presentan a continuación pueden ubicarse en cualquiera de los niveles anteriores:
+
+\begin{itemize}
+	\item {\bf Pruebas funcionales.} Su objetivo es demostrar que el sistema se ajusta a los requerimientos establecidos. Son pruebas referentes a ``Qué hace el sistema'' y pueden aplicarse en cualquier nivel.
+	\item {\bf Pruebas de características no funcionales.} Incluye, pero no se limita, a comprobar: rendimiento, usabilidad, mantenibilidad y portabilidad. ``Son pruebas referentes a cómo funciona el sistema'' y pueden aplicarse en cualquier nivel.	
+	\item {\bf Pruebas de estructura/arquitectura.} Están orientadas al funcionamiento interno del sistema. Y su objetivo es medir el grado en el que los casos de prueba han logrado abarcar los escenarios. Pueden aplicarse en cualquier nivel.
+	\item {\bf Pruebas de regresión.} Consisten en confirmar que se ha corregido un defecto de manera satisfactoria. Pueden aplicarse en cualquier nivel, y puede utilizar cualquier tipo de prueba.
+\end{itemize}
+
+\subsection{Pruebas funcionales}
+
+El objetivo de las pruebas funcionales es demostrar que el software satisface los requerimientos establecidos. Estas pruebas también son conocidas como pruebas de entrega, y normalmente se encuentran en el conjunto de pruebas de caja negra, pues únicamente estudian el funcionamiento del sistema a través de un conjunto de entradas y un conjunto de salidas esperadas.\\
+
+Según \cite{sommerville1992software}, la mejor aproximación para realizar pruebas de funcionalidad es utilizar la prueba basada en escenarios, en la que se idean diferentes escenarios y a partir de ellos se desarrollan diferentes casos de prueba. Para el caso de sistemas desarrollados a partir de un paradigma orientado a objetos, la creación de casos de prueba podría basarse en la especificación de casos de uso, así como en los diagramas de secuencia.
+
+
+\subsection{Pruebas automatizadas}
+
+Debido a que la etapa de pruebas presenta un costo muy alto, el desarrollo de herramientas para realizar pruebas automatizadas ha incrementado considerablemente, a continuación se muestra una tabla comparativa entre diferentes herramientas.
+
+
+\begin{longtable}{| p{.30\textwidth} | p{.10\textwidth} | p{.10\textwidth} | p{.10\textwidth} |}%
+	\arrayrulecolor{black}%
+	\rowcolor{black}%
+	{\color{white}Herramienta} & {\color{white}Pruebas funcionales} & {\color{white}Bases de datos} & {\color{white}Código abierto}\\ \hline
+	\endhead%
+	\arrayrulecolor{black}%
+	Selenium & Sí & No & No\\ \hline
+	JMeter Rose & Sí & No & No\\ \hline
+	WebLOAD &  Sí & No & Sí\\ \hline
+	Microsfot Word &  No & No & No\\ \hline
+	\caption{Herramientas para documentar software}\label{fig:tablaAnalisis}
+\end{longtable}%
