@@ -2,30 +2,30 @@
 	 	\IUfigNoId[.7]{images/metodologiaGenerador.png}{fig:metodologiaGenerador}{Metodología: Generador de casos de prueba}
 	
 	
-\subsubsection{I. Análisis de casos de uso candidatos a probar}
+\subsubsection{I. Análisis de las trayectorias a probar}
 
-	Dado que el comportamiento de un caso de uso puede modelar un conjunto muy amplio de escenarios, se realizó un análisis de diferentes casos de uso, buscando comportamientos en común y altamente repetitivos.\\
+	Dado que el comportamiento de un caso de uso puede modelar un conjunto muy amplio de escenarios, se realizó un análisis de diferentes trayectorias, buscando comportamientos en común y altamente repetitivos.\\
 	
-	El resultado de este análisis permitió definir un modelo general de los casos de uso candidatos a ser convertidos a casos de prueba funcionales. Posteriormente se analizaron nuevamente diferentes casos de uso, pero esta vez basando la búsqueda en el modelo obtenido del análisis anterior, esto con la finalidad de identificar claramente qué casos de uso realmente eran candidatos.\\ El modelo obtenido puede consultarse en la documentación de análisis anexada a este documento.
+	El resultado de este análisis permitió definir un modelo general de trayecotiras candidatas para la creación de casos de prueba funcionales. Posteriormente se analizaron nuevamente diferentes trayectorias, pero esta vez basando la búsqueda en el modelo obtenido del análisis anterior, esto con la finalidad de identificar claramente qué casos de uso realmente eran candidatos y con ello definir un vector de pruebas.\\ El modelo obtenido puede consultarse en la documentación de análisis que se encuentra como anexo a este documento.
 	
 	
-\subsubsection{II. Creación de una prueba automatizada para un de uso}
+\subsubsection{II. Creación de una prueba automatizada para una trayectoria}
 
-	Con un espacio de búsqueda reducido, se escogió un caso de uso para utilizarlo como base para la generación de casos de prueba muestra. Se buscó que el caso de uso presentara la mayor cantidad de escenarios para así observar los componentes de prueba necesarios para cada uno de ellos. Este ejercicio reforzó el análisis realizado durante el primer icremento para determinar la información necesaria para construir la prueba automatizada y permitió definir claramente qué información no aportaba el editor para la construcción de la prueba.
+	Con un espacio de búsqueda reducido, se escogió la trayectoria de un caso de uso para utilizarlo como base para la generación de casos de prueba muestra. Se buscó que el caso de uso presentara la mayor cantidad de escenarios para así observar los componentes de prueba necesarios para cada uno de ellos. Este ejercicio reforzó el análisis realizado durante el primer icremento para determinar la información necesaria para construir la prueba automatizada y permitió definir claramente qué información no aportaba el editor para la construcción de la prueba.
 	
 \subsubsection{III. Análisis de las equivalencias entre pasos de un caso de uso y componentes de  prueba}
 
 	Con la prueba creada, el siguiente paso consistió en analizar a detalle la relación existente entre los pasos de una trayectoria y los componentes de prueba. Para ello se estudió cada paso y se establecieron diferentes categorias, a las cuales a su vez se les asocio un conjunto de componentes de prueba, por ejemplo, para un paso que consiste en oprimir un botón, se le asocio una petición HTTP.
 	
 	
-	\subsubsection{IV. Diseño de mecanismos para la recolección de información faltante para generar la prueba}
+	\subsubsection{IV. Diseño de mecanismos para la recolección de información faltante para los casos de prueba}
 
 	La siguiente tarea consistió en establecer la manera en que la información faltante sería solicitada al usuario, entre los datos que el editor de casos de uso no aportaba se encuentran por ejemplo los nombres de los input de los formularios. Por otro lado, para el caso de los datos de entrada, se diseñaron mecanismos para su generación automática, con base en la especificación registrada en el editor de casos de uso.\\
 	 Los mecanismos utilizados para solicitar información no resultaron triviales debido a que gran parte de la información depende de la especificación del caso de uso, es por ello que su comportamiento es completamente dinámico.
 	
 
-	\subsubsection{V. Diseño de un algoritmo para convertir pasos de un caso de uso a componentes de prueba}
+	\subsubsection{V. Diseño de un algoritmo para convertir pasos de una trayectoria a componentes de prueba}
 	
 	Finalmente, con el análisis de las equivalencias entre pasos y componentes de prueba, se prosiguó a diseñar un algoritmo que permitiera transformar los pasos de una trayectoria a casos de prueba funcionales.\\
-	Inicialmente se propuso realizar una traducción lineal de los pasos, es decir, encontrar un paso y en ese mismo momento transformarlo a componentes de prueba, sin embargo con esa idea no resultó posible generar la prueba de forma automática pues la transformación dependía del contexto. En el \cdtRef{chp:algoritmosDesarrollados}{capítulo 5} se muestra a detalle el funcionamiento del algoritmo.
+	Inicialmente se propuso realizar una traducción lineal de los pasos, es decir, encontrar un paso y en ese mismo momento transformarlo a componentes de prueba, sin embargo con esa idea no resultó posible generar la prueba de forma automática pues la transformación dependía del contexto. Debido a esto, se implementó un algoritmo que permitiera realizar esta conversión. En el \cdtRef{chp:algoritmosDesarrollados}{capítulo 5} se muestra a detalle el funcionamiento del algoritmo. 
 	

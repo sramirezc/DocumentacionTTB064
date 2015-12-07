@@ -1,4 +1,4 @@
-	\subsubsection{Algoritmo Referencias a parámetros}
+	\subsubsection{Descripción del algoritmo Referencias a parámetros}
 	
 	En el {\it Módulo 1  Editor de casos de uso} se implementó un mecanismo que permite seleccionar algunos elementos previamente registrados en medio de una redacción abierta. Este mecanismo surge de la necesidad de poder agilizar el uso de elementos como reglas de negocio o mensajes mientras se redacta un caso de uso, además de mantener consistente la información previniendo futuros cambios en los elementos utilizados.\\
 	
@@ -34,9 +34,10 @@
 	
 	\newpage
 
-	\subsubsection{Algoritmo Generador de casos de prueba}
+	\subsubsection{Descripción del algoritmo Generador de casos de prueba}
 	
-	Cuando se desea generar un conjunto de casos de prueba, se requiere configurar una serie de parámetros que son determinados por la estructura del caso de uso a probar, a este caso de uso lo llamaremos caso de uso base. Para determinar qué parámetros deben ser configurados, el sistema establece una ruta de los casos de uso que deben ser ejecutados para llegar al caso de uso base, en el ejemplo de la figura~\ref{fig:rutaCasosUso} se muestra la ruta necesaria para ejecutar el caso de uso ``Registrar persona''. Se asume que cada caso de uso que forme parte de la ruta debe ser configurado para poder probar el caso de uso base. Cuando esta configuración es realizada, se procede configurar el caso de uso base, parte de esta configuración consiste en la generación automática de las entradas, con base en la especificación de cada atributo y en las reglas de negocio utilizadas. Finalemente, el sistema genera un conjunto de archivos en los que se definen los casos de prueba funcionales, estos archivos son descargados en el equipo cliente para que pueda ejecutar la prueba con JMeter.
+	Cuando se desea generar un conjunto de casos de prueba, se requiere configurar una serie de parámetros que son determinados por la estructura del caso de uso a probar, a este caso de uso se le llamará caso de uso base. Para determinar qué parámetros deben ser configurados, el sistema establece una ruta de los casos de uso que deben ser ejecutados para llegar al caso de uso base, en el ejemplo de la figura~\ref{fig:rutaCasosUso} se muestra la ruta necesaria para ejecutar el caso de uso ``Registrar persona''. Se asume que cada caso de uso que forme parte de la ruta debe ser configurado para poder probar el caso de uso base. \\
+	Cuando esta configuración es realizada, se procede configurar el caso de uso base, parte de esta configuración consiste en la generación automática de las entradas, con base en la especificación de cada atributo y en las reglas de negocio utilizadas. Finalemente, el sistema genera un conjunto de archivos en los que se definen los casos de prueba funcionales, estos archivos son descargados en el equipo cliente para que pueda ejecutar la prueba con JMeter.
 	
 	\IUfigNoId[.8]{images/rutaCasosUso.png}{fig:rutaCasosUso}{Algoritmo Generador de casos de prueba: Buscar ruta}
 	
@@ -44,7 +45,7 @@
 	El algoritmo {\bf Generador de casos de prueba} se encarga de analizar los pasos de cada caso de uso y generar su equivalente en  componentes de prueba y así generar los casos de prueba funcionales que serán descargados al cliente. A continuación se explica el funcionamiento:\\
 		
 	\begin{enumerate}
-		\item Para iniciar el algoritmo es necesario especificar el conjunto de pasos correspondientes a la trayectoria principal y el paso a analizar, a este último lo llamaremos {\it paso A}.
+		\item Para iniciar el algoritmo es necesario especificar el conjunto de pasos correspondientes a la trayectoria principal y el paso a analizar, a este último se le llamará {\it paso A}.
 		\item Se determina el tipo del {\it paso A}, los tipos pueden ser:
 		\begin{itemize}
 			\item Oprimir botón
@@ -53,13 +54,23 @@
 			\item Validar regla de negocio
 		\end{itemize}
 		
-		\item Se calcula cuál es el siguiente paso, que a partir de ahora llamaremos {\it paso B}.
+		Para determinar el tipo del paso, se considera quién realiza el paso, qué verbo utiliza y qué referencias tiene.
+		
+		\item Se calcula cuál es el siguiente paso, que a partir de ahora se le llamará {\it paso B}.
 		
 		\item Si el {\it paso A} es de tipo ``Oprimir botón'' se deben considerar los siguientes casos:
 		
 		\begin{enumerate}
-			\item Si el {\it paso B} es de tipo ``Validar regla de negocio'', se deben crear una serie de peticiones HTTP con la indicación de que el conjunto de entradas a utilizar, está definido por la regla de negocio utilizada.\\
-			 Por ejemplo, si el {\it paso B} utiliza una regla de negocio de tipo ``Datos obligatorios'', el algoritmo debe generar un conjunto de peticiones HTTP con entradas que permitan validar la regla de negocio, como se muestra en la figura~\ref{fig:entradasDatosObligatorios}. Para probar estas validaciones se crea también una aserción para cada petición, esta aserción se genera con base en la trayectoria alternativa especificada en el paso.
+			\item Si el {\it paso B} es de tipo ``Validar regla de negocio'', se deben crear una serie de peticiones HTTP con la indicación de que el conjunto de entradas a utilizar, está definido por la regla de negocio empleada.Cada tipo de regla de negocio establece un funcionamiento particular:
+	 		\begin{itemize}
+	 			\item {\bf Datos obligatorios.} Indica que deben generarse tantas peticiones HTTP, como entradas requeridas tenga el caso de uso. Cada petición HTTP especifica un conjunto de entradas en el que una de ellas se omite para validar el correcto funcionamiento de la aplicación. Por ejemplo, para un caso de uso con 2 entradas requeridas, esta regla de negocio generaría los escenarios que se muestran en la imagen~\ref{fig:entradasDatosObligatorios}.\\
+	 			\item {\bf Verificación de catálogos.} Indica que se debe generar una petición JDBC que permita extraear información mínima para el sistema, con el objetivo de anticipar si es que el sistema debe operar normalmente o debe alertar sobre la falta de información necesaria para operar.\\
+	 			\item {\bf Unicidad de elementos.} Indica que se debe generar una petición JDBC que permita extraer la información de algún registro en particular, con el objetivo de anticipar si es que el sistema debe alertar sobre un posible duplicado u operar normalmente.\\
+				\item {\bf Tipo de dato correcto.} Indica que deben generarse tantas peticiones HTTP, como entradas de tipo entero, fecha, booleano o flotantes tenga el caso de uso. Cada petición especifica un conjunto de entradas en el que cada una de ellas se genera con un tipo incorrecto para validar el correcto funcionamiento de la aplicación.\\
+				\item {\bf Longitud correcta.} Indica que deben generarse tantas peticiones HTTP, como entradas de tipo cadena, entero o flotante tenga el caso de uso. Cada petición HTTP especifica un conjunto de entradas en el que cada una de ellas se genera con más caracteres de los permitidos para validar el correcto funcionamiento de la aplicación.\\
+	 		\end{itemize}
+			
+			Inicialmente se había planteado considerar reglas de negocio referentes a operaciones aritméticas, sin embargo no se consideraron debido a que para lograr comprender un tipo de regla de negocio como este se requería más tiempo del establecido para desarrollar el módulo.
 			
 			\IUfigNoId[.8]{images/entradasDatosObligatorios.png}{fig:entradasDatosObligatorios}{Algoritmo Generador de casos de prueba: Datos obligatorios}
 			
