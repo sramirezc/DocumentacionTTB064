@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<changelog xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2">
+  <version>2.1</version>
+  <task-change-set user="Sergio Ramírez" date="2015-07-17T18:29:05.593Z" timestamp="2015-07-17T18:29:05.593Z">
+    <change idref="t2" to="t-1" to-position="1">
+      <change idref="t2" attribute="title" type="string" to="Tarea 1"/>
+    </change>
+    <change idref="t1" attribute="title" type="string" from="Tarea 1" to="Actualizar diagrama de casos de uso"/>
+  </task-change-set>
+  <task-change-set user="Sergio Ramírez" date="2015-07-27T21:43:51.055Z" timestamp="2015-07-27T21:43:51.055Z">
+    <change idref="t3" attribute="title" type="string" from="Documentar módulo de administrador" to="Documentar"/>
+    <change idref="t28" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t28" attribute="internalAssignments" type="string" from="3" to="2"/>
+    <change idref="t29" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t29" attribute="internalAssignments" type="string" from="3" to="2"/>
+    <change idref="t30" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t31" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t32" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t33" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t38" attribute="effort" type="real" from="10800" to="7200"/>
+    <change idref="t38" attribute="internalPrerequisitesString" type="string" to="29FS"/>
+    <change idref="t38" attribute="internalEffortDone" type="real" from="10800" to="7200"/>
+    <change idref="t39" attribute="internalAssignments" type="string" from="2" to="3"/>
+    <change idref="t39" attribute="internalPrerequisitesString" type="string" to="30FS"/>
+    <change idref="t48" attribute="internalAssignments" type="string" from="3" to="2"/>
+    <change idref="t49" attribute="effort" type="real" from="14400" to="7200"/>
+    <change idref="t49" attribute="internalAssignments" type="string" from="3" to="2"/>
+    <change idref="t49" attribute="internalPrerequisitesString" type="string" to="38FS"/>
+    <change idref="t50" attribute="effort" type="real" from="14400" to="10800"/>
+    <change idref="t50" attribute="internalPrerequisitesString" type="string" to="39FS"/>
+    <change idref="t62" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t62" attribute="title" type="string" from="Documentar  módulo de módulos" to="Módulo de módulos"/>
+    <change idref="t197" to="t62" to-position="0" resurrection="yes">
+      <change idref="t197" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t197" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t197" attribute="title" type="string" to="Documentar"/>
+    </change>
+    <change idref="t121" to="t62" to-position="1" resurrection="yes">
+      <change idref="t121" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t121" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t121" attribute="title" type="string" to="Implementar "/>
+    </change>
+    <change idref="t67" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t67" attribute="title" type="string" from="Documentar módulo de líder de análisis" to="Módulo de líder de análisis"/>
+    <change idref="t198" to="t67" to-position="0">
+      <change idref="t198" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t198" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t198" attribute="title" type="string" to="Documentar"/>
+    </change>
+    <change idref="t126" to="t67" to-position="1" resurrection="yes">
+      <change idref="t126" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t126" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t126" attribute="title" type="string" to="Implementar módulo de líder de análisis"/>
+    </change>
+    <change idref="t74" attribute="title" type="string" from="Implementar módulo de administrador" to="Implementar"/>
+    <change idref="t75" to="t74" to-position="0" resurrection="yes">
+      <change idref="t75" attribute="effort" type="real" from="28800" to="7200"/>
+      <change idref="t75" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t75" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t75" attribute="title" type="string" to="CU1 Gestionar proyectos de Administrador"/>
+    </change>
+    <change idref="t76" to="t74" to-position="1" resurrection="yes">
+      <change idref="t76" attribute="effort" type="real" from="28800" to="21600"/>
+      <change idref="t76" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t76" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t76" attribute="title" type="string" to="CU1.1 Registrar proyecto"/>
+    </change>
+    <change idref="t77" to="t74" to-position="2" resurrection="yes">
+      <change idref="t77" attribute="effort" type="real" from="28800" to="21600"/>
+      <change idref="t77" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t77" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t77" attribute="title" type="string" to="CU1.2 Modificar proyecto"/>
+    </change>
+    <change idref="t78" to="t74" to-position="3" resurrection="yes">
+      <change idref="t78" attribute="effort" type="real" from="28800" to="14400"/>
+      <change idref="t78" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t78" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t78" attribute="title" type="string" to="CU1.3 Eliminar proyecto"/>
+    </change>
+    <change idref="t79" to="t74" to-position="4" resurrection="yes">
+      <change idref="t79" attribute="effort" type="real" from="28800" to="7200"/>
+      <change idref="t79" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t79" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t79" attribute="title" type="string" to="CU2 Gestionar personal"/>
+    </change>
+    <change idref="t80" to="t74" to-position="5" resurrection="yes">
+      <change idref="t80" attribute="effort" type="real" from="28800" to="21600"/>
+      <change idref="t80" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t80" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t80" attribute="title" type="string" to="CU2.1 Registrar persona"/>
+    </change>
+    <change idref="t81" to="t74" to-position="6" resurrection="yes">
+      <change idref="t81" attribute="effort" type="real" from="28800" to="21600"/>
+      <change idref="t81" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t81" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t81" attribute="title" type="string" to="CU2.2 Modificar persona"/>
+    </change>
+    <change idref="t82" to="t74" to-position="7" resurrection="yes">
+      <change idref="t82" attribute="effort" type="real" from="28800" to="14400"/>
+      <change idref="t82" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t82" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t82" attribute="title" type="string" to="CU2.3 Eliminar persona"/>
+    </change>
+    <change idref="t75" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t76" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t77" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t78" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t79" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t80" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t81" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t82" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t84" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t84" attribute="internalAssignments" type="string" from="" to="3"/>
+    <change idref="t85" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t85" attribute="internalAssignments" type="string" from="" to="3"/>
+    <change idref="t85" attribute="internalPrerequisitesString" type="string" to="84FS"/>
+    <change idref="t86" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t86" attribute="internalAssignments" type="string" from="" to="3"/>
+    <change idref="t86" attribute="internalPrerequisitesString" type="string" to="85FS"/>
+    <change idref="t87" attribute="effort" type="real" from="28800" to="57600"/>
+    <change idref="t87" attribute="internalAssignments" type="string" from="" to="2"/>
+    <change idref="t88" attribute="effort" type="real" from="14400" to="21600"/>
+    <change idref="t88" attribute="internalAssignments" type="string" from="" to="2"/>
+    <change idref="t89" attribute="internalAssignments" type="string" from="" to="3"/>
+    <change idref="t90" attribute="internalAssignments" type="string" from="" to="3"/>
+    <change idref="t91" attribute="internalAssignments" type="string" from="" to="3"/>
+    <change idref="t92" attribute="internalAssignments" type="string" from="" to="3"/>
+    <change idref="t94" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t94" attribute="internalAssignments" type="string" from="" to="3"/>
+    <change idref="t94" attribute="internalPrerequisitesString" type="string" to="86FS"/>
+    <change idref="t95" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t95" attribute="internalAssignments" type="string" from="" to="3"/>
+    <change idref="t95" attribute="internalPrerequisitesString" type="string" to="94FS"/>
+    <change idref="t96" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t96" attribute="internalAssignments" type="string" from="" to="3"/>
+    <change idref="t96" attribute="internalPrerequisitesString" type="string" to="95FS"/>
+    <change idref="t97" attribute="internalAssignments" type="string" from="" to="2"/>
+    <change idref="t98" attribute="effort" type="real" from="28800" to="21600"/>
+    <change idref="t98" attribute="internalAssignments" type="string" from="" to="2"/>
+    <change idref="t98" attribute="internalPrerequisitesString" type="string" to="88FS"/>
+    <change idref="t99" attribute="internalAssignments" type="string" from="" to="3"/>
+    <change idref="t99" attribute="internalPrerequisitesString" type="string" to="89FS"/>
+    <change idref="t100" attribute="internalAssignments" type="string" from="" to="3"/>
+    <change idref="t101" attribute="internalAssignments" type="string" from="" to="3"/>
+    <change idref="t102" attribute="internalAssignments" type="string" from="" to="3"/>
+    <change idref="t103" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t104" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t105" attribute="noLaterThanConstrainedTaskEnd" type="real" from="1" to="0"/>
+    <change idref="t105" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t106" attribute="noLaterThanConstrainedTaskEnd" type="real" from="1" to="0"/>
+    <change idref="t106" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t106" attribute="internalPrerequisitesString" type="string" to="105FS"/>
+    <change idref="t107" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t107" attribute="internalAssignments" type="string" from="3" to="2"/>
+    <change idref="t107" attribute="internalPrerequisitesString" type="string" to="106FS"/>
+    <change idref="t108" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t108" attribute="internalPrerequisitesString" type="string" to="107FS"/>
+    <change idref="t109" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t109" attribute="internalPrerequisitesString" type="string" to="108FS"/>
+    <change idref="t110" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t110" attribute="internalPrerequisitesString" type="string" to="109FS"/>
+    <change idref="t111" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t111" attribute="internalPrerequisitesString" type="string" to="110FS"/>
+    <change idref="t113" attribute="internalAssignments" type="string" from="" to="2"/>
+    <change idref="t118" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t118" attribute="internalAssignments" type="string" from="" to="3"/>
+    <change idref="t118" attribute="internalPrerequisitesString" type="string" to="99FS"/>
+    <change idref="t121" attribute="title" type="string" from="Implementar  módulo de módulos" to="Implementar "/>
+    <change idref="t122" to="t121" to-position="0" resurrection="yes">
+      <change idref="t122" attribute="effort" type="real" from="28800" to="7200"/>
+      <change idref="t122" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t122" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t122" attribute="title" type="string" to="CU3 Gestionar módulos"/>
+    </change>
+    <change idref="t123" to="t121" to-position="1" resurrection="yes">
+      <change idref="t123" attribute="effort" type="real" from="28800" to="14400"/>
+      <change idref="t123" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t123" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t123" attribute="title" type="string" to="CU3.1 Registrar módulo"/>
+    </change>
+    <change idref="t124" to="t121" to-position="2" resurrection="yes">
+      <change idref="t124" attribute="effort" type="real" from="28800" to="14400"/>
+      <change idref="t124" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t124" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t124" attribute="title" type="string" to="CU3.2 Modificar módulo"/>
+    </change>
+    <change idref="t125" to="t121" to-position="3" resurrection="yes">
+      <change idref="t125" attribute="effort" type="real" from="28800" to="14400"/>
+      <change idref="t125" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t125" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t125" attribute="title" type="string" to="CU3.3 Eliminar módulo"/>
+    </change>
+    <change idref="t122" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t123" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t124" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t125" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t127" to="t126" to-position="0" resurrection="yes">
+      <change idref="t127" attribute="effort" type="real" from="28800" to="7200"/>
+      <change idref="t127" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t127" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t127" attribute="title" type="string" to="CU4 Gestionar proyectos de Líder"/>
+    </change>
+    <change idref="t128" to="t126" to-position="1" resurrection="yes">
+      <change idref="t128" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t128" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t128" attribute="title" type="string" to="CU4.1 Elegir colaboradores"/>
+    </change>
+    <change idref="t129" to="t126" to-position="2" resurrection="yes">
+      <change idref="t129" attribute="effort" type="real" from="28800" to="14400"/>
+      <change idref="t129" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t129" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t129" attribute="title" type="string" to="CU4.2 Iniciar proyecto"/>
+    </change>
+    <change idref="t130" to="t126" to-position="3" resurrection="yes">
+      <change idref="t130" attribute="effort" type="real" from="28800" to="14400"/>
+      <change idref="t130" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t130" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t130" attribute="title" type="string" to="CU4.3 Liberar caso de uso"/>
+    </change>
+    <change idref="t131" to="t126" to-position="4" resurrection="yes">
+      <change idref="t131" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t131" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t131" attribute="title" type="string" to="CU5.5Revisar caso de uso"/>
+    </change>
+    <change idref="t132" to="t126" to-position="5" resurrection="yes">
+      <change idref="t132" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t132" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t132" attribute="title" type="string" to="CU5.6 Terminar caso de uso"/>
+    </change>
+    <change idref="t127" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t128" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t129" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t130" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t131" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t132" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t135" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t143" to="t142" to-position="0" resurrection="yes">
+      <change idref="t143" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t143" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t143" attribute="title" type="string" to="CU13 Iniciar sesión"/>
+    </change>
+    <change idref="t144" to="t142" to-position="1" resurrection="yes">
+      <change idref="t144" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t144" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t144" attribute="title" type="string" to="CU14 Recuperar contraseña "/>
+    </change>
+    <change idref="t145" to="t142" to-position="2" resurrection="yes">
+      <change idref="t145" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t145" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t145" attribute="title" type="string" to="CU15 Cambiar contraseña"/>
+    </change>
+    <change idref="t146" to="t142" to-position="3" resurrection="yes">
+      <change idref="t146" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t146" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t146" attribute="title" type="string" to="CU16 Cerrar sesión"/>
+    </change>
+    <change idref="t143" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t144" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t145" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t146" attribute="internalAssignments" type="string" from="" to="4"/>
+    <change idref="t150" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t8" from="t150" from-position="4">
+      <change idref="t8" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t8" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t8" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t8" attribute="title" type="string" to="Documentar módulo generador de documento"/>
+    </change>
+    <change idref="t43" from="t150" from-position="3">
+      <change idref="t43" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t43" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t43" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t43" attribute="title" type="string" to="Documentar cu de consulta"/>
+    </change>
+    <change idref="t6" from="t150" from-position="2">
+      <change idref="t6" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t6" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t6" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t6" attribute="title" type="string" to="Documentar cu de eliminaciones"/>
+    </change>
+    <change idref="t5" from="t150" from-position="1">
+      <change idref="t5" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t5" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t5" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t5" attribute="title" type="string" to="Documentar cu de modificaciones"/>
+    </change>
+    <change idref="t172" to="t150" to-position="1">
+      <change idref="t172" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t172" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t172" attribute="title" type="string" to="Módulo de casos de uso"/>
+    </change>
+    <change idref="t175" to="t150" to-position="2">
+      <change idref="t175" attribute="internalPrerequisitesString" type="string" to="171FS"/>
+      <change idref="t175" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t175" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t175" attribute="title" type="string" to="Módulo de reglas de negocio"/>
+    </change>
+    <change idref="t178" to="t150" to-position="3">
+      <change idref="t178" attribute="internalPrerequisitesString" type="string" to="175FS"/>
+      <change idref="t178" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t178" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t178" attribute="title" type="string" to="Módulo de actores"/>
+    </change>
+    <change idref="t181" to="t150" to-position="4">
+      <change idref="t181" attribute="internalPrerequisitesString" type="string" to="172FS"/>
+      <change idref="t181" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t181" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t181" attribute="title" type="string" to="Módulo de mensajes"/>
+    </change>
+    <change idref="t184" to="t150" to-position="5">
+      <change idref="t184" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t184" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t184" attribute="title" type="string" to="Módulo de términos"/>
+    </change>
+    <change idref="t185" to="t150" to-position="6">
+      <change idref="t185" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t185" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t185" attribute="title" type="string" to="Módulo de entidades"/>
+    </change>
+    <change idref="t190" to="t150" to-position="7">
+      <change idref="t190" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t190" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t190" attribute="title" type="string" to="Módulo generador de documento"/>
+    </change>
+    <change idref="t193" to="t150" to-position="8">
+      <change idref="t193" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t193" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t193" attribute="title" type="string" to="Módulo de administrador"/>
+    </change>
+    <change idref="t151" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t152" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t161" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t164" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t165" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t166" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t167" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-20T13:00:00.000Z"/>
+    <change idref="t142" to="t170" to-position="0" resurrection="yes">
+      <change idref="t142" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t142" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t142" attribute="title" type="string" to="Implementar módulo de inicio de sesión"/>
+    </change>
+    <change idref="t171" attribute="noEarlierThanConstraintDate" type="date" from="2015-07-27T13:00:00.000Z"/>
+    <change idref="t171" attribute="title" type="string" from="Módulo de Pantallas" to="Módulo de pantallas"/>
+    <change idref="t7" from="t171" from-position="0">
+      <change idref="t7" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t7" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t7" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t7" attribute="title" type="string" to="Documentar módulo de pantallas"/>
+    </change>
+    <change idref="t127" to="t126" to-position="0" resurrection="yes">
+      <change idref="t127" attribute="effort" type="real" from="28800" to="7200"/>
+      <change idref="t127" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t127" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t127" attribute="title" type="string" to="CU4 Gestionar proyectos de Líder"/>
+    </change>
+    <change idref="t128" to="t126" to-position="1" resurrection="yes">
+      <change idref="t128" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t128" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t128" attribute="title" type="string" to="CU4.1 Elegir colaboradores"/>
+    </change>
+    <change idref="t129" to="t126" to-position="2" resurrection="yes">
+      <change idref="t129" attribute="effort" type="real" from="28800" to="14400"/>
+      <change idref="t129" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t129" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t129" attribute="title" type="string" to="CU4.2 Iniciar proyecto"/>
+    </change>
+    <change idref="t130" to="t126" to-position="3" resurrection="yes">
+      <change idref="t130" attribute="effort" type="real" from="28800" to="14400"/>
+      <change idref="t130" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t130" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t130" attribute="title" type="string" to="CU4.3 Liberar caso de uso"/>
+    </change>
+    <change idref="t131" to="t126" to-position="4" resurrection="yes">
+      <change idref="t131" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t131" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t131" attribute="title" type="string" to="CU5.5Revisar caso de uso"/>
+    </change>
+    <change idref="t132" to="t126" to-position="5" resurrection="yes">
+      <change idref="t132" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t132" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t132" attribute="title" type="string" to="CU5.6 Terminar caso de uso"/>
+    </change>
+    <change idref="t143" to="t142" to-position="0" resurrection="yes">
+      <change idref="t143" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t143" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t143" attribute="title" type="string" to="CU13 Iniciar sesión"/>
+    </change>
+    <change idref="t144" to="t142" to-position="1" resurrection="yes">
+      <change idref="t144" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t144" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t144" attribute="title" type="string" to="CU14 Recuperar contraseña "/>
+    </change>
+    <change idref="t145" to="t142" to-position="2" resurrection="yes">
+      <change idref="t145" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t145" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t145" attribute="title" type="string" to="CU15 Cambiar contraseña"/>
+    </change>
+    <change idref="t146" to="t142" to-position="3" resurrection="yes">
+      <change idref="t146" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t146" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t146" attribute="title" type="string" to="CU16 Cerrar sesión"/>
+    </change>
+    <change idref="t142" to="t170" to-position="0" resurrection="yes">
+      <change idref="t142" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t142" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t142" attribute="title" type="string" to="Implementar módulo de inicio de sesión"/>
+    </change>
+    <change idref="t173" to="t172" to-position="0">
+      <change idref="t173" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t173" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t173" attribute="title" type="string" to="Documentar"/>
+    </change>
+    <change idref="t174" to="t172" to-position="1">
+      <change idref="t174" attribute="internalPrerequisitesString" type="string" to="173FS"/>
+      <change idref="t174" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t174" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t174" attribute="title" type="string" to="Implementar"/>
+    </change>
+    <change idref="t45" from="t43" from-position="0" to="t173" to-position="0"/>
+    <change idref="t84" to="t174" to-position="0" resurrection="yes">
+      <change idref="t84" attribute="effort" type="real" from="28800" to="57600"/>
+      <change idref="t84" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t84" attribute="title" type="string" to="CU5.2 Modificar caso de uso"/>
+    </change>
+    <change idref="t85" to="t174" to-position="1" resurrection="yes">
+      <change idref="t85" attribute="effort" type="real" from="28800" to="21600"/>
+      <change idref="t85" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t85" attribute="internalPrerequisitesString" type="string" to="84FS"/>
+      <change idref="t85" attribute="title" type="string" to="CU5.1.1.2 Modificar trayectoria"/>
+    </change>
+    <change idref="t86" to="t174" to-position="2" resurrection="yes">
+      <change idref="t86" attribute="effort" type="real" from="28800" to="7200"/>
+      <change idref="t86" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t86" attribute="internalPrerequisitesString" type="string" to="85FS"/>
+      <change idref="t86" attribute="title" type="string" to="CU5.1.1.1.2 Modificar paso"/>
+    </change>
+    <change idref="t94" to="t174" to-position="3" resurrection="yes">
+      <change idref="t94" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t94" attribute="internalPrerequisitesString" type="string" to="86FS"/>
+      <change idref="t94" attribute="title" type="string" to="CU5.3 Eliminar caso de uso"/>
+    </change>
+    <change idref="t95" to="t174" to-position="4" resurrection="yes">
+      <change idref="t95" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t95" attribute="internalPrerequisitesString" type="string" to="94FS"/>
+      <change idref="t95" attribute="title" type="string" to="CU5.1.1.3 Eliminar trayectoria"/>
+    </change>
+    <change idref="t96" to="t174" to-position="5" resurrection="yes">
+      <change idref="t96" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t96" attribute="internalPrerequisitesString" type="string" to="95FS"/>
+      <change idref="t96" attribute="title" type="string" to="CU5.1.1.1.3 Eliminar paso"/>
+    </change>
+    <change idref="t176" to="t175" to-position="0">
+      <change idref="t176" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t176" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t176" attribute="title" type="string" to="Documentar"/>
+    </change>
+    <change idref="t177" to="t175" to-position="1">
+      <change idref="t177" attribute="internalPrerequisitesString" type="string" to="176FS"/>
+      <change idref="t177" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t177" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t177" attribute="title" type="string" to="Implementar"/>
+    </change>
+    <change idref="t28" from="t5" from-position="3" to="t176" to-position="0"/>
+    <change idref="t48" from="t43" from-position="1" to="t176" to-position="1"/>
+    <change idref="t87" to="t177" to-position="0" resurrection="yes">
+      <change idref="t87" attribute="effort" type="real" from="28800" to="57600"/>
+      <change idref="t87" attribute="internalAssignments" type="string" from="" to="2"/>
+      <change idref="t87" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t87" attribute="title" type="string" to="CU8.2 Modificar regla de negocio"/>
+    </change>
+    <change idref="t97" to="t177" to-position="1" resurrection="yes">
+      <change idref="t97" attribute="internalAssignments" type="string" from="" to="2"/>
+      <change idref="t97" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t97" attribute="title" type="string" to="CU8.3 Eliminar regla de negocio"/>
+    </change>
+    <change idref="t179" to="t178" to-position="0">
+      <change idref="t179" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t179" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t179" attribute="title" type="string" to="Documentar"/>
+    </change>
+    <change idref="t180" to="t178" to-position="1">
+      <change idref="t180" attribute="internalPrerequisitesString" type="string" to="179FS"/>
+      <change idref="t180" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t180" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t180" attribute="title" type="string" to="Implementar"/>
+    </change>
+    <change idref="t29" from="t5" from-position="4" to="t179" to-position="0"/>
+    <change idref="t38" from="t6" from-position="4" to="t179" to-position="1"/>
+    <change idref="t49" from="t43" from-position="2" to="t179" to-position="2"/>
+    <change idref="t88" to="t180" to-position="0" resurrection="yes">
+      <change idref="t88" attribute="effort" type="real" from="28800" to="21600"/>
+      <change idref="t88" attribute="internalAssignments" type="string" from="" to="2"/>
+      <change idref="t88" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t88" attribute="title" type="string" to="CU7.2 Modificar actor"/>
+    </change>
+    <change idref="t98" to="t180" to-position="1" resurrection="yes">
+      <change idref="t98" attribute="effort" type="real" from="28800" to="21600"/>
+      <change idref="t98" attribute="internalAssignments" type="string" from="" to="2"/>
+      <change idref="t98" attribute="internalPrerequisitesString" type="string" to="88FS"/>
+      <change idref="t98" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t98" attribute="title" type="string" to="CU7.3 Eliminar actor"/>
+    </change>
+    <change idref="t182" to="t181" to-position="0">
+      <change idref="t182" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t182" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t182" attribute="title" type="string" to="Documentar"/>
+    </change>
+    <change idref="t183" to="t181" to-position="1">
+      <change idref="t183" attribute="internalPrerequisitesString" type="string" to="182FS"/>
+      <change idref="t183" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t183" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t183" attribute="title" type="string" to="Implementar"/>
+    </change>
+    <change idref="t30" from="t5" from-position="5" to="t182" to-position="0"/>
+    <change idref="t39" from="t6" from-position="5" to="t182" to-position="1"/>
+    <change idref="t50" from="t43" from-position="3" to="t182" to-position="2"/>
+    <change idref="t89" to="t183" to-position="0" resurrection="yes">
+      <change idref="t89" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t89" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t89" attribute="title" type="string" to="CU9.2 Modificar mensaje"/>
+    </change>
+    <change idref="t99" to="t183" to-position="1" resurrection="yes">
+      <change idref="t99" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t99" attribute="internalPrerequisitesString" type="string" to="89FS"/>
+      <change idref="t99" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t99" attribute="title" type="string" to="CU9.3 Eliminar mensaje"/>
+    </change>
+    <change idref="t118" to="t183" to-position="2" resurrection="yes">
+      <change idref="t118" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t118" attribute="internalPrerequisitesString" type="string" to="99FS"/>
+      <change idref="t118" attribute="title" type="string" to="CU9.4 Consultar mensaje"/>
+    </change>
+    <change idref="t186" to="t184" to-position="0">
+      <change idref="t186" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t186" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t186" attribute="title" type="string" to="Documentar"/>
+    </change>
+    <change idref="t187" to="t184" to-position="1">
+      <change idref="t187" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t187" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t187" attribute="title" type="string" to="Implementar"/>
+    </change>
+    <change idref="t188" to="t185" to-position="0">
+      <change idref="t188" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t188" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t188" attribute="title" type="string" to="Documentar"/>
+    </change>
+    <change idref="t189" to="t185" to-position="1">
+      <change idref="t189" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t189" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t189" attribute="title" type="string" to="Implementar"/>
+    </change>
+    <change idref="t31" from="t5" from-position="6" to="t186" to-position="0"/>
+    <change idref="t40" from="t6" from-position="6" to="t186" to-position="1"/>
+    <change idref="t51" from="t43" from-position="4" to="t186" to-position="2"/>
+    <change idref="t90" to="t187" to-position="0" resurrection="yes">
+      <change idref="t90" attribute="effort" type="real" from="28800" to="14400"/>
+      <change idref="t90" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t90" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t90" attribute="title" type="string" to="CU10.2 Modificar término del glosario"/>
+    </change>
+    <change idref="t100" to="t187" to-position="1" resurrection="yes">
+      <change idref="t100" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t100" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t100" attribute="title" type="string" to="CU10.3 Eliminar término del glosario"/>
+    </change>
+    <change idref="t33" from="t5" from-position="8" to="t188" to-position="0"/>
+    <change idref="t42" from="t6" from-position="8" to="t188" to-position="1"/>
+    <change idref="t32" from="t5" from-position="7" to="t188" to-position="2"/>
+    <change idref="t41" from="t6" from-position="7" to="t188" to-position="3"/>
+    <change idref="t52" from="t43" from-position="5" to="t188" to-position="4"/>
+    <change idref="t92" to="t189" to-position="0" resurrection="yes">
+      <change idref="t92" attribute="effort" type="real" from="28800" to="7200"/>
+      <change idref="t92" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t92" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t92" attribute="title" type="string" to="CU11.5.2 Modificar atributo"/>
+    </change>
+    <change idref="t102" to="t189" to-position="1" resurrection="yes">
+      <change idref="t102" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t102" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t102" attribute="title" type="string" to="CU11.5.3 Eliminar atributo"/>
+    </change>
+    <change idref="t91" to="t189" to-position="2" resurrection="yes">
+      <change idref="t91" attribute="effort" type="real" from="28800" to="21600"/>
+      <change idref="t91" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t91" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t91" attribute="title" type="string" to="CU11.2 Modificar entidad"/>
+    </change>
+    <change idref="t101" to="t189" to-position="3" resurrection="yes">
+      <change idref="t101" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t101" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t101" attribute="title" type="string" to="CU11.3 Eliminar entidad"/>
+    </change>
+    <change idref="t191" to="t190" to-position="0">
+      <change idref="t191" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t191" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t191" attribute="title" type="string" to="Documentar"/>
+    </change>
+    <change idref="t192" to="t190" to-position="1">
+      <change idref="t192" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t192" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t192" attribute="title" type="string" to="Implementar"/>
+    </change>
+    <change idref="t54" from="t8" from-position="0" to="t191" to-position="0"/>
+    <change idref="t113" to="t192" to-position="0" resurrection="yes">
+      <change idref="t113" attribute="effort" type="real" from="28800" to="144000"/>
+      <change idref="t113" attribute="internalAssignments" type="string" from="" to="2"/>
+      <change idref="t113" attribute="title" type="string" to="CU12 Generar documento"/>
+    </change>
+    <change idref="t3" from="t150" from-position="5" to="t193" to-position="0"/>
+    <change idref="t74" to="t193" to-position="1" resurrection="yes">
+      <change idref="t74" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t74" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t74" attribute="title" type="string" to="Implementar"/>
+    </change>
+    <change idref="t63" from="t62" from-position="0" to="t197" to-position="0"/>
+    <change idref="t64" from="t62" from-position="1" to="t197" to-position="1"/>
+    <change idref="t65" from="t62" from-position="2" to="t197" to-position="2"/>
+    <change idref="t66" from="t62" from-position="3" to="t197" to-position="3"/>
+    <change idref="t68" from="t67" from-position="0" to="t198" to-position="0"/>
+    <change idref="t69" from="t67" from-position="1" to="t198" to-position="1"/>
+    <change idref="t70" from="t67" from-position="2" to="t198" to-position="2"/>
+    <change idref="t71" from="t67" from-position="3" to="t198" to-position="3"/>
+    <change idref="t73" from="t67" from-position="4" to="t198" to-position="4"/>
+    <change idref="t72" from="t67" from-position="5" to="t198" to-position="5"/>
+    <change idref="t75" to="t74" to-position="0" resurrection="yes">
+      <change idref="t75" attribute="effort" type="real" from="28800" to="7200"/>
+      <change idref="t75" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t75" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t75" attribute="title" type="string" to="CU1 Gestionar proyectos de Administrador"/>
+    </change>
+    <change idref="t76" to="t74" to-position="1" resurrection="yes">
+      <change idref="t76" attribute="effort" type="real" from="28800" to="21600"/>
+      <change idref="t76" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t76" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t76" attribute="title" type="string" to="CU1.1 Registrar proyecto"/>
+    </change>
+    <change idref="t77" to="t74" to-position="2" resurrection="yes">
+      <change idref="t77" attribute="effort" type="real" from="28800" to="21600"/>
+      <change idref="t77" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t77" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t77" attribute="title" type="string" to="CU1.2 Modificar proyecto"/>
+    </change>
+    <change idref="t78" to="t74" to-position="3" resurrection="yes">
+      <change idref="t78" attribute="effort" type="real" from="28800" to="14400"/>
+      <change idref="t78" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t78" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t78" attribute="title" type="string" to="CU1.3 Eliminar proyecto"/>
+    </change>
+    <change idref="t79" to="t74" to-position="4" resurrection="yes">
+      <change idref="t79" attribute="effort" type="real" from="28800" to="7200"/>
+      <change idref="t79" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t79" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t79" attribute="title" type="string" to="CU2 Gestionar personal"/>
+    </change>
+    <change idref="t80" to="t74" to-position="5" resurrection="yes">
+      <change idref="t80" attribute="effort" type="real" from="28800" to="21600"/>
+      <change idref="t80" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t80" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t80" attribute="title" type="string" to="CU2.1 Registrar persona"/>
+    </change>
+    <change idref="t81" to="t74" to-position="6" resurrection="yes">
+      <change idref="t81" attribute="effort" type="real" from="28800" to="21600"/>
+      <change idref="t81" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t81" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t81" attribute="title" type="string" to="CU2.2 Modificar persona"/>
+    </change>
+    <change idref="t82" to="t74" to-position="7" resurrection="yes">
+      <change idref="t82" attribute="effort" type="real" from="28800" to="14400"/>
+      <change idref="t82" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t82" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t82" attribute="title" type="string" to="CU2.3 Eliminar persona"/>
+    </change>
+    <change idref="t122" to="t121" to-position="0" resurrection="yes">
+      <change idref="t122" attribute="effort" type="real" from="28800" to="7200"/>
+      <change idref="t122" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t122" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t122" attribute="title" type="string" to="CU3 Gestionar módulos"/>
+    </change>
+    <change idref="t123" to="t121" to-position="1" resurrection="yes">
+      <change idref="t123" attribute="effort" type="real" from="28800" to="14400"/>
+      <change idref="t123" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t123" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t123" attribute="title" type="string" to="CU3.1 Registrar módulo"/>
+    </change>
+    <change idref="t124" to="t121" to-position="2" resurrection="yes">
+      <change idref="t124" attribute="effort" type="real" from="28800" to="14400"/>
+      <change idref="t124" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t124" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t124" attribute="title" type="string" to="CU3.2 Modificar módulo"/>
+    </change>
+    <change idref="t125" to="t121" to-position="3" resurrection="yes">
+      <change idref="t125" attribute="effort" type="real" from="28800" to="14400"/>
+      <change idref="t125" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t125" attribute="noEarlierThanConstraintDate" type="date" to="2015-07-20T13:00:00.000Z"/>
+      <change idref="t125" attribute="title" type="string" to="CU3.3 Eliminar módulo"/>
+    </change>
+  </task-change-set>
+  <task-change-set user="Sergio Ramírez" date="2015-08-30T05:36:34.471Z" timestamp="2015-08-30T05:36:34.471Z">
+    <change idref="t144" attribute="internalEffortDone" type="real" from="0" to="28800"/>
+  </task-change-set>
+  <task-change-set user="Sergio Ramírez" date="2015-09-16T22:56:48.862Z" timestamp="2015-09-16T22:56:48.862Z">
+    <change idref="t71" attribute="internalPrerequisitesString" type="string" from="70FS" to="69FS"/>
+    <change idref="t129" from="t126" from-position="2">
+      <change idref="t129" attribute="effort" type="real" from="28800" to="14400"/>
+      <change idref="t129" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t129" attribute="internalPrerequisitesString" type="string" to="128FS"/>
+      <change idref="t129" attribute="title" type="string" to="CU4.2 Iniciar proyecto"/>
+    </change>
+    <change idref="t127" attribute="internalEffortDone" type="real" from="0" to="7200"/>
+    <change idref="t130" attribute="internalPrerequisitesString" type="string" from="129FS" to="128FS"/>
+    <change idref="t70" from="t198" from-position="2">
+      <change idref="t70" attribute="effort" type="real" from="28800" to="7200"/>
+      <change idref="t70" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t70" attribute="internalPrerequisitesString" type="string" to="69FS"/>
+      <change idref="t70" attribute="notesAllowingNil" type="textdata" to="e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzQ4XGNvY29hc3VicnRmMTcwCntcZm9udHRibFxmMFxmbmlsXGZjaGFyc2V0MCBIZWx2ZXRpY2FOZXVlO30Ke1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7XHJlZDg1XGdyZWVuODVcYmx1ZTg1O30KXHBhcmRcdHg1NjBcdHgxMTIwXHR4MTY4MFx0eDIyNDBcdHgyODAwXHR4MzM2MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1cmFsCgpcZjBcZnMyNCBcY2YyIERlc2VjaGFkb30="/>
+      <change idref="t70" attribute="title" type="string" to="CU4.2 Iniciar proyecto"/>
+    </change>
+  </task-change-set>
+  <task-change-set user="Sergio Ramírez" date="2015-09-23T07:50:07.527Z" timestamp="2015-09-23T07:50:07.527Z">
+    <change idref="t128" attribute="internalEffortDone" type="real" from="0" to="28800" resolved="yes"/>
+    <change idref="t132" attribute="internalEffortDone" type="real" from="0" to="28800" resolved="yes"/>
+  </task-change-set>
+  <metadata-change-set user="Sergio Ramírez" date="2015-07-17T18:29:05.593Z" timestamp="2015-07-17T18:29:05.593Z">
+    <change idref="m1" attribute="fixedDate" type="date" from="2007-01-01T20:00:00.000Z" to="2015-07-17T13:00:00.000Z"/>
+  </metadata-change-set>
+</changelog>

@@ -1,0 +1,973 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<scenario xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2" xmlns:opns="http://www.omnigroup.com/namespace/OmniPlan/v2" id="pc7tdx7hv_K">
+  <start-date>2015-07-28T14:00:00.000Z</start-date>
+  <prototype-task>
+    <task id="t-2">
+      <title>Tarea 1</title>
+      <effort>28800</effort>
+    </task>
+  </prototype-task>
+  <prototype-task>
+    <task id="t-3">
+      <title>Fecha clave 1</title>
+      <type>milestone</type>
+    </task>
+  </prototype-task>
+  <prototype-task>
+    <task id="t-4">
+      <title>Grupo 1</title>
+      <type>group</type>
+    </task>
+  </prototype-task>
+  <prototype-resource>
+    <resource id="r-2">
+      <name>Recurso 1</name>
+      <type>Staff</type>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r-3">
+      <name>Equipo 1</name>
+      <type>Equipment</type>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r-4">
+      <name>Material 1</name>
+      <type>Material</type>
+      <units-available>0</units-available>
+      <efficiency>0</efficiency>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r-5">
+      <name>Grupo 1</name>
+      <type>Group</type>
+    </resource>
+  </prototype-resource>
+  <top-resource idref="r-1"/>
+  <resource id="r-1">
+    <type>Group</type>
+    <schedule>
+      <schedule-day day-of-week="sunday"/>
+      <schedule-day day-of-week="monday">
+        <time-span start-time="32400" end-time="50400"/>
+        <time-span start-time="54000" end-time="64800"/>
+      </schedule-day>
+      <schedule-day day-of-week="tuesday">
+        <time-span start-time="32400" end-time="50400"/>
+        <time-span start-time="54000" end-time="64800"/>
+      </schedule-day>
+      <schedule-day day-of-week="wednesday">
+        <time-span start-time="32400" end-time="50400"/>
+        <time-span start-time="54000" end-time="64800"/>
+      </schedule-day>
+      <schedule-day day-of-week="thursday">
+        <time-span start-time="32400" end-time="50400"/>
+        <time-span start-time="54000" end-time="64800"/>
+      </schedule-day>
+      <schedule-day day-of-week="friday">
+        <time-span start-time="32400" end-time="50400"/>
+        <time-span start-time="54000" end-time="64800"/>
+      </schedule-day>
+      <schedule-day day-of-week="saturday"/>
+      <calendar name="Time Off" editable="yes" overtime="no"/>
+      <calendar name="Overtime" editable="yes" overtime="yes"/>
+    </schedule>
+    <child-resource idref="r2"/>
+    <child-resource idref="r3"/>
+  </resource>
+  <resource id="r2">
+    <name>Natalia</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r3">
+    <name>Sergio</name>
+    <type>Staff</type>
+  </resource>
+  <top-task idref="t-1"/>
+  <task id="t-1">
+    <type>group</type>
+    <child-task idref="t150"/>
+  </task>
+  <task id="t3">
+    <title>Documentar</title>
+    <type>group</type>
+    <child-task idref="t4"/>
+    <child-task idref="t55"/>
+    <child-task idref="t56"/>
+    <child-task idref="t57"/>
+    <child-task idref="t58"/>
+    <child-task idref="t59"/>
+    <child-task idref="t60"/>
+    <child-task idref="t61"/>
+  </task>
+  <task id="t4">
+    <title>CU1 Gestionar proyectos de Administrador</title>
+    <effort>10800</effort>
+    <effort-done>10800</effort-done>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t28">
+    <title>CU8.2 Modificar regla de negocio</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t29">
+    <title>CU7.2 Modificar actor</title>
+    <effort>7200</effort>
+    <effort-done>7200</effort-done>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t30">
+    <title>CU9.2 Modificar mensaje</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t31">
+    <title>CU10.2 Modificar término del glosario</title>
+    <effort>7200</effort>
+    <effort-done>7200</effort-done>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t32">
+    <title>CU11.2 Modificar entidad</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t33">
+    <title>CU11.1.2 Modificar atributo</title>
+    <effort>14400</effort>
+    <effort-done>14400</effort-done>
+    <prerequisite-task idref="t52"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t38">
+    <title>CU7.3 Eliminar actor</title>
+    <effort>7200</effort>
+    <effort-done>7200</effort-done>
+    <prerequisite-task idref="t29"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t39">
+    <title>CU9.3 Eliminar mensaje</title>
+    <effort>10800</effort>
+    <effort-done>10800</effort-done>
+    <prerequisite-task idref="t30"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t40">
+    <title>CU10.3 Eliminar término del glosario</title>
+    <effort>10800</effort>
+    <effort-done>10800</effort-done>
+    <prerequisite-task idref="t31"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t41">
+    <title>CU11.3 Eliminar entidad</title>
+    <effort>14400</effort>
+    <effort-done>14400</effort-done>
+    <prerequisite-task idref="t32"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t42">
+    <title>CU11.5.3 Eliminar atributo</title>
+    <effort>14400</effort>
+    <effort-done>14400</effort-done>
+    <prerequisite-task idref="t33"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t45">
+    <title>CU5.4 Consultar caso de uso</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t48">
+    <title>CU8.4 Consultar regla de negocio</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <prerequisite-task idref="t28"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t49">
+    <title>CU7.4 Consultar actor</title>
+    <effort>7200</effort>
+    <effort-done>7200</effort-done>
+    <prerequisite-task idref="t38"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t50">
+    <title>CU9.4 Consultar mensaje</title>
+    <effort>10800</effort>
+    <effort-done>10800</effort-done>
+    <prerequisite-task idref="t39"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t51">
+    <title>CU10.4 Consultar término del glosario</title>
+    <effort>10800</effort>
+    <effort-done>10800</effort-done>
+    <prerequisite-task idref="t40"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t52">
+    <title>CU11.4 Consultar entidad</title>
+    <effort>14400</effort>
+    <effort-done>14400</effort-done>
+    <prerequisite-task idref="t41"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t54">
+    <title>CU12 Generar documento</title>
+    <effort>57600</effort>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t55">
+    <title>CU1.1 Registrar proyecto</title>
+    <effort>21600</effort>
+    <effort-done>21600</effort-done>
+    <prerequisite-task idref="t4"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t56">
+    <title>CU1.2 Modificar proyecto</title>
+    <effort>21600</effort>
+    <effort-done>21600</effort-done>
+    <prerequisite-task idref="t55"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t57">
+    <title>CU1.3 Eliminar proyecto</title>
+    <effort>14400</effort>
+    <effort-done>14400</effort-done>
+    <prerequisite-task idref="t56"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t58">
+    <title>CU2 Gestionar personal</title>
+    <effort>10800</effort>
+    <effort-done>10800</effort-done>
+    <prerequisite-task idref="t57"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t59">
+    <title>CU2.1 Registrar persona</title>
+    <effort>21600</effort>
+    <effort-done>21600</effort-done>
+    <prerequisite-task idref="t58"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t60">
+    <title>CU2.2 Modificar persona</title>
+    <effort>21600</effort>
+    <effort-done>21600</effort-done>
+    <prerequisite-task idref="t59"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t61">
+    <title>CU2.3 Eliminar persona</title>
+    <effort>14400</effort>
+    <effort-done>14400</effort-done>
+    <prerequisite-task idref="t60"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t62">
+    <title>Módulo de módulos</title>
+    <type>group</type>
+    <child-task idref="t197"/>
+    <child-task idref="t121"/>
+    <prerequisite-task idref="t68"/>
+    <prerequisite-task idref="t193"/>
+  </task>
+  <task id="t63">
+    <title>CU3 Gestionar módulos</title>
+    <effort>10800</effort>
+    <effort-done>10800</effort-done>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t64">
+    <title>CU3.1 Registrar módulo</title>
+    <effort>21600</effort>
+    <effort-done>21600</effort-done>
+    <prerequisite-task idref="t63"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t65">
+    <title>CU3.2 Modificar módulo</title>
+    <effort>21600</effort>
+    <effort-done>21600</effort-done>
+    <prerequisite-task idref="t64"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t66">
+    <title>CU3.3 Eliminar módulo</title>
+    <effort>14400</effort>
+    <effort-done>14400</effort-done>
+    <prerequisite-task idref="t65"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t67">
+    <title>Módulo de líder de análisis</title>
+    <type>group</type>
+    <child-task idref="t198"/>
+    <child-task idref="t126"/>
+    <prerequisite-task idref="t135"/>
+  </task>
+  <task id="t68">
+    <title>CU4 Gestionar proyectos de Líder</title>
+    <effort>10800</effort>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t69">
+    <title>CU4.1 Elegir colaboradores</title>
+    <effort>21600</effort>
+    <prerequisite-task idref="t68"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t71">
+    <title>CU4.3 Liberar caso de uso</title>
+    <effort>21600</effort>
+    <prerequisite-task idref="t69"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t72">
+    <title>CU5.6 Terminar caso de uso</title>
+    <effort>28800</effort>
+    <note>
+      <text>
+        <p>
+          <run>
+            <lit>Validaciones de la coherencia entre trayectorias y tabla de resumen</lit>
+          </run>
+        </p>
+      </text>
+    </note>
+    <prerequisite-task idref="t73"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t73">
+    <title>CU5.5 Revisar caso de uso</title>
+    <effort>28800</effort>
+    <prerequisite-task idref="t71"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t74">
+    <title>Implementar</title>
+    <type>group</type>
+    <child-task idref="t75"/>
+    <child-task idref="t76"/>
+    <child-task idref="t77"/>
+    <child-task idref="t78"/>
+    <child-task idref="t79"/>
+    <child-task idref="t80"/>
+    <child-task idref="t81"/>
+    <child-task idref="t82"/>
+    <prerequisite-task idref="t3"/>
+  </task>
+  <task id="t75">
+    <title>CU1 Gestionar proyectos de Administrador</title>
+    <effort>7200</effort>
+    <effort-done>7200</effort-done>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t76">
+    <title>CU1.1 Registrar proyecto</title>
+    <effort>21600</effort>
+    <effort-done>21600</effort-done>
+    <prerequisite-task idref="t75"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t77">
+    <title>CU1.2 Modificar proyecto</title>
+    <effort>21600</effort>
+    <effort-done>21600</effort-done>
+    <prerequisite-task idref="t76"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t78">
+    <title>CU1.3 Eliminar proyecto</title>
+    <effort>14400</effort>
+    <effort-done>14400</effort-done>
+    <prerequisite-task idref="t77"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t79">
+    <title>CU2 Gestionar personal</title>
+    <effort>7200</effort>
+    <effort-done>7200</effort-done>
+    <prerequisite-task idref="t78"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t80">
+    <title>CU2.1 Registrar persona</title>
+    <effort>21600</effort>
+    <effort-done>21600</effort-done>
+    <prerequisite-task idref="t79"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t81">
+    <title>CU2.2 Modificar persona</title>
+    <effort>21600</effort>
+    <effort-done>21600</effort-done>
+    <prerequisite-task idref="t80"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t82">
+    <title>CU2.3 Eliminar persona</title>
+    <effort>14400</effort>
+    <effort-done>14400</effort-done>
+    <prerequisite-task idref="t81"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t84">
+    <title>CU5.2 Modificar caso de uso</title>
+    <effort>57600</effort>
+    <effort-done>57600</effort-done>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t85">
+    <title>CU5.1.1.2 Modificar trayectoria</title>
+    <effort>21600</effort>
+    <effort-done>21600</effort-done>
+    <prerequisite-task idref="t84"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t86">
+    <title>CU5.1.1.1.2 Modificar paso</title>
+    <effort>7200</effort>
+    <effort-done>7200</effort-done>
+    <prerequisite-task idref="t85"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t87">
+    <title>CU8.2 Modificar regla de negocio</title>
+    <effort>57600</effort>
+    <effort-done>57600</effort-done>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t88">
+    <title>CU7.2 Modificar actor</title>
+    <effort>21600</effort>
+    <effort-done>21600</effort-done>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t89">
+    <title>CU9.2 Modificar mensaje</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t90">
+    <title>CU10.2 Modificar término del glosario</title>
+    <effort>21600</effort>
+    <effort-done>21600</effort-done>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t91">
+    <title>CU11.2 Modificar entidad</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t92">
+    <title>CU11.5.2 Modificar atributo</title>
+    <effort>14400</effort>
+    <effort-done>14400</effort-done>
+    <prerequisite-task idref="t101"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t94">
+    <title>CU5.3 Eliminar caso de uso</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <prerequisite-task idref="t86"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t95">
+    <title>CU5.1.1.3 Eliminar trayectoria</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <prerequisite-task idref="t94"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t96">
+    <title>CU5.1.1.1.3 Eliminar paso</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <prerequisite-task idref="t95"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t97">
+    <title>CU8.3 Eliminar regla de negocio</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <prerequisite-task idref="t87"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t98">
+    <title>CU7.3 Eliminar actor</title>
+    <effort>21600</effort>
+    <effort-done>21600</effort-done>
+    <prerequisite-task idref="t88"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t99">
+    <title>CU9.3 Eliminar mensaje</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <prerequisite-task idref="t89"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t100">
+    <title>CU10.3 Eliminar término del glosario</title>
+    <effort>21600</effort>
+    <effort-done>21600</effort-done>
+    <prerequisite-task idref="t90"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t101">
+    <title>CU11.3 Eliminar entidad</title>
+    <effort>14400</effort>
+    <effort-done>14400</effort-done>
+    <prerequisite-task idref="t91"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t102">
+    <title>CU11.5.3 Eliminar atributo</title>
+    <effort>14400</effort>
+    <effort-done>14400</effort-done>
+    <prerequisite-task idref="t92"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t103">
+    <title>Implementar módulo de pantallas</title>
+    <type>group</type>
+    <child-task idref="t104"/>
+    <child-task idref="t105"/>
+    <child-task idref="t106"/>
+    <child-task idref="t107"/>
+    <child-task idref="t108"/>
+    <child-task idref="t109"/>
+    <child-task idref="t110"/>
+    <child-task idref="t111"/>
+  </task>
+  <task id="t104">
+    <title>CU6 Gestionar pantallas</title>
+    <effort>10800</effort>
+    <effort-done>10800</effort-done>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t105">
+    <title>CU6.1 Registrar pantalla</title>
+    <effort>18000</effort>
+    <effort-done>18000</effort-done>
+    <prerequisite-task idref="t104"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t106">
+    <title>CU6.1.1 Registrar acción</title>
+    <effort>3600</effort>
+    <effort-done>3600</effort-done>
+    <prerequisite-task idref="t105"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t107">
+    <title>CU6.1.2 Modificar acción</title>
+    <effort>3600</effort>
+    <effort-done>3600</effort-done>
+    <prerequisite-task idref="t106"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t108">
+    <title>CU6.1.3 Eliminar acción</title>
+    <effort>3600</effort>
+    <effort-done>3600</effort-done>
+    <prerequisite-task idref="t107"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t109">
+    <title>CU6.2 Modificar pantalla</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <prerequisite-task idref="t108"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t110">
+    <title>CU6.3 Eliminar pantalla</title>
+    <effort>21600</effort>
+    <effort-done>21600</effort-done>
+    <prerequisite-task idref="t109"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t111">
+    <title>CU6.4 Consultar pantalla</title>
+    <effort>14400</effort>
+    <effort-done>14400</effort-done>
+    <note>
+      <text>
+        <p>
+          <run>
+            <lit>Mostrar acciones</lit>
+          </run>
+        </p>
+      </text>
+    </note>
+    <prerequisite-task idref="t110"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t113">
+    <title>CU12 Generar documento</title>
+    <effort>144000</effort>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t118">
+    <title>CU9.4 Consultar mensaje</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <prerequisite-task idref="t99"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t121">
+    <title>Implementar </title>
+    <type>group</type>
+    <child-task idref="t122"/>
+    <child-task idref="t123"/>
+    <child-task idref="t124"/>
+    <child-task idref="t125"/>
+    <prerequisite-task idref="t197"/>
+  </task>
+  <task id="t122">
+    <title>CU3 Gestionar módulos</title>
+    <effort>7200</effort>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t123">
+    <title>CU3.1 Registrar módulo</title>
+    <effort>14400</effort>
+    <prerequisite-task idref="t122"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t124">
+    <title>CU3.2 Modificar módulo</title>
+    <effort>14400</effort>
+    <prerequisite-task idref="t123"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t125">
+    <title>CU3.3 Eliminar módulo</title>
+    <effort>14400</effort>
+    <prerequisite-task idref="t124"/>
+    <assignment idref="r2"/>
+  </task>
+  <task id="t126">
+    <title>Implementar </title>
+    <type>group</type>
+    <child-task idref="t127"/>
+    <child-task idref="t128"/>
+    <child-task idref="t130"/>
+    <child-task idref="t131"/>
+    <child-task idref="t132"/>
+    <prerequisite-task idref="t198"/>
+  </task>
+  <task id="t127">
+    <title>CU4 Gestionar proyectos de Líder</title>
+    <effort>7200</effort>
+    <effort-done>7200</effort-done>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t128">
+    <title>CU4.1 Elegir colaboradores</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <prerequisite-task idref="t127"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t130">
+    <title>CU4.3 Liberar caso de uso</title>
+    <effort>14400</effort>
+    <prerequisite-task idref="t128"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t131">
+    <title>CU5.5Revisar caso de uso</title>
+    <effort>28800</effort>
+    <prerequisite-task idref="t130"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t132">
+    <title>CU5.6 Terminar caso de uso</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <prerequisite-task idref="t131"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t135">
+    <title>Módulo de inicio de sesión</title>
+    <type>group</type>
+    <child-task idref="t199"/>
+    <child-task idref="t142"/>
+    <prerequisite-task idref="t185"/>
+  </task>
+  <task id="t138">
+    <title>CU13 Iniciar sesión</title>
+    <effort>14400</effort>
+    <effort-done>14400</effort-done>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t139">
+    <title>CU14 Recuperar contraseña </title>
+    <effort>14400</effort>
+    <effort-done>14400</effort-done>
+    <prerequisite-task idref="t138"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t141">
+    <title>CU15 Cerrar sesión</title>
+    <effort>14400</effort>
+    <effort-done>14400</effort-done>
+    <prerequisite-task idref="t139"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t142">
+    <title>Implementar</title>
+    <type>group</type>
+    <child-task idref="t143"/>
+    <child-task idref="t144"/>
+    <child-task idref="t146"/>
+    <prerequisite-task idref="t199"/>
+  </task>
+  <task id="t143">
+    <title>CU13 Iniciar sesión</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t144">
+    <title>CU14 Recuperar contraseña </title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <prerequisite-task idref="t143"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t146">
+    <title>CU15 Cerrar sesión</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <prerequisite-task idref="t144"/>
+    <assignment idref="r3"/>
+  </task>
+  <task id="t150">
+    <title>TTI</title>
+    <type>group</type>
+    <child-task idref="t171"/>
+    <child-task idref="t172"/>
+    <child-task idref="t175"/>
+    <child-task idref="t178"/>
+    <child-task idref="t181"/>
+    <child-task idref="t184"/>
+    <child-task idref="t185"/>
+    <child-task idref="t135"/>
+    <child-task idref="t193"/>
+    <child-task idref="t62"/>
+    <child-task idref="t67"/>
+    <child-task idref="t190"/>
+    <child-task idref="t202"/>
+  </task>
+  <task id="t171">
+    <title>Módulo de pantallas</title>
+    <type>group</type>
+    <child-task idref="t103"/>
+  </task>
+  <task id="t172">
+    <title>Módulo de casos de uso</title>
+    <type>group</type>
+    <child-task idref="t173"/>
+    <child-task idref="t174"/>
+  </task>
+  <task id="t173">
+    <title>Documentar</title>
+    <type>group</type>
+    <child-task idref="t45"/>
+  </task>
+  <task id="t174">
+    <title>Implementar</title>
+    <type>group</type>
+    <child-task idref="t84"/>
+    <child-task idref="t85"/>
+    <child-task idref="t86"/>
+    <child-task idref="t94"/>
+    <child-task idref="t95"/>
+    <child-task idref="t96"/>
+    <prerequisite-task idref="t173"/>
+  </task>
+  <task id="t175">
+    <title>Módulo de reglas de negocio</title>
+    <type>group</type>
+    <child-task idref="t176"/>
+    <child-task idref="t177"/>
+    <prerequisite-task idref="t171"/>
+  </task>
+  <task id="t176">
+    <title>Documentar</title>
+    <type>group</type>
+    <child-task idref="t28"/>
+    <child-task idref="t48"/>
+  </task>
+  <task id="t177">
+    <title>Implementar</title>
+    <type>group</type>
+    <child-task idref="t87"/>
+    <child-task idref="t97"/>
+    <prerequisite-task idref="t176"/>
+  </task>
+  <task id="t178">
+    <title>Módulo de actores</title>
+    <type>group</type>
+    <child-task idref="t179"/>
+    <child-task idref="t180"/>
+    <prerequisite-task idref="t175"/>
+  </task>
+  <task id="t179">
+    <title>Documentar</title>
+    <type>group</type>
+    <child-task idref="t29"/>
+    <child-task idref="t38"/>
+    <child-task idref="t49"/>
+  </task>
+  <task id="t180">
+    <title>Implementar</title>
+    <type>group</type>
+    <child-task idref="t88"/>
+    <child-task idref="t98"/>
+    <prerequisite-task idref="t179"/>
+  </task>
+  <task id="t181">
+    <title>Módulo de mensajes</title>
+    <type>group</type>
+    <child-task idref="t182"/>
+    <child-task idref="t183"/>
+    <prerequisite-task idref="t172"/>
+  </task>
+  <task id="t182">
+    <title>Documentar</title>
+    <type>group</type>
+    <child-task idref="t30"/>
+    <child-task idref="t39"/>
+    <child-task idref="t50"/>
+  </task>
+  <task id="t183">
+    <title>Implementar</title>
+    <type>group</type>
+    <child-task idref="t89"/>
+    <child-task idref="t99"/>
+    <child-task idref="t118"/>
+    <prerequisite-task idref="t182"/>
+  </task>
+  <task id="t184">
+    <title>Módulo de términos</title>
+    <type>group</type>
+    <child-task idref="t186"/>
+    <child-task idref="t187"/>
+    <prerequisite-task idref="t178"/>
+  </task>
+  <task id="t185">
+    <title>Módulo de entidades</title>
+    <type>group</type>
+    <child-task idref="t188"/>
+    <child-task idref="t189"/>
+    <prerequisite-task idref="t118"/>
+  </task>
+  <task id="t186">
+    <title>Documentar</title>
+    <type>group</type>
+    <child-task idref="t31"/>
+    <child-task idref="t40"/>
+    <child-task idref="t51"/>
+  </task>
+  <task id="t187">
+    <title>Implementar</title>
+    <type>group</type>
+    <child-task idref="t90"/>
+    <child-task idref="t100"/>
+    <prerequisite-task idref="t186"/>
+  </task>
+  <task id="t188">
+    <title>Documentar</title>
+    <type>group</type>
+    <child-task idref="t32"/>
+    <child-task idref="t41"/>
+    <child-task idref="t52"/>
+    <child-task idref="t33"/>
+    <child-task idref="t42"/>
+  </task>
+  <task id="t189">
+    <title>Implementar</title>
+    <type>group</type>
+    <child-task idref="t91"/>
+    <child-task idref="t101"/>
+    <child-task idref="t92"/>
+    <child-task idref="t102"/>
+    <prerequisite-task idref="t188"/>
+  </task>
+  <task id="t190">
+    <title>Módulo generador de documento</title>
+    <type>group</type>
+    <child-task idref="t191"/>
+    <child-task idref="t192"/>
+    <prerequisite-task idref="t62"/>
+  </task>
+  <task id="t191">
+    <title>Documentar</title>
+    <type>group</type>
+    <child-task idref="t54"/>
+  </task>
+  <task id="t192">
+    <title>Implementar</title>
+    <type>group</type>
+    <child-task idref="t113"/>
+    <prerequisite-task idref="t191"/>
+  </task>
+  <task id="t193">
+    <title>Módulo de administrador</title>
+    <type>group</type>
+    <child-task idref="t3"/>
+    <child-task idref="t74"/>
+    <prerequisite-task idref="t184"/>
+  </task>
+  <task id="t197">
+    <title>Documentar</title>
+    <type>group</type>
+    <child-task idref="t63"/>
+    <child-task idref="t64"/>
+    <child-task idref="t65"/>
+    <child-task idref="t66"/>
+  </task>
+  <task id="t198">
+    <title>Documentar</title>
+    <type>group</type>
+    <child-task idref="t68"/>
+    <child-task idref="t69"/>
+    <child-task idref="t71"/>
+    <child-task idref="t73"/>
+    <child-task idref="t72"/>
+  </task>
+  <task id="t199">
+    <title>Documentar</title>
+    <type>group</type>
+    <child-task idref="t138"/>
+    <child-task idref="t139"/>
+    <child-task idref="t141"/>
+  </task>
+  <task id="t202">
+    <title>Pruebas de integración</title>
+    <effort>86400</effort>
+    <prerequisite-task idref="t67"/>
+  </task>
+  <critical-path root="-1" enabled="false" resources="false">
+    <color r="1" g="0.5" b="0.5"/>
+  </critical-path>
+</scenario>

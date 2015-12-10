@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<changelog xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2">
+  <version>2.1</version>
+  <task-change-set user="Sergio Ramírez" date="2015-10-06T16:14:42.437Z" timestamp="2015-10-06T16:14:42.437Z">
+    <change idref="t2" attribute="styleDict" type="dict" to="{
+    &quot;font-italic&quot; = 1;
+    &quot;font-weight&quot; = 5;
+}" resolved="yes"/>
+    <change idref="t3" attribute="noEarlierThanConstraintDate" type="date" from="2015-09-30T13:00:00.000Z" to="2015-10-02T13:00:00.000Z" resolved="yes"/>
+  </task-change-set>
+  <resource-change-set user="Sergio Ramírez" date="2015-10-06T16:14:42.436Z" timestamp="2015-10-06T16:14:42.436Z">
+    <change idref="r-1" attribute="standardHoursString" type="string" from="-;-;-;-;-;-;-" to=";28800,43200,46800,61200;28800,43200,46800,61200;28800,43200,46800,61200;28800,43200,46800,61200;28800,43200,46800,61200;28800,43200,46800,61200" resolved="yes"/>
+  </resource-change-set>
+</changelog>
