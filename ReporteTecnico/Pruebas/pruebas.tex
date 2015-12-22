@@ -7,21 +7,17 @@ En este capítulo se describen las pruebas realizadas al sistema, se describe el
 La pruebas que se llevaron a cabo permitieron comprobar el funcionamiento de la herramienta, así como detectar los diferentes errores de todo el proceso de desarrollo. 
 Los errores se clasificaron en errores de funcionalidad, excepciones, errores visuales y mejoras al sistema.\\
 
-También se describe el desarrollo de una prueba realizada al {\it Generador de casos de prueba} con la finalidad de mostrar la cantidad de información 
-que se solicita al usuario.
-
 \section{Editor de casos de uso}
 
 Para probar el {\it Editor de casos de uso} se realizaron registros de diferentes elementos: actores, mensajes, reglas de negocio, entidades, atributos, términos del glosario, pantallas y casos de uso de
-tres sistemas distintos:
+dos sistemas distintos:
 
 \begin{itemize}
- \item Sistema de Información Geográfica
- \item E-commerce
+ \item E-Commerce
  \item PRISMA
 \end{itemize}
 
-En la tabla \ref{tabla:vectorEditor} se muestra el total de elementos registrados en la herramienta.
+En la tabla \ref{tabla:vectorEditor} se muestra la cantidad de elementos registrados con la herramienta en relación al total de elementos pertenecientes al sistema PRISMA.
 
 \begin{longtable}{| p{.30\textwidth} | p{.30\textwidth} |}%
 	\arrayrulecolor{black}%
@@ -29,18 +25,39 @@ En la tabla \ref{tabla:vectorEditor} se muestra el total de elementos registrado
 	{\color{white}Elemento} & {\color{white}Total registrado}\\ \hline
 	\endhead%
 	\arrayrulecolor{black}%
-	Actores & \totalACT \\ \hline
-	Mensajes & \totalMSG \\ \hline
-	Reglas de negocio & \totalRN \\ \hline
-	Entidades & \totalENT \\ \hline
-	Atributos & \totalATR \\ \hline
-	Términos del glosario & \totalGLS \\ \hline
-	Pantallas & \totalIU \\ \hline
-	Casos de uso & \totalCUEditor \\ \hline
-	\caption{Vectores de pruebas}\label{tabla:vectorEditor}
+	Casos de uso & 9 / 83 \\ \hline
+	Pantallas & 10 / 70 \\ \hline
+	Mensajes & 10 / 36 \\ \hline
+	Entidades & 6 / 27 \\ \hline
+	Reglas de negocio & 10 / 26 \\ \hline
+	Actores & 3 / 3 \\ \hline
+	Términos del glosario  & 1 / 30 \\ \hline
+	\caption{Elementos de PRISMA}\label{tabla:vectorEditor}
 \end{longtable}%
 
-Durante la etapa de pruebas del editor, se detectaron diferentes tipos de errores. Los resultados de las pruebas
+En la tabla \ref{tabla:vectorEditor2} se muestra el total de elementos registrados en la herramienta pertenecientes a E-Commerce.
+
+\begin{longtable}{| p{.30\textwidth} | p{.30\textwidth} |}%
+	\arrayrulecolor{black}%
+	\rowcolor{black}%
+	{\color{white}Elemento} & {\color{white}Total registrado}\\ \hline
+	\endhead%
+	\arrayrulecolor{black}%
+	Casos de uso & 4 \\ \hline
+	Pantallas & 5 \\ \hline
+	Mensajes & 9 \\ \hline
+	Entidades & 2 \\ \hline
+	Reglas de negocio & 6 \\ \hline
+	Actores & 2 \\ \hline
+	Términos del glosario  & 0 \\ \hline
+	\caption{Elementos de E-Commerce}\label{tabla:vectorEditor2}
+\end{longtable}%
+
+\subsection*{Resultados}
+
+Con base a los registros realizados fue posible generar la base de datos y el documento de análisis de manera satisfactoria para los dos sistemas. \\
+
+Al realizar las pruebas mencionadas, se detectaron diferentes tipos de errores. Los resultados de las pruebas
 realizadas al {\it Editor de casos de uso} se muestran en la tabla \ref{tabla:erroresEditor}, donde también se muestra el total de errores corregidos.
 
 \begin{longtable}{| p{.30\textwidth} | p{.15\textwidth} | p{.15\textwidth} |}%
@@ -49,10 +66,10 @@ realizadas al {\it Editor de casos de uso} se muestran en la tabla \ref{tabla:er
 	{\color{white}Tipo de error} & {\color{white}Total errores detectados} & {\color{white}Total errores corregidos}\\ \hline
 	\endhead%
 	\arrayrulecolor{black}%
-	{\bf Excepción} & \porcentajeExcepcionEditor & \porcentajeExcepcionCorregidosEditor \\ \hline
-	{\bf Funcionalidad} & \porcentajeFuncionalEditor & \porcentajeFuncionalCorregidosEditor \\ \hline
-	{\bf Visual} & \porcentajeVisualEditor & \porcentajeVisualCorregidosEditor \\ \hline
-	{\bf Mejora al sistema} & \porcentajeMejoraEditor & \porcentajeMejoraCorregidosEditor \\ \hline
+	{\bf Excepción} & 3 & 3 \\ \hline
+	{\bf Funcionalidad} & 59 & 50 \\ \hline
+	{\bf Visual} & 12 & 11 \\ \hline
+	{\bf Mejora al sistema} & 2 & 0 \\ \hline
 	\caption{Resultados de las pruebas del Editor de casos de uso}\label{tabla:erroresEditor}
 \end{longtable}%
 
@@ -65,25 +82,10 @@ Para probar el {\it Generador de casos de prueba} se utilizaron algunos casos de
  \item PRISMA
 \end{itemize}
 
-Se generaron pruebas para \totalCUGenerador casos de uso registrados, los resultados de las pruebas realizadas se muestran en la tabla \ref{tabla:erroresGenerador}, donde también se muestra el total de errores corregidos.
+\subsection*{Desarrollo de la prueba realizada al caso de uso CUE2.1 Registrar persona}
 
-\begin{longtable}{| p{.30\textwidth} | p{.15\textwidth} | p{.15\textwidth} |}%
-	\arrayrulecolor{black}%
-	\rowcolor{black}%
-	{\color{white}Tipo de error} & {\color{white}Total errores detectados} & {\color{white}Total errores corregidos}\\ \hline
-	\endhead%
-	\arrayrulecolor{black}%
-	{\bf Excepción} & \porcentajeExcepcionGenerador & \porcentajeExcepcionCorregidosGenerador \\ \hline
-	{\bf Funcionalidad} & \porcentajeFuncionalGenerador & \porcentajeFuncionalCorregidosGenerador \\ \hline
-	{\bf Visual} & \porcentajeVisualGenerador & \porcentajeVisualCorregidosGenerador \\ \hline
-	{\bf Mejora al sistema} & \porcentajeMejoraGenerador & \porcentajeMejoraCorregidosGenerador \\ \hline
-	\caption{Resultados de las pruebas del Generador de casos de prueba}\label{tabla:erroresGenerador}
-\end{longtable}
-
-\section{Desarrollo de la prueba realizada al caso de uso CUE2.1 Registrar persona}
-
-A continuación se describirá a detalle el desarrollo de una prueba realizada al {\it Generador de casos de prueba}, con la finalidad de mostrar el número de campos adicionales solicitados en relación
-a la cantidad de casos de prueba que se pueden generar, mostrar el tiempo de generación de los casos de prueba, así como mostrar la cantidad de valores que el usuario debe cambiar 
+A continuación se describirá a detalle el desarrollo de una prueba realizada al {\it Generador de casos de prueba}, con la finalidad de mostrar el número
+casos de prueba que se pueden generar, mostrar el tiempo de generación de los casos de prueba, así como mostrar la cantidad de valores que el usuario debe cambiar 
 directamente en JMeter para completar al 100 \% una prueba, de un caso de uso con determinadas características.\\
 
 \subsection*{Características del caso de uso}
@@ -96,30 +98,28 @@ generación de los casos de prueba para el caso de uso {\bf CUE2.1 Registrar per
  \item Los casos de uso previos que deben ser configurados son: CUE13 Iniciar sesión, CUE1 Gestionar proyectos de Administrador y CUE2 Gestionar personal.
 \end{itemize}
 
-
-\subsection*{Total de campos adicionales a la información de análisis}
-En la tabla \ref{tabla:resultadosCURegistrarPersona} se muestra la cantidad de campos solicitados por el sistema para la configuración de la prueba.
-
-
-\begin{longtable}{| p{.60\textwidth} | p{.30\textwidth} |}%
-	\arrayrulecolor{black}%
-	\rowcolor{black}%
-	{\color{white}Sección o caso de uso} & {\color{white}Número de campos solicitados} \\ \hline
-	\endhead%
-	\arrayrulecolor{black}%
-	{\bf Configuración general} & 6 \\ \hline
-	{\bf CUE13 Iniciar sesión} & 6 \\ \hline
-	{\bf CUE1 Gestionar proyectos de Administrador} & 2 \\ \hline
-	{\bf CUE2 Gestionar personal} & 2 \\ \hline
-	{\bf CUE2.1 Registrar persona} & 30 \\ \hline
-	{\bf Total de campos solicitados} & 46 \\ \hline
-	\caption{Total de campos solicitados}\label{tabla:resultadosCURegistrarPersona}
-\end{longtable}
-
 \subsection*{Total de casos de prueba generados}
 Como resultado de esta configuración se generaron \totalCasosPruebaCURegistrarPersona casos de prueba, para completar la prueba
 fue necesario ingresar 6 valores directamente en JMeter, estos valores no podían ser ingresados a la configuración. 
 
 \subsection*{Tiempo de respuesta}
 Se solicitó 5 veces la generación de la prueba, el tiempo promedio de respuesta del sistema fue de 4.26 segundos.
+
+
+\subsection*{Resultados}
+
+De las pruebas realizadas al generador, los resultados de las se muestran en la tabla \ref{tabla:erroresGenerador}, donde también se muestra el total de errores corregidos.
+
+\begin{longtable}{| p{.30\textwidth} | p{.15\textwidth} | p{.15\textwidth} |}%
+	\arrayrulecolor{black}%
+	\rowcolor{black}%
+	{\color{white}Tipo de error} & {\color{white}Total errores detectados} & {\color{white}Total errores corregidos}\\ \hline
+	\endhead%
+	\arrayrulecolor{black}%
+	{\bf Excepción} & 3 & 3 \\ \hline
+	{\bf Funcionalidad} & 25 & 17 \\ \hline
+	{\bf Visual} & 13 & 12 \\ \hline
+	{\bf Mejora al sistema} & 2 & 0 \\ \hline
+	\caption{Resultados de las pruebas del Generador de casos de prueba}\label{tabla:erroresGenerador}
+\end{longtable}
 

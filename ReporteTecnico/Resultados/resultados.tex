@@ -1,1 +1,48 @@
 %Describir las restricciones
+En este capítulo se describen los resultados más relevantes que se obtuvieron a lo largo del desarrollo del proyecto. 
+
+\section{Prototipo}
+El desarrollo del proyecto permitió la construcción de PRISMA, un prototipo de editor de casos de uso que permite construir casos de prueba con base en la información de análisis. Algunas de las
+características de la herramienta son:
+
+\begin{itemize}
+ \item Permite recabar los elementos que componen un documento de análisis.
+ \item PRISMA permite la interacción de tres perfiles de usuario distintos.
+ \item El sistema permite generar el documento de análisis en dos formatos distintos: pdf y docx.
+ \item El Editor de casos de uso construye la base de datos de manera adecuada.
+ \item PRISMA permite modelar el proceso de revisión de los casos de uso, así como gestionar las actividades de los colaboradores.
+\end{itemize}
+
+Algunas de las características se detallan a continuación.
+
+\subsection*{Registro de elementos}
+PRISMA permite gestionar los elementos que describen el comportamiento de un sistema y que son recabados en la etapa de análisis: mensajes, reglas de negocio, entidades, actores, términos del glosario, pantallas y casos de uso. Con el registro 
+de los elementos mencionados es posible modelar las diversas estructuras de información de múltiples sistemas web. 
+
+\section*{Gestión de las actividades de los colaboradores}
+El diseño de la herramienta soporta tres perfiles de usuario diferentes:
+\begin{itemize}
+ \item Administrador 
+ \item Líder de análisis
+ \item Analista
+\end{itemize}
+
+Estos tres perfiles permiten que existan usuarios con diferentes responsabilidades y niveles de acceso. El Administrador es el encargado de gestionar los proyectos, así como el personal de la organización. El Líder
+de análisis y el Analista participan en el proceso de revisión de los casos de uso siendo cada uno colaborador de los proyectos.\\
+
+\section{Documento de análisis}
+Se construyó un documento de análisis que contiene las especificaciones del comportamiento de PRISMA. Dentro de este documento se describen los siguientes elementos:
+
+\begin{itemize}
+ \item Requerimientos del sistema
+ \item Análisis de riesgos
+ \item Modelo de negocio
+ \item Modelo de comportamiento
+ \item Modelo de interacción con el usuario
+\end{itemize}
+
+\section{Fórmula para el cálculo de los casos de prueba generados por el sistema}
+Un resultado interesante fue la fórmula que permite calcular el número de casos de prueba que pueden ser generados por PRISMA, el resultado del cáluco como se observa en la figura \ref{fig:formula} 
+depende de las reglas de negocio asociadas al caso de uso a probar, así como el tipo y la cantidad de entradas asociadas.
+
+\IUfigNoId[.7]{images/formula.png}{fig:formula}{Fórmula para calcular los casos de prueba generados}
