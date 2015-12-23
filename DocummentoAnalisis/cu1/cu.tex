@@ -1,6 +1,6 @@
 \begin{UseCase}{CU 1}{Gestionar proyectos de Administrador}
 	{
-		Este caso de uso permite al Administrador visualizar todos los proyectos, así como solicitar el registro, modificación, eliminación de un proyecto y la descarga del documento.
+		Este caso de uso permite al Administrador visualizar todos los proyectos registrados en el sistema, además sirve como punto de acceso para registrar, modificar o eliminar un proyecto.
 	}
 	
 	\UCitem{Actor}{\cdtRef{actor:administrador}{Administrador}}
@@ -40,11 +40,10 @@
 \end{UseCase}
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
-    \UCpaso[\UCactor] Solicita gestionar los proyectos presionando la opción ``Proyectos'' del menú \cdtRef{menu:principal}{Menú principal}.
+    \UCpaso[\UCactor] Solicita gestionar los proyectos presionando la opción ``Proyectos'' del menú \cdtIdRef{MN 1}{Menú de Administrador}.
     \UCpaso[\UCsist] Busca la información de los proyectos registrados en cualquier estado. \refTray{A}
-    \UCpaso[\UCsist] Muestra la información de los proyectos en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador} y las operaciones 
-    disponibles de acuerdo al estado en que se encuentra.
-    \UCpaso[\UCactor] Gestiona los proyectos a través de los botones: \cdtButton{Registrar}, \btnDescargarDoc, \btnEditar y \btnEliminar. \label{cu1:gestiona}
+    \UCpaso[\UCsist] Muestra la información de los proyectos en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}.
+    \UCpaso[\UCactor] Gestiona los proyectos a través de los botones: \cdtButton{Registrar}, \btnEditar y \btnEliminar. \label{cu1:gestiona}
  \end{UCtrayectoria}
  
  \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No existen registros de proyectos.}
@@ -53,7 +52,7 @@
  \end{UCtrayectoriaA}
  
 
-\subsection{Puntos de extensión}
+\subsubsection{Puntos de extensión}
 
 \UCExtensionPoint{El actor requiere registrar un proyecto}
 	{Paso \ref{cu1:gestiona} de la trayectoria principal}

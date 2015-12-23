@@ -13,12 +13,13 @@
 			\UCli \cdtRef{Proyecto:Nombre}{Nombre}: \ioEscribir.
 			\UCli \cdtRef{Proyecto:FechaDeInicio}{Fecha de inicio}: \ioCalendario.
 			\UCli \cdtRef{Proyecto:FechaDeTermino}{Fecha de término}: \ioCalendario.
-			\UCli \cdtRef{Proyecto:FechaDeInicioProgramada}{Fecha de Inicio Programada}: \ioCalendario.
-			\UCli \cdtRef{Proyecto:FechaDeTerminoProgramada}{Fecha de Término Programada}: \ioCalendario.
-			\UCli \cdtRef{Proyecto:Descripcion}{Descripcion}: \ioEscribir.
+			\UCli \cdtRef{Proyecto:FechaDeInicioProgramada}{Fecha de inicio programada}: \ioCalendario.
+			\UCli \cdtRef{Proyecto:FechaDeTerminoProgramada}{Fecha de término programada}: \ioCalendario.
+			\UCli \cdtRef{Proyecto:Lider}{Líder del Proyecto}: \ioSeleccionar.
+			\UCli \cdtRef{Proyecto:Descripcion}{Descripción}: \ioEscribir.
 			\UCli \cdtRef{Proyecto:Contraparte}{Contraparte}: \ioEscribir.
 			\UCli \cdtRef{Proyecto:Presupuesto}{Presupuesto}: \ioEscribir.
-			\UCli \cdtRef{gls:EstadoDelProyecto}{Estado del Proyecto}: \ioSeleccionar.
+			\UCli \cdtRef{gls:EstadoDelProyecto}{Estado del proyecto}: \ioSeleccionar.
 		\end{UClist}
 	}
 	\UCitem{Salidas}{
@@ -29,6 +30,7 @@
 			\UCli \cdtRef{Proyecto:FechaDeTermino}{Fecha de término}: \ioObtener.
 			\UCli \cdtRef{Proyecto:FechaDeInicioProgramada}{Fecha de Inicio Programada}: \ioObtener.
 			\UCli \cdtRef{Proyecto:FechaDeTerminoProgramada}{Fecha de Término Programada}: \ioObtener.
+			\UCli \cdtRef{Proyecto:Lider}{Líder del Proyecto}: \ioObtener.
 			\UCli \cdtRef{Proyecto:Descripcion}{Descripcion}: \ioObtener.
 			\UCli \cdtRef{Proyecto:Contraparte}{Contraparte}: \ioObtener.
 			\UCli \cdtRef{Proyecto:Presupuesto}{Presupuesto}: \ioObtener.
@@ -59,8 +61,9 @@
 			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 1.2}{Modificar proyecto} cuando no se ha ingresado un dato marcado como obligatorio.
 			\UCli \cdtIdRef{MSG5}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 1.2}{Modificar proyecto} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
 			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 1.2}{Modificar proyecto} cuando se ha excedido la longitud de alguno de los campos.
-			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 1.2}{Modificar proyecto} cuando se registre un proyecto con un nombre que ya exista.
-			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 1.2}{Modificar proyecto} cuando el proyecto no se encuentre en estado ``En negociación'' o ``Iniciado''.
+			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 1.2}{Modificar proyecto} cuando se registre un proyecto con un nombre o clave que ya exista.
+			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos} cuando no exista información de los estados de un proyecto.
+			\UCli \cdtIdRef{MSG22}{Falta información}: Se muestra en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos} cuando no existan colaboradores registrados.
 		\end{UClist}
 	}
 
@@ -68,56 +71,82 @@
 		Secundario, extiende del casos de uso \cdtIdRef{CU 1}{Gestionar proyectos de Administrador}.
 	}
 \end{UseCase}
-%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
- \begin{UCtrayectoria}
+	%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+	 \begin{UCtrayectoria}
     \UCpaso[\UCactor] Solicita modificar un proyecto oprimiendo el botón \btnEditar del proyecto que desea modificar de la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}.
-    \UCpaso[\UCsist] Busca la información del proyecto seleccionado.
-    \UCpaso[\UCsist] Busca los estados con los que puede iniciar un proyecto.
-    \UCpaso[\UCsist] Verifica que el estado del proyecto sea ``En negociación'' o ``Iniciado''. \refTray{A}
-    \UCpaso[\UCsist] Busca los colaboradores registrados en el sistema.
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 1.2}{Modificar proyecto} en la cual se realizará la modificación del proyecto. 
-    \UCpaso[\UCactor] Modifica la información en la pantalla. \label{cu1.2:ingresaDatos}
-    \UCpaso[\UCactor] Solicita guardar los cambios del proyecto oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 1.2}{Modificar proyecto}. \refTray{B} 
-    \UCpaso[\UCsist] Verifica que el estado del proyecto sea ``En negociación'' o ``Iniciado''. \refTray{A}
-    \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{C}
-    \UCpaso[\UCsist] Verifica que el nombre del proyecto no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{D}
-    \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{E} \refTray{F}
-    \UCpaso[\UCsist] Modifica la información del proyecto en el sistema. 
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}
-    para indicar al actor que la modificación fue exitosa.
- \end{UCtrayectoria}
- %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El proyecto no se encuentra en un estado que permita la modificación.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error} en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}.
- \end{UCtrayectoriaA} 
- %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{El actor desea cancelar la operación.}
-    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 1.2}{Modificar proyecto}.
-    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
- \end{UCtrayectoriaA} 
-  %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
- \begin{UCtrayectoriaA}{C}{El actor no ingresó algún dato marcado como obligatorio.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
-	    \cdtIdRef{IU 1.2}{Modificar proyecto}, indicando al actor que el dato es obligatorio.
-    \UCpaso[] Continúa con el paso \ref{cu1.2:ingresaDatos} de la trayectoria principal.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
- \begin{UCtrayectoriaA}{D}{El actor ingresó un nombre de proyecto repetido.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Registro repetido} y señala el campo que presenta la duplicidad en la pantalla 
-	    \cdtIdRef{IU 1.2}{Modificar proyecto}, indicando al actor que existe un proyecto con el mismo nombre.
-    \UCpaso[] Continúa con el paso \ref{cu1.2:ingresaDatos} de la trayectoria principal.
- \end{UCtrayectoriaA}
+	    \UCpaso[\UCsist] Verifica que exista información referente a los estados de un proyecto, con base en la regla de negocio \cdtIdRef{RN20}{Verificación de catálogos}. \refTray{A}
+	    \UCpaso[\UCsist] Verifica que exista al menos un colaborador, con base en la regla de negocio \cdtIdRef{RN20}{Verificación de catálogos}. \refTray{B}
+	    \UCpaso[\UCsist] Busca la información del proyecto seleccionado.
+		
+	    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 1.2}{Modificar proyecto} con la información del proyecto.
+	    \UCpaso[\UCactor] Ingresa la información solicitada en la pantalla. \label{cu1.2:ingresaDatos}
+	    \UCpaso[\UCactor] Solicita guardar el proyecto oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 1.2}{Modificar proyecto}. \refTray{C} 
+    
+	    \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{D}
+	    \UCpaso[\UCsist] Verifica que el nombre del proyecto no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{E}
+	    \UCpaso[\UCsist] Verifica que la clave del proyecto no se encuentre registrada en el sistema con base en la regla de negocio  \cdtIdRef{RN22}{Unicidad de la clave del Proyecto}. \refTray{F}
+	    \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{G} \refTray{H}
+	    \UCpaso[\UCsist] Verifica que la fecha de término sea posterior a la fecha de inicio. \refTray{I}
+	    \UCpaso[\UCsist] Verifica que la fecha de término programada sea posterior a la fecha de inicio programada. \refTray{J}
+	    \UCpaso[\UCsist] Registra la información del proyecto en el sistema.
+	    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}
+	    para indicar al actor que el registro se ha realizado exitosamente.
+	 \end{UCtrayectoria}
+
+	 %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+	 \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No hay estados con los que puede iniciar un proyecto.}
+	    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error} en la la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador} para indicar que no es posible realizar la operación debido a la falta de información necesaria para el sistema.
+	 \end{UCtrayectoriaA} 
+	 %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
+	 \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{No hay ningún colaborador registrado.}
+	    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG22}{Falta información} en la la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador} indicando que no hay colaboradores registrados.
+	 \end{UCtrayectoriaA} 
+	 %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
+	 \begin{UCtrayectoriaA}[Fin del caso de uso]{C}{El actor desea cancelar la operación.}
+	    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 1.2}{Modificar proyecto}.
+	    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
+	 \end{UCtrayectoriaA} 
+	  %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
+	 \begin{UCtrayectoriaA}{D}{El actor no ingresó algún dato marcado como obligatorio.}
+	    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
+		    \cdtIdRef{IU 1.2}{Modificar proyecto}, indicando al actor que el dato es obligatorio.
+	    \UCpaso[] Continúa con el paso \ref{cu1.2:ingresaDatos} de la trayectoria principal.
+	 \end{UCtrayectoriaA}
+	 %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
+	 \begin{UCtrayectoriaA}{E}{El actor ingresó un nombre de proyecto repetido.}
+	    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Registro repetido} y señala el campo que presenta la duplicidad en la pantalla 
+		    \cdtIdRef{IU 1.2}{Modificar proyecto}, indicando al actor que existe un proyecto con el mismo nombre.
+	    \UCpaso[] Continúa con el paso \ref{cu1.2:ingresaDatos} de la trayectoria principal.
+	 \end{UCtrayectoriaA}
+	 %----------------------------------------------------------%trayectoria F---------------------------------------------------- 
+	 \begin{UCtrayectoriaA}{F}{El actor ingresó una clave de proyecto repetida.}
+	    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG7}{Registro repetido} y señala el campo que presenta la duplicidad en la pantalla 
+		    \cdtIdRef{IU 1.2}{Modificar proyecto}, indicando al actor que existe un proyecto con la misma clave.
+	    \UCpaso[] Continúa con el paso \ref{cu1.2:ingresaDatos} de la trayectoria principal.
+	 \end{UCtrayectoriaA}
  
- %----------------------------------------------------------%trayectoria E----------------------------------------------------  
- \begin{UCtrayectoriaA}{E}{El actor proporciona un dato que excede la longitud máxima.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
-    longitud en la pantalla \cdtIdRef{IU 1.2}{Modificar proyecto}, para indicar que el dato excede el tamaño máximo permitido.
-    \UCpaso[] Continúa con el paso \ref{cu1.2:ingresaDatos} de la trayectoria principal.
- \end{UCtrayectoriaA}
+	 %----------------------------------------------------------%trayectoria G----------------------------------------------------  
+	 \begin{UCtrayectoriaA}{G}{El actor proporciona un dato que excede la longitud máxima.}
+	    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
+	    longitud en la pantalla \cdtIdRef{IU 1.2}{Modificar proyecto}, para indicar que el dato excede el tamaño máximo permitido.
+	    \UCpaso[] Continúa con el paso \ref{cu1.2:ingresaDatos} de la trayectoria principal.
+	 \end{UCtrayectoriaA}
  
- %----------------------------------------------------------%trayectoria F---------------------------------------------------- 
- \begin{UCtrayectoriaA}{F}{El actor ingresó un tipo de dato incorrecto.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Formato incorrecto} y señala el campo que presenta el dato inválido en la 
-    pantalla \cdtIdRef{IU 1.2}{Modificar proyecto} para indicar que se ha ingresado un tipo de dato inválido.
-    \UCpaso[] Continúa con el paso \ref{cu1.2:ingresaDatos} de la trayectoria principal.
- \end{UCtrayectoriaA}
+	 %----------------------------------------------------------%trayectoria H---------------------------------------------------- 
+	 \begin{UCtrayectoriaA}{H}{El actor ingresó un tipo de dato incorrecto.}
+	    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Formato incorrecto} y señala el campo que presenta el dato inválido en la 
+	    pantalla \cdtIdRef{IU 1.2}{Modificar proyecto} para indicar que se ha ingresado un tipo de dato inválido.
+	    \UCpaso[] Continúa con el paso \ref{cu1.2:ingresaDatos} de la trayectoria principal.
+	 \end{UCtrayectoriaA}
+	 %----------------------------------------------------------%trayectoria I---------------------------------------------------- 
+	 \begin{UCtrayectoriaA}{I}{El actor ingresó una fecha de término que no es posterior a la fecha de inicio.}
+	    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG35}{Orden de fechas} y señala el campo de la fecha de término en la 
+	    pantalla \cdtIdRef{IU 1.2}{Modificar proyecto}.
+	    \UCpaso[] Continúa con el paso \ref{cu1.2:ingresaDatos} de la trayectoria principal.
+	 \end{UCtrayectoriaA}
+	 %----------------------------------------------------------%trayectoria J---------------------------------------------------- 
+	 \begin{UCtrayectoriaA}{J}{El actor ingresó una fecha de término programada que no es posterior a la fecha de inicio programada.}
+	    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG35}{Orden de fechas} y señala el campo de la fecha de término programada en la 
+	    pantalla \cdtIdRef{IU 1.2}{Modificar proyecto}.
+	    \UCpaso[] Continúa con el paso \ref{cu1.2:ingresaDatos} de la trayectoria principal.
+	 \end{UCtrayectoriaA}

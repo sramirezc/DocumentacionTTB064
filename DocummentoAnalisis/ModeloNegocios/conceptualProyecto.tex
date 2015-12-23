@@ -97,11 +97,13 @@
 \begin{BusinessEntity}{Proyecto}{Proyecto}
       \Battr{Clave}{Clave}{\tdPalabra}{Palabra que permitirá distinguir al proyecto, regularmente es la sigla del nombre}{\requerido}
       \Battr{Nombre}{Nombre}{\tdFrase}{Palabra que sirve para identificar un proyecto}{\requerido}
-      \Battr{FechaDeInicio}{Fecha de Inicio}{\tdFecha}{Fecha en que se arranca el proyecto}{\requerido}
-      \Battr{FechaDeTermino}{Fecha de Término}{\tdFecha}{Fecha en que consluye el proyecto}{\requerido}
+      \Battr{FechaDeInicio}{Fecha de Inicio}{\tdFecha}{Fecha en que se arranca el proyecto}{\opcional}
+      \Battr{FechaDeTermino}{Fecha de Término}{\tdFecha}{Fecha en que consluye el proyecto}{\opcional}
       \Battr{FechaDeInicioProgramada}{Fecha de Inicio Programada}{\tdFecha}{Fecha en que se desea arrancar el proyecto}{\requerido}
       \Battr{FechaDeTerminoProgramada}{Fecha de Término Programada}{\tdFecha}{Fecha en que se desea finalizar el proyecto}{\requerido}
       \Battr{Descripcion}{Descripción}{\tdParrafo}{Párrafo que contiene las características generales del proyecto que se comenzará}{\requerido}
+      \Battr{Lider}{Líder}{\tdParrafo}{Párrafo que contiene el nombre y apellidos del líder del proyecto}{\requerido}
+	  
       \Battr{Contraparte}{Contraparte}{\tdFrase}{Es el cliente del proyecto}{\requerido}
       \Battr{Presupuesto}{Presupuesto}{\tdNumerico{flotante}}{El el monto calculado del costo del proyecto}{\opcional}
 \end{BusinessEntity}
