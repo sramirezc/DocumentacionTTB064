@@ -1,35 +1,32 @@
 \begin{UseCase}{CU 1.3}{Eliminar proyecto}
 	{
-		Este caso de uso permite al actor eliminar del sistema un proyecto.
+		Este caso de uso permite al actor eliminar un proyecto del sistema.
 	}
 	
 	\UCitem{Actor}{\cdtRef{actor:administrador}{Administrador}}
 	\UCitem{Propósito}{
-		Eliminar la información de un proyecto.
+		Eliminar un proyecto del sistema.
 	}
 	\UCitem{Entradas}{
 		Ninguna
 	}
 	\UCitem{Salidas}{
-		\begin{UClist}
-			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador} para indicar que la eliminación fue exitosa.
-		\end{UClist}
+		Ninguna
 	}
 	\UCitem{Mensajes}{
 		\begin{UClist}
+			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador} para indicar que la eliminación fue exitosa.
 			\UCli \cdtIdRef{MSG11}{Confirmar eliminación}: Se muestra para que el actor confirme la eliminación.
 		\end{UClist}
 	}
 
 	\UCitem{Precondiciones}{
-		\begin{UClist}
-			\UCli Que el proyecto se encuentre en estado ``En negociación'' o ``Iniciado''.
-		\end{UClist}
+		Ninguna
 	}
 	
 	\UCitem{Postcondiciones}{
 		\begin{UClist}
-			\UCli Se eliminará del sistema el proyecto.
+			\UCli Se eliminará el proyecto del sistema.
 		\end{UClist}
 	}
 
@@ -47,21 +44,15 @@
  \begin{UCtrayectoria}
     \UCpaso[\UCactor] Solicita eliminar un proyecto oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}.
     \UCpaso[\UCsist] Busca la información del proyecto seleccionado.
-    \UCpaso[\UCsist] Verifica que el estado del proyecto sea ``En negociación'' o ``Iniciado''. \refTray{A}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG11}{Confirmar eliminación} en una pantalla emergente con los botones \cdtButton{Aceptar} y \cdtButton{Cancelar}.
     \UCpaso[\UCactor] Confirma la eliminación del proyecto oprimiendo el botón \cdtButton{Aceptar} de la pantalla emergente. \refTray{B}
-    \UCpaso[\UCsist] Verifica que el estado del proyecto sea ``En negociación'' o ``Iniciado''. \refTray{A}
-    \UCpaso[\UCsist] Elimina la información referente al proyecto.
+    \UCpaso[\UCsist] Elimina el proyecto del sistema.
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}
     para indicar al actor que se ha eliminado el registro exitosamente.
  \end{UCtrayectoria}
  
- %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El proyecto no está en un estado que permita la eliminación.}
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador} con el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error}.
- \end{UCtrayectoriaA} 
  %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
  \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{El actor desea cancelar la operación.}
     \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla emergente.
-    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}.
  \end{UCtrayectoriaA} 

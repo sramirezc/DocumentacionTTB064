@@ -6,26 +6,30 @@
 \usepackage{cite}
 \usepackage{ragged2e}
 \pagenumbering{roman}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
 
 
+
+
+
+\organizacion[IPN]{Directores: M. en C. Idalia Maldonado Castillo y M. en C. José Jaime López Rabadán}
+\proyecto[TT]{Prototipo de editor de casos de uso para la construcción asistida de casos de prueba}
+\documento{2014}{}{\RELEASE{1}} %\DRAFT{\today}
+\entregable{B064}{\Large{Documento de análisis}}
+\title{Instituto Politécnico Nacional \\           Escuela Superior de Cómputo}
+\author{Natalia Giselle Hernández Sánchez, Sergio Ramírez Camacho}
 
 \begin{document}
 \bibliographystyle{IEEEtran}
-%=========================================================
-% Portada
-%\ThisLRCornerWallPaper{1}{cdt/theme/agua.png}
-\thispagestyle{empty}
 
-\cfinput{portada}
-% \makeFirmas
+\thispagestyle{empty}
+\maketitle
 
 %=========================================================
 % Indices del documento
 \frontmatter
-% \LRCornerWallPaper{1}{cdt/theme/pleca.png}
 \tableofcontents
 \listoffigures
-%\listoftables
 \mainmatter
 
 % Para esconder la información del documentador se descomenta el \hideControlVersion
@@ -41,13 +45,13 @@
 \hypertarget{chp:marcoTeorico}{}
 \cfinput{MarcoTeorico/marcoTeorico}
 %=========================================================
-\chapter{Requerimientos del sistema}\label{chp:requerimientos}
-\hypertarget{chp:requerimientos}{}
-\cfinput{ModeloNegocios/requerimientos}
+%\chapter{Requerimientos del sistema}\label{chp:requerimientos}
+%\hypertarget{chp:requerimientos}{}
+%\cfinput{ModeloNegocios/requerimientos}
 %=========================================================
-\chapter{Análisis de riesgos}\label{chp:riesgos}
-\hypertarget{chp:riesgos}{}
-\cfinput{AnalisisRiesgos/analisisRiesgos}
+%\chapter{Análisis de riesgos}\label{chp:riesgos}
+%\hypertarget{chp:riesgos}{}
+%\cfinput{AnalisisRiesgos/analisisRiesgos}
 
 %=========================================================
 \chapter{Modelo de negocio}\label{chp:modeloNegocios}
@@ -138,7 +142,7 @@ y las reglas de negocio.\\
 % \cfinput{ModeloInteraccion/interaccion}
 
 %---------------------------------------------------------------------
-\section{Interfaces del prototipo}
+\section{Interfaces}
 	\cfinput{cu1/iu}
 	\cfinput{cu1.1/iu}
 	\cfinput{cu1.2/iu}
@@ -192,18 +196,12 @@ y las reglas de negocio.\\
 	\cfinput{cu14/iu}
 	
 %---------------------------------------------------------------------
-\section{Diseño de mensajes}
+\section{Mensajes}
 	\cfinput{ModeloInteraccion/mensajes}
 	
-\chapter{Avances y resultados}
-\label{chp:avances}
-\hypertarget{chp:avances}{}
-
-	\cfinput{Avances/analisis}
-	\cfinput{Avances/disenio}
-	\cfinput{Avances/implementacion}
-	\cfinput{Avances/pruebas}
-
+\section{Menús}
+	\cfinput{ModeloInteraccion/menus}
+	
 
 
 % \clossing

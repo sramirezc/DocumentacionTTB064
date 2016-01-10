@@ -1,77 +1,76 @@
 \section{Diagramas de estados}
 Es esta sección se muestran los diagramas de estados y la descripción de cada uno de ellos.\\
 
-\subsection{Diagrama de estados de un caso de uso}
+\subsection{Estados de un caso de uso}
 
-En la figura \refIM{fig:estadosElemento}{Diagrama de estados de un caso de uso} se muestran los estados que tiene un caso de uso a lo largo 
-del sistema. Estos estados cambian conforme la operación que se esté realizando sobre ellos.\\
+En la figura \ref{fig:estadosElemento} se muestran los estados en los que se puede encontrar un caso de uso en el sistema. 
 
-\IMfig[1]{ModeloNegocios/images/estadosElementos.png}{fig:estadosElemento}{Diagrama de estados de un caso de uso}
+\IMfig[1]{ModeloNegocios/images/estadosCasoUso.png}{fig:estadosElemento}{Estados de un caso de uso}
 
 \clearpage
 Cada estado se describe a continuación:
 
 \begin{itemize}
- \item {\bf Pre-registro.} Cuando un analista solicite el registro de un caso de uso, este tendrá el estado ``Pre-registro''.
- Los casos de uso que se encuentran en este estado están temporalmente en la base de datos hasta que el analista decide guardar la información.
- 
- \item {\bf Edición.} Un caso de uso pasará a este estado cuando: 
+ \item {\bf Edición.} Un caso de uso se encuentra en este estado si:
  \begin{itemize}
-  \item El analista guarda la información del caso de uso que solicitó registrar.
-  \item Cuando un analista solicita modificar la información del caso de uso que no ha terminado.
-  \item Cuando un analista solicita corregir un caso de uso.
-  \item Cuando un caso de uso está liberado y un analista solicita modicar su información.
+  \item Un analista registra el caso de uso.
+  \item Un analista modifica el caso de uso.
+ \end{itemize}
+ Cuando un caso de uso se encuentra en estado {\bf Edición}, puede ser terminado o modificado.
+ 
+ \item {\bf Revisión.} Un caso de uso se encuentra en este estado si:
+ \begin{itemize}
+  \item Un analista termina el caso de uso.
+  \item Un analista corrige el caso de uso.
  \end{itemize}
  
- \item {\bf Terminado.} Cuando el analista haya concluido el registro del caso de uso este pasará a estado ``Terminado''. Cuando el caso de uso está en este estado
- el analista que lo haya terminado podrá modificarlo y cualquier otro analista podrá revisarlo.
- \item {\bf Revisión.} Cuando algún analista solicite revisar el caso de uso este pasará a estado ``Revisión''. Cuando el caso de uso está en este estado, el revisor podrá solicitar correcciones. En caso de que no existan correcciones, el caso de uso estará a la espera de su liberación, no obstante si quién determina que el caso de uso es correcto es el Líder de Análisis, será liberado inmediatamente.
+ Cuando un caso de uso se encuentra en estado {\bf Revisión}, puede ser revisado por algún analista e indicar si es correcto o no. 
 
-
- \item {\bf Pendiente de corrección.} Un caso de uso pasará a este estado cuando:
+ \item {\bf Pendiente de corrección.} Un caso de uso se encuentra en este estado si:
  \begin{itemize}
-  \item Cuando un analista revisa el caso de uso y solicita correcciones.
-  \item Cuando el líder de análisis decide no liberar el caso de uso y solicita correcciones.
-  \item Cuando un analista solicita corregir un caso de uso.
-  \item Cuando un caso de uso está liberado y un analista solicita modicar su información.
+  \item Un analista revisa el caso de uso e indica que es incorrecto.
+  \item El líder de análisis decide no liberar el caso de uso.
+  \item El líder de análisis solicita correcciones al caso de uso.
  \end{itemize}
+ Cuando un caso de uso se encuentra en estado {\bf Pendiente de corrección}, puede ser corregido.
 
- \item {\bf Por liberar.} Cuando un analista revisa un caso de uso y no realiza observaciones, este pasará a estado ``Por liberar''. El líder de análisis podrá
- decidir liberar el caso de uso o solicitar correcciones.
+ \item {\bf Por liberar.} Un caso de uso se encuentra en este estado si:
+ \begin{itemize}
+  \item Un analista revisa el caso de uso e indica que es correcto.
+ \end{itemize}
+ Cuando un caso de uso se encuentra en estado {\bf Por liberar}, el líder de análisis puede decidir si es liberado o no.
 
- \item {\bf Liberado.} Cuando el líder de análisis decide liberar el caso de uso, este pasará a estado ``Liberado''. Cuando el caso de uso está en este estado, cualquier analista podrá solicitar modificarlo. En caso de que se modifique algún elemento asociado al caso de uso, este pasará a estar pendiente de corrección.
+ \item {\bf Liberado.} Un caso de uso se encuentra en este estado si:
+ \begin{itemize}
+  \item El líder de análisis revisa el caso de uso e indica que es correcto.
+  \item El líder de análisis decide liberar el caso de uso.
+ \end{itemize}
+ Cuando un caso de uso se encuentra en estado {\bf Liberado}, un analista puede configurar o preconfigurar el caso de uso. En este estado el líder de análisis puede solicitar correcciones al caso de uso.
+ 
+ \item {\bf Preconfigurado.} Un caso de uso se encuentra en este estado si:
+  \begin{itemize}
+   \item Un analista preconfigura el caso de uso.
+  \end{itemize}
+  
+  Cuando un caso de uso se encuentra en estado {\bf Preconfigurado} un analista puede preconfigurarlo nuevamente o configurarlo. En este estado el líder de análisis puede solicitar correcciones al caso de uso.
+
+ \item {\bf Configurado.} Un caso de uso se encuentra en este estado si:
+  \begin{itemize}
+   \item Un analista configura el caso de uso.
+  \end{itemize}
+  
+  Cuando un caso de uso se encuentra en estado {\bf Configurado} un analista puede configurarlo nuevamente, preconfigurarlo o solicitar generar sus casos de prueba. En este estado el líder de análisis puede solicitar correcciones al caso de uso.
+
 
 \end{itemize}
 
-\subsection{Diagrama de estados de un proyecto}
 
-En la figura \refIM{fig:estadosProyecto}{Diagrama de estados de un proyecto} se muestra el diagrama de estados que corresponde a un proyecto. Cada estado se
-detalla a continuación:
+\subsection{Estados de una trayectoria}
+En la figura \refIM{fig:estadosComportamientoCasoUso}{} se describe el funcionamiento de un conjunto limitado de trayectorias las cuales son comprendidas para la generación de casos de prueba.
 
-\IMfig[.9]{ModeloNegocios/images/estadosProyectos.png}{fig:estadosProyecto}{Diagrama de estados de un proyecto}
+\IMfig[1]{ModeloNegocios/images/estadosTrayectoria.png}{fig:estadosComportamientoCasoUso}{Estados de una trayectoria}
 
-\begin{itemize}
- \item {\bf En negociación.} Cuando un proyecto esté siendo negociado con el cliente se puede indicar 
- que el estado de este es ``En negociación''. 
- \RCitem{PC1}{\TODO{Falta indicar si se puede realizar operaciones sobre los elementos en este estado.}}{}
- \item {\bf Iniciado.} Cuando un proyecto haya iniciado antes de ser registrado en la herramienta, se puede indicar que el estado es ``Iniciado''.
- Se puede realizar cualquier operación sobre los elementos de los proyectos en este estado.
- \item {\bf Terminado.} Cuando un proyecto haya terminado, se puede indicar que el estado de este es ``Terminado'' y por lo tanto no se podrán realizar
- modificaciones o registros de elementos, solo consulta.
-\end{itemize}
-% ----------------------------------------------------------------	
-% ----------------------------------------------------------------	
-% ----------------------------------------------------------------	
-% ----------------------------------------------------------------	
-% ----------------------------------------------------------------	
-% ----------------------------------------------------------------	
-
-\subsection{Diagrama del comportamiento de un caso de uso}
-En la figura \refIM{fig:estadosComportamientoCasoUso}{} se describe el funcionamiento de un conjunto limitado de casos de uso, a los cuales se buscará convertir en casos de prueba.
-
-\IMfig[1]{ModeloNegocios/images/estadosComportamientoCasoUso.png}{fig:estadosComportamientoCasoUso}{Diagrama de estados de la trayectoria de un caso de uso}
-
-A continuación se describirá cada transición del diagrama:\\
+Debido a que el funcionamiento de este modelo se encuentra principalmente basado en las transiciones y no en los estados, el desarrollo del presente diagrama se realizará con base en las transiciones, a continuación se describe cada una de ellas:\\
 
 % ----------------------------------------------------------------	
 \subsubsection{Transición inicial} \IMfig[.3]{ModeloNegocios/images/trayectoriaEstados/0_1.png}{fig:trayectoriaEstados0_1}{Transición inicial} 
@@ -121,7 +120,7 @@ La aparición de un paso de este tipo en la trayectoria es necesaria ya que  per
 % ----------------------------------------------------------------	
 \subsubsection{Transición de 1 a 3 y de 2 a 3}
 
-  \IMfig[.4]{ModeloNegocios/images/trayectoriaEstados/1_3.png}{fig:trayectoriaEstados1_3}{Transición de 1 a 3}
+  \IMfig[.5]{ModeloNegocios/images/trayectoriaEstados/1_3.png}{fig:trayectoriaEstados1_3}{Transición de 1 a 3}
   
 En la figura \refIM{fig:trayectoriaEstados1_3}{} se muestra la transición que modela el escenario en el que el sistema no requiere condiciones para ejecutar el caso de uso, de modo que directamente muestra la pantalla en la que se realizará la operación.
   \IMfig[.3]{ModeloNegocios/images/trayectoriaEstados/2_3.png}{fig:trayectoriaEstados2_3}{Transición de 2 a 3}
@@ -161,7 +160,7 @@ En la figura \refIM{fig:trayectoriaEstados3_4}{} se muestra la transición que m
  En este caso particular, se realiza una validación y en caso de cumplirse se solicita nueva información que posteriormente será mostrada en la pantalla, de lo contrario simplemente omitirá algunos pasos.\\
  
  {\bf 6} \UCsist Muestra la pantalla \cdtIdRef{IU 8.1a}{Registrar regla de negocio: Comparación de atributos}''\\\\
- ``
+ 
  \begin{UCtrayectoriaA}{A}{La regla de negocio no requiere parámetros.}
 	\UCpaso[] Continúa con el paso \ref{cu8.1:descripcion} de la trayectoria principal.
  \end{UCtrayectoriaA}
@@ -182,13 +181,14 @@ La aparición de un paso de este tipo en la trayectoria es indispensable ya que 
 
 	Debido a que el paso anterior es realizado por el actor, es necesario crear una petición HTTP que simule este comportamiento, por lo que es indispensable contar con la URL que especifica la acción \cdtButton{Aceptar}.\\
 	  
-% ----------------------------------------------------------------	
+% ----------------------------------------------------------------
+\clearpage	
 \subsubsection{Transición de 5 a 6 y 5 a 12}
- \IMfig[.3]{ModeloNegocios/images/trayectoriaEstados/5_6.png}{fig:trayectoriaEstados5_6}{Transición de 5 a 6}
+ \IMfig[.4]{ModeloNegocios/images/trayectoriaEstados/5_6.png}{fig:trayectoriaEstados5_6}{Transición de 5 a 6}
  
  En la figura \refIM{fig:trayectoriaEstados5_6}{} se muestra la transición que modela el escenario en el que el sistema cumple con las reglas de negocio establecidas.
   
- \IMfig[.4]{ModeloNegocios/images/trayectoriaEstados/5_12.png}{fig:trayectoriaEstados5_12}{Transición de 5 a 12}
+ \IMfig[.2]{ModeloNegocios/images/trayectoriaEstados/5_12.png}{fig:trayectoriaEstados5_12}{Transición de 5 a 12}
  
  En la figura \refIM{fig:trayectoriaEstados5_12}{} se muestra la transición que modela el escenario en el que el sistema no cumple con las reglas de negocio establecidas.\\
   
@@ -196,12 +196,11 @@ La aparición de un paso de este tipo en la trayectoria es indispensable ya que 
  La aparición de pasos de este tipo en la trayectoria es opcional, ya que algunos casos de uso no cuentan con validación de reglas de negocio. A continuación se muestra una lista de reglas de negocio con las que el sistema podrá operar:
  
  \begin{itemize}
-	 \item Formato correcto. Especifican mendiante una expresión regular el formato de alguna cadena.
 	 \item Datos obligatorios. Especifica que los datos obligatorios no pueden omitirse.
 	 \item Longitud correcta. Especifica que los datos no deben exceder la longitud establecida.
 	 \item Tipo de dato correcto. Especifica que los datos deben ser del tipo de dato establecido.
 	 \item Verificación de catálogos. Especifica que debe existir información base para una determinada operación.
-	 \item Comparación de atributos. Especifica condiciones de mayor, igual o menor entre 2 atributos.\\
+	 \item Unicidad de atributos. Especifica qué atributo vuelve única a una entidad.\\
  \end{itemize}
  
 

@@ -1,24 +1,14 @@
 \subsection{IU 1 Gestionar proyectos de Administrador}
 \subsubsection{Objetivo}
 	
-	En esta pantalla el actor puede visualizar algunos atributos de los proyectos y las operaciones disponibles de acuerdo su estado.
+	En esta pantalla el actor puede visualizar los proyectos registrados en el sistema, así como las operaciones correspondientes para cada uno.
 
 \subsubsection{Diseño}
 
     En la figura ~\ref{IU 1} se muestra la pantalla ``Gestionar proyectos de Administrador'', por medio de la cual 
-    se podrán gestionar los proyectos a través de una tabla. El actor podrá podrá solicitar el registro, la modificación, la eliminación 
-    de un proyecto y la descarga del documento mediante los botones
-    \cdtButton{Registrar}, \btnEditar, \btnEliminar y  \btnDescargarDoc, respectivamente. \\
+    se podrán gestionar los proyectos a través de una tabla. El actor podrá solicitar el registro, la modificación y la eliminación 
+    de un proyecto a través de los botones: \cdtButton{Registrar}, \btnEditar y \btnEliminar respectivamente. \\
     
-    Los botones correspondientes a las opciones mencionadas para cada uno de los registros aparecerán en la tabla dependiendo del estado
-    del proyecto.
-    	
-    \begin{itemize}
-	    \item {\bf En negociación:} \btnDescargarDoc, \btnEditar, \btnEliminar.
-	    \item {\bf Iniciado:} \btnDescargarDoc, \btnEditar, \btnEliminar.
-            \item {\bf Terminado:} \btnDescargarDoc.
-    \end{itemize}
-
     \IUfig[.9]{cu1/images/iu.png}{IU 1}{Gestionar proyectos de Administrador}
 
 
@@ -27,8 +17,6 @@
 	\item \cdtButton{Registrar}: Permite al actor solicitar el registro de un proyecto, dirige a la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto}.
 	\item \btnEditar[Modificar]: Permite al actor solicitar la modificación de un proyecto, dirige a la pantalla \cdtIdRef{IU 1.2}{Modificar proyecto}.
 	\item \btnEliminar[Eliminar]: Permite al actor solicitar la eliminación de un proyecto, dirige a la pantalla \cdtIdRef{IU 1.3}{Eliminar proyecto}.
-	\item \btnEntrar[Entrar]: Permite al actor entrar un proyecto, dirige a la pantalla \cdtIdRef{IU 3}{Gestionar módulos}.
-	\item \btnDescargarDoc[Descargar documento]: Permite al actor descargar el documento de análisis del proyecto.
 \end{itemize}
 \subsubsection{Mensajes}
 	

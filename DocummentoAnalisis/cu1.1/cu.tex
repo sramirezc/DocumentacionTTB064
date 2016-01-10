@@ -1,6 +1,6 @@
 \begin{UseCase}{CU 1.1}{Registrar proyecto}
 	{
-		Este caso de uso permite registrar la información de un proyecto.
+		Este caso de uso permite al actor registrar la información de un proyecto en el sistema.
 	}
 	
 	\UCitem{Actor}{\cdtRef{actor:administrador}{Administrador}}
@@ -13,8 +13,9 @@
 			\UCli \cdtRef{Proyecto:Nombre}{Nombre}: \ioEscribir.
 			\UCli \cdtRef{Proyecto:FechaDeInicio}{Fecha de inicio}: \ioCalendario.
 			\UCli \cdtRef{Proyecto:FechaDeTermino}{Fecha de término}: \ioCalendario.
-			\UCli \cdtRef{Proyecto:FechaDeInicioProgramada}{Fecha de Inicio Programada}: \ioCalendario.
-			\UCli \cdtRef{Proyecto:FechaDeTerminoProgramada}{Fecha de Término Programada}: \ioCalendario.
+			\UCli \cdtRef{Proyecto:FechaDeInicioProgramada}{Fecha de inicio programada}: \ioCalendario.
+			\UCli \cdtRef{Proyecto:FechaDeTerminoProgramada}{Fecha de término programada}: \ioCalendario.
+			\UCli \cdtRef{Proyecto:Lider}{Líder del Proyecto}: \ioSeleccionar.
 			\UCli \cdtRef{Proyecto:Descripcion}{Descripción}: \ioEscribir.
 			\UCli \cdtRef{Proyecto:Contraparte}{Contraparte}: \ioEscribir.
 			\UCli \cdtRef{Proyecto:Presupuesto}{Presupuesto}: \ioEscribir.
@@ -34,13 +35,14 @@
 	\UCitem{Precondiciones}{
 		\begin{UClist}
 			\UCli Que exista al menos un colaborador registrado.
-			\UCli Que existan estados para iniciar un proyecto.
+			\UCli Que exista información referente a los estados del proyecto.
 		\end{UClist}
 	}
 	
 	\UCitem{Postcondiciones}{
 		\begin{UClist}
 			\UCli Se registrará un proyecto en el sistema.
+			\UCli Se podrán gestionar los Términos del glosario, Entidades, Reglas de negocio, Mensajes y Actores. 
 		\end{UClist}
 	}
 
@@ -50,7 +52,7 @@
 			\UCli \cdtIdRef{MSG5}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
 			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto} cuando se ha excedido la longitud de alguno de los campos.
 			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto} cuando se registre un proyecto con un nombre o clave que ya exista.
-			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos} cuando no exista información de los estados con los que puede iniciar un proyecto.
+			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos} cuando no exista información de los estados de un proyecto.
 			\UCli \cdtIdRef{MSG22}{Falta información}: Se muestra en la pantalla \cdtIdRef{IU 1}{Gestionar proyectos} cuando no existan colaboradores registrados.
 			\UCli \cdtIdRef{MSG35}{Orden de fechas}: Se muestra en la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto} cuando el actor ingrese fechas de término que no son posteriores a las fechas de inicio correspondientes.
 		\end{UClist}
@@ -63,7 +65,7 @@
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
     \UCpaso[\UCactor] Solicita registrar un proyecto oprimiendo el botón \cdtButton{Registrar} de la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}.
-    \UCpaso[\UCsist] Verifica que existan estados con los que puede iniciar un proyecto, con base en la regla de negocio \cdtIdRef{RN20}{Verificación de catálogos}. \refTray{A}
+    \UCpaso[\UCsist] Verifica que exista información referente a los estados de un proyecto, con base en la regla de negocio \cdtIdRef{RN20}{Verificación de catálogos}. \refTray{A}
     \UCpaso[\UCsist] Verifica que exista al menos un colaborador, con base en la regla de negocio \cdtIdRef{RN20}{Verificación de catálogos}. \refTray{B}
     \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 1.1}{Registrar proyecto} en la cual se realizará el registro del proyecto. 
     \UCpaso[\UCactor] Ingresa la información solicitada en la pantalla. \label{cu1.1:ingresaDatos}
@@ -82,7 +84,7 @@
 
  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
  \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No hay estados con los que puede iniciar un proyecto.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error} en la la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador}.
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error} en la la pantalla \cdtIdRef{IU 1}{Gestionar proyectos de Administrador} para indicar que no es posible realizar la operación debido a la falta de información necesaria para el sistema.
  \end{UCtrayectoriaA} 
  %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
  \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{No hay ningún colaborador registrado.}
