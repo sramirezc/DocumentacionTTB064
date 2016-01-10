@@ -1,0 +1,47 @@
+
+El \emph{proceso de software} tiene como etapas principales el análisis, diseño, implementación y pruebas, 
+en proyectos grandes regularmente cada una de estas etapas se lleva a cabo por diferentes equipos
+de trabajo. En la etapa de \emph{Análisis}, los analistas son los encargados definir qué hará el sistema
+mediante la descripción del ámbito del sistema, los requerimientos del sistema, el análisis del comportamiento que debe tener el sistema para satisfacer 
+las necesidades del usuario, así como documentar todo lo anterior, entre otras cosas. En la etapa de \emph{Diseño} el equipo de trabajo encargado
+(diseñadores) describe cómo debe implementarse el código, cómo se guardará la información, la distribución de las pantallas, entre otras cosas, e igual
+que los analistas deben documentar todas las actividades. El equipo de desarrollo es el encargado de codificar el sistema con base en el análisis 
+y diseño, y por último el equipo de pruebas valida y verifica el funcionamiento del sistema.\\
+
+Dentro del documento generado en la etapa de análisis se incluye la descripción de los casos de uso, las entidades, 
+las reglas de negocio, los mensajes, las interfaces, los actores, la trayectoria principal
+y las trayectorias alternativas del sistema. Toda la información recabada es utilizada a lo largo del proceso de software 
+por los equipos de diseño, desarrollo y pruebas, los integrantes de estos
+equipos deben interpretar la información del documento de análisis para diseñar, codificar el sistema y ejecutar las pruebas. 
+Cabe mencionar que en muchas ocasiones en el documento de análisis se incluyen secciones que van más relacionadas con la etapa de diseño.\\
+
+La documentación de análisis debe contener los elementos necesarios para describir el funcionamiento completo del sistema, considerando lo anterior
+la información de este documento puede ser utilizada para asistir a todos los colaboradores del proyecto en distintas etapas
+del proceso de software. Si suponemos una estructura del documento de análisis
+bien definida con cada elemento organizado y las relaciones entre estos completamente descritas, toda la información es materia prima para construir algunos
+artefactos de software tales como scripts para la base de datos, codificación automática de algunos componentes, generación automática de guiones de prueba, entre otros,
+este mapeo del documento de análisis a otro artefacto podría ser viable cuando la estructura del documento es bien conocida, 
+sin embargo hay que considerar que exiten diversas maneras y estilos para 
+documentar sistemas.\\
+
+Para lograr un mapeo automático del documento de análisis a otro artefacto de software es necesario conocer la redacción utilizada, ya que la manera de escribir 
+el documento de análisis depende del analista y de las reglas definidas por la empresa u organización. No existe un lenguaje definido para realizar esta tarea
+(regularmente se redacta en lenguaje natural) y esto nos impide acotar las posibles redacciones que se puedan utilizar.\\
+
+El lenguaje natural no puede ser completamente modelado, así que debe buscarse una alternativa para mitigar este hecho, la forma en que trabaja un lenguaje de programación 
+puede ser una primera aproximación; los lenguajes de programación son modelados en gramáticas y esto permite traducir cualquier código sin importar el estilo de cada pogramador. \\
+
+Obligar a los analistas a aprender un lenguaje para escribir el documento de análisis resulta complicado y reduce la flexibilidad de escritura. \\
+
+Para evitar que el analista aprenda un lenguaje de programación, se decidió construir una herramienta que permita la
+captura de la información de manera organizada mediante formularios con una
+estructura definida.\\
+
+Lo anterior permite obtener la información necesaria para construir el documento de análisis y 
+organizar todos los elementos de tal forma que puedan ser utilizados posteriormente como base de otros 
+artefactos de software.\\
+
+La etapa de pruebas representa aproximadamente un 40 \% del costo total del sistema debido a que se llevan a cabo, entre otras actividades, la ejecución de 
+caso de prueba para validar la funcionalidad del sistema y estas pruebas son en la mayoría de los casos repetitivas y no es posible contemplar todos los escenarios
+debido al número de validaciones y combinaciones entre ellas, por lo que se ubican como área de oportunidad
+para reducir los costos del proceso completo del software.\\

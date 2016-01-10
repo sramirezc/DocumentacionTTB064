@@ -1,0 +1,78 @@
+\subsection{Registrar Trayectoria}
+En esta subsección se describe el procedimiento a seguir para registrar una Trayectoria.
+
+\subsubsection{Datos de entrada}
+\begin{description}
+	\item Para registrar una Trayectoria debe contar con los siguientes datos: \hspace{10pt}
+	
+	\begin{description}
+	    \item \textbf{Información general de la Trayectoria}
+	    \begin{itemize}
+		  \item Clave: Es una palabra que sirve para identificar a la Trayectoria.
+		  \item Tipo: Permite indicar si la Trayectoria es principal o alternativa.
+		  \item Fin del Caso de uso: Sirve para indicar si el flujo del Caso de uso termina en esta Trayectoria.
+		  \item Condición: Es un texto que describe la condición que se debe cumplir para ir a esta Trayectoria.
+	    \end{itemize}
+	    \item \textbf{Información del Paso}
+	    \begin{itemize}
+		  \item Realiza: Permite indicar si el actor o el sistema lleva a cabo el Paso.
+		  \item Verbo: Permite indicar la acción que se realiza en el Paso.
+		  \item Redacción: Permite describir la función del Paso.
+	    \end{itemize}
+	 \end{description}
+\end{description}
+
+\subsubsection{Acciones}
+\begin{itemize}
+ \item Sección \textbf{Pasos de la Trayectoria}
+  \begin{enumerate}
+	\item \cdtButton{Registrar}: Mediante este botón puede solicitar el registro de un Paso.
+	\item \btnFlechaArriba[Subir Paso]: Mediente este botón mueve el paso hacia arriba.
+	\item \btnFlechaAbajo[Bajar Paso]: Mediente este botón mueve el paso hacia abajo.
+	\item \btnEditar[Modificar Precondición]: Mediante este botón puede solicitar la modificación de un Paso.
+	\item \btnEliminar[Eliminar Precondición]: Mediante este botón puede solicitar la eliminación de un Paso.
+  \end{enumerate}
+  \item Pantalla emergente \textbf{Registrar Paso}
+  \begin{enumerate}
+	\item \cdtButton{Aceptar}: Mediante este botón puede registrar el Paso.
+	\item \cdtButton{Cancelar}: Mediante este botón puede cancelar el registro del Paso.
+  \end{enumerate}
+  \item \cdtButton{Aceptar}: Mediante este botón puede registrar la Trayectoria.
+  \item \cdtButton{Cancelar}: Mediante este botón puede cancelar el registro de la Trayectoria.
+\end{itemize}
+	
+	
+\subsubsection{Procedimiento}
+\begin{enumerate}
+	\item Oprima el botón \cdtButton{Registrar} de la pantalla \cdtFigureRef{fig:gestionarTrayectorias}{Gestionar Trayectorias}, el sistema mostrará la pantalla \cdtFigureRef{fig:registrarTrayectoria}{Registrar Trayectoria}. 
+
+	%--------------------------------------------------------------------------------------------------------
+	      \IUfig[.9]{CU5.1.1.1/images/registrarTrayectoria}{fig:registrarTrayectoria}{Registrar Trayectoria}
+	%--------------------------------------------------------------------------------------------------------
+	
+	\item Ingrese la \textbf{Información general del Trayectoria}.
+	
+	\item Oprima el botón \cdtButton{Registrar} de la sección \textbf{Pasos de la Trayectoria} para registrar un Paso. El sistema mostrará la pantalla \cdtFigureRef{fig:registrarPaso}{Registrar Paso}. \label{cu5.1.1.1.1:paso:registrarPaso}
+
+	%--------------------------------------------------------------------------------------------------------
+	      \IUfig[.9]{CU5.1.1.1/images/registrarPaso}{fig:registrarPaso}{Registrar Paso}
+	%--------------------------------------------------------------------------------------------------------
+	
+	\item Ingrese la \textbf{Información del Paso} en la pantalla, en la caja de texto de \textbf{Redacción} puede referenciar cualquier elemento como se indica en la sección \ref{cap:token}.
+	
+	\item Oprima el botón \cdtButton{Aceptar} de la pantalla emergente. El sistema cerrará la pantalla emergente y agregará el Paso a la tabla de la sección \textbf{Pasos de la Trayectoria}. Para registrar más Pasos regrese al paso \ref{cu5.1.1.1.1:paso:registrarPaso}.
+	
+	\item Oprima el botón \btnEditar de la sección \textbf{Pasos de la Trayectoria} para modificar un Paso. El sistema mostrará la pantalla \cdtFigureRef{fig:modificarPaso}{Modificar Paso}. \label{cu5.1.1.1.1:paso:modificarPaso}
+
+	%--------------------------------------------------------------------------------------------------------
+	      \IUfig[.9]{CU5.1.1.2/images/modificarPaso}{fig:modificarPaso}{Modificar Paso}
+	%--------------------------------------------------------------------------------------------------------
+	
+	\item Modifique la \textbf{Información del Paso} en la pantalla, en la caja de texto de \textbf{Redacción} puede referenciar cualquier elemento como se indica en la sección \ref{cap:token}.
+	
+	\item Oprima el botón \cdtButton{Aceptar} de la pantalla emergente. El sistema cerrará la pantalla emergente y modificará el Paso en la tabla de la sección \textbf{Pasos de la Trayectoria}. Para modificar más Pasos regrese al paso \ref{cu5.1.1.1.1:paso:modificarPaso}.
+	
+	\item Oprima el botón \btnEliminar de la sección \textbf{Pasos de la Trayectoria} para eliminar un Paso.
+	
+	\item Oprima el botón \cdtButton{Aceptar}, el sistema mostrará la pantalla \cdtFigureRef{fig:gestionarTrayectorias}{Gestionar Trayectorias} con el mensaje de éxito.
+\end{enumerate}

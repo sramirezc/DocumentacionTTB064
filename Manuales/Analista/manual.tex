@@ -1,0 +1,82 @@
+ \documentclass[10pt]{book}
+\usepackage{cdt/cdtBusiness}
+\usepackage{prisma}
+\usepackage{enumerate}
+\usepackage{subfigure}
+\usepackage{cite}
+\usepackage{ragged2e}
+\pagenumbering{roman}
+
+
+
+\begin{document}
+\bibliographystyle{IEEEtran}
+%=========================================================
+% Portada
+%\ThisLRCornerWallPaper{1}{cdt/theme/agua.png}
+\thispagestyle{empty}
+
+\cfinput{portada}
+% \makeFirmas
+
+%=========================================================
+% Indices del documento
+\frontmatter
+% \LRCornerWallPaper{1}{cdt/theme/pleca.png}
+\tableofcontents
+\listoffigures
+%\listoftables
+\mainmatter
+
+% Para esconder la información del documentador se descomenta el \hideControlVersion
+ \hideControlVersion
+
+%=========================================================
+\chapter{Introducción}\label{chp:introduccion}
+\hypertarget{chp:introduccion}{}
+\cfinput{Introduccion/introduccion}
+%=========================================================
+\chapter{Glosario de términos}\label{cap:glosario}
+%%\cfinput{glosario} 
+%=========================================================
+\chapter{Acceso al sistema}\label{cap:iniciarSesion}
+\cfinput{CU13/cu.tex}
+%=========================================================
+\chapter{Proyectos}\label{cap:gestionarProyectos}
+\cfinput{CU4/cu.tex}
+%=========================================================
+\chapter{Módulos}\label{cap:gestionarModulos}
+\cfinput{CU3/cu.tex}
+%=========================================================
+\chapter{Casos de uso}\label{cap:gestionarCasosUso}
+\cfinput{CU5/cu.tex}
+%=========================================================
+\chapter{Pantallas}\label{cap:gestionarPantallas}
+%\cfinput{CU6/cu.tex}
+%=========================================================
+\chapter{Actores}\label{cap:gestionarActores}
+%\cfinput{CU7/cu.tex}
+%=========================================================
+\chapter{Reglas de negocio}\label{cap:gestionarReglasNegocio}
+%\cfinput{CU8/cu.tex}
+%=========================================================
+\chapter{Mensajes}\label{cap:gestionarMensajes}
+%\cfinput{CU9/cu.tex}
+%=========================================================
+\chapter{Términos del glosario}\label{cap:gestionarTerminos}
+%\cfinput{CU10/cu.tex}
+%=========================================================
+\chapter{Entidades}\label{cap:gestionarEntidades}
+%\cfinput{CU11/cu.tex}
+%=========================================================
+\chapter{Token}\label{cap:token}
+\cfinput{token/token.tex}
+
+
+
+\end{document}
+
+
+
+
+

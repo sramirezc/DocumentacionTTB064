@@ -1,0 +1,41 @@
+\subsection{Revisar Caso de uso}
+
+En esta subsección se describe el procedimiento a seguir para revisar el contenido de un Caso de uso, dejarlo en estado ``Por liberar'' o liberarlo directamente en caso de que sea líder del Proyecto. 
+Si alguna de las secciones es incorrecta puede anotar sus observaciones y el Caso de uso cambiará a estado ``Pendiente de corrección'' para que algún analista lo corrija.
+
+
+\subsubsection{Datos de entrada}
+\begin{description}
+	\item Para revisar un Caso de uso debe contar con los siguientes datos: \hspace{10pt}
+	\begin{description}
+	    \item Observaciones del resumen del Caso de uso: Es una descripción de los errores encontrados en la sección de información general del Caso de uso.
+	    \item Observaciones de las Trayectorias del Caso de uso: Es una descripción de los errores encontrados en la sección de Trayectorias del Caso de uso.
+	    \item Observaciones de los Puntos de extensión del Caso de uso: Es una descripción de los errores encontrados en la sección de Puntos de extensión del Caso de uso.
+	 \end{description}
+\end{description}
+
+\subsubsection{Acciones}
+\begin{itemize}
+  \item \cdtButton{Aceptar}: Mediante este botón puede revisar el Caso de uso.
+  \item \cdtButton{Cancelar}: Mediante este botón puede cancelar la revisión del Caso de uso.
+\end{itemize}
+
+
+\subsubsection{Procedimiento}
+\begin{enumerate}
+	\item Oprima el botón \btnRevisar de la pantalla \cdtFigureRef{fig:gestionarCasosUso}{Gestionar Casos de uso}, el sistema mostrará la pantalla \cdtFigureRef{fig:revisarCasoUso}{Revisar Caso de uso}. 
+
+	%--------------------------------------------------------------------------------------------------------
+	      \IUfig[.7]{CU5.5/images/revisarCasoUso}{fig:revisarCasoUso}{Revisar Caso de uso}
+	%--------------------------------------------------------------------------------------------------------
+	 
+	\item Seleccione \textbf{Sí} para indicar que la sección de información general del Caso de uso es correcta, seleccione \textbf{No} si considera que la información no es correcta y anote las observaciones correspondientes.
+	
+	\item Seleccione \textbf{Sí} para indicar que la sección de Trayectorias del Caso de uso es correcta, seleccione \textbf{No} si considera que la información no es correcta y anote las observaciones correspondientes.
+	
+	\item Seleccione \textbf{Sí} para indicar que la sección de Puntos de extensión del Caso de uso es correcta, seleccione \textbf{No} si considera que la información no es correcta y anote las observaciones correspondientes.
+	
+	\item Oprima el botón \cdtButton{Aceptar}, el sistema mostrará la pantalla \cdtFigureRef{fig:gestionarCasosUso}{Gestionar Casos de uso} con el mensaje de éxito. Si usted es el líder del Proyecto, el Caso de uso se liberará 
+	automáticamente en caso de no tener observaciones, en caso de que usted no sea el líder del Proyecto, entonces el Caso de uso pasará a estado ``Por liberar''.
+\end{enumerate}
+

@@ -1,0 +1,68 @@
+\subsection{Modificar Caso de uso}
+En esta subsección se describe el procedimiento a seguir para modificar la información general de un Caso de uso.
+
+\subsubsection{Datos de entrada}
+\begin{description}
+	\item Para modificar un Caso de uso debe contar con los siguientes datos: \hspace{10pt}
+	\begin{description}
+	    \item \textbf{Información general del Caso de uso}
+	    \begin{itemize}
+		  \item Número: Es una palabra que sirve para identificar al Caso de uso.
+		  \item Nombre: Es el nombre del Caso de uso.
+		  \item Resumen: Es un texto que describe la información general del Caso de uso.
+	    \end{itemize}
+	    \item \textbf{Descripción del Caso de uso}
+	    \begin{itemize}
+		  \item Actores: Son los roles que realizan la operación que describe el Caso de uso.
+		  \item Entradas: Son los datos que el actor deberá ingresar.
+		  \item Salidas: Son los datos que muestra el sistema al concluir una operación.
+		  \item Reglas de negocio: Son las reglas y restricciones de operación del Caso de uso.
+	    \end{itemize}
+	 \end{description}
+\end{description}
+
+\subsubsection{Acciones}
+\begin{itemize}
+ \item Sección \textbf{Precondiciones}
+  \begin{enumerate}
+	\item \cdtButton{Registrar}: Mediante este botón puede solicitar el registro de una Precondición.
+	\item \btnEditar[Modificar Precondición]: Mediante este botón puede solicitar la modificación de una Precondición.
+	\item \btnEliminar[Eliminar Precondición]: Mediante este botón puede solicitar la eliminación de una Precondición.
+  \end{enumerate}
+ \item Sección \textbf{Postcondiciones}
+  \begin{enumerate}
+	\item \cdtButton{Registrar}: Mediante este botón puede solicitar el registro de una Postcondición.
+	\item \btnEditar[Modificar Precondición]: Mediante este botón puede solicitar la modificación de una Postcondición.
+	\item \btnEliminar[Eliminar Precondición]: Mediante este botón puede solicitar la eliminación de una Postcondición.
+  \end{enumerate}
+  \item \cdtButton{Aceptar}: Mediante este botón puede modificar el Caso de uso.
+  \item \cdtButton{Cancelar}: Mediante este botón puede cancelar la modificación del Caso de uso.
+\end{itemize}
+
+
+	
+	
+\subsubsection{Procedimiento}
+\begin{enumerate}
+	\item Oprima el botón \btnEditar de la pantalla \cdtFigureRef{fig:gestionarCasosUso}{Gestionar Casos de uso}, el sistema mostrará la pantalla \cdtFigureRef{fig:modificarCasoUso}{Modificar Caso de uso}. 
+
+	%--------------------------------------------------------------------------------------------------------
+	      \IUfig[.9]{CU5.2/images/modificarCasoUso}{fig:modificarCasoUso}{Modificar Caso de uso}
+	%--------------------------------------------------------------------------------------------------------
+	
+	\item Ingrese la \textbf{Información general del Caso de uso}.
+	
+	\item Modifique los actores, en esta caja de texto puede referenciar Actores como se indica en la sección \ref{cap:token}.
+	
+	\item Modifique las entradas, en esta caja de texto puede referenciar Atributos y Términos del glosario como se indica en la sección \ref{cap:token}.
+	
+	\item Modifique las salidas, en esta caja de texto puede referenciar Atributos, Términos del glosario y Mensajes como se indica en la sección \ref{cap:token}.
+	
+	\item Modifique las reglas de negocio, en esta caja de texto puede referenciar Reglas de negocio como se indica en la sección \ref{cap:token}.
+	
+	\item Modifique las precondiciones, en las precondiciones puede referenciar cualquier elemento como se indica en la sección \ref{cap:token}.
+	
+	\item Modifique las postcondiciones, en las postcondiciones puede referencias cualquier elemento como se indica en la sección \ref{cap:token}.
+	
+	\item Oprima el botón \cdtButton{Aceptar}, el sistema mostrará la pantalla \cdtFigureRef{fig:gestionarCasosUso}{Gestionar Casos de uso} con el mensaje de éxito.
+\end{enumerate}
