@@ -1,0 +1,76 @@
+\subsection{Modificar Entidad}
+En esta subsección se describe el procedimiento a seguir para modificar una Entidad.
+
+\subsubsection{Datos de entrada}
+\begin{description}
+	\item Para modificar una Entidad debe contar con los siguientes datos: \hspace{10pt}
+	\begin{description}
+	    \item \textbf{Información general de la Entidad}
+	    \begin{itemize}
+		  \item Nombre: Es el nombre de la Entidad.
+		  \item Descripción: Es un texto que detalla la información general de la Entidad.
+	    \end{itemize}
+	    \item \textbf{Información general del Atributo}
+	    \begin{itemize}
+		  \item Nombre: Es el nombre de la Atributo.
+		  \item Descripción: Es un texto que detalla la información general de la Atributo.
+		  \item Tipo de dato: Sive para definir el tipo de dato del Atributo.
+		  \item Obligatorio: Permite indicar si el Atributo es un dato obligatorio u opcional.
+		  \item {\bf Tipo de dato ``Archivo''}
+		  \begin{itemize}
+		   \item Formato de archivo: Es el formato del archivo, se debe indicar la extensión o las extensiones en caso de ser más de un formato.
+		   \item Tamaño máximo de archivo: Es un número que indica el tamaño máximo permitido, la unidad se selecciona el la lista desplegable que se encuentra del lado derecho del campo.
+		  \end{itemize}
+		  \item {\bf Tipo de dato ``Cadena'', ``Entero'' o ``Flotante''}
+		  \begin{itemize}
+		   \item Longitud máxima: Es el número máximo de caracteres permitidos en el campo.
+		  \end{itemize}
+		  \item {\bf Tipo de dato ``Otro''}
+		  \begin{itemize}
+		   \item Especifique: Es la especificación del tipo de dato en caso de no encontrar el tipo de dato en la lista.
+		  \end{itemize}
+		  
+	    \end{itemize}
+	 \end{description}
+\end{description}
+
+\subsubsection{Acciones}
+\begin{itemize}
+  \item Sección \textbf{Atributos de la Entidad}
+  \begin{enumerate}
+	\item \cdtButton{Registrar}: Mediante este botón puede solicitar el registro de un Atributo.
+	\item \btnEditar[Modificar Atributo]: Mediante este botón puede solicitar la modificación de un Atributo.
+	\item \btnEliminar[Eliminar Atributo]: Mediante este botón puede solicitar la eliminación de un Atributo.
+  \end{enumerate}
+  \item Pantalla emergente \textbf{Atributo}
+  \begin{enumerate}
+	\item \cdtButton{Aceptar}: Mediante este botón puede registrar el Atributo.
+	\item \cdtButton{Cancelar}: Mediante este botón puede cancelar el registro del Atributo.
+  \end{enumerate}
+ \item \cdtButton{Aceptar}: Mediante este botón puede modificar la Entidad.
+ \item \cdtButton{Cancelar}: Mediante este botón puede cancelar la modificación de la Entidad.
+\end{itemize}
+	
+	
+\subsubsection{Procedimiento}
+\begin{enumerate}
+	\item Oprima el botón \btnEditar de la Entidad que desea modificar en la pantalla \cdtFigureRef{fig:gestionarEntidades}{Gestionar Entidades}, el sistema mostrará la pantalla \cdtFigureRef{fig:modificarEntidad}{Modificar Entidad}. 
+
+	%--------------------------------------------------------------------------------------------------------
+	      \IUfig[.9]{CU11.2/images/modificarEntidad}{fig:modificarEntidad}{Modificar Entidad}
+	%--------------------------------------------------------------------------------------------------------
+	
+	\item Modifique la \textbf{Información general de la Entidad}.
+	
+	\item Oprima el botón \cdtButton{Registrar} de la sección \textbf{Atributos de la Entidad}, el sistema mostrará la pantalla emergente \cdtFigureRef{fig:registrarAtributo}{Registrar Atributo}. \label{cu11.2:paso:registrarAtributo} 
+
+	\item Ingrese la información de la pantalla emergente \textbf{Atributo} y la información referente al tipo de dato seleccionado.
+	
+	\item Oprima el botón \cdtButton{Aceptar}, el sistema mostrará la pantalla \cdtFigureRef{fig:modificarEntidad}{Modificar Entidad} con el Atributo en la sección \textbf{Atributos de la Entidad}.
+	
+	\item Registre todos los Atributos repitiendo el procedimiento que se indica a partir del paso \ref{cu11.2:paso:registrarAtributo}.
+	
+	\item Oprima el botón \cdtButton{Aceptar}, el sistema mostrará la pantalla \cdtFigureRef{fig:gestionarEntidades}{Gestionar Entidades} con el mensaje de éxito.
+\end{enumerate}
+
+

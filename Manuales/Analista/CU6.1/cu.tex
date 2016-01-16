@@ -1,0 +1,75 @@
+\subsection{Registrar Pantalla}
+En esta subsección se describe el procedimiento a seguir para registrar una Pantalla.
+
+\subsubsection{Datos de entrada}
+\begin{description}
+	\item Para registrar una Pantalla debe contar con los siguientes datos: \hspace{10pt}
+	\begin{description}
+	    \item \textbf{Información general de la Pantalla}
+	    \begin{itemize}
+		  \item Número: Es un número que sirve para identificar a la Pantalla.
+		  \item Nombre: Es el nombre de la Pantalla.
+		  \item Descripción: Es un texto que detalla la información general de la Pantalla.
+		  \item Imagen: Es un archivo en formato PNG de la Pantalla.
+	    \end{itemize}
+	    \item \textbf{Información general de la Acción}
+	    \begin{itemize}
+		  \item Nombre: Es el nombre de la Acción.
+		  \item Descripción: Es un texto que detalla la información general de la Acción.
+		  \item Imagen: Es un archivo en formato PNG de la Acción.
+		  \item Tipo de Acción: Sive para definir si la Acción es un botón, liga, opción del menú u otro tipo.
+		  \item Pantalla destino: Es la Pantalla a la que dirige la Acción.
+	    \end{itemize}
+	 \end{description}
+\end{description}
+
+\subsubsection{Acciones}
+\begin{itemize}
+ \item Sección \textbf{Información general de la Pantalla}
+  \begin{enumerate}
+	\item \btnEliminar[Eliminar]: Mediante este botón puede eliminar la imagen seleccionada de la Pantalla.
+  \end{enumerate}
+  \item Sección \textbf{Acciones de la Pantalla}
+  \begin{enumerate}
+	\item \cdtButton{Registrar}: Mediante este botón puede solicitar el registro de una Acción.
+	\item \btnEditar[Modificar Acción]: Mediante este botón puede solicitar la modificación de una Acción.
+	\item \btnEliminar[Eliminar Acción]: Mediante este botón puede solicitar la eliminación de una Acción.
+  \end{enumerate}
+  \item Pantalla emergente \textbf{Acción}
+  \begin{enumerate}
+	\item \btnEliminar[Eliminar]: Mediante este botón puede eliminar la imagen seleccionada de la Acción.
+	\item \cdtButton{Aceptar}: Mediante este botón puede registrar la Acción.
+	\item \cdtButton{Cancelar}: Mediante este botón puede cancelar el registro de la Acción.
+  \end{enumerate}
+ \item \cdtButton{Aceptar}: Mediante este botón puede registrar la Pantalla.
+ \item \cdtButton{Cancelar}: Mediante este botón puede cancelar el registro de la Pantalla.
+\end{itemize}
+	
+	
+\subsubsection{Procedimiento}
+\begin{enumerate}
+	\item Oprima el botón \cdtButton{Registrar} de la pantalla \cdtFigureRef{fig:gestionarPantallas}{Gestionar Pantallas}, el sistema mostrará la pantalla \cdtFigureRef{fig:registrarPantalla}{Registrar Pantalla}. 
+
+	%--------------------------------------------------------------------------------------------------------
+	      \IUfig[.9]{CU6.1/images/registrarPantalla}{fig:registrarPantalla}{Registrar Pantalla}
+	%--------------------------------------------------------------------------------------------------------
+	
+	\item Ingrese la \textbf{Información general de la Pantalla}.
+	
+	\item Oprima el botón \cdtButton{Registrar} de la sección \textbf{Acciones de la Pantalla}, el sistema mostrará la pantalla emergente \cdtFigureRef{fig:registrarAccion}{Registrar Acción}. \label{cu6.1:paso:registrarAccion} 
+
+	%--------------------------------------------------------------------------------------------------------
+	      \IUfig[.9]{CU6.1/images/registrarAccion}{fig:registrarAccion}{Registrar Acción}
+	%--------------------------------------------------------------------------------------------------------
+	
+	
+	\item Ingrese la información de la pantalla emergente \textbf{Acción}.
+	
+	\item Oprima el botón \cdtButton{Aceptar}, el sistema mostrará la pantalla \cdtFigureRef{fig:registrarPantalla}{Registrar Pantalla} con la Acción en la sección \textbf{Acciones de la Pantalla}.
+	
+	\item Registre todas las Acciones repitiendo el procedimiento que se indica a partir del paso \ref{cu6.1:paso:registrarAccion}.
+	
+	\item Oprima el botón \cdtButton{Aceptar}, el sistema mostrará la pantalla \cdtFigureRef{fig:gestionarPantallas}{Gestionar Pantallas} con el mensaje de éxito.
+\end{enumerate}
+
+
