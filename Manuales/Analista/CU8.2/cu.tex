@@ -1,0 +1,58 @@
+\subsection{Modificar Regla de negocio}
+En esta subsección se describe el procedimiento a seguir para modificar una Regla de negocio.
+
+\subsubsection{Datos de entrada}
+\begin{description}
+	\item Para modificar una Regla de negocio debe contar con los siguientes datos: \hspace{10pt}
+	\begin{description}
+	    \item \textbf{Información general de la Regla de negocio}
+	    \begin{itemize}
+		  \item Número: Es un número que sirve para identificar a la Regla de negocio.
+		  \item Nombre: Es el nombre de la Regla de negocio.
+		  \item Descripción: Es un texto que detalla la información general de la Regla de negocio.
+		  \item \textbf{Regla de negocio de tipo ``Comparación de atributos''}
+		  \begin{itemize}
+			\item Entidad 1: Permite seleccionar la Entidad que contiene el primer Atributo a comparar.
+			\item Atributo 1: Permite seleccionar el primer Atributo a comparar.
+			\item Tipo de comparación: Permite seleccionar el signo para la comparación.
+			\item Entidad 2: Permite seleccionar la Entidad que contiene el segundo Atributo a comparar.
+			\item Atributo 2: Permite seleccionar el segundo Atributo a comparar.
+		  \end{itemize}
+		  \item \textbf{Regla de negocio de tipo ``Formato correcto''}
+		  \begin{itemize}
+			\item Entidad: Permite seleccionar la Entidad que contiene el Atributo con el formato específico.
+			\item Atributo: Permite seleccionar el primer Atributo con formato específico.
+			\item Expresión regular: Es la expresión regular que modela el formato que debe contener el Atributo seleccionado.
+		  \end{itemize}
+		  \item \textbf{Regla de negocio de tipo ``Unicidad de parámetros''}
+		  \begin{itemize}
+			\item Entidad: Permite seleccionar la Entidad que contiene el Atributo que debe ser único en el sistema.
+			\item Atributo: Permite seleccionar el Atributo que debe ser único en el sistema.
+		  \end{itemize}
+	    \end{itemize}
+	 \end{description}
+\end{description}
+
+\subsubsection{Acciones}
+\begin{itemize}
+ \item \cdtButton{Aceptar}: Mediante este botón puede modificar la Regla de negocio.
+ \item \cdtButton{Cancelar}: Mediante este botón puede cancelar la modificación de la Regla de negocio.
+\end{itemize}
+	
+	
+\subsubsection{Procedimiento}
+\begin{enumerate}
+	\item Oprima el botón \btnEditar de la Regla de negocio que desea modificar en la pantalla \cdtFigureRef{fig:gestionarReglasNegocio}{Gestionar Reglas de negocios}, el sistema mostrará la pantalla \cdtFigureRef{fig:registrarReglaNegocio}{Modificar Regla de negocio}. 
+
+	%--------------------------------------------------------------------------------------------------------
+	      \IUfig[.9]{CU8.2/images/modificarReglaNegocio}{fig:modificarReglaNegocio}{Modificar Regla de negocio}
+	%--------------------------------------------------------------------------------------------------------
+	
+	\item Modifique la \textbf{Información general de la Regla de negocio}.
+	
+	\item Modifique la información referente al tipo de Regla de negocio seleccionado.
+	
+	\item Oprima el botón \cdtButton{Aceptar}, el sistema mostrará la pantalla \cdtFigureRef{fig:gestionarReglasNegocio}{Gestionar Reglas de negocio} con el mensaje de éxito.
+\end{enumerate}
+
+

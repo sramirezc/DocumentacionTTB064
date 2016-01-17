@@ -1,0 +1,67 @@
+\subsection{Configurar Casos de uso previos}
+En esta subsección se describe el procedimiento a seguir para configurar los Casos de uso previos. La tabla de Casos de uso previos mostrará los casos de uso que deben ejecutarse para ejecutar el Caso de uso a probar, esta tabla aparecerá sin 
+registros si el caso de uso es primario.
+
+\subsubsection{Datos de entrada}
+\begin{description}
+	\item Para configurar los Casos de uso previos debe contar con los siguientes datos: \hspace{10pt}
+	
+	\begin{description}
+	    \item \textbf{Configuración de las Entradas}
+	    \begin{itemize}
+		  \item Name: Es el valor del atributo \emph{Name} del input de la entrada indicada.
+		  \item Value: Es el valor del atributo \emph{Value} del input de la entrada indicada.
+	    \end{itemize}
+	    \item \textbf{Configuración de las URL}
+	    \begin{itemize}
+		  \item URL: Es la URL a la que dirige la acción indicada.
+		  \item Método: Permite indicar si la URL es solicitada con el método GET o POST.
+	    \end{itemize}
+	 \end{description}
+\end{description}
+
+\subsubsection{Acciones}
+\begin{itemize}
+ \item Pantalla \textbf{Configurar Caso de uso previo}
+  \begin{enumerate}
+	\item \cdtButton{Guardar}: Mediante este botón puede guardar la información ingresada en la pantalla.
+	\item \cdtButton{Finalizar}: Mediante este botón puede configurar la información del Caso de uso previo.
+	\item \cdtButton{Cancelar}: Mediante este botón puede cancelar la configuración del Caso de uso previo.
+  \end{enumerate}
+  \item Pantalla \textbf{Configurar Casos de uso previos}
+  \begin{enumerate}
+	\item \cdtButton{Anterior}: Mediante este botón puede regresar a la configuración general de la Prueba.
+	\item \cdtButton{Siguiente}: Mediante este botón puede ir a la configuración del Caso de uso a probar.
+	\item \cdtButton{Cancelar}: Mediante este botón puede cancelar la configuración de la Prueba y regresar a la gestión de Casos de uso.
+  \end{enumerate}
+\end{itemize}
+	
+	
+\subsubsection{Procedimiento}
+\begin{enumerate}
+	\item Oprima el botón \cdtButton{Siguiente} de la pantalla \cdtFigureRef{fig:configuracionGeneral}{Configuración general}, el sistema mostrará la pantalla \cdtFigureRef{fig:configurarCasosUsoPrevios}{Configurar Casos de uso previos}. 
+
+	%--------------------------------------------------------------------------------------------------------
+	      \IUfig[.9]{CU5.7.2/images/configurarCasosUsoPrevios}{fig:configurarCasosUsoPrevios}{Configurar Casos de uso previos}
+	%--------------------------------------------------------------------------------------------------------
+	
+	\item Oprima el botón \btnConfigurarPrueba del Caso de uso que desea configurar en la pantalla \cdtFigureRef{fig:configurarCasosUsoPrevios}{Configurar Casos de uso previos}, 
+	      el sistema mostrará una pantalla parecida a la de la figura \cdtFigureRef{fig:configurarCasoUsoPrevio}{Configurar Caso de uso previo}. La información mostrada depende de las entradas y las acciones registradas en el Caso de uso. \label{cu5.7.2:paso:configurarCUPrevio}
+
+	%--------------------------------------------------------------------------------------------------------
+	      \IUfig[.9]{CU5.7.2/images/configurarCasoUsoPrevio}{fig:configurarCasoUsoPrevio}{Configurar Caso de uso previo}
+	%--------------------------------------------------------------------------------------------------------
+	
+	\item Ingrese la información solicitada en la pantalla.
+	
+	\item Oprima el botón \cdtButton{Finalizar} de la pantalla \cdtFigureRef{fig:configurarCasoUsoPrevio}{Configurar Caso de uso previo}, el sistema mostrará la pantalla 
+	      \cdtFigureRef{fig:configurarCasosUsoPrevios}{Configurar Casos de uso previos} con el mensaje de éxito.
+	      
+	\item Configure todos los Casos de uso previos repitiendo el procedimiento que se indica a partir del paso \ref{cu5.7.2:paso:configurarCUPrevio}.
+	
+	\item Oprima el botón \cdtButton{Siguiente} de la pantalla \cdtFigureRef{fig:configurarCasosUsoPrevios}{Configurar Casos de uso previos}, el sistema mostrará 
+	      la pantalla \cdtFigureRef{fig:configurarCasosUso}{Configurar Casos de uso} con el mensaje de éxito.
+\end{enumerate}
+
+
+

@@ -1,0 +1,58 @@
+\subsection{Configurar Caso de uso}
+En esta subsección se describe el procedimiento a seguir para configurar el Caso de uso a probar.
+
+\subsubsection{Datos de entrada}
+\begin{description}
+	\item Para configurar el Caso de uso debe contar con los siguientes datos: \hspace{10pt}
+	\begin{description}
+	    \item \textbf{Configuración de las Entradas}
+	    \begin{itemize}
+		  \item Name: Es el valor del atributo \emph{Name} del input de la entrada indicada.
+		  \item Value: Es el valor del atributo \emph{Value} del input de la entrada indicada.
+	    \end{itemize}
+	    \item \textbf{Configuración de las URL}
+	    \begin{itemize}
+		  \item URL: Es la URL a la que dirige la acción indicada.
+		  \item Método: Permite indicar si la URL es solicitada con el método GET o POST.
+	    \end{itemize}
+	    \item \textbf{Configuración de las Reglas de negocio}
+	    \begin{itemize}
+		  \item Query: Es la query para realizar una consulta a la base de datos. Las Reglas de negocio de unicidad requieren una query que consulte las Entidades cuyo Atributo identificador sea igual al proporcionado en las Entradas. 
+			En el caso de las Reglas de negocio de verificación de catálogos, deberá ingresar una query que consulte todos los registros del catálogo.
+	    \end{itemize}
+	    \item \textbf{Configuración de los Parámetros}
+	    \begin{itemize}
+		  \item Valor del Parámetro: Es el valor que toma el Parámetro del Mensaje en el momento de ejecución del Caso de uso. Si deja este valor vacío, el sistema guardará como valor el nombre del Parámetro.
+	    \end{itemize}
+	    \item \textbf{Configuración de las Pantallas}
+	    \begin{itemize}
+		  \item Patrón: Es una cadena que contiene la Pantalla indicada.
+	    \end{itemize}
+	 \end{description}
+\end{description}
+
+\subsubsection{Acciones}
+\begin{itemize}
+    \item \cdtButton{Anterior}: Mediante este botón puede regresar a la configuración de los Casos de uso previos.
+    \item \cdtButton{Guardar}: Mediante este botón puede guardar la información ingresada en la pantalla.
+    \item \cdtButton{Finalizar}: Mediante este botón puede configurar la información del Caso de uso.
+    \item \cdtButton{Cancelar}: Mediante este botón puede cancelar la configuración del Caso de uso.
+\end{itemize}
+	
+	
+\subsubsection{Procedimiento}
+\begin{enumerate}
+	\item Oprima el botón \cdtButton{Siguiente} de la pantalla \cdtFigureRef{fig:configurarCasosUsoPrevios}{Configurar Casos de uso previos}, el sistema mostrará la pantalla \cdtFigureRef{fig:configurarCasosUso}{Configurar Caso de uso}. 
+
+	%--------------------------------------------------------------------------------------------------------
+	      \IUfig[.45]{CU5.7.3/images/configurarCasoUso}{fig:configurarCasosUso}{Configurar Caso de uso}
+	%--------------------------------------------------------------------------------------------------------
+	
+	\item Ingrese la información solicitada en la pantalla.
+	
+	\item Oprima el botón \cdtButton{Finalizar} de la pantalla \cdtFigureRef{fig:configurarCasosUso}{Configurar Caso de uso}, el sistema mostrará la pantalla 
+	      \cdtFigureRef{fig:gestionarCasosUso}{Gestionar Casos de uso} con el mensaje de éxito.
+\end{enumerate}
+
+
+

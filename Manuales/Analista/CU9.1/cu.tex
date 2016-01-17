@@ -1,0 +1,45 @@
+\subsection{Registrar Mensaje}
+En esta subsección se describe el procedimiento a seguir para registrar un Mensaje.
+
+\subsubsection{Datos de entrada}
+\begin{description}
+	\item Para registrar un Mensaje debe contar con los siguientes datos: \hspace{10pt}
+	\begin{description}
+	    \item \textbf{Información general del Mensaje}
+	    \begin{itemize}
+		  \item Número: Es el número que identifica al Mensaje.
+		  \item Nombre: Es el nombre del Mensaje.
+		  \item Descripción: Es un texto que detalla la información general del Mensaje.
+		  \item Redacción: Es el texto del mensaje que aparecerá en pantalla y puede contener Parámetros.
+	    \end{itemize}
+	    \item \textbf{Parámetros del Mensaje}    
+	    \begin{itemize}
+		  \item Descripciones de los Parámetros: Son textos que detallan cada uno de los Parámetros utilizados en la redacción.
+	    \end{itemize}
+
+	 \end{description}
+\end{description}
+
+\subsubsection{Acciones}
+\begin{itemize}
+ \item \cdtButton{Aceptar}: Mediante este botón puede registrar el Mensaje.
+ \item \cdtButton{Cancelar}: Mediante este botón puede cancelar el registro del Mensaje.
+\end{itemize}
+	
+	
+\subsubsection{Procedimiento}
+\begin{enumerate}
+	\item Oprima el botón \cdtButton{Registrar} de la pantalla \cdtFigureRef{fig:gestionarMensajes}{Gestionar Mensajes}, el sistema mostrará la pantalla \cdtFigureRef{fig:registrarMensaje}{Registrar Mensaje}. 
+
+	%--------------------------------------------------------------------------------------------------------
+	      \IUfig[.9]{CU9.1/images/registrarMensaje}{fig:registrarMensaje}{Registrar Mensaje}
+	%--------------------------------------------------------------------------------------------------------
+	
+	\item Ingrese la \textbf{Información general del Mensaje}, en la caja de texto de {\bf Redacción} puede referenciar Parámetros como se indica en la sección \ref{cap:token}.
+	
+	\item Ingrese o modifique la descripción de cada uno de los Parámetros en la sección \textbf{Parámetros del Mensaje}.
+	
+	\item Oprima el botón \cdtButton{Aceptar}, el sistema mostrará la pantalla \cdtFigureRef{fig:gestionarMensajes}{Gestionar Mensajes} con el mensaje de éxito.
+\end{enumerate}
+
+

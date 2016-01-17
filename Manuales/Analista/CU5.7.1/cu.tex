@@ -1,0 +1,49 @@
+\subsection{Configurar información general}
+En esta subsección se describe el procedimiento a seguir para ingresar la información referente a la conexión con la base de datos y lo referente al alojamiento del sistema a probar.
+
+\subsubsection{Datos de entrada}
+\begin{description}
+	\item Para configurar la información general de la Prueba debe contar con los siguientes datos: \hspace{10pt}
+	
+	\begin{description}
+	    \item \textbf{Configuración de la conexión a la base de datos}
+	    \begin{itemize}
+		  \item URL de la base de datos: Es la URL donde se ubica la base de datos.
+		  \item Driver: Es la ubicación del driver de la base de datos.
+		  \item Nombre de usuario: Es el nombre de usuario para ingresar a la base de datos.
+		  \item Contraseña: Es la contraseña relacionada al nombre de usuario para ingresar a la base de datos.
+	    \end{itemize}
+	    \item \textbf{Configuración HTTP}
+	    \begin{itemize}
+		  \item Nombre del servidor o IP: Es el nombre del servidor o la IP donde se aloja el sistema que se desea probar.
+		  \item Puerto: Es el puerto donde se tiene acceso al sistema a probar.
+	    \end{itemize}
+	 \end{description}
+\end{description}
+
+\subsubsection{Acciones}
+\begin{itemize}
+ \item Sección \textbf{Configuración de la conexión a la base de datos}
+  \begin{enumerate}
+	\item \cdtButton{Probar conexión}: Mediante este botón puede solicitar probar la conexión a la base de datos con la información proporcionada en esta sección.
+  \end{enumerate}
+ \item \cdtButton{Guardar}: Mediante este botón puede guardar la información ingresada.
+ \item \cdtButton{Siguiente}: Mediante este botón puede configurar la información general de la Prueba.
+ \item \cdtButton{Cancelar}: Mediante este botón puede cancelar la configuración de la Prueba.
+\end{itemize}
+	
+	
+\subsubsection{Procedimiento}
+\begin{enumerate}
+	\item Oprima el botón \btnConfigurarPrueba de la pantalla \cdtFigureRef{fig:gestionarCasosUso}{Gestionar Casos de uso}, el sistema mostrará la pantalla \cdtFigureRef{fig:configuracionGeneral}{Configuración general}. 
+
+	%--------------------------------------------------------------------------------------------------------
+	      \IUfig[.9]{CU5.7.1/images/configuracionGeneral}{fig:configuracionGeneral}{Configuración general}
+	%--------------------------------------------------------------------------------------------------------
+	
+	\item Ingrese la información solicitada en la pantalla.
+	
+	\item Oprima el botón \cdtButton{Siguiente}, el sistema mostrará la pantalla \cdtFigureRef{fig:configurarCasosUsoPrevios}{Configurar Casos de uso previos} con el mensaje de éxito.
+\end{enumerate}
+
+
