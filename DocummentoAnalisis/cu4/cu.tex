@@ -1,0 +1,89 @@
+\newpage 
+\begin{UseCase}{CU 4}{Gestionar proyectos de Colaborador}
+	{
+		Este caso de uso permite al actor visualizar los proyectos en los que se encuentra participando, además sirve como punto de acceso para gestionar: módulos, términos del glosario, entidades, reglas de negocio, mensajes y actores, así como para descargar el documento de análisis y en caso de ser líder, elegir a los colaboradores.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Visualizar los proyectos a los que se encuentra asociado, así como entrar a cada uno de ellos para realizar las actividades correspondientes.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtRef{Proyecto}{Proyecto}: \ioTabla{\cdtRef{Proyecto:Clave}{Clave}, \cdtRef{Proyecto:Nombre}{Nombre} y el \cdtRef{Colaborador}{Líder del Proyecto}}{de los proyectos}.
+		\end{UClist}
+	}
+	
+	\UCitem{Mensajes}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG2}{No existe información}: Se muestra en la pantalla \cdtIdRef{IU 4}{Gestionar proyectos de Colaborador} cuando el actor no se encuentra asociado a ningún proyecto.
+		\end{UClist}
+	}
+
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		Ninguna
+	}
+
+	\UCitem{Errores}{
+		Ninguno
+	}
+
+	\UCitem{Tipo}{
+		Primario
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita gestionar los proyectos presionando la opción ``Proyectos'' del menú \cdtIdRef{MN 2}{Menú de Colaborador}.
+    \UCpaso[\UCsist] Busca la información de los proyectos en los que el actor se encuentra colaborando. \refTray{A}
+    \UCpaso[\UCsist] Muestra la información de los proyectos en la pantalla \cdtIdRef{IU 4}{Gestionar proyectos de Colaborador}.
+	\UCpaso[\UCsist] Muestra el botón \btnColaboradores para cada proyecto en el que el actor sea líder.
+    \UCpaso[\UCactor] Gestiona los proyectos a través de las botones mostrados en la columna ``Acciones''. \label{cu4:gestiona}
+ \end{UCtrayectoria}
+ 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El actor no se encuentra colaborando en ningún proyecto.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG2}{No existe información} en pantalla \cdtIdRef{IU 4}{Gestionar proyectos de Colaborador} 
+    para indicar que no hay registros de proyectos para mostrar.
+ \end{UCtrayectoriaA}
+ 
+
+\subsubsection{Puntos de extensión}
+
+\UCExtensionPoint{El actor requiere gestionar los módulos de un proyecto}
+	{Paso \ref{cu4:gestiona} de la trayectoria principal}
+	{\cdtIdRef{CU 3}{Gestionar módulos}}
+
+\UCExtensionPoint{El actor requiere gestionar el glosario de un proyecto}
+	{Paso \ref{cu4:gestiona} de la trayectoria principal}
+	{\cdtIdRef{CU 10}{Gestionar términos}}	
+	
+\UCExtensionPoint{El actor requiere gestionar las entidades de un proyecto}
+	{Paso \ref{cu4:gestiona} de la trayectoria principal}
+	{\cdtIdRef{CU 11}{Gestionar entidades}}
+		
+\UCExtensionPoint{El actor requiere gestionar las reglas de negocio de un proyecto}
+	{Paso \ref{cu4:gestiona} de la trayectoria principal}
+	{\cdtIdRef{CU 8}{Gestionar reglas de negocio}}	
+	
+\UCExtensionPoint{El actor requiere gestionar los mensajes de un proyecto}
+	{Paso \ref{cu4:gestiona} de la trayectoria principal}
+	{\cdtIdRef{CU 9}{Gestionar mensajes}}	
+	
+\UCExtensionPoint{El actor requiere gestionar los actores de un proyecto}
+	{Paso \ref{cu4:gestiona} de la trayectoria principal}
+	{\cdtIdRef{CU 7}{Gestionar actores}}	
+	
+\UCExtensionPoint{El actor requiere descargar el documento de análisis de un proyecto}
+	{Paso \ref{cu4:gestiona} de la trayectoria principal}
+	{\cdtIdRef{CU 4.2}{Descargar documento}}	
+	
+\UCExtensionPoint{El actor requiere elegir a los colaboradores de un proyecto}
+	{Paso \ref{cu4:gestiona} de la trayectoria principal}
+	{\cdtIdRef{CU 4.1}{Elegir colaboradores}}

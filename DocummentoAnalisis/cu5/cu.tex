@@ -1,3 +1,4 @@
+\newpage 
 \begin{UseCase}{CU 5}{Gestionar casos de uso}
 	{
 		Este caso de uso permite al analista visualizar los registros de los casos de uso del sistema. También permite 
@@ -7,23 +8,24 @@
 	
 	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
 	\UCitem{Propósito}{
-		Revisar y gestionar los casos de uso registrados en la herramienta.
+		Visualizar y gestionar los casos de uso registrados en el sistema.
 	}
 	\UCitem{Entradas}{
 		Ninguna
 	}
 	\UCitem{Salidas}{
 		\begin{UClist}
-			\UCli \cdtRef{Modulo:Clave}{Clave del módulo}: \ioObtener.
-			\UCli \cdtRef{Modulo:Nombre}{Nombre del módulo}: \ioObtener.
-			\UCli \cdtRef{Modulo:Descripcion}{Descripción del módulo}: \ioObtener.
-			\UCli \cdtRef{CasodeUso}{Caso de uso}: \ioTabla{\cdtRef{Elemento:Clave}{Clave}, \cdtRef{Elemento:Numero}{Número}, \cdtRef{Elemento:Nombre}{Nombre} y el \cdtRef{Estado_Elemento}{Estado} }{de los casos de uso}.
+			\UCli \cdtRef{Proyecto:Clave}{Clave} del proyecto. \ioObtener.
+			\UCli \cdtRef{Proyecto:Nombre}{Nombre} del proyecto. \ioObtener.
+			\UCli \cdtRef{Modulo:Clave}{Clave} del módulo: \ioObtener.
+			\UCli \cdtRef{Modulo:Nombre}{Nombre} del módulo: \ioObtener.
+			\UCli \cdtRef{CasodeUso}{Caso de uso}: \ioTabla{\cdtRef{Elemento:Clave}{Clave}, \cdtRef{Elemento:Numero}{Número}, \cdtRef{Elemento:Nombre}{Nombre} y el \cdtRef{Estado_Elemento}{Estado} }{de los casos de uso del módulo en cuestión}.
 		\end{UClist}
 	}
 	
 	\UCitem{Mensajes}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG2}{No existe información}: Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} cuando no existen casos de uso registrados.
+			\UCli \cdtIdRef{MSG2}{No existe información}: Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} cuando no existen casos de uso registrados en el módulo.
 		\end{UClist}
 	}
 
@@ -32,15 +34,7 @@
 	}
 	
 	\UCitem{Postcondiciones}{
-		\begin{UClist}
-			\UCli Se podrá solicitar el registro de un caso de uso por medio del caso de uso \cdtIdRef{CU 5.1}{Registrar caso de uso}.
-			\UCli Se podrá solicitar la gestión de las trayectorias del caso de uso por medio del caso de uso \cdtIdRef{CU 5.1.1}{Gestionar trayectorias}.
-			\UCli Se podrá solicitar la gestión de los puntos de extensión del caso de uso por medio del caso de uso \cdtIdRef{CU 5.1.4}{Gestionar puntos de extensión}. 
-			\UCli Se podrá solicitar la modificación de un caso de uso por medio del caso de uso \cdtIdRef{CU 5.2}{Modificar caso de uso}.
-			\UCli Se podrá solicitar la eliminación de un caso de uso por medio del caso de uso \cdtIdRef{CU 5.3}{Eliminar caso de uso}.
-			\UCli Se podrá solicitar la consulta de un caso de uso por medio del caso de uso \cdtIdRef{CU 5.4}{Consultar caso de uso}.
-			\UCli Se podrá solicitar la revisión de un caso de uso por medio del caso de uso \cdtIdRef{CU 5.5}{Revisar caso de uso}.
-		\end{UClist}
+		Ninguna
 	}
 
 	\UCitem{Errores}{
@@ -57,7 +51,7 @@
     \UCpaso[\UCsist] Busca la información de los casos de uso en cualquier estado. \refTray{A}
     \UCpaso[\UCsist] Muestra la información de los casos de uso en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} y las operaciones 
     disponibles de acuerdo a la regla de negocio \cdtIdRef{RN9}{Operaciones disponibles de casos de uso}. 
-    \UCpaso[\UCactor] Gestiona los casos de uso a través de los botones: \cdtButton{Registrar}, \btnTray, \btnExt, \btnConsulta, \btnEditar, \btnEliminar y \btnRevisar. \label{cu5:gestionaCU}
+    \UCpaso[\UCactor] Gestiona los casos de uso a través de las operaciones disponibles de la columna ``Acciones''.\label{cu5:gestionaCU}
  \end{UCtrayectoria}
  
  \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No existen registros de casos de uso.}
@@ -69,24 +63,51 @@
 \subsubsection{Puntos de extensión}
 
 \UCExtensionPoint{El actor requiere registrar un caso de uso}
-	{Paso \ref{cu5:gestionaCU}}
+	{Paso \ref{cu5:gestionaCU} de la trayectoria principal}
 	{\cdtIdRef{CU 5.1}{Registrar caso de uso}}
+
 \UCExtensionPoint{El actor requiere gestionar las trayectorias del caso de uso}
-	{Paso \ref{cu5:gestionaCU}}
+	{Paso \ref{cu5:gestionaCU} de la trayectoria principal}
 	{\cdtIdRef{CU 5.1.1}{Gestionar trayectorias}}
+	
 \UCExtensionPoint{El actor requiere gestionar los puntos de extensión del caso de uso}
-	{Paso \ref{cu5:gestionaCU}}
+	{Paso \ref{cu5:gestionaCU} de la trayectoria principal}
 	{\cdtIdRef{CU 5.1.4}{Gestionar puntos de extensión}}
+	
 \UCExtensionPoint{El actor requiere modificar un caso de uso}
-	{Paso \ref{cu5:gestionaCU}}
-	{\cdtIdRef{CU 5.2}{Modificar caso de uso}}	
+	{Paso \ref{cu5:gestionaCU} de la trayectoria principal.}
+	{\cdtIdRef{CU 5.2}{Modificar caso de uso}}
+
 \UCExtensionPoint{El actor requiere eliminar un caso de uso}
-	{Paso \ref{cu5:gestionaCU}}
+	{Paso \ref{cu5:gestionaCU} de la trayectoria principal}
 	{\cdtIdRef{CU 5.3}{Eliminar caso de uso}}
+	
 \UCExtensionPoint{El actor requiere consultar un caso de uso}
-	{Paso \ref{cu5:gestionaCU}}
+	{Paso \ref{cu5:gestionaCU} de la trayectoria principal}
 	{\cdtIdRef{CU 5.4}{Consultar caso de uso}}
+	
 \UCExtensionPoint{El actor requiere revisar un caso de uso}
-	{Paso \ref{cu5:gestionaCU}}
+	{Paso \ref{cu5:gestionaCU} de la trayectoria principal}
 	{\cdtIdRef{CU 5.5}{Revisar caso de uso}}
-  
+	
+\UCExtensionPoint{El actor requiere terminar un caso de uso}
+	{Paso \ref{cu5:gestionaCU} de la trayectoria principal}
+	{\cdtIdRef{CU 5.6}{Terminar caso de uso}}
+	
+\UCExtensionPoint{El actor requiere configurar la prueba de un caso de uso}
+	{Paso \ref{cu5:gestionaCU} de la trayectoria principal}
+	{\cdtIdRef{CU 5.7}{Configurar prueba}}
+	
+\UCExtensionPoint{El actor requiere generar la prueba de un caso de uso}
+	{Paso \ref{cu5:gestionaCU} de la trayectoria principal}
+	{\cdtIdRef{CU 5.8}{Generar prueba}}
+	
+\UCExtensionPoint{El actor requiere liberar un caso de uso}
+	{Paso \ref{cu5:gestionaCU} de la trayectoria principal}
+	{\cdtIdRef{CU 5.9}{Liberar caso de uso}}
+
+\UCExtensionPoint{El actor requiere desbloquear un caso de uso liberado}
+	{Paso \ref{cu5:gestionaCU} de la trayectoria principal}
+	{\cdtIdRef{CU 5.10}{Desbloquear caso de uso}}
+ 
+	

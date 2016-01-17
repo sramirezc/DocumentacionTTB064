@@ -1,3 +1,4 @@
+\newpage 
 \begin{UseCase}{CU 2.1}{Registrar persona}
 	{
 		Este caso de uso permite registrar la información de una persona que podrá ser elegida como colaborador de un proyecto.
@@ -9,13 +10,12 @@
 	}
 	\UCitem{Entradas}{
 		\begin{UClist}
-			\UCli \cdtRef{Persona:CURP}{CURP}: \ioEscribir.
-			\UCli \cdtRef{Persona:Nombre}{Nombre}: \ioEscribir.
-			\UCli \cdtRef{Persona:PrimerApellido}{Primer Apellido}: \ioEscribir.
-			\UCli \cdtRef{Persona:SegundoApellido}{Segundo Apellido}: \ioEscribir.
-			\UCli \cdtRef{Persona:CorreoElectronico}{Correo Electrónico}: \ioEscribir.
-			\UCli \cdtRef{Persona:Contrasena}{Contraseña}: \ioEscribir.
-			\UCli \cdtRef{Persona:Telefono}{Teléfono}: \ioEscribir.
+			\UCli \cdtRef{Colaborador:CURP}{CURP}: \ioEscribir.
+			\UCli \cdtRef{Colaborador:Nombre}{Nombre}: \ioEscribir.
+			\UCli \cdtRef{Colaborador:PrimerApellido}{Primer Apellido}: \ioEscribir.
+			\UCli \cdtRef{Colaborador:SegundoApellido}{Segundo Apellido}: \ioEscribir.
+			\UCli \cdtRef{Colaborador:CorreoElectronico}{Correo electrónico}: \ioEscribir.
+			\UCli \cdtRef{Colaborador:Contrasena}{Contraseña}: \ioEscribir.
 		\end{UClist}
 	}
 	\UCitem{Salidas}{
@@ -35,6 +35,7 @@
 	\UCitem{Postcondiciones}{
 		\begin{UClist}
 			\UCli Se registrará una persona en el sistema.
+			\UCli La persona registrada se podrá elegir para participar en algún proyecto.
 		\end{UClist}
 	}
 
@@ -48,7 +49,7 @@
 	}
 
 	\UCitem{Tipo}{
-		Secundario, extiende del casos de uso \cdtIdRef{CU 2}{Gestionar personal}.
+		Secundario, extiende del caso de uso \cdtIdRef{CU 2}{Gestionar personal}.
 	}
 \end{UseCase}
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------

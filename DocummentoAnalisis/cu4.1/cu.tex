@@ -1,0 +1,67 @@
+\newpage 
+\begin{UseCase}{CU 4.1}{Elegir colaboradores}
+	{
+		Este caso de uso permite al actor elegir las personas que colaborarán en el proyecto que él lidera.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}}
+	\UCitem{Propósito}{
+		Elegir las personas que colaborarán en un proyecto.
+	}
+	\UCitem{Entradas}{
+		\begin{UClist}
+			\UCli \cdtRef{Colaborador}{Colaborador}: \ioTabla{\cdtRef{Colaborador:CURP}{CURP}, \cdtRef{Colaborador:Nombre}{Nombre}, \cdtRef{Colaborador:PrimerApellido}{Primer Apellido} 
+			y \cdtRef{Colaborador:SegundoApellido}{Segundo Apellido}}{de las personas}. \ioSeleccionar
+		\end{UClist}
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtRef{Colaborador}{Colaborador}: \ioTabla{\cdtRef{Colaborador:CURP}{CURP}, \cdtRef{Colaborador:Nombre}{Nombre}, \cdtRef{Colaborador:PrimerApellido}{Primer Apellido} 
+			y \cdtRef{Colaborador:SegundoApellido}{Segundo Apellido}}{de las personas}.
+		\end{UClist}
+	}
+	
+	\UCitem{Mensajes}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 4}{Gestionar proyectos de Colaborador} para indicar que se han actualizado los participantes exitosamente.
+			\UCli \cdtIdRef{MSG2}{No existe información}: Se muestra en la pantalla \cdtIdRef{IU 4.1}{Elegir colaboradores} cuando no hay personal registrado.
+			
+		\end{UClist}
+	}
+
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		\begin{UClist}
+			\UCli Los colaboradores seleccionados podrán entrar al proyecto en cuestión.
+		\end{UClist}
+
+	}
+
+	\UCitem{Errores}{
+		Ninguno
+	}
+
+	\UCitem{Tipo}{
+		Secundario, extiende del caso de uso \cdtIdRef{CU 4}{Gestionar proyectos de Colaborador}
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita elegir los colaborades oprimiendo el botón \btnColaboradores del proyecto que desee de la pantalla \cdtIdRef{IU 4}{Gestionar proyectos de Colaborador}
+    \UCpaso[\UCsist] Busca la información del personal de la organización. \refTray{A}
+    \UCpaso[\UCsist] Muestra el personal encontrado en la pantalla \cdtIdRef{IU 4.1}{Elegir colaboradores}.
+	\UCpaso[\UCactor] Selecciona los colaboradores que participarán en el proyecto, marcando o desmarcando las casillas de la columna ``Elegir''.
+    \UCpaso[\UCactor] Solicita guardar la selección de colaboradores, oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 4.1}{Elegir colaboradores}.
+	\UCpaso[\UCsist] Actualiza el personal asociado al proyecto en cuestión.
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 4}{Gestionar proyectos de Colaborador}
+    para indicar al actor que el personal del proyecto ha sido actualizado exitosamente.
+ \end{UCtrayectoria}
+ 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No existe personal.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG2}{No existe información} en pantalla \cdtIdRef{IU 4.1}{Elegir colaboradores} 
+    para indicar que no hay registros para mostrar.
+ \end{UCtrayectoriaA}
+ 

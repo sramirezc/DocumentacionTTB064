@@ -80,13 +80,13 @@
 %============================== MSG7 =================================
 \begin{mensaje}{MSG7}{Registro repetido}{Error}
     \item[Objetivo:] Notificar al actor que el nombre del elemento ya existe.
-    \item[Redacción:] DETERMINADO ENTIDAD VALOR que desea registrar ya existe.
+    \item[Redacción:] DETERMINADO ENTIDAD VALOR ya existe.
     \item[Parámetros:] El mensaje se muestra con base en los siguientes parámetros:
     \begin{Citemize}
 	\item DETERMINADO ENTIDAD: Es un artículo determinado más la entidad sobre la que se efectúa la operación.
 	\item VALOR: Es el valor que toma determinado atributo de la entidad.
     \end{Citemize}
-    \item[Ejemplo:] Escriba menos de {\em 30 letras}.
+    \item[Ejemplo:] {\em El actor Analista} ya existe.
 \end{mensaje}
 
 %============================== MSG8 =================================
@@ -130,7 +130,7 @@
     \item[Redacción:] Este elemento no se puede eliminar debido a que está siendo referenciado en: LISTA
     \item[Parámetros:] El mensaje se muestra con base en los siguientes parámetros:
     \begin{Citemize}
-	\item LISTA: Es la lista de casos de uso que estń referenciando al elemento.
+	\item LISTA: Es la lista de razones por las que no se puede eliminar el elemento.
     \end{Citemize}
     \item[Ejemplo:] Este elemento no se puede eliminar debido a que está siendo referenciado en: {\em CUSF1.1 Registrar incendio, CUSF1.2 Modificar incendio}.
 \end{mensaje}
@@ -182,7 +182,7 @@
 \end{mensaje}
 %============================== MSG23 =================================
 \begin{mensaje}{MSG23}{Caracteres inválidos}{Error}
-    \item[Objetivo:] Informar al actor que el dato que ingresó no puede contener coma, punto, punto medio, dos pufTntos o guión bajo.
+    \item[Objetivo:] Informar al actor que el dato que ingresó no puede contener coma, punto, punto medio, dos puntos o guión bajo.
     \item[Redacción:] DETERMINADO ATRIBUTO no puede contener coma, punto, punto medio, dos puntos o guión bajo.
     \item[Parámetros:] El mensaje se muestra con base en los siguientes parámetros:
     \begin{Citemize}
@@ -196,7 +196,7 @@
 %    \item[Redacción:] No es posible realizar la operación debido a la falta de información necesaria para el sistema.
 %\end{mensaje}
 %============================== MSG27 =================================
-\begin{mensaje}{MSG23}{Token incorrecto}{Error}
+\begin{mensaje}{MSG27}{Token incorrecto}{Error}
     \item[Objetivo:] Informar al actor que no es posible realizar la operación debido a que el token ingresado es incorrecto.
     \item[Redacción:] El token ingresado para DETERMINADO ELEMENTO es incorrecto.
     \item[Parámetros:] El mensaje se muestra con base en los siguientes parámetros:
@@ -275,5 +275,16 @@
 	\item FECHAINICIO: Es la fecha de inicio.
     \end{Citemize}
     \item[Ejemplo:] La {\em fecha de inicio programada} debe ser posterior a la {\em fecha de término programada}.
+\end{mensaje}
+
+%============================== MSG36 =================================
+\begin{mensaje}{MSG36}{Elemento no registrado}{Error}
+    \item[Objetivo:] Informar al actor que no es posible completar la operación debido a que se está utilizando un elemento que no se encuentra registrado en el sistema.
+    \item[Redacción:] Datos incorrectos, DETERMINADO ELEMENTO no se encuentra registrado en el sistema.
+    \item[Parámetros:] El mensaje se muestra con base en los siguientes parámetros:
+    \begin{Citemize}
+	\item DETERMINADO ELEMENTO: Artículo determinado más el nombre del elemento que se desea referenciar.
+    \end{Citemize}
+    \item[Ejemplo:] Datos incorrectos, {\em el actor tester} no se encuentra registrado en el sistema.
 \end{mensaje}
 

@@ -104,7 +104,7 @@
     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
     \BRitem{Estatus}{Edición}
     \BRitem{Descripción}{
-      Los estados de los casos de uso y el rol del actor determinan las operaciones que pueden solicitarse desde la gestión:
+      Los estados de los casos de uso y el rol del actor determinan las operaciones que pueden solicitarse sobre un caso de uso desde la gestión:
       
       \begin{longtable}{| p{.2\textwidth} | p{.3\textwidth} | p{.3\textwidth} |}%
 		\arrayrulecolor{black}%
@@ -112,14 +112,18 @@
 		\color{white} Estado &  \color{white}Operaciones Analista & \color{white}Operaciones Líder de análisis\\ \hline
 		\endhead%
 		\arrayrulecolor{black}
-		Edición & Consultar y solamente el analista que esté editando el caso de uso puede editar, gestionar trayectorias y gestionar puntos de extensión 
-		& Consultar y solamente el analista que esté editando el caso de uso puede editar, gestionar trayectorias y gestionar puntos de extensión \\ \hline
-		Terminado & Consultar, revisar, eliminar y solamente el analista que esté editando el caso de uso puede editar, gestionar trayectorias y gestionar puntos de extensión 
-		& Consultar, revisar, eliminar y solamente el analista que esté editando el caso de uso puede editar, gestionar trayectorias y gestionar puntos de extensión\\ \hline
-		Revisión & Consultar y solamente el analista que esté realizando la revisión puede revisar & Liberar, consultar, revisar (solamente el líder que esté realizando la revisión)\\ \hline
-		Pendiente de corrección & Consultar, editar & N/A\\ \hline
-		Por Liberar & Consulta & Habilitar correcciones\\ \hline
-		Liberado & Consulta & Habilitar correcciones\\ \hline
+		Edición & Consultar, editar, gestionar trayectorias, gestionar puntos de extensión, terminar y eliminar & Consultar, editar, gestionar trayectorias, gestionar puntos de extensión, terminar y eliminar\\ \hline
+		
+		Revisión & Consultar y revisar & Consultar y revisar\\ \hline
+		
+		Por liberar & Consultar & Consultar y liberar\\ \hline
+		
+		Pendiente de corrección & Consultar, editar, gestionar trayectorias, gestionar puntos de extensión, terminar y eliminar & Consultar, editar, gestionar trayectorias, gestionar puntos de extensión, terminar y eliminar\\ \hline
+		
+		Liberado & Consultar y configurar prueba & Consultar, solicitar correcciones y configurar prueba\\ \hline
+		
+		Configurado & Consultar, configurar prueba y generar prueba & Consultar, solicitar correcciones, configurar prueba y generar prueba\\ \hline
+		
       \end{longtable}
     }	
 \end{BusinessRule}
@@ -152,7 +156,7 @@
     \BRitem{Estatus}{Edición}
     \BRitem{Descripción}{El identificador de cada elemento se compone de un nombre, número y una clave. Donde el nombre es el que le asigna el usuario, el número 
     es secuencial y la clave define el tipo de elemento: ``ENT'' para las entidades, ``ACT'' para los actores, ``CU'' para los casos de uso, ``IU'' para
-    las pantallas, ``MSJ'' para los mensajes, ``RN'' para las reglas de negocio y ``GLS'' para los términos del glosario.}	
+    las pantallas, ``MSG'' para los mensajes, ``RN'' para las reglas de negocio y ``GLS'' para los términos del glosario.}	
     % Se sacrifica la usabilidad por el tiempo reducido de desarrollo
 \end{BusinessRule}
 
@@ -291,4 +295,41 @@
     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
     \BRitem{Estatus}{Edición}
     \BRitem{Descripción}{La fecha de término programada del proyecto debe ser posterior a la fecha de inicio programada.}
+\end{BusinessRule}
+
+
+\begin{BusinessRule}{RN27}{Eliminación de personas}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{1.0}
+    \BRitem{Autor}{Sergio Ramírez Camacho}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{No es posible eliminar una persona, si esta es líder de al menos un proyecto.}
+\end{BusinessRule}
+
+\begin{BusinessRule}{RN28}{Eliminación de módulos}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{1.0}
+    \BRitem{Autor}{Sergio Ramírez Camacho}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{No es posible eliminar un módulo, si algún elemento de otro módulo, tiene referencias a al menos un elemento del módulo que desea eliminarse.}
+\end{BusinessRule}
+
+\begin{BusinessRule}{RN29}{Unicidad de casos de uso}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{1.0}
+    \BRitem{Autor}{Sergio Ramírez Camacho}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{Diferentes casos de uso pueden tener el mismo nombre y/o número, únicamente si cada uno de estos pertenecen a diferentes módulos.}
+\end{BusinessRule}
+
+\begin{BusinessRule}{RN30}{Unicidad de pantallas}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{1.0}
+    \BRitem{Autor}{Sergio Ramírez Camacho}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{Diferentes pantallas pueden tener el mismo nombre y/o número, únicamente si cada una de estas pertenecen a diferentes módulos.}
 \end{BusinessRule}

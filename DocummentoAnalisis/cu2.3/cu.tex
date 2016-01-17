@@ -1,3 +1,4 @@
+\newpage 
 \begin{UseCase}{CU 2.3}{Eliminar persona}
 	{
 		Este caso de uso permite al actor eliminar del sistema una persona.
@@ -35,7 +36,7 @@
 
 	\UCitem{Errores}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 2}{Gestionar personal} cuando la persona lidere un proyecto.
+			\UCli \cdtIdRef{MSG14}{Eliminación no permitida}: Se muestra en la pantalla \cdtIdRef{IU 2}{Gestionar personal} cuando no se pueda eliminar una persona, con base en la regla de negocio \cdtIdRef{RN27}{Eliminación de personas}.
 		\end{UClist}
 	}
 
@@ -47,18 +48,18 @@
  \begin{UCtrayectoria}
     \UCpaso[\UCactor] Solicita eliminar una persona oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{IU 2}{Gestionar personal}.
     \UCpaso[\UCsist] Busca la información de la persona seleccionada.
-    \UCpaso[\UCsist] Verifica que la persona no lidere ningún proyecto. \refTray{A}
+    \UCpaso[\UCsist] Verifica que la persona pueda eliminarse, con base en la regla de negocio \cdtIdRef{RN27}{Eliminación de personas}. \refTray{A}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG11}{Confirmar eliminación} en una pantalla emergente con los botones \cdtButton{Aceptar} y \cdtButton{Cancelar}.
     \UCpaso[\UCactor] Confirma la eliminación de la persona oprimiendo el botón \cdtButton{Aceptar} de la pantalla emergente. \refTray{B}
-    \UCpaso[\UCsist] Verifica que la persona no lidere ningún proyecto. \refTray{A}
+    \UCpaso[\UCsist] Verifica que la persona pueda eliminarse, con base en la regla de negocio \cdtIdRef{RN27}{Eliminación de personas}. \refTray{A}
     \UCpaso[\UCsist] Elimina la información referente a la persona.
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 2}{Gestionar personal}
     para indicar al actor que se ha eliminado el registro exitosamente.
  \end{UCtrayectoria}
  
  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{La persona es líder de algún proyecto.}
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 2}{Gestionar personal} con el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error}.
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No es posible eliminar a la persona.}
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 2}{Gestionar personal} con el mensaje \cdtIdRef{MSG14}{Eliminación no permitida}.
  \end{UCtrayectoriaA} 
  %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
  \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{El actor desea cancelar la operación.}

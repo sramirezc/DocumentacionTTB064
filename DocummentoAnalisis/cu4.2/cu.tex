@@ -1,0 +1,67 @@
+\newpage 
+\begin{UseCase}{CU 4.2}{Descargar documento}
+	{
+		Este caso de uso permite al actor descargar el documento de análisis de algún proyecto, este documento incluirá el glosario de términos, la descripción de las entidades, las reglas de negocio, los mensajes, los actores, los casos de uso y las pantallas, así como la información del proyecto.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Descargar el documento de análisis de algún proyecto.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli El documento de análisis con extensión {\it docx} o {\it pdf} con la siguiente información:
+			\begin{itemize}
+				\item \cdtRef{Proyecto}{Proyecto}
+				\item \cdtRef{TerminodelGlosario}{Glosario}
+				\item \cdtRef{Entidad}{Entidades}
+				\item \cdtRef{RegladeNegocio}{Reglas de negocio}
+				\item \cdtRef{Mensaje}{Mensajes}
+				\item \cdtRef{Actor}{Actores}
+				\item \cdtRef{Modulo}{Modulos}				
+				\item \cdtRef{CasodeUso}{Casos de uso}
+				\item \cdtRef{Pantalla}{Pantallas}
+			\end{itemize}
+		\end{UClist}
+	}
+	
+	\UCitem{Mensajes}{
+		Ninguno
+	}
+
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		Ninguna
+
+	}
+
+	\UCitem{Errores}{
+		Ninguno
+	}
+
+	\UCitem{Tipo}{
+		Secundario, extiende del caso de uso \cdtIdRef{CU 4}{Gestionar proyectos de Colaborador}
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita descargar el documento de análisis oprimiendo el botón \btnPDF o el botón \btnWord, del proyecto que desee de la pantalla \cdtIdRef{IU 4}{Gestionar proyectos de Colaborador}.
+    \UCpaso[\UCsist] Busca la información del proyecto.
+    \UCpaso[\UCsist] Busca los términos del glosario del proyecto.
+    \UCpaso[\UCsist] Busca las entidades del proyecto.
+    \UCpaso[\UCsist] Busca las reglas de negocio del proyecto.
+    \UCpaso[\UCsist] Busca los mensajes del proyecto.
+    \UCpaso[\UCsist] Busca los actores del proyecto.
+    \UCpaso[\UCsist] Busca los módulos del proyecto.
+    \UCpaso[\UCsist] Busca los casos de uso de los módulos.
+    \UCpaso[\UCsist] Busca las pantallas de los módulos.
+    \UCpaso[\UCsist] Crea el documento con base en la información encontrada.
+	\UCpaso[\UCsist] Descarga el documento con extensión {\it docx} o {\it pdf}, según corresponda.
+ \end{UCtrayectoria}
+ 

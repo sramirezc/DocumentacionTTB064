@@ -1,3 +1,4 @@
+\newpage 
 \begin{UseCase}{CU 3}{Gestionar módulos}
 	{
 		Este caso de uso permite al Analista visualizar todos los módulos en que se divide el proyecto, así como solicitar el registro, modificación y eliminación de un módulo.
@@ -5,14 +6,16 @@
 	
 	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
 	\UCitem{Propósito}{
-		Visualizar y gestionar los módulos del sistema.
+		Visualizar y gestionar los módulos de un proyecto.
 	}
 	\UCitem{Entradas}{
 		Ninguna
 	}
 	\UCitem{Salidas}{
 		\begin{UClist}
-			\UCli \cdtRef{Modulo}{Módulo}: \ioTabla{\cdtRef{Modulo:Clave}{Clave} y \cdtRef{Modulo:Nombre}{Nombre}}{de los módulos}.
+			\UCli \cdtRef{Proyecto:Clave}{Clave} del proyecto. \ioObtener.
+			\UCli \cdtRef{Proyecto:Nombre}{Nombre} del proyecto. \ioObtener.
+			\UCli \cdtRef{Modulo}{Módulo}: \ioTabla{\cdtRef{Modulo:Clave}{Clave} y \cdtRef{Modulo:Nombre}{Nombre}}{de los módulos de un proyecto}.
 		\end{UClist}
 	}
 	
@@ -23,11 +26,12 @@
 	}
 
 	\UCitem{Precondiciones}{
-		Ninguna
+			Ninguna
+
 	}
 	
 	\UCitem{Postcondiciones}{
-		Ninguna
+			Ninguna
 	}
 
 	\UCitem{Errores}{
@@ -35,15 +39,15 @@
 	}
 
 	\UCitem{Tipo}{
-		Primario
+		Secundario, extiende de \cdtIdRef{CU 4}{Gestionar proyectos de Colaborador}
 	}
 \end{UseCase}
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
-    \UCpaso[\UCactor] Solicita gestionar los módulos presionando el botón \btnEntrar de algún proyecto de la pantalla \cdtIdRef{IU 4}{Gestionar proyectos de Líder}.
+    \UCpaso[\UCactor] Solicita gestionar los módulos presionando el botón \btnEntrar de algún proyecto de la pantalla \cdtIdRef{IU 4}{Gestionar proyectos de analista}.
     \UCpaso[\UCsist] Busca la información de los módulos del proyecto seleccionado. \refTray{A}
     \UCpaso[\UCsist] Muestra la información de los módulos en la pantalla \cdtIdRef{IU 3}{Gestionar módulos}.
-    \UCpaso[\UCactor] Gestiona los módulos a través de los botones: \cdtButton{Registrar}, \btnEditar y \btnEliminar. \label{cu3:gestiona}
+    \UCpaso[\UCactor] Gestiona los módulos a través de los botones: \cdtButton{Registrar}, \btnEditar y \btnEliminar, \btnCU, \btnIU. \label{cu3:gestiona}
  \end{UCtrayectoria}
  
  \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No existen registros de módulos.}
@@ -63,3 +67,9 @@
 \UCExtensionPoint{El actor requiere eliminar un módulo}
 	{Paso \ref{cu3:gestiona} de la trayectoria principal}
 	{\cdtIdRef{CU 3.3}{Eliminar módulo}}
+\UCExtensionPoint{El actor requiere gestionar los casos de uso de un módulo}
+	{Paso \ref{cu3:gestiona} de la trayectoria principal}
+	{\cdtIdRef{CU 5}{Gestionar casos de uso}}
+\UCExtensionPoint{El actor requiere gestionar las pantallas de un módulo}
+	{Paso \ref{cu3:gestiona} de la trayectoria principal}
+	{\cdtIdRef{CU 6}{Gestionar pantallas}}

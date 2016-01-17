@@ -1,3 +1,4 @@
+\newpage 
 \begin{UseCase}{CU 2.2}{Modificar persona}
 	{
 		Este caso de uso permite modificar la información de una persona que podrá ser elegida como colaborador de un proyecto.
@@ -9,23 +10,21 @@
 	}
 	\UCitem{Entradas}{
 		\begin{UClist}
-			\UCli \cdtRef{Persona:Nombre}{Nombre}: \ioEscribir.
-			\UCli \cdtRef{Persona:PrimerApellido}{Primer Apellido}: \ioEscribir.
-			\UCli \cdtRef{Persona:SegundoApellido}{Segundo Apellido}: \ioEscribir.
-			\UCli \cdtRef{Persona:CorreoElectronico}{Correo Electrónico}: \ioEscribir.
-			\UCli \cdtRef{Persona:Contrasena}{Contraseña}: \ioEscribir.
-			\UCli \cdtRef{Persona:Telefono}{Teléfono}: \ioEscribir.
+			\UCli \cdtRef{Colaborador:Nombre}{Nombre}: \ioEscribir.
+			\UCli \cdtRef{Colaborador:PrimerApellido}{Primer Apellido}: \ioEscribir.
+			\UCli \cdtRef{Colaborador:SegundoApellido}{Segundo Apellido}: \ioEscribir.
+			\UCli \cdtRef{Colaborador:CorreoElectronico}{Correo electrónico}: \ioEscribir.
+			\UCli \cdtRef{Colaborador:Contrasena}{Contraseña}: \ioEscribir.
 		\end{UClist}
 	}
 	\UCitem{Salidas}{
 		\begin{UClist}
-			\UCli \cdtRef{Persona:CURP}{CURP}: \ioObtener.
-			\UCli \cdtRef{Persona:Nombre}{Nombre}: \ioObtener.
-			\UCli \cdtRef{Persona:PrimerApellido}{Primer Apellido}: \ioObtener.
-			\UCli \cdtRef{Persona:SegundoApellido}{Segundo Apellido}: \ioObtener.
-			\UCli \cdtRef{Persona:CorreoElectronico}{Correo Electrónico}: \ioObtener.
-			\UCli \cdtRef{Persona:Contrasena}{Contrseña}: \ioObtener.
-			\UCli \cdtRef{Persona:Telefono}{Teléfono}: \ioObtener.
+			\UCli \cdtRef{Colaborador:CURP}{CURP}: \ioObtener.
+			\UCli \cdtRef{Colaborador:Nombre}{Nombre}: \ioObtener.
+			\UCli \cdtRef{Colaborador:PrimerApellido}{Primer Apellido}: \ioObtener.
+			\UCli \cdtRef{Colaborador:SegundoApellido}{Segundo Apellido}: \ioObtener.
+			\UCli \cdtRef{Colaborador:CorreoElectronico}{Correo electrónico}: \ioObtener.
+			\UCli \cdtRef{Colaborador:Contrasena}{Contraseña}: \ioObtener.
 		\end{UClist}
 	}
 	
@@ -54,14 +53,14 @@
 	}
 
 	\UCitem{Tipo}{
-		Secundario, extiende del casos de uso \cdtIdRef{CU 2}{Gestionar personal}.
+		Secundario, extiende del caso de uso \cdtIdRef{CU 2}{Gestionar personal}.
 	}
 \end{UseCase}
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
     \UCpaso[\UCactor] Solicita modificar una persona oprimiendo el botón \btnEditar de la pantalla \cdtIdRef{IU 2}{Gestionar personal}.
     \UCpaso[\UCsist] Busca la información de la persona seleccionada.
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 2.2}{Modificar persona} con la información de la persona. 
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 2.2}{Modificar persona} con la información encontrada. 
     \UCpaso[\UCactor] Modifica la información en la pantalla \cdtIdRef{IU 2.2}{Modificar persona}. \label{cu2.2:ingresaDatos}
     \UCpaso[\UCactor] Solicita guardar la información de la persona oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 2.2}{Modificar persona}. \refTray{A} 
     \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{B}
