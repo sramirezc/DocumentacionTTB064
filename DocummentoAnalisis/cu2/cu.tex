@@ -1,11 +1,12 @@
+\newpage 
 \begin{UseCase}{CU 2}{Gestionar personal}
 	{
-		Este caso de uso permite al Administrador visualizar todas las personas de la organización, así como solicitar el registro, consulta, modificación y eliminación de una persona.
+		Este caso de uso permite al actor visualizar todas las personas de la organización, así como solicitar el registro, consulta, modificación y eliminación de una persona.
 	}
 	
 	\UCitem{Actor}{\cdtRef{actor:administrador}{Administrador}}
 	\UCitem{Propósito}{
-		Visualizar y gestionar el personal.
+		Visualizar y gestionar el personal de la organización.
 	}
 	\UCitem{Entradas}{
 		Ninguna
@@ -41,7 +42,7 @@
 \end{UseCase}
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
-    \UCpaso[\UCactor] Solicita gestionar el personal presionando la opción ``Personal'' del menú \cdtRef{menu:principal}{Menú principal}.
+    \UCpaso[\UCactor] Solicita gestionar el personal presionando la opción ``Personal'' del menú \cdtIdRef{MN 1}{Menú de Administrador}.
     \UCpaso[\UCsist] Busca la información del personal registrado. \refTray{A}
     \UCpaso[\UCsist] Muestra la información del personal en la pantalla \cdtIdRef{IU 2}{Gestionar personal}.
     \UCpaso[\UCactor] Gestiona el personal a través de los botones: \cdtButton{Registrar}, \btnEditar y \btnEliminar. \label{cu2:gestiona}

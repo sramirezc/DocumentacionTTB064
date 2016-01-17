@@ -1,0 +1,29 @@
+\newpage 
+\newpage 
+\subsection{IU 4.1 Elegir colaboradores}
+\subsubsection{Objetivo}
+	
+		Esta pantalla permite al actor elegir las personas que colaborarán en el proyecto que él lidera.
+
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 4.1} se muestra la pantalla ``Elegir colaboradores'', por medio de la cual 
+    se podrán seleccionar los colaboradores que participarán en el proyecto actual. \\
+	
+	En la esquina superior derecha de la pantalla, el sistema mostrará la clave y el nombre del proyecto del cual se están seleccionando los colaboradores.
+	
+    
+    \IUfig[.9]{cu4.1/images/iu.png}{IU 4.1}{Elegir colaboradores}
+
+
+\subsubsection{Comandos}
+\begin{itemize}
+		\item \cdtButton{Aceptar}: Permite al actor solicitar que se actualice el personal del proyecto, dirige a la pantalla \cdtIdRef{IU 4}{Gestionar proyectos de Colaborador}.
+		\item \cdtButton{Cancelar}: Permite al actor cancelar la operación, dirige a la pantalla \cdtIdRef{IU 4}{Gestionar proyectos de Colaborador}.
+\end{itemize}
+\subsubsection{Mensajes}
+	
+\begin{description}
+	\item[\cdtIdRef{MSG1}{Operación exitosa}:] Se muestra en la pantalla \cdtIdRef{IU 4}{Gestionar proyectos de Colaborador} para indicar que se han actualizado los participantes exitosamente.
+	\item[\cdtIdRef{MSG2}{No existe información}:] Se muestra en la pantalla \cdtIdRef{IU 4.1}{Elegir colaboradores} cuando no existe personal registrado.
+\end{description}
