@@ -61,8 +61,6 @@
 			\UCli \cdtIdRef{MSG23}{Caracteres inválidos}: Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} cuando el nombre del caso de uso contiene un caracter no válido.
 			\UCli \cdtIdRef{MSG27}{Token incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} cuando el token ingresado está mal formado.
 		\end{UClist}
-			\UCli \cdtIdRef{MSG36}{Elemento no registrado}: Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} cuando el elemento utilizado en un token no se encuentra registrado en el sistema.
-		\end{UClist}
 	}
 	
 	\UCitem{Tipo}{
@@ -93,16 +91,12 @@
     \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{G}
 	\UCpaso[\UCsist] Verifica que el nombre del caso de uso no se encuentre registrado, con base en la regla de negocio  \cdtIdRef{RN29}{Unicidad de casos de uso}. \refTray{H}
     \UCpaso[\UCsist] Verifica que el nombre no contenga caracteres inválidos con base en la regla de negocio \cdtIdRef{RN2}{Nombres de los elementos}. \refTray{I}
-    \UCpaso[\UCsist] Verifica que el número del caso de uso no se encuentre registrado en el sistema con base en la regla de negocio  \cdtIdRef{RN1}{Unicidad de números}. \refTray{J}
+	\UCpaso[\UCsist] Verifica que el número del caso de uso no se encuentre registrado, con base en la regla de negocio  \cdtIdRef{RN29}{Unicidad de casos de uso}. \refTray{J}
+	    \UCpaso[\UCsist] Verifica que los datos sean proporcionados correctamente, con base en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{K} \refTray{L}
+    \UCpaso[\UCsist] Verifica que los tokens utilizados se encuentren correctamente estructurados, con base en la regla de negocio \cdtIdRef{RN31}{Estructura de tokens}. \refTray{M}
+    \UCpaso[\UCsist] Verifica que los elementos referenciados existan en el sistema, con base en la regla de negocio \cdtIdRef{RN10}{Referencias a elementos}. \refTray{N}
     
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{K} \refTray{L}
-    
-    \UCpaso[\UCsist] Verifica que los tokens utilizados esten bien formados. \refTray{M}
-    \UCpaso[\UCsist] Verifica que los elementos referenciados existan. \refTray{N}
-    
-    \UCpaso[\UCsist] Registra la información del caso de uso en el sistema.
-    \UCpaso[\UCsist] Cambia el estado del caso de uso a ``Edición''.
+    \UCpaso[\UCsist] Registra el caso de uso en el sistema con estado ``Edición''.
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} 
     para indicar al actor que el registro se ha realizado exitosamente.
  \end{UCtrayectoria}
@@ -128,19 +122,19 @@
 
   %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
  \begin{UCtrayectoriaA}{C}{El actor desea seleccionar un atributo.}
- 	\UCpaso[\UCactor] Ingresa el token ``ATR·''.
+ 	\UCpaso[\UCactor] Ingresa el token {\it ATR·}.
   	\UCpaso[\UCsist] Busca los atributos de las entidades encontradas.
   	\UCpaso[\UCsist] Muestra una lista de los atributos encontrados.
  	\UCpaso[\UCactor] Selecciona un atributo de la lista.
   	\UCpaso[\UCsist] Verifica que el nombre de la entidad a la que pertenece el atributo seleccionado no contenga espacios. \refTray{Z}
   	\UCpaso[\UCsist] Verifica que el nombre del atributo seleccionado no contenga espacios. \refTray{Z}
-  	\UCpaso[\UCsist] Agrega el nombre de la entidad a la que pertece el atributo al texto, seguido del signo ``:''.
+  	\UCpaso[\UCsist] Agrega el nombre de la entidad a la que pertenece el atributo al texto, seguido del signo ``:''.
   	\UCpaso[\UCsist] Agrega el nombre del atributo al texto.
     \UCpaso[] Continúa con el paso \ref{cu5.1:ingresaEntradas} o el paso \ref{cu5.1:ingresaSalidas} de la trayectoria principal, según corresponda.
  \end{UCtrayectoriaA}
 %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
  \begin{UCtrayectoriaA}{D}{El actor desea seleccionar un mensaje.}
- 	 \UCpaso[\UCactor] Ingresa el token ``MSG·''.	
+ 	 \UCpaso[\UCactor] Ingresa el token {\it MSG·}.	
  	\UCpaso[\UCsist] Muestra una lista con los mensajes encontrados.
  	\UCpaso[\UCactor] Selecciona un mensaje de la lista.
   	\UCpaso[\UCsist] Verifica que el nombre del mensaje seleccionado no contenga espacios. \refTray{Z}
@@ -150,7 +144,7 @@
  \end{UCtrayectoriaA}
  %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
  \begin{UCtrayectoriaA}{E}{El actor desea seleccionar una regla de negocio.}
- 	\UCpaso[\UCactor] Ingresa el token ``RN·''.	
+ 	\UCpaso[\UCactor] Ingresa el token {\it RN·}.	
  	\UCpaso[\UCsist] Muestra una lista con las reglas de negocio encontradas.
  	\UCpaso[\UCactor] Selecciona una regla de negocio de la lista.
   	\UCpaso[\UCsist] Verifica que el nombre de la regla de negocio seleccionada no contenga espacios. \refTray{Z}

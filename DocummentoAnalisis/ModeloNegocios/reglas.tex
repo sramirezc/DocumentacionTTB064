@@ -58,7 +58,7 @@
     \BRitem{Versión}{1.0}
     \BRitem{Autor}{Sergio Ramírez Camacho}
     \BRitem{Estatus}{Edición}
-    \BRitem{Descripción}{No es posible modificar entidades, reglas de negocio, actores, términos del glosario, pantallas y/o mensajes que se encuentren asociados a 						casos de uso con estado ``Liberado''.}	
+    \BRitem{Descripción}{No es posible modificar entidades, reglas de negocio, actores, términos del glosario, pantallas y/o mensajes que se encuentren asociados a casos de uso con estado ``Liberado''.}	
 \end{BusinessRule}
 
 %\begin{BusinessRule}{RN5}{Numeración de elementos}
@@ -134,7 +134,7 @@
     \BRitem{Versión}{1.0}
     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
     \BRitem{Estatus}{Edición}
-    \BRitem{Descripción}{Los elementos que podrán ser referenciados desde los casos de uso son aquellos que ya han sido registrados.}	
+    \BRitem{Descripción}{Los elementos que podrán ser referenciados desde los casos de uso son aquellos que se encuentren registrados en el sistema.}	
     % Se sacrifica la usabilidad por el tiempo reducido de desarrollo
 \end{BusinessRule}
 
@@ -332,4 +332,123 @@
     \BRitem{Autor}{Sergio Ramírez Camacho}
     \BRitem{Estatus}{Edición}
     \BRitem{Descripción}{Diferentes pantallas pueden tener el mismo nombre y/o número, únicamente si cada una de estas pertenecen a diferentes módulos.}
+\end{BusinessRule}
+
+\begin{BusinessRule}{RN31}{Estructura de tokens}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{1.0}
+    \BRitem{Autor}{Sergio Ramírez Camacho}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{Los tokens utilizados para referenciar elementos deben mantener una estructura determinada de acuerdo al tipo de elemento referenciado:
+	\begin{itemize}
+		\item Regla de negocio: {\it RN·Número:Nombre}
+			\begin{itemize}
+				\item ``RN'': cadena que indica que el tipo de elemento referenciado es una regla de negocio.
+				\item ``·'': símbolo para separar las partes del token (punto medio).
+				\item ``Número'': número de la regla de negocio referenciada.
+				\item ``:'': símbolo para separar las partes del token (dos puntos).
+				\item ``Nombre'': nombre de la regla de negocio referenciada.
+			\end{itemize}
+			
+			\item Entidad: {\it ENT·Nombre}
+				\begin{itemize}
+					\item ``ENT'': cadena que indica que el tipo de elemento referenciado es una entidad.
+					\item ``·'': símbolo para separar las partes del token (punto medio).
+					\item ``Nombre'': nombre de la entidad referenciada.
+				\end{itemize}
+			\item Caso de uso: {\it CU·ClaveMódulo·Número:Nombre}
+				\begin{itemize}
+					\item ``CU'': cadena que indica que el tipo de elemento referenciado es un caso de uso.
+					\item ``·'': símbolo para separar las partes del token (punto medio).
+					\item ``ClaveMódulo'': clave del módulo a la que pertenece el caso de uso referenciado.
+					\item ``Número'': número del caso de uso referenciado.
+					\item ``:'': símbolo para separar las partes del token (dos puntos).
+					\item ``Nombre'': nombre del caso de uso referenciado.
+				\end{itemize}
+			\item Pantalla: {\it IU·ClaveMódulo·Número:Nombre}
+				\begin{itemize}
+					\item ``CU'': cadena que indica que el tipo de elemento referenciado es una pantalla.
+					\item ``·'': símbolo para separar las partes del token (punto medio).
+					\item ``ClaveMódulo'': clave del módulo a la que pertenece la pantalla referenciada.
+					\item ``Número'': número de la pantalla referenciada.
+					\item ``:'': símbolo para separar las partes del token (dos puntos).
+					\item ``Nombre'': nombre de la pantalla referenciada.
+				\end{itemize}
+			\item Mensaje: {\it MSG·Número:Nombre}
+				\begin{itemize}
+					\item ``MSG'': cadena que indica que el tipo de elemento referenciado es un mensaje.
+					\item ``·'': símbolo para separar las partes del token (punto medio).
+					\item ``Número'': número del mensaje referenciado.
+					\item ``:'': símbolo para separar las partes del token (dos puntos).
+					\item ``Nombre'': nombre del mensaje referenciado.
+				\end{itemize}
+			\item Actor: {\it ACT·Nombre}
+				\begin{itemize}
+					\item ``ACT'': cadena que indica que el tipo de elemento referenciado es un actor.
+					\item ``·'': símbolo para separar las partes del token (punto medio).
+					\item ``Nombre'': nombre del actor referenciado.
+				\end{itemize}
+			\item Término del glosario: {\it GLS·Nombre}
+				\begin{itemize}
+					\item ``GLS'': cadena que indica que el tipo de elemento referenciado es un término del glosario.
+					\item ``·'': símbolo para separar las partes del token (punto medio).
+					\item ``Nombre'': nombre del término del glosario referenciado.
+				\end{itemize}
+			\item Atributo: {\it ATR·Entidad:Nombre}
+				\begin{itemize}
+					\item ``ATR'': cadena que indica que el tipo de elemento referenciado es un atributo.
+					\item ``·'': símbolo para separar las partes del token (punto medio).
+					\item ``Entidad'': nombre de la entidad a la que pertenece el atributo referenciado.
+					\item ``:'': símbolo para separar las partes del token (dos puntos).
+					\item ``Nombre'': nombre del atributo referenciado.
+				\end{itemize}
+			\item Paso: {\it P·ClaveCasoUso·NúmeroCasoUso:NombreCasoUso:ClaveTrayectoria·Número}
+				\begin{itemize}
+					\item ``P'': cadena que indica que el tipo de elemento referenciado es un paso.
+					\item ``·'': símbolo para separar las partes del token (punto medio).
+					\item ``ClaveCasoUso'': clave del caso de uso al que pertenece el paso referenciado.
+					\item ``NúmeroCasoUso'': número del caso de uso al que pertenece el paso referenciado.
+					\item ``:'': símbolo para separar las partes del token (dos puntos).
+					\item ``NombreCasoUso'': nombre del caso de uso al que pertenece el paso referenciado.
+					\item ``ClaveTrayectoria'': clave de la trayectoria a la que pertenece el paso referenciado.
+					\item ``Número'': número del paso referenciado.
+				\end{itemize}
+			\item Trayectoria: {\it TRAY·ClaveCasoUso·NúmeroCasoUso:NombreCasoUso:Clave}
+				\begin{itemize}
+					\item ``TRAY'': cadena que indica que el tipo de elemento referenciado es una trayectoria.
+					\item ``·'': símbolo para separar las partes del token (punto medio).
+					\item ``ClaveCasoUso'': clave del caso de uso al que pertenece la trayectoria referenciada.
+					\item ``NúmeroCasoUso'': número del caso de uso al que pertenece la trayectoria referenciada.
+					\item ``:'': símbolo para separar las partes del token (dos puntos).
+					\item ``NombreCasoUso'': nombre del caso de uso al que pertenece la trayectoria referenciada.
+					\item ``Clave'': clave de la trayectoria referenciada.									
+				\end{itemize}
+			\item Acción: {\it ACC·ClavePantalla·NúmeroPantalla:NombrePantalla:Nombre}
+				\begin{itemize}
+					\item ``ACC'': cadena que indica que el tipo de elemento referenciado es una acción.
+					\item ``·'': símbolo para separar las partes del token (punto medio).
+					\item ``ClavePantalla'': clave de la pantalla a la que pertenece la acción referenciada.
+					\item ``NúmeroPantalla'': número de la pantalla a la que pertenece la acción referenciada.
+					\item ``:'': símbolo para separar las partes del token (dos puntos).
+					\item ``NombrePantalla'': nombre de la pantalla a la que pertenece la acción referenciada.
+					\item ``Nombre'': nombre de la acción referenciada.				
+				\end{itemize}
+			\item Parámentro (Mensajes): {\it PARAM·Nombre}
+				\begin{itemize}
+					\item ``PARAM'': cadena que indica que se está realizando una referencia a un parámetro en un mensaje.
+					\item ``·'': símbolo para separar las partes del token (punto medio).
+					\item ``Nombre'': nombre del parámentro referenciado.
+				\end{itemize}
+	\end{itemize}		
+		}
+\end{BusinessRule}
+
+\begin{BusinessRule}{RN32}{Pasos en la trayectoria}
+    {Restricción de operación}
+    {Controla la operación}
+    \BRitem{Versión}{1.0}
+    \BRitem{Autor}{Sergio Ramírez Camacho}
+    \BRitem{Estatus}{Edición}
+    \BRitem{Descripción}{Una trayectoria debe debe contar al menos con un paso.}
 \end{BusinessRule}

@@ -13,8 +13,14 @@
 	}
 	\UCitem{Salidas}{
 		\begin{UClist}
-			\UCli \cdtRef{Elemento:Clave}{Clave}, \cdtRef{Elemento:Numero}{número} y \cdtRef{Elemento:Nombre}{nombre} del caso de uso al que pertenece la trayectoria.
-			\UCli \cdtRef{Trayectoria}{Trayectoria}: \ioTabla{\cdtRef{Elemento:Clave}{Clave}, \cdtRef{Elemento:Nombre}{Nombre}, y la \cdtRef{}{condición}}{de las trayectorias}.
+			\UCli \cdtRef{Proyecto:Clave}{Clave} del proyecto. \ioObtener.
+			\UCli \cdtRef{Proyecto:Nombre}{Nombre} del proyecto. \ioObtener.
+			\UCli \cdtRef{Modulo:Clave}{Clave} del módulo: \ioObtener.
+			\UCli \cdtRef{Modulo:Nombre}{Nombre} del módulo: \ioObtener.
+			\UCli \cdtRef{Elemento:Clave}{Clave} del caso de uso: \ioObtener. 
+			\UCli \cdtRef{Elemento:Numero}{Número} del caso de uso: \ioObtener.
+			\UCli \cdtRef{Elemento:Nombre}{Nombre} del caso de uso: \ioObtener.
+			\UCli \cdtRef{Trayectoria}{Trayectoria}: \ioTabla{\cdtRef{Trayectoria:Clave}{Clave} y \cdtRef{Trayectoria:Condicion}{Condición}}{de las trayectorias del caso de uso}.
 		\end{UClist}
 	}
 	
@@ -29,12 +35,7 @@
 	}
 	
 	\UCitem{Postcondiciones}{
-		\begin{UClist}
-			\UCli Se podrá solicitar el registro de una trayectoria por medio del caso de uso \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria}.
-			\UCli Se podrá solicitar la modificación de una trayectoria por medio del caso de uso \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria}.
-			\UCli Se podrá solicitar la eliminación de una trayectoria por medio del caso de uso \cdtIdRef{CU 5.1.1.3}{Eliminar trayectoria}.
-			\UCli Se podrá regresar a la gestión de casos de uso.
-		\end{UClist}
+		Ningunas
 	}
 
 	\UCitem{Errores}{
@@ -66,12 +67,12 @@
 \subsubsection{Puntos de extensión}
 
 \UCExtensionPoint{El actor requiere registrar una trayectoria}
-	{Paso \ref{cu5.1.1:gestionaCU}}
+	{Paso \ref{cu5.1.1:gestionaCU} de la trayectoria principal}
 	{\cdtIdRef{CU 5.1.1.1}{Registrar trayectoria}}
 \UCExtensionPoint{El actor requiere modificar una trayectoria}
-	{Paso \ref{cu5.1.1:gestionaCU}}
+	{Paso \ref{cu5.1.1:gestionaCU} de la trayectoria principal}
 	{\cdtIdRef{CU 5.1.1.2}{Modificar trayectoria}}
 \UCExtensionPoint{El actor requiere eliminar una trayectoria}
-	{Paso \ref{cu5.1.1:gestionaCU}}
+	{Paso \ref{cu5.1.1:gestionaCU} de la trayectoria principal}
 	{\cdtIdRef{CU 5.1.1.3}{Eliminar trayectoria}}
   
