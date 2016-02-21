@@ -2,12 +2,12 @@
 \begin{UseCase}{CU 5.1.1.2}{Modificar trayectoria}
 	{
 		Las trayectorias describen los escenarios ideales y alternos de un sistema mediante una serie de pasos.
-		Este caso de uso permite al analista modificar la información de una trayectoria, así como gestionar sus pasos.
+		Este caso de uso permite al analista modificar la trayectoria principal o una trayectoria alternativa de un caso de uso.
 		
 	}
 	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
 	\UCitem{Propósito}{
-		Modificar la información de una trayectoria, así como gestionar sus pasos.
+		Modificar una trayectoria principal o alternativa.
 	}
 	\UCitem{Entradas}{
 		\begin{UClist}
@@ -15,95 +15,103 @@
 			\UCli \cdtRef{Trayectoria:Alternativa}{Tipo}: \ioSeleccionar
 			\UCli \cdtRef{Trayectoria:Condicion}{Condición}: \ioEscribir
 			\UCli \cdtRef{Trayectoria:FindelCasodeUso}{Fin del caso de uso}: \ioSeleccionar
-			\UCli \cdtRef{Actualizacion:Comentario}{Comentario de la actualización}: \ioEscribir.
 		\end{UClist}
 	}
 	\UCitem{Salidas}{
 		\begin{UClist}
-			\UCli \cdtRef{Revision:Observaciones}{Observaciones}: \ioObtener.
-			\UCli \cdtRef{Elemento:Clave}{Clave}, \cdtRef{Elemento:Numero}{número} y \cdtRef{Elemento:Nombre}{nombre} del caso de uso al que pertenece la trayectoria.
-			\UCli \cdtRef{Trayectoria:Identificador}{Clave}: \ioObtener.
-			\UCli \cdtRef{Trayectoria:Alternativa}{Tipo}: \ioObtener.
-			\UCli \cdtRef{Trayectoria:Condicion}{Condición}: \ioObtener.
-			\UCli \cdtRef{Trayectoria:FindelCasodeUso}{Fin del caso de uso}: \ioObtener.
-			\UCli \cdtRef{Paso}{Paso}: \ioTabla{\cdtRef{Paso:Numero}{Número} y la \cdtRef{Paso:Redaccion}{Redacción}}{de pasos de la trayectoria}.
+			\UCli \cdtRef{Proyecto:Clave}{Clave} del proyecto. \ioObtener.
+			\UCli \cdtRef{Proyecto:Nombre}{Nombre} del proyecto. \ioObtener.
+			\UCli \cdtRef{Modulo:Clave}{Clave} del módulo: \ioObtener.
+			\UCli \cdtRef{Modulo:Nombre}{Nombre} del módulo: \ioObtener.
+			\UCli \cdtRef{Elemento:Clave}{Clave} del caso de uso: \ioObtener. 
+			\UCli \cdtRef{Elemento:Numero}{Número} del caso de uso: \ioObtener.
+			\UCli \cdtRef{Elemento:Nombre}{Nombre} del caso de uso: \ioObtener.
+			\UCli \cdtRef{Revision:Observaciones}{Observaciones} realizadas a la sección ``Trayectorias'' del caso de uso: \ioObtener.
+			\UCli \cdtRef{Trayectoria:Identificador}{Clave}: \ioEscribir
+			\UCli \cdtRef{Trayectoria:Alternativa}{Tipo}: \ioSeleccionar
+			\UCli \cdtRef{Trayectoria:Condicion}{Condición}: \ioEscribir
+			\UCli \cdtRef{Trayectoria:FindelCasodeUso}{Fin del caso de uso}: \ioSeleccionar
 		\end{UClist}
 	}
 	
 	\UCitem{Mensajes}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias} para indicar que la modificación fue exitosa.
+			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias} para indicar que el registro fue exitoso.
 		\end{UClist}
 	}
 
 	\UCitem{Precondiciones}{
 		\begin{UClist}
-			\UCli Que el caso de uso al que pertenece la trayectoria se encuentre en estado ``Edición'' o en estado ``Pendiente de corrección''.
-			\UCli Que existan verbos registrados en el sistema.
+			\UCli Que el caso de uso al que pertenece la trayectoria se encuentre en estado ``Edición'' o ``Pendiente de corrección''.
 		\end{UClist}
 	}
 	
 	\UCitem{Postcondiciones}{
-		\UCli El caso de uso cambiará a estado ``Edición''.
+		\begin{UClist}
+			\UCli Se modificará la información de la trayectoria en el sistema.
+			\UCli El caso de uso cambiará a estado ``Edición''.
+		\end{UClist}
 	}
 
 	\UCitem{Errores}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} o en la pantalla emergente \cdtIdRef{IU 5.1.1.2A}{Modificar trayectoria: Comentario} cuando no se ha ingresado un dato marcado como obligatorio.
+			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} cuando no se ha ingresado un dato marcado como obligatorio.
 			\UCli \cdtIdRef{MSG5}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
-			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} o en la pantalla emergente \cdtIdRef{IU 5.1.1.2A}{Modificar trayectoria: Comentario}  cuando se ha excedido la longitud de alguno de los campos.
+			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} cuando se ha excedido la longitud de alguno de los campos.
 			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} cuando se haya ingresado una clave que ya esté registrada.
-			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias} cuando no existan verbos registrados en el sistema o cuando el estado del caso de uso al que pertenece la trayectoria sea inválido.
+			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} cuando el estado del caso de uso no sea ``Edición'' o ``Pendiente de corección''.
 			\UCli \cdtIdRef{MSG15}{Dato no registrado}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} cuando un elemento referenciado no existe en el sistema.
-			\UCli \cdtIdRef{MSG23}{Caracteres inválidos}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} cuando la clave de la trayectoria contiene un carácter no válido.
+			\UCli \cdtIdRef{MSG23}{Caracteres inválidos}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} cuando el nombre del caso de uso contiene un caracter no válido.
 			\UCli \cdtIdRef{MSG27}{Token incorrecto}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} cuando el token ingresado está mal formado.
-			
 		\end{UClist}
 	}
 
 	\UCitem{Tipo}{
 		Secundario, extiende del caso de uso \cdtIdRef{CU 5.1.1}{Gestionar trayectorias}.
-% 		\clearpage
 	}
 	
 \end{UseCase}
 
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
-	\UCpaso[\UCactor] Oprime el botón \btnEditar de la trayectoria que desea modificar en la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias}. 
-	\UCpaso[\UCsist] Busca información referente a los verbos en el sistema. \refTray{K}
-	\UCpaso[\UCsist] Busca la información de la trayectoria.	
-	\UCpaso[\UCsist] Verifica que el caso de uso al que pertenece la trayectoria se encuentre en estado ``Edición'' o en estado ``Pendiente de corrección''.\refTray{L}
-	\UCpaso[\UCsist] Busca entidades, actores, casos de uso, pantallas, mensajes, reglas de negocio y términos del glosario asociados al proyecto.
-	\UCpaso[\UCsist] Busca las trayectorias y los pasos del caso de uso al que pertenece la trayectoria.
-	\UCpaso[\UCsist] Verifica que la sección trayectorias del caso de uso al que pertenece la trayectoria no cuente con observaciones. \refTray{M}
-	\UCpaso[\UCsist] Verifica que no exista una trayectoria principal asociada al caso de uso. \refTray{N} 
-	\UCpaso[\UCsist] Muestra la información encontrada en la pantalla \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria}. \label{cu5.1.1.2:muestra}
+	\UCpaso[\UCactor] Solicita modificar una trayectoria oprimiendo el botón \btnEditar del registro que desee de la la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias}.
+    \UCpaso[\UCsist] Verifica que el caso de uso se encuentre en estado ``Edición'' o ``Pendiente de corrección''. \refTray{K}
+    \UCpaso[\UCsist] Busca las reglas de negocio del proyecto actual registradas en el sistema.
+    \UCpaso[\UCsist] Busca las entidades del proyecto actual registradas en el sistema. 
+    \UCpaso[\UCsist] Busca los atributos de las entidades del proyecto actual registrados en el sistema. 
+    \UCpaso[\UCsist] Busca los casos de uso del proyecto actual registrados en el sistema. 
+    \UCpaso[\UCsist] Busca las trayectorias del caso de uso registradas en el sistema. 
+    \UCpaso[\UCsist] Busca los pasos de las trayectorias del caso de uso registrados en el sistema. 
+    \UCpaso[\UCsist] Busca las pantallas del proyecto actual registradas en el sistema. 
+    \UCpaso[\UCsist] Busca las acciones de las pantallas del proyecto actual registradas en el sistema. 
+    \UCpaso[\UCsist] Busca los mensajes del proyecto actual registrados en el sistema. 
+    \UCpaso[\UCsist] Busca los actores del proyecto actual registrados en el sistema. 
+    \UCpaso[\UCsist] Busca los términos del glosario del proyecto actual registrados en el sistema. 
+    \UCpaso[\UCsist] Busca las observaciones realizadas a la sección ``Trayectorias'' del caso de uso al que pertenece la trayectoria
+	\UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria} en la cual se realizará el registro de la trayectoria con las observaciones encontradas.
 	\UCpaso[\UCactor] Modifica la clave de la trayectoria.
-	\UCpaso[\UCactor] Selecciona que es la trayectoria principal. \refTray{A} \label{cu5.1.1.2:ingresaDatos}
-	\UCpaso[\UCsist] Marca que en la trayectoria termina el caso de uso.
+	\UCpaso[\UCactor] Selecciona la opción ``Principal'' del campo ``Tipo''. \refTray{A} \label{cu5.1.1.2:ingresaDatos}
+	\UCpaso[\UCsist] Marca la casilla del campo ``Fin del caso de uso''.
 	\UCpaso[\UCactor] Gestiona los pasos de la trayectoria. \label{cu5.1.1.2:gestionaPasos}
 	\UCpaso[\UCactor] Solicita modificar la trayectoria oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria}. \refTray{B} 
+	
 	\UCpaso[\UCsist] Verifica que el actor haya ingresado todos los campos obligatorios con base en la regla de negocio \cdtIdRef{RN8}{Datos obligatorios}. \refTray{C}
-	\UCpaso[\UCsist] Verifica que la trayectoria no se encuentre registrada en el sistema con base en la regla de negocio \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{D}
 	\UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{E} \refTray{F}
-	\UCpaso[\UCsist] Verifica que la clave no contenga caracteres inválidos con base en la regla de negocio \cdtIdRef{RN16}{Nombres de las trayectorias}. \refTray{G}	
-	\UCpaso[\UCsist] Verifica que el usuario haya ingresado al menos un paso. \refTray{H}
-	\UCpaso[\UCsist] Verifica que los tokens utilizados en los pasos estén bien formados. \refTray{I}
+	\UCpaso[\UCsist] Verifica que la clave no contenga caracteres inválidos con base en la regla de negocio \cdtIdRef{RN2}{Nombres de los elementos}. \refTray{G}
+	\UCpaso[\UCsist] Verifica que la trayectoria con la clave ingresada no se encuentre registrada en el caso de uso en cuestión, con base en la regla de negocio \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{D}
+	
+	\UCpaso[\UCsist] Verifica que el usuario haya ingresado al menos un paso, con base en la regla de negocio \cdtIdRef{RN32}{Pasos en la trayectoria}. \refTray{H}
+	\UCpaso[\UCsist] Verifica que los tokens utilizados en los pasos se encuentren bien formados. \refTray{I}
 	\UCpaso[\UCsist] Verifica que los elementos referenciados en los pasos existan. \refTray{J}
-	\UCpaso[\UCsist] Muestra la pantalla emergente \cdtIdRef{IU 5.1.1.2A}{Modificar trayectoria: Comentarios}.
-	\UCpaso[\UCsist] Ingresa el comentario referente a la modificación realizada en la pantalla emergente \cdtIdRef{IU 5.1.1.2A}{Modificar trayectoria: Comentarios}. \label{cu5.1.1.2:ingresaComentario}
-    \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{C}
-    \UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{F}
-	\UCpaso[\UCsist] Verifica que el caso de uso al que pertenece la trayectoria se encuentre en estado ``Edición'' o en estado ``Pendiente de corrección''.\refTray{L}
+	
 	\UCpaso[\UCsist] Modifica la información de la trayectoria en el sistema.
-    \UCpaso[\UCsist] Cambia el estado del caso de uso a ``Edición''.
+	\UCpaso[\UCsist] Modifica el estado del caso de uso a ``Edición''.
 	\UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias} 
 	para indicar al actor que la modificación se ha realizado exitosamente.
     
 \end{UCtrayectoria}
  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
- \begin{UCtrayectoriaA}{A}{El actor selecciona que la trayectoria es alternativa.}
+ \begin{UCtrayectoriaA}{A}{El actor desea registrar una trayectoria alternativa.}
     \UCpaso[\UCsist] Muestra el campo de condición.
     \UCpaso[\UCactor] Ingresa la condición de la trayectoria.
     \UCpaso[\UCactor] Selecciona si en la trayectoria se termina el caso de uso.
@@ -118,8 +126,8 @@
  %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
  \begin{UCtrayectoriaA}{C}{El actor no ingresó algún dato marcado como obligatorio.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
-	    \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} o en la pantalla emergente \cdtIdRef{IU 5.1.1.2A}{Modificar trayectoria: Comentarios}, según corresponda, indicando al actor que el dato es obligatorio.
-    \UCpaso[] Continúa con el paso \ref{cu5.1.1.2:ingresaDatos} o con el paso \ref{cu5.1.1.2:ingresaComentario} de la trayectoria principal, según corresponda.
+	    \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria}, indicando al actor que el dato es obligatorio.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.1.2:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
  %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
  \begin{UCtrayectoriaA}{D}{El actor ingresó un nombre de trayectoria repetido.}
@@ -136,7 +144,7 @@
  %----------------------------------------------------------%trayectoria F--------------------------------------------------  
  \begin{UCtrayectoriaA}{F}{El actor proporciona un dato que excede la longitud máxima.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
-    longitud en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} o en la pantalla emergente \cdtIdRef{IU 5.1.1.2A}{Modificar trayectoria: Comentarios}, según corresponda, para indicar que el dato excede el tamaño máximo permitido.
+    longitud en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria}, para indicar que el dato excede el tamaño máximo permitido.
     \UCpaso[] Continúa con el paso \ref{cu5.1.1.2:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
  
@@ -160,41 +168,22 @@
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG15}{Dato no registrado} mencionando el elemento que no está registrado en el sistema.
     \UCpaso[] Continúa con el paso \ref{cu5.1.1.2:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
+
  %----------------------------------------------------------%trayectoria K---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{K}{No existe información referente a verbos en el sistema.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error} en la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias}, indicando que no es posible
-	continuar con la operación debido a la falta de verbos en el sistema.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria L---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{L}{El estado del caso de uso al que pertenece la trayectoria no es ``Edición'' o ``Pendiente de corrección''.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error} en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}, indicando que no es posible
-	continuar con la operación debido a que el caso de uso no cuenta con el estado adecuado.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria M---------------------------------------------------- 
- \begin{UCtrayectoriaA}{M}{La sección trayectorias del caso de uso al que pertenece la trayectoria cuenta con observaciones.}
-    \UCpaso[\UCsist] Muestra la sección ``Observaciones'' con las observaciones encontradas.
-	\UCpaso[] Continúa con el paso \ref{cu5.1.1.2:muestra} de la trayectoria principal.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria N---------------------------------------------------- 
- \begin{UCtrayectoriaA}{N}{Existe una trayectoria principal asociada al caso de uso.}
-    \UCpaso[\UCsist] Verifica que la trayecoria principal encontrada no sea la trayectoria a modificar. \refTray{O}
-	\UCpaso[\UCsist] Bloquea el campo tipo.	
-	\UCpaso[] Continúa con el paso \ref{cu5.1.1.2:muestra} de la trayectoria principal.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria O---------------------------------------------------- 
- \begin{UCtrayectoriaA}{O}{La trayectoria a modificar es la trayectoria principal.}
-	\UCpaso[] Continúa con el paso \ref{cu5.1.1.2:muestra} de la trayectoria principal.
- \end{UCtrayectoriaA}
+  \begin{UCtrayectoriaA}[Fin del caso de uso]{K}{El caso de uso no se encuentra en estado ``Edición'' o ``Pendiente de corrección''.}
+     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error} en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}, para indicar que no es posible realizar la operación debido a que el caso de uso no cuenta con el estado adecuado.
+  \end{UCtrayectoriaA}
+ 
 
 \subsubsection{Puntos de extensión}
 
 \UCExtensionPoint{El actor requiere registrar un paso de la trayectoria}
-	{Paso \ref{cu5.1.1.2:gestionaPasos}}
+	{Paso \ref{cu5.1.1.2:gestionaPasos} de la trayectoria principal}
 	{\cdtIdRef{CU 5.1.1.2.1}{Registrar paso}}
 \UCExtensionPoint{El actor requiere modificar un paso de la trayectoria}
-	{Paso \ref{cu5.1.1.2:gestionaPasos}}
+	{Paso \ref{cu5.1.1.2:gestionaPasos} de la trayectoria principal}
 	{\cdtIdRef{CU 5.1.1.2.2}{Modificar paso}}	
 \UCExtensionPoint{El actor requiere eliminar un paso de la trayectoria}
-	{Paso \ref{cu5.1.1.2:gestionaPasos}}
+	{Paso \ref{cu5.1.1.2:gestionaPasos} de la trayectoria principal}
 	{\cdtIdRef{CU 5.1.1.2.3}{Eliminar paso}}
   

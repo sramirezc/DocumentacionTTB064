@@ -1,26 +1,26 @@
 \newpage 
-\begin{UseCase}{CU 5.1.2}{Gestionar precondiciones}
+\begin{UseCase}{CU 5.1.2}{Registrar precondición}
 	{
-		Este caso de uso permite al analista visualizar las precondiciones del caso de uso. También permite 
-		al actor acceder a las operaciones de registro, modificación y eliminación de las precondiciones.
+		Las precondiciones describen un conjunto de condiciones que deben cumplirse para poder ejecutar el caso de uso satisfactoriamente.
+		Este caso de uso permite al analista registrar una precondición.
+		
 	}
 	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
 	\UCitem{Propósito}{
-		Revisar y gestionar las precondiciones de un caso de uso.
+		Registrar las precondiciones de un caso de uso.
 	}
 	\UCitem{Entradas}{
-		Ninguna
+		\begin{UClist}
+ 			\UCli \cdtRef{Precondicion:Redaccion}{Redacción de la precondición}: \ioEscribir.
+ 
+		\end{UClist}
 	}
 	\UCitem{Salidas}{
-		\begin{UClist}
-			\UCli \cdtRef{Precondicion}{Precondición}: \ioTabla{la \cdtRef{Precondicion:Redacción}{Redacción}}.
-		\end{UClist}
+		Ninguna
 	}
 	
 	\UCitem{Mensajes}{
-		\begin{UClist}
-			\UCli \cdtIdRef{MSG2}{No existe información}: Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o \cdtIdRef{IU 5.2}{Modificar caso de uso} cuando no existen precondiciones registradas.
-		\end{UClist}
+		Ninguno
 	}
 
 	\UCitem{Precondiciones}{
@@ -28,46 +28,182 @@
 	}
 	
 	\UCitem{Postcondiciones}{
-		\begin{UClist}
-			\UCli Se podrá solicitar el registro de una precondición por medio del caso de uso \cdtIdRef{CU 5.1.2.1}{Registrar precondición}.
-			\UCli Se podrá solicitar la eliminación de una precondición por medio del caso de uso \cdtIdRef{CU 5.1.2.3}{Eliminar precondición}.
-		\end{UClist}
+		Ninguna
 	}
 
 	\UCitem{Errores}{
-		Ninguno
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 5.1.2}{Registrar precondición} cuando no se ha ingresado un dato marcado como obligatorio.
+			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 5.1.2}{Registrar precondición} cuando se ha excedido la longitud de alguno de los campos.
+		\end{UClist}
 	}
 
 	\UCitem{Tipo}{
-		Secundario, extiende del caso de uso \cdtIdRef{CU 5.1}{Registrar caso de uso}.
+		Secundario, extiende de los casos de uso \cdtIdRef{CU 5.1}{Registrar caso de uso} y \cdtIdRef{CU 5.2}{Modificar caso de uso}.
 	}
 \end{UseCase}
+
+
+
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+
  \begin{UCtrayectoria}
-    \UCpaso[\UCactor] Solicita gestionar las precondiciones del caso de uso en la sección ``Precondiciones'' de la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o \cdtIdRef{IU 5.2}{Modificar caso de uso}.
-    \UCpaso[\UCsist] Verifica que la operación sea registrar caso de uso. \refTray{A}
-    \UCpaso[\UCactor] Gestiona las precondiciones a través de los botones: \cdtButton{Registrar} y \btnEliminar. \label{cu5.1.2:gestionaCU}
- \end{UCtrayectoria}
- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{La operación es una modificación.}
-    \UCpaso[\UCsist] Busca información de las precondiciones del caso de uso. \refTray{B}
-    \UCpaso[\UCsist] Muestra la información de las precondiciones en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o \cdtIdRef{IU 5.2}{Modificar caso de uso}. 
-    \UCpaso[] Continúa con el paso \ref{cu5.1.2:gestionaCU} de la trayectoria principal.
+	\UCpaso[\UCactor] Solicita registrar una precondición oprimiendo el botón \btnRegistrar de la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o de la pantalla \cdtIdRef{IU 5.1.2}{Modificar caso de uso}, en la sección ``Precondiciones''. 
+	\UCpaso[\UCsist] Muestra la pantalla emergente \cdtIdRef{IU 5.1.2}{Registrar precondición} en la cual se realizará el registro de la precondición. 
+	\UCpaso[\UCactor] Ingresa la redacción de la precondición. \refTray{A} \refTray{B} \refTray{C} \refTray{D} \refTray{E} \refTray{F} \refTray{G} \refTray{H} \refTray{I} \refTray{J} \refTray{K}\label{cu5.1.2:ingresaRedaccion}
+	\UCpaso[\UCactor] Solicita registrar la precondición oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{CU 5.1.2}{Registrar precondición}. \refTray{L} 
+	\UCpaso[\UCsist] Verifica que el actor haya ingresado todos los campos obligatorios con base en la regla de negocio \cdtIdRef{RN8}{Datos obligatorios}. \refTray{M}
+	\UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{N} 
+	\UCpaso[\UCsist] Agrega la precondición en la tabla de la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o de la pantalla \cdtIdRef{IU 5.1.2}{Modificar caso de uso}, en la sección ``Precondición''.
+\end{UCtrayectoria}
+
+    
+
+  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{A}{El actor desea seleccionar un actor.}
+ 	\UCpaso[\UCactor] Ingresa el token {\it ACT·}.
+ 	\UCpaso[\UCsist] Muestra una lista con los actores encontrados.
+ 	\UCpaso[\UCactor] Selecciona un actor de la lista.
+  	\UCpaso[\UCsist] Verifica que el nombre del actor seleccionado no contenga espacios. \refTray{Z}
+  	\UCpaso[\UCsist] Agrega el nombre del actor al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2:ingresaRedaccion} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+  %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{B}{El actor desea seleccionar un término del glosario.}
+ 	\UCpaso[\UCactor] Ingresa el token {\it GLS·}.	
+ 	\UCpaso[\UCsist] Muestra una lista con los términos del glosario encontrados.
+ 	\UCpaso[\UCactor] Selecciona un término del glosario de la lista.
+  	\UCpaso[\UCsist] Verifica que el nombre del término del glosario seleccionado no contenga espacios. \refTray{Z}
+  	\UCpaso[\UCsist] Agrega el nombre del término del glosario al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2:ingresaRedaccion} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+  %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{C}{El actor desea seleccionar un atributo.}
+ 	\UCpaso[\UCactor] Ingresa el token {\it ATR·}.
+  	\UCpaso[\UCsist] Busca los atributos de las entidades encontradas.
+  	\UCpaso[\UCsist] Muestra una lista de los atributos encontrados.
+ 	\UCpaso[\UCactor] Selecciona un atributo de la lista.
+  	\UCpaso[\UCsist] Verifica que el nombre de la entidad a la que pertenece el atributo seleccionado no contenga espacios. \refTray{Z}
+  	\UCpaso[\UCsist] Verifica que el nombre del atributo seleccionado no contenga espacios. \refTray{Z}
+  	\UCpaso[\UCsist] Agrega el nombre de la entidad a la que pertenece el atributo al texto, seguido del signo ``:''.
+  	\UCpaso[\UCsist] Agrega el nombre del atributo al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2:ingresaRedaccion} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+%----------------------------------------------------------%trayectoria D---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{D}{El actor desea seleccionar un mensaje.}
+ 	 \UCpaso[\UCactor] Ingresa el token {\it MSG·}.	
+ 	\UCpaso[\UCsist] Muestra una lista con los mensajes encontrados.
+ 	\UCpaso[\UCactor] Selecciona un mensaje de la lista.
+  	\UCpaso[\UCsist] Verifica que el nombre del mensaje seleccionado no contenga espacios. \refTray{Z}
+  	\UCpaso[\UCsist] Agrega el número del mensaje al texto, seguido del signo ``:''.
+  	\UCpaso[\UCsist] Agrega el nombre del mensaje al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2:ingresaRedaccion} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{E}{El actor desea seleccionar una regla de negocio.}
+ 	\UCpaso[\UCactor] Ingresa el token {\it RN·}.	
+ 	\UCpaso[\UCsist] Muestra una lista con las reglas de negocio encontradas.
+ 	\UCpaso[\UCactor] Selecciona una regla de negocio de la lista.
+  	\UCpaso[\UCsist] Verifica que el nombre de la regla de negocio seleccionada no contenga espacios. \refTray{Z}
+  	\UCpaso[\UCsist] Agrega el número de la regla de negocio al texto, seguido del signo ``:''.
+  	\UCpaso[\UCsist] Agrega el nombre de la regla de negocio al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2:ingresaRedaccion} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+  %----------------------------------------------------------%trayectoria F---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{F}{El actor desea seleccionar una entidad.}
+ 	\UCpaso[\UCactor] Ingresa el token {\it ENT·}.	
+ 	\UCpaso[\UCsist] Muestra una lista con las entidades encontradas.
+ 	\UCpaso[\UCactor] Selecciona una entidad de la lista.
+  	\UCpaso[\UCsist] Verifica que el nombre de la entidad seleccionada no contenga espacios. \refTray{Z}
+  	\UCpaso[\UCsist] Agrega el nombre de la entidad al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2:ingresaRedaccion} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+  %----------------------------------------------------------%trayectoria G---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{G}{El actor desea seleccionar un caso de uso.}
+ 	\UCpaso[\UCactor] Ingresa el token {\it CU·}.
+  	\UCpaso[\UCsist] Muestra una lista de los casos de uso encontrados.
+ 	\UCpaso[\UCactor] Selecciona un caso de uso de la lista.
+  	\UCpaso[\UCsist] Verifica que el nombre del caso de uso seleccionado no contenga espacios. \refTray{Z}
+  	\UCpaso[\UCsist] Agrega la clave del módulo al que pertenece el caso de uso al texto, seguido del signo ``·''.
+  	\UCpaso[\UCsist] Agrega el número del caso de uso al texto, seguido del signo ``:''.
+  	\UCpaso[\UCsist] Agrega el nombre del caso de uso al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2:ingresaRedaccion} de la trayectoria principal.
  \end{UCtrayectoriaA}
  
- \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{No existen registros de precondiciones.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG2}{No existe información} en la pantalla correspondiente
-    para indicar que no hay registros de precondiciones para mostrar.
-    \UCpaso[] Continúa con el paso \ref{cu5.1.2:gestionaCU} de la trayectoria principal.
+  %----------------------------------------------------------%trayectoria H---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{H}{El actor desea seleccionar una pantalla.}
+ 	\UCpaso[\UCactor] Ingresa el token {\it CU·}.
+  	\UCpaso[\UCsist] Muestra una lista de los casos de uso encontrados.
+ 	\UCpaso[\UCactor] Selecciona un caso de uso de la lista.
+  	\UCpaso[\UCsist] Verifica que el nombre del caso de uso seleccionado no contenga espacios. \refTray{Z}
+  	\UCpaso[\UCsist] Agrega la clave del módulo al que pertenece el caso de uso al texto, seguido del signo ``·''.
+  	\UCpaso[\UCsist] Agrega el número del caso de uso al texto, seguido del signo ``:''.
+  	\UCpaso[\UCsist] Agrega el nombre del caso de uso al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2:ingresaRedaccion} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+  %----------------------------------------------------------%trayectoria I---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{I}{El actor desea seleccionar un paso.}
+ 	\UCpaso[\UCactor] Ingresa el token {\it P·}.
+	\UCpaso[\UCsist] Busca los pasos del caso de uso.
+  	\UCpaso[\UCsist] Muestra una lista de los pasos encontrados.
+ 	\UCpaso[\UCactor] Selecciona un paso de la lista.
+  	\UCpaso[\UCsist] Verifica que el nombre del caso de uso al que pertenece el paso no contenga espacios. \refTray{Z}
+  	\UCpaso[\UCsist] Agrega la clave del caso de uso al que pertenece el paso al texto, seguido del signo ``·''.
+  	\UCpaso[\UCsist] Agrega el número del caso de uso al texto, seguido del signo ``:''.
+  	\UCpaso[\UCsist] Agrega el nombre del caso de uso al texto, seguido del signo ``:''.
+  	\UCpaso[\UCsist] Agrega el nombre del caso de uso al texto, seguido del signo ``:''.
+  	\UCpaso[\UCsist] Agrega la clave de la trayectoria a la que petenece el paso al texto, seguido del signo ``·''.
+  	\UCpaso[\UCsist] Agrega el número del paso seleccionado al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2:ingresaRedaccion} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+  %----------------------------------------------------------%trayectoria J---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{J}{El actor desea seleccionar una trayectoria.}
+ 	\UCpaso[\UCactor] Ingresa el token {\it TRAY·}.
+	\UCpaso[\UCsist] Busca las trayectorias del caso de uso.
+  	\UCpaso[\UCsist] Muestra una lista de las trayectorias encontradas.
+ 	\UCpaso[\UCactor] Selecciona una trayectoria de la lista.
+  	\UCpaso[\UCsist] Verifica que el nombre del caso de uso al que pertenece la trayectoria no contenga espacios. \refTray{Z}
+  	\UCpaso[\UCsist] Agrega la clave del caso de uso al que pertenece el paso al texto, seguido del signo ``·''.
+  	\UCpaso[\UCsist] Agrega el número del caso de uso al texto, seguido del signo ``:''.
+  	\UCpaso[\UCsist] Agrega el nombre del caso de uso al texto, seguido del signo ``:''.
+  	\UCpaso[\UCsist] Agrega el nombre del caso de uso al texto, seguido del signo ``:''.
+  	\UCpaso[\UCsist] Agrega la clave de la trayectoria seleccionada.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2:ingresaRedaccion} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+  %----------------------------------------------------------%trayectoria K---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{K}{El actor desea seleccionar una acción.}
+ 	\UCpaso[\UCactor] Ingresa el token {\it ACC·}.
+	\UCpaso[\UCsist] Busca las acciones de las pantallas.
+  	\UCpaso[\UCsist] Muestra una lista de las acciones encontradas.
+ 	\UCpaso[\UCactor] Selecciona una acción de la lista.
+  	\UCpaso[\UCsist] Verifica que el nombre de la pantalla a la que pertenece la acción no contenga espacios. \refTray{Z}
+  	\UCpaso[\UCsist] Agrega la clave de la pantalla a la que pertenece la acción al texto, seguido del signo ``·''.
+  	\UCpaso[\UCsist] Agrega el número de la pantalla al texto, seguido del signo ``:''.
+  	\UCpaso[\UCsist] Agrega el nombre de la pantalla al texto, seguido del signo ``:''.
+  	\UCpaso[\UCsist] Agrega el nombre de la acción seleccionada al texto.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2:ingresaRedaccion} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+ %----------------------------------------------------------%trayectoria L---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{L}{El actor desea cancelar la operación.}
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{CU 5.1.2}{Registrar precondición}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o \cdtIdRef{IU 5.1.2}{Modificar caso de uso} según corresponda.
  \end{UCtrayectoriaA}
  
+ %----------------------------------------------------------%trayectoria M---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{M}{El actor no ingresó algún dato marcado como obligatorio.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} en una pantalla emergente.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ 
+ %----------------------------------------------------------%trayectoria N --------------------------------------------------  
+ \begin{UCtrayectoriaA}{N}{El actor proporciona un dato que excede la longitud máxima.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} en una pantalla emergente.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.2:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
 
-\subsubsection{Puntos de extensión}
-
-\UCExtensionPoint{El actor requiere registrar una precondición}
-	{Paso \ref{cu5.1.2:gestionaCU}}
-	{\cdtIdRef{CU 5.1.2.1}{Registrar precondición}}
-\UCExtensionPoint{El actor requiere eliminar una precondición}
-	{Paso \ref{cu5.1.2:gestionaCU}}
-	{\cdtIdRef{CU 5.1.2.3}{Eliminar precondición}}
-  
+  %----------------------------------------------------------%trayectoria Z---------------------------------------------------- 
+  \begin{UCtrayectoriaA}{Z}{El texto contiene espacios.}
+     \UCpaso[\UCsist] Sustituye los espacios por guiones bajos.
+  \end{UCtrayectoriaA}

@@ -1,12 +1,13 @@
 \newpage 
 \begin{UseCase}{CU 5.1.1.1.3}{Eliminar paso}
 	{
-		Este caso de uso permite al actor eliminar un registro de la tabla de pasos de la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} o de la pantalla \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria}.
+		Este caso de uso permite al actor eliminar un registro de la tabla de 
+		pasos de la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} o de la pantalla \cdtIdRef{IU 5.2}{Modificar trayectoria}.
 	}
 	
 	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
 	\UCitem{Propósito}{
-		Eliminar la información de un paso de la tabla de pasos.
+		Eliminar un paso de la tabla de trayectoria.
 	}
 	\UCitem{Entradas}{
 		Ninguna
@@ -23,7 +24,7 @@
 	
 	\UCitem{Postcondiciones}{
 		\begin{UClist}
-			\UCli Se eliminará el atributo de la tabla de atributos correspondiente.
+			\UCli Se eliminará un paso de la tabla de la trayectoria.
 		\end{UClist}
 	}
 
@@ -39,15 +40,13 @@
 \end{UseCase}
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
-    \UCpaso[\UCactor] Solicita eliminar un paso oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} o de la pantalla \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria}.
-    \UCpaso[\UCsist] Busca los elementos que estén referenciando al paso.
+    \UCpaso[\UCactor] Solicita eliminar un paso oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} o de la pantalla \cdtIdRef{IU 5.2}{Modificar trayectoria}, de la sección ``Precondiciones''.
     \UCpaso[\UCsist] Verifica que ningún elemento esté referenciando al paso. \refTray{A}
     \UCpaso[\UCsist] Elimina el paso de la tabla correspondiente.
  \end{UCtrayectoria}
-  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El paso está siendo referenciado en un elemento.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG14}{Eliminación no permitida} en una pantalla emergente
-    con la lista de elementos que están referenciando al paso.
-    \UCpaso[\UCactor] Oprime el botón \cdtButton{Aceptar} de la pantalla emergente.
-    \UCpaso[\UCsist] Muestra la pantalla donde se solicitó la operación.
+ %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{Existen elementos referenciando al paso que se desea eliminar.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG14}{Eliminación no permitida} en una pantalla emergente con la lista de elementos que están referenciando al paso.
+	 \UCpaso[\UCactor] Oprime el botón \cdtButton{Aceptar} de la pantalla emergente.
+     \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} o la pantalla \cdtIdRef{IU 5.2}{Modificar trayectoria}, según corresponda.
  \end{UCtrayectoriaA}

@@ -31,7 +31,9 @@
 	}
 
 	\UCitem{Precondiciones}{
-		Ninguna
+		\begin{UClist}
+			\UCli Que el caso de uso se encuentre en estado ``Edición'' o ``Pendiente de corrección''.
+		\end{UClist}
 	}
 	
 	\UCitem{Postcondiciones}{
@@ -39,7 +41,10 @@
 	}
 
 	\UCitem{Errores}{
-		Ninguno
+	\begin{UClist}
+		\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla  \cdtIdRef{IU 5}{Gestionar casos de uso} cuando el estado del caso de uso sea inválido.
+	\end{UClist}
+		
 	}
 
 	\UCitem{Tipo}{
@@ -48,9 +53,11 @@
 \end{UseCase}
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
-    \UCpaso[\UCactor] Solicita gestionar las trayectorias del caso de uso presionando el botón \btnTray de la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+    \UCpaso[\UCactor] Solicita gestionar las trayectorias oprimiendo el botón \btnTray del caso de uso que desee de la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
     \UCpaso[\UCsist] Busca la información de las trayectorias del caso de uso. \refTray{A}
-    \UCpaso[\UCsist] Muestra la información de las trayectorias en la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias}. 
+    \UCpaso[\UCsist] Verifica que el caso de uso se encuentre en estado ``Edición'' o en estado ``Pendiente de corrección''. \refTray{D}
+    \UCpaso[\UCsist] Verifica que las trayectorias del caso de uso no cuenten con observaciones. \refTray{C}
+    \UCpaso[\UCsist] Muestra la información de las trayectorias en la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias}. \label{cu5.1.1:muestra}
     \UCpaso[\UCactor] Gestiona las trayectorias a través de los botones: \cdtButton{Registrar}, \btnEditar y \btnEliminar. \refTray{B} \label{cu5.1.1:gestionaCU}
  \end{UCtrayectoria}
  
@@ -62,6 +69,15 @@
  \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{El actor desea regresar a la gestión de casos de uso.}
     \UCpaso[\UCactor] Presiona el botón \cdtButton{Regresar}.
     \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+ \end{UCtrayectoriaA}
+ 
+ \begin{UCtrayectoriaA}{C}{Las trayectorias tienen observaciones.}
+    \UCpaso[\UCsist] Muestra las observaciones realizadas a las trayectorias del caso de uso en la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias}.
+    \UCpaso[] Continúa con el paso \ref{cu5.1.1:muestra} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{D}{El caso de uso no se encuentra en estado ``Edición'' o ``Pendiente de corrección''.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error} en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}, indicando que no es posible gestionar las trayectorias debido a que el estado del caso de uso es inválido.
  \end{UCtrayectoriaA}
  
 \subsubsection{Puntos de extensión}

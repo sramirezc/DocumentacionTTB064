@@ -56,7 +56,7 @@
 			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} cuando no se ha ingresado un dato marcado como obligatorio.
 			\UCli \cdtIdRef{MSG5}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
 			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} cuando se ha excedido la longitud de alguno de los campos.
-			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} cuando se registre un caso de uso con un nombre o número que ya este registrado.
+			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} cuando se registre un caso de uso con un nombre o número que ya se encuentre registrado.
 			\UCli \cdtIdRef{MSG15}{Dato no registrado}: Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} cuando un elemento referenciado no existe en el sistema.
 			\UCli \cdtIdRef{MSG23}{Caracteres inválidos}: Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} cuando el nombre del caso de uso contiene un caracter no válido.
 			\UCli \cdtIdRef{MSG27}{Token incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} cuando el token ingresado está mal formado.
@@ -72,13 +72,15 @@
  %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
     \UCpaso[\UCactor] Solicita registrar un caso de uso oprimiendo el botón \cdtButton{Registrar} de la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
-    \UCpaso[\UCsist] Busca los términos del glosario del proyecto actual registrados en el sistema. 
-    \UCpaso[\UCsist] Busca las entidades del proyecto actual registradas en el sistema. 
     \UCpaso[\UCsist] Busca las reglas de negocio del proyecto actual registradas en el sistema. 
+    \UCpaso[\UCsist] Busca las entidades del proyecto actual registradas en el sistema. 
+    \UCpaso[\UCsist] Busca los atributos de las entidades del proyecto actual registrados en el sistema. 
+    \UCpaso[\UCsist] Busca los casos de uso del proyecto actual registrados en el sistema. 
+    \UCpaso[\UCsist] Busca las pantallas del proyecto actual registradas en el sistema. 
+    \UCpaso[\UCsist] Busca las acciones de las pantallas del proyecto actual registradas en el sistema. 
     \UCpaso[\UCsist] Busca los mensajes del proyecto actual registrados en el sistema. 
     \UCpaso[\UCsist] Busca los actores del proyecto actual registrados en el sistema. 
-    \UCpaso[\UCsist] Busca las pantallas del proyecto actual registradas en el sistema. 
-    \UCpaso[\UCsist] Busca los casos de uso del proyecto actual registrados en el sistema. 
+    \UCpaso[\UCsist] Busca los términos del glosario del proyecto actual registrados en el sistema. 
     \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} en la cual se realizará el registro del caso de uso. 
     \UCpaso[\UCactor] Ingresa la información general del caso de uso. \label{cu5.1:ingresaDatos}
     \UCpaso[\UCactor] Ingresa los actores del caso de uso. \refTray{A} \label{cu5.1:ingresaActores}
@@ -203,12 +205,25 @@
     \UCpaso[] Continúa con el paso \ref{cu5.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
  
+ %----------------------------------------------------------%trayectoria Z---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{Z}{El texto contiene espacios.}
+    \UCpaso[\UCsist] Sustituye los espacios por guiones bajos.
+ \end{UCtrayectoriaA}
+ 
 
 \subsubsection{Puntos de extensión}	
 \UCExtensionPoint{El actor requiere registrar una precondición}
-	{Paso \ref{cu5.1:ingresaPrecond} de la trayectoria principal}
+	{Paso \ref{cu5.2:ingresaPrecond} de la trayectoria principal}
 	{\cdtIdRef{CU 5.1.2}{Registrar precondición}}
 	
+\UCExtensionPoint{El actor requiere eliminar una precondición}
+	{Paso \ref{cu5.2:ingresaPrecond} de la trayectoria principal}
+	{\cdtIdRef{CU 5.1.3}{Eliminar precondición}}
+	
 \UCExtensionPoint{El actor requiere registrar una postcondición}
-	{Paso \ref{cu5.1:ingresaPostcond} de la trayectoria principal}
-	{\cdtIdRef{CU 5.1.3}{Registrar postcondición}}
+	{Paso \ref{cu5.2:ingresaPostcond} de la trayectoria principal}
+	{\cdtIdRef{CU 5.1.4}{Registrar postcondición}}
+
+\UCExtensionPoint{El actor requiere eliminar una postcondición}
+	{Paso \ref{cu5.2:ingresaPostcond} de la trayectoria principal}
+	{\cdtIdRef{CU 5.1.5}{Eliminar postcondición}}

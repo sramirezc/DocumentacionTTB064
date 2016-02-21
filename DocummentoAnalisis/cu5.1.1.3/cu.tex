@@ -47,8 +47,7 @@
     \UCpaso[\UCactor] Solicita eliminar una trayectoria oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias}.
     \UCpaso[\UCsist] Busca los casos de uso que estén referenciando a la trayectoria.
     \UCpaso[\UCsist] Busca los casos de uso que estén referenciando algún paso de la trayectoria.
-    \UCpaso[\UCsist] Verifica que ningún caso de uso esté referenciando a la trayectoria. \refTray{A}
-    \UCpaso[\UCsist] Verifica que ningún caso de uso esté referenciando algún paso de la trayectoria. \refTray{B}
+    \UCpaso[\UCsist] Verifica que ningún elemento esté referenciando a la trayectoria. \refTray{A}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG11}{Confirmar eliminación} en una pantalla emergente con los botones \cdtButton{Aceptar} y \cdtButton{Cancelar}.
     \UCpaso[\UCactor] Confirma la eliminación de la trayectoria oprimiendo el botón \cdtButton{Aceptar} de la pantalla emergente. \refTray{C}
     \UCpaso[\UCsist] Elimina la información referente a la trayectoria.
@@ -57,18 +56,11 @@
  \end{UCtrayectoria}
  
  %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{La trayectoria está siendo referenciada en algún caso de uso.}
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{La trayectoria está siendo referenciada en algún elemento.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG14}{Eliminación no permitida} en una pantalla emergente
-    con la lista de casos de uso que están referenciando a la trayectoria.
+    con la lista de elementos que están referenciando a la trayectoria.
     \UCpaso[\UCactor] Oprime el botón \cdtButton{Aceptar} de la pantalla emergente.
     \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias}.
- \end{UCtrayectoriaA}
- %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
- \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{Algún paso de la trayectoria está siendo referenciado en algún caso de uso.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG14}{Eliminación no permitida} en una pantalla emergente
-    con la lista de casos de uso que están referenciando al paso.
-    \UCpaso[\UCactor] Oprime el botón \cdtButton{Aceptar} de la pantalla emergente.
-    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
  \end{UCtrayectoriaA}
  %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
  \begin{UCtrayectoriaA}[Fin del caso de uso]{C}{El actor desea cancelar la operación.}

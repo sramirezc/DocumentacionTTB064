@@ -53,6 +53,7 @@
 			\UCli \cdtIdRef{MSG5}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
 			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando se ha excedido la longitud de alguno de los campos.
 			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando se haya ingresado una clave que ya esté registrada.
+			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} cuando el estado del caso de uso no sea ``Edición'' o ``Pendiente de corección''.
 			\UCli \cdtIdRef{MSG15}{Dato no registrado}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando un elemento referenciado no existe en el sistema.
 			\UCli \cdtIdRef{MSG23}{Caracteres inválidos}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando el nombre del caso de uso contiene un caracter no válido.
 			\UCli \cdtIdRef{MSG27}{Token incorrecto}: Se muestra en la pantalla \cdtIdRef{CU 5.1.1.1}{Registrar trayectoria} cuando el token ingresado está mal formado.
@@ -64,12 +65,25 @@
 	}
 	
 \end{UseCase}
-%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%
 
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
-	\UCpaso[\UCactor] Solicita registrar una trayectoria oprimiento el botón \cdtButton{Registrar} de la la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias}. 
+	\UCpaso[\UCactor] Solicita registrar una trayectoria oprimiendo el botón \cdtButton{Registrar} de la la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias}.
+    \UCpaso[\UCsist] Verifica que el caso de uso se encuentre en estado ``Edición'' o en estado ``Pendiente de corrección''. \refTray{K}
+    \UCpaso[\UCsist] Busca las reglas de negocio del proyecto actual registradas en el sistema. 
+    \UCpaso[\UCsist] Busca las entidades del proyecto actual registradas en el sistema. 
+    \UCpaso[\UCsist] Busca los atributos de las entidades del proyecto actual registrados en el sistema. 
+    \UCpaso[\UCsist] Busca los casos de uso del proyecto actual registrados en el sistema. 
+    \UCpaso[\UCsist] Busca las trayectorias del caso de uso registradas en el sistema. 
+    \UCpaso[\UCsist] Busca los pasos de las trayectorias del caso de uso registrados en el sistema. 
+    \UCpaso[\UCsist] Busca las pantallas del proyecto actual registradas en el sistema. 
+    \UCpaso[\UCsist] Busca las acciones de las pantallas del proyecto actual registradas en el sistema. 
+    \UCpaso[\UCsist] Busca los mensajes del proyecto actual registrados en el sistema. 
+    \UCpaso[\UCsist] Busca los actores del proyecto actual registrados en el sistema. 
+    \UCpaso[\UCsist] Busca los términos del glosario del proyecto actual registrados en el sistema. 
+	
+	
+	
 	\UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} en la cual se realizará el registro de la trayectoria.
 	\UCpaso[\UCactor] Ingresa la clave de la trayectoria.
 	\UCpaso[\UCactor] Selecciona la opción ``Principal'' del campo ``Tipo''. \refTray{A} \label{cu5.1.1.1:ingresaDatos}
@@ -82,8 +96,8 @@
 	\UCpaso[\UCsist] Verifica que la clave no contenga caracteres inválidos con base en la regla de negocio \cdtIdRef{RN2}{Nombres de los elementos}. \refTray{G}
 	\UCpaso[\UCsist] Verifica que la trayectoria con la clave ingresada no se encuentre registrada en el caso de uso en cuestión, con base en la regla de negocio \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{D}
 	
-	\UCpaso[\UCsist] Verifica que el usuario haya ingresado al menos un paso, con base en la regla de negocio \cdtIdRef{RN6}{Unicidad de nombres}. \refTray{H}
-	\UCpaso[\UCsist] Verifica que los tokens utilizados en los pasos esten bien formados. \refTray{I}
+	\UCpaso[\UCsist] Verifica que el usuario haya ingresado al menos un paso, con base en la regla de negocio \cdtIdRef{RN32}{Pasos en la trayectoria}. \refTray{H}
+	\UCpaso[\UCsist] Verifica que los tokens utilizados en los pasos se encuentren bien formados. \refTray{I}
 	\UCpaso[\UCsist] Verifica que los elementos referenciados en los pasos existan. \refTray{J}
 	
 	\UCpaso[\UCsist] Registra la información de la trayectoria en el sistema.
@@ -150,16 +164,21 @@
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG15}{Dato no registrado} mencionando el elemento que no está registrado en el sistema.
     \UCpaso[] Continúa con el paso \ref{cu5.1.1.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria K---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{K}{El caso de uso no se encuentra en estado ``Edición'' o ``Pendiente de corrección''.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error} en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}, indicando que no es posible registrar una trayectoria debido a que el estado del caso de uso es inválido.
+ \end{UCtrayectoriaA}
+ 
 
 \subsubsection{Puntos de extensión}
 
 \UCExtensionPoint{El actor requiere registrar un paso de la trayectoria}
-	{Paso \ref{cu5.1.1.1:gestionaPasos}}
+	{Paso \ref{cu5.1.1.1:gestionaPasos} de la trayectoria principal}
 	{\cdtIdRef{CU 5.1.1.1.1}{Registrar paso}}
 \UCExtensionPoint{El actor requiere modificar un paso de la trayectoria}
-	{Paso \ref{cu5.1.1.1:gestionaPasos}}
+	{Paso \ref{cu5.1.1.1:gestionaPasos} de la trayectoria principal}
 	{\cdtIdRef{CU 5.1.1.1.2}{Modificar paso}}	
 \UCExtensionPoint{El actor requiere eliminar un paso de la trayectoria}
-	{Paso \ref{cu5.1.1.1:gestionaPasos}}
+	{Paso \ref{cu5.1.1.1:gestionaPasos} de la trayectoria principal}
 	{\cdtIdRef{CU 5.1.1.1.3}{Eliminar paso}}
   

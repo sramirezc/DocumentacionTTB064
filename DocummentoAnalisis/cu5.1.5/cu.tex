@@ -1,13 +1,13 @@
 \newpage 
-\begin{UseCase}{CU 5.1.3}{Eliminar precondición}
+\begin{UseCase}{CU 5.1.5}{Eliminar postcondición}
 	{
 		Este caso de uso permite al actor eliminar un registro de la tabla de 
-		precondiciones de la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o de la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}.
+		postcondiciones de la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o de la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}.
 	}
 	
 	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
 	\UCitem{Propósito}{
-		Eliminar una precondición.
+		Eliminar una postcondición.
 	}
 	\UCitem{Entradas}{
 		Ninguna
@@ -24,7 +24,7 @@
 	
 	\UCitem{Postcondiciones}{
 		\begin{UClist}
-			\UCli Se eliminará la precondición de la tabla.
+			\UCli Se eliminará la postcondición de la tabla.
 		\end{UClist}
 	}
 
@@ -38,6 +38,6 @@
 \end{UseCase}
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
-    \UCpaso[\UCactor] Solicita eliminar una precondición oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o de la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}, de la sección ``Precondiciones''.
-    \UCpaso[\UCsist] Elimina la precondición de la tabla correspondiente.
+    \UCpaso[\UCactor] Solicita eliminar una postcondición oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o de la pantalla \cdtIdRef{IU 5.2}{Modificar caso de uso}, de la sección ``Postcondiciones''.
+    \UCpaso[\UCsist] Elimina la postcondición de la tabla correspondiente.
  \end{UCtrayectoria}
