@@ -1,0 +1,60 @@
+\newpage 
+\begin{UseCase}{CU 5.7}{Configurar prueba}
+	{
+		Este caso de uso permite al analista comenzar la configuración de la prueba que generará PRISMA.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Revisar que la información del caso de uso sea correcta.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		Ninguna
+	}	
+	
+	
+	\UCitem{Mensajes}{
+		Ninguno
+	}
+
+	\UCitem{Precondiciones}{
+		\begin{UClist}
+			\UCli Que el caso de uso se encuentre en estado ``Preconfigurado'', ``Configurado'' o ``Liberado''.
+		\end{UClist}
+	}
+	
+	\UCitem{Postcondiciones}{
+		\begin{UClist}
+			\UCli El caso de uso pasará a estado ``Configurado''. 
+		\end{UClist}
+	}
+
+	\UCitem{Errores}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} cuando el caso de uso que se desea revisar no se encuentra en estado ``Preconfigurado'' ``Configurado'' o ``Liberado''.
+		\end{UClist}
+	}
+
+	\UCitem{Tipo}{
+		Secundario, extiende del caso de uso \cdtIdRef{CU 5}{Gestionar casos de uso}.
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+	\UCpaso[\UCactor] Oprime el botón \btnConfigurar del caso de uso del que desea configurar la prueba en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+    \UCpaso[\UCsist] Busca la información de la configuración general de la prueba del caso de uso.
+    \UCpaso[\UCsist] Verifica que el estado del caso de uso sea ``Preconfigurado'', ``Configurado'' o ``Liberado''. \refTray{A}
+    \UCpaso[\UCsist] Incluye al caso de uso \cdtIdRef{CU 5.7.1}{Configurar información general}.
+    \UCpaso[\UCsist] Incluye al caso de uso \cdtIdRef{CU 5.7.2}{Gestionar casos de uso previos}.
+    \UCpaso[\UCsist] Incluye al caso de uso \cdtIdRef{CU 5.7.3}{Configurar caso de uso}.
+	
+ \end{UCtrayectoria}
+ 
+ %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El caso de uso que se desea revisar se encuentra en un estado inválido.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error} en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+ \end{UCtrayectoriaA} 
+ 

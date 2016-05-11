@@ -1,0 +1,68 @@
+\newpage 
+\begin{UseCase}{CU 5.6}{Terminar caso de uso}
+	{
+		Este caso de uso permite al actor terminar la edición de un caso de uso en el sistema, para que pueda ser revisado y en su caso liberado.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Terminar la edición de un caso de uso para solicitar su revisión.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} para indicar que la operación fue exitosa.
+		\end{UClist}
+	}
+	\UCitem{Mensajes}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG36}{Confirmación de término}: Se muestra para que el actor confirme el término del caso de uso.
+		\end{UClist}
+	}
+
+	\UCitem{Precondiciones}{
+		\begin{UClist}
+			\UCli Que el caso de uso se encuentre en estado ``Edición'' o ``Pendiente de corrección''.
+		\end{UClist}
+	}
+	
+	\UCitem{Postcondiciones}{
+		\begin{UClist}
+			\UCli El caso de uso cambiará a estado ``Revisión''.
+		\end{UClist}
+	}
+
+	\UCitem{Errores}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} cuando el caso de uso no se encuentre en un estado que permita la operación.
+		\end{UClist}
+	}
+
+	\UCitem{Tipo}{
+		Secundario, extiende del caso de uso \cdtIdRef{CU 5}{Gestionar casos de uso}.
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita terminar un caso de uso oprimiendo el botón \btnTerminar del registro que desea terminar de la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+    \UCpaso[\UCsist] Verifica que el caso de uso se encuentre en estado ``Edición'' o ``Pendiente de corrección'' \refTray{A}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG36}{Confirmación de término} en una pantalla emergente con los botones \cdtButton{Aceptar} y \cdtButton{Cancelar}.
+    \UCpaso[\UCactor] Confirma el término del caso de uso oprimiendo el botón \cdtButton{Aceptar} de la pantalla emergente. \refTray{B}
+    \UCpaso[\UCsist] Verifica que el caso de uso se encuentre en estado ``Edición'' o ``Pendiente de corrección'' \refTray{A}
+    \UCpaso[\UCsist] Cambia el estado del caso de uso a ``Revisión''.
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}
+    para indicar al actor que se ha terminado el caso de uso exitosamente.
+ \end{UCtrayectoria}
+ 
+ %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El caso de uso está en un estado en que no se permite el término.}
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} con el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error}.
+ \end{UCtrayectoriaA} 
+
+ %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{El actor desea cancelar la operación.}
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla emergente.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+ \end{UCtrayectoriaA} 

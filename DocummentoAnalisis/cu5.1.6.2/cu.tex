@@ -1,0 +1,56 @@
+\newpage 
+\begin{UseCase}{CU 5.1.6.2}{Eliminar punto de extensión}
+	{
+		Este caso de uso permite al actor eliminar un punto de extensión del sistema.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Eliminar un punto de extensión del caso de uso.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		Ninguna
+	}
+	\UCitem{Mensajes}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG11}{Confirmar eliminación}: Se muestra en la pantalla \cdtIdRef{IU 5.1.4}{Gestionar puntos de extensión}
+			para solicitar la confirmación de eliminación al actor.
+			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 5.1.4}{Gestionar puntos de extensión}
+			para indicar que el registro del punto de extensión fue eliminado.
+		\end{UClist}
+	}
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		\begin{UClist}
+			\UCli Se eliminará un punto de extensión.
+		\end{UClist}
+	}
+
+	\UCitem{Errores}{
+		Ninguno
+	}
+
+	\UCitem{Tipo}{
+		Secundario, extiende del caso de uso \cdtIdRef{CU 5.1.4}{Gestionar puntos de extensión}.
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita eliminar un punto de extensión oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{IU 5.1.6}{Gestionar puntos de extensión}.
+    \UCpaso[\UCsist] Muestra el mensaje emergente \cdtIdRef{MSG11}{Confirmar eliminación}.
+    \UCpaso[\UCactor] Confirma la eliminación del punto de extensión oprimiendo el botón \cdtButton{Aceptar} del mensaje emergente. \refTray{A}
+    \UCpaso[\UCsist] Elimina el punto de extensión del sistema.
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 5.1.6}{Gestionar puntos de extensión} indicando que el punto de extensión ha sido eliminado exitosamente.
+	
+ \end{UCtrayectoria}
+ %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El actor no desea confirmar la eliminación.}
+	 \UCpaso[\UCactor] Solicita cancelar la eliminación oprimiendo el botón \cdtButton{Cancelar} de la pantalla emergente.
+     \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.1.6}{Gestionar puntos de extensión}.
+ \end{UCtrayectoriaA}

@@ -1,4 +1,4 @@
-\section{Modelo conceptual de un caso de uso}
+\section{Modelo conceptual de un Caso de uso}
 
 \subsection{Descripción general}
 En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de información de los elementos que componen un caso de uso.
@@ -98,6 +98,8 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
       \Battr{Numero}{Número}{\tdNumerico{entero}}{Número de la Pantalla}{\requerido}
       \Battr{Nombre}{Nombre}{\tdFrase}{Nombre que identificará a la Pantalla}{\requerido}
 	  \Battr{Imagen}{Imagen}{Imagen que ilustrará la interfaz gráfica del sistema.}{Es un archivo en formato PNG o JPG}{\requerido}
+      \Battr{Patron}{Patrón}{\tdFrase}{Texto que contiene la pantalla para su identificación}{\requerido}
+	  
 \end{BusinessEntity}
 
 \subsubsection{Relaciones}
@@ -114,6 +116,9 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
       \Battr{Nombre}{Nombre}{\tdFrase}{Nombre que identificará a la Acción}{\requerido}	
       \Battr{Descripcion}{Descripción}{\tdParrafo}{Texto que describirá la Acción}{\requerido}
 	  \Battr{Imagen}{Imagen}{Imágen que ilustrará la interfaz gráfica del sistema.}{Es un archivo en formato PNG o JPG}{\requerido}
+	  
+	  \Battr{URL}{URL}{\tdPalabra}{URL que determinará el destino de la acción}{\requerido}
+	  
 \end{BusinessEntity}
 
 \subsubsection{Relaciones}
@@ -199,7 +204,9 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 %-------------------------------------------------Salida----------------------------------
 
 \begin{BusinessEntity}{Salida}{Salida}
-	\item Esta entidad no cuenta con atributos y únicamente sirve para ilustrar que el Caso de Uso cuenta con salidas.
+    \Battr{HTMLValue}{HTML Value}{\tdFrase}{Valor HTML que tomará un determinado parámetro a realizar la ejecución de la prueba}{\requerido}
+    \Battr{HTMLValue}{HTML Name}{\tdPalabra}{Nombre del parámetro HTML que tomará un determinado valor a realizar la ejecución de la prueba}{\requerido}
+	
 \end{BusinessEntity}
 
 \subsubsection{Relaciones}
@@ -240,31 +247,13 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
     \BRitem{Cardinalidad}{Uno a muchos}
 \end{BusinessFact}
 
-%-------------------------------------------------Valor del Parámetro en Mensaje----------------------------------
-
-\begin{BusinessEntity}{ValordelParametroenMensaje}{Valor del Parámetro en Mensaje}
-      \Battr{OtroValor}{Otro Valor}{\tdFrase}{Valor del parámetro utilizado cuando no es un Elemento}{\opcional}
-      \Battr{NumerodeParametro}{Número de Parámetro}{\tdNumerico{entero}}{Número del Parámetro}{\requerido}
-\end{BusinessEntity}
-
-\subsubsection{Relaciones}
-
-\begin{BusinessFact}{ValordelParametroenMensaje:Elemento}{Elemento}
-	\BRitem{Descripción}{El valor utilizado en el Mensaje corresponde a un Elemento.}
-	\BRitem{Tipo}{\relAsociacion}
-    \BRitem{Cardinalidad}{Muchos a uno}
-\end{BusinessFact}
-
-\begin{BusinessFact}{ValordelParametroenMensaje:ParametrodelMensaje}{Parametro del Mensaje}
-	\BRitem{Descripción}{El valor utilizado en el Mensaje corresponde a un tipo específico.}
-	\BRitem{Tipo}{\relAsociacion}
-    \BRitem{Cardinalidad}{Muchos a uno}
-\end{BusinessFact}
 
 %-------------------------------------------------Entrada----------------------------------
 
 \begin{BusinessEntity}{Entrada}{Entrada}
-	\item Esta entidad no cuenta con atributos y únicamente sirve para ilustrar que el Caso de Uso cuenta con entradas.
+    \Battr{HTMLValue}{HTML Value}{\tdFrase}{Valor HTML que tomará un determinado parámetro a realizar la ejecución de la prueba}{\requerido}
+    \Battr{HTMLValue}{HTML Name}{\tdPalabra}{Nombre del parámetro HTML que tomará un determinado valor a realizar la ejecución de la prueba}{\requerido}
+	
 \end{BusinessEntity}
 
 \subsubsection{Relaciones}
@@ -320,7 +309,7 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
     \Battr{Alternativa}{Alternativa}{\tdBooleano}{Bandera que especifica si la Trayectoria es alternativa o principal}{\requerido}
     \Battr{Identificador}{Clave}{\tdPalabra}{Nombre o clave que identificará a la Trayectoria.}{\requerido}
     \Battr{Condicion}{Condición}{\tdFrase}{Texto que determina la circunstancia con la que se ejecuta la Trayectoria en caso de ser alternativa}{\requerido}
-    \Battr{FindelCasodeUso}{Fin del Caso de Uso}{\tdBooleano}{Bandera que especifica si la Trayectoria concluye el Caso de Uso.}{\requerido}
+    \Battr{FindelCasodeUso}{Fin del Caso de Uso}{\tdBooleano}{Bandera que especifica si la Trayectoria concluye el Caso de uso}{\requerido}
 \end{BusinessEntity}
 
 \subsubsection{Relaciones}
@@ -457,4 +446,64 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 	\BRitem{Descripción}{La Postcondición se encuentra constituida por diferentes elementos.}
 	\BRitem{Tipo}{\relAsociacion}
     \BRitem{Cardinalidad}{Muchos a muchos}
+\end{BusinessFact}
+
+%------------------------------------------------Valor del Parámetro en mensaje-----------------------------------
+\begin{BusinessEntity}{ValordelParametroenMensaje}{Valor del Parámetro en Mensaje}
+    \Battr{Valor}{Valor}{\tdParrafo}{Valor del parámetro que tendrá un mensaje parametrizado al realizar la ejecución de una prueba}{\requerido}
+\end{BusinessEntity}
+
+\subsubsection{Relaciones}
+
+\begin{BusinessFact}{ValordelParametroenMensaje:Mensaje}{Mensaje}
+	\BRitem{Descripción}{El valor del parámetro dependerá del mensaje en cuestión.}
+	\BRitem{Tipo}{\relAgregacion}
+    \BRitem{Cardinalidad}{Muchos a uno}
+\end{BusinessFact}
+
+\begin{BusinessFact}{ValordelParametroenMensaje:ParametrodelMensaje}{Parámetro del Mensaje}
+	\BRitem{Descripción}{El valor del parámetro corresponde a un tipo de parámetro.}
+	\BRitem{Tipo}{\relAsociacion}
+    \BRitem{Cardinalidad}{Muchos a uno}
+\end{BusinessFact}
+
+%------------------------------------------------Valor del Parámetro en Regla de Negocio-----------------------------------
+\begin{BusinessEntity}{ValordelParametroenRegladeNegocio}{Valor del Parámetro en Regla de Negocio}
+    \Battr{Valor}{Valor}{\tdParrafo}{Valor del parámetro que tendrá una regla de negocio al realizar la ejecución de una prueba}{\requerido}
+\end{BusinessEntity}
+
+\subsubsection{Relaciones}
+
+\begin{BusinessFact}{ValordelParametroenRegladeNegocio:RegladeNegocio}{Regla de Negocio}
+	\BRitem{Descripción}{El valor del parámetro dependerá de la regla de negocio en cuestión.}
+	\BRitem{Tipo}{\relAgregacion}
+    \BRitem{Cardinalidad}{Muchos a uno}
+\end{BusinessFact}
+
+\begin{BusinessFact}{ValordelParametroenRegladeNegocio:ParametrodelaRegladeNegocio}{Parámetro de la Regla de Negocio}
+	\BRitem{Descripción}{El valor del parámetro corresponde a un tipo de parámetro de Regla de Negocio.}
+	\BRitem{Tipo}{\relAsociacion}
+    \BRitem{Cardinalidad}{Muchos a uno}
+\end{BusinessFact}
+
+
+%-------------------------------------------------Configuración de pruebas----------------------------------
+
+\begin{BusinessEntity}{Configuraciondepruebas}{Configuracion de pruebas}
+    \Battr{URLBasededatos}{URL Base de datos}{\tdPalabra}{URL de la base de datos a la que se harán peticiones al realizar la ejecución de una prueba}{\requerido}
+    \Battr{DriverBasededatos}{Driver Base de datos}{\tdPalabra}{Nombre de la base de datos a la que se harán peticiones al realizar la ejecución de una prueba}{\requerido}
+	 \Battr{UsuarioBasededatos}{Usuario Base de datos}{\tdPalabra}{Usuario del servidor de la base de datos a la que se harán peticiones al realizar la ejecución de una prueba}{\requerido}
+	 \Battr{ContraseniaBasededatos}{Contraseña Base de datos}{\tdPalabra}{Contraseña del servidor de la base de datos a la que se harán peticiones al realizar la ejecución de una prueba}{\requerido}
+ \Battr{ServidoroIP}{Servidor o IP}{\tdPalabra}{Nombre del servidor o IP en la cual se aloja el sistema a probar}{\requerido}
+ \Battr{Puerto}{Puerto}{\tdPalabra}{Puerto por el cual se accede al sistema a probar}{\requerido}
+ 
+	
+\end{BusinessEntity}
+
+\subsubsection{Relaciones}
+
+\begin{BusinessFact}{Configuraciondepruebas:Casodeuso}{Caso de uso}
+	\BRitem{Descripción}{Cada caso de uso posee una configuración específica de pruebas.}
+	\BRitem{Tipo}{\relAsociacion}
+    \BRitem{Cardinalidad}{Uno a uno}
 \end{BusinessFact}

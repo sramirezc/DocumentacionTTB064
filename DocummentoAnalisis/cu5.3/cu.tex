@@ -23,7 +23,9 @@
 	}
 
 	\UCitem{Precondiciones}{
-		Ninguna
+		\begin{UClist}
+			\UCli Que el caso de uso se encuentre en estado ``Edición'' o ``Pendiente de corrección''.
+		\end{UClist}
 	}
 	
 	\UCitem{Postcondiciones}{
@@ -46,7 +48,7 @@
 %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
  \begin{UCtrayectoria}
     \UCpaso[\UCactor] Solicita eliminar un caso de uso oprimiendo el botón \btnEliminar del registro que desea eliminar de la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
-    \UCpaso[\UCsist] Verifica que el caso de uso se encuentra en un estado que permita la eliminación de acuerdo a la regla de negocio \cdtIdRef{RN18}{Eliminación de elementos}. \refTray{A}
+    \UCpaso[\UCsist] Verifica que el caso de uso se encuentre en estado ``Edición'' o ``Pendiente de corrección''. \refTray{A}
     \UCpaso[\UCsist] Busca los casos de uso que estén referenciando al caso de uso.
     \UCpaso[\UCsist] Busca los casos de uso que estén referenciando alguna trayectoria del caso de uso.
     \UCpaso[\UCsist] Busca los casos de uso que estén referenciando algún paso de alguna trayectoria del caso de uso.
@@ -55,7 +57,7 @@
     \UCpaso[\UCsist] Verifica que ningún caso de uso esté referenciando algún paso de alguna trayectoria del caso de uso. \refTray{D}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG11}{Confirmar eliminación} en una pantalla emergente con los botones \cdtButton{Aceptar} y \cdtButton{Cancelar}.
     \UCpaso[\UCactor] Confirma la eliminación del caso de uso oprimiendo el botón \cdtButton{Aceptar} de la pantalla emergente. \refTray{E}
-    \UCpaso[\UCsist] Verifica que el caso de uso se encuentra en un estado que permita la eliminación de acuerdo a la regla de negocio \cdtIdRef{RN18}{Eliminación de elementos}. \refTray{A}
+    \UCpaso[\UCsist] Verifica que el caso de uso se encuentre en estado ``Edición'' o ``Pendiente de corrección''. \refTray{A}
     \UCpaso[\UCsist] Elimina la información referente al caso de uso.
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}
     para indicar al actor que se ha eliminado el registro exitosamente.
