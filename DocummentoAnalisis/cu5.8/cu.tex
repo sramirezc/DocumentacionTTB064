@@ -1,0 +1,56 @@
+\newpage 
+\begin{UseCase}{CU 5.6}{Terminar caso de uso}
+	{
+		Este caso de uso permite al actor generar la prueba automatizada.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Generar la prueba automatizada.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli Script {\it JMX} donde se especifica el plan de pruebas.
+		\end{UClist}
+	}
+	\UCitem{Mensajes}{
+		Ninguno
+	}
+
+	\UCitem{Precondiciones}{
+		\begin{UClist}
+			\UCli Que el caso de uso se encuentre en estado ``Configurado''.
+		\end{UClist}
+	}
+	
+	\UCitem{Postcondiciones}{
+		\begin{UClist}
+			\UCli Se descargará un archivo al analista con el script de pruebas.
+		\end{UClist}
+	}
+
+	\UCitem{Errores}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} cuando el caso de uso no se encuentre en un estado que permita la operación.
+		\end{UClist}
+	}
+
+	\UCitem{Tipo}{
+		Secundario, extiende del caso de uso \cdtIdRef{CU 5}{Gestionar casos de uso}.
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Solicita generar la prueba de un caso de uso oprimiendo el botón \btnGenerar del registro que desee de la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+    \UCpaso[\UCsist] Verifica que el caso de uso se encuentre en estado ``Configurado''. \refTray{A}
+    \UCpaso[\UCsist] Genera el script de pruebas con base en el algoritmo ``Generador de casos de prueba''.
+    \UCpaso[\UCsist] Descarga el script de pruebas al analista.
+ \end{UCtrayectoria}
+ 
+ %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El caso de uso está en un estado en que no se permite el término.}
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} con el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error}.
+ \end{UCtrayectoriaA} 

@@ -1,0 +1,74 @@
+\newpage 
+\begin{UseCase}{CU 5.7.2}{Gestionar casos de uso previos}
+	{
+		Este caso de uso permite al analista visualizar los registros de los casos de uso que debe configurar para realizar la prueba a un determinado caso de uso. 
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Visualizar y gestionar los casos de uso registrados en el sistema.
+	}
+	\UCitem{Entradas}{
+		Ninguna
+	}
+	\UCitem{Salidas}{
+		\begin{UClist}
+			\UCli \cdtRef{Proyecto:Clave}{Clave} del proyecto. \ioObtener.
+			\UCli \cdtRef{Proyecto:Nombre}{Nombre} del proyecto. \ioObtener.
+			\UCli \cdtRef{Modulo:Clave}{Clave} del módulo: \ioObtener.
+			\UCli \cdtRef{Modulo:Nombre}{Nombre} del módulo: \ioObtener.
+			\UCli \cdtRef{CasodeUso}{Caso de uso}: \ioTabla{\cdtRef{Elemento:Clave}{Clave}, \cdtRef{Elemento:Numero}{Número}, \cdtRef{Elemento:Nombre}{Nombre} y el \cdtRef{Estado_Elemento}{Estado} }{de los casos de uso del módulo en cuestión}.
+		\end{UClist}
+	}
+	
+	\UCitem{Mensajes}{
+		Ninguno
+	}
+
+	\UCitem{Precondiciones}{
+		Ninguna
+	}
+	
+	\UCitem{Postcondiciones}{
+		Ninguna
+	}
+
+	\UCitem{Errores}{
+		Ninguno
+	}
+
+	\UCitem{Tipo}{
+		Secundario, incluido en el caso de uso \cdtIdRef{CU 7}{Configurar prueba}.
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCsist] Busca los casos de uso padre requeridos para ejecutar el caso de uso que se desea probar con base en los puntos de extensión especificados.
+    \UCpaso[\UCsist] Muestra la información de los casos de uso en la pantalla \cdtIdRef{IU 5.7.2}{Gestionar casos de uso previos} y su respeciva opción para preconfigurarlos. 
+	\UCpaso[\UCactor] Preconfigura los casos de uso previos a través de las operaciones disponibles de la columna ``Acciones''.\label{cu5.7.2:gestionaCU}
+    \UCpaso[\UCactor] Oprime el botón \cdtButton{Siguiente} para continuar con la configuración del caso de uso. \refTray{A} \refTray{B}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 5.7.3}{Configurar caso de uso} para indicar al actor que la configuración se ha realizado exitosamente.
+ \end{UCtrayectoria}
+ 
+ 
+ %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{A}{El actor desea volver al paso anterior.}
+     \UCpaso[\UCactor] Solicita volver al paso anterior oprimiendo el botón \cdtButton{Regresar} de la pantalla \cdtIdRef{IU 5.7.2}{Gestionar casos de uso previos}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.7.1}{Configurar información general}.
+ \end{UCtrayectoriaA}
+ 
+
+ %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{El actor desea cancelar la operación.}
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 5.7.2}{Gestionar casos de uso previos}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+ \end{UCtrayectoriaA}
+ 
+
+\subsubsection{Puntos de extensión}
+
+\UCExtensionPoint{El actor requiere preconfigurar un caso de uso previo}
+	{Paso \ref{cu5.7.2:gestionaCU} de la trayectoria principal}
+	{\cdtIdRef{CU 5.7.2.1}{Configurar caso de uso previo}}
+
+	

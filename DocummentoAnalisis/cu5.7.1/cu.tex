@@ -1,0 +1,142 @@
+\newpage 
+\begin{UseCase}{CU 5.7.1}{Configurar información general}
+	{
+		Este caso de uso permite al actor realizar la configuración general de la prueba automatizada para un caso de uso en particular.
+		
+	}
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+	\UCitem{Propósito}{
+		Configurar la información general de la prueba automatizada.
+	}
+	\UCitem{Entradas}{
+		\begin{UClist} 
+			\UCli De la sección {\bf Configuración de la conexión a la base de datos}: 
+				\begin{Citemize}
+					\item \cdtRef{Configuraciondepruebas:URLBasededatos}{URL de la base de datos}: \ioEscribir.
+					\item \cdtRef{Configuraciondepruebas:DriverBasededatos}{Driver}: \ioEscribir.
+					\item \cdtRef{Configuraciondepruebas:UsuarioBasededatos}{Nombre de usuario}: \ioEscribir.
+					\item \cdtRef{Configuraciondepruebas:ContraseniaBasededatos}{Contraseña}: \ioEscribir.
+					
+				\end{Citemize}
+			\UCli De la sección {\bf Configuración HTTP}:
+				\begin{Citemize}
+				        \item \cdtRef{Configuraciondepruebas:ServidoroIP}{Nombre del servidor o IP}: \ioEscribir.
+				        \item \cdtRef{Configuraciondepruebas:Puerto}{Puerto}: \ioEscribir.
+				\end{Citemize}
+			
+		\end{UClist}
+	}	
+	
+	\UCitem{Salidas}{	
+		\begin{UClist} 
+			\UCli \cdtRef{Proyecto:Clave}{Clave} del proyecto. \ioObtener.
+			\UCli \cdtRef{Proyecto:Nombre}{Nombre} del proyecto. \ioObtener.
+			\UCli \cdtRef{Modulo:Clave}{Clave} del módulo: \ioObtener.
+			\UCli \cdtRef{Modulo:Nombre}{Nombre} del módulo: \ioObtener.
+			\UCli \cdtRef{Elemento:Clave}{Clave} del caso de uso: \ioObtener. 
+			\UCli \cdtRef{Elemento:Numero}{Número} del caso de uso: \ioObtener.
+			\UCli \cdtRef{Elemento:Nombre}{Nombre} del caso de uso: \ioObtener.
+			\UCli De la sección {\bf Configuración de la conexión a la base de datos}: 
+				\begin{Citemize}
+					\item \cdtRef{Configuraciondepruebas:URLBasededatos}{URL de la base de datos}: \ioObtener.
+					\item \cdtRef{Configuraciondepruebas:DriverBasededatos}{Driver}: \ioObtener.
+					\item \cdtRef{Configuraciondepruebas:UsuarioBasededatos}{Nombre de usuario}: \ioObtener.
+					\item \cdtRef{Configuraciondepruebas:ContraseniaBasededatos}{Contraseña}: \ioObtener.
+					
+				\end{Citemize}
+			\UCli De la sección {\bf Configuración HTTP}:
+				\begin{Citemize}
+				        \item \cdtRef{Configuraciondepruebas:ServidoroIP}{Nombre del servidor o IP}: \ioObtener.
+				        \item \cdtRef{Configuraciondepruebas:Puerto}{Puerto}: \ioObtener.
+				\end{Citemize}
+			
+		\end{UClist}
+	}
+	
+	\UCitem{Mensajes}{	
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 5.7.2}{Gestionar casos de uso previos} o en la pantalla \cdtIdRef{IU 5.7.1}{Configurar información general} para indicar que la configuración general se realizó exitosamente.
+		\end{UClist}
+	}
+	
+	\UCitem{Precondiciones}{ 
+		\begin{UClist}
+			\UCli Ninguna
+	 	\end{UClist}
+	}			
+	\UCitem{Postcondiciones}{ 
+		\begin{UClist}
+			\UCli Se modificará la información de la configuración general del caso de uso en el sistema.	
+	 	\end{UClist}
+	}
+	\UCitem{Errores}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 5.7.1}{Configurar información general} cuando no se ha ingresado un dato marcado como obligatorio.
+			\UCli \cdtIdRef{MSG5}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 5.7.1}{Configurar información general} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 5.7.1}{Configurar información general} cuando se ha excedido la longitud de alguno de los campos.
+			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} cuando el caso de uso que se desea revisar no se encuentra en estado ``Preconfigurado'' ``Configurado'' o ``Liberado''.
+			
+		\end{UClist}
+	}
+	
+	\UCitem{Tipo}{
+		Secundario, incluido en el caso de uso \cdtIdRef{CU 7}{Configurar prueba}.
+	}
+
+	
+\end{UseCase}
+ %-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Ingresa la configuración general del caso de uso en la pantalla \cdtIdRef{IU 5.7.1}{Configurar información general}.\label{cu5.7.1:ingresaDatos}
+    \UCpaso[\UCactor] Solicita guardar la configuración del caso de uso oprimiendo el botón \cdtButton{Siguiente} de la pantalla \cdtIdRef{IU 5.7.1}{Configurar información general}. \refTray{A} \refTray{B}
+    \UCpaso[\UCsist] Verifica que el estado del caso de uso sea ``Preconfigurado'', ``Configurado'' o ``Liberado''. \refTray{C}	
+    \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{G}
+	    \UCpaso[\UCsist] Verifica que los datos sean proporcionados correctamente, con base en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{K} \refTray{L}    
+    \UCpaso[\UCsist] Modifica la configuración general del caso de uso en el sistema.	
+    \UCpaso[\UCsist] Verifica que el caso de uso que se desea probar requiera de la ejecución de casos de uso con base en los puntos de extensión. \refTray{M}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 5.7.2}{Gestionar casos de uso previos} para indicar al actor que la configuración se ha realizado exitosamente.
+ \end{UCtrayectoria}
+ 
+ %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{A}{El actor desea únicamente guardar el avance realizado sin avanzar al siguiente paso de la configuración.}
+     \UCpaso[\UCactor] Solicita guardar el avance oprimiendo el botón \cdtButton{Guardar} de la pantalla \cdtIdRef{IU 5.7.1}{Configurar información general}.
+    \UCpaso[\UCsist] Modifica la configuración general del caso de uso en el sistema.	
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 5.7.1}{Configurar información general}, indicando que la información ha sido guardada exitosamente.
+ \end{UCtrayectoriaA}
+ 
+
+ %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{El actor desea cancelar la operación.}
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 5.7.1}{Configurar información general}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+ \end{UCtrayectoriaA}
+ 
+ %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{C}{El caso de uso que se desea revisar se encuentra en un estado inválido.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error} en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+ \end{UCtrayectoriaA}
+
+  %----------------------------------------------------------%trayectoria G---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{G}{El actor no ingresó algún dato marcado como obligatorio.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
+	    \cdtIdRef{CU 5.2}{Configurar información general}, indicando al actor que el dato es obligatorio.
+    \UCpaso[] Continúa con el paso \ref{cu5.7.1:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+ %----------------------------------------------------------%trayectoria K---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{K}{El actor ingresó un tipo de dato incorrecto.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Formato incorrecto} y señala el campo que presenta el dato inválido en la 
+    pantalla \cdtIdRef{IU 5.7.1}{Configurar información general} para indicar que se ha ingresado un tipo de dato inválido.
+    \UCpaso[] Continúa con el paso \ref{cu5.7.1:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria L----------------------------------------------------  
+ \begin{UCtrayectoriaA}{L}{El actor proporciona un dato que excede la longitud máxima.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
+    longitud en la pantalla \cdtIdRef{IU 5.7.1}{Configurar información general}, para indicar que el dato excede el tamaño máximo permitido.
+    \UCpaso[] Continúa con el paso \ref{cu5.7.1:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria L----------------------------------------------------  
+ \begin{UCtrayectoriaA}{M}{El caso de uso es primario y no requiere de la ejecución de otros casos de uso.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 5.7.3}{Configurar caso de uso} para indicar al actor que la configuración se ha realizado exitosamente.
+ \end{UCtrayectoriaA}
+ 
