@@ -75,6 +75,7 @@ Debido a que el funcionamiento de este modelo se encuentra principalmente basado
 % ----------------------------------------------------------------	
 \subsubsection{Transición inicial} \IMfig[.3]{ModeloNegocios/images/trayectoriaEstados/0_1.png}{fig:trayectoriaEstados0_1}{Transición inicial} 
 En la figura \refIM{fig:trayectoriaEstados0_1}{} se muestra la transición que modela el escenario que desencadena la ejecución del caso de uso, generalmente corresponde a la acción de oprimir un botón o ícono en una gestión. \\
+
 Un paso de este tipo es necesario ya que el botón o ícono aporta información sobre la URL que se utilizará para generar la prueba. Ejemplo:\\
 
 {``\it
@@ -92,8 +93,7 @@ En la figura \refIM{fig:trayectoriaEstados1_2}{} se muestra la transición que m
   
    \IMfig[.2]{ModeloNegocios/images/trayectoriaEstados/1_14.png}{fig:trayectoriaEstados1_14}{Transición de 1 a 14}
    
-En la figura \refIM{fig:trayectoriaEstados1_14}{} se muestra la transición que modela el escenario en el que el sistema no cumple las precondiciones establecidas.\\\\
-  
+En la figura \refIM{fig:trayectoriaEstados1_14}{} se muestra la transición que modela el escenario en el que el sistema no cumple las precondiciones establecidas.\\
   
  La aparición de pasos de este tipo en la trayectoria es opcional, ya que algunos casos de uso no cuentan con precondiciones. En nuestro caso de estudio únicamente se trabajará con precondiciones cuyo comportamiento exija la validación de la existencia de información necesaria para operar. Ejemplo:\\
 
@@ -155,17 +155,17 @@ En la figura \refIM{fig:trayectoriaEstados3_4}{} se muestra la transición que m
  En la figura \refIM{fig:trayectoriaEstados4_9_10_11_5}{} se muestra un conjunto de transiciones que modelan el escenario en el que una vez ingresados los datos, el sistema opera para mostrar nuevos campos, mostrar nueva información, realizar validaciones, calculos etc. Ejemplo:\\
 
   ``{\it
- {\bf 5} \UCsist Verifica que el tipo de regla de negocio requiera parámetros. \refTray{A}\\
- 
+ {\bf 5} \UCsist Verifica que el tipo de regla de negocio requiera parámetros. \refTray{A}}''\\
+   
  En este caso particular, se realiza una validación y en caso de cumplirse se solicita nueva información que posteriormente será mostrada en la pantalla, de lo contrario simplemente omitirá algunos pasos.\\
  
- {\bf 6} \UCsist Muestra la pantalla \cdtIdRef{IU 8.1a}{Registrar regla de negocio: Comparación de atributos}''\\\\
+ ``{\it
+ {\bf 6} \UCsist Muestra la pantalla \cdtIdRef{IU 8.1a}{Registrar regla de negocio: Comparación de atributos}\\
  
  \begin{UCtrayectoriaA}{A}{La regla de negocio no requiere parámetros.}
 	\UCpaso[] Continúa con el paso \ref{cu8.1:descripcion} de la trayectoria principal.
  \end{UCtrayectoriaA}
-     
-  }''\\
+ }''\\
 	
   	{\bf Este tipo de comportamientos no están considerados para la generación de casos de prueba.}
 	
@@ -208,7 +208,7 @@ Ejemplo:\\
 
  ``{\it
     {\bf 8} \UCsist Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{C}
- }''
+ }''\\
 	
 	Debido a que el paso anterior es realizado por el sistema, no es necesario simularlo, sin embargo, para poder verificar que el sistema hizo lo correcto es necesario evaluar las entradas generadas y así determinar qué comportamiento esperar.
 	
@@ -216,7 +216,7 @@ Ejemplo:\\
 \subsubsection{Transición de 12 a 13}
  \IMfig[.4]{ModeloNegocios/images/trayectoriaEstados/12_13.png}{fig:trayectoriaEstados12_13}{Transición de 12 a 13} 
  
-En la figura \refIM{fig:trayectoriaEstados5_6}{} se muestra la transición que modela el conjunto de escenarios en los que alguna regla de negocio no fue cumplida y no es de alguno de los tipos especificados anteriormente. Debido a que las reglas de negocio pueden ser de naturalezas completamente diferentes, modelarlo sería bastante complejo, pues el comportamiento de cada una es muy particular, se podrían solicitar nuevos datos, mostrar mensajes, cambiar de pantalla, ejecutar transacciones, terminar el caso de uso, realizar cálculos, etc. Ejemplo:\\
+En la figura \refIM{fig:trayectoriaEstados12_13}{} se muestra la transición que modela el conjunto de escenarios en los que alguna regla de negocio no fue cumplida y no es de alguno de los tipos especificados anteriormente. Debido a que las reglas de negocio pueden ser de naturalezas completamente diferentes, modelarlo sería bastante complejo, pues el comportamiento de cada una es muy particular, se podrían solicitar nuevos datos, mostrar mensajes, cambiar de pantalla, ejecutar transacciones, terminar el caso de uso, realizar cálculos, etc. Ejemplo:\\
 	 
 
 	``{\it
@@ -253,7 +253,7 @@ Un paso de este tipo es necesario ya que el botón o ícono aporta información 
  \subsubsection{Transición de 7 a 8}
    \IMfig[.2]{ModeloNegocios/images/trayectoriaEstados/7_8.png}{fig:trayectoriaEstados7_8}{Transición de 7 a 8}
   
- En la figura \refIM{fig:trayectoriaEstados14_8}{} se muestra la transición que modela el escenario en el que después de ejecutar la transacción, el sistema muestra un mensaje de éxito. 
+ En la figura \refIM{fig:trayectoriaEstados7_8}{} se muestra la transición que modela el escenario en el que después de ejecutar la transacción, el sistema muestra un mensaje de éxito. 
  La aparición de un paso de este tipo en la trayectoria es necesaria ya que  permite saber si el sistema muestra correctamente mensaje. Ejemplo:\\
 
  ``{\it
