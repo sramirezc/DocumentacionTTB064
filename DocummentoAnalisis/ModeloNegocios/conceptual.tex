@@ -61,31 +61,31 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
     \BRitem{Cardinalidad}{Uno a muchos}
 \end{BusinessFact}
 
-\begin{BusinessFact}{CasodeUso:Revision}{Revision}
+\begin{BusinessFact}{CasodeUso:Revision}{Revisión}
 	\BRitem{Descripción}{Un caso de uso puede ser revisado.}
 	\BRitem{Tipo}{\relComposicion}
     \BRitem{Cardinalidad}{Uno a muchos}
 \end{BusinessFact}
 
-\begin{BusinessFact}{CasodeUso:Extension}{Extension}
+\begin{BusinessFact}{CasodeUso:Extension}{Extensión}
 	\BRitem{Descripción}{Un caso de uso puede tener puntos de extensión.}
 	\BRitem{Tipo}{\relComposicion}
     \BRitem{Cardinalidad}{Uno a muchos}
 \end{BusinessFact}
 
-\begin{BusinessFact}{CasodeUso:Inclusion}{Inclusion}
+\begin{BusinessFact}{CasodeUso:Inclusion}{Inclusión}
 	\BRitem{Descripción}{Un caso de uso puede incluir otros casos de uso.}
 	\BRitem{Tipo}{\relComposicion}
     \BRitem{Cardinalidad}{Uno a muchos}
 \end{BusinessFact}
 
-\begin{BusinessFact}{CasodeUso:Precondicion}{Precondicion}
+\begin{BusinessFact}{CasodeUso:Precondicion}{Precondición}
 	\BRitem{Descripción}{Un caso de uso puede tener diferentes precondiciones.}
 	\BRitem{Tipo}{\relComposicion}
     \BRitem{Cardinalidad}{Uno a muchos}
 \end{BusinessFact}
 
-\begin{BusinessFact}{CasodeUso:Postcondicion}{Postcondicion}
+\begin{BusinessFact}{CasodeUso:Postcondicion}{Postcondición}
 	\BRitem{Descripción}{Un caso de uso puede tener diferentes postcondiciones.}
 	\BRitem{Tipo}{\relComposicion}
     \BRitem{Cardinalidad}{Uno a muchos}
@@ -97,7 +97,7 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
       \Battr{Clave}{Clave}{\tdPalabra}{Clave que permitirá distinguir que el Elemento es una Pantalla}{\requerido}
       \Battr{Numero}{Número}{\tdNumerico{entero}}{Número de la Pantalla}{\requerido}
       \Battr{Nombre}{Nombre}{\tdFrase}{Nombre que identificará a la Pantalla}{\requerido}
-	  \Battr{Imagen}{Imagen}{Imagen que ilustrará la interfaz gráfica del sistema.}{Es un archivo en formato PNG o JPG}{\requerido}
+	  \Battr{Imagen}{Imagen}{Es un archivo en formato PNG o JPG}{Imagen que ilustrará la interfaz gráfica del sistema}{\requerido}
       \Battr{Patron}{Patrón}{\tdFrase}{Texto que contiene la pantalla para su identificación}{\requerido}
 	  
 \end{BusinessEntity}
@@ -115,9 +115,9 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 \begin{BusinessEntity}{Accion}{Acción}
       \Battr{Nombre}{Nombre}{\tdFrase}{Nombre que identificará a la Acción}{\requerido}	
       \Battr{Descripcion}{Descripción}{\tdParrafo}{Texto que describirá la Acción}{\requerido}
-	  \Battr{Imagen}{Imagen}{Imágen que ilustrará la interfaz gráfica del sistema.}{Es un archivo en formato PNG o JPG}{\requerido}
+	  \Battr{Imagen}{Imagen}{Es un archivo en formato PNG o JPG}{Imagen que ilustrará la interfaz gráfica del sistema}{\requerido}
 	  
-	  \Battr{URL}{URL}{\tdPalabra}{URL que determinará el destino de la acción}{\requerido}
+	  \Battr{URL}{URL}{\tdPalabra}{URL que determinará el destino de la Acción}{\requerido}
 	  
 \end{BusinessEntity}
 
@@ -204,8 +204,8 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 %-------------------------------------------------Salida----------------------------------
 
 \begin{BusinessEntity}{Salida}{Salida}
-    \Battr{HTMLValue}{HTML Value}{\tdFrase}{Valor HTML que tomará un determinado parámetro a realizar la ejecución de la prueba}{\requerido}
-    \Battr{HTMLValue}{HTML Name}{\tdPalabra}{Nombre del parámetro HTML que tomará un determinado valor a realizar la ejecución de la prueba}{\requerido}
+    \Battr{HTMLValue}{HTML Value}{\tdFrase}{Valor HTML que tomará un determinado parámetro al realizar la ejecución de la prueba}{\requerido}
+    \Battr{HTMLValue}{HTML Name}{\tdPalabra}{Nombre del parámetro HTML que tomará un determinado valor al realizar la ejecución de la prueba}{\requerido}
 	
 \end{BusinessEntity}
 
@@ -251,8 +251,8 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 %-------------------------------------------------Entrada----------------------------------
 
 \begin{BusinessEntity}{Entrada}{Entrada}
-    \Battr{HTMLValue}{HTML Value}{\tdFrase}{Valor HTML que tomará un determinado parámetro a realizar la ejecución de la prueba}{\requerido}
-    \Battr{HTMLValue}{HTML Name}{\tdPalabra}{Nombre del parámetro HTML que tomará un determinado valor a realizar la ejecución de la prueba}{\requerido}
+    \Battr{HTMLValue}{HTML Value}{\tdFrase}{Valor HTML que tomará un determinado parámetro al realizar la ejecución de la prueba}{\requerido}
+    \Battr{HTMLValue}{HTML Name}{\tdPalabra}{Nombre del parámetro HTML que tomará un determinado valor al realizar la ejecución de la prueba}{\requerido}
 	
 \end{BusinessEntity}
 
@@ -307,7 +307,7 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 \clearpage
 \begin{BusinessEntity}{Trayectoria}{Trayectoria}
     \Battr{Alternativa}{Alternativa}{\tdBooleano}{Bandera que especifica si la Trayectoria es alternativa o principal}{\requerido}
-    \Battr{Identificador}{Clave}{\tdPalabra}{Nombre o clave que identificará a la Trayectoria.}{\requerido}
+    \Battr{Identificador}{Clave}{\tdPalabra}{Nombre o clave que identificará a la Trayectoria}{\requerido}
     \Battr{Condicion}{Condición}{\tdFrase}{Texto que determina la circunstancia con la que se ejecuta la Trayectoria en caso de ser alternativa}{\requerido}
     \Battr{FindelCasodeUso}{Fin del Caso de Uso}{\tdBooleano}{Bandera que especifica si la Trayectoria concluye el Caso de uso}{\requerido}
 \end{BusinessEntity}
@@ -371,7 +371,7 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 %-------------------------------------------------Revisión----------------------------------
 
 \begin{BusinessEntity}{Revision}{Revisión}
-    \Battr{Observaciones}{Observaciones}{\tdParrafo}{Texto que describe los errores y/o cambios que deben realizarse al caso de uso identificados durante su revisión}{\requerido}
+    \Battr{Observaciones}{Observaciones}{\tdParrafo}{Texto que describe los errores y/o cambios que deben realizarse al caso de uso}{\requerido}
 \end{BusinessEntity}
 
 \subsubsection{Relaciones}
@@ -489,9 +489,9 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 
 %-------------------------------------------------Configuración de pruebas----------------------------------
 
-\begin{BusinessEntity}{Configuraciondepruebas}{Configuracion de pruebas}
+\begin{BusinessEntity}{Configuraciondepruebas}{Configuración de pruebas}
     \Battr{URLBasededatos}{URL Base de datos}{\tdPalabra}{URL de la base de datos a la que se harán peticiones al realizar la ejecución de una prueba}{\requerido}
-    \Battr{DriverBasededatos}{Driver Base de datos}{\tdPalabra}{Nombre de la base de datos a la que se harán peticiones al realizar la ejecución de una prueba}{\requerido}
+    \Battr{DriverBasededatos}{Driver Base de datos}{\tdPalabra}{Driver de la base de datos a la que se harán peticiones al realizar la ejecución de una prueba}{\requerido}
 	 \Battr{UsuarioBasededatos}{Usuario Base de datos}{\tdPalabra}{Usuario del servidor de la base de datos a la que se harán peticiones al realizar la ejecución de una prueba}{\requerido}
 	 \Battr{ContraseniaBasededatos}{Contraseña Base de datos}{\tdPalabra}{Contraseña del servidor de la base de datos a la que se harán peticiones al realizar la ejecución de una prueba}{\requerido}
  \Battr{ServidoroIP}{Servidor o IP}{\tdPalabra}{Nombre del servidor o IP en la cual se aloja el sistema a probar}{\requerido}
