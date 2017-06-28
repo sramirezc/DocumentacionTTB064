@@ -24,7 +24,7 @@
     \BRitem{Versión}{1.0}
     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
     \BRitem{Estatus}{Terminada}
-    \BRitem{Descripción}{El número de los elementos del mismo tipo no pueden repetirse.}	
+    \BRitem{Descripción}{El número de los elementos del mismo tipo no puede repetirse.}	
 \end{BusinessRule}
 \begin{BusinessRule}{RN2}{Nombres de los elementos}
     {Restricción de operación}
@@ -116,13 +116,15 @@
 		
 		Revisión & Consultar y revisar & Consultar y revisar\\ \hline
 		
-		Por liberar & Consultar & Consultar y liberar\\ \hline
-		
 		Pendiente de corrección & Consultar, editar, gestionar trayectorias, gestionar puntos de extensión, terminar y eliminar & Consultar, editar, gestionar trayectorias, gestionar puntos de extensión, terminar y eliminar\\ \hline
+		
+		Por liberar & Consultar & Consultar y liberar\\ \hline
 		
 		Liberado & Consultar y configurar prueba & Consultar, solicitar correcciones y configurar prueba\\ \hline
 		
 		Configurado & Consultar, configurar prueba y generar prueba & Consultar, solicitar correcciones, configurar prueba y generar prueba\\ \hline
+		
+		Preconfigurado & Consultar y configurar prueba & Consultar, solicitar correcciones, configurar prueba \\ \hline
 		
       \end{longtable}
     }	
@@ -154,10 +156,13 @@
     \BRitem{Versión}{1.0}
     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
     \BRitem{Estatus}{Terminada}
-    \BRitem{Descripción}{El identificador de cada elemento se compone de un nombre, número y una clave. Donde el nombre es el que le asigna el usuario, el número 
-    es secuencial y la clave define el tipo de elemento: ``ENT'' para las entidades, ``ACT'' para los actores, ``CU'' para los casos de uso, ``IU'' para
-    las pantallas, ``MSG'' para los mensajes, ``RN'' para las reglas de negocio y ``GLS'' para los términos del glosario.}	
+    \BRitem{Descripción}{El identificador de cada elemento (excepto casos de uso y pantallas) se compone de un nombre, número y una clave. Donde el nombre es el que le asigna el usuario, el número 
+    es secuencial y la clave define el tipo de elemento: ``ENT'' para las entidades, ``ACT'' para los actores, ``MSG'' para los mensajes, ``RN'' para las reglas de negocio y ``GLS'' para los términos del glosario.\\
+    
+    El identificador de los casos de uso y de las pantallas se compone de un nombre, número, clave y clave del módulo. Donde el nombre es el que le asigna el usuario, el número 
+    es secuencial, la clave define el tipo de elemento:  ``CU'' para los casos de uso y ``IU'' para las pantallas, y finalmente la clave del módulo al que pertenece el caso de uso o pantalla.}	
     % Se sacrifica la usabilidad por el tiempo reducido de desarrollo
+    
 \end{BusinessRule}
 
 \begin{BusinessRule}{RN13}{Modificación del identificador}
@@ -249,7 +254,7 @@
     \BRitem{Versión}{1.0}
     \BRitem{Autor}{Natalia Giselle Hernández Sánchez}
     \BRitem{Estatus}{Terminada}
-    \BRitem{Descripción}{Se podrán registrar proyectos con estado ``En Negociación'' o ``Iniciado''.}
+    \BRitem{Descripción}{Se podrán registrar proyectos con estado ``Negociación'' o ``Iniciado''.}
 \end{BusinessRule}
 
 \begin{BusinessRule}{RN22}{Unicidad de la clave del proyecto}
