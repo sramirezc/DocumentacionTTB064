@@ -1,0 +1,34 @@
+\newpage 
+\subsection{IU 5.7.2.1 Configurar caso de uso previo}
+\subsubsection{Objetivo}
+	
+	En esta pantalla el actor puede configurar un caso de uso previo. Para configurar un caso de uso previo es necesario configurar las entradas y las acciones que contiene el mismo.
+
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 5.7.2.1} se muestra la pantalla ``Configurar caso de uso previo'', por medio de la cual 
+    se podrán configurar los atributos Value y Name de las entradas, así como las URL de las acciones de cada una de las pantallas.\\
+	
+	En la parte superior derecha, el sistema muestra el proyecto, el módulo y el caso de uso  en el que actualmente se encuentra trabajando.
+
+    \IUfig[.9]{cu5.7.2.1/images/iu.png}{IU 5.7.2.1}{Configurar caso de uso previo}
+
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \cdtButton{Guardar}: Permite al actor guardar el avance de la configuración, dirige a la pantalla \cdtIdRef{IU 5.7.2}{Gestionar casos de uso previos}.
+	\item \cdtButton{Finalizar}: Permite al actor solicitar guardar la configuración, realizar las validaciones y marcar el caso de uso como configurado, dirige a la pantalla \cdtIdRef{IU 5.7.2}{Gestionar casos de uso previos}.
+	\item \cdtButton{Cancelar}: Permite al actor cancelar la configuración, dirige a la pantalla \cdtIdRef{IU 5.7.2}{Gestionar casos de uso previos}.
+	
+	
+\end{itemize}
+
+\subsubsection{Mensajes}
+
+\begin{description}
+	\item[\cdtIdRef{MSG1}{Operación exitosa}:] Se muestra en la pantalla \cdtIdRef{IU 5.7.2.1}{Configurar caso de uso previo} cuando no se ha ingresado un dato marcado como obligatorio.
+	\item[\cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 5.7.2.1}{Configurar caso de uso previo} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+	\item[\cdtIdRef{MSG5}{Dato incorrecto}:] Se muestra en la pantalla \cdtIdRef{IU 5.7.2.1}{Configurar caso de uso previo} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+	\item [\cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 5.7.2.1}{Configurar caso de uso previo} cuando se ha excedido la longitud de alguno de los campos.
+	\item [\cdtIdRef{MSG13}{Ha ocurrido un error}:] Se muestra en la pantalla \cdtIdRef{IU 5.7.2}{Gestionar casos de uso previos} cuando el caso de uso que se desea configurar no se encuentra en estado ``Preconfigurado'' ``Configurado'' o ``Liberado''.
+\end{description}

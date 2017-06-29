@@ -1,0 +1,146 @@
+\newpage 
+\begin{UseCase}{CU 5.7.3}{Configurar caso de uso}
+	{
+        Este caso de uso permite al analista configurar el caso de uso principal, es decir, el caso de uso que se desea probar.
+    }
+    
+    \UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}, \cdtRef{actor:analista}{Analista}}
+    \UCitem{Propósito}{
+        Configurar un caso de uso.
+    }
+    \UCitem{Entradas}{
+        \begin{UClist} 
+            \UCli De la sección {\bf Configuración de las Entradas}: 
+                \begin{Citemize}
+                    \item \cdtRef{Entrada:HTMLName}{Name}: \ioEscribir.
+                    \item \cdtRef{Entrada:HTMLValue}{Value}: \ioEscribir.                   
+                \end{Citemize}
+            \UCli De la sección {\bf Configuración de las Acciones}:     
+                \begin{Citemize}
+                    \item \cdtRef{Accion:URL}{URL}: \ioEscribir.
+                    \item \cdtRef{Accion:Metodo}{Método}: \ioEscribir.                  
+                \end{Citemize}
+			 \UCli De la sección {\bf Configuración de las Reglas de negocio}:     
+                \begin{Citemize}
+                    \item \cdtRef{RegladeNegocio:Query}{Query}: \ioEscribir.               
+                \end{Citemize}	
+             \UCli De la sección {\bf Configuración de los Parámetros}:     
+                \begin{Citemize}
+                    \item \cdtRef{ValordelParametroenMensaje:Valor}{Valor del Parámetro en Mensaje}: \ioEscribir.               
+                \end{Citemize}
+             \UCli De la sección {\bf Configuración de las Pantallas}:     
+                \begin{Citemize}
+                    \item \cdtRef{Pantalla:Patron}{Patrón}: \ioEscribir.               
+                \end{Citemize}	  
+        \end{UClist}
+    }
+    \UCitem{Salidas}{
+        \begin{UClist}
+            \UCli \cdtRef{Proyecto:Clave}{Clave} del proyecto. \ioObtener.
+            \UCli \cdtRef{Proyecto:Nombre}{Nombre} del proyecto. \ioObtener.
+            \UCli \cdtRef{Modulo:Clave}{Clave} del módulo: \ioObtener.
+            \UCli \cdtRef{Modulo:Nombre}{Nombre} del módulo: \ioObtener.
+            \UCli \cdtRef{Elemento:Clave}{Clave}, \cdtRef{Elemento:Numero}{Número} y \cdtRef{Elemento:Nombre}{Nombre} del caso de uso que se está configurando. \ioObtener.
+            \UCli De la sección {\bf Configuración de las Entradas}: 
+                \begin{Citemize}
+                    \item \cdtRef{Entrada}{Lista de Entradas}. \ioObtener.                  
+                \end{Citemize}
+            \UCli De la sección {\bf Configuración de las Acciones}: 
+                \begin{Citemize}
+                    \item \cdtRef{Pantalla}{Lista de Pantallas} con sus respectivas \cdtRef{Accion}{Acciones}. \ioObtener.                  
+                \end{Citemize}
+             \UCli De la sección {\bf Configuración de las Reglas de negocio}: 
+                \begin{Citemize}
+                    \item \cdtRef{RegladeNegocio}{Lista de Reglas de negocio} que se deben configurar y el \cdtRef{Paso:Redaccion}{paso} donde fueron referenciadas. \ioObtener.                  
+                \end{Citemize}
+              \UCli De la sección {\bf Configuración de los Parámetros}: 
+                \begin{Citemize}
+                    \item \cdtRef{Mensaje:Redaccion}{Lista de Mensajes} parametrizados, los \cdtRef{Paso:Redaccion}{pasos} donde fueron referenciados y sus respectivos parámetros. \ioObtener.                  
+                \end{Citemize}
+              \UCli De la sección {\bf Configuración de las Pantallas}: 
+                \begin{Citemize}
+                    \item \cdtRef{Pantalla}{Lista de Pantallas}. \ioObtener.                  
+                \end{Citemize}
+        \end{UClist}
+    }
+    
+    \UCitem{Mensajes}{
+        \begin{UClist}
+            \UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} para indicar que la configuración se realizó exitosamente.
+        \end{UClist}
+    }
+
+    \UCitem{Precondiciones}{
+        Ninguna
+    }
+    
+    \UCitem{Postcondiciones}{
+        \begin{UClist}
+            \UCli Se modificará la información de la configuración del caso de uso.
+        \end{UClist}
+    }
+
+    \UCitem{Errores}{
+        \begin{UClist}
+            \UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 5.7.3}{Configurar caso de uso} cuando no se ha ingresado un dato marcado como obligatorio.
+            \UCli \cdtIdRef{MSG5}{Dato incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 5.7.3}{Configurar caso de uso} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+            \UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 5.7.3}{Configurar caso de uso} cuando se ha excedido la longitud de alguno de los campos.
+            \UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} cuando el caso de uso que se desea configurar no se encuentra en estado ``Preconfigurado'' ``Configurado'' o ``Liberado''.
+        \end{UClist}
+    }
+
+    \UCitem{Tipo}{
+        Secundario, incluido en el caso de uso \cdtIdRef{CU5}{Gestionar casos de uso}.
+    }
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+    \UCpaso[\UCactor] Ingresa la configuración del caso de uso en la pantalla \cdtIdRef{IU 5.7.3}{Configurar caso de uso}.\label{cu5.7.3:ingresaDatos}
+    \UCpaso[\UCactor] Solicita guardar la configuración del caso de uso oprimiendo el botón \cdtButton{Finalizar} de la pantalla \cdtIdRef{IU 5.7.3}{Configurar caso de uso}. \refTray{A} \refTray{B}
+    \UCpaso[\UCsist] Verifica que el estado del caso de uso previo sea ``Preconfigurado'', ``Configurado'' o ``Liberado''. \refTray{C} 
+    \UCpaso[\UCsist] Verifica que el actor ingrese todos los campos obligatorios con base en la regla de negocio  \cdtIdRef{RN8}{Datos obligatorios}. \refTray{D}
+        \UCpaso[\UCsist] Verifica que los datos sean proporcionados correctamente, con base en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{E} \refTray{F}    
+    \UCpaso[\UCsist] Modifica la configuración del caso de uso en el sistema.   
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} para indicar al actor que la configuración se ha realizado exitosamente.
+ \end{UCtrayectoria}
+ 
+ %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{A}{El actor desea únicamente guardar el avance realizado.}
+     \UCpaso[\UCactor] Solicita guardar el avance oprimiendo el botón \cdtButton{Guardar} de la pantalla \cdtIdRef{IU 5.7.3}{Configurar caso de uso}.
+    \UCpaso[\UCsist] Modifica la configuración del caso de uso en el sistema.   
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}, indicando que la información ha sido guardada exitosamente.
+ \end{UCtrayectoriaA}
+ 
+
+ %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{El actor desea cancelar la operación.}
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 5.7.3}{Configurar caso de uso}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+ \end{UCtrayectoriaA}
+ 
+ %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{C}{El caso de uso que se desea configurar se encuentra en un estado inválido.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error} en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+ \end{UCtrayectoriaA}
+
+  %----------------------------------------------------------%trayectoria D---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{D}{El actor no ingresó algún dato marcado como obligatorio.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
+        \cdtIdRef{IU 5.7.3}{Configurar caso de uso}, indicando al actor que el dato es obligatorio.
+    \UCpaso[] Continúa con el paso \ref{cu5.7.3:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+
+ %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{E}{El actor ingresó un tipo de dato incorrecto.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Dato incorrecto} y señala el campo que presenta el dato inválido en la 
+    pantalla \cdtIdRef{IU 5.7.3}{Configurar caso de uso} para indicar que se ha ingresado un tipo de dato inválido.
+    \UCpaso[] Continúa con el paso \ref{cu5.7.3:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ %----------------------------------------------------------%trayectoria F----------------------------------------------------  
+ \begin{UCtrayectoriaA}{F}{El actor proporciona un dato que excede la longitud máxima.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG6}{Longitud inválida} y señala el campo que excede la 
+    longitud en la pantalla \cdtIdRef{IU 5.7.3}{Configurar caso de uso}, para indicar que el dato excede el tamaño máximo permitido.
+    \UCpaso[] Continúa con el paso \ref{cu5.7.3:ingresaDatos} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ 
+ 

@@ -1,0 +1,44 @@
+\newpage 
+\subsection{IU 5.7.3 Configurar caso de uso}
+\subsubsection{Objetivo}
+	
+	En esta pantalla el actor puede configurar un caso de uso. Para configurar un caso de uso  es necesario configurar las entradas, las acciones, las 
+	reglas de negocio, los parámetros de los mensajes y los patrones de las pantallas que contiene el mismo.
+
+\subsubsection{Diseño}
+
+    En la figura ~\ref{IU 5.7.3} se muestra la pantalla ``Configurar caso de uso'', por medio de la cual 
+    se podrá indicar: 
+    
+    \begin{itemize}
+    	\item Los atributos Name y Value de las entradas.
+    	\item Las URL y los métodos de las acciones.
+    	\item Los queries de las reglas de negocio.
+    	\item Los valores que tomarán los parámetros de los mensajes.
+    	\item Los patrones que se esperan en las pantallas.
+    \end{itemize}
+	
+	En la parte superior derecha, el sistema muestra el proyecto, el módulo y el caso de uso  en el que actualmente se encuentra trabajando.
+
+    \IUfig[.6]{cu5.7.3/images/iu.png}{IU 5.7.3}{Configurar caso de uso}
+
+
+\subsubsection{Comandos}
+\begin{itemize}
+	\item \cdtButton{Anterior}: Permite al actor solicitar regresar a la pantalla anterior de la configuración, dirige a la pantalla \cdtIdRef{IU 5.7.2}{Gestionar casos de uso previos}.
+	\item \cdtButton{Guardar}: Permite al actor guardar el avance de la configuración, dirige a la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+	\item \cdtButton{Finalizar}: Permite al actor solicitar guardar la configuración, realizar las validaciones y marcar el caso de uso como configurado, dirige a la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+	\item \cdtButton{Cancelar}: Permite al actor cancelar la configuración, dirige a la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+	
+	
+\end{itemize}
+
+\subsubsection{Mensajes}
+
+\begin{description}
+	\item[\cdtIdRef{MSG1}{Operación exitosa}:] Se muestra en la pantalla \cdtIdRef{IU 5.7.3}{Configurar caso de uso} cuando no se ha ingresado un dato marcado como obligatorio.
+	\item[\cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 5.7.3}{Configurar caso de uso} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+	\item[\cdtIdRef{MSG5}{Dato incorrecto}:] Se muestra en la pantalla \cdtIdRef{IU 5.7.3}{Configurar caso de uso} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+	\item [\cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 5.7.3}{Configurar caso de uso} cuando se ha excedido la longitud de alguno de los campos.
+	\item [\cdtIdRef{MSG13}{Ha ocurrido un error}:] Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} cuando el caso de uso que se desea configurar no se encuentra en estado ``Preconfigurado'' ``Configurado'' o ``Liberado''.
+\end{description}

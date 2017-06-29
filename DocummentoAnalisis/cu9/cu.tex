@@ -21,7 +21,7 @@
 	
 	\UCitem{Mensajes}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG2}{No existe información}: Se muestra en la pantalla \cdtIdRef{CU 9}{Gestionar mensajes} cuando no existen mensajes registrados.
+			\UCli \cdtIdRef{MSG2}{No existe información}: Se muestra en la pantalla \cdtIdRef{IU 9}{Gestionar mensajes} cuando no existen mensajes registrados.
 		\end{UClist}
 	}
 
@@ -52,7 +52,7 @@
     \UCpaso[\UCsist] Busca la información de los mensajes registrados en el sistema. \refTray{A}
     \UCpaso[\UCsist] Muestra la información de los mensajes en la pantalla \cdtIdRef{IU 9}{Gestionar mensajes} y las operaciones 
     disponibles de acuerdo a la regla de negocio \cdtIdRef{RN15}{Elementos en uso}. 
-    \UCpaso[\UCactor] Gestiona los mensajes a través de los botones: \cdtButton{Registrar}, \btnConsulta, \btnEditar y \btnEliminar. \label{cu8:gestiona}
+    \UCpaso[\UCactor] Gestiona los mensajes a través de los botones: \cdtButton{Registrar}, \btnConsulta, \btnEditar y \btnEliminar. \label{cu9:gestiona}
  \end{UCtrayectoria}
  
  \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{No existen registros de mensajes.}
@@ -64,14 +64,14 @@
 \subsubsection{Puntos de extensión}
 
 \UCExtensionPoint{El actor requiere registrar un mensaje}
-	{Paso \ref{cu8:gestiona}}
+	{Paso \ref{cu9:gestiona}}
 	{\cdtIdRef{CU 9.1}{Registrar mensaje}}
 \UCExtensionPoint{El actor requiere modificar un mensaje}
-	{Paso \ref{cu8:gestiona}}
+	{Paso \ref{cu9:gestiona}}
 	{\cdtIdRef{CU 9.2}{Modificar mensaje}}	
 \UCExtensionPoint{El actor requiere eliminar un mensaje}
-	{Paso \ref{cu8:gestiona}}
+	{Paso \ref{cu9:gestiona}}
 	{\cdtIdRef{CU 9.3}{Eliminar mensaje}}
 \UCExtensionPoint{El actor requiere consultar un mensaje}
-	{Paso \ref{cu8:gestiona}}
+	{Paso \ref{cu9:gestiona}}
 	{\cdtIdRef{CU 9.4}{Consultar mensaje}}

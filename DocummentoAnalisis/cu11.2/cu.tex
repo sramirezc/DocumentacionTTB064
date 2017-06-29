@@ -88,7 +88,7 @@
  \begin{UCtrayectoriaA}{B}{El actor no ingresó algún dato marcado como obligatorio.}
     \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla 
 	    \cdtIdRef{IU 11.2}{Modificar entidad} o en la pantalla emergente \cdtIdRef{IU 11.2A}{Modificar entidad: Comentarios}, indicando al actor que el dato es obligatorio.
-    \UCpaso[] Continúa con el paso \ref{cu11.2:ingresaDatos} o con el paso \label{cu11.2:ingresaComentario} de la trayectoria principal.
+    \UCpaso[] Continúa con el paso \ref{cu11.2:ingresaDatos} o con el paso \ref{cu11.2:ingresaComentario} de la trayectoria principal.
  \end{UCtrayectoriaA}
  %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
  \begin{UCtrayectoriaA}{C}{El actor ingresó un nombre de entidad repetido.}
@@ -98,9 +98,9 @@
  \end{UCtrayectoriaA}
  %----------------------------------------------------------%trayectoria D----------------------------------------------------  
  \begin{UCtrayectoriaA}{D}{El actor proporciona un dato que excede la longitud máxima.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG6}{Longitud inválida} y señala el campo que excede la 
     longitud en la pantalla \cdtIdRef{IU 11.2}{Modificar entidad} o en la pantalla emergente \cdtIdRef{IU 11.2A}{Modificar entidad: Comentarios}, para indicar que el dato excede el tamaño máximo permitido.
-    \UCpaso[] Continúa con el paso \ref{cu11.2:ingresaDatos} o con el paso \label{cu11.2:ingresaComentario} de la trayectoria principal.
+    \UCpaso[] Continúa con el paso \ref{cu11.2:ingresaDatos} o con el paso \ref{cu11.2:ingresaComentario} de la trayectoria principal.
  \end{UCtrayectoriaA}
  %----------------------------------------------------------%trayectoria E---------------------------------------------------- 
  \begin{UCtrayectoriaA}{E}{El actor ingresó un nombre con caracteres inválidos.}

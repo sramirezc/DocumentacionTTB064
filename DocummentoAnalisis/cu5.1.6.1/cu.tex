@@ -42,11 +42,11 @@
 
 	\UCitem{Errores}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{CU 5.1.6.1}{Registrar punto de extensión} cuando no se ha ingresado un dato marcado como obligatorio.
-			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{CU 5.1.6.1}{Registrar punto de extensión} cuando se ha excedido la longitud de alguno de los campos.
-			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{CU 5.1.6.1}{Registrar punto de extensión} cuando se ha ingresado un punto de extensión que ya existe.
-			\UCli \cdtIdRef{MSG15}{Dato no registrado}: Se muestra en la pantalla \cdtIdRef{CU 5.1.6.1}{Registrar punto de extensión} cuando un elemento referenciado no existe en el sistema.
-			\UCli \cdtIdRef{MSG27}{Token incorrecto}: Se muestra en la pantalla \cdtIdRef{CU 5.1.6.1}{Registrar punto de extensión} cuando el token ingresado está mal formado.
+			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 5.1.6.1}{Registrar punto de extensión} cuando no se ha ingresado un dato marcado como obligatorio.
+			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 5.1.6.1}{Registrar punto de extensión} cuando se ha excedido la longitud de alguno de los campos.
+			\UCli \cdtIdRef{MSG7}{Registro repetido}: Se muestra en la pantalla \cdtIdRef{IU 5.1.6.1}{Registrar punto de extensión} cuando se ha ingresado un punto de extensión que ya existe.
+			\UCli \cdtIdRef{MSG15}{Dato no registrado}: Se muestra en la pantalla \cdtIdRef{IU 5.1.6.1}{Registrar punto de extensión} cuando un elemento referenciado no existe en el sistema.
+			\UCli \cdtIdRef{MSG27}{Token incorrecto}: Se muestra en la pantalla \cdtIdRef{IU 5.1.6.1}{Registrar punto de extensión} cuando el token ingresado está mal formado.
 		\end{UClist}
 	}
 
@@ -65,7 +65,7 @@
 	\UCpaso[\UCactor] Selecciona el caso de uso que extiende. \label{cu5.1.6.1:ingresaDatos}
 	\UCpaso[\UCactor] Ingresa la causa del punto de extensión.
 	\UCpaso[\UCactor] Ingresa la región de la trayectoria. \label{cu5.1.6.1:ingresaRedaccion} \refTray{A}
-	\UCpaso[\UCactor] Solicita registrar el punto de extensión oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{CU 5.1.6.1}{Registrar punto de extensión}. \refTray{B} 
+	\UCpaso[\UCactor] Solicita registrar el punto de extensión oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 5.1.6.1}{Registrar punto de extensión}. \refTray{B} 
 	\UCpaso[\UCsist] Verifica que el actor haya ingresado todos los campos obligatorios con base en la regla de negocio \cdtIdRef{RN8}{Datos obligatorios}. \refTray{C}
 	\UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{D} 
 	\UCpaso[\UCsist] Verifica que el punto de extensión no esté registrado de acuerdo a la regla de negocio \cdtIdRef{RN17}{Unicidad de puntos de extensión}. \refTray{E}
@@ -88,7 +88,7 @@
 
  %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
  \begin{UCtrayectoriaA}[Fin del caso de uso]{B}{El actor desea cancelar la operación.}
-    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{CU 5.1.6.1}{Registrar punto de extensión}.
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 5.1.6.1}{Registrar punto de extensión}.
     \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o \cdtIdRef{IU 5.2}{Modificar caso de uso} según corresponda.
  \end{UCtrayectoriaA}
  
@@ -100,7 +100,7 @@
  
  %----------------------------------------------------------%trayectoria D --------------------------------------------------  
  \begin{UCtrayectoriaA}{D}{El actor proporciona un dato que excede la longitud máxima.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG6}{Longitud inválida} y señala el campo que excede la 
     longitud en la pantalla \cdtIdRef{IU 5.1.6.1}{Registrar punto de extensión}, para indicar que el dato excede el tamaño máximo permitido.
     \UCpaso[] Continúa con el paso \ref{cu5.1.6.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}

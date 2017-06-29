@@ -51,7 +51,7 @@
 	\UCpaso[\UCactor] Solicita registrar una postcondición oprimiendo el botón \btnRegistrar de la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o de la pantalla \cdtIdRef{IU 5.1.4}{Modificar caso de uso}, en la sección ``Postcondiciones''. 
 	\UCpaso[\UCsist] Muestra la pantalla emergente \cdtIdRef{IU 5.1.4}{Registrar postcondición} en la cual se realizará el registro de la postcondición. 
 	\UCpaso[\UCactor] Ingresa la redacción de la postcondición. \refTray{A} \refTray{B} \refTray{C} \refTray{D} \refTray{E} \refTray{F} \refTray{G} \refTray{H} \refTray{I} \refTray{J} \refTray{K}\label{cu5.1.4:ingresaRedaccion}
-	\UCpaso[\UCactor] Solicita registrar la postcondición oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{CU 5.1.4}{Registrar postcondición}. \refTray{L} 
+	\UCpaso[\UCactor] Solicita registrar la postcondición oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 5.1.4}{Registrar postcondición}. \refTray{L} 
 	\UCpaso[\UCsist] Verifica que el actor haya ingresado todos los campos obligatorios con base en la regla de negocio \cdtIdRef{RN8}{Datos obligatorios}. \refTray{M}
 	\UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{N} 
 	\UCpaso[\UCsist] Agrega la postcondición en la tabla de la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o de la pantalla \cdtIdRef{IU 5.1.4}{Modificar caso de uso}, en la sección ``Postcondiciónes''.
@@ -187,7 +187,7 @@
 
  %----------------------------------------------------------%trayectoria L---------------------------------------------------- 
  \begin{UCtrayectoriaA}[Fin del caso de uso]{L}{El actor desea cancelar la operación.}
-    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{CU 5.1.4}{Registrar postcondición }.
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 5.1.4}{Registrar postcondición }.
     \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.1}{Registrar caso de uso} o \cdtIdRef{IU 5.1.4}{Modificar caso de uso} según corresponda.
  \end{UCtrayectoriaA}
  
@@ -199,7 +199,7 @@
  
  %----------------------------------------------------------%trayectoria N --------------------------------------------------  
  \begin{UCtrayectoriaA}{N}{El actor proporciona un dato que excede la longitud máxima.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} en una pantalla emergente.
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG6}{Longitud inválida} en una pantalla emergente.
     \UCpaso[] Continúa con el paso \ref{cu5.1.4:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
 

@@ -118,6 +118,7 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 	  \Battr{Imagen}{Imagen}{Es un archivo en formato PNG o JPG}{Imagen que ilustrará la interfaz gráfica del sistema}{\requerido}
 	  
 	  \Battr{URL}{URL}{\tdPalabra}{URL que determinará el destino de la Acción}{\requerido}
+	  \Battr{Metodo}{Método}{\tdPalabra}{Especifica cómo se realizará la petición HTTP}{\requerido}
 	  
 \end{BusinessEntity}
 
@@ -168,6 +169,7 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
       \Battr{Nombre}{Nombre}{\tdFrase}{Nombre que identificará a la Regla de Negocio}{\requerido}
       \Battr{Redaccion}{Redacción}{\tdParrafo}{Redacción de la Regla de Negocio}{\requerido}
       \Battr{ExpresionRegular}{Expresión regular}{\tdFrase}{Es la expresión regular que modela el formato de un determinado campo}{\requerido}
+      \Battr{Query}{Query}{\tdFrase}{Es un query para verificar la existencia de catálogos o para verificar la unicidad de los registros}{\requerido}
 \end{BusinessEntity}
 
 \subsubsection{Relaciones}
@@ -205,7 +207,7 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 
 \begin{BusinessEntity}{Salida}{Salida}
     \Battr{HTMLValue}{HTML Value}{\tdFrase}{Valor HTML que tomará un determinado parámetro al realizar la ejecución de la prueba}{\requerido}
-    \Battr{HTMLValue}{HTML Name}{\tdPalabra}{Nombre del parámetro HTML que tomará un determinado valor al realizar la ejecución de la prueba}{\requerido}
+    \Battr{HTMLName}{HTML Name}{\tdPalabra}{Nombre del parámetro HTML que tomará un determinado valor al realizar la ejecución de la prueba}{\requerido}
 	
 \end{BusinessEntity}
 
@@ -252,7 +254,7 @@ En la figura~\ref{fig:conceptualProyectos} se muestra la estructura de informaci
 
 \begin{BusinessEntity}{Entrada}{Entrada}
     \Battr{HTMLValue}{HTML Value}{\tdFrase}{Valor HTML que tomará un determinado parámetro al realizar la ejecución de la prueba}{\requerido}
-    \Battr{HTMLValue}{HTML Name}{\tdPalabra}{Nombre del parámetro HTML que tomará un determinado valor al realizar la ejecución de la prueba}{\requerido}
+    \Battr{HTMLName}{HTML Name}{\tdPalabra}{Nombre del parámetro HTML que tomará un determinado valor al realizar la ejecución de la prueba}{\requerido}
 	
 \end{BusinessEntity}
 

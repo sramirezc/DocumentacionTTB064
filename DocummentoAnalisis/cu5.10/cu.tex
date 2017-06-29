@@ -1,0 +1,147 @@
+\newpage 
+\begin{UseCase}{CU 5.10}{Desbloquear caso de uso}
+	{
+		Este caso de uso permite al líder de análisis revisar la información de un caso de uso y desbloquearlo para que pueda ser editado  
+		o pueda ser modificado alguno de sus elementos asociados.
+	}
+	
+	\UCitem{Actor}{\cdtRef{actor:liderAnalisis}{Líder de análisis}}
+	\UCitem{Propósito}{
+		Desbloquear un caso de uso para poder editarlo o modificar alguno de sus elementos asociados.
+	}
+	\UCitem{Entradas}{
+		\UCli ¿El resumen del caso de uso es correcto?
+		\UCli \cdtRef{Revision:Observaciones}{Observaciones del resumen}: \ioEscribir
+		\UCli ¿Las trayectorias del caso de uso son correctas?
+		\UCli \cdtRef{Revision:Observaciones}{Observaciones de las trayectorias}: \ioEscribir	
+		\UCli ¿Los puntos de extensión son correctos?
+		\UCli \cdtRef{Revision:Observaciones}{Observaciones de los puntos de extensión}: \ioEscribir
+	}
+	\UCitem{Salidas}{
+			\UCli \cdtRef{Elemento:Clave}{Clave}: \ioObtener.
+			\UCli \cdtRef{Elemento:Numero}{Número}: \ioObtener.
+		    \UCli \cdtRef{Elemento:Nombre}{Nombre}: \ioObtener.
+			\UCli \cdtRef{Elemento:Resumen}{Resumen}: \ioObtener.
+			\UCli \cdtRef{Estado_Elemento}{Estado}: \ioObtener.
+			\UCli De la sección {\bf Información general del Caso de uso}:
+				\begin{Citemize}
+			        \item \cdtRef{Actor}{Actores}: \ioObtener.
+				    \item \cdtRef{Entrada}{Entradas}: \ioObtener.
+				    \item \cdtRef{Salida}{Salidas}: \ioObtener.
+					\item \cdtRef{RegladeNegocio}{Reglas de negocio}: \ioObtener.
+					\item \cdtRef{Precondicion:Redaccion}{Redacción} de cada \cdtRef{Precondicion}{Precondición}: \ioObtener.
+					\item \cdtRef{Postcondicion:Redaccion}{Redacción} de cada \cdtRef{Postcondicion}{Postcondición}: \ioObtener.
+				\end{Citemize}
+	}	
+	\UCitem{Salidas}{
+			\UCli De la sección {\bf Trayectorias}:
+			\begin{Citemize}
+				\item Se muestra la siguiente información para cada \cdtRef{Trayectoria}{Trayectoria}:
+				\begin{Citemize}
+					\item \cdtRef{Trayectoria:Identificador}{Clave}: \ioObtener.
+					\item \cdtRef{Trayectoria:Alternativa}{Tipo}: \ioObtener.
+					\item \cdtRef{Trayectoria:Condicion}{Condición}: \ioObtener.
+					\item Se muestra la siguiente información para cada \cdtRef{Paso}{Paso}:
+					\begin{Citemize}
+						\item \cdtRef{Paso:Numero}{Número}: \ioObtener.
+						\item \cdtRef{Paso:RealizaActor}{Quien realiza el paso}: \ioObtener.
+						\item \cdtRef{Paso:Redaccion}{Redacción}: \ioObtener.
+					\end{Citemize}
+					\item \cdtRef{Trayectoria:FindelCasodeUso}{Fin del caso de uso}: \ioObtener.
+				\end{Citemize}
+			\end{Citemize}
+			
+			\UCli De la sección {\bf Puntos de extensión}:
+			\begin{Citemize}
+		        \item Se muestra la siguiente información para cada \cdtRef{Extension}{Punto de extensión}:
+				\begin{Citemize}
+	 				\item \cdtRef{Extension:Causa}{Causa}: \ioObtener.
+	 				\item \cdtRef{Trayectoria}{Región de la trayectoria}: \ioObtener.
+	 				\item \cdtRef{CasodeUso}{Caso de uso al que extiende}: \ioObtener.
+				\end{Citemize}
+			\end{Citemize}
+		
+	}
+	
+	\UCitem{Mensajes}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG1}{Operación exitosa}: Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} para indicar que la liberación se ha realizado exitosamente.
+		\end{UClist}
+	}
+
+	\UCitem{Precondiciones}{
+		\begin{UClist}
+			\UCli Que el caso de uso al que pertenece la trayectoria se encuentre en estado ``Liberado'', ``Preconfigurado'' o ``Configurado''.
+		\end{UClist}
+	}
+	
+	\UCitem{Postcondiciones}{
+		\begin{UClist}
+			\UCli El caso de uso pasará a estado ``Pendiente de corrección''.
+		\end{UClist}
+	}
+
+	\UCitem{Errores}{
+		\begin{UClist}
+			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 5.9}{Liberar caso de uso} cuando no se ha ingresado un dato marcado como obligatorio.
+			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 5.9}{Liberar caso de uso} cuando se ha excedido la longitud de alguno de los campos.
+			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} cuando el caso de uso que se desea liberar no se encuentra en estado ``Liberado'', ``Preconfigurado'' o ``Configurado''.
+		\end{UClist}
+	}
+
+	\UCitem{Tipo}{
+		Secundario, extiende del caso de uso \cdtIdRef{CU 5}{Gestionar casos de uso}.
+	}
+\end{UseCase}
+%-------------------------------------------------------%trayectoria Principal-----------------------------------------------
+ \begin{UCtrayectoria}
+	\UCpaso[\UCactor] Oprime el botón \btnDesbloquear del caso de uso que desea desbloquear en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+    \UCpaso[\UCsist] Busca la información del caso de uso. 
+    \UCpaso[\UCsist] Verifica que el estado del caso de uso sea ``Liberado'', ``Preconfigurado'' o ``Configurado''. \refTray{A}
+    \UCpaso[\UCsist] Muestra la información encontrada en la pantalla \cdtIdRef{IU 5.9}{Liberar caso de uso}.
+    \UCpaso[\UCactor] Selecciona la opción ``No'' para alguna de las secciones. \refTray{B} \label{cu5.10:selecciona}
+    \UCpaso[\UCsist] Muestra el campo de observaciones de aquellas secciones que se hayan marcado como incorrectas.
+    \UCpaso[\UCactor] Ingresa las observaciones en los campos.
+	\UCpaso[\UCactor] Solicita desbloquear el caso de uso oprimiendo el botón \cdtButton{Aceptar}. \refTray{F} \label{cu5.10:oprime}
+	\UCpaso[\UCsist] Verifica que el actor haya ingresado todos los campos obligatorios con base en la regla de negocio \cdtIdRef{RN8}{Datos obligatorios}. \refTray{C}
+	\UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{D}
+    \UCpaso[\UCsist] Verifica que el estado del caso de uso sea ``Liberado'', ``Preconfigurado'' o ``Configurado''. \refTray{A}
+    \UCpaso[\UCsist] Verifica que al menos una sección se marque como incorrecta. \refTray{E}
+    \UCpaso[\UCsist] Cambia el estado del caso de uso a ``Pendiente de corrección''.
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+ \end{UCtrayectoria}
+ 
+ %----------------------------------------------------------%trayectoria A---------------------------------------------------- 
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{A}{El caso de uso que se desea revisar se encuentra en un estado diferente a ``Liberado'', ``Preconfigurado'' o ``Configurado''}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG13}{Ha ocurrido un error} en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+ \end{UCtrayectoriaA} 
+ 
+ %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{B}{El actor selecciona que todas las secciones son correctas.}
+    \UCpaso[\UCactor] Selecciona la opción ``Sí'' para cada una de las secciones.
+	\UCpaso[] Continúa con el paso \ref{cu5.10:oprime}.
+ \end{UCtrayectoriaA}
+ 
+ %----------------------------------------------------------%trayectoria C---------------------------------------------------- 
+ \begin{UCtrayectoriaA}{C}{El actor no ingresó algún dato marcado como obligatorio.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG4}{Dato obligatorio} y señala el campo que presenta el error en la pantalla \cdtIdRef{IU 5.9}{Liberar caso de uso}, indicando al actor que el dato es obligatorio.
+    \UCpaso[] Continúa con el paso \ref{cu5.10:selecciona} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ 
+ %----------------------------------------------------------%trayectoria D --------------------------------------------------  
+ \begin{UCtrayectoriaA}{D}{El actor proporciona un dato que excede la longitud máxima.}
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG6}{Longitud inválida} y señala el campo que excede la 
+    longitud en la pantalla \cdtIdRef{IU 5.9}{Liberar caso de uso}, para indicar que el dato excede el tamaño máximo permitido.
+    \UCpaso[] Continúa con el paso \ref{cu5.10:selecciona} de la trayectoria principal.
+ \end{UCtrayectoriaA}
+ 
+ %----------------------------------------------------------%trayectoria E --------------------------------------------------  
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{E}{El actor marcó todas las secciones del caso de uso como correctas.}
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+ \end{UCtrayectoriaA}
+ 
+ %----------------------------------------------------------%trayectoria F --------------------------------------------------  
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{F}{El actor desea cancelar la operación.}
+    \UCpaso[\UCactor] Solicita cancelar el caso de uso oprimiendo el botón \cdtButton{Cancelar}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+ \end{UCtrayectoriaA}

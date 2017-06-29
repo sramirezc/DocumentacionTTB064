@@ -9,15 +9,11 @@
 
     En la figura ~\ref{IU 5.1.1.2} se muestra la pantalla ``Modificar trayectoria'' en la cual el actor deberá ingresar la nueva información y gestionar los pasos.\\
       
-    Una vez ingresada la información solicitada en la pantalla, deberá oprimir el botón \cdtButton{Aceptar}, el sistema mostrará la pantalla emergente ~\ref{IU 5.1.1.2A} para que el actor ingrese los comentarios referentes a la modificación, posteriormente deberá oprimir el botón \cdtButton{Aceptar} de la pantalla emergente, el sistema validará la información y en caso de cumplor con todas las reglas de negocio establecidas, se realizará la modificación de la información.
+    Una vez ingresada la información solicitada en la pantalla, deberá oprimir el botón \cdtButton{Aceptar}, el sistema validará la información y en caso de cumplir con todas las reglas de negocio establecidas, se realizará la modificación de la información.\\
 	    
     Finalmente se mostrará el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias}, para indicar que la información de la trayectoria se ha modificado correctamente.        
 
-
     \IUfig[.9]{cu5.1.1.2/images/iu.png}{IU 5.1.1.2}{Modificar trayectoria}
-    \IUfig[.9]{cu5.1.1.2/images/iuA.png}{IU 5.1.1.2A}{Modificar trayectoria: Comentarios}
-
-
 
 \subsubsection{Comandos}
 \begin{itemize}
@@ -33,12 +29,12 @@
 	
 \begin{description}
 	\item[ \cdtIdRef{MSG1}{Operación exitosa}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.1}{Gestionar trayectorias} para indicar que la modificación fue exitosa.
-	\item[\cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} o en la pantalla emergente \cdtIdRef{CU 5.1.1.2A}{Modificar trayectoria: Comentarios} cuando no se ha ingresado un dato marcado como obligatorio.
-	\item[\cdtIdRef{MSG5}{Dato incorrecto}:] Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
-	\item[\cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} o en la pantalla emergente \cdtIdRef{CU 5.1.1.2A}{Modificar trayectoria: Comentarios} cuando se ha excedido la longitud de alguno de los campos.
-	\item[\cdtIdRef{MSG7}{Registro repetido}:] Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} cuando se haya ingresado una clave que ya esté registrada.
-	\item[\cdtIdRef{MSG15}{Dato no registrado}:] Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} cuando un elemento referenciado no existe en el sistema.
+	\item[\cdtIdRef{MSG4}{Dato obligatorio}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria} o en la pantalla emergente \cdtIdRef{CU 5.1.1.2A}{Modificar trayectoria: Comentarios} cuando no se ha ingresado un dato marcado como obligatorio.
+	\item[\cdtIdRef{MSG5}{Dato incorrecto}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria} cuando el tipo de dato ingresado no cumple con el tipo de dato solicitado en el campo.
+	\item[\cdtIdRef{MSG6}{Longitud inválida}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria} o en la pantalla emergente \cdtIdRef{CU 5.1.1.2A}{Modificar trayectoria: Comentarios} cuando se ha excedido la longitud de alguno de los campos.
+	\item[\cdtIdRef{MSG7}{Registro repetido}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria} cuando se haya ingresado una clave que ya esté registrada.
+	\item[\cdtIdRef{MSG15}{Dato no registrado}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria} cuando un elemento referenciado no existe en el sistema.
 	\item[\cdtIdRef{MSG13}{Ha ocurrido un error}:] Se muestra en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso} cuando el estado del caso de uso sea inválido.
-	\item[\cdtIdRef{MSG23}{Caracteres inválidos}:] Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} cuando la clave de la trayectoria contiene un carácter no válido.
-	\item[\cdtIdRef{MSG27}{Token incorrecto}:] Se muestra en la pantalla \cdtIdRef{CU 5.1.1.2}{Modificar trayectoria} cuando el token ingresado está mal formado.
+	\item[\cdtIdRef{MSG23}{Caracteres inválidos}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria} cuando la clave de la trayectoria contiene un carácter no válido.
+	\item[\cdtIdRef{MSG27}{Token incorrecto}:] Se muestra en la pantalla \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria} cuando el token ingresado está mal formado.
 \end{description}

@@ -54,7 +54,7 @@
 	\UCpaso[\UCactor] Selecciona quien realiza el paso.\label{cu5.1.1.1.1:ingresaDatos}
 	\UCpaso[\UCactor] Selecciona el verbo.
 	\UCpaso[\UCactor] Ingresa la redacción del paso. \refTray{A} \refTray{B} \refTray{C} \refTray{D} \refTray{E} \refTray{F} \refTray{G} \refTray{H} \refTray{I} \refTray{J} \refTray{K}\label{cu5.1.1.1.1:ingresaRedaccion}
-	\UCpaso[\UCactor] Solicita registrar el paso oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{CU 5.1.1.1.1}{Registrar paso}. \refTray{L} 
+	\UCpaso[\UCactor] Solicita registrar el paso oprimiendo el botón \cdtButton{Aceptar} de la pantalla \cdtIdRef{IU 5.1.1.1.1}{Registrar paso}. \refTray{L} 
 	\UCpaso[\UCsist] Verifica que el actor haya ingresado todos los campos obligatorios con base en la regla de negocio \cdtIdRef{RN8}{Datos obligatorios}. \refTray{M}
 	\UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{N} 
 	\UCpaso[\UCsist] Agrega el paso en la tabla de la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} o de la pantalla \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria}.
@@ -190,7 +190,7 @@
 
  %----------------------------------------------------------%trayectoria L---------------------------------------------------- 
  \begin{UCtrayectoriaA}[Fin del caso de uso]{L}{El actor desea cancelar la operación.}
-    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{CU 5.1.1.1.1}{Registrar paso}.
+    \UCpaso[\UCactor] Solicita cancelar la operación oprimiendo el botón \cdtButton{Cancelar} de la pantalla \cdtIdRef{IU 5.1.1.1.1}{Registrar paso}.
     \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5.1.1.1}{Registrar trayectoria} o \cdtIdRef{IU 5.1.1.2}{Modificar trayectoria} según corresponda.
  \end{UCtrayectoriaA}
  
@@ -202,7 +202,7 @@
  
  %----------------------------------------------------------%trayectoria N --------------------------------------------------  
  \begin{UCtrayectoriaA}{N}{El actor proporciona un dato que excede la longitud máxima.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} en una pantalla emergente.
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG6}{Longitud inválida} en una pantalla emergente.
     \UCpaso[] Continúa con el paso \ref{cu5.1.1.1.1:ingresaDatos} de la trayectoria principal.
  \end{UCtrayectoriaA}
 

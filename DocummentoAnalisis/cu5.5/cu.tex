@@ -83,8 +83,8 @@
 
 	\UCitem{Errores}{
 		\begin{UClist}
-			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{CU 5.5}{Revisar caso de uso} cuando no se ha ingresado un dato marcado como obligatorio.
-			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{CU 5.5}{Revisar caso de uso} cuando se ha excedido la longitud de alguno de los campos.
+			\UCli \cdtIdRef{MSG4}{Dato obligatorio}: Se muestra en la pantalla \cdtIdRef{IU 5.5}{Revisar caso de uso} cuando no se ha ingresado un dato marcado como obligatorio.
+			\UCli \cdtIdRef{MSG6}{Longitud inválida}: Se muestra en la pantalla \cdtIdRef{IU 5.5}{Revisar caso de uso} cuando se ha excedido la longitud de alguno de los campos.
 			\UCli \cdtIdRef{MSG13}{Ha ocurrido un error}: Se muestra en la pantalla donde se solicitó la operación cuando el caso de uso que se desea revisar no se encuentra en estado ``Revisión''.
 		\end{UClist}
 	}
@@ -100,7 +100,7 @@
     \UCpaso[\UCsist] Verifica que el estado del caso de uso sea ``Revisión''. \refTray{A}
     \UCpaso[\UCsist] Muestra la información encontrada en la pantalla \cdtIdRef{IU 5.5}{Revisar caso de uso}.
     \UCpaso[\UCactor] Selecciona la opción ``Sí'' para cada una de las secciones. \refTray{B} \label{cu5.5:selecciona}
-	\UCpaso[\UCactor] Solicita guardar la revisión oprimiendo el botón \cdtButton{Aceptar}. \label{cu5.5:oprime}
+	\UCpaso[\UCactor] Solicita guardar la revisión oprimiendo el botón \cdtButton{Aceptar}. \refTray{G} \label{cu5.5:oprime}
 	\UCpaso[\UCsist] Verifica que el actor haya ingresado todos los campos obligatorios con base en la regla de negocio \cdtIdRef{RN8}{Datos obligatorios}. \refTray{C}
 	\UCpaso[\UCsist] Verifica que los datos requeridos sean proporcionados correctamente como se especifica en la regla de negocio \cdtIdRef{RN7}{Información correcta}. \refTray{D}
     \UCpaso[\UCsist] Verifica que el estado del caso de uso sea ``Revisión''. \refTray{A}
@@ -117,7 +117,7 @@
  
  %----------------------------------------------------------%trayectoria B---------------------------------------------------- 
  \begin{UCtrayectoriaA}{B}{El actor selecciona que alguna de las secciones no es correcta.}
-    \UCpaso[\UCsist] Muestra el campo correspondiente a las observaciones de aquellas secciones en las que se hayan marcado como incorrecta.
+    \UCpaso[\UCsist] Muestra el campo de observaciones de aquellas secciones que se hayan marcado como incorrectas.
     \UCpaso[\UCactor] Ingresa las observaciones en los campos.
 	\UCpaso[] Continúa con el paso \ref{cu5.5:oprime}.
  \end{UCtrayectoriaA}
@@ -130,7 +130,7 @@
  
  %----------------------------------------------------------%trayectoria D --------------------------------------------------  
  \begin{UCtrayectoriaA}{D}{El actor proporciona un dato que excede la longitud máxima.}
-    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG5}{Se ha excedido la longitud máxima del campo} y señala el campo que excede la 
+    \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG6}{Longitud inválida} y señala el campo que excede la 
     longitud en la pantalla \cdtIdRef{IU 5.5}{Revisar caso de uso}, para indicar que el dato excede el tamaño máximo permitido.
     \UCpaso[] Continúa con el paso \ref{cu5.5:selecciona} de la trayectoria principal.
  \end{UCtrayectoriaA}
@@ -145,4 +145,10 @@
  \begin{UCtrayectoriaA}[Fin del caso de uso]{F}{El perfil del actor es ``Líder de análisis''.}
  \UCpaso[\UCsist] Cambia el estado del caso de uso a ``Liberado''.
  \UCpaso[\UCsist] Muestra el mensaje \cdtIdRef{MSG1}{Operación exitosa} en la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
+ \end{UCtrayectoriaA}
+ 
+  %----------------------------------------------------------%trayectoria G --------------------------------------------------  
+ \begin{UCtrayectoriaA}[Fin del caso de uso]{G}{El actor desea cancelar la operación.}
+    \UCpaso[\UCactor] Solicita cancelar el caso de uso oprimiendo el botón \cdtButton{Cancelar}.
+    \UCpaso[\UCsist] Muestra la pantalla \cdtIdRef{IU 5}{Gestionar casos de uso}.
  \end{UCtrayectoriaA}
