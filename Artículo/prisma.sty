@@ -1,0 +1,43 @@
+\newcommand{\instituto}{Escuela Superior de Cómputo I.P.N México Ciudad de México}
+\newcommand{\telefonos}{Tel. 57-29-6000 ext. 52000 y 52021. }
+\newcommand{\correos}{E-mail: \href{mailto:hdeznatali@gmail.com}{hdeznatali@gmail.com}, \href{mailto:sramirezc@live.com}{sramirezc@live.com}}
+\newcommand{\tituloTrabajo}{{Prototipo de editor de casos de uso para la construcción asistida de casos de prueba}}
+\newcommand{\noRegistro}{{2014-B064}}
+\newcommand{\resumen}{
+	El \tituloTrabajo , llamado ``PRISMA'',  es una herramienta que permite documentar casos de uso mediante el registro 
+	de entidades, atributos, reglas de negocio, interfaces, mensajes, actores y trayectorias. 
+	La herramienta permite generar casos de prueba funcionales con base en la documentación realizada, todo esto con la 
+	finalidad de disminuir el tiempo empleado en	la etapa de pruebas de un sistema.
+}
+\newcommand{\palabrasClave}{{Documentación de Sistemas, Ingeniería de Software, Proceso de Software.}}
+\newcommand{\autores}{Natalia Giselle Hernández Sánchez, Sergio Ramírez Camacho}
+\newcommand{\directores}{M. en C. José Jaime López Rabadán, M. en C. Idalia Maldonado Castillo}
+
+%Hacer referencia a las imágenes
+\newcommand{\refIM}[2]{%
+	\hyperlink{#1}{\ref{#1}\ {#2}}%
+}
+
+%Incluir imágenes 
+\newcommand{\IMfig}[4][0.7]{%
+	\begin{figure}[htpb!]%
+		\begin{center}%
+			\hypertarget{#3}{\includegraphics[width=#1\textwidth]{#2}}%
+			\caption{#4}
+			\label{#3}%
+		\end{center}%
+	\end{figure}%
+}
+
+\newcommand{\IUfigNoId}[4][0.7]{%
+\begingroup
+    \centering
+    \hypertarget{#3}{\includegraphics[width=#1\textwidth]{#2}}
+    \captionof{figure}{#4}\label{#3}
+\endgroup
+}
+
+	
+\newcommand{\cdtRef}[2]{%
+	{\bf \hyperlink{#1}{{#2}}}
+}

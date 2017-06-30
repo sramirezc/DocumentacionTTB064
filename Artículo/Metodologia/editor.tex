@@ -1,0 +1,49 @@
+Las actividades que se realizaron en el incremento 1 fueron las siguientes:
+
+{\small
+\begin{enumerate}[label=\Roman*.]
+	\item Análisis de diferentes documentos de análisis
+	\item Análisis de la información necesaria para crear una prueba automatizada
+	\item Construcción de una prueba automatizada como base para la experimentación
+	\item Generación de una prueba automatizada con base en una fuente de información externa
+	\item Diseño de la base de datos
+	\item Diseño de mecanismos para relacionar elementos
+\end{enumerate}
+}	
+	
+\subsubsection*{I. Análisis de diferentes documentos de análisis}
+	Dado que las pruebas funcionales de un sistema pueden basarse en la especificación de casos de uso, se realizó un estudio de la documentación de casos de uso de diferentes sistemas, con e objetivo de conocer cómo se estructuraban y qué información requerían. El resultado de esta actividad permitió establecer la información con la que PRISMA operaría:
+	\begin{itemize}
+		\item Reglas de negocio
+		\item Mensajes
+		\item Actores
+		\item Términos del glosario
+		\item Entidades
+		\item Pantallas
+	\end{itemize}
+	
+\subsubsection*{II. Análisis de la información necesaria para crear una prueba automatizada}
+		
+	Posteriormente se estudió la estructura y la información necesaria para construir un caso de prueba funcional, esperando que los resultados obtenidos presentaran una estrecha relación con los resultados del análisis de la estructura e información necearia para un caso de uso.\\
+		
+	Los resultados obtenidos fueron positivos, ya que gran parte de la información requerida para construir un caso de prueba funcional, coincidía con la información necesaria para la construcción de un caso de uso.
+
+\subsubsection*{III. Construcción de una prueba automatizada como base para la experimentación}
+
+	Con los resultados obtenidos anteriormente, se intentó realizar una prueba automatizada, utilizando exclusivamente la información proporcionada por la especificación de casos de uso, el resultado de este ejercicio mostró que aunque la información que proporciona este documento es bastante útil, no es suficiente para la construcción de la prueba.
+		
+\subsubsection*{IV. Generación de una prueba automatizada con base en una fuente de información externa}
+	
+	Debido a que la prueba automatizada creada anteriormente fue construida directamente sobre una herramienta de pruebas, se realizó un ensayo para demostrar que era posible crearla de forma semiautomática desde una herramienta externa. Para ello se implementó un sistema simple, en el cual se solicitaba información referente a la prueba, para posteriormente utilizarla y generar la prueba automatizada. Los resultados fueron satisfactorios, se demostró que era posible generar pruebas desde una herramienta externa para una posible ejecución con alguna herramienta de pruebas.
+		
+\subsubsection*{V. Diseño de la base de datos}
+
+	Con el análisis realizado anteriormente, se propuso como primer incremento la construcción de un editor de casos de uso que permitiera gestionar diferentes elementos contenidos en la documentación de análisis de un sistema. Con ello se diseñó una base de datos que permitiera alojar la información y que además modelara la gran cantidad de relaciones que tiene un caso de uso con diferentes elementos del documento análisis.
+			
+\subsubsection*{VI. Diseño de mecanismos para relacionar elementos}
+
+	Como se mencionó anteriormente, un caso de uso se encuentra interrelacionado con una gran cantidad de elementos incluidos en el documento de análisis, por lo que resultó importante establecer mecanismos que elevaran la usabilidad al sistema. En general, este mecanismo consiste en poder seleccionar elementos previamente registrados en medio de una redacción abierta. Es necesario utilizar una estructura definida para hacer una referencia, en la figura ~\ref{fig:referencia} se muestra un ejemplo de cómo hacer una referencia a una pantalla detro de un paso.
+	
+	\IUfigNoId[.3]{images/referencia.png}{fig:referencia}{Referencia a un caso de uso} 
+
+	 
