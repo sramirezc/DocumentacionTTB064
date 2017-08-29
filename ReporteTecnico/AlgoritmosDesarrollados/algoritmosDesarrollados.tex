@@ -3,29 +3,28 @@
 	En el {\it Módulo 1  Editor de casos de uso} se implementó un mecanismo que permite seleccionar algunos elementos previamente registrados en medio de una redacción abierta. Este mecanismo surge de la necesidad de poder agilizar el uso de elementos como reglas de negocio o mensajes mientras se redacta un caso de uso, además de mantener consistente la información previniendo futuros cambios en los elementos utilizados.\\
 	
 
-	Cuando el usuario escribe algún token ({\it RN·}, {\it ENT·}, {\it CU·}, {\it MSG·}, etc.) en un campo de texto válido, el sistema muestra una lista ubicada en la posición actual del cursor, esta lista muestra diferentes resultados según el token utilizado, por ejemplo, para el token {\it MSG·} el sistema mostraría una lista de mensajes. Posteriormente, cuando el usuario elige algún elemento de la lista, el sistema se encarga de incluir una cadena de texto relativa al elemento seleccionado. Cuando el usuario decide guardar la información, el sistema ejecuta un algoritmo previo al almacenamiento, que permite establecer relaciones lógicas con los elementos seleccionados y así mantener la información consistente ante cualquier cambio, a este algoritmo se le llamó {\bf Referencias a parámetros}. A continuación se explica el funcionamiento:\\
+	Cuando el usuario escribe algún token ({\it RN·}, {\it ENT·}, {\it CU·}, {\it MSG·}, etc.) en un campo de texto válido, el sistema muestra una lista ubicada en la posición actual del cursor, esta lista muestra diferentes resultados según el token utilizado, por ejemplo, para el token {\it MSG·} el sistema mostraría una lista de mensajes. Posteriormente, cuando el usuario elige algún elemento de la lista, el sistema se encarga de incluir una cadena de texto relativa al elemento seleccionado. Cuando el usuario decide guardar la información, el sistema ejecuta un algoritmo previo al almacenamiento, que permite establecer relaciones lógicas con los elementos seleccionados y así mantener la información consistente ante cualquier cambio, a este algoritmo se le llamó {\bf Referencias a parámetros}. Para explicar el funcionamiento, se utilizará como ejemplo la redacción de un paso que hace referencia a un mensaje y a una pantalla.\\
 	
-	Para explicar el funcionamiento, se utilizará como ejemplo la redacción de un paso que hace referencia a un mensaje y a una pantalla.
 	
 	\begin{enumerate}
-		\item {\it Inicialmente el algoritmo se encarga de buscar los tokens utilizados en la cadena en cuestión, respondiendo con un conjunto de cadenas correspondientes a los tokens ingresados, como se muestra en la figura ~\ref{fig:buscarToken}.}
+		\item Inicialmente el algoritmo se encarga de buscar los tokens utilizados en la cadena en cuestión, respondiendo con un conjunto de cadenas correspondientes a los tokens ingresados, como se muestra en la figura ~\ref{fig:buscarToken}.
 		
 	    \IUfigNoId[1]{images/buscarToken.png}{fig:buscarToken}{Algoritmo Referencias a parámetros: Buscar token}
 		\newpage
 		
-		\item {\it Para cada token encontrado se realiza una segmentación con base en una determinada estructura, esta segmentación permite obtener todos los segmentos utilizados en el token. El primer segmento corresponde al tipo de elemento seleccionado y el resto de la estructura es determinada por el tipo encontrado. En la figura ~\ref{fig:segmentarToken} se muestra el resultado que se obtendría de segmentar el token para un mensaje.}
+		\item Para cada token encontrado se realiza una segmentación con base en una determinada estructura, esta segmentación permite obtener todos los segmentos utilizados en el token. El primer segmento corresponde al tipo de elemento seleccionado y el resto de la estructura es determinada por el tipo encontrado. En la figura ~\ref{fig:segmentarToken} se muestra el resultado que se obtendría de segmentar el token para un mensaje.
 		
 		\IUfigNoId[1]{images/segmentarToken.png}{fig:segmentarToken}{Algoritmo Referencias a parámetros: Segmentar token}
 		
-		\item {\it Cuando el token se encuentra segmentado, se busca el objeto al que hace referencia, en este ejemplo se busca el mensaje número ``1'' cuyo nombre es ``Operación exitosa''. En la figura ~\ref{fig:buscarObjeto} se ilustra el resultado de esta búsqueda con base en los segmentos. 
+		\item Cuando el token se encuentra segmentado, se busca el objeto al que hace referencia, en este ejemplo se busca el mensaje número ``1'' cuyo nombre es ``Operación exitosa''. En la figura ~\ref{fig:buscarObjeto} se ilustra el resultado de esta búsqueda con base en los segmentos. 
 		
 		\IUfigNoId[1]{images/buscarObjeto.png}{fig:buscarObjeto}{Algoritmo Referencias a parámetros: Buscar objeto}
 		
-		\item Con base en el objeto encontrado se crea una referencia, la cual cuenta con un objeto origen y un objeto destino, en este ejemplo, el {\it paso número 12} y el {\it mensaje número 1} respectivamente, como se muestra en la figura ~\ref{fig:crearReferencia}. Esta referencia permite identificar a nivel base de datos las relaciones que existen entre determinados elementos del sistema, permitiendo mantener únicamente una referencia lógica entre ellos, por lo que si uno de ellos actualiza su información, el cambio se verá reflejado también en los elementos con los que se encuentra relacionado.}
+		\item Con base en el objeto encontrado se crea una referencia, la cual cuenta con un objeto origen y un objeto destino, en este ejemplo, el {\it paso número 12} y el {\it mensaje número 1} respectivamente, como se muestra en la figura ~\ref{fig:crearReferencia}. Esta referencia permite identificar a nivel base de datos las relaciones que existen entre determinados elementos del sistema, permitiendo mantener únicamente una referencia lógica entre ellos, por lo que si uno de ellos actualiza su información, el cambio se verá reflejado también en los elementos con los que se encuentra relacionado.
 		
 		\IUfigNoId[1]{images/crearReferencia.png}{fig:crearReferencia}{Algoritmo Referencias a parámetros: Crear referencia}
 \newpage
-		\item {\it Finalmente la cadena original es codificada para preservar en el texto únicamente los identificadores de los elementos a los que se hicieron referencia, como se muestra en la figura ~\ref{fig:codificarCadena}. Despúes de este procesamiento, las siguientes tareas para el sistema consisten únicamente en el almacenamiento de toda la información.}
+		\item Finalmente la cadena original es codificada para preservar en el texto únicamente los identificadores de los elementos a los que se hicieron referencia, como se muestra en la figura ~\ref{fig:codificarCadena}. Despúes de este procesamiento, las siguientes tareas para el sistema consisten únicamente en el almacenamiento de toda la información.
 				
 		\IUfigNoId[1]{images/codificarCadena.png}{fig:codificarCadena}{Algoritmo Referencias a parámetros: Codificar cadena}
 		
@@ -37,7 +36,8 @@
 	\subsubsection{Descripción del algoritmo Generador de casos de prueba}
 	
 	Cuando se desea generar un conjunto de casos de prueba, se requiere configurar una serie de parámetros que son determinados por la estructura del caso de uso a probar, a este caso de uso se le llamará caso de uso base. Para determinar qué parámetros deben ser configurados, el sistema establece una ruta de los casos de uso que deben ser ejecutados para llegar al caso de uso base, en el ejemplo de la figura~\ref{fig:rutaCasosUso} se muestra la ruta necesaria para ejecutar el caso de uso ``Registrar persona''. Se asume que cada caso de uso que forme parte de la ruta debe ser configurado para poder probar el caso de uso base. \\
-	Cuando esta configuración es realizada, se procede configurar el caso de uso base, parte de esta configuración consiste en la generación automática de las entradas, con base en la especificación de cada atributo y en las reglas de negocio utilizadas. Finalemente, el sistema genera un conjunto de archivos en los que se definen los casos de prueba funcionales, estos archivos son descargados en el equipo cliente para que pueda ejecutar la prueba con JMeter.
+	
+	Cuando esta configuración es realizada, se procede a configurar el caso de uso base, parte de esta configuración consiste en la generación automática de las entradas, con base en la especificación de cada atributo y en las reglas de negocio utilizadas. Finalemente, el sistema genera un conjunto de archivos en los que se definen los casos de prueba funcionales, estos archivos son descargados en el equipo cliente para que pueda ejecutar la prueba con JMeter.
 	
 	\IUfigNoId[.8]{images/rutaCasosUso.png}{fig:rutaCasosUso}{Algoritmo Generador de casos de prueba: Buscar ruta}
 	
@@ -61,7 +61,7 @@
 		\item Si el {\it paso A} es de tipo ``Oprimir botón'' se deben considerar los siguientes casos:
 		
 		\begin{enumerate}
-			\item Si el {\it paso B} es de tipo ``Validar regla de negocio'', se deben crear una serie de peticiones HTTP con la indicación de que el conjunto de entradas a utilizar, está definido por la regla de negocio empleada.Cada tipo de regla de negocio establece un funcionamiento particular:
+			\item Si el {\it paso B} es de tipo ``Validar regla de negocio'', se deben crear una serie de peticiones HTTP con la indicación de que el conjunto de entradas a utilizar, está definido por la regla de negocio empleada. Cada tipo de regla de negocio establece un funcionamiento particular:
 	 		\begin{itemize}
 	 			\item {\bf Datos obligatorios.} Indica que deben generarse tantas peticiones HTTP, como entradas requeridas tenga el caso de uso. Cada petición HTTP especifica un conjunto de entradas en el que una de ellas se omite para validar el correcto funcionamiento de la aplicación. Por ejemplo, para un caso de uso con 2 entradas requeridas, esta regla de negocio generaría los escenarios que se muestran en la imagen~\ref{fig:entradasDatosObligatorios}.\\
 	 			\item {\bf Verificación de catálogos.} Indica que se debe generar una petición JDBC que permita extraear información mínima para el sistema, con el objetivo de anticipar si es que el sistema debe operar normalmente o debe alertar sobre la falta de información necesaria para operar.\\
@@ -81,11 +81,11 @@
 			
 		\end{enumerate}
 		 
-			\item Si el {\it paso A} es de tipo ``Mostrar pantalla'' se debe crear una aserción con base en el patrón definido para la pantalla. Posteriormente se elimina el paso y se repite el proceso, indicando que el nuevo paso {\it paso A} ahora es el {\it paso B}.
+			\item Si el {\it paso A} es de tipo ``Mostrar pantalla'' se debe crear una aserción con base en el patrón definido para la pantalla. Posteriormente se elimina el paso y se repite el proceso, indicando que el nuevo {\it paso A} ahora es el {\it paso B}.
 			
 			\item Si el {\it paso A} es de tipo ``Mostrar mensaje'' se debe crear una aserción con base en el patrón definido por la redacción del mensaje. Posteriormente se elimina el paso y se repite el proceso, indicando que el nuevo {\it paso A} ahora es el {\it paso B}.
 			
-			\item Si el tipo del {\it paso A} no está especificado, se elimina y se repite el proceso, indicando que el nuevo paso {\it paso A} ahora es el {\it paso B}.
+			\item Si el tipo del {\it paso A} no está especificado, se elimina y se repite el proceso, indicando que el nuevo {\it paso A} ahora es el {\it paso B}.
 			
 			\item Si el {\it paso A} no existe, se termina el proceso.
 	\end{enumerate}
